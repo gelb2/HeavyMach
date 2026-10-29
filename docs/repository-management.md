@@ -105,18 +105,13 @@ HUD 편집과 도구·장식 수정을 feat/hud-layout-editor→develop→main �
 
 ## 플랫폼별 폴더와 공용 모듈 — 2026-10-30
 
-HeavyMach는 Apple·Android를 같은 저장소에서 관리한다. 사용자 지시에 따라 향후 폴더 구조는 `Shared/`, `Apple/`, `Android/`로 나눈다. 공용 게임 에셋은 루트 `Resources/`·`Art/`에서 한 벌을 관리한다. iOS·Android별 코어 복사본이나 플랫폼별 영구 브랜치는 만들지 않는다.
+HeavyMach는 Apple·Android를 같은 저장소에서 관리한다. 최신 사용자 지시는 **Android 개발 때문에 기존 iOS 프로젝트나 파일을 변경하지 않는 것**이다. 따라서 앞서 제안한 Shared·Apple 폴더 이동과 Apple 코드 선행 공통화는 철회한다.
 
-| 현재 경로 | 이동할 경로 |
-|---|---|
-| `Sources/Core` | `Shared/Core` |
-| `Sources/iOS` 안의 Apple 공통 실행 코드, `Sources/Apple` | `Apple/Runtime` |
-| `Sources/iOS` 안의 iOS 진입 코드, `iOS` 프로젝트 | `Apple/iOS` |
-| `Sources/Mac`, `macOS` 프로젝트 | `Apple/macOS` |
-| `HeavyMach.xcworkspace`, `Modules` | `Apple/HeavyMach.xcworkspace`, `Apple/Modules` |
-| 공용 C++ 검사, Apple 검사 | `Shared/Tests`, `Apple/Tests` |
-| `Resources/Assets.xcassets` | `Apple/Resources/Assets.xcassets` |
-| Apple 화면 코드에 남은 공통 프레임·메뉴·HUD 처리 | 새 `Shared/Runtime` |
-| 새 Android 앱·JNI·EGL·센서·파일 연결 | `Android` 내부 |
+- 새 Android 앱·Kotlin·JNI·C++ 실행 코드·빌드 설정·검사·로컬 ignore는 `Android/` 아래에 둔다.
+- 기존 `HeavyMach.xcworkspace`, `iOS/`, `macOS/`, `Modules/`, `Sources/`, 루트 `CMakeLists.txt`와 Apple 빌드 도구는 이동·수정하지 않는다.
+- `Sources/Core`, `Resources`, `Art`, `vendor`는 Android 빌드에서도 기존 파일을 읽어 사용한다. 이 작업에서 수정·덮어쓰지 않는다.
+- Android용 실행·메뉴·HUD·렌더·음향 연결은 별도 구현한다. 기존 Apple 코드와 같은 동작을 비교한다.
+- 플랫폼별 영구 브랜치는 만들지 않는다. Android 작업 브랜치는 develop에서 분기하고 기존 병합 규칙을 따른다.
+- 작업 전후 보호 파일의 경로·해시와 Git 변경 목록을 검사한다. 문서·계획·지침은 최신 요구에 맞춰 갱신한다.
 
-이 표는 이동 계획이다. 현재 소스·빌드 문서의 기존 경로는 실제 이동 때 바꾼다. 공용 에셋 경로 변경은 빌드 자원 목록과 SHA-256을 대조한다. `Shared`는 Apple·Android SDK를 포함하지 않고, 플랫폼 어댑터가 공용 모듈을 호출한다. 파일 이동, 공통 동작 추출, Android 기능 구현은 따로 커밋한다. [조사와 검증 순서](android-port-plan-20261026.md#코어와-플랫폼-경계-조사--2026-10-30).
+[구성과 검증 순서](android-port-plan-20261026.md#android-구성안). 기존 파일을 이동하지 않으므로 현재 Apple 빌드·설치 문서의 경로도 유지한다.

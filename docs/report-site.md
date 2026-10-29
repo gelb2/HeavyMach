@@ -1,6 +1,17 @@
 # HeavyMach 보고 사이트
 
 
+## 2026-10-30 Apple 변경 없는 Android 개발 계획
+
+[Android 보고서](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/android-plan.html#section-10)에 Apple 파일 이동·수정 없는 개발 조건, 코어/음향/그래픽 네이티브 링크 검사, 공용 게임 기능, GL 복구·에셋·오디오 계획을 반영했다. 앞선 Apple 선행 공통화 계획은 철회했다. [원고](android-port-plan-20261026.md), [검사](evidence/android-isolation-20261030.json).
+
+- source: `1dbbee304c700593c48d757f8a9b5e64686e53a0`
+- deployment: `appgdep_6ae37ce7789c8191bf3dc67cbd530448` · succeeded
+- version: `appgprj_6addbf55aea081918d3d182d7e496e88~appgver_49f04c49c2d48191ad5293f32892307b`
+- 소유자 전용 접근 유지. 기존 절 앵커·로컬 링크·다운로드 일치 확인. 브라우저 직접 화면 검사는 기존 Computer Use URL 제한으로 미실행.
+
+
+
 ## 2026-10-30 Android 코어·플랫폼 경계 조사
 
 [Android 보고서](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/android-plan.html#section-9)에 최신 일반용·치트용 코어의 NDK 컴파일 결과, Apple 화면 코드에 남은 공통 처리, Shared·Apple·Android 폴더 계획을 추가했다. [원고](android-port-plan-20261026.md), [증거](evidence/android-boundaries-20261030.json).

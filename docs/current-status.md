@@ -1,5 +1,10 @@
 # 2026-10-25 문서·코드·앱 일치 체계 점검 및 보완
 
+## Apple 변경 없는 Android 준비 — 2026-10-30
+
+후속 사용자 지시에 따라 Apple 선행 공통화·폴더 이동 계획을 철회했다. 기존 Apple·코어·자원·vendor 등 2,000개 보호 파일의 해시가 작업 전후 같았다. 기존 코어 전체와 OpenAL/OpenSL ES·stb·JNI·EGL/GLES1·AssetManager를 연결한 Android ARM64 일반·치트 공유 라이브러리 두 개를 빌드했다. 기존 빌드/검사 자원 1,504개 해시도 통과했다. [증거](evidence/android-isolation-20261030.json), [현재 계획](android-port-plan-20261026.md). APK·화면·GL 복구·실제 음향은 아직 미구현이다. 아래 최초 공통화 제안은 이 후속 계획으로 대체한다.
+
+
 ## Android 코어·플랫폼 경계 조사 — 2026-10-30
 
 `d46e122a`의 코어를 수정 없이 NDK ARM64 일반용·치트용 정적 라이브러리로 컴파일했다. 코어 56개 파일에서 Apple SDK 의존성은 없었다. 프레임 실행 순서·메뉴와 HUD의 데이터 변경은 Apple 화면 코드에 남아 있다. 이를 공통 Runtime으로 추출하는 계획과 Shared·Apple·Android 폴더 구분을 [Android 계획](android-port-plan-20261026.md)에 반영했다. [컴파일 증거](evidence/android-boundaries-20261030.json). 제품 소스·현재 폴더·앱 설치본은 변경하지 않았다.

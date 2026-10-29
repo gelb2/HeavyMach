@@ -22,7 +22,7 @@
 
 - 개발 브랜치는 develop에 병합하고 main에는 develop만 병합한다. v0.9 등 릴리스 태그는 main의 병합 커밋에 붙이며 재지정하지 않는다. [저장소 관리](docs/repository-management.md)를 따른다.
 
-- 플랫폼 추가·폴더 재구성은 [저장소 관리](docs/repository-management.md#플랫폼별-폴더와-공용-모듈--2026-10-30)의 Shared·Apple·Android 분리를 따른다. 현재 경로와 이동 계획을 구분하며 공용 코어·에셋을 플랫폼별로 복제하지 않는다. Android 추가 때문에 전투·탄도·이동 규칙을 바꾸지 않는다.
+- Android 개발은 기존 Apple 소스·프로젝트·공용 코어·자원·vendor·Apple 빌드 도구를 이동하거나 수정하지 않는다. Android 전용 구현·빌드·검사는 `Android/` 아래에 추가하고 기존 코어·자원은 읽기 입력으로 참조한다. Shared·Apple 폴더 이동과 Apple 선행 공통화 제안은 철회했다. [변경 범위](docs/repository-management.md#플랫폼별-폴더와-공용-모듈--2026-10-30)를 따르고 보호 파일의 작업 전후 해시를 비교한다.
 
 - HeavyMach Android 이식·APK 작업에는 `.agents/skills/port-heavymach-android/SKILL.md`와 `docs/android-port-plan-20261026.md`를 읽고 `document_contract.py plan --task android`로 연결을 확인한다. 조사·예정 단계와 실제 APK 완료를 구분한다.
 

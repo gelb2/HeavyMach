@@ -1,5 +1,10 @@
 # HeavyMach 정본과 작업 기준
 
+## Android 추가 시 기존 Apple 파일 보존 — 2026-10-30
+
+Android 개발 때문에 기존 iOS·macOS 프로젝트·소스·공용 코어·에셋·vendor·Apple 빌드 도구를 이동하거나 수정하지 않는다. Android 전용 구현과 빌드·검사는 `Android/`에 추가한다. 기존 코어와 자원은 읽어 사용한다. Apple 선행 공통화와 Shared·Apple 폴더 이동 제안은 철회했다. [Android 계획](android-port-plan-20261026.md), [경로·검사 규칙](repository-management.md#플랫폼별-폴더와-공용-모듈--2026-10-30).
+
+
 ## Apple 플랫폼 확장 — 2026-10-26
 
 2026-10-29 지원 범위: Mac 앱과 iOS 시뮬레이터는 Apple Silicon arm64만 지원한다. Intel Mac은 지원하지 않는다.

@@ -1,0 +1,70 @@
+{
+  "date": "2026-10-30",
+  "source_commit": "c94e44a08b2e31dceecbc9e83c48deebc4b3f615",
+  "ndk": "26.3.11579264",
+  "abi": "arm64-v8a",
+  "api": 26,
+  "test": "Unchanged core + OpenAL OpenSL + stb + JNI + EGL/GLES1 + AssetManager native shared-library link",
+  "result": "Both normal and cheat native shared libraries built with --no-undefined and whole-archive core linkage",
+  "runtime_execution": false,
+  "apk_built": false,
+  "protected_file_count": 2000,
+  "protected_paths": [
+    "Sources",
+    "Modules",
+    "iOS",
+    "macOS",
+    "HeavyMach.xcworkspace",
+    "CMakeLists.txt",
+    "Resources",
+    "Art",
+    "vendor",
+    "tools/build_openal.sh"
+  ],
+  "protected_manifest_sha256_before": "c826a4408b6e4740387a6360f05754705d308bb5b7c9ba45a406051550795e98",
+  "protected_manifest_sha256_after": "c826a4408b6e4740387a6360f05754705d308bb5b7c9ba45a406051550795e98",
+  "modified_protected_files": [],
+  "artifacts": [
+    {
+      "file": "build/android-isolation-audit-20261030/out/libHMAndroidNormalProbe.so",
+      "bytes": 17671208,
+      "sha256": "ff72e716413d840c90f61279488a54e9c310608673d02f26caf28e564e5e3b75",
+      "machine": "AArch64",
+      "needed": [
+        "libEGL.so",
+        "libGLESv1_CM.so",
+        "libandroid.so",
+        "liblog.so",
+        "libOpenSLES.so",
+        "libdl.so",
+        "libm.so",
+        "libc.so"
+      ]
+    },
+    {
+      "file": "build/android-isolation-audit-20261030/out/libHMAndroidCheatProbe.so",
+      "bytes": 18210288,
+      "sha256": "54d5881a015c755db8ed299759f6e7d1a268a247a2820c3d3ab9e9e9a33ff2b1",
+      "machine": "AArch64",
+      "needed": [
+        "libEGL.so",
+        "libGLESv1_CM.so",
+        "libandroid.so",
+        "liblog.so",
+        "libOpenSLES.so",
+        "libdl.so",
+        "libm.so",
+        "libc.so"
+      ]
+    }
+  ],
+  "probe_cmake": "cmake_minimum_required(VERSION 3.20)\nproject(HeavyMachAndroidIsolationAudit LANGUAGES C CXX)\nset(CMAKE_CXX_STANDARD 20)\nset(CMAKE_POSITION_INDEPENDENT_CODE ON)\nget_filename_component(HM_ROOT \"${CMAKE_CURRENT_SOURCE_DIR}/../..\" ABSOLUTE)\nset(HM_BUILD_VALIDATION_TESTS ON CACHE BOOL \"\" FORCE)\nadd_subdirectory(\"${HM_ROOT}\" core-build EXCLUDE_FROM_ALL)\nset(LIBTYPE STATIC CACHE STRING \"\" FORCE)\nset(ALSOFT_UTILS OFF CACHE BOOL \"\" FORCE)\nset(ALSOFT_EXAMPLES OFF CACHE BOOL \"\" FORCE)\nset(ALSOFT_INSTALL OFF CACHE BOOL \"\" FORCE)\nset(ALSOFT_NO_CONFIG_UTIL ON CACHE BOOL \"\" FORCE)\nset(ALSOFT_BACKEND_WAVE OFF CACHE BOOL \"\" FORCE)\nset(ALSOFT_REQUIRE_OPENSL ON CACHE BOOL \"\" FORCE)\nadd_subdirectory(\"${HM_ROOT}/vendor/openal-soft\" openal-build EXCLUDE_FROM_ALL)\nforeach(kind IN ITEMS Normal Cheat)\n add_library(HMAndroid${kind}Probe SHARED probe.cpp)\n if(kind STREQUAL \"Cheat\")\n  set(HM_PROBE_CORE HeavyMachValidationCore)\n else()\n  set(HM_PROBE_CORE HeavyMachCore)\n endif()\n target_include_directories(HMAndroid${kind}Probe PRIVATE \"${HM_ROOT}/vendor/openal-soft/include\" \"${HM_ROOT}/vendor/stb\")\n target_link_options(HMAndroid${kind}Probe PRIVATE -Wl,--no-undefined)\n target_link_libraries(HMAndroid${kind}Probe PRIVATE -Wl,--whole-archive ${HM_PROBE_CORE} -Wl,--no-whole-archive OpenAL EGL GLESv1_CM android log)\nendforeach()\n",
+  "probe_cpp": "#include <jni.h>\n#include <EGL/egl.h>\n#include <GLES/gl.h>\n#include <AL/al.h>\n#include <AL/alc.h>\n#include <android/asset_manager.h>\n#define STB_IMAGE_IMPLEMENTATION\n#define STB_IMAGE_STATIC\n#define STBI_ONLY_JPEG\n#define STBI_ONLY_PNG\n#define STBI_ONLY_BMP\n#define STBI_ONLY_GIF\n#define STBI_NO_STDIO\n#include \"stb_image.h\"\nextern \"C\" JNIEXPORT jint JNICALL JNI_OnLoad(JavaVM*,void*) { return JNI_VERSION_1_6; }\n// Link-time dependency probe only; no device execution.\nextern \"C\" JNIEXPORT int hm_android_dependency_probe(AAssetManager* assets) {\n auto display=eglGetDisplay(EGL_DEFAULT_DISPLAY);\n auto device=alcOpenDevice(nullptr);\n auto asset=AAssetManager_open(assets,\"RawData/WeaponInfo.mch\",AASSET_MODE_BUFFER);\n int x=0,y=0,c=0;const unsigned char invalid[1]={0};\n auto pixels=stbi_load_from_memory(invalid,1,&x,&y,&c,4);stbi_image_free(pixels);\n auto error=glGetError();auto audio=alGetError();\n if(asset)AAsset_close(asset);if(device)alcCloseDevice(device);\n return int(display!=EGL_NO_DISPLAY)+int(error)+int(audio);\n}\n",
+  "configure_log_sha256": "07c3782f2df3caecdadce9c3ea381a5740f9798574756d0306982b1291de47ca",
+  "build_log_sha256": "38471e32d8c81b0a4dcc837e4b0f65b4ea16c701f19ea91ce83b64c77872d4d8",
+  "limits": [
+    "No Android rendering/audio/lifecycle execution",
+    "No APK or 16KB package validation",
+    "Context loss recovery remains unimplemented"
+  ]
+}
