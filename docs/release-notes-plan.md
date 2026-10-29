@@ -4,7 +4,7 @@
 
 ## 현재 구성
 
-GitHub Releases에는 v0.12~v0.15의 설명, 소스·자원 압축본, 고지 묶음과 SHA256SUMS가 있다. README는 최신 태그와 Releases를 연결하고, CHANGELOG는 버전별 변경을 기록한다. 이 구성을 이어간다.
+GitHub Releases에는 v0.12~v0.16의 설명, 소스·자원 압축본, 고지 묶음과 SHA256SUMS가 있다. README는 최신 태그와 Releases를 연결하고, CHANGELOG는 버전별 변경을 기록한다. 이 구성을 이어간다.
 
 ## 원고 위치와 내용
 

@@ -2,7 +2,7 @@
 
 ## v0.16 main 반영 — 2026-10-29
 
-PR26으로 develop `818adc0b`, PR27로 main `0dfb2a02`에 병합하고 main 병합 커밋에 주석 태그 v0.16을 달아 원격 반영을 확인했다. 병합 후보와 PR26에서 코어·Apple4종 빌드·문서 검사를 통과한 소스 트리는 같다. 사용자 main 원고도 보존했다. [변경 이력](../CHANGELOG.md). 릴리스 노트 과제를 먼저 등록한 뒤 [작성·공개 계획](release-notes-plan.md)을 정리했다. 후속 자동화 도구는 미구현이다.
+PR26으로 develop `818adc0b`, PR27로 main `0dfb2a02`에 병합하고 main 병합 커밋에 주석 태그 v0.16을 달아 원격 반영을 확인했다. [GitHub Release](https://github.com/gelb2/HeavyMach/releases/tag/v0.16)를 공개했고 소스·자원 압축본, 고지 묶음, SHA256SUMS의 업로드 해시와 인증 없는 페이지·체크섬 다운로드를 확인했다. 병합 후보와 PR26에서 코어·Apple4종 빌드·문서 검사를 통과한 소스 트리는 같다. 사용자 main 원고도 보존했다. [변경 이력](../CHANGELOG.md). 릴리스 노트 과제를 먼저 등록한 뒤 [작성·공개 계획](release-notes-plan.md)을 정리했다. 후속 자동화 도구는 미구현이다.
 
 ## v0.16 병합 준비 — 2026-10-29
 
