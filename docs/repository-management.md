@@ -97,3 +97,5 @@ HUD 편집과 도구·장식 수정을 feat/hud-layout-editor→develop→main �
 ## v0.16 — 2026-10-29
 
 럭스루나에 X·Y 진입 배치와 실기기 검사, 무선 검사 후 앱 종료 절차를 포함한다. 작업 브랜치→develop→main 순서로 병합하고 main 병합 커밋에 주석 태그 v0.16을 붙인다. 앱 번들 버전은 유지한다. iPad 진입 프레임 검사 실패와 전투 중 재밀집은 [변경 이력](../CHANGELOG.md)에 남긴다. 버전별 릴리스 노트·GitHub 공개 절차의 후속 계획은 [투두](usability-todo.md#hm-release-notes--버전별-릴리스-노트와-github-공개-절차--2026-10-29)에 등록했다.
+
+버전별 원고 위치·GitHub Releases 공개·압축본 검사는 [릴리스 노트 계획](release-notes-plan.md)을 따른다. 후속 자동화 구현은 TODO에 있다.
