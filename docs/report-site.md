@@ -1,5 +1,16 @@
 # HeavyMach 보고 사이트
 
+
+## 2026-10-30 Android 코어·플랫폼 경계 조사
+
+[Android 보고서](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/android-plan.html#section-9)에 최신 일반용·치트용 코어의 NDK 컴파일 결과, Apple 화면 코드에 남은 공통 처리, Shared·Apple·Android 폴더 계획을 추가했다. [원고](android-port-plan-20261026.md), [증거](evidence/android-boundaries-20261030.json).
+
+- source: `ba96da719524b47cc800fa44f68d7dc47e96b405`
+- deployment: `appgdep_6ae3772461148191a5219efc6ef62ea3` · succeeded
+- version: `appgprj_6addbf55aea081918d3d182d7e496e88~appgver_c3c0697eef948191bb08938bd58c6110`
+- 소유자 전용 접근 유지. 기존 절 앵커·페이지 내 로컬 링크·다운로드 원고 일치를 확인했다. 브라우저 화면 검사는 기존 Computer Use URL 제한으로 미실행.
+
+
 ## 2026-10-30 GitHub 국문·영문 문서 작성과 검사
 
 [기존 번역 보고서](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/document-localization.html)에 20쌍 작성 결과와 국영문 문서 링크를 추가했다. 언어 전환·명령·표·절·그림·원문 보존 검사 결과를 담았다. [원고](document-localization-plan.md), [실행 기록](evidence/visitor-english-20261030.json).

@@ -101,3 +101,22 @@ HUD 편집과 도구·장식 수정을 feat/hud-layout-editor→develop→main �
 ## 버전별 릴리스 노트
 
 [CHANGELOG](../CHANGELOG.md)를 원본으로 쓰고 버전별 GitHub Releases에 같은 본문과 다운로드·검사 링크를 게시한다. README와 문서 목차에서 전체 버전 이력으로 연결한다. [작성·공개 절차](release-notes-plan.md). 기존 태그와 첨부 파일은 유지한다.
+
+
+## 플랫폼별 폴더와 공용 모듈 — 2026-10-30
+
+HeavyMach는 Apple·Android를 같은 저장소에서 관리한다. 사용자 지시에 따라 향후 폴더 구조는 `Shared/`, `Apple/`, `Android/`로 나눈다. 공용 게임 에셋은 루트 `Resources/`·`Art/`에서 한 벌을 관리한다. iOS·Android별 코어 복사본이나 플랫폼별 영구 브랜치는 만들지 않는다.
+
+| 현재 경로 | 이동할 경로 |
+|---|---|
+| `Sources/Core` | `Shared/Core` |
+| `Sources/iOS` 안의 Apple 공통 실행 코드, `Sources/Apple` | `Apple/Runtime` |
+| `Sources/iOS` 안의 iOS 진입 코드, `iOS` 프로젝트 | `Apple/iOS` |
+| `Sources/Mac`, `macOS` 프로젝트 | `Apple/macOS` |
+| `HeavyMach.xcworkspace`, `Modules` | `Apple/HeavyMach.xcworkspace`, `Apple/Modules` |
+| 공용 C++ 검사, Apple 검사 | `Shared/Tests`, `Apple/Tests` |
+| `Resources/Assets.xcassets` | `Apple/Resources/Assets.xcassets` |
+| Apple 화면 코드에 남은 공통 프레임·메뉴·HUD 처리 | 새 `Shared/Runtime` |
+| 새 Android 앱·JNI·EGL·센서·파일 연결 | `Android` 내부 |
+
+이 표는 이동 계획이다. 현재 소스·빌드 문서의 기존 경로는 실제 이동 때 바꾼다. 공용 에셋 경로 변경은 빌드 자원 목록과 SHA-256을 대조한다. `Shared`는 Apple·Android SDK를 포함하지 않고, 플랫폼 어댑터가 공용 모듈을 호출한다. 파일 이동, 공통 동작 추출, Android 기능 구현은 따로 커밋한다. [조사와 검증 순서](android-port-plan-20261026.md#코어와-플랫폼-경계-조사--2026-10-30).

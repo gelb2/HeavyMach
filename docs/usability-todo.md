@@ -360,8 +360,10 @@ Apple의 scene 기반 앱에서는 `sceneWillResignActive`가 일시적 중단�
 - [x] 사용자 원래 Archive 링크에서 후속 타이틀·버전·다운로드 응답 확인. [조사 기록](related-titles-20261026.md).
 - [x] 중단한 hm-defense 포크·로컬 브랜치·기존 APK·남은 TODO 확인. 작업 파일 보존.
 - [x] HeavyMach 코어 NDK ARM64 컴파일·개발 계획·전용 스킬·읽기 경로 작성. [Android 계획](android-port-plan-20261026.md).
+- [x] 2026-10-30 최신 일반용·치트용 코어 NDK 컴파일, Apple 의존성·HUD/메뉴 경계 조사. [결과](android-port-plan-20261026.md#코어와-플랫폼-경계-조사--2026-10-30).
+- [ ] A0.5 Shared·Apple·Android 폴더 분리, 빌드/도구/문서 경로 변경, Apple 4종 빌드·공용 검사·자원 해시 확인. 게임 코드 내용과 에셋은 유지.
 - [ ] A1 Android 앱·EGL/OpenAL·일반/치트 debug APK 뼈대.
-- [ ] A2 메뉴·HUD·게임 조립 공통화와 iOS 회귀.
+- [ ] A2 프레임 순서·메뉴·HUD 상태를 Shared Runtime으로 추출. 기본 무기 탄약99·슬롯 선택/삭제·이벤트/저장 순서를 보존하고 iOS/iPadOS/macOS 회귀 검사.
 - [ ] A3 입력·음향·저장·중단/복귀 이식 및 전체 무기 검사.
 - [ ] A4 전체 미션·화면비·context·고주사율·16KB·실기기 발열 검사.
 - [ ] A5 일반 release·치트 APK 서명·설치·저장 보존·재현 기록.

@@ -314,6 +314,7 @@
       "label": "Android 이식·APK",
       "read": [
         "docs/android-port-plan-20261026.md",
+        "docs/repository-management.md",
         "docs/coordinate-policy.md",
         "docs/rendering-policy.md",
         "docs/runtime-policy.md",
@@ -333,6 +334,7 @@
         "Tests/GameSessionTests.cpp"
       ],
       "evidence": [
+        "docs/evidence/android-boundaries-20261030.json",
         "docs/research/android-and-titles-evidence-20261026.json",
         "docs/current-status.md"
       ]

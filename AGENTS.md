@@ -22,6 +22,8 @@
 
 - 개발 브랜치는 develop에 병합하고 main에는 develop만 병합한다. v0.9 등 릴리스 태그는 main의 병합 커밋에 붙이며 재지정하지 않는다. [저장소 관리](docs/repository-management.md)를 따른다.
 
+- 플랫폼 추가·폴더 재구성은 [저장소 관리](docs/repository-management.md#플랫폼별-폴더와-공용-모듈--2026-10-30)의 Shared·Apple·Android 분리를 따른다. 현재 경로와 이동 계획을 구분하며 공용 코어·에셋을 플랫폼별로 복제하지 않는다. Android 추가 때문에 전투·탄도·이동 규칙을 바꾸지 않는다.
+
 - HeavyMach Android 이식·APK 작업에는 `.agents/skills/port-heavymach-android/SKILL.md`와 `docs/android-port-plan-20261026.md`를 읽고 `document_contract.py plan --task android`로 연결을 확인한다. 조사·예정 단계와 실제 APK 완료를 구분한다.
 
 - 개발자의 변·README 소개·GitHub 회고·SaaS Apps·Mags 작성은 `python3 tools/document_contract.py plan --task developer_story`의 자료를 읽는다. [개발 동기 원문과 작성 순서](docs/developer-background.md)를 따르고, 기술 학습 목적만으로 개인적인 동기를 대신하지 않는다. 받지 않은 다음 문단을 추측해 쓰지 않는다.

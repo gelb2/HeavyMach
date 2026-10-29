@@ -1,5 +1,10 @@
 # 2026-10-25 문서·코드·앱 일치 체계 점검 및 보완
 
+## Android 코어·플랫폼 경계 조사 — 2026-10-30
+
+`d46e122a`의 코어를 수정 없이 NDK ARM64 일반용·치트용 정적 라이브러리로 컴파일했다. 코어 56개 파일에서 Apple SDK 의존성은 없었다. 프레임 실행 순서·메뉴와 HUD의 데이터 변경은 Apple 화면 코드에 남아 있다. 이를 공통 Runtime으로 추출하는 계획과 Shared·Apple·Android 폴더 구분을 [Android 계획](android-port-plan-20261026.md)에 반영했다. [컴파일 증거](evidence/android-boundaries-20261030.json). 제품 소스·현재 폴더·앱 설치본은 변경하지 않았다.
+
+
 ## 릴리스 도구 — 2026-10-29
 
 `tools/release.py prepare/publish`를 구현했다. v0.16의 추적 파일2,672개·자원1,504개 압축·재추출 검사와 임시 저장소/게시 응답17개 검사를 통과했다. 기존 v0.16 공개본 수정 차단을 실제 GitHub 조회로 확인했다. 새 버전의 실제 업로드·공개는 다음 배포 때 검증한다. [명령과 재개 방법](release-notes-plan.md#릴리스-도구), [증거](evidence/release-tool-20261029.json).
