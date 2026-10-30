@@ -111,19 +111,39 @@ I have not run that comparison. But placing my experience in other work beside t
 
 The historical example that came to mind was Trofim Lysenko. His rise to power and the fate of scientists who opposed him make concrete what it means for politics to determine a scientific conclusion.
 
-Vernalization, the effect of prolonged cold on a plant's readiness to flower, is real. But a response within one plant does not by itself establish a heritable improvement. Research in Arabidopsis has shown how the state that permits flowering after cold exposure is reset in the next generation's embryo. The next generation must experience cold again. [Research on resetting the vernalization response](https://pubmed.ncbi.nlm.nih.gov/35234936/).
+**Lysenko's own words — the English translation of his 1948 address**
 
-Lysenko claimed that changing conditions and training plants could redirect heredity, and that acquired traits were inherited. In his 1948 address, he claimed to have transformed spring wheat into highly frost-resistant winter wheat and attacked chromosome-based genetics as reactionary. He used plants' responses to their environment to reject genetics as a whole. [Lysenko's 1948 address](https://www.marxists.org/reference/archive/lysenko/works/1940s/report.htm).
+Lysenko said Soviet biologists regarded Michurin's principles as:
 
-Nikolai Vavilov studied crop diversity, genetics and breeding. In a 1939 complaint to Molotov, Lysenko and Isai Prezent denounced Vavilov's statements as anti-Soviet. Scientific objections were treated as hostility to the state. [The persecution of Vavilov](https://pmc.ncbi.nlm.nih.gov/articles/PMC6499510/).
+> **“the only scientific principles”**
+
+[Lysenko's 1948 address](https://www.marxists.org/reference/archive/lysenko/works/1940s/report.htm).
+
+**His argument in plain language**
+
+Put simply, his argument was this: Soviet biology could train plants to their environment and produce crops with the desired hereditary characteristics. **Mendelian-Morganist genetics, which denied this, was reactionary, and Michurin's doctrine alone was valid science.** In the same address, Lysenko combined his claim to have transformed spring wheat into frost-resistant winter wheat with this ideological division.
+
+**What modern research has established**
+
+Vernalization, the effect of prolonged cold on a plant's readiness to flower, is real. **But a response within one plant does not by itself establish a heritable improvement.** Research in Arabidopsis has shown how the state that permits flowering after cold exposure is reset in the next generation's embryo. **The next generation must experience cold again.** [Research on resetting the vernalization response](https://pubmed.ncbi.nlm.nih.gov/35234936/).
+
+**The science Vavilov pursued**
+
+Nikolai Vavilov was **a geneticist and plant breeder whose work rested on Mendelian genetics and the observation and comparison of actual crops**. He studied plant genetics under Bateson and collected seeds internationally to investigate crop genetic diversity. [The John Innes Centre on Vavilov](https://jic.ac.uk/blog/celebrating-the-trailblazers-of-our-international-community/). He also published research on similar patterns of variation in related plant species. The patterns he identified by comparing crops and their variations could be used to predict traits not yet found. His method collected observations, compared them and produced predictions that could be tested. [Vavilov's research on variation](https://pmc.ncbi.nlm.nih.gov/articles/PMC7381429/).
+
+In a 1939 complaint to Molotov, Lysenko and Isai Prezent denounced Vavilov's statements as anti-Soviet. Scientific objections were treated as hostility to the state. [The persecution of Vavilov](https://pmc.ncbi.nlm.nih.gov/articles/PMC6499510/).
 
 Vavilov was arrested during a collecting expedition in 1940 and accused of espionage and sabotaging Soviet agriculture. His death sentence was commuted, but he died of malnutrition in Saratov prison in 1943. [Vavilov's life](https://www.encyclopediaofukraine.com/display.asp?linkpath=pages%5CV%5CA%5CVavilovNikolai.htm). After his arrest, Lysenko took over the Institute of Genetics. [The change in leadership](https://pmc.ncbi.nlm.nih.gov/articles/PMC6499510/).
 
-At the Soviet agricultural academy's 1948 meeting, Lysenko declared: “The Central Committee of the Party examined my report and approved it.” [Concluding remarks](https://www.marxists.org/reference/archive/lysenko/works/1940s/report.htm). Geneticists opposing the doctrine endorsed by Stalin were pressed into public recantations. A Party-approved answer took the place of an argument about what was true. [The political decisions behind the 1948 meeting](https://ethos.lps.library.cmu.edu/article/id/560/).
+At the Soviet agricultural academy's 1948 meeting, Lysenko declared that the Party Central Committee had examined and approved his report. [Concluding remarks](https://www.marxists.org/reference/archive/lysenko/works/1940s/report.htm). Geneticists opposing the doctrine endorsed by Stalin were pressed into public recantations. A Party-approved answer took the place of an argument about what was true. [The political decisions behind the 1948 meeting](https://ethos.lps.library.cmu.edu/article/id/560/).
 
 Geneticist Iosif Rapoport refused to recant. He was expelled from the Party and spent about 10 years away from research. Schmalhausen lost his positions. Laboratories and departments were closed; textbooks and genetic research materials were destroyed. Lysenko's supporters took the places of those removed. [The purge of research and teaching institutions](https://pmc.ncbi.nlm.nih.gov/articles/PMC6499510/).
 
 Lysenkoism damaged the means of correcting its own errors. People who offered contrary evidence lost their positions or went to prison, and the people and materials needed for further research disappeared. An acceptable political answer was settled first, and the research institutions capable of testing it were dismantled. Even knowledgeable and capable researchers could hardly practice science when presenting an objection could itself bring punishment.
+
+This is the meaning I draw from Vavilov's fate.
+
+What does it mean that Vavilov, who pursued sound scientific research, was purged by Lysenko, who rose to power through pseudoscience? **Sound knowledge and facts do not survive simply because they are scientific.** The historical lesson is that those who command political hegemony and control the channels through which information enters and leaves come to decide what counts as sound knowledge and fact.
 
 Today's AI brought that structure to mind. If communist ideology once controlled scientific judgment, might corporate standards shaped by capital and liability avoidance now determine which engineering work gets done? Who decides that technically feasible work will not be performed, and why? If the decision reaches the user as a claim of technical impossibility, how can the user distinguish a limitation of technology from a provider's choice?
 

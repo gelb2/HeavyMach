@@ -1,6 +1,16 @@
 # HeavyMach 보고 사이트
 
-## 신 리셴코주의 역사 설명 보강 — 2026-10-30
+## 리센코 인용 강조와 바빌로프 연구 설명 — 2026-10-30
+
+[원고 9절](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/ai-project-experience.html#part-9)을 실제 인용·쉬운 해설·현대 연구·바빌로프 연구 방법으로 구분하고 표제·핵심 문장을 강조했다. 사용자가 제공한 해설과 권력·사실에 관한 문단을 추가했다. 제목은 ‘신(新) 리센코주의와 정렬세’로 맞췄다. 국문·영문·다운로드, 제목의 新, HTML 인용·강조 구조와 문서 링크를 검사했다. Safari 직접 화면 검사는 앞선 CUA 응답 시간 초과 이후 미실행이다.
+
+- source: `3d618e4d7f7729c85670f35701ea8394f22ca8ff`
+- deployment: `appgdep_6ae46685f6f8819196dcca1399ae941d` · succeeded
+- version: `appgprj_6addbf55aea081918d3d182d7e496e88~appgver_4c0afc9ddf788191bc85a4529759f820`
+- 기존 소유자 전용 접근 유지. [GitHub 원고](public/android-ai-experience-20261030.md).
+
+
+## 신(新) 리센코주의 역사 설명 보강 — 2026-10-30
 
 [원고 9절](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/ai-project-experience.html#part-9)에 리센코의 유전 주장, 바빌로프 탄압·옥사, 1948년 연구·교육기관 숙청을 보강했다. 국문·영문과 Markdown 다운로드를 같은 원고에서 갱신했다. 기존 절 앵커·목차·다운로드와 본문 일치를 검사했다. 이번 Safari 화면 검사는 CUA 응답 시간 초과로 미완료다.
 
@@ -12,7 +22,7 @@
 
 ## Android 개발 경험과 가설 전문 — 2026-10-30
 
-[신 리셴코주의와 정렬세](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/ai-project-experience.html)를 기존 준비 페이지에 게시했다. 국문·영문 전문을 각각 한 페이지에 담고 전체 목차·언어 전환·Markdown 다운로드를 연결했다. 원문 대비 10개 절과 본문 문단의 일치를 확인했고 Safari 로컬 화면에서 지면·목차 이동·영문 표시를 검사했다.
+[신(新) 리센코주의와 정렬세](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/ai-project-experience.html)를 기존 준비 페이지에 게시했다. 국문·영문 전문을 각각 한 페이지에 담고 전체 목차·언어 전환·Markdown 다운로드를 연결했다. 원문 대비 10개 절과 본문 문단의 일치를 확인했고 Safari 로컬 화면에서 지면·목차 이동·영문 표시를 검사했다.
 
 - source: `27a1fbf445b93f6ddad3b98346aee82dbb1d7cad`
 - deployment: `appgdep_6ae458826fe88191a32c6307a2a2fef8` · succeeded
