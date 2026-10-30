@@ -32,6 +32,8 @@ HeavyMach can be built and played on iPhone, iPad, Mac and Android. The latest r
 - [Why Lux Lunae?](lux-lunae-intent-20261028.md): the two games' meaning, livery and combat design, approved artwork and gameplay.
 - [Features and implementation](features.md): target and trajectory calculations, aircraft weapons and placement values.
 
+- [The unease after Android development](android-ai-experience-20261030.md): refusals, false reports and my hypothesis about differences between projects.
+
 <a id="구현과-검사"></a>
 
 ## Implementation and tests

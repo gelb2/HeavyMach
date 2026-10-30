@@ -26,6 +26,8 @@ HeavyMach는 iPhone·iPad·Mac·Android에서 빌드하고 플레이할 수 있�
 - [왜 럭스루나에인가](lux-lunae-intent-20261028.md): 두 게임의 의미, 도색과 전투 기획, 승인 도안과 게임 화면.
 - [기능과 세부 구현](features.md): 표적·탄도 계산, 항공기 무장과 배치 수치.
 
+- [Android 개발 뒤에 남은 위화감](android-ai-experience-20261030.md): 다른 프로젝트에서 겪은 업무 거부·허위보고와 그 차이에 관한 가설.
+
 ## 구현과 검사
 
 - [코드 구조](architecture.md): workspace, 공용 코어·런타임·자원, 한 프레임의 처리.

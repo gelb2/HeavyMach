@@ -6,6 +6,8 @@ Codex가 일반 앱과 치트 앱을 아이폰·아이패드에 설치했다. �
 
 ## 전체 보고서 {#reports}
 
+[신(新) 리센코주의와 정렬세 — Android 개발 경험과 가설 전문](ai-project-experience.html)
+
 - [GitHub 국문·영문 문서](document-localization.html) — 문서20쌍 작성, 언어 선택과 원문·명령·그림·링크 검사.
 
 - [럭스루나에 편대 밀집 조사·수정 계획](lux-formation.html) — 생성점·목적지·높이 분산과 코어 비교.

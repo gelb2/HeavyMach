@@ -5,8 +5,8 @@
   "documents": {
     "README.md": {
       "english": "README.en.md",
-      "source_sha256": "8cc6060d84017f1ff97132bac28dbc175d2013be3338b792a8f8447e26cce711",
-      "english_sha256": "16f08c7659299dea895f60b06b5b0423e653f9fda37cb9b5e14ce047429cdbe0",
+      "source_sha256": "7d1063717584d509abec3da37b41c05b90e1da7fde994a01227784630d63ac0a",
+      "english_sha256": "e0ca04835c17b3f31602f4d0926feb2144280e136c9ccd3c263353a5e0e02f68",
       "reviewed_numeric_difference": {
         "source_only": {
           "7": 1,
@@ -23,7 +23,7 @@
           "13": 2
         }
       },
-      "review_note": "July, nine years/three months, aircraft and clip quantities use English words; source punctuation attaches Korean suffixes to digits. Shared personal paragraphs match the English statement. User-approved correction: 이승에서나 → in this life. Updated Android availability; personal paragraphs unchanged. Added iOS gallery and four physical-device cheat captures in both languages. Reviewed Android overview, regular Galaxy gameplay images/GIF, OS table, Gradle installation, shared-core paragraph and current-main versus v0.16 distinction; author opening unchanged. Reviewed 2026-10-30 Android coverage/link audit; current main and released v0.16 remain distinct. Lux sentence follows author commit 39b05834 where applicable. Reviewed v0.17 Android release, download links and current-version wording; historical v0.16 test results retained."
+      "review_note": "July, nine years/three months, aircraft and clip quantities use English words; source punctuation attaches Korean suffixes to digits. Shared personal paragraphs match the English statement. User-approved correction: 이승에서나 → in this life. Updated Android availability; personal paragraphs unchanged. Added iOS gallery and four physical-device cheat captures in both languages. Reviewed Android overview, regular Galaxy gameplay images/GIF, OS table, Gradle installation, shared-core paragraph and current-main versus v0.16 distinction; author opening unchanged. Reviewed 2026-10-30 Android coverage/link audit; current main and released v0.16 remain distinct. Lux sentence follows author commit 39b05834 where applicable. Reviewed v0.17 Android release, download links and current-version wording; historical v0.16 test results retained. Reviewed the Android experience essay, firsthand accounts, qualified hypotheses, public sources, author voice and README link. Private evidence stays outside Git."
     },
     "CHANGELOG.md": {
       "english": "CHANGELOG.en.md",
@@ -262,13 +262,13 @@
     },
     "docs/public/index.md": {
       "english": "docs/en/public/index.md",
-      "source_sha256": "1b1947083db32d866232650bc00860e208b6657a52d51c576afc21ea7a8db584",
-      "english_sha256": "7d4cb9fdc7573c58fd2e03f43cc190415aadfaf0a85142605e52a16df873a933",
+      "source_sha256": "9c2508164ce3d4bab1843745fe62f9b4e304894b2aa592ac52f8e8b0c9b9e209",
+      "english_sha256": "62b47d220208c40a53c1ce8128c7c042d8f3a66369e00690f75a425284e6e89a",
       "reviewed_numeric_difference": {
         "source_only": {},
         "english_only": {}
       },
-      "review_note": "Compared source and English meaning, tables, commands, attribution and current/planned status. Numeric tokens match. Reviewed Android availability and installation/development/gallery links; English captions identify Korean-only linked articles. Reviewed 2026-10-30 Android coverage/link audit; current main and released v0.16 remain distinct. Lux sentence follows author commit 39b05834 where applicable. Reviewed v0.17 Android release, download links and current-version wording; historical v0.16 test results retained."
+      "review_note": "Compared source and English meaning, tables, commands, attribution and current/planned status. Numeric tokens match. Reviewed Android availability and installation/development/gallery links; English captions identify Korean-only linked articles. Reviewed 2026-10-30 Android coverage/link audit; current main and released v0.16 remain distinct. Lux sentence follows author commit 39b05834 where applicable. Reviewed v0.17 Android release, download links and current-version wording; historical v0.16 test results retained. Reviewed the Android experience essay, firsthand accounts, qualified hypotheses, public sources, author voice and README link. Private evidence stays outside Git."
     },
     "docs/public/design-intent.md": {
       "english": "docs/en/public/design-intent.md",
@@ -293,6 +293,21 @@
         "english_only": {}
       },
       "review_note": "Compared source and English meaning, tables, commands, attribution and current/planned status. Numeric tokens match. Android implementation and linked evidence updated on 2026-10-30; existing paragraphs retained. Numeric wording reviewed. Reviewed 2026-10-30 Android coverage/link audit; current main and released v0.16 remain distinct. Lux sentence follows author commit 39b05834 where applicable. Reviewed v0.17 Android release, download links and current-version wording; historical v0.16 test results retained. Recorded v0.17 publication and the remaining draft-discovery recovery task."
+    },
+    "docs/public/android-ai-experience-20261030.md": {
+      "english": "docs/en/public/android-ai-experience-20261030.md",
+      "source_sha256": "489623cbca0467d6dfc32d22fe676da49a820f35915ece99e3bcbbeea30a2e25",
+      "english_sha256": "15bb8de429a8aa78e42a815ee5852e41823e408de6db484e2bcc966184e37c29",
+      "reviewed_numeric_difference": {
+        "source_only": {
+          "10": 1,
+          "50": 1
+        },
+        "english_only": {
+          "500,000": 1
+        }
+      },
+      "review_note": " Reviewed the Android experience essay, firsthand accounts, qualified hypotheses, public sources, author voice and README link. Private evidence stays outside Git."
     }
   }
 }

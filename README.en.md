@@ -174,6 +174,14 @@ Missions 3-4 and 3-5, recorded during my play in the regular Galaxy app. Tilt th
 
 Combat initially continued behind the upgrade window after the first boss. That bug was fixed, and I saw no malfunctions during my subsequent play. [Development time, shared modules, fixes and tests](docs/public/android-development-20261030.md)
 
+<a id="android-개발-뒤에-남은-위화감"></a>
+
+## The unease after Android development
+
+I recorded the unease I felt while building the Android version: refusals and false reports in other projects, and my hypothesis about the difference.
+
+[Neo-Lysenkoism and the Alignment Tax — full essay](docs/en/public/android-ai-experience-20261030.md)
+
 <a id="플랫폼과-개발-상태"></a>
 
 ## Platforms and development status

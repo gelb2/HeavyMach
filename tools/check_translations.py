@@ -13,7 +13,8 @@ ROOT_DOCS = ('README', 'CHANGELOG', 'CREDITS', 'CONTRIBUTING', 'LICENSE-SCOPE',
              'ASSET-LICENSES', 'THIRD_PARTY_NOTICES')
 PUBLIC_DOCS = ('features', 'implementation-status', 'build-and-install', 'gameplay-guide',
                'architecture', 'development-history', 'troubleshooting', 'validation',
-               'lux-lunae-intent-20261028', 'index', 'design-intent', 'roadmap')
+               'lux-lunae-intent-20261028', 'index', 'design-intent', 'roadmap',
+               'android-ai-experience-20261030')
 EXPECTED = {**{f'{n}.md': f'{n}.en.md' for n in ROOT_DOCS},
             'docs/RESTORATION.md': 'docs/en/RESTORATION.md',
             **{f'docs/public/{n}.md': f'docs/en/public/{n}.md' for n in PUBLIC_DOCS}}
@@ -55,7 +56,7 @@ def anchors(text):
 def check_scope(scope):
     pairs = [(p['korean'], p['english']) for p in scope['documents']]
     return [] if len(pairs) == len(EXPECTED) and dict(pairs) == EXPECTED else [
-        'Translation scope differs from the 20 approved visitor documents']
+        'Translation scope differs from the approved visitor documents']
 
 
 def resolved_links(root, name, text):
@@ -163,5 +164,5 @@ if __name__ == '__main__':
     for error in errors:
         print('FAIL:', error)
     if not errors:
-        print('PASS: 20 translation pairs, hashes, language navigation, headings, tables, code, links and reviewed numeric differences')
+        print(f'PASS: {len(EXPECTED)} translation pairs, hashes, language navigation, headings, tables, code, links and reviewed numeric differences')
     sys.exit(bool(errors))

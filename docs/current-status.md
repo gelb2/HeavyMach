@@ -1,5 +1,11 @@
 # 2026-10-25 문서·코드·앱 일치 체계 점검 및 보완
 
+## Android 개발 경험과 가설 원고 — 2026-10-30
+
+[신(新) 리센코주의와 정렬세](public/android-ai-experience-20261030.md)를 10절의 한 문서로 작성했다. [영문](en/public/android-ai-experience-20261030.md), README의 별도 소제목과 전문 링크, 방문자 목차와 SaaS 집필 안내를 연결했다. 웹·회계 사례, 작업 조건, Android 재사용과 개발 시간, 데이터 규모, 소송 회피·문화적 맥락 가설과 리센코 사례를 포함한다.
+
+번역 21쌍과 공개 문서·링크 검사를 통과했다. 통합 보고서의 국영문 본문 일치·10개 절·언어 전환 링크를 검사하고 Safari에서 지면과 목차 이동을 확인했다. 게임 코드와 기존 개인 원고는 유지했다.
+
 ## v0.17 공개 — 2026-10-30
 
 `release/v0.17`→`develop`→`main`으로 병합했다(PR #58·#59). main 병합 커밋 `a684245729f50a0e4a89d1af70176f00ec384e1a`에 주석 태그 v0.17을 붙이고 [GitHub Release](https://github.com/gelb2/HeavyMach/releases/tag/v0.17)를 공개했다. Android 일반·치트 앱, 업그레이드 창 오류 수정과 Galaxy 플레이 자료를 포함한다.

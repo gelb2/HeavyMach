@@ -1,5 +1,14 @@
 # HeavyMach 보고 사이트
 
+## Android 개발 경험과 가설 전문 — 2026-10-30
+
+[신(新) 리센코주의와 정렬세](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/ai-project-experience.html)를 기존 준비 페이지에 게시했다. 국문·영문 전문을 각각 한 페이지에 담고 전체 목차·언어 전환·Markdown 다운로드를 연결했다. 원문 대비 10개 절과 본문 문단의 일치를 확인했고 Safari 로컬 화면에서 지면·목차 이동·영문 표시를 검사했다.
+
+- source: `27a1fbf445b93f6ddad3b98346aee82dbb1d7cad`
+- deployment: `appgdep_6ae458826fe88191a32c6307a2a2fef8` · succeeded
+- version: `appgprj_6addbf55aea081918d3d182d7e496e88~appgver_c1147df31e788191b095d21e40ef4570`
+- 기존 소유자 전용 접근을 유지했다. [GitHub 원고](public/android-ai-experience-20261030.md).
+
 
 ## 2026-10-30 Apple 변경 없는 Android 개발 계획
 
