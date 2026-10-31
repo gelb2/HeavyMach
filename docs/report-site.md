@@ -1,5 +1,16 @@
 # HeavyMach 보고 사이트
 
+## Mac 두 버전과 웹·PWA 비교 — 2026-11-01
+
+[비교 보고서](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/mac-web-pwa-comparison.html)에 네이티브 Mac·Tauri·Chrome 웹·설치형 PWA의 실행 구조, 프레임 수치, 입력·오프라인·저장·업데이트 검사와 실제 화면을 올렸다. 기존 사이트 목차·개발 계획에서 연결하고 원고·검사 JSON 다운로드를 제공한다. [웹 게임](https://gelb2.github.io/HeavyMach/)도 배포했다.
+
+- 개발 커밋: `433c9e44` · `feat/tauri-mac`. develop·main 병합 없음.
+- source: `36d1c3a5b7b5186caa9befd58aaf1f84ecfc8cb0`
+- deployment: `appgdep_6ae623f5ba308191aa085b4acdfca9da` · succeeded
+- version: `appgprj_6addbf55aea081918d3d182d7e496e88~appgver_183885459a18819181399691f064a739`
+- 소유자 전용 접근 유지. 1440px·390px 로컬 Chrome 렌더에서 이미지 로드·가로 넘침 없음, 네 페이지 링크·앵커·다운로드 원고 일치를 확인했다. Mac 게임 두 앱은 CUA로 조작했고 설치형 PWA는 Chrome 검사 인터페이스로 설치·실행했다.
+
+
 ## Tauri Mac 첫 구현과 저장 복구 — 2026-10-31
 
 [개발 계획과 실행 결과](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/desktop-web-plan.html)에 별도 브랜치, 첫 Mac 앱, 실제 슬롯 복구, JS/Rust 20개 검사와 남은 작업을 반영했다. 기술검토·원고 다운로드·TODO·검사 JSON을 함께 갱신했다.
