@@ -2,14 +2,16 @@
 
 2026-10-31. 개발 순서는 **Tauri Mac 앱 → 순수 웹판 → Tauri Windows 설치본 빌드**다. Mac에서는 기존 네이티브 HeavyMach와 비교한다. Electron은 기술 비교 자료로 남긴다.
 
-현재 웹 게임 코어·렌더러·입력·음향·저장을 재사용해 시작할 수 있다. Tauri 실행기와 OS 파일 저장 연결은 아직 없다. 이번 검토에서는 소스 의존 관계, 도구, 배포 절차를 확인했다. [점검 기록](evidence/desktop-web-readiness-20261031.json).
+**기여자의 웹 구현과 후속 버그 수정 3건을 현재 상태로 고정한다.** 업그레이드 정지·저장 복구·GPU 복구까지 포함한 `Web/`·`Sources/Web/` 파일은 이번 Tauri·순수 웹 개발에서 수정하지 않는다. Apple·Android·공용 코어·자원·기존 빌드 도구도 그대로 읽는다.
+
+Tauri를 검토한 목적은 **저장 데이터 보존과 Mac·Windows 지원**이다. 웹판의 저장 경로를 유지하면서, 별도 실행기가 OS 파일 백업과 복구를 담당하는 안을 세웠다. 실행기와 백업 기능은 아직 미구현이다. 이번 검토에서는 소스 의존 관계, 도구, 배포 절차를 확인했다. [점검 기록](evidence/desktop-web-readiness-20261031.json).
 
 ## 1. 개발 순서
 
 | 단계 | 할 일 | 완료할 결과 |
 |---|---|---|
-| 1. Tauri Mac | 기존 웹판을 앱에 포함하고 창·파일 저장·종료 처리를 연결한다. 기존 네이티브 Mac 앱과 비교한다 | Apple Silicon Mac에서 설치·플레이·재실행·저장 복구가 되는 앱과 비교 결과 |
-| 2. 순수 웹 | 같은 웹 실행부를 브라우저 저장과 연결하고 고정 HTTPS 주소로 배포한다 | 게임 주소, 버전별 웹 묶음, 저장 유지·업데이트·브라우저 검사 결과 |
+| 1. Tauri Mac | 기존 웹판을 앱에 포함하고 창·별도 파일 백업·시작 전 복구·종료 처리를 추가한다. 기존 네이티브 Mac 앱과 비교한다 | Apple Silicon Mac에서 설치·플레이·재실행·저장 복구가 되는 앱과 비교 결과 |
+| 2. 순수 웹 | 수정하지 않은 웹 산출물을 고정 HTTPS 주소로 배포한다 | 게임 주소, 버전별 웹 묶음, 저장 유지·업데이트·브라우저 검사 결과 |
 | 3. Tauri Windows | 같은 Tauri 프로젝트를 Windows용으로 빌드하고 설치본을 만든다 | Windows x64 빌드 결과, 설치 파일, 해시·빌드 로그 |
 
 첫 단계에서도 Mac 앱에 넣을 Wasm·자원을 빌드한다. 두 번째 단계는 그 실행부의 브라우저 배포다. 순수 웹판은 Tauri나 Rust 설치 없이 브라우저에서 실행한다. Windows 설치·플레이·성능 검사는 이번 세 번째 단계 이후의 별도 과제다.
@@ -22,11 +24,11 @@
 |---|---|---|
 | 게임 코어 | `Web/CMakeLists.txt`가 기존 `Sources/Core`를 직접 빌드 | 코어를 그대로 읽는다 |
 | 웹 실행 | `Sources/Web`의 WebGL2·Web Audio·입력·메뉴·HUD 구현 존재 | Tauri에서 로딩·포커스·외부 링크·창 크기 처리 |
-| 진행 저장 | `Web/shell.html`의 IDBFS, 초기 읽기 대기·실패 재시도·쓰기 완료 처리 존재 | 데스크톱 파일 저장 어댑터 |
-| 설정 저장 | HUD는 `/persist/HUDLayoutV1-web.json`, 키 설정·자동조준 설정은 localStorage | 세 종류 모두 데스크톱 저장과 연결 |
+| 진행 저장 | `Web/shell.html`의 IDBFS, 초기 읽기 대기·실패 재시도·쓰기 완료 처리 존재 | 기존 IDBFS 유지, 별도 OS 파일 백업·복구 실행기 |
+| 설정 저장 | HUD는 `/persist/HUDLayoutV1-web.json`, 키 설정·자동조준 설정은 localStorage | 진행·HUD·두 설정 키를 한 백업 묶음으로 보존 |
 | 복구 검사 | 웹 복구 19개, Wasm 코어 24개와 Apple·Android 검사 기록 존재 | 실제 Tauri 앱에 같은 시나리오 적용 |
 | 도구 | Xcode 27.1, Emscripten 6.0.13의 로컬 설치 확인 | Rust·Cargo·Tauri CLI와 의존성 버전 고정 |
-| Tauri 프로젝트 | `Desktop/` 추적 파일 없음 | 새 프로젝트·저장 코드·검사·빌드 도구 작성 |
+| Tauri 프로젝트 | `Desktop/` 추적 파일 없음 | 새 프로젝트·백업 코드·외부 검사·빌드 도구 작성 |
 | Mac 공개 배포 | 로컬 키체인에 Apple Development 인증서만 확인 | Developer ID 서명·공증을 사용할 배포 자격 확인 |
 | Windows 빌드 | 저장소에 Windows 작업·self-hosted runner 없음 | GitHub Windows runner의 빌드·패키징 작업 추가 |
 | 웹 배포 | 기여자의 기존 테스트 사이트 기록 존재 | 이 저장소 수정본의 공식 주소·업데이트 구성 |
@@ -35,48 +37,45 @@
 
 ## 3. 폴더와 의존 관계
 
-아래 `Desktop/Tauri/`, `Web/host/`, `Web/deploy/`는 추가할 폴더다. 기존 Apple·Android 프로젝트와 소스는 현재 위치를 유지한다.
+새 파일은 `Desktop/Tauri/`와 `Distribution/Web/` 아래에 둔다. 기존 `Web/`·`Sources/Web/`에는 파일을 추가하거나 고치지 않는다.
 
 ```text
 HeavyMach/
-├── HeavyMach.xcworkspace/       기존 Apple workspace
-├── iOS/                        기존 iPhone·iPad Xcode 프로젝트
-├── macOS/                      기존 네이티브 Mac Xcode 프로젝트
-├── Modules/                    기존 Apple 모듈 프로젝트
-├── Android/                    Kotlin·JNI·Gradle·Android 검사
-├── Sources/
-│   ├── Core/                   모든 플랫폼이 읽는 C++ 게임 규칙
-│   ├── iOS/ Apple/ Mac/         기존 Apple 실행 코드
-│   └── Web/                    브라우저·Tauri가 공유하는 C++ 웹 실행부
-├── Resources/ Art/ vendor/      기존 공용 자원·라이브러리
-├── Web/
-│   ├── CMakeLists.txt          Wasm 빌드
-│   ├── shell.html              브라우저와 Tauri가 사용하는 화면
-│   ├── host/                  저장·설정 연결 규약, 브라우저 구현
-│   ├── tools/                 웹 자원 패키징
-│   ├── tests/                 웹 입력·저장·GPU 검사
-│   └── deploy/                순수 웹 호스팅·캐시·버전 설정
-└── Desktop/
-    └── Tauri/
-        ├── README.md          소비 코드·빌드 명령·출력 경로
-        ├── package.json       Tauri 도구와 잠금 파일
-        ├── frontend/          Tauri 전용 JS 저장·창 연결
-        ├── scripts/           웹 빌드·앱 포함용 복사·패키지 검사
-        ├── tests/             Mac 비교·Rust 저장·패키지 검사
-        └── src-tauri/
-            ├── Cargo.toml     Rust 의존성, Cargo.lock 함께 관리
-            ├── src/           실행기·파일 저장
-            ├── capabilities/  앱 창의 명령 접근 범위
-            ├── tauri.conf.json
-            ├── tauri.macos.conf.json
-            └── tauri.windows.conf.json
+├── HeavyMach.xcworkspace/       기존 Apple workspace · 수정 금지
+├── iOS/ macOS/ Modules/        기존 Apple 프로젝트 · 수정 금지
+├── Android/                    기존 Android 앱 · 수정 금지
+├── Sources/                    기존 모든 플랫폼·공용 소스 · 수정 금지
+├── Resources/ Art/ vendor/      기존 자원·라이브러리 · 수정 금지
+├── Web/                        기여자 웹 빌드·화면·검사 + 후속 수정 · 수정 금지
+├── Desktop/
+│   └── Tauri/
+│       ├── README.md           소비 코드·빌드 명령·입출력 경로
+│       ├── package.json        Tauri 도구와 잠금 파일
+│       ├── frontend/           별도 시작 화면·백업 관찰·복구 화면
+│       ├── scripts/            기존 웹 빌드 호출·산출물 복사·보호 해시 검사
+│       ├── tests/              Mac 비교·백업/복구·원본 불변 검사
+│       └── src-tauri/
+│           ├── Cargo.toml      Rust 의존성, Cargo.lock 포함
+│           ├── src/            창·종료·백업 파일·내보내기/가져오기
+│           ├── capabilities/   로컬 앱의 백업 명령 접근 범위
+│           ├── tauri.conf.json
+│           ├── tauri.macos.conf.json
+│           └── tauri.windows.conf.json
+└── Distribution/
+    └── Web/
+        ├── README.md           공식 웹 배포·갱신·롤백 절차
+        ├── scripts/            기존 웹 빌드 호출·산출물 복사·해시 검사
+        ├── hosting/            MIME·캐시·고정 주소·배포 설정
+        └── tests/              공개 주소·저장 유지·브라우저 검사
 ```
 
-Mac과 Windows는 하나의 Tauri 프로젝트를 쓴다. OS별 차이는 위 설정 파일과 작은 Rust 분기로 둔다. Tauri 모바일 프로젝트는 생성하지 않는다. 기존 `macOS/`에는 Tauri 파일을 넣지 않는다.
+Mac과 Windows는 하나의 Tauri 프로젝트를 쓴다. OS별 차이는 전용 설정 파일과 Rust 분기로 둔다. Tauri 모바일 프로젝트는 생성하지 않는다. 기존 `macOS/`나 `Android/`에는 새 파일을 넣지 않는다.
 
-빌드 출력도 분리한다. Wasm은 `build/web/`, Tauri용 웹 묶음과 Rust 출력은 `Desktop/Tauri/build/` 아래에 둔다. 이 폴더는 Git에서 제외한다. 앱에 넣을 자원은 기존 자원을 빌드 때 복사하고 경로·SHA 목록으로 대조한다. `frontend/`에는 Tauri 연결 코드만 두고 게임 코드나 원본 에셋 복사본을 추적하지 않는다.
+빌드는 기존 `Web/CMakeLists.txt`를 읽고 Git 제외 출력 폴더에서 실행한다. 웹 묶음은 `build/web/`, Tauri 패키지·Rust 출력은 `Desktop/Tauri/build/`와 그 전용 target 경로, 배포 출력은 `Distribution/Web/build/`에 둔다. `frontend/`에는 실행기 코드만 추적한다. 게임 소스와 원본 자원의 별도 사본은 추적하지 않는다.
 
-의존 방향은 `Tauri → 웹 산출물 → Sources/Web + Sources/Core + 공용 자원`이다. Apple·Android 빌드에 Tauri 도구를 요구하지 않는다. 각 폴더 README와 파일 목록에 소유 플랫폼·읽는 경로·생성 경로를 적고 검사 스크립트로 실제 의존 경로를 대조한다.
+하나의 웹 빌드에서 얻은 HTML·JS·Wasm·자원 묶음을 데스크톱과 웹 배포에 그대로 복사한다. 원본 산출물과 포함된 게임 파일의 SHA-256을 대조한다. 실행기용 파일은 별도 경로로 추가한다. 생성된 HTML·JS를 패치하거나 게임 함수·`FS`·`Module.hmSyncSave`를 바꿔 끼우는 방법도 사용하지 않는다. Tauri의 런타임 주입은 별도 관찰·백업 코드로 한정하고 원본 함수를 재정의하지 않는다.
+
+의존 방향은 `새 실행기/배포 도구 → 기존 웹 산출물 → Sources/Web + Sources/Core + 공용 자원`이다. Apple·Android 빌드는 Tauri 도구를 요구하지 않는다. 각 폴더 README에 소비자·입력·출력 경로를 적는다.
 
 ### 기존 iOS 폴더에 있는 공용 헤더 세 개
 
@@ -86,20 +85,60 @@ Mac과 Windows는 하나의 Tauri 프로젝트를 쓴다. OS별 차이는 위 �
 
 ## 4. 첫 단계: Tauri Mac 앱
 
-### 로딩·저장 연결
+### 웹 게임 로딩
 
-게임은 기존 `Web/` 빌드로 만든 HTML·JS·Wasm·자원 묶음을 `frontendDist`에 포함해 실행한다. 원격 게임 주소를 열지 않으므로 앱 설치 뒤 네트워크 없이 시작할 수 있다. [정적 파일 구성](https://v2.tauri.app/develop/).
+기존 `Web/` 빌드로 만든 HTML·JS·Wasm·자원을 앱에 포함한다. 원격 게임 주소를 열지 않으므로 설치 뒤 인터넷 없이 실행할 수 있다. 앱의 첫 페이지는 `Desktop/Tauri/frontend/`의 별도 시작 화면이다. 저장 점검·필요한 복구가 끝나면 같은 origin의 원본 게임 페이지로 이동한다. 원본의 `syncfs(true)`와 게임 시작 대기는 그대로 실행된다. [정적 파일 구성](https://v2.tauri.app/develop/).
 
-`Web/host/`에 초기 읽기·쓰기 완료·설정 읽기/쓰기를 담당하는 작은 연결 규약을 둔다. 브라우저 구현은 현재 IDBFS와 localStorage를 사용한다. Tauri 구현은 `Desktop/Tauri/frontend/`에서 Rust 명령에 연결한다. 브라우저 빌드에는 Tauri 패키지를 넣지 않는다. 기존 웹 게임 동작은 회귀 검사로 확인한다.
+### 데이터 영속성: 웹 저장 유지 + OS 파일 백업
 
-- 시작할 때 Rust가 `HvM.dat`와 HUD 배치·설정을 읽고, JS가 `/persist`와 설정 메모리를 준비한 뒤 게임을 시작한다. 읽기 실패와 최초 실행의 파일 없음은 구분한다.
-- `HvM.dat`는 기존 3,624바이트 형식을 유지한다. 슬롯 선택·스테이지 전환·게임오버·메뉴 복귀의 저장 요청만 전달한다. HUD는 APPLY, 키 설정은 확정 시점에 저장한다.
-- 저장 요청에 순번을 붙여 직렬 처리한다. 임시 파일·백업·교체를 마친 뒤 성공을 반환한다. 실패한 요청은 메모리에 유지하고 재시도한다. Mac과 Windows의 파일 교체 동작은 각각 검사한다.
-- 닫기 요청 때 진행 중인 쓰기의 완료를 기다린다. 실패하면 창을 유지하고 재시도 또는 취소를 제공한다. 창을 닫는다는 이유로 전투 중간 진행을 새로 저장하지 않는다.
-- 앱 데이터 경로와 앱 식별자는 기존 네이티브 Mac 앱과 분리한다. 비교할 때도 원래 사용자 저장을 직접 열어 덮어쓰지 않는다. 내보내기·가져오기는 형식 검사와 백업을 거친다.
-- 키 설정·자동조준 설정은 현재 localStorage의 실패를 조용히 무시하는 코드도 함께 점검한다. 진행 저장만 성공하고 설정이 사라지는 경우를 검사한다.
+브라우저의 일반 HTTP 캐시와 IndexedDB·localStorage는 다른 저장소다. 사이트 데이터를 지우면 게임 진행도 지워질 수 있다. `navigator.storage.persist()`도 사용자가 직접 지우는 것을 막지는 않는다. Tauri에서는 일반 Safari·Chrome과 분리된 앱 저장소를 쓰고, 그 밖에 백업 파일을 둔다. [브라우저 저장 정책](https://developer.mozilla.org/en-US/docs/Web/API/Storage_API/Storage_quotas_and_eviction_criteria).
 
-Rust 명령은 저장에 필요한 파일 이름만 받는다. 임의 경로 쓰기와 원격 페이지의 명령 호출을 열지 않는다. Wasm·로컬 자원·외부 링크 처리에 필요한 CSP와 권한만 설정한다. [Tauri 명령](https://v2.tauri.app/concept/inter-process-communication/), [접근 범위](https://v2.tauri.app/security/capabilities/), [CSP](https://v2.tauri.app/security/csp/).
+| 계층 | 저장 내용 | 담당 코드 |
+|---|---|---|
+| 게임이 사용하는 저장 | IDBFS의 `/persist/HvM.dat`, `/persist/HUDLayoutV1-web.json`; localStorage의 `HeavyMach.KeyboardBindingsV1`·`HeavyMach.AimModeV1` | 기존 웹 코드 그대로 |
+| 앱 전용 웹뷰 프로필 | 위 IndexedDB·localStorage를 재실행·업데이트 뒤에도 유지 | 새 Tauri 설정 |
+| OS 파일 백업 | 진행·HUD·두 설정 키, 형식 버전·순번·각 파일 해시 | 새 JS 관찰 코드와 Rust 파일 처리 |
+| 사용자 내보내기 | 다른 위치에 보관할 백업 파일, 가져오기 전 검증·현재 진행 백업 | 새 Tauri 메뉴와 Rust 코드 |
+
+Windows는 WebView2 데이터 디렉터리를 고정한다. Mac은 영속 WKWebView 저장소를 사용하며, macOS 14 이상에서는 고정 `dataStoreIdentifier`를 쓸 수 있다. 하위 OS 지원 여부는 이 API 가용성과 함께 정한다. Mac의 `dataDirectory`는 지원되지 않으므로 Windows 설정을 그대로 복사하지 않는다. 앱 ID·origin·scheme·프로필을 버전마다 바꾸지 않고 기존 네이티브 Mac 앱과 분리한다. 비공개·임시 웹뷰를 사용하지 않는다. [Tauri 저장소 설정](https://v2.tauri.app/reference/config/#datadirectory).
+
+백업은 Tauri가 구한 앱 데이터 경로의 `saves/` 아래에 둔다. Mac은 Application Support, Windows는 앱 데이터 디렉터리를 사용하며 설치 폴더·HTTP 캐시·웹뷰 프로필 안에는 두지 않는다. 네이티브 앱의 기존 저장도 건드리지 않는다. 경로는 OS API로 구하고 절대 경로를 코드에 박지 않는다. [Tauri 파일 접근](https://v2.tauri.app/plugin/file-system/).
+
+### 기존 코드를 고치지 않고 백업을 연결하는 방법
+
+아래는 구현할 설계다. 현재 소스의 `hmStorageState()`와 Emscripten 6.0.13 IDBFS 구조를 확인했다. 실제 WKWebView·WebView2에서의 연결 검사는 첫 구현 단계에서 한다.
+
+1. **시작 전:** 별도 시작 페이지가 같은 origin의 저장소와 Rust 백업을 검사한다. 유효한 웹 저장이 있으면 그것을 우선한다. 웹 저장이 없고 유효한 파일 백업이 있으면 게임을 열기 전에 IndexedDB·설정 키를 복구한다. 손상·권한 오류와 최초 실행의 빈 저장을 구별한다. 손상 시 원본을 보존하고 복구할 백업을 선택하게 한다.
+2. **게임 중:** Tauri의 별도 초기화 스크립트는 `hmStorageState()`를 읽고 IndexedDB에 이미 반영된 데이터만 읽기 전용 트랜잭션으로 수집한다. `FS.syncfs`나 게임 저장 함수를 교체·호출하지 않는다. 초기안은 5초 간격이며 저장 중·오류·로딩 중에는 건너뛴다. 같은 검사 안에서 설정 값과 저장 상태가 달라졌으면 다음 번에 다시 읽는다. 포커스 복귀와 정상 종료 요청에도 확인한다.
+3. **OS 파일 기록:** 직전 백업과 내용 해시가 같으면 쓰지 않는다. 달라진 데이터만 Rust에 전달하고 한 번에 한 묶음씩 기록한다. 임시 파일 쓰기·flush·검증·파일 교체 후 성공을 돌려준다. 최신본과 직전 정상본을 보관한다. 번호와 해시는 묶음 전체에 붙이고 Windows·Mac의 교체/강제 종료 결과를 각각 검사한다.
+4. **정상 종료:** 기존 웹 저장이 끝났는지 확인하고 마지막 파일 백업까지 마친 뒤 창을 닫는다. 웹 저장 오류는 기존 재시도 UI로 처리한다. 백업 실패는 새 앱 UI에서 재시도·종료 취소·이전 백업을 남기고 종료를 선택하게 한다. 닫기를 눌렀다고 전투 중간 진행을 새로 저장하지 않는다.
+5. **가져오기:** 게임을 닫고 별도 복구 페이지에서 검증한 백업을 반영한 뒤 게임을 다시 연다. 실행 중인 게임의 메모리나 저장 파일을 덮어쓰지 않는다. 앱 프로필마다 한 게임 인스턴스만 열어 동시 쓰기를 막는다.
+
+초기화 스크립트는 Tauri 실행기에만 들어간다. 해당 로컬 origin과 게임 경로에서만 동작하며 원본 함수·C++·DOM을 바꾸지 않는다. 복구 때의 IndexedDB 쓰기는 게임 로딩 전에만 허용한다. 네이티브 명령은 백업 묶음만 받고 임의 파일 경로나 원격 페이지 호출을 허용하지 않는다. [Tauri 초기화 스크립트](https://docs.rs/tauri/latest/tauri/webview/struct.WebviewWindowBuilder.html#method.initialization_script), [명령 접근 범위](https://v2.tauri.app/security/capabilities/).
+
+현재 IDBFS는 `/persist` 데이터베이스, 버전 21, `FILE_DATA` 저장소를 사용한다. 이를 읽고 복구하는 코드는 `Desktop/Tauri/`에만 둔다. Emscripten 버전과 레코드 형식을 고정하고 알 수 없는 형식에서는 쓰기를 중단한다. 최초 빈 DB 생성과 복구에는 동일한 레코드·timestamp 인덱스를 만들어 원본 IDBFS로 읽히는지 검사한다. 구현 근거는 로컬 6.0.13의 `src/lib/libidbfs.js`와 [IDBFS 설명](https://emscripten.org/docs/api_reference/Filesystem-API.html#filesystem-api-idbfs)이다. 이 내부 형식 의존도 별도 어댑터에 가두어 게임 코드 변경 없이 검사한다.
+
+`HvM.dat`는 기존 3,624바이트와 슬롯 형식을 유지한다. 백업 묶음의 구조·길이·해시·HUD/설정 값 범위를 검사한다. 파일이 없다는 상태와 빈 값도 구별해 최초 실행 설정을 임의 생성하지 않는다. 기존 저장 시점은 슬롯 선택·스테이지 전환·게임오버·메뉴 복귀이고, HUD APPLY와 설정 변경도 그대로다. **발사·피격·프레임마다 파일을 쓰지 않는다.**
+
+정상 종료는 마지막 백업의 완료를 기다린다. 강제 종료·전원 차단 때는 마지막으로 완료된 백업까지 복구한다. 5초는 초기 관찰 간격이며 저장 오류·OS 일시정지까지 포함한 무손실 보장 시간이 아니다. 디스크 기록이 끝나기 전 진행은 남지 않을 수 있다. 웹뷰 프로필 삭제 뒤에도 OS 백업은 남지만, 앱 데이터 전체를 직접 지우면 그 안의 백업도 사라진다. 이 경우를 위해 별도 위치 내보내기를 제공한다. 게임의 HUD APPLY 성공 표시와 앱 파일 백업 완료는 별도 상태로 다룬다.
+
+### 저장 검사와 첫 구현 순서
+
+먼저 새 Tauri 실행기에 **원본 웹 묶음과 백업 실험만** 연결한다. `Web/`·`Sources/Web/` 및 포함한 게임 파일의 해시가 같은지 확인하고 다음 검사를 한다. 이 연결이 원본 수정 없이는 성립하지 않으면 수정이 필요한 정확한 파일·이유를 보고한다. 보호 파일을 몰래 바꾸거나 생성된 JS를 패치하지 않는다.
+
+| 검사 | 확인할 결과 |
+|---|---|
+| 재실행·업데이트 | 3개 슬롯·HUD·키·조준 설정 유지, 앱 ID·origin 유지 |
+| 일반 브라우저 데이터 삭제 | Safari/Chrome 데이터 삭제가 Tauri 저장에 영향 없음 |
+| 웹뷰 저장소 삭제 | 앱 종료 후 전용 프로필을 지우고 OS 백업에서 같은 바이트로 복구 |
+| 강제 종료 | IDB 저장/백업 쓰기/파일 교체 중 종료 각각에서 마지막 정상본 복구 |
+| 디스크 부족·쓰기 권한 오류 | 기존 정상본 유지, 실패 표시·재시도, 성공 허위 표시 없음 |
+| 손상·형식 불일치 | 자동 초기화 없이 손상본 보존, 정상 이전 백업 선택 |
+| 동시 실행·가져오기 | 한 게임 인스턴스 유지, 게임 종료 후 복구, 유효한 기존 진행 자동 덮어쓰기 없음 |
+| 내보내기·새 설치 | 외부 백업을 새 앱 프로필에 가져와 동일 슬롯·설정 복구 |
+| 성능·기록 횟수 | 30분 전투에서 해시가 같으면 OS 쓰기 0회, 프레임·발사와 백업 기록 분리 |
+
+Mac에서 이 검사를 통과한 뒤 전투·성능 비교로 간다. Windows 설치본 빌드에는 같은 백업 구현과 단위 검사를 포함하되 실제 WebView2 저장 검사는 Windows 실행 단계에서 확인한다.
 
 ### 기존 네이티브 Mac과 비교
 
@@ -119,7 +158,7 @@ Rust 명령은 저장에 필요한 파일 이름만 받는다. 임의 경로 쓰
 
 현재 TODO의 ‘키보드 첫 사격 조준점’과 Apple의 ‘미사용 경험치가 남은 미션 진입’도 같은 조건으로 재현한다. 기존 앱에 이미 있던 문제를 Tauri의 정상 기준으로 삼지 않는다. 이 과정에서 Apple 수정이 필요하면 별도 버그 작업으로 분리한다.
 
-Tauri의 최신 공식 문서는 `@wdio/tauri-service`와 앱 안의 WebDriver 플러그인으로 macOS 검사를 안내한다. 이를 검증 빌드에만 넣고 실제 WKWebView와 Rust 저장 명령을 검사한다. 브라우저에서 명령을 모의한 검사와 앱 실행 검사를 구분한다. 입력·화면·음향은 실제 앱에서도 확인한다. [Tauri WebDriver 안내](https://v2.tauri.app/develop/tests/webdriver/).
+Tauri의 최신 공식 문서는 `@wdio/tauri-service`와 앱 안의 WebDriver 플러그인으로 macOS 검사를 안내한다. 이를 검증 빌드에만 넣고 실제 WKWebView와 별도 Rust 백업 명령을 검사한다. 브라우저에서 명령을 모의한 검사와 앱 실행 검사를 구분한다. 입력·화면·음향은 실제 앱에서도 확인한다. [Tauri WebDriver 안내](https://v2.tauri.app/develop/tests/webdriver/).
 
 ### Mac 배포
 
@@ -127,11 +166,11 @@ Tauri의 최신 공식 문서는 `@wdio/tauri-service`와 앱 안의 WebDriver �
 
 ## 5. 두 번째 단계: 순수 웹판
 
-Mac에서 검사한 공용 웹 실행부를 브라우저 저장 어댑터로 빌드한다. 정적 호스팅용 결과는 `Web/deploy/`의 설정으로 만든다. 기존 기여자 사이트의 배포 상태와 이 저장소의 공식 배포 상태를 별도로 기록한다.
+Mac에 포함한 것과 같은 원본 웹 산출물을 `Distribution/Web/`의 설정으로 배포한다. 새 브라우저 저장 어댑터를 만들거나 `Web/` 안에 배포 파일을 추가하지 않는다. 기존 기여자 사이트와 이번 공식 배포를 구분한다.
 
-고정 HTTPS origin을 정하고 버전별 HTML·JS·Wasm·자원 묶음을 함께 배포한다. 이전 HTML과 새 Wasm이 섞이지 않게 버전 경로와 캐시를 구성한다. Wasm MIME, CSP, 하위 경로 로딩, 다운로드 실패·재시도와 이전 버전 복귀를 검사한다. 현재 자원 분할 도구를 그대로 사용한다.
+고정 HTTPS origin을 정하고 같은 버전의 HTML·JS·Wasm·자원을 함께 배포한다. 이전 HTML과 새 Wasm이 섞이지 않게 서버의 버전 경로·캐시 헤더를 구성한다. Wasm MIME·CSP·하위 경로·다운로드 실패·이전 버전 복귀를 검사한다. 자원 분할 도구도 그대로 읽어 실행한다.
 
-브라우저 진행은 IndexedDB, 설정은 브라우저 저장소에 남긴다. 저장 내보내기·가져오기, 저장소 사용 불가·용량 초과·새로고침·동시 탭·업데이트 후 복구를 검사한다. 같은 origin을 사용해도 여러 탭의 동시 쓰기로 이전 진행이 덮일 수 있으므로 한 탭의 쓰기 소유권과 잠금 해제를 구현한다. 서버 계정 동기화는 추가하지 않는다.
+브라우저 진행은 기존 IndexedDB, 설정은 기존 localStorage를 쓴다. 저장소 사용 불가·용량 초과·새로고침·동시 탭·업데이트를 검사한다. 현재 없는 동시 탭 잠금·영속 저장 요청·내보내기/가져오기는 별도 배포 화면에서 구현 가능한지 후속 검토한다. 게임 코드 수정이 필요한 경우 이번 범위에 끼워 넣지 않는다. 순수 웹은 Tauri의 OS 파일 백업을 쓸 수 없으므로 사용자가 사이트 데이터를 삭제하면 별도 내보낸 파일 없이는 복구할 수 없다. 서버 계정 동기화는 추가하지 않는다.
 
 Mac Safari·Chrome과 모바일 브라우저의 터치·틸트·가로 회전·소리·복귀를 검사한다. 사용자가 제외했던 Firefox는 이번 기본 검사 대상에서도 제외한다. 웹 manifest는 이미 있으며 Service Worker 오프라인 캐시는 별도 후속 과제로 둔다. Tauri 앱의 오프라인 실행은 앱 내부 자원으로 처리한다.
 
@@ -145,10 +184,14 @@ Mac Safari·Chrome과 모바일 브라우저의 터치·틸트·가로 회전·�
 
 ## 7. 기존 플랫폼·기여 보존과 릴리스
 
-시작 기준 develop의 Apple·Android·Core·Resources·Art·vendor·기존 빌드 파일 경로와 해시를 저장한다. 허용 변경은 웹 실행부·웹 빌드·새 Desktop 폴더·전용 검사/워크플로·관련 문서다. Apple 폴더에 Tauri·Android 파일이 들어오거나 Android 폴더에 Tauri 파일이 들어오면 경로 검사에서 실패시킨다. 웹이 읽는 기존 공용 헤더 세 개도 보호 목록에 둔다.
+보호 기준은 현재 main `cf3dca50099d2b7e840de5e3f79c6c1d017369de`의 게임·빌드 파일이다. 기여자의 원본 19개 커밋과 후속 수정 2개 커밋에 담긴 업그레이드 정지·저장 복구·GPU 복구 3건을 함께 보존한다. `Web/`·`Sources/Web/`뿐 아니라 Apple·Android·Core·Resources·Art·vendor·기존 빌드/검사 도구를 보호한다.
 
-`Web/`와 `Sources/Web/` 수정은 기여자 원본 커밋 뒤의 새 커밋으로 남긴다. 원본 19개 SHA·작성자·공동 작성자 표기를 유지한다. fastutlego의 웹판과 후속 Tauri 실행기·저장·배포 작업의 크레딧을 구분한다.
+구현 착수 때 최신 develop을 fetch하고 기준 이후 변경을 먼저 확인한다. 사용자·기여자의 새 변경을 덮지 않고, 실제 사용할 기준 SHA와 보호 파일 SHA-256 목록을 기록한다. 수정 허용 경로는 새 `Desktop/Tauri/`·`Distribution/Web/`, 새 전용 CI 파일, 필요한 ignore 항목과 관련 문서다. `.github/workflows/desktop-tauri.yml`은 새로 추가하며 기존 Apple·Android·웹 workflow를 수정하지 않는다. 파일 추가·삭제·이동도 보호 검사에 포함한다.
 
-릴리스 때는 `CHANGELOG`에 Mac 비교 결과, 웹 주소, Windows 빌드 상태를 나눠 적는다. develop→main 병합 후 새 태그에 소스·자원 묶음과 플랫폼별 산출물·해시·고지를 연결한다. 기존 릴리스 도구는 소스/고지 묶음을 처리하므로 DMG·Windows 설치본·웹 묶음의 추가와 재개 검사를 구현해야 한다. [릴리스 절차](release-notes-plan.md).
+패키지에 넣은 게임 HTML·JS·Wasm·자원은 원본 웹 빌드 산출물과 바이트로 대조한다. 원본 함수 교체·저장 요청 가로채기·생성물 패치는 금지한다. 소스 보존뿐 아니라 기존 웹 검사와 저장 전후 관측으로 실행 동작도 비교한다. 연결이 막히면 새 실행기 쪽에서 원인을 좁히고, 보호 파일 수정이 필요할 때는 파일과 이유를 먼저 보고한다.
 
-다음 구현은 develop에서 별도 `feat/tauri-mac` 브랜치를 만든 뒤 시작한다. 이번 문서 작업에서는 Tauri 앱을 생성하거나 기존 앱을 변경하지 않았다.
+기여자 원본 19개 SHA·작성자·공동 작성자·커밋 메시지를 유지한다. 원본을 리베이스하거나 squash하지 않는다. fastutlego의 웹 구현과 이후 Tauri 실행기·백업·배포 작업을 구분해 기록한다.
+
+릴리스 때 `CHANGELOG`에 Mac 비교·파일 복구 결과, 웹 주소, Windows 빌드 상태를 나눠 적는다. develop→main 병합 후 새 태그에 소스·자원 묶음과 플랫폼별 산출물·해시·고지를 연결한다. 기존 릴리스 도구를 고치는 대신 새 플랫폼의 패키징·첨부 도구를 전용 폴더에 추가한다. [릴리스 절차](release-notes-plan.md).
+
+다음 구현은 develop에서 별도 `feat/tauri-mac` 브랜치를 만든 뒤 시작한다. 이번 문서 작업에서는 Tauri 앱·보호 검사 도구·백업 기능을 구현하지 않았다.

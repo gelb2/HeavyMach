@@ -125,5 +125,35 @@
     "CMakeLists.txt"
   ],
   "existing_tests": "docs/evidence/pr24-web-fixes-20261031.json",
-  "new_runtime_tests": []
+  "new_runtime_tests": [],
+  "frozen_web_plan_update": {
+    "checked_at": "2026-10-31T13:50:36.660270+00:00",
+    "baseline_main": "cf3dca50099d2b7e840de5e3f79c6c1d017369de",
+    "protected_paths": [
+      "Web",
+      "Sources",
+      "Android",
+      "iOS",
+      "macOS",
+      "Modules",
+      "HeavyMach.xcworkspace",
+      "Resources",
+      "Art",
+      "vendor",
+      "tools",
+      ".github/workflows"
+    ],
+    "working_tree_changes_from_baseline": [],
+    "observed_file_count": 2121,
+    "working_file_sha256_manifest_digest": "6f65b16ea19fa099e2adabc0f5f879845fee5eb53be695550e65dd20757f5d9d",
+    "allowed_new_product_roots": [
+      "Desktop/Tauri/",
+      "Distribution/Web/"
+    ],
+    "existing_web_storage": "unchanged IDBFS and localStorage",
+    "proposed_desktop_persistence": "separate host observes committed browser storage and writes OS file backups; restore before loading unchanged game",
+    "tauri_app_built": false,
+    "native_backup_implemented": false,
+    "runtime_preservation_tested": false
+  }
 }

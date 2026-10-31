@@ -131,4 +131,4 @@ PR #24 이후 외부 기여를 통합할 때 원저자의 검토 대상 커밋 S
 
 ## Tauri·웹 폴더 — 2026-10-31
 
-Tauri Mac·Windows는 `Desktop/Tauri/`의 한 프로젝트로 관리하고 OS별 설정 파일을 나눈다. 웹 빌드·배포·검사는 `Web/`, 브라우저와 Tauri의 C++ 실행부는 `Sources/Web/`에 둔다. 기존 iOS·Android·네이티브 Mac 폴더에 새 플랫폼 파일을 넣지 않는다. 공용 코어·자원과 기존 세 C++ 헤더는 읽기 입력이며 보호 해시로 검사한다. 폴더별 README에 소비자·입력·출력을 명시한다. [폴더와 개발 순서](desktop-web-plan-20261031.md).
+Tauri Mac·Windows는 새 `Desktop/Tauri/`, 순수 웹 배포는 새 `Distribution/Web/`에서 관리한다. 기여자 웹 구현과 후속 버그 수정 3건을 담은 `Web/`·`Sources/Web/`는 수정 금지다. Apple·Android·공용 코어·자원·vendor·기존 빌드/검사 도구도 그대로 읽는다. 기준 main은 `cf3dca50`이며 구현 착수 때 최신 develop의 후속 변경을 확인하고 보호 파일 해시·경로 목록을 기록한다. 생성된 게임 파일 패치나 원본 함수 교체도 하지 않는다. 새 플랫폼 CI와 ignore 항목·문서만 기존 공통 경로에 추가한다. 보호 파일 변경이 필요하면 파일·이유를 먼저 보고한다. 폴더별 README에 소비자·입력·출력을 명시한다. [폴더와 개발 순서](desktop-web-plan-20261031.md).

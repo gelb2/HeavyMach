@@ -163,6 +163,8 @@ Apple에서 동일한 저장 조건을 따로 검사하고, 실패한다면 Appl
 
 ## 8. Tauri Mac·Windows와 순수 웹판
 
+아래는 PR 수정 전의 제안 기록이다. 웹 결함 3건은 11절의 후속 수정으로 처리했다. 저장 어댑터 교체 제안은 이후 철회했고, 현재는 원본 웹 코드를 고정한 별도 백업·복구 방식이다. 최신 범위는 12·15절과 [개발 계획](../desktop-web-plan-20261031.md)을 따른다.
+
 | 대상 | 가능 여부 | 추가할 작업 |
 | --- | --- | --- |
 | 순수 웹브라우저 | 이미 PR에 구현돼 있고 이번 소스 빌드도 실행됨 | 위 3개 결함·저장 보호·배포/캐시·브라우저별 검증 |
@@ -258,7 +260,7 @@ GitHub는 기본 브랜치 포함 여부와 계정에 연결된 커밋 이메일
 
 ## 12. Tauri와 Electron 비교
 
-**Tauri Mac 앱을 먼저 만들고 기존 네이티브 Mac과 비교한다.** 웹판의 HTML·Wasm을 그대로 활용하고 창과 파일 저장을 추가하면 되기 때문이다. 기존 iOS·Android·native Mac 앱은 유지한다. Tauri는 Vue 전용이 아니며 HTML·CSS·JavaScript를 내보내는 프런트엔드를 받을 수 있다. [Tauri 프런트엔드 설정](https://v2.tauri.app/start/frontend/).
+**Tauri Mac 앱을 먼저 만들고 기존 네이티브 Mac과 비교한다.** 웹판의 HTML·Wasm을 그대로 활용하고 별도 창·백업 기능을 추가하는 방식이다. 기존 iOS·Android·native Mac 앱은 유지한다. Tauri는 Vue 전용이 아니며 HTML·CSS·JavaScript를 내보내는 프런트엔드를 받을 수 있다. [Tauri 프런트엔드 설정](https://v2.tauri.app/start/frontend/).
 
 사용자는 Electron을 잠깐 사용하며 소스 구조·웹뷰 로딩·자원 사용에 불안정을 느꼈다고 했다. 그 프로젝트를 계측한 결과는 없다. 이번 비교에서는 HeavyMach가 어떤 구조와 검사를 필요로 하는지 정리한다.
 
@@ -286,9 +288,13 @@ Windows의 WebView2 설치 방식도 배포안에 포함한다. 고정 런타임
 
 브라우저 웹판은 이미 IDBFS/IndexedDB에 저장한다. Electron도 영속 세션을 제공하며 사용자 지정 partition은 `persist:` 접두어 여부에 따라 디스크 저장과 메모리 세션이 나뉜다. [Electron session](https://www.electronjs.org/docs/latest/api/session).
 
-데스크톱 후보에는 OS 앱 데이터 폴더의 파일 저장을 제안한다. Tauri에서는 Rust, Electron에서는 main이 이를 담당할 수 있다. 저장 포맷과 기존 저장 시점은 유지한다. 초기 읽기를 마치기 전에 게임을 시작하지 않고, 임시 파일 쓰기·교체·백업과 성공 응답을 처리한다. 교체의 원자성·디스크 오류·강제 종료는 OS별로 검사한다. HUD도 파일 저장 성공 뒤 APPLY를 끝낸다. 발사나 프레임마다 파일을 쓰거나 호스트를 호출하지 않는다. [Tauri 파일 시스템](https://v2.tauri.app/plugin/file-system/).
+Tauri를 선택한 목적은 **저장 데이터 보존과 Mac·Windows 지원**이다. 최신 계획은 웹판의 IDBFS·localStorage를 유지하고, 새 실행기가 저장된 내용을 OS 앱 데이터 폴더에 백업하는 방식이다. 웹 저장 함수나 Emscripten 파일 시스템을 교체하지 않는다. `Desktop/Tauri/`에만 시작 페이지·백업 관찰 코드·Rust 파일 처리를 추가한다.
 
-앱 식별자·저장 경로를 고정하고 업데이트 후에도 진행을 읽는다. 웹 저장을 유지한다면 origin·scheme 변경도 검사해야 한다. Tauri 설정 문서는 scheme 변경으로 IndexedDB 등 저장 위치가 달라질 수 있음을 설명한다. [Tauri 설정](https://v2.tauri.app/reference/config/). 다른 기기로 진행을 옮길 때는 저장 내보내기·가져오기를 별도로 제공하는 안이다.
+별도 시작 페이지에서 같은 origin의 저장을 검사하고, 웹뷰 데이터가 없으면 백업을 복구한 뒤 원본 게임 페이지를 연다. 게임 중에는 이미 반영된 데이터를 낮은 빈도로 읽고 내용이 달라졌을 때만 파일에 기록한다. 정상 종료는 마지막 백업을 기다린다. 최신본·직전 정상본, 손상본 보존, 내보내기·가져오기와 복구 검사를 포함한다. 게임 프레임·발사마다 파일을 쓰지 않는다. [상세 백업·검사 계획](../desktop-web-plan-20261031.md).
+
+일반 HTTP 캐시 삭제와 사이트 데이터 삭제는 다르다. 사이트 데이터 삭제는 브라우저 진행을 지울 수 있다. Tauri 앱의 웹뷰 프로필은 일반 브라우저와 분리하고, OS 백업은 그 프로필 밖에 둔다. 웹뷰 프로필 삭제 뒤 복구를 시험한다. 앱 데이터 폴더 전체 삭제에는 외부로 내보낸 파일이 필요하다. [브라우저 저장 수명](https://developer.mozilla.org/en-US/docs/Web/API/Storage_API/Storage_quotas_and_eviction_criteria).
+
+앱 ID·origin·scheme·프로필은 업데이트 때도 유지한다. Windows는 고정 dataDirectory, Mac은 영속 WKWebView 저장소를 사용한다. macOS 14 이상은 dataStoreIdentifier를 지정할 수 있다. [Tauri 설정](https://v2.tauri.app/reference/config/). 백업의 연결 가능성은 소스와 API로 검토했으며 실제 Tauri 복구 검사는 아직이다.
 
 ### 순수 웹페이지 버전
 
@@ -305,7 +311,7 @@ PR의 브라우저 실행 경로는 이미 있다. `Web/`에서 Emscripten으로
 ### 개발 순서 — 최신 사용자 제안 반영
 
 1. `Desktop/Tauri/`에 Mac 앱을 만들고 **기존 네이티브 Mac 앱과 비교**한다. 같은 미션·무기·화면·저장 복사본으로 조작·전투·저장·음향·표시 간격·메모리를 확인한다.
-2. 같은 웹 실행부를 브라우저 어댑터로 빌드해 순수 웹판을 배포한다. 고정 주소·버전별 자원·저장·업데이트를 검사한다.
+2. 같은 원본 웹 산출물을 `Distribution/Web/`의 별도 설정으로 배포한다. 고정 주소·버전별 자원·저장·업데이트를 검사한다.
 3. 동일 Tauri 프로젝트의 Windows 설치본을 빌드한다. 이번 범위는 빌드·산출물 검사까지이며 Windows 실행·플레이 검사는 후속 과제다.
 
 Electron 비교 앱 제작은 현재 순서에서 제외한다. 기술 비교는 이 절에 유지한다. 실제 구현·저장·폴더·검사·릴리스 계획은 [개발 계획](../desktop-web-plan-20261031.md)에 정리했다.
@@ -318,7 +324,7 @@ Electron 비교 앱 제작은 현재 순서에서 제외한다. 기술 비교는
 - main의 GitHub 계정 연결과 README·CREDITS·CHANGELOG 표기는 확인했다. Contributors 통계도 fastutlego 19개를 확인했다. 요약 목록의 캐시 갱신과 다음 버전 릴리스 노트는 후속 확인한다.
 - 실제 모바일 브라우저의 틸트·멀티터치·음향·저장·복귀를 검사한다.
 - Apple의 미사용 경험치 미션 진입은 별도 재현한다. 이번 웹 수정으로 Apple 코드가 바뀌지는 않았다.
-- Tauri Mac부터 구현하고 기존 네이티브 Mac과 비교한다. 순수 웹 배포, Windows 설치본 빌드가 뒤따른다. Electron은 기술 비교 자료로 유지한다.
+- 기여자 웹 구현·후속 수정 3건을 고정하고 새 실행기·배포 폴더만 추가한다. 별도 파일 백업과 복구를 검사한 뒤 Tauri Mac을 기존 네이티브 Mac과 비교한다. 순수 웹 배포, Windows 설치본 빌드가 뒤따른다. Electron은 기술 비교 자료로 유지한다.
 
 [개발 TODO](https://github.com/gelb2/HeavyMach/blob/docs/tauri-development-plan/docs/usability-todo.md#hm-pr24-integration)에 완료와 남은 항목을 나눴다.
 
@@ -343,12 +349,16 @@ Electron 비교 앱 제작은 현재 순서에서 제외한다. 기술 비교는
 
 | 항목 | 현재 상태와 처리 |
 |---|---|
-| 개발 시작 | 웹 코어·렌더러·입력·저장이 있어 시작 가능. Tauri 프로젝트와 저장 어댑터는 새로 작성 |
+| 개발 시작 | 기여자 웹 구현·후속 수정 3건을 고정하고 새 Tauri 실행기·백업·복구만 작성 |
 | Mac 비교 | 같은 미션·무기·화면·저장 복사본, 앱 하나씩 실행. Instruments와 실제 앱 검사로 전투·프레임·메모리·저장·음향 비교 |
-| 폴더 | `Desktop/Tauri/`에 Mac/Windows 실행기, `Web/`에 웹 빌드·배포, `Sources/Web/`에 공용 웹 실행부. iOS·Android 프로젝트 유지 |
+| 폴더 | 새 `Desktop/Tauri/`는 Mac/Windows 실행기, 새 `Distribution/Web/`는 웹 배포. 기존 Web·Sources/Web·Apple·Android·코어·자원·도구는 수정 금지 |
 | 기존 의존 | 웹이 `Sources/iOS`의 공용 C++ 헤더 세 개를 읽음. 읽기 목록·해시로 관리하며 이번에 이동·복사하지 않음 |
 | 추가 준비 | Rust·Tauri 도구, Mac Developer ID 서명·공증, Windows 빌드 CI, 공식 웹 배포 주소 |
 | Windows 범위 | 설치본·해시·빌드 로그까지. 실제 설치·전투·저장·성능은 후속 검사 |
+
+**보호 기준은 main `cf3dca50`의 웹 구현과 후속 수정 3건을 포함한다.** 새 작업에서 기존 파일을 변경·이동·삭제하거나 생성된 JS를 패치하지 않는다. 원본 19개 커밋과 후속 2개 커밋을 보존하고, 작업 전후 보호 해시 및 패키지에 포함한 게임 파일을 대조한다. 별도 실행기는 게임 함수를 재정의하지 않는다.
+
+저장 데이터 보존은 첫 Mac 단계의 필수 검사다. 웹뷰 프로필을 삭제한 뒤 OS 파일 백업에서 복구하는지, 쓰기 실패·강제 종료·업데이트 뒤에도 정상본이 남는지 확인한다. 현재 앱과 백업 기능은 미구현이다.
 
 최신 Tauri 문서는 앱 안의 WebDriver 플러그인을 통한 macOS 검사도 안내한다. 기존 네이티브 Mac 검사와 함께 사용할 수 있으며 실제 연동 확인은 구현 단계에서 한다. [공식 검사 안내](https://v2.tauri.app/develop/tests/webdriver/).
 

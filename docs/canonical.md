@@ -75,4 +75,4 @@ fastutlego가 `porting/wasm`에서 웹 빌드를 작성해 PR #24로 기여했�
 
 ## Tauri·웹 확장 계획 — 2026-10-31
 
-Tauri 추가는 기존 Apple·Android·공용 코어·자원 위치와 내용을 유지한다. Mac 앱을 기존 네이티브 Mac과 비교한 뒤 웹 배포, Windows 설치본 빌드를 진행한다. [개발 계획](desktop-web-plan-20261031.md). 현재 Tauri 실행기는 미구현이다.
+Tauri·순수 웹 개발은 기여자 웹 구현과 후속 수정 3건까지 고정한다. `Web/`·`Sources/Web/`·기존 Apple·Android·공용 코어·자원·도구는 수정하지 않는다. 새 코드는 `Desktop/Tauri/`·`Distribution/Web/`에 둔다. 저장 데이터 보존과 Mac·Windows 지원을 목적으로, 기존 웹 저장을 유지하고 별도 실행기에 OS 파일 백업·복구를 추가한다. Mac 비교 → 웹 배포 → Windows 설치본 빌드 순서로 진행한다. [개발 계획](desktop-web-plan-20261031.md). 현재 Tauri 실행기는 미구현이다.

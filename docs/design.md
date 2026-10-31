@@ -89,9 +89,9 @@ MAP/MCH 관찰 구조는 LE u32 `declared_size,type,data_size`, payload, LE u32 
 
 ## 웹 빌드
 
-`Sources/Web`은 HMGameView·HMMenus·HMGameHUD·HMMedia·HMOpenALAudio를 C++로 옮긴 브라우저 호스트다. 호출 흐름은 WebGameView → GameSession/World → RenderCommand → Media → GLRenderer로 iOS와 같다. `WebGLRenderer`는 WebGL2 셰이더로 GL_REPLACE/MODULATE, 원본 블렌드 표, 가위 영역, float 행렬, RGBA8 장면 버퍼→복사 텍스처→최종 사각형을 재현한다. 메뉴·HUD·프레임 조립은 플랫폼별 호스트에 있다. 기존 Apple·Android·공용 코어를 이동하거나 수정하지 않고 웹 호스트에서 필요한 수정을 한다. [이식 문서](web-port-20261028.md).
+`Sources/Web`은 HMGameView·HMMenus·HMGameHUD·HMMedia·HMOpenALAudio를 C++로 옮긴 브라우저 호스트다. 호출 흐름은 WebGameView → GameSession/World → RenderCommand → Media → GLRenderer로 iOS와 같다. `WebGLRenderer`는 WebGL2 셰이더로 GL_REPLACE/MODULATE, 원본 블렌드 표, 가위 영역, float 행렬, RGBA8 장면 버퍼→복사 텍스처→최종 사각형을 재현한다. 메뉴·HUD·프레임 조립은 플랫폼별 호스트에 있다. 웹 호스트의 업그레이드 정지·저장 복구·GPU 복구 수정까지 반영했다. 이후 Tauri·순수 웹 개발에서는 이 웹 호스트도 고정한다. [이식 문서](web-port-20261028.md).
 
 
 ## Tauri·웹 확장 계획 — 2026-10-31
 
-추가할 Tauri 실행기·저장은 `Desktop/Tauri/`, 웹 빌드·배포는 `Web/`, 공유 웹 실행부는 `Sources/Web/`가 담당한다. 세 공용 C++ 헤더의 기존 iOS 경로 읽기는 명시적으로 유지한다. [개발 계획](desktop-web-plan-20261031.md). 현재 Tauri 실행기는 미구현이다.
+새 실행기·시작 전 복구·OS 파일 백업은 `Desktop/Tauri/`, 새 순수 웹 배포는 `Distribution/Web/`가 담당한다. 기존 `Web/`·`Sources/Web/`는 수정하지 않고 빌드 입력으로만 쓴다. IDBFS·localStorage를 교체하지 않는다. 별도 실행기가 이미 저장된 내용을 백업하고 게임 시작 전에 복구한다. 세 공용 C++ 헤더의 기존 iOS 경로 읽기는 명시적으로 유지한다. [개발 계획](desktop-web-plan-20261031.md). 현재 Tauri 실행기는 미구현이다.
