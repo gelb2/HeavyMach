@@ -160,6 +160,8 @@ Galaxy의 일반 앱에서 직접 플레이한 미션 3-4와 3-5다. 기기를 �
 
 [신(新) 리센코주의와 정렬세 — 전문 읽기](docs/public/android-ai-experience-20261030.md)
 
+## 첫 PR과 Tauri
+
 [첫 PR을 받다. 그 다음 이어진 스케일업, 그리고 타우리](docs/public/first-pr-and-tauri-20261031.md): 웹판 기여를 받아들인 과정, 승인 리뷰 누락, Tauri 검토를 기록했다.
 
 ## 플랫폼과 개발 상태

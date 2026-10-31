@@ -182,9 +182,13 @@ I recorded the unease I felt while building the Android version: refusals and fa
 
 [Neo-Lysenkoism and the Alignment Tax — full essay](docs/en/public/android-ai-experience-20261030.md)
 
-<a id="플랫폼과-개발-상태"></a>
+<a id="첫-pr과-tauri"></a>
+
+## The first PR and Tauri
 
 [The first PR and Tauri (Korean)](docs/public/first-pr-and-tauri-20261031.md): accepting the web contribution, the missing approval review, and the Tauri evaluation.
+
+<a id="플랫폼과-개발-상태"></a>
 
 ## Platforms and development status
 
