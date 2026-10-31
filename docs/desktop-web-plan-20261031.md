@@ -121,6 +121,10 @@ Mac과 Windows는 하나의 Tauri 프로젝트를 쓴다. OS별 차이는 전용
 
 기존 `Web/` 빌드로 만든 HTML·JS·Wasm·자원을 앱에 포함한다. 원격 게임 주소를 열지 않으므로 설치 뒤 인터넷 없이 실행할 수 있다. 앱의 첫 페이지는 `Desktop/Tauri/frontend/`의 별도 시작 화면이다. 저장 점검·필요한 복구가 끝나면 같은 origin의 원본 게임 페이지로 이동한다. 원본의 `syncfs(true)`와 게임 시작 대기는 그대로 실행된다. [정적 파일 구성](https://v2.tauri.app/develop/).
 
+### 추가 저장 연구 — 2026-11-01
+
+[웹 데이터 삭제 후 저장 보존](usability-todo.md#hm-save-survives-web-data-deletion)과 [기기·플랫폼·재설치 간 복원 코드](usability-todo.md#hm-progress-recovery-code)를 별도 연구 과제로 추가했다. 후자는 획득 무기·순서, UI 배치, 경험치, 업그레이드와 연결된 탱크 외형, 스테이지 진척도를 포함한다. 기존 OS 백업과 파일 내보내기를 출발점으로 기술적 타당성과 구현·검증 절차를 조사한다.
+
 ### 데이터 영속성: 웹 저장 유지 + OS 파일 백업
 
 브라우저의 일반 HTTP 캐시와 IndexedDB·localStorage는 다른 저장소다. 사이트 데이터를 지우면 게임 진행도 지워질 수 있다. `navigator.storage.persist()`도 사용자가 직접 지우는 것을 막지는 않는다. Tauri에서는 일반 Safari·Chrome과 분리된 앱 저장소를 쓰고, 그 밖에 백업 파일을 둔다. [브라우저 저장 정책](https://developer.mozilla.org/en-US/docs/Web/API/Storage_API/Storage_quotas_and_eviction_criteria).
