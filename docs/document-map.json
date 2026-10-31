@@ -47,7 +47,8 @@
     "docs/public/hud-improvement-plan-20261028.md",
     "docs/public/auto-aim-visibility-plan-20261028.md",
     "docs/release-notes-plan.md",
-    "docs/web-port-20261028.md"
+    "docs/web-port-20261028.md",
+    "docs/desktop-web-plan-20261031.md"
   ],
   "base_read": [
     "AGENTS.md",
@@ -553,6 +554,34 @@
       ],
       "evidence": [
         "docs/evidence/web-port-20261028.json",
+        "docs/current-status.md"
+      ]
+    },
+    "desktop": {
+      "label": "Tauri Mac·웹·Windows 개발",
+      "read": [
+        "docs/desktop-web-plan-20261031.md",
+        "docs/repository-management.md",
+        "docs/web-port-20261028.md",
+        "docs/runtime-policy.md",
+        "docs/keyboard-input-policy.md",
+        "docs/release-notes-plan.md"
+      ],
+      "sources": [
+        "Sources/Web/*",
+        "Web/*",
+        "Sources/Core/*",
+        "Sources/iOS/HMButtonState.hpp",
+        "Sources/iOS/HMAimOverlay.hpp",
+        "Sources/iOS/HMCompatibilityPixels.hpp"
+      ],
+      "tests": [
+        "Web/tests/recovery.mjs",
+        "Web/tests/browser-smoke.mjs",
+        "Web/tests/hud-editor.mjs"
+      ],
+      "evidence": [
+        "docs/evidence/desktop-web-readiness-20261031.json",
         "docs/current-status.md"
       ]
     }

@@ -837,3 +837,34 @@ VTOL 첫 생성 프롬프트와 스킬 수정 커밋을 대조했다. 요청에 
 - source: `69fc0be1766e1e451f6283752f3879a4b43f8f6e`
 - deployment: `appgdep_6ae5e88fdfc481919dac3696ab6b15cc` · succeeded · 2026-10-31T13:09:50Z
 - 원고 6절의 순서·기존 앵커·링크·다운로드 일치를 검사했다. Safari 화면 확인은 `cgWindowNotFound`로 완료하지 못했다.
+
+## 2026-10-31 Tauri 개발 순서·폴더 검토
+
+[상세 계획](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/desktop-web-plan.html)을 같은 사이트 목차에 추가했다. Tauri Mac·기존 Mac 비교 → 순수 웹 배포 → Windows 설치본 빌드 순서, 저장 연결·플랫폼별 폴더·검사·릴리스 준비를 담았다. 기존 PR 검토 15절과 첫 PR 원고·다운로드·TODO도 같은 순서로 갱신했다.
+
+- source: `eb5a4f26ad9acaf30a81c955ae0e2e9a88de5f8a`
+- deployment: `appgdep_6ae5ed2218208191829f07e92ca3a7b5` · succeeded · 2026-10-31T13:29:23Z
+- 기존 접근 범위·앵커·원문 다운로드를 유지했다. 세 페이지의 링크·절 순서·다운로드 일치와 로컬 HTTP 200을 검사했다. Safari 화면 검사는 `cgWindowNotFound`로 완료하지 못했다.
+- 앞선 첫 PR 원고는 PR #69·#70으로 main `cf3dca50`에 게시했다. 이번 후속 계획은 `docs/tauri-development-plan`에 커밋했다.
+
+## 2026-10-31 웹 코드 보존·Tauri 데이터 백업 계획
+
+[개발 계획](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/desktop-web-plan#4-tauri-mac), [기술검토](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/pr24-web-review#desktop-development-plan), 첫 PR 원고·TODO·다운로드를 갱신했다. 기여자의 웹 구현과 후속 수정 3건을 고정하고, 새 Desktop/Tauri·Distribution/Web에서 작업한다. 기존 웹 저장을 유지한 OS 파일 백업·시작 전 복구·종료·내보내기/가져오기 설계를 담았다.
+
+- 문서 커밋: `c31d691d`, `docs/tauri-development-plan` 원격 반영. main 병합은 하지 않았다.
+- Site source: `ca77425d5c521ebabde7374e01ac2f2986dcdb4e`
+- deployment: `appgdep_6ae5f2a729788191823bee288dc26f09` · succeeded · 2026-10-31T13:52:55Z
+- 기존 소유자 전용 접근 유지. 원고 3개의 다운로드 바이트·앵커·링크·절 순서를 검사했다. 문서 연결·공개 문서·21개 번역 쌍 검사도 통과했다.
+- Safari 접근이 복구돼 로컬 목차 클릭·저장 설계 표를 확인했다. 게시 주소에서도 로그인된 기존 세션으로 최신 보호 범위·파일 백업·Distribution/Web 문구와 화면을 직접 확인했다.
+- 기존 게임·빌드 경로 2,121개를 기록했고 기준 main 대비 변경은 0개다. Tauri 앱·백업 기능·보호 검사 도구는 아직 구현하지 않았다.
+
+## 2026-10-31 PWA 개발 범위 반영
+
+순수 웹 단계에 PWA 설치·전체 자원 다운로드·오프라인 플레이·저장·재실행·업데이트를 포함했다. `/desktop-web-plan#web-pwa`와 PR 기술검토·첫 PR 원고·다운로드 TODO를 같은 사이트에서 갱신했다.
+
+- 문서 커밋: `df2a5098` (`docs/tauri-development-plan`).
+- 사이트 소스: `5284b627de0ec37270f851c752cc6930d4af8a3b`.
+- 배포: `appgdep_6ae5f6a3e7b48191895afa7e11afa938`, succeeded, 2026-10-31T14:09:55Z.
+- 검사: 문서 구조·공개 문서·번역 연결, 원고/다운로드 일치, 보고서 3개 링크·기존 앵커, Safari 로컬 미리보기의 PWA 본문 배치.
+- 게시 후 Safari 창 조회는 `cgWindowNotFound`로 실패했다. 게시 성공은 Sites 배포 응답으로 확인했다. 기존 소유자 전용 공개 범위를 유지했다.
+- 게임 코드 변경 없음. PWA 구현·게임 오프라인 검사는 개발 단계에서 수행한다.

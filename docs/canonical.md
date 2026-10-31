@@ -71,3 +71,8 @@ Apple 플랫폼 공용 모듈·native Mac·키보드 요구는 2026-10-26 사용
 ## 웹(WebAssembly) 빌드 — 2026-10-28
 
 fastutlego가 `porting/wasm`에서 웹 빌드를 작성해 PR #24로 기여했다. `Sources/Core`를 그대로 소비하고 iOS 플랫폼 계층의 번역인 `Sources/Web`, 빌드 구성 `Web/`을 사용한다. 그래픽은 WebGL2에서 GLES 1.1 상태를 재현하고 음향은 Emscripten OpenAL, 저장은 IndexedDB의 HvM.dat다. 일반 앱만 대상이며 치트 웹 빌드는 없다. 관련 업무는 document-map의 web을 읽는다. [이식 문서](web-port-20261028.md).
+
+
+## Tauri·웹 확장 계획 — 2026-10-31
+
+Tauri·순수 웹 개발은 기여자 웹 구현과 후속 수정 3건까지 고정한다. `Web/`·`Sources/Web/`·기존 Apple·Android·공용 코어·자원·도구는 수정하지 않는다. 새 코드는 `Desktop/Tauri/`·`Distribution/Web/`에 둔다. 저장 데이터 보존과 Mac·Windows 지원을 목적으로, 기존 웹 저장을 유지하고 별도 실행기에 OS 파일 백업·복구를 추가한다. Mac 비교 → 순수 웹·PWA 배포 → Windows 설치본 빌드 순서로 진행한다. [개발 계획](desktop-web-plan-20261031.md). 현재 Tauri 실행기는 미구현이다.
