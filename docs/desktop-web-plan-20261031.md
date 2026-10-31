@@ -32,6 +32,10 @@ Tauri를 검토한 목적은 **저장 데이터 보존과 Mac·Windows 지원**�
 
 [비교·검사 결과](reviews/mac-web-pwa-comparison-20261101.md) · [웹 빌드·운영 방법](../Distribution/Web/README.md).
 
+### 시작 화면 추가 요구 — 2026-11-01
+
+웹 첫 화면에 리소스 다운로드 프로그레스바를 표시하고, 전체 다운로드·검증이 끝나면 PWA 설치 버튼을 표시한다. Tauri와 웹의 시작 화면 버튼·텍스트·상태 표시는 HeavyMach 원작 메뉴의 에셋·질감·색조·눌림 표현에 맞춰 전면 개편한다. Safari에서는 설치 버튼에서 홈 화면 추가 방법을 안내한다. [구현·검증 투두](usability-todo.md#hm-launcher-ui).
+
 ## 1. 개발 순서
 
 | 단계 | 할 일 | 완료할 결과 |
