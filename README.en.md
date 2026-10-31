@@ -184,6 +184,8 @@ I recorded the unease I felt while building the Android version: refusals and fa
 
 <a id="플랫폼과-개발-상태"></a>
 
+[The first PR and Tauri (Korean)](docs/public/first-pr-and-tauri-20261031.md): accepting the web contribution, the missing approval review, and the Tauri evaluation.
+
 ## Platforms and development status
 
 Wider screens, iPad and Mac support, and keyboard controls were also my requests. Wider displays show more world. The keyboard covers movement, jumping, aiming, firing, weapon switching and menus. iPad supports touch, tilt and keyboard together.
