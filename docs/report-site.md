@@ -815,3 +815,15 @@ VTOL 첫 생성 프롬프트와 스킬 수정 커밋을 대조했다. 요청에 
 - source: `9b7131851d1137791ed7c47597aa4d2487b9aa3b`
 - deployment: `appgdep_6ae3a6e555848191b96b597f205499e6` · succeeded
 - 기존 소유자 전용 접근을 유지했다. 페이지 링크와 이미지·영상 파일을 검사했다. 원본 캡처와 GIF의 시작·중간·끝 프레임을 직접 확인했다. 이번 게시의 브라우저 화면 검사는 수행하지 않았다.
+
+## 2026-10-31 PR #24 병합·Tauri 검토·첫 PR 원고
+
+[기술검토](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/pr24-web-review.html)에 수정·회귀 검사·main 병합·원저자 커밋 보존·Tauri/Electron·순수 웹판 검토와 후속 TODO를 추가했다. 수정 전 10절과 실패 증거는 보존했다.
+
+[첫 PR을 받다. 그 다음 이어진 스케일업, 그리고 타우리](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/first-pr-and-tauri.html)를 같은 사이트 목차에 연결했다. 첫 외부 기여, 플랫폼 확장 고민, 승인 리뷰 생략 경험을 한 원고로 작성했다. 제공 원문과 Markdown 다운로드를 함께 제공한다.
+
+- source: `45836f5dfcafc5965aebbd9d5da6868a18286c70`
+- deployment: `appgdep_6ae5e48b325881919b61a4be70933dc4`, `succeeded`, 2026-10-31T12:52:42Z.
+- 기존 소유자 전용 접근 유지. 기술검토 14절·기존 앵커·게임 캡처 6개, 원고 6절·다운로드 바이트 일치를 확인했다.
+- Safari 로컬에서 원고 표시와 승인 리뷰 절 목차 클릭·문단 배치를 확인했다. GitHub Contributors 화면의 fastutlego 19 commits와 main의 원저자 커밋 목록 19개도 직접 확인했다.
+- GitHub 문서는 `docs/pr24-followup`에서 관리하며 Tauri 앱 구현·새 릴리스 태그는 만들지 않았다. 웹 PR은 main `91e4c7a2`에 포함됐다.
