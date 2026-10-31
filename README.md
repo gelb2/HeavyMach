@@ -170,6 +170,7 @@ Galaxy의 일반 앱에서 직접 플레이한 미션 3-4와 3-5다. 기기를 �
 | iPad | 화면 비율에 맞춘 캔버스, 터치·틸트·키보드 병용 | iPad Air 13형 M2 설치·입력·전투 검사, 내 플레이 |
 | Mac | AppKit 앱, 창·전체 화면, 키보드 조작 | Mac mini 실행·33개 검사, 개발 서명 앱 누수 0건 |
 | Android | 공용 C++ 코어를 사용하는 일반·치트 앱 | Galaxy 유선·무선 설치·플레이 확인. [설치](Android/README.md) · [개발 과정과 화면](docs/public/android-development-20261030.md) |
+| 웹 | WebAssembly·WebGL2, 마우스·키보드·터치·기울기 (`porting/wasm`) | Chrome·Safari·ego lite, iPad mini Safari·Android 패드 Chrome 확인. [웹 이식 문서](docs/web-port-20261028.md) |
 
 설치한 iPhone·iPad 앱을 직접 플레이했을 때 프레임 드랍이나 오작동은 보이지 않았다. 기기별 자동 검사에는 표시시간 기준 실패가 남아 있다. [측정 조건과 결과](docs/public/validation.md)
 
@@ -223,6 +224,10 @@ adb -s SERIAL install -r app/build/outputs/apk/normal/debug/app-normal-debug.apk
 `SERIAL`을 설치할 기기 ID로 바꾼다. 치트 앱은 `app/build/outputs/apk/cheat/debug/app-cheat-debug.apk`를 같은 방식으로 설치한다. 현재 APK는 최적화한 debug 서명본이다.
 
 [SDK 설정·APK 경로·USB/무선 설치](docs/public/build-and-install.md#android-빌드와-설치) · [Android 도구와 검사 절차](Android/README.md)
+
+웹 빌드는 Emscripten으로 만든다. `emcmake cmake -S Web -B build/web && cmake --build build/web` 뒤 `build/web/dist`를 정적 서버로 연다. [웹 빌드 문서](docs/web-port-20261028.md)
+
+웹판은 [fastutlego](https://github.com/fastutlego)가 기여했다. [PR #24](https://github.com/gelb2/HeavyMach/pull/24)에 WebAssembly 실행부, WebGL2 렌더링, 입력·음향·저장과 브라우저 검사가 포함된다.
 
 ## 개발 중 고친 문제
 

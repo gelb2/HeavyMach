@@ -1,0 +1,10 @@
+{
+  "name": "Heavy Mach 1",
+  "short_name": "Heavy Mach",
+  "start_url": "./",
+  "scope": "./",
+  "display": "fullscreen",
+  "orientation": "landscape",
+  "background_color": "#000000",
+  "theme_color": "#000000"
+}

@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="theme-color" content="#000000">
+<!-- Added to the home screen, iOS/Android open the game without browser bars. -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Heavy Mach">
+<link rel="manifest" href="manifest.webmanifest">
+<title>Heavy Mach 1</title>
+<link rel="icon" href="data:,">
+<style>
+  :root { color-scheme: dark; }
+  html, body { margin: 0; height: 100%; background: #000; overflow: hidden; overscroll-behavior: none; }
+  body { -webkit-user-select: none; user-select: none; -webkit-touch-callout: none; font-family: -apple-system, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif; }
+  #canvas { position: fixed; inset: 0; width: 100vw; height: 100vh; height: 100dvh; display: block; touch-action: none; outline: none; }
+  #safe-probe { position: fixed; inset: 0; pointer-events: none; visibility: hidden;
+    padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left); }
+  .overlay { position: fixed; display: none; color: #fff; background: rgba(0,0,0,.92); white-space: pre-wrap; z-index: 3; }
+  #hm-keyboard { inset: 24px; padding: 16px; font: 15px/1.5 ui-monospace, Menlo, monospace; overflow: auto; }
+  #hm-error { left: 24px; right: 24px; top: 30%; padding: 16px; font-size: 14px; }
+  #hm-boot { position: fixed; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; color: #c9ced6; z-index: 4; background: #000; font-size: 15px; }
+  #hm-boot .bar { width: min(320px, 70vw); height: 4px; background: #1f2329; border-radius: 2px; overflow: hidden; }
+  #hm-boot .bar > i { display: block; height: 100%; width: 0; background: #d8a238; transition: width .2s; }
+  #hm-rotate { position: fixed; inset: 0; display: none; align-items: center; justify-content: center; text-align: center; padding: 24px; color: #fff; background: #000; z-index: 5; font-size: 16px; line-height: 1.6; }
+  @media (orientation: portrait) and (pointer: coarse) { #hm-rotate.enabled { display: flex; } }
+  /* HUD layout editor controls (HMHUDEditor UIKit views): CSS px = UIKit points. */
+  #hm-hud-ui { position: fixed; inset: 0; pointer-events: none; z-index: 2; }
+  #hm-hud-ui .hud-btn { position: absolute; width: 168px; height: 44px; padding: 0; border: 0; margin: 0; pointer-events: auto;
+    background: #2a2a24 no-repeat center / 168px 44px; color: transparent; font-size: 0; touch-action: manipulation; -webkit-tap-highlight-color: transparent; }
+  #hm-hud-ui .hud-btn.text { color: #f9b838; font: bold 18px "DIN Condensed", "Arial Narrow", sans-serif; }
+  #hm-hud-ui .hud-bar { position: absolute; width: 168px; pointer-events: none; }
+  #hm-hud-ui .hud-scroll { position: absolute; left: 0; top: 0; width: 168px; overflow-y: auto; pointer-events: auto; }
+  #hm-hud-ui .hud-label { position: absolute; left: 0; top: 0; width: 168px; height: 48px; box-sizing: border-box; padding: 2px 4px;
+    display: flex; align-items: center; justify-content: center; text-align: center; white-space: pre-line; overflow: hidden;
+    color: rgb(242,196,102); background: rgba(15,15,15,.94); font: 12px/1.25 -apple-system, sans-serif; }
+</style>
+</head>
+<body>
+<canvas id="canvas" tabindex="0" aria-label="Heavy Mach 1"></canvas>
+<div id="safe-probe"></div>
+<div id="hm-keyboard" class="overlay"></div>
+<div id="hm-error" class="overlay"></div>
+<div id="hm-boot"><div id="hm-boot-text">게임 자원을 불러오는 중</div><div class="bar"><i id="hm-boot-bar"></i></div></div>
+<div id="hm-storage" class="overlay" style="inset:24px;bottom:auto;padding:20px;z-index:8" role="alert"><p id="hm-storage-text"></p><button id="hm-storage-retry" type="button">Retry</button></div>
+<div id="hm-context" class="overlay" style="inset:24px;bottom:auto;padding:20px;z-index:7" role="alert">Graphics interrupted. Waiting for recovery.</div>
+<div id="hm-hud-ui"></div>
+<div id="hm-rotate">기기를 가로로 돌려 주세요.<br>Heavy Mach 1은 가로 화면에서 플레이합니다.</div>
+<script>
+(function(){
+  'use strict';
+  const canvas = document.getElementById('canvas');
+  const probe = document.getElementById('safe-probe');
+  const bootText = document.getElementById('hm-boot-text');
+  const bootBar = document.getElementById('hm-boot-bar');
+  let ready = false, contextLost = false, storageBlocked = false;
+
+  // KeyboardEvent.code -> USB HID usage (the keyboard policy is defined in HID usages).
+  const HID = {};
+  for (let i = 0; i < 26; i++) HID['Key' + String.fromCharCode(65 + i)] = 4 + i;
+  for (let i = 1; i <= 9; i++) HID['Digit' + i] = 29 + i;
+  Object.assign(HID, { Digit0: 39, Enter: 0x28, Escape: 0x29, Backspace: 0x2a, Tab: 0x2b, Space: 0x2c,
+    Minus: 0x2d, Equal: 0x2e, BracketLeft: 0x2f, BracketRight: 0x30, Backslash: 0x31, Semicolon: 0x33,
+    Quote: 0x34, Backquote: 0x35, Comma: 0x36, Period: 0x37, Slash: 0x38, CapsLock: 0x39,
+    F1: 0x3a, F2: 0x3b, F3: 0x3c, F4: 0x3d, F5: 0x3e, F6: 0x3f, F7: 0x40, F8: 0x41, F9: 0x42, F10: 0x43, F11: 0x44, F12: 0x45,
+    Insert: 0x49, Home: 0x4a, PageUp: 0x4b, Delete: 0x4c, End: 0x4d, PageDown: 0x4e,
+    ArrowRight: 0x4f, ArrowLeft: 0x50, ArrowDown: 0x51, ArrowUp: 0x52,
+    ControlLeft: 0xe0, ShiftLeft: 0xe1, AltLeft: 0xe2, MetaLeft: 0xe3, ControlRight: 0xe4, ShiftRight: 0xe5, AltRight: 0xe6, MetaRight: 0xe7 });
+
+  // iPadOS Safari reports screen.orientation.angle 0 in both landscapes
+  // (measured: type landscape-primary, angle 0, window.orientation 90), so the
+  // older window.orientation wins where it exists (iOS, Android Chrome).
+  function orientationAngle() {
+    if (typeof window.orientation === 'number') return (window.orientation + 360) % 360;
+    if (screen.orientation && typeof screen.orientation.angle === 'number') return screen.orientation.angle;
+    return 0;
+  }
+  function resize() {
+    if (!ready) return;
+    const rect = canvas.getBoundingClientRect();
+    const dpr = window.devicePixelRatio || 1;
+    const w = Math.max(1, Math.round(rect.width * dpr)), h = Math.max(1, Math.round(rect.height * dpr));
+    if (canvas.width !== w || canvas.height !== h) { canvas.width = w; canvas.height = h; }
+    const cs = getComputedStyle(probe);
+    Module._hm_resize(rect.width, rect.height, dpr, parseFloat(cs.paddingLeft) || 0, parseFloat(cs.paddingTop) || 0,
+      parseFloat(cs.paddingRight) || 0, parseFloat(cs.paddingBottom) || 0, orientationAngle());
+  }
+
+  // Pointer phases map to UITouch began/moved/ended/cancelled (0/1/2/3).
+  function pointer(e, state) {
+    if (!ready) return;
+    const rect = canvas.getBoundingClientRect();
+    Module._hm_pointer(e.pointerId, e.clientX - rect.left, e.clientY - rect.top, state);
+  }
+  const active = new Set();
+  // No preventDefault on pointerdown: the compatibility mousedown/touchstart
+  // events resume the Web Audio context created by Emscripten's OpenAL.
+  canvas.addEventListener('pointerdown', e => {
+    canvas.focus({ preventScroll: true });
+    if (e.pointerType === 'mouse') unlockMotion();
+    if (e.pointerType === 'mouse' && e.button !== 0) return;
+    active.add(e.pointerId); try { canvas.setPointerCapture(e.pointerId); } catch (_) {}
+    pointer(e, 0);
+  });
+  canvas.addEventListener('pointermove', e => { if (active.has(e.pointerId)) { e.preventDefault(); pointer(e, 1); } });
+  // Touch grants user activation on pointerup/touchend, not pointerdown. iOS
+  // rejects DeviceMotionEvent.requestPermission and fullscreen outside it.
+  canvas.addEventListener('pointerup', e => {
+    // One prompt per tap: requesting full screen in the same gesture hid the
+    // iOS motion prompt and left the request pending (measured on iPad mini 6).
+    if (e.pointerType !== 'mouse') { if (motionState === 'idle') unlockMotion(); else if (motionState !== 'pending') enterFullscreen(); }
+    if (active.delete(e.pointerId)) { e.preventDefault(); pointer(e, 2); }
+  });
+  canvas.addEventListener('pointercancel', e => { if (active.delete(e.pointerId)) pointer(e, 3); });
+  canvas.addEventListener('contextmenu', e => e.preventDefault());
+
+  window.addEventListener('keydown', e => {
+    if (!ready || e.metaKey || e.ctrlKey) { if (ready && (e.metaKey || e.ctrlKey)) Module._hm_keyboard_blur(); return; }
+    const code = HID[e.code]; if (!code) return;
+    if (e.repeat) { e.preventDefault(); return; }
+    if (Module._hm_key(code, 1)) e.preventDefault();
+  });
+  window.addEventListener('keyup', e => {
+    if (!ready) return; const code = HID[e.code]; if (!code) return;
+    if (Module._hm_key(code, 0)) e.preventDefault();
+  });
+
+  // The DeviceMotion spec (Android Chrome) reports the reaction to gravity in
+  // m/s^2 (+Z when lying face up); CoreMotion reports g with gravity as -Z.
+  // iOS WebKit already uses the CoreMotion sign: measured on iPad mini 6 held in
+  // landscape (window.orientation 90, device +X up) x = -9.29, z = -3.14.
+  // Android Chrome 156 also has DeviceMotionEvent.requestPermission but keeps the
+  // spec sign (Lenovo TB322FC, same landscape: x = +9.30), so the engine is
+  // identified as Apple mobile WebKit: iPhone/iPad UA, or iPadOS's desktop UA
+  // with touch points.
+  const appleMobile = /iPhone|iPad|iPod/.test(navigator.userAgent) || (/Macintosh/.test(navigator.userAgent) && navigator.maxTouchPoints > 1);
+  const motionSign = appleMobile ? 1 : -1;
+  // motionState: idle -> pending -> granted/denied. A request rejected for a
+  // missing user gesture returns to idle so the next tap asks again.
+  let motionState = 'idle', motionRequest = 0;
+  function onMotion(e) {
+    const a = e.accelerationIncludingGravity;
+    if (!a || a.x === null) return;
+    window.hmLastMotion = { x: a.x, y: a.y, z: a.z };
+    if (!ready) return;
+    Module._hm_motion(1, motionSign * a.x / 9.80665, motionSign * a.y / 9.80665, motionSign * a.z / 9.80665);
+  }
+  function listenMotion() { if (motionState !== 'granted') window.addEventListener('devicemotion', onMotion); motionState = 'granted'; }
+  function unlockMotion() {
+    if (motionState !== 'idle') return;
+    const DME = window.DeviceMotionEvent;
+    if (!DME) { motionState = 'denied'; return; }
+    if (typeof DME.requestPermission !== 'function') { listenMotion(); return; }
+    motionState = 'pending';
+    const request = ++motionRequest;
+    // A prompt that never answers returns to idle so a later tap asks again.
+    setTimeout(() => { if (motionState === 'pending' && request === motionRequest) motionState = 'idle'; }, 10000);
+    DME.requestPermission().then(result => {
+      if (request !== motionRequest && motionState === 'granted') return;
+      if (result === 'granted') listenMotion(); else motionState = 'denied';
+    }).catch(error => { if (request === motionRequest) motionState = 'idle'; console.warn('HeavyMach motion permission', error && error.name); });
+  }
+  window.hmMotionState = () => motionState;
+  // A permission granted earlier resolves without a gesture; otherwise the call
+  // is rejected silently and the first tap asks.
+  function resumeGrantedMotion() {
+    const DME = window.DeviceMotionEvent;
+    if (!DME || typeof DME.requestPermission !== 'function' || motionState !== 'idle') return;
+    DME.requestPermission().then(result => { if (result === 'granted' && motionState === 'idle') listenMotion(); }).catch(() => {});
+  }
+
+  // Touch devices play full screen: the landscape game must not lose its top
+  // rows to browser bars. iPhone Safari has no element fullscreen; there the
+  // home-screen web app (meta tags above) opens without bars.
+  const coarsePointer = window.matchMedia('(pointer: coarse)');
+  function enterFullscreen() {
+    if (!coarsePointer.matches || document.fullscreenElement || document.webkitFullscreenElement) return;
+    const root = document.documentElement;
+    const request = root.requestFullscreen || root.webkitRequestFullscreen;
+    if (!request) return;
+    try { const r = request.call(root, { navigationUI: 'hide' }); if (r && r.catch) r.catch(() => {}); } catch (_) {}
+  }
+  document.addEventListener('fullscreenchange', () => resize());
+  document.addEventListener('webkitfullscreenchange', () => resize());
+
+  // Resign/become active: hidden tab, window blur or page hide pause the game.
+  // A phone or tablet held in portrait shows the rotate notice and holds the
+  // landscape-only game without a pause menu.
+  const portrait = window.matchMedia('(orientation: portrait) and (pointer: coarse)');
+  // 0: interruption (pause menu, resume by the player). 2: portrait only on a
+  // touch device: the game holds and continues by itself back in landscape.
+  function setActive() {
+    if (!ready) return;
+    const foreground = !contextLost && !storageBlocked && document.visibilityState === 'visible' && document.hasFocus();
+    Module._hm_active(!foreground ? 0 : portrait.matches ? 2 : 1);
+  }
+  document.addEventListener('visibilitychange', setActive);
+  portrait.addEventListener('change', setActive);
+  window.addEventListener('blur', () => { if (ready) { Module._hm_keyboard_blur(); Module._hm_active(0); } });
+  window.addEventListener('focus', setActive);
+  window.addEventListener('pagehide', () => { if (ready) Module._hm_active(0); });
+  canvas.addEventListener('webglcontextlost', event => {
+    event.preventDefault(); // Opt in to restoration by the browser.
+    contextLost = true; active.clear();
+    document.getElementById('hm-context').style.display = 'block';
+    if (ready) Module._hm_context_lost();
+  });
+  canvas.addEventListener('webglcontextrestored', () => {
+    if (!ready) return;
+    if (!Module._hm_context_restored()) {
+      document.getElementById('hm-context').textContent = 'Graphics recovery failed. Reload to load your last saved progress.';
+      return;
+    }
+    contextLost = false;
+    document.getElementById('hm-context').style.display = 'none';
+    resize(); setActive();
+  });
+  window.addEventListener('resize', resize);
+  if (screen.orientation) screen.orientation.addEventListener('change', resize);
+  window.addEventListener('orientationchange', resize);
+  if (window.ResizeObserver) new ResizeObserver(resize).observe(canvas);
+
+  // Do not start the game until the existing save has been read successfully.
+  // Writes retain a dirty revision until IndexedDB acknowledges that revision.
+  let loaded = false, loading = false, syncing = false, revision = 0, savedRevision = 0;
+  let callbacks = [], retryStorage = null;
+  const storagePanel = document.getElementById('hm-storage');
+  function storageError(message, retry) {
+    storageBlocked = true; retryStorage = retry;
+    document.getElementById('hm-storage-text').textContent = message;
+    storagePanel.style.display = 'block'; setActive();
+  }
+  function storageRecovered() {
+    storageBlocked = false; retryStorage = null; storagePanel.style.display = 'none'; setActive();
+  }
+  document.getElementById('hm-storage-retry').addEventListener('click', () => { if (retryStorage) retryStorage(); });
+  function loadSave() {
+    if (loaded || loading) return;
+    loading = true;
+    const complete = err => {
+      loading = false;
+      if (err) { storageError('Could not load your saved game. Retry to continue.', loadSave); return; }
+      loaded = true; storageRecovered(); Module.removeRunDependency('hm-persist');
+    };
+    try { FS.syncfs(true, complete); } catch (err) { complete(err); }
+  }
+  function flushSave() {
+    if (!loaded || syncing || revision === savedRevision) return;
+    syncing = true;
+    const target = revision, batch = callbacks; callbacks = [];
+    const complete = err => {
+      syncing = false;
+      if (err) {
+        storageError('Could not save your progress. Keep this page open and retry.', flushSave);
+        const waiting = callbacks; callbacks = [];
+        for (const callback of [...batch, ...waiting]) callback(false);
+        return;
+      }
+      savedRevision = target;
+      for (const callback of batch) callback(true);
+      if (revision !== savedRevision) flushSave(); else storageRecovered();
+    };
+    try { FS.syncfs(false, complete); } catch (err) { complete(err); }
+  }
+  function syncSave(callback) {
+    ++revision;
+    if (callback) callbacks.push(callback);
+    flushSave();
+  }
+  window.hmStorageState = () => ({ loaded, loading, syncing, dirty: revision !== savedRevision, blocked: storageBlocked });
+  window.addEventListener('beforeunload', e => {
+    if (revision !== savedRevision) { e.preventDefault(); e.returnValue = ''; }
+  });
+
+  // HUD layout editor controls. The game sends their state (HMHUDEditor
+  // layoutHUDControls) through Module.hmHudUI; taps call Module._hm_hud_control:
+  // -1 SET GAME UI, 0 RESET LAYOUT, 1 CANCEL, 2 APPLY, 3 PREVIEW, 4 SCENE, 5 TOOLS.
+  const hudUI = { root: document.getElementById('hm-hud-ui'), sheet: null, images: new Map(), buttons: {} };
+  const hudTitles = { '-1': 'SET GAME UI', 0: 'RESET LAYOUT', 1: 'CANCEL', 2: 'APPLY', 3: 'PREVIEW', 4: 'SAMPLE SCENE', 5: 'TOOLS' };
+  // iOS hudToolImage: 168x44 from Common_Btn_OK.png (top half normal, bottom half
+  // pressed): a 2px stretched middle and 8px end caps, DIN Condensed Bold 22 with
+  // a gold stroke, drawn at 2x. The sheet pixels come premultiplied from the game.
+  function hudButtonImages(title) {
+    if (!hudUI.sheet) return null;
+    if (hudUI.images.has(title)) return hudUI.images.get(title);
+    const sheet = hudUI.sheet, sw = sheet.width, sh = sheet.height / 2, w = 168, h = 44;
+    const urls = [false, true].map(pressed => {
+      const c = document.createElement('canvas'); c.width = w * 2; c.height = h * 2;
+      const g = c.getContext('2d'); g.scale(2, 2); g.imageSmoothingQuality = 'high';
+      const y = pressed ? sh : 0;
+      g.drawImage(sheet, 6, y, 2, sh, 8, 0, w - 16, h);
+      g.drawImage(sheet, 0, y, 8, sh, 0, 0, 8, h);
+      g.drawImage(sheet, sw - 8, y, 8, sh, w - 8, 0, 8, h);
+      g.font = 'bold 22px "DIN Condensed", "DINCondensed-Bold", "Arial Narrow", sans-serif';
+      const width = g.measureText(title).width, scale = Math.min(1, (w - 20) / Math.max(1, width));
+      g.translate(w / 2, h / 2 + (pressed ? 1 : 0)); g.scale(scale, scale);
+      g.textAlign = 'center'; g.textBaseline = 'middle';
+      g.fillStyle = 'rgb(20,18,10)'; g.fillText(title, 0, 1);
+      g.lineWidth = 1.32; g.strokeStyle = 'rgb(250,184,56)'; g.strokeText(title, 0, 1);
+      return c.toDataURL();
+    });
+    hudUI.images.set(title, urls); return urls;
+  }
+  function paintHudButton(b) {
+    const urls = hudButtonImages(b.dataset.title);
+    b.classList.toggle('text', !urls); b.textContent = urls ? '' : b.dataset.title;
+    b.setAttribute('aria-label', b.dataset.title);
+    if (urls) b.style.backgroundImage = 'url(' + urls[b.classList.contains('down') ? 1 : 0] + ')';
+  }
+  function hudButton(tag, parent) {
+    const b = document.createElement('button'); b.type = 'button'; b.className = 'hud-btn'; b.dataset.title = hudTitles[tag];
+    const up = () => { b.classList.remove('down'); paintHudButton(b); };
+    b.addEventListener('pointerdown', e => { e.stopPropagation(); b.classList.add('down'); paintHudButton(b); });
+    b.addEventListener('pointerup', up); b.addEventListener('pointerleave', up); b.addEventListener('pointercancel', up);
+    b.addEventListener('click', e => { e.preventDefault(); if (ready) Module._hm_hud_control(tag); canvas.focus({ preventScroll: true }); });
+    parent.appendChild(b); paintHudButton(b); hudUI.buttons[tag] = b; return b;
+  }
+  function placeRect(el, r) { el.hidden = !!r[0]; el.style.left = r[1] + 'px'; el.style.top = r[2] + 'px'; if (el.classList.contains('hud-bar')) { el.style.width = r[3] + 'px'; el.style.height = r[4] + 'px'; } }
+  function buildHudUI() {
+    if (hudUI.bar) return;
+    hudButton(-1, hudUI.root); hudButton(5, hudUI.root);
+    const bar = hudUI.bar = document.createElement('div'); bar.className = 'hud-bar'; hudUI.root.appendChild(bar);
+    const scroll = hudUI.scroll = document.createElement('div'); scroll.className = 'hud-scroll'; bar.appendChild(scroll);
+    const rows = hudUI.rows = document.createElement('div'); rows.style.position = 'relative'; scroll.appendChild(rows);
+    const label = hudUI.label = document.createElement('div'); label.className = 'hud-label'; rows.appendChild(label);
+    for (const tag of [3, 4, 0]) hudButton(tag, rows);
+    hudButton(1, bar); hudButton(2, bar);
+  }
+  function hmHudUI(state) {
+    buildHudUI(); hudUI.state = state;
+    const b = hudUI.buttons;
+    placeRect(b[-1], state.entry); placeRect(b[5], state.tools); placeRect(hudUI.bar, state.bar);
+    hudUI.scroll.style.height = state.scroll + 'px'; hudUI.rows.style.height = state.body + 'px';
+    for (const [tag, hidden, y] of state.rows) { b[tag].hidden = !!hidden; b[tag].style.left = '0px'; b[tag].style.top = y + 'px'; }
+    b[1].style.left = b[2].style.left = '0px'; b[1].style.top = state.cancel + 'px'; b[2].style.top = state.apply + 'px';
+    hudUI.label.textContent = state.label;
+    if (b[4].dataset.title !== state.scene) { b[4].dataset.title = state.scene; paintHudButton(b[4]); }
+  }
+  window.hmHudState = () => hudUI.state || null;
+  function hmSetUISheet(premultiplied, width, height) {
+    const pixels = new Uint8ClampedArray(premultiplied.length);
+    for (let i = 0; i < pixels.length; i += 4) {
+      const a = premultiplied[i + 3]; pixels[i + 3] = a;
+      for (let c = 0; c < 3; c++) pixels[i + c] = a ? Math.min(255, Math.round(premultiplied[i + c] * 255 / a)) : 0;
+    }
+    const c = document.createElement('canvas'); c.width = width; c.height = height;
+    c.getContext('2d').putImageData(new ImageData(pixels, width, height), 0, 0);
+    hudUI.sheet = c; hudUI.images.clear();
+    for (const button of Object.values(hudUI.buttons)) paintHudButton(button);
+  }
+
+  window.Module = {
+    canvas,
+    hmSyncSave: syncSave,
+    hmHudUI,
+    hmSetUISheet,
+    hmReady() {
+      ready = true; document.getElementById('hm-boot').style.display = 'none';
+      document.getElementById('hm-rotate').classList.add('enabled');
+      resize(); setActive(); canvas.focus({ preventScroll: true }); resumeGrantedMotion();
+    },
+    hmFatal(message) { bootText.textContent = message; },
+    preRun: [function () {
+      FS.mkdir('/persist'); FS.mount(Module.IDBFS, {}, '/persist');
+      Module.addRunDependency('hm-persist');
+      loadSave();
+    }],
+    setStatus(text) {
+      const m = /\((\d+(?:\.\d+)?)\/(\d+)\)/.exec(text || '');
+      if (m) bootBar.style.width = (100 * Number(m[1]) / Number(m[2])).toFixed(1) + '%';
+    },
+    print: t => console.log(t),
+    printErr: t => console.warn(t),
+  };
+  window.hmDebugState = () => ready ? JSON.parse(Module.UTF8ToString(Module._hm_debug_state())) : { screen: 'loading' };
+})();
+</script>
+<script src="hm-assets.js"></script>
+{{{ SCRIPT }}}
+</body>
+</html>

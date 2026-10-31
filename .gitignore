@@ -60,3 +60,6 @@ account.md
 /docs/references/developer-background/sass-mutiny-source.txt
 /docs/public/ai-project-experience*
 /docs/evidence/gallery-and-ai-writing-preparation-20261030.json
+
+# Web test dependencies.
+Web/tests/node_modules/

@@ -5,8 +5,8 @@
   "documents": {
     "README.md": {
       "english": "README.en.md",
-      "source_sha256": "7d1063717584d509abec3da37b41c05b90e1da7fde994a01227784630d63ac0a",
-      "english_sha256": "e0ca04835c17b3f31602f4d0926feb2144280e136c9ccd3c263353a5e0e02f68",
+      "source_sha256": "4d127908d5e037316e2684d918d4d74186a4e7fff96ea7ea8837bc5d39fcb595",
+      "english_sha256": "53daa679ad5cb9fcc839ef4c26fe3c717f7adcf257b1f9b7250be721825cd580",
       "reviewed_numeric_difference": {
         "source_only": {
           "7": 1,
@@ -23,12 +23,12 @@
           "13": 2
         }
       },
-      "review_note": "July, nine years/three months, aircraft and clip quantities use English words; source punctuation attaches Korean suffixes to digits. Shared personal paragraphs match the English statement. User-approved correction: 이승에서나 → in this life. Updated Android availability; personal paragraphs unchanged. Added iOS gallery and four physical-device cheat captures in both languages. Reviewed Android overview, regular Galaxy gameplay images/GIF, OS table, Gradle installation, shared-core paragraph and current-main versus v0.16 distinction; author opening unchanged. Reviewed 2026-10-30 Android coverage/link audit; current main and released v0.16 remain distinct. Lux sentence follows author commit 39b05834 where applicable. Reviewed v0.17 Android release, download links and current-version wording; historical v0.16 test results retained. Reviewed the Android experience essay, firsthand accounts, qualified hypotheses, public sources, author voice and README link. Private evidence stays outside Git. Reviewed Lysenko history expansion: vernalization versus heritable claims, Vavilov persecution, arrest and prison death, 1948 Party endorsement and institutional purge. Citations and dates match in both languages. Korean hypothesis name follows the author: 신 리셴코주의. Final title follows the latest author instruction: 신(新) 리센코주의와 정렬세."
+      "review_note": "July, nine years/three months, aircraft and clip quantities use English words; source punctuation attaches Korean suffixes to digits. Shared personal paragraphs match the English statement. User-approved correction: 이승에서나 → in this life. Updated Android availability; personal paragraphs unchanged. Added iOS gallery and four physical-device cheat captures in both languages. Reviewed Android overview, regular Galaxy gameplay images/GIF, OS table, Gradle installation, shared-core paragraph and current-main versus v0.16 distinction; author opening unchanged. Reviewed 2026-10-30 Android coverage/link audit; current main and released v0.16 remain distinct. Lux sentence follows author commit 39b05834 where applicable. Reviewed v0.17 Android release, download links and current-version wording; historical v0.16 test results retained. Reviewed the Android experience essay, firsthand accounts, qualified hypotheses, public sources, author voice and README link. Private evidence stays outside Git. Reviewed Lysenko history expansion: vernalization versus heritable claims, Vavilov persecution, arrest and prison death, 1948 Party endorsement and institutional purge. Citations and dates match in both languages. Korean hypothesis name follows the author: 신 리셴코주의. Final title follows the latest author instruction: 신(新) 리센코주의와 정렬세. Reviewed web PR #24 attribution, web build instructions and follow-up fixes; personal paragraphs preserved."
     },
     "CHANGELOG.md": {
       "english": "CHANGELOG.en.md",
-      "source_sha256": "7888c8b57223caadffaa4ddc8c60e5fdc1db70494175a007477c9c0757ca9c20",
-      "english_sha256": "4daed044a883f77b7cb08e93caf7768d28dccffd299642fe853d7bd04276e18b",
+      "source_sha256": "486763e85998f247b7ada2494de3f318b84300054d358a5dce0bb74c23bda6e4",
+      "english_sha256": "11fd2a040ff52c56a46abe47e42916f7c86aa94c98430127bedec0d03fb0f00b",
       "reviewed_numeric_difference": {
         "source_only": {
           "10": 2,
@@ -47,17 +47,17 @@
           "1,482": 1
         }
       },
-      "review_note": "Month/day headings and counts use English words; source 자원1,482개·코어21개 is rendered as 1,482 resources and 21 core tests. Every release URL and historical count retained. Reviewed 2026-10-30 Android coverage/link audit; current main and released v0.16 remain distinct. Lux sentence follows author commit 39b05834 where applicable. Reviewed v0.17 Android release, download links and current-version wording; historical v0.16 test results retained."
+      "review_note": "Month/day headings and counts use English words; source 자원1,482개·코어21개 is rendered as 1,482 resources and 21 core tests. Every release URL and historical count retained. Reviewed 2026-10-30 Android coverage/link audit; current main and released v0.16 remain distinct. Lux sentence follows author commit 39b05834 where applicable. Reviewed v0.17 Android release, download links and current-version wording; historical v0.16 test results retained. Reviewed web PR #24 attribution, web build instructions and follow-up fixes; personal paragraphs preserved."
     },
     "CREDITS.md": {
       "english": "CREDITS.en.md",
-      "source_sha256": "d315682146492760c545f9f10da1b09d1fc3189b1d4ed88e43b3db59cda838f3",
-      "english_sha256": "c1bba9c251b186fbb51629081275eb1c3b63bb76e2fb54e0dfce152b14478d4b",
+      "source_sha256": "49df8a72a17ef78e2f09e6ab7e09355de3ccff988a2511e89c5292005214c250",
+      "english_sha256": "e12a1d0a5676bef4000b131fe28edffef5a904e229b19d4211e11a35da25f208",
       "reviewed_numeric_difference": {
         "source_only": {},
         "english_only": {}
       },
-      "review_note": "Compared source and English meaning, tables, commands, attribution and current/planned status. Numeric tokens match."
+      "review_note": "Compared source and English meaning, tables, commands, attribution and current/planned status. Numeric tokens match. Reviewed web PR #24 attribution, web build instructions and follow-up fixes; personal paragraphs preserved."
     },
     "CONTRIBUTING.md": {
       "english": "CONTRIBUTING.en.md",

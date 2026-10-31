@@ -46,7 +46,8 @@
     "docs/ground-aa-expansion.md",
     "docs/public/hud-improvement-plan-20261028.md",
     "docs/public/auto-aim-visibility-plan-20261028.md",
-    "docs/release-notes-plan.md"
+    "docs/release-notes-plan.md",
+    "docs/web-port-20261028.md"
   ],
   "base_read": [
     "AGENTS.md",
@@ -523,6 +524,36 @@
         "docs/evidence/release-tool-20261029.json",
         "docs/evidence/release-history-20261029.json",
         "docs/evidence/android-main-readiness-20261030.json"
+      ]
+    },
+    "web": {
+      "label": "웹(WebAssembly) 빌드",
+      "read": [
+        "docs/web-port-20261028.md",
+        "docs/coordinate-policy.md",
+        "docs/rendering-policy.md",
+        "docs/runtime-policy.md",
+        "docs/keyboard-input-policy.md"
+      ],
+      "sources": [
+        "Sources/Web/*",
+        "Web/CMakeLists.txt",
+        "Web/shell.html",
+        "Web/tools/package_assets.py",
+        "Sources/Core/*",
+        "Sources/iOS/*"
+      ],
+      "tests": [
+        "Web/tests/browser-smoke.mjs",
+        "Web/tests/hud-editor.mjs",
+        "Web/tests/orientation-hold.mjs",
+        "Tests/CoreTests.cpp",
+        "Tests/GameSessionTests.cpp",
+        "Tests/KeyboardInputTests.cpp"
+      ],
+      "evidence": [
+        "docs/evidence/web-port-20261028.json",
+        "docs/current-status.md"
       ]
     }
   }

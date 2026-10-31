@@ -81,3 +81,7 @@ VTOL 후속 크기 수정: 야크112·해리어108·F35B116. 높이는 이미지
 기본 배치는 기존480×320 변환을 유지한다. HUDConfiguration의 기능8묶음·치트 방향키·상단 장식은 안전영역에 대한 상대 위치로 저장한다. 각 묶음의 그림과 hit rect는 같은 transform을 쓴다. 중앙480영역 밖으로 옮긴 버튼도 판정한다. 누르기 시작한 버튼이 해당 터치를 해제까지 소유하며, 다른 버튼 위에서 끝나도 그 버튼을 실행하지 않는다. 사용자 배치에서 새 입력 겹침은 적용을 막는다. 창 축소로 저장 배치가 겹치면 기본 배치로 표시하고, 충분한 크기로 돌아오면 저장 배치를 복원한다.
 
 상단 장식은 편집 선택·드래그만 받으며 전투 hit rect를 만들지 않는다. 오른쪽 도구 패널은 안전영역 안에 배치하고 최소44pt 버튼 높이를 유지한다. 드래그를 시작하면 도구를 접고 TOOLS로 다시 연다.
+
+## 웹 입력
+
+캔버스의 CSS 픽셀 크기와 devicePixelRatio로 drawable을 정하고 같은 CanvasGeometry·Viewport 계산을 쓴다. 브라우저 창은 4:3보다 세로로 길 수 있으므로 CanvasGeometry에 넣는 높이를 가로×3/4 이하로 제한한다. 논리 화면은 iPad와 같은 480×360이 되고 남는 높이는 Viewport.drawable의 여백이다. Pointer Events의 CSS 좌표를 `Viewport.logical`에 넣으며 pointerId가 UITouch 역할을 한다. 안전영역은 CSS env(safe-area-inset-*)에서 읽는다. DeviceMotion의 m/s² 가속도를 g로 바꾼다. Apple 모바일 WebKit(iPhone·iPad UA, 터치가 있는 Macintosh UA)은 CoreMotion과 같은 부호라 9.80665로만 나누고, 그 밖의 표준 부호(Android 등)는 −9.80665로 나눈다. 권한 함수 유무로는 판별하지 않는다(Android Chrome 156에도 있다). `window.orientation`(없으면 `screen.orientation.angle`) 90을 LandscapeRight로 보고 X/Y를 반전한다. iPadOS Safari는 가로에서도 `screen.orientation.angle` 0을 보고한다. 2026-10-29 iPad mini 6 LandscapeRight, Android 패드 양쪽 가로 방향에서 오른쪽·왼쪽 기울기 이동을 확인했다. [이식 문서](web-port-20261028.md).

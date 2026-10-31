@@ -28,6 +28,8 @@ I defined the comparisons with the original, the wider screen, platform and modu
 
 Codex performed behavior analysis, C++ and Objective-C++ implementation, image creation and integration, builds, tests, installation, and documentation. The incorrect implementations and their corrections are recorded in [troubleshooting](docs/en/public/troubleshooting.md).
 
+Web development: [fastutlego](https://github.com/fastutlego), [PR #24](https://github.com/gelb2/HeavyMach/pull/24). The contribution implements a WebAssembly host using the existing C++ core, a WebGL2 renderer, browser input, audio, IndexedDB storage, HUD editing and automated tests. Original commits, authors and co-author records are retained; fixes found during review are recorded in separate Codex commits.
+
 <a id="그림과-플레이-자료"></a>
 
 ## Art and gameplay media

@@ -8,6 +8,12 @@
 
 [Latest release](https://github.com/gelb2/HeavyMach/releases/latest) · [All GitHub releases](https://github.com/gelb2/HeavyMach/releases)
 
+<a id="다음-릴리스-웹판"></a>
+
+## Next release — web version
+
+[fastutlego](https://github.com/fastutlego) contributes the WebAssembly·WebGL2 version and browser tests in [PR #24](https://github.com/gelb2/HeavyMach/pull/24). Original commits and authorship are retained. Follow-up Codex fixes cover upgrade-window pausing, IndexedDB read/write failures, HUD commit acknowledgement and WebGL context restoration. Existing Apple, Android, shared core and resources remain unchanged.
+
 | Version | Tag date | Main changes |
 |---|---|---|
 | [v0.17](#v017) | 2026-10-30 | Android apps and upgrade-window fix |
