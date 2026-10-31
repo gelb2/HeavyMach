@@ -827,3 +827,13 @@ VTOL 첫 생성 프롬프트와 스킬 수정 커밋을 대조했다. 요청에 
 - 기존 소유자 전용 접근 유지. 기술검토 14절·기존 앵커·게임 캡처 6개, 원고 6절·다운로드 바이트 일치를 확인했다.
 - Safari 로컬에서 원고 표시와 승인 리뷰 절 목차 클릭·문단 배치를 확인했다. GitHub Contributors 화면의 fastutlego 19 commits와 main의 원저자 커밋 목록 19개도 직접 확인했다.
 - GitHub 문서는 `docs/pr24-followup`에서 관리하며 Tauri 앱 구현·새 릴리스 태그는 만들지 않았다. 웹 PR은 main `91e4c7a2`에 포함됐다.
+
+
+## 2026-10-31 첫 PR 원고 문장 수정
+
+승인 리뷰 누락을 다룬 절을 두 번째 절로 옮겼다. 과장된 소제목과 방어적인 문장을 고쳤다. 사용자 제공 원문과 기여자·검사 기록은 보존했다.
+
+- [수정 원고](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/first-pr-and-tauri)
+- source: `69fc0be1766e1e451f6283752f3879a4b43f8f6e`
+- deployment: `appgdep_6ae5e88fdfc481919dac3696ab6b15cc` · succeeded · 2026-10-31T13:09:50Z
+- 원고 6절의 순서·기존 앵커·링크·다운로드 일치를 검사했다. Safari 화면 확인은 `cgWindowNotFound`로 완료하지 못했다.
