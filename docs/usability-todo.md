@@ -1,11 +1,54 @@
 # 버그 수정·사용성 개선 과제
 
-## 웹 PR 통합과 데스크톱 검토 — 2026-10-31
+<a id="hm-pr24-integration"></a>
 
-- 웹 업그레이드 정지·IndexedDB 실패 복구·HUD 비동기 저장·WebGL 복구 수정과 회귀 검사 완료. [결과](evidence/pr24-web-fixes-20261031.json).
-- 기여자의 19개 커밋·작성자 기록 보존. README·CREDITS·CHANGELOG의 국영문에 fastutlego와 PR #24 연결.
-- Tauri와 Electron을 저장·웹뷰·WebGL·음향·입력·메모리·배포 관점에서 비교하고 기존 보고서에 추가한다. 데스크톱 제품 빌드는 별도 작업이다.
-- Apple의 미사용 경험치가 남은 미션 진입을 검사한다. 기존 HMGameView의 강제 정지 해제문은 웹과 같은 형태이며 이번 PR에서 수정하지 않았다.
+## HM-PR24-INTEGRATION — 웹 PR 통합·기여 기록 보존 · 2026-10-31
+
+[PR #24](https://github.com/gelb2/HeavyMach/pull/24)를 merge commit `757523e17f5ba54449c34f20f9f0c0690161d40d`로 develop에 병합했다. 원저자는 [fastutlego](https://github.com/fastutlego)다. PR #68로 develop→main을 병합했다(`91e4c7a2`). 새 버전 태그·릴리스 발행은 아직 하지 않았다.
+
+- [x] 기여자의 원본 19개 SHA가 develop의 조상으로 모두 남아 있는지 검사했다. SHA가 같으므로 작성자·작성 시각·메시지·공동 작성자 표기도 그대로다. GitHub API에서 19개 모두 fastutlego 계정에 연결됨을 확인했다.
+- [x] 수정은 별도 2개 커밋으로 추가했다. squash·기존 커밋 재작성·강제 푸시는 하지 않았다. 머지 트리와 검사한 최종 트리가 같다.
+- [x] 웹 업그레이드 정지·IndexedDB 실패 복구·HUD 저장 완료 확인·WebGL 복구를 수정하고 검사했다. Apple·Android·코어·자원 등의 보호 파일 2,143개 해시가 같고 머지 후 보호 경로 차이도 없다.
+- [x] README·CREDITS·CHANGELOG 국영문에 작성자와 PR 링크, 웹 구현 기여를 적었다. 후속 버그 수정은 별도로 설명했다.
+- [x] main 병합 직전 사용자 웹 편집·원격 변경을 확인했다. main 전용 커밋은 기존 병합 3개이고 파일 차이는 없었다. develop→main merge commit으로 원본 19개 SHA와 공동 작성자 기록을 유지했다.
+- [x] main 병합 후 원본 19개 SHA의 조상 관계·GitHub 계정 연결·README/CREDITS/CHANGELOG 국영문 6개 표기를 다시 검사했다. main 트리는 검사한 최종 코드와 같다.
+- [x] main 병합 뒤 GitHub Contributors 통계 API에서 **fastutlego 19개 기여**를 확인했다. 공동 작성자 claude도 19개로 집계된다. 원저자 SHA·계정 연결과 원래 공동 작성자 표기를 유지했다.
+- [ ] 저장소 요약 Contributors 목록의 캐시 갱신도 확인한다. 통계 API에는 반영됐지만 요약 API는 이전 목록을 반환했다. 이번 브라우저 직접 확인은 창 접근 오류로 수행하지 못했다.
+- [ ] 이후 외부 PR은 검토 결과를 GitHub 리뷰로 남기고 Approve한 뒤 merge commit으로 병합한다. PR #24에서는 승인 리뷰를 생략했다.
+- [ ] 새 릴리스에서 PR·작성자·웹 기능을 소개한다. 기존 네이티브 앱을 웹판으로 교체했다고 쓰지 않는다.
+- [ ] 실제 iPhone Safari·Android Chrome의 입력·음향·저장·복귀를 검사한다. 이번 Apple 검사는 시뮬레이터, Android 검사는 에뮬레이터에서 했다.
+- [ ] Apple의 미사용 경험치가 남은 미션 진입을 별도 재현한다. 기존 HMGameView의 강제 정지 해제문은 웹과 같은 형태이며 이번 PR에서 수정하지 않았다.
+
+[수정·검사](evidence/pr24-web-fixes-20261031.json) · [머지·기여 보존 검사](evidence/pr24-merge-preservation-20261031.json) · [검토와 후속 보고서](reviews/pr24-web-review-20261031.md). GitHub는 기본 브랜치 포함 여부와 계정에 연결된 커밋 이메일을 Contributors 표시 조건으로 설명한다. [공식 안내](https://docs.github.com/en/repositories/viewing-activity-and-data-for-your-repository/viewing-a-projects-contributors).
+
+<a id="hm-desktop-web"></a>
+
+## HM-DESKTOP-WEB — Tauri·Electron 비교와 Windows·Mac·웹 확장 · 2026-10-31
+
+사용자는 Electron을 잠깐 사용하며 소스 구조·웹뷰 로딩 안정성·자원 사용에 의문을 가졌고, Vue 전용 프로젝트가 아닌 HeavyMach에도 Tauri가 적합한지 물었다. 기존 iOS·Android 네이티브 앱은 유지한다. 웹 기여를 Windows·Mac·브라우저로 활용하는 방법을 조사한다.
+
+- [x] Tauri 2의 시스템 웹뷰와 Electron의 Chromium 포함 방식, 코드 구조·저장·로딩·배포를 비교했다. [보고서 12절](reviews/pr24-web-review-20261031.md#tauri-electron).
+- [ ] 별도 작업 브랜치에서 `Desktop/Tauri/` 후보를 만든다. 기존 `Web/` 산출물을 포함하고 창·파일 저장만 Rust로 담당한다. Apple·Android·공용 코어를 수정하지 않는다. 현재는 검토안이며 데스크톱 앱 구현을 시작하지 않았다.
+- [ ] 브라우저는 IDBFS/IndexedDB를 유지한다. 데스크톱은 같은 저장 형식과 저장 시점을 쓰되 앱 데이터 폴더에 임시 파일→교체·백업·쓰기 성공 확인·실패 재시도를 구현한다. 초기 읽기가 끝나야 게임을 시작한다. 발사·프레임마다 파일이나 IPC를 쓰지 않는다.
+- [ ] 오프라인 실행, 고정 저장 경로, 업데이트 후 진행 유지, 저장 내보내기·가져오기, 디스크 쓰기 실패·종료 직전 저장을 검사한다.
+- [ ] 같은 Wasm·자원·화면·전투 조건에서 Tauri와 Electron의 시작 시간·전체 프로세스 메모리·프레임 간격·30분 전투를 비교한다. 현재 실행 수치로 Tauri가 더 빠르거나 안정적이라고 단정하지 않는다.
+- [ ] Mac WKWebView와 Windows WebView2에서 그래픽 복구·음향·키보드·포커스·절전·전체 화면·설치·업데이트를 검사한다. Windows 실행 환경을 확보한다. 기존 native Mac 앱도 유지한다.
+- [ ] 순수 웹판의 공식 정적 호스팅·고정 origin·Wasm MIME·버전별 자원 캐시·저장 내보내기·브라우저별 검사를 정한다. 기여자의 배포 사이트에 이번 수정본이 자동 반영됐다고 간주하지 않는다. 오프라인/PWA는 별도 검토한다.
+- [ ] 결과를 기존 통합 보고서에 추가하고 채택한 구조·배포 방식·빌드 경로를 문서화한다. 독립 사이트를 만들지 않는다.
+
+<a id="hm-first-pr-story"></a>
+
+## HM-FIRST-PR-STORY — 처음 받은 외부 PR에 관한 글감 · 2026-10-31
+
+- [x] 사용자 제공 원문 전체를 [첫 PR 경험 원문](references/developer-background/user-first-pr-20261031.md)에 보존했다. 개발 후속 과제와 별도 글감으로 등록했다.
+- [ ] 첫 외부 PR을 받은 상황, 기여자가 투자한 시간에 대한 생각과 기술적 완성도 평가를 개발자 1인칭으로 정리한다.
+- [ ] Android 네이티브를 교체해야 하는가, 그러면 iOS 네이티브는 왜 남기는가라는 당시 고민을 담는다. 당시 질문과 이후 결정은 구분한다.
+- [ ] 웹 게임이라는 발상은 이 PR을 보기 전에는 생각하지 못했다는 경험을 담는다. Windows·Mac·웹 지원 고민을 떠올린 뒤 PR을 다시 본 순서로 쓴다.
+- [ ] 기여자의 기술적 성취를 프로젝트에 남길 방법을 코드·원본 커밋·크레딧·릴리스 기록과 연결한다. 작성자의 웹 구현을 프로젝트 소유자나 Codex가 만든 것으로 서술하지 않는다.
+- [ ] 기술 검토·수정·검사·develop→main 병합 결과와 이후 실제 데스크톱 개발 결과를 구분한다. Tauri 채택·앱 완성·Contributor 표시를 미리 완료로 쓰지 않는다.
+- [ ] GitHub 완성 원고의 위치·README 연결을 정하고 SaaS 담당 세션에 같은 원문·기술 근거를 전달한다. 지금은 글감 등록 단계다.
+
+[집필 자료 안내](public/publication-inventory.md) · [검토 보고서](reviews/pr24-web-review-20261031.md).
 
 
 <a id="hm-gui-install-guide"></a>
@@ -59,6 +102,8 @@ main에 배포한 버전마다 변경 내용과 검사 결과를 정리하고 Gi
 
 ## HM-WEB — 웹(WebAssembly) 빌드 후속 · 2026-10-28
 
+아래 2026-10-28~29 항목은 기여자가 제공한 웹 구현·기기 확인 기록이다. 2026-10-31 소유자 측 수정·검사·머지 결과는 위 HM-PR24-INTEGRATION을 따른다.
+
 `porting/wasm`에 일반 앱 웹 빌드를 구현했다. 헤드리스 Chrome 자동 검사와 Wasm 코어 검사21개는 통과했다. [이식 문서](web-port-20261028.md).
 
 - [ ] 실제 iPhone Safari·Android Chrome에서 양쪽 가로 방향 틸트, 멀티터치, 소리, 안전영역, 프레임을 확인한다. DeviceMotion 축·부호 변환을 실측과 대조한다.
@@ -77,7 +122,7 @@ main에 배포한 버전마다 변경 내용과 검사 결과를 정리하고 Gi
 - [ ] iPhone 기울기 확인. 다른 iPadOS 버전에서 반대 가로의 방향 값(`window.orientation` 0으로 보고) 확인.
 - [x] 세로를 지날 때 멈춤 메뉴 대신 보류 후 가로 복귀 시 자동 재개(2026-10-29 사용자 결정, 헤드리스·Android 패드 실기기 확인). iPhone 확인은 남음.
 - [x] v0.14 HUD 편집기를 웹에 옮겼다(2026-10-29, 헤드리스 검사 통과). 실제 iPad 확인은 아래 항목.
-- [ ] iOS·웹·Android가 함께 쓰는 `Sources/Platform`으로 메뉴·HUD·프레임 조립을 합친다.
+- 철회된 제안: `Sources/Platform`으로 iOS·웹·Android를 선행 공통화하지 않는다. 기존 Apple·Android 파일을 보존하고 웹·데스크톱 전용 경계에서 구현한다.
 
 <a id="hm-keyboard-aim-threshold"></a>
 

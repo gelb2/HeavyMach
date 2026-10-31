@@ -1,5 +1,12 @@
 # 2026-10-25 문서·코드·앱 일치 체계 점검 및 보완
 
+## PR #24 main 병합·후속 TODO — 2026-10-31
+
+웹 PR을 `757523e1`로 develop에 병합했다. 검사한 `fdb16df0`와 머지 트리가 같다. 원본 19개 SHA가 모두 develop에 남아 있고 GitHub author도 모두 fastutlego다. 보호 경로의 차이는 없다. 후속 PR #68로 develop→main을 병합했다(`91e4c7a2`). main에서도 원본 19개 커밋·검사한 트리·국영문 기여 표기 6개를 확인했다. 새 태그는 만들지 않았다. Contributors 통계 API에서 fastutlego 19개 기여와 공동 작성자 claude 19개를 확인했다. 요약 Contributors API는 이전 캐시를 반환한다. [머지 검사](evidence/pr24-merge-preservation-20261031.json).
+
+[개발 TODO](usability-todo.md#hm-pr24-integration)에 기여 보존·웹 실기기·Tauri/Electron 비교·데스크톱 후보를 정리했다. [첫 외부 PR 글감](usability-todo.md#hm-first-pr-story)은 원문을 별도로 보존하고 개발 동기·SaaS 집필 안내에 연결했다.
+
+
 ## PR #24 후속 수정과 플랫폼 검사 — 2026-10-31
 
 fastutlego의 웹 기여 19개 커밋 뒤에 웹 전용 수정과 회귀 검사를 추가했다. 업그레이드 상태에서 전투를 정지하고, IndexedDB 초기 읽기에 실패하면 재시도 전까지 게임을 시작하지 않는다. 쓰기 실패는 진행과 HUD 초안을 유지하며 재시도한다. WebGL 손실 뒤 GPU 객체를 다시 만들고 기존 게임을 정지 메뉴에서 재개한다.

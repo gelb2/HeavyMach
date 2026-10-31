@@ -1,0 +1,794 @@
+{
+  "date": "2026-10-31",
+  "pr": 24,
+  "base": "2f82c85214d84c470a3936c452a2d46a524eeb32",
+  "head": "9d2505f74ad95dc0c24692f2360623401fbe15b2",
+  "before_rebase": "568331251cd275de02474a78912f953b424006b7",
+  "force_push_at": "2026-10-31T07:30:25Z",
+  "changed_files": 38,
+  "added_lines": 4895,
+  "deleted_lines": 2,
+  "old_conflicts": [
+    ".gitignore",
+    "AGENTS.md",
+    "README.md",
+    "docs/current-status.md",
+    "docs/design.md",
+    "docs/document-map.json",
+    "docs/usability-todo.md"
+  ],
+  "current_merge_conflicts": 0,
+  "current_rebase": "HEAD is up to date",
+  "web_before_after_identical": true,
+  "protected_product_paths_unchanged": true,
+  "merged": false,
+  "web_wasm_bytes": 709803,
+  "assets": {
+    "files": 799,
+    "packages": [
+      {
+        "data": "hm-assets-1.data",
+        "files": 468,
+        "bytes": 20905496,
+        "sha256": "8176c4e73c8cea236f692545d1e9ba707f0a17f689f1ec4034902da960d36a10"
+      },
+      {
+        "data": "hm-assets-2.data",
+        "files": 310,
+        "bytes": 20170652,
+        "sha256": "93d5c87fefc1e93427ad101562cce24985327e7b6cc57c5d60fc76e12dda84f8"
+      },
+      {
+        "data": "hm-assets-3.data",
+        "files": 13,
+        "bytes": 20262890,
+        "sha256": "45fe34130a1a1eb41f60ae8066ff93345119f513943f05b106af1e30805d3a4f"
+      },
+      {
+        "data": "hm-assets-4.data",
+        "files": 8,
+        "bytes": 11579833,
+        "sha256": "330be5fcd2f4f399a859eec467c0536d2be4a4c73d2a4fb7fd2c316e8fb4f284"
+      }
+    ]
+  },
+  "core_wasm_tests": {
+    "passed": 24,
+    "total": 24,
+    "assertions": "Debug"
+  },
+  "resources_sha256": {
+    "passed": 1504
+  },
+  "translation_failures": [
+    "README source hash",
+    "inline code",
+    "table structure",
+    "link targets"
+  ],
+  "suites": {
+    "smoke": {
+      "url": "http://127.0.0.1:48724/",
+      "touch": false,
+      "steps": [
+        {
+          "name": "title",
+          "canvas": [
+            694.857,
+            320
+          ],
+          "gameFramesPerSecond": 52.4,
+          "callbackInterval": 0.0167,
+          "ticksPerCallback": 1
+        },
+        {
+          "name": "slots"
+        },
+        {
+          "name": "mode"
+        },
+        {
+          "name": "mission"
+        },
+        {
+          "name": "game-start",
+          "screen": "game",
+          "time": 20.5333,
+          "canvas": [
+            694.857,
+            320
+          ],
+          "loading": 0,
+          "mission": 0,
+          "stage": 0,
+          "playerX": -1040,
+          "playerY": -40.5,
+          "hp": 241,
+          "enemies": 3,
+          "bullets": 1,
+          "paused": 0,
+          "gameState": 0,
+          "decodes": 160,
+          "loadError": 0,
+          "aimMode": 1,
+          "aimTarget": 0,
+          "inputBlocked": 0,
+          "keyboardFire": 0,
+          "gameMenu": 0,
+          "resumeRequired": 0,
+          "active": 1,
+          "keyboardAimX": 0,
+          "callbackInterval": 0.0167,
+          "ticksPerCallback": 1,
+          "motion": 0,
+          "tilt": [
+            0,
+            0,
+            -1
+          ],
+          "hudEditing": 0,
+          "hudCustomized": 0,
+          "hudFallback": 0,
+          "hudSelected": 2,
+          "hudDraftCustomized": 0,
+          "orientationHold": 0
+        },
+        {
+          "name": "fire",
+          "maxBullets": 3
+        },
+        {
+          "name": "move-right",
+          "from": -1040,
+          "to": -867.4
+        },
+        {
+          "name": "fire-after-move",
+          "maxBullets": 3,
+          "state": {
+            "screen": "game",
+            "time": 26.5833,
+            "canvas": [
+              694.857,
+              320
+            ],
+            "loading": 0,
+            "mission": 0,
+            "stage": 0,
+            "playerX": -867.4,
+            "playerY": -40.5,
+            "hp": 206,
+            "enemies": 3,
+            "bullets": 2,
+            "paused": 0,
+            "gameState": 0,
+            "decodes": 161,
+            "loadError": 0,
+            "aimMode": 1,
+            "aimTarget": 0,
+            "inputBlocked": 0,
+            "keyboardFire": 0,
+            "gameMenu": 0,
+            "resumeRequired": 0,
+            "active": 1,
+            "keyboardAimX": 264,
+            "callbackInterval": 0.0167,
+            "ticksPerCallback": 1,
+            "motion": 0,
+            "tilt": [
+              0,
+              0,
+              -1
+            ],
+            "hudEditing": 0,
+            "hudCustomized": 0,
+            "hudFallback": 0,
+            "hudSelected": 2,
+            "hudDraftCustomized": 0,
+            "orientationHold": 0
+          }
+        },
+        {
+          "name": "jump",
+          "from": -40.5,
+          "to": 12.41
+        },
+        {
+          "name": "auto-aim",
+          "before": 1,
+          "on": 2,
+          "target": 1,
+          "bulletsWhileFiring": 2,
+          "off": 1
+        },
+        {
+          "name": "save-after-slot-select",
+          "bytes": 3624
+        },
+        {
+          "name": "pause",
+          "paused": 1
+        },
+        {
+          "name": "reload-save",
+          "bytes": 3624
+        },
+        {
+          "name": "slots-after-reload"
+        }
+      ],
+      "errors": [],
+      "ok": true
+    },
+    "hud": {
+      "url": "http://127.0.0.1:48724/",
+      "steps": [
+        {
+          "name": "mission-no-entry",
+          "visible": false
+        },
+        {
+          "name": "pause",
+          "paused": 1,
+          "gameMenu": 1
+        },
+        {
+          "name": "open-editor",
+          "hudEditing": 1,
+          "selected": 2
+        },
+        {
+          "name": "drag",
+          "selected": 1,
+          "draftCustomized": 1,
+          "timeFrozen": true
+        },
+        {
+          "name": "apply",
+          "hudEditing": 0,
+          "customized": 1,
+          "file": "{\"version\":1,\"positions\":[null,[0.28240962895373811,0.76109215017064846],null,null,null,null,null,null,null,null]}"
+        },
+        {
+          "name": "resume",
+          "paused": 0,
+          "gameMenu": 0
+        },
+        {
+          "name": "menu-button-after-layout",
+          "gameMenu": 1,
+          "paused": 1
+        },
+        {
+          "name": "reload",
+          "customized": 1,
+          "file": "{\"version\":1,\"positions\":[null,[0.28240962895373811,0.76109215017064846],null,null,null,null,null,null,null,null]}"
+        },
+        {
+          "name": "reopen-from-pause",
+          "hudEditing": 1
+        },
+        {
+          "name": "sample-scene",
+          "label": "HUD LAYOUT · SAMPLE\nJUMP · Drag to move."
+        },
+        {
+          "name": "reset",
+          "hudEditing": 0,
+          "customized": 0,
+          "file": "{\"version\":1,\"positions\":[null,null,null,null,null,null,null,null,null,null]}"
+        }
+      ],
+      "errors": [],
+      "ok": true
+    },
+    "orientation": {
+      "url": "http://127.0.0.1:48724/",
+      "steps": [
+        {
+          "name": "game",
+          "active": 1,
+          "hold": 0,
+          "paused": 0,
+          "gameMenu": 0,
+          "resumeRequired": 0,
+          "time": 17.1167
+        },
+        {
+          "name": "portrait",
+          "active": 0,
+          "hold": 1,
+          "paused": 0,
+          "gameMenu": 0,
+          "resumeRequired": 0,
+          "time": 20.1333,
+          "timeFrozen": true
+        },
+        {
+          "name": "landscape",
+          "active": 1,
+          "hold": 0,
+          "paused": 0,
+          "gameMenu": 0,
+          "resumeRequired": 0,
+          "time": 21.6167
+        },
+        {
+          "name": "portrait-then-blur",
+          "active": 0,
+          "hold": 0,
+          "paused": 1,
+          "gameMenu": 1,
+          "resumeRequired": 1,
+          "time": 21.6167
+        },
+        {
+          "name": "landscape-after-blur",
+          "active": 1,
+          "hold": 0,
+          "paused": 1,
+          "gameMenu": 1,
+          "resumeRequired": 1,
+          "time": 23.1
+        }
+      ],
+      "errors": [],
+      "ok": true
+    }
+  },
+  "runtime_probe": {
+    "normal": {
+      "screen": "game",
+      "time": 18.4,
+      "canvas": [
+        694.857,
+        320
+      ],
+      "loading": 0,
+      "mission": 0,
+      "stage": 0,
+      "playerX": -1040,
+      "playerY": -40.5,
+      "hp": 256,
+      "enemies": 3,
+      "bullets": 0,
+      "paused": 0,
+      "gameState": 0,
+      "decodes": 157,
+      "loadError": 0,
+      "aimMode": 1,
+      "aimTarget": 0,
+      "inputBlocked": 0,
+      "keyboardFire": 0,
+      "gameMenu": 0,
+      "resumeRequired": 0,
+      "active": 1,
+      "keyboardAimX": 0,
+      "callbackInterval": 0.0167,
+      "ticksPerCallback": 1,
+      "motion": 0,
+      "tilt": [
+        0,
+        0,
+        -1
+      ],
+      "hudEditing": 0,
+      "hudCustomized": 0,
+      "hudFallback": 0,
+      "hudSelected": 2,
+      "hudDraftCustomized": 0,
+      "orientationHold": 0
+    },
+    "seed": {
+      "exp": 2415,
+      "level": 3,
+      "bytes": 3624
+    },
+    "upgradeBefore": {
+      "screen": "game",
+      "time": 18.4167,
+      "canvas": [
+        694.857,
+        320
+      ],
+      "loading": 0,
+      "mission": 1,
+      "stage": 0,
+      "playerX": -4121.01,
+      "playerY": -60.57,
+      "hp": 256,
+      "enemies": 2,
+      "bullets": 3,
+      "paused": 0,
+      "gameState": 0,
+      "decodes": 166,
+      "loadError": 0,
+      "aimMode": 1,
+      "aimTarget": 0,
+      "inputBlocked": 0,
+      "keyboardFire": 0,
+      "gameMenu": 0,
+      "resumeRequired": 0,
+      "active": 1,
+      "keyboardAimX": 0,
+      "callbackInterval": 0.0167,
+      "ticksPerCallback": 1,
+      "motion": 0,
+      "tilt": [
+        0,
+        0,
+        -1
+      ],
+      "hudEditing": 0,
+      "hudCustomized": 0,
+      "hudFallback": 0,
+      "hudSelected": 2,
+      "hudDraftCustomized": 0,
+      "orientationHold": 0
+    },
+    "upgradeAfter": {
+      "screen": "game",
+      "time": 19.4167,
+      "canvas": [
+        694.857,
+        320
+      ],
+      "loading": 0,
+      "mission": 1,
+      "stage": 0,
+      "playerX": -4121.01,
+      "playerY": -60.57,
+      "hp": 249,
+      "enemies": 2,
+      "bullets": 5,
+      "paused": 0,
+      "gameState": 0,
+      "decodes": 167,
+      "loadError": 0,
+      "aimMode": 1,
+      "aimTarget": 0,
+      "inputBlocked": 0,
+      "keyboardFire": 0,
+      "gameMenu": 0,
+      "resumeRequired": 0,
+      "active": 1,
+      "keyboardAimX": 0,
+      "callbackInterval": 0.0166,
+      "ticksPerCallback": 1,
+      "motion": 0,
+      "tilt": [
+        0,
+        0,
+        -1
+      ],
+      "hudEditing": 0,
+      "hudCustomized": 0,
+      "hudFallback": 0,
+      "hudSelected": 2,
+      "hudDraftCustomized": 0,
+      "orientationHold": 0
+    },
+    "afterUpgradeButtons": {
+      "screen": "game",
+      "time": 20.85,
+      "canvas": [
+        694.857,
+        320
+      ],
+      "loading": 0,
+      "mission": 1,
+      "stage": 0,
+      "playerX": -4121.01,
+      "playerY": -60.57,
+      "hp": 214,
+      "enemies": 2,
+      "bullets": 0,
+      "paused": 0,
+      "gameState": 0,
+      "decodes": 167,
+      "loadError": 0,
+      "aimMode": 1,
+      "aimTarget": 0,
+      "inputBlocked": 0,
+      "keyboardFire": 0,
+      "gameMenu": 0,
+      "resumeRequired": 0,
+      "active": 1,
+      "keyboardAimX": 0,
+      "callbackInterval": 0.0166,
+      "ticksPerCallback": 1,
+      "motion": 0,
+      "tilt": [
+        0,
+        0,
+        -1
+      ],
+      "hudEditing": 0,
+      "hudCustomized": 0,
+      "hudFallback": 0,
+      "hudSelected": 2,
+      "hudDraftCustomized": 0,
+      "orientationHold": 0
+    },
+    "storageBeforeFailure": {
+      "errorVisible": "none",
+      "state": {
+        "screen": "game",
+        "time": 20.9833,
+        "canvas": [
+          694.857,
+          320
+        ],
+        "loading": 0,
+        "mission": 1,
+        "stage": 0,
+        "playerX": -4121.01,
+        "playerY": -60.57,
+        "hp": 214,
+        "enemies": 2,
+        "bullets": 0,
+        "paused": 0,
+        "gameState": 0,
+        "decodes": 167,
+        "loadError": 0,
+        "aimMode": 1,
+        "aimTarget": 0,
+        "inputBlocked": 0,
+        "keyboardFire": 0,
+        "gameMenu": 0,
+        "resumeRequired": 0,
+        "active": 1,
+        "keyboardAimX": 0,
+        "callbackInterval": 0.0166,
+        "ticksPerCallback": 1,
+        "motion": 0,
+        "tilt": [
+          0,
+          0,
+          -1
+        ],
+        "hudEditing": 0,
+        "hudCustomized": 0,
+        "hudFallback": 0,
+        "hudSelected": 2,
+        "hudDraftCustomized": 0,
+        "orientationHold": 0
+      }
+    },
+    "storageAfterFailure": {
+      "errorVisible": "none",
+      "state": {
+        "screen": "game",
+        "time": 20.9833,
+        "canvas": [
+          694.857,
+          320
+        ],
+        "loading": 0,
+        "mission": 1,
+        "stage": 0,
+        "playerX": -4121.01,
+        "playerY": -60.57,
+        "hp": 214,
+        "enemies": 2,
+        "bullets": 0,
+        "paused": 0,
+        "gameState": 0,
+        "decodes": 167,
+        "loadError": 0,
+        "aimMode": 1,
+        "aimTarget": 0,
+        "inputBlocked": 0,
+        "keyboardFire": 0,
+        "gameMenu": 0,
+        "resumeRequired": 0,
+        "active": 1,
+        "keyboardAimX": 0,
+        "callbackInterval": 0.0166,
+        "ticksPerCallback": 1,
+        "motion": 0,
+        "tilt": [
+          0,
+          0,
+          -1
+        ],
+        "hudEditing": 0,
+        "hudCustomized": 0,
+        "hudFallback": 0,
+        "hudSelected": 2,
+        "hudDraftCustomized": 0,
+        "orientationHold": 0
+      }
+    },
+    "contextBefore": {
+      "screen": "game",
+      "time": 20.9833,
+      "canvas": [
+        694.857,
+        320
+      ],
+      "loading": 0,
+      "mission": 1,
+      "stage": 0,
+      "playerX": -4121.01,
+      "playerY": -60.57,
+      "hp": 214,
+      "enemies": 2,
+      "bullets": 0,
+      "paused": 0,
+      "gameState": 0,
+      "decodes": 167,
+      "loadError": 0,
+      "aimMode": 1,
+      "aimTarget": 0,
+      "inputBlocked": 0,
+      "keyboardFire": 0,
+      "gameMenu": 0,
+      "resumeRequired": 0,
+      "active": 1,
+      "keyboardAimX": 0,
+      "callbackInterval": 0.0166,
+      "ticksPerCallback": 1,
+      "motion": 0,
+      "tilt": [
+        0,
+        0,
+        -1
+      ],
+      "hudEditing": 0,
+      "hudCustomized": 0,
+      "hudFallback": 0,
+      "hudSelected": 2,
+      "hudDraftCustomized": 0,
+      "orientationHold": 0
+    },
+    "contextLost": {
+      "lost": true,
+      "state": {
+        "screen": "game",
+        "time": 22.5,
+        "canvas": [
+          694.857,
+          320
+        ],
+        "loading": 0,
+        "mission": 1,
+        "stage": 0,
+        "playerX": -4121.01,
+        "playerY": -60.57,
+        "hp": 214,
+        "enemies": 2,
+        "bullets": 0,
+        "paused": 0,
+        "gameState": 0,
+        "decodes": 167,
+        "loadError": 0,
+        "aimMode": 1,
+        "aimTarget": 0,
+        "inputBlocked": 0,
+        "keyboardFire": 0,
+        "gameMenu": 0,
+        "resumeRequired": 0,
+        "active": 1,
+        "keyboardAimX": 0,
+        "callbackInterval": 0.0166,
+        "ticksPerCallback": 1,
+        "motion": 0,
+        "tilt": [
+          0,
+          0,
+          -1
+        ],
+        "hudEditing": 0,
+        "hudCustomized": 0,
+        "hudFallback": 0,
+        "hudSelected": 2,
+        "hudDraftCustomized": 0,
+        "orientationHold": 0
+      }
+    },
+    "contextRestore": {
+      "lost": true,
+      "state": {
+        "screen": "game",
+        "time": 24,
+        "canvas": [
+          694.857,
+          320
+        ],
+        "loading": 0,
+        "mission": 1,
+        "stage": 0,
+        "playerX": -4121.01,
+        "playerY": -60.57,
+        "hp": 214,
+        "enemies": 2,
+        "bullets": 0,
+        "paused": 0,
+        "gameState": 0,
+        "decodes": 167,
+        "loadError": 0,
+        "aimMode": 1,
+        "aimTarget": 0,
+        "inputBlocked": 0,
+        "keyboardFire": 0,
+        "gameMenu": 0,
+        "resumeRequired": 0,
+        "active": 1,
+        "keyboardAimX": 0,
+        "callbackInterval": 0.0165,
+        "ticksPerCallback": 1,
+        "motion": 0,
+        "tilt": [
+          0,
+          0,
+          -1
+        ],
+        "hudEditing": 0,
+        "hudCustomized": 0,
+        "hudFallback": 0,
+        "hudSelected": 2,
+        "hudDraftCustomized": 0,
+        "orientationHold": 0
+      }
+    },
+    "initialReadFailure": {
+      "state": {
+        "screen": "title",
+        "time": 0,
+        "canvas": [
+          694.857,
+          320
+        ],
+        "loading": 0,
+        "mission": 0,
+        "stage": 0,
+        "playerX": 0,
+        "playerY": 0,
+        "hp": 0,
+        "enemies": 0,
+        "bullets": 0,
+        "paused": 0,
+        "gameState": 0,
+        "decodes": 29,
+        "loadError": 0,
+        "aimMode": 1,
+        "aimTarget": 0,
+        "inputBlocked": 1,
+        "keyboardFire": 0,
+        "gameMenu": 0,
+        "resumeRequired": 0,
+        "active": 1,
+        "keyboardAimX": 0,
+        "callbackInterval": 0.0015,
+        "ticksPerCallback": 1,
+        "motion": 0,
+        "tilt": [
+          0,
+          0,
+          -1
+        ],
+        "hudEditing": 0,
+        "hudCustomized": 0,
+        "hudFallback": 0,
+        "hudSelected": 2,
+        "hudDraftCustomized": 0,
+        "orientationHold": 0
+      },
+      "errorVisible": "none"
+    },
+    "saveAfterTransientReadFailure": {
+      "experience": 0,
+      "level": 0,
+      "occupied": 1,
+      "bytes": 3624
+    },
+    "logs": [
+      "HeavyMach IDBFS sync failed Error: injected quota failure",
+      "HMGLRenderer: OpenGL error 0x9242",
+      "WebGL: INVALID_OPERATION: restoreContext: context restoration not allowed",
+      "HMGLRenderer: OpenGL error 0x502",
+      "HeavyMach IDBFS load failed UnknownError: injected storage unavailable"
+    ]
+  }
+}

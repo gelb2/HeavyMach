@@ -157,3 +157,12 @@ Apps에는 지상 유닛의 파츠·무장과 HUD 그림/터치 위치 공유를
 [신(新) 리센코주의와 정렬세](android-ai-experience-20261030.md)에 Android 개발 뒤의 의문, 웹·정치인 지면·회계 업무에서 겪은 사례, 작업 조건, 기술적 재사용 효과와 원인 가설을 한 편으로 정리했다. [영문](../en/public/android-ai-experience-20261030.md)도 있다.
 
 Apps의 Android 구현·검사 설명은 [개발 과정](android-development-20261030.md)을 기준으로 쓴다. Mags에서 경험과 가설을 다룰 때는 위 전문을 기준으로 질문과 답변을 구성한다. 9절에는 리센코의 실제 인용·쉬운 해설·현대 춘화 연구를 구분하고, 바빌로프의 연구 방법·탄압, 1948년 연구기관 숙청과 출처, 권력과 사실에 관한 저자의 해석을 보강했다. 개발자의 변와 럭스루나에 원고의 기존 문단은 각각 유지한다.
+
+## 첫 외부 PR과 웹·데스크톱 확장 — 2026-10-31
+
+웹 기여는 PR #24→develop→PR #68→main(`91e4c7a2`)에 반영됐다. v0.17 태그는 그대로다. Tauri/Electron·웹 확장 검토와 글감은 develop에서 분기한 `docs/pr24-followup`에 정리했다.
+
+- Mags 글감: [사용자 원문](../references/developer-background/user-first-pr-20261031.md), [집필 TODO](../usability-todo.md#hm-first-pr-story). 첫 PR을 받은 경험과 기여 보존, 네이티브 앱 유지에 대한 고민, Windows·Mac·웹 지원 가능성을 발견한 순서를 다룬다.
+- Apps 기술 근거: [PR 검토·수정·Tauri/Electron 비교](../reviews/pr24-web-review-20261031.md), [플랫폼 검사](../evidence/pr24-web-fixes-20261031.json), [기여 보존 검사](../evidence/pr24-merge-preservation-20261031.json).
+- 웹 구현은 fastutlego가 기여했다. Codex는 검토·후속 수정·검사를 담당했다. 원본 19개 커밋과 후속 2개 커밋을 구분한다.
+- 데스크톱은 검토 단계다. main 반영 후 GitHub Contributors 통계에서 fastutlego 19개 기여를 확인했다.

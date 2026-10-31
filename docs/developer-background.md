@@ -71,3 +71,7 @@
 ## 원본을 받은 사이트 — 2026-10-30
 
 사용자가 최초 복원 원본의 Internet Archive 출처 확인과 GitHub 명시를 지시했다. 최초 보관본과 재다운로드의 SHA-256이 같음을 확인했다. README·개발자의 변·개발 과정에서 [HeavyMach 시리즈 모음](https://archive.org/details/heavy-mach-archive_202406)에서 1.13을 받았다고 적고 해당 모음을 연결한다. 사용자의 후속 출처 표기 지시를 반영했다. [출처 증거](source-provenance.md).
+
+## 첫 외부 PR에 관한 글감 — 2026-10-31
+
+[제공 원문](references/developer-background/user-first-pr-20261031.md)과 [집필 과제](usability-todo.md#hm-first-pr-story)를 연결했다. 기여자가 들인 시간에 대한 생각, 네이티브 앱 유지에 관한 고민, 웹판에서 Windows·Mac 지원 가능성을 발견한 순서를 다룬다. 아직 완성 원고는 작성하지 않았다.
