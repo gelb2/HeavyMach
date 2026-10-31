@@ -166,3 +166,7 @@ Apps의 Android 구현·검사 설명은 [개발 과정](android-development-202
 - Apps 기술 근거: [PR 검토·수정·Tauri/Electron 비교](../reviews/pr24-web-review-20261031.md), [플랫폼 검사](../evidence/pr24-web-fixes-20261031.json), [기여 보존 검사](../evidence/pr24-merge-preservation-20261031.json).
 - 웹 구현은 fastutlego가 기여했다. Codex는 검토·후속 수정·검사를 담당했다. 원본 19개 커밋과 후속 2개 커밋을 구분한다.
 - 데스크톱은 검토 단계다. main 반영 후 GitHub Contributors 통계에서 fastutlego 19개 기여를 확인했다.
+
+### 첫 PR 원고 작성
+
+[첫 PR을 받다. 그 다음 이어진 스케일업, 그리고 타우리](first-pr-and-tauri-20261031.md)에 첫 기여, 네이티브 유지와 웹 확장 고민, 저장 구조, Tauri/Electron 검토, 승인 리뷰 생략 경험, main 병합과 기여 보존 결과를 한 문서로 작성했다. 최신 원문은 앞의 제공 원문 파일에 이어 보존했다. 이 원고는 `docs/pr24-followup`에 있으며 main에는 아직 반영하지 않았다.

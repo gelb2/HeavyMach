@@ -330,6 +330,6 @@ PR의 브라우저 실행 경로는 이미 있다. `Web/`에서 Emscripten으로
 
 사용자가 이번 경험을 별도 글감으로 지정했다. 처음 받은 외부 PR에 다른 사람이 투자한 시간과 기술적 성취, 기존 Android·iOS 네이티브 앱을 유지할지 고민한 과정, 웹판에서 Windows·Mac 지원 가능성을 발견한 순서를 담는다. 웹 게임으로 복원할 생각은 이 PR을 보기 전에는 해본 적이 없었다는 원문도 보존했다.
 
-아직 완성 원고를 쓰지 않았다. 당시 고민은 개발자 1인칭으로 쓰고, 원저자의 웹 구현·Codex의 후속 수정·실제 병합 결과를 구분할 계획이다. GitHub 원고와 SaaS 담당 세션의 Apps·Mags 집필 자료로 연결했다.
+후속 지시에 따라 [첫 PR을 받다. 그 다음 이어진 스케일업, 그리고 타우리](../public/first-pr-and-tauri-20261031.md)를 작성했다. 당시 고민을 개발자 1인칭으로 쓰고 승인 리뷰 생략으로 화가 난 경험도 같은 글에 담았다. 원저자의 웹 구현·Codex의 후속 수정·실제 병합 결과를 구분했다. SaaS 담당 세션의 Apps·Mags 집필 자료에도 연결했다.
 
 [사용자 원문](https://github.com/gelb2/HeavyMach/blob/docs/pr24-followup/docs/references/developer-background/user-first-pr-20261031.md) · [글감 TODO](https://github.com/gelb2/HeavyMach/blob/docs/pr24-followup/docs/usability-todo.md#hm-first-pr-story) · [SaaS 집필 안내](https://github.com/gelb2/HeavyMach/blob/docs/pr24-followup/docs/public/publication-inventory.md).

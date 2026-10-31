@@ -74,4 +74,4 @@
 
 ## 첫 외부 PR에 관한 글감 — 2026-10-31
 
-[제공 원문](references/developer-background/user-first-pr-20261031.md)과 [집필 과제](usability-todo.md#hm-first-pr-story)를 연결했다. 기여자가 들인 시간에 대한 생각, 네이티브 앱 유지에 관한 고민, 웹판에서 Windows·Mac 지원 가능성을 발견한 순서를 다룬다. 아직 완성 원고는 작성하지 않았다.
+[제공 원문](references/developer-background/user-first-pr-20261031.md)과 [집필 과제](usability-todo.md#hm-first-pr-story)를 연결했다. 기여자가 들인 시간에 대한 생각, 네이티브 앱 유지에 관한 고민, 웹판에서 Windows·Mac 지원 가능성을 발견한 순서를 다룬다. 후속 지시에 따라 [첫 PR과 Tauri 원고](public/first-pr-and-tauri-20261031.md)를 작성했다. 승인 리뷰 생략 경험을 같은 글에 담았다.

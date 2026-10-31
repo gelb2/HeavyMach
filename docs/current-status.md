@@ -1,5 +1,10 @@
 # 2026-10-25 문서·코드·앱 일치 체계 점검 및 보완
 
+## 첫 PR과 Tauri 원고 — 2026-10-31
+
+[원고](public/first-pr-and-tauri-20261031.md)를 작성했다. 첫 외부 기여, 웹·데스크톱 확장 고민, 승인 리뷰 생략에 관한 사용자 경험을 1인칭으로 담고 기술검토·main 병합·기여 보존 기록을 연결했다. 최신 사용자 원문도 보존했다. 원고는 별도 `docs/pr24-followup` 브랜치에 두며 main의 게임 코드는 그대로다.
+
+
 ## PR #24 main 병합·후속 TODO — 2026-10-31
 
 웹 PR을 `757523e1`로 develop에 병합했다. 검사한 `fdb16df0`와 머지 트리가 같다. 원본 19개 SHA가 모두 develop에 남아 있고 GitHub author도 모두 fastutlego다. 보호 경로의 차이는 없다. 후속 PR #68로 develop→main을 병합했다(`91e4c7a2`). main에서도 원본 19개 커밋·검사한 트리·국영문 기여 표기 6개를 확인했다. 새 태그는 만들지 않았다. Contributors 통계 API에서 fastutlego 19개 기여와 공동 작성자 claude 19개를 확인했다. 요약 Contributors API는 이전 캐시를 반환한다. [머지 검사](evidence/pr24-merge-preservation-20261031.json).
