@@ -88,6 +88,11 @@
       "copy": "approved-readme-opening-20261029.md",
       "sha256": "202f8a5347d3ae6c32d9ae73779c5f07313fdeda4a4798838d109f726bd384b7",
       "note": "2026-10-29 사용자 추가 문장을 반영한 README 도입부"
+    },
+    {
+      "copy": "user-first-pr-20261031.md",
+      "source": "2026-10-31 현재 대화의 첫 외부 PR 경험과 기여 보존·글감 TODO 지시 및 승인 리뷰 생략 경험·통합 원고 집필 후속 지시",
+      "sha256": "23aa60d7d11ad1eaa94d891402c0f11d8c5fef73abbc13905c3798b76966213b"
     }
   ]
 }

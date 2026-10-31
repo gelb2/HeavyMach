@@ -1,0 +1,313 @@
+{
+  "checked_at": "2026-10-31T12:42:20.014025+00:00",
+  "pr": 24,
+  "merge_commit": "757523e17f5ba54449c34f20f9f0c0690161d40d",
+  "merge_parents": [
+    "2f82c85214d84c470a3936c452a2d46a524eeb32",
+    "fdb16df0baa7ffbf19300695dbe82d25c694c074"
+  ],
+  "tested_head": "fdb16df0baa7ffbf19300695dbe82d25c694c074",
+  "merge_tree_matches_tested_head": true,
+  "original_commits": [
+    {
+      "sha": "00dc422f54f79bf3116387eaec9ef2a2621246d5",
+      "author_login": "fastutlego",
+      "author_name": "fastutlego",
+      "message": "feat(web): WebAssembly port of the normal app\n\nBuild HeavyMach for the browser with Emscripten. Sources/Core compiles unchanged;\nSources/Web translates the iOS platform layer (game view, menus, HUD, media,\nrenderer, audio) to C++ with WebGL2, Emscripten OpenAL, Pointer/Keyboard/\nDeviceMotion events and an IDBFS save. Web/ holds the CMake build, the shell,\nan asset packager that splits data files under 20 MiB, and a headless Chrome\nsmoke test. Windows taller than 4:3 keep the iPad 480x360 canvas and letterbox.\n\nDeployed as a test to https://fastutle.com/game/heavy_mach/ (fastutle-site 0be8788).\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
+    },
+    {
+      "sha": "7ceedef63eeb06319bc557efaecc82b7a97c234b",
+      "author_login": "fastutlego",
+      "author_name": "fastutlego",
+      "message": "feat(web): add Shilka/Tunguska (GroundAA) to the web build\n\nBuild GroundAA.cpp, call addGroundAAExpansion on data load, crop the shared\nGAA source sheets and resize once to the logical size in Media::image like\nHMMedia, and prepare every GroundAA frame before combat. The v0.14 HUD editor\nis not ported yet; the web keeps the default HUD and three-button pause menu.\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
+    },
+    {
+      "sha": "9c809f7a623332d306320703401bb6e85b910c74",
+      "author_login": "fastutlego",
+      "author_name": "fastutlego",
+      "message": "fix(web): tilt permission, full screen and 30 Hz pacing on iPad\n\niPad report: browser bars crop the game, the tank cannot move, the game is slow.\nTouch taps now request DeviceMotion permission and full screen on pointerup,\nwhere iOS grants user activation, and retry after an error. A web app manifest\nand home-screen meta tags open the game without bars. Display callbacks at\n30 Hz advance up to round(interval/tick) due ticks, so the game keeps 60 ticks\nper second; 60 Hz stays one tick per callback. ?fps=30 emulates the slow case.\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
+    },
+    {
+      "sha": "940439ca37530f4bcf73379116bd6ae0be3f35b1",
+      "author_login": "fastutlego",
+      "author_name": "fastutlego",
+      "message": "fix(web): iOS motion prompt, sensor sign and orientation (iPad verified)\n\nChecked on iPad mini 6 Safari through the remote Web Inspector:\n- requestFullscreen in the same tap hid the motion prompt; the first tap now\n  asks for motion only, a pending prompt retries after 10 s, and a granted\n  permission is restored on load without a tap.\n- iOS WebKit reports accelerationIncludingGravity with the CoreMotion sign\n  (landscape, device +X up: x -9.29); keep it, negate only the spec sign.\n- iPadOS reports screen.orientation.angle 0 in landscape; read\n  window.orientation first (90 = LandscapeRight).\nTilting right moves right, left moves left; combat runs at 60 ticks/s.\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
+    },
+    {
+      "sha": "3307933260df5eb496966d87279e2472823715df",
+      "author_login": "fastutlego",
+      "author_name": "fastutlego",
+      "message": "docs(web): record fastutle.com deployment and iPad live check\n\nfastutle-site 0be8788..8f09692. The live index.html matches the verified local\nbuild; iPad Safari loads it at 60.2 ticks/s and the headless flow passes.\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
+    },
+    {
+      "sha": "87bf7d2ac6f811b452644c0adc3fff9594d4814e",
+      "author_login": "fastutlego",
+      "author_name": "fastutlego",
+      "message": "feat(web): port the v0.14 HUD layout editor\n\nHUD drawing (WebGameHUD): per-group transforms, rail regions with riveted end\ncaps and the upper trim, the four-row pause menu with SET GAME UI (104) built\nfrom GameMenuSub.png letters, button receivers captured per touch. Media and\nGLRenderer gain drawRegion. WebHUDEditor.inc translates HMHUDEditor.inc: entry\nfrom the pause menu, mission selection or an invalid layout; drag, Tab, arrows\nand Esc; frozen game time; the Stage01 sample scene; APPLY writes\n/persist/HUDLayoutV1-web.json atomically and syncs IndexedDB. The UIKit tool\npanel becomes DOM buttons drawn from the game-decoded Common_Btn_OK.png (CgBI).\nWeb/tests/hud-editor.mjs covers entry, drag, apply, reload and reset.\nAlso fixes the ?fps= test regex (\\d was escaped away; the earlier 30 Hz run\nwas really 60 Hz). No cheat web build (user decision).\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
+    },
+    {
+      "sha": "03fb7a10f0148d6b829d8b543e06f5383c16ab6d",
+      "author_login": "fastutlego",
+      "author_name": "fastutlego",
+      "message": "docs(web): record Chrome, ego lite and Safari desktop checks\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
+    },
+    {
+      "sha": "26312b0376c71e406b075345f20a49cfd5cac910",
+      "author_login": "fastutlego",
+      "author_name": "fastutlego",
+      "message": "fix(web): keep the spec motion sign on Android Chrome\n\nAndroid Chrome 156 also exposes DeviceMotionEvent.requestPermission, so the\nprevious check gave Android the iOS sign and inverted tilt (same landscape:\niPad x -9.29, Lenovo TB322FC x +9.30). Identify Apple mobile WebKit by UA\n(iPhone/iPad/iPod, or Macintosh with touch points) instead.\nChecked on the Android pad: both landscapes move toward the tilted side,\nfull screen on the first tap, 59.9 ticks/s on a 120 Hz display, jump, touch\nfire and the HUD editor with touch.\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
+    },
+    {
+      "sha": "fc7db544bd8bf54b6f7e013907b667e5c9d562d0",
+      "author_login": "fastutlego",
+      "author_name": "fastutlego",
+      "message": "feat(web): hold in portrait and continue back in landscape\n\nUser decision: a phone or tablet passing through portrait while it is turned\nno longer opens the pause menu. hm_active now takes 2 for portrait only: time,\ninput and sound stop, and landscape continues the game. Hidden tab, blur and\npagehide keep the iOS resign-active pause, also when they arrive during a hold.\nWeb/tests/orientation-hold.mjs covers hold, resume and blur during a hold.\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
+    },
+    {
+      "sha": "49faba39f1eb6b9a1b85fe2e178af360886366ec",
+      "author_login": "fastutlego",
+      "author_name": "fastutlego",
+      "message": "docs(web): Android pad confirms the portrait hold and landscape resume\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
+    },
+    {
+      "sha": "caae371c01a904a1078907d71edaf155cda9878a",
+      "author_login": "fastutlego",
+      "author_name": "fastutlego",
+      "message": "docs(web): LV/EXP report traced to a leftover test layout\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
+    },
+    {
+      "sha": "1abe5c81bee0e8d5e5ae7370f8f8c1c089da5106",
+      "author_login": "fastutlego",
+      "author_name": "fastutlego",
+      "message": "docs(web): record the fastutle.com update 8e13936\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
+    },
+    {
+      "sha": "c9f3e8026f00ac2068fe174088cb2b62bc85d1d0",
+      "author_login": "fastutlego",
+      "author_name": "fastutlego",
+      "message": "docs(web): iPad mini check on fastutle.com, both landscapes\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
+    },
+    {
+      "sha": "62f09a5186cbc797520651a7d6f3f1bd7e923eb6",
+      "author_login": "fastutlego",
+      "author_name": "fastutlego",
+      "message": "docs(web): iPad reverse landscape is LandscapeLeft (user-confirmed)\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
+    },
+    {
+      "sha": "ddea4e0a356cb49052cdf90f54f1ce99741d2b13",
+      "author_login": "fastutlego",
+      "author_name": "fastutlego",
+      "message": "docs(web): desktop Safari check on fastutle.com\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
+    },
+    {
+      "sha": "67fb3814c069f5e2db8b31c1058747b72186538d",
+      "author_login": "fastutlego",
+      "author_name": "fastutlego",
+      "message": "fix(web): open the HUD editor from the pause menu only (v0.15)\n\nUpstream #23 removed SET GAME UI from mission selection on iOS. Copy the\nupdateHUDEntry/openHUDEditor conditions from HMHUDEditor.inc v0.15 into\nWebHUDEditor.inc. hud-editor.mjs now checks that mission selection has no\nentry and reopens the editor from the pause menu for SAMPLE SCENE and reset.\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
+    },
+    {
+      "sha": "19707b3db8ee253df0aa992193ad9f2ecdcf9114",
+      "author_login": "fastutlego",
+      "author_name": "fastutlego",
+      "message": "docs(web): record the v0.15 fastutle.com deploy 2b4c504\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
+    },
+    {
+      "sha": "2eabecfc1f615b8fb9631ecc02094cc9cafa6245",
+      "author_login": "fastutlego",
+      "author_name": "fastutlego",
+      "message": "docs(web): fastutle-site copy path is site/game/heavy_mach/ since 2026-10-30\n\nfastutle-site moved its source under site/ (fastutle-site PR #7). A build copied\nto the old root game/ now fails the Cloudflare build and stops main deploys.\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
+    },
+    {
+      "sha": "9d2505f74ad95dc0c24692f2360623401fbe15b2",
+      "author_login": "fastutlego",
+      "author_name": "fastutlego",
+      "message": "docs(web): record the rebase onto upstream v0.17\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
+    }
+  ],
+  "original_commits_preserved": 19,
+  "changed_protected_paths": [],
+  "default_branch": "main",
+  "main_commit": "91e4c7a29bc7391e341aa3344cdcf5f1cd279750",
+  "contributors_api": [
+    {
+      "contributions": 339,
+      "login": "gelb2"
+    }
+  ],
+  "main_integration": "complete",
+  "contributors_graph_verified": true,
+  "main_pr": 68,
+  "main_merged_at": "2026-10-31T12:41:56Z",
+  "main_original_commits_preserved": 19,
+  "main_tree_matches_tested_head": true,
+  "main_credits_verified": true,
+  "contributors_stats": [
+    {
+      "login": "fastutlego",
+      "total": 19
+    },
+    {
+      "login": "claude",
+      "total": 19
+    },
+    {
+      "login": "gelb2",
+      "total": 200
+    }
+  ],
+  "contributors_verification_method": "GitHub REST stats/contributors, underlying Contributors statistics; not a visual browser check",
+  "contributors_stats_checked_at": "2026-10-31T12:43:38.561797+00:00",
+  "contributors_list_api": "cached older result (gelb2 only) at this check",
+  "remote_main_commit_list": [
+    {
+      "sha": "9d2505f74ad95dc0c24692f2360623401fbe15b2",
+      "author_login": "fastutlego",
+      "subject": "docs(web): record the rebase onto upstream v0.17",
+      "html_url": "https://github.com/gelb2/HeavyMach/commit/9d2505f74ad95dc0c24692f2360623401fbe15b2"
+    },
+    {
+      "sha": "2eabecfc1f615b8fb9631ecc02094cc9cafa6245",
+      "author_login": "fastutlego",
+      "subject": "docs(web): fastutle-site copy path is site/game/heavy_mach/ since 2026-10-30",
+      "html_url": "https://github.com/gelb2/HeavyMach/commit/2eabecfc1f615b8fb9631ecc02094cc9cafa6245"
+    },
+    {
+      "sha": "19707b3db8ee253df0aa992193ad9f2ecdcf9114",
+      "author_login": "fastutlego",
+      "subject": "docs(web): record the v0.15 fastutle.com deploy 2b4c504",
+      "html_url": "https://github.com/gelb2/HeavyMach/commit/19707b3db8ee253df0aa992193ad9f2ecdcf9114"
+    },
+    {
+      "sha": "67fb3814c069f5e2db8b31c1058747b72186538d",
+      "author_login": "fastutlego",
+      "subject": "fix(web): open the HUD editor from the pause menu only (v0.15)",
+      "html_url": "https://github.com/gelb2/HeavyMach/commit/67fb3814c069f5e2db8b31c1058747b72186538d"
+    },
+    {
+      "sha": "ddea4e0a356cb49052cdf90f54f1ce99741d2b13",
+      "author_login": "fastutlego",
+      "subject": "docs(web): desktop Safari check on fastutle.com",
+      "html_url": "https://github.com/gelb2/HeavyMach/commit/ddea4e0a356cb49052cdf90f54f1ce99741d2b13"
+    },
+    {
+      "sha": "62f09a5186cbc797520651a7d6f3f1bd7e923eb6",
+      "author_login": "fastutlego",
+      "subject": "docs(web): iPad reverse landscape is LandscapeLeft (user-confirmed)",
+      "html_url": "https://github.com/gelb2/HeavyMach/commit/62f09a5186cbc797520651a7d6f3f1bd7e923eb6"
+    },
+    {
+      "sha": "c9f3e8026f00ac2068fe174088cb2b62bc85d1d0",
+      "author_login": "fastutlego",
+      "subject": "docs(web): iPad mini check on fastutle.com, both landscapes",
+      "html_url": "https://github.com/gelb2/HeavyMach/commit/c9f3e8026f00ac2068fe174088cb2b62bc85d1d0"
+    },
+    {
+      "sha": "1abe5c81bee0e8d5e5ae7370f8f8c1c089da5106",
+      "author_login": "fastutlego",
+      "subject": "docs(web): record the fastutle.com update 8e13936",
+      "html_url": "https://github.com/gelb2/HeavyMach/commit/1abe5c81bee0e8d5e5ae7370f8f8c1c089da5106"
+    },
+    {
+      "sha": "caae371c01a904a1078907d71edaf155cda9878a",
+      "author_login": "fastutlego",
+      "subject": "docs(web): LV/EXP report traced to a leftover test layout",
+      "html_url": "https://github.com/gelb2/HeavyMach/commit/caae371c01a904a1078907d71edaf155cda9878a"
+    },
+    {
+      "sha": "49faba39f1eb6b9a1b85fe2e178af360886366ec",
+      "author_login": "fastutlego",
+      "subject": "docs(web): Android pad confirms the portrait hold and landscape resume",
+      "html_url": "https://github.com/gelb2/HeavyMach/commit/49faba39f1eb6b9a1b85fe2e178af360886366ec"
+    },
+    {
+      "sha": "fc7db544bd8bf54b6f7e013907b667e5c9d562d0",
+      "author_login": "fastutlego",
+      "subject": "feat(web): hold in portrait and continue back in landscape",
+      "html_url": "https://github.com/gelb2/HeavyMach/commit/fc7db544bd8bf54b6f7e013907b667e5c9d562d0"
+    },
+    {
+      "sha": "26312b0376c71e406b075345f20a49cfd5cac910",
+      "author_login": "fastutlego",
+      "subject": "fix(web): keep the spec motion sign on Android Chrome",
+      "html_url": "https://github.com/gelb2/HeavyMach/commit/26312b0376c71e406b075345f20a49cfd5cac910"
+    },
+    {
+      "sha": "03fb7a10f0148d6b829d8b543e06f5383c16ab6d",
+      "author_login": "fastutlego",
+      "subject": "docs(web): record Chrome, ego lite and Safari desktop checks",
+      "html_url": "https://github.com/gelb2/HeavyMach/commit/03fb7a10f0148d6b829d8b543e06f5383c16ab6d"
+    },
+    {
+      "sha": "87bf7d2ac6f811b452644c0adc3fff9594d4814e",
+      "author_login": "fastutlego",
+      "subject": "feat(web): port the v0.14 HUD layout editor",
+      "html_url": "https://github.com/gelb2/HeavyMach/commit/87bf7d2ac6f811b452644c0adc3fff9594d4814e"
+    },
+    {
+      "sha": "3307933260df5eb496966d87279e2472823715df",
+      "author_login": "fastutlego",
+      "subject": "docs(web): record fastutle.com deployment and iPad live check",
+      "html_url": "https://github.com/gelb2/HeavyMach/commit/3307933260df5eb496966d87279e2472823715df"
+    },
+    {
+      "sha": "940439ca37530f4bcf73379116bd6ae0be3f35b1",
+      "author_login": "fastutlego",
+      "subject": "fix(web): iOS motion prompt, sensor sign and orientation (iPad verified)",
+      "html_url": "https://github.com/gelb2/HeavyMach/commit/940439ca37530f4bcf73379116bd6ae0be3f35b1"
+    },
+    {
+      "sha": "9c809f7a623332d306320703401bb6e85b910c74",
+      "author_login": "fastutlego",
+      "subject": "fix(web): tilt permission, full screen and 30 Hz pacing on iPad",
+      "html_url": "https://github.com/gelb2/HeavyMach/commit/9c809f7a623332d306320703401bb6e85b910c74"
+    },
+    {
+      "sha": "7ceedef63eeb06319bc557efaecc82b7a97c234b",
+      "author_login": "fastutlego",
+      "subject": "feat(web): add Shilka/Tunguska (GroundAA) to the web build",
+      "html_url": "https://github.com/gelb2/HeavyMach/commit/7ceedef63eeb06319bc557efaecc82b7a97c234b"
+    },
+    {
+      "sha": "00dc422f54f79bf3116387eaec9ef2a2621246d5",
+      "author_login": "fastutlego",
+      "subject": "feat(web): WebAssembly port of the normal app",
+      "html_url": "https://github.com/gelb2/HeavyMach/commit/00dc422f54f79bf3116387eaec9ef2a2621246d5"
+    }
+  ],
+  "remote_main_19_sha_author_message_match": true,
+  "contributors_browser": {
+    "browser": "Safari",
+    "url": "https://github.com/gelb2/HeavyMach/graphs/contributors",
+    "visible": "fastutlego — 19 commits",
+    "visual_screenshot_checked": true,
+    "checked_at": "2026-10-31T12:49:45.399401+00:00"
+  },
+  "remote_main_commits_browser": {
+    "browser": "Safari",
+    "url": "https://github.com/gelb2/HeavyMach/commits?author=fastutlego",
+    "branch": "main",
+    "author": "fastutlego",
+    "visible_commits": 19,
+    "sha_prefixes": [
+      "9d2505f",
+      "2eabecf",
+      "19707b3",
+      "67fb381",
+      "ddea4e0",
+      "62f09a5",
+      "c9f3e80",
+      "1abe5c8",
+      "caae371",
+      "49faba3",
+      "fc7db54",
+      "26312b0",
+      "03fb7a1",
+      "87bf7d2",
+      "3307933",
+      "940439c",
+      "9c809f7",
+      "7ceedef",
+      "00dc422"
+    ]
+  }
+}

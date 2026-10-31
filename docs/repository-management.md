@@ -119,3 +119,11 @@ HeavyMach는 Apple·Android를 같은 저장소에서 관리한다. 최신 사�
 ## v0.17 — 2026-10-30
 
 Android 일반·치트 앱, 업그레이드 창 오류 수정, Galaxy 플레이 자료를 포함한다. `release/v0.17`→`develop`→`main` 순서로 병합하고 main 병합 커밋에 주석 태그를 붙인다. 기존 앱 내부 버전과 게임 코드는 유지한다. [릴리스](https://github.com/gelb2/HeavyMach/releases/tag/v0.17) · [변경 이력](../CHANGELOG.md#v017).
+
+## 외부 PR 기여 보존 — 2026-10-31
+
+PR #24 이후 외부 기여를 통합할 때 원저자의 검토 대상 커밋 SHA·author·공동 작성자·메시지를 보존한다. 후속 수정은 별도 커밋으로 추가하고 merge commit으로 develop에 병합한다. 기존 이력을 squash·임의 rebase·작성자 교체로 대체하지 않는다. main에는 develop만 병합한다.
+
+머지 후 원본 SHA가 대상 브랜치 조상인지 확인하고 GitHub가 원저자 계정과 연결하는지도 검사한다. README·CREDITS·릴리스 노트에 작성자·PR·기여 범위를 적는다. 기본 브랜치 main에 들어간 뒤 Contributors 그래프와 API의 실제 표시를 확인한다. 표시 지연을 기여 완료로 처리하지 않으며 이를 해결하려고 원본 작성자 정보를 바꾸지 않는다. [PR #24 검사](evidence/pr24-merge-preservation-20261031.json) · [남은 확인](usability-todo.md#hm-pr24-integration).
+
+외부 PR의 코드를 검토하고 필요한 수정을 마치면, 검사 대상 커밋·발견한 문제·수정·검사 결과를 GitHub PR 리뷰에 기록하고 `Approve`한다. 그 뒤 merge commit으로 병합한다. 원저자의 기여 범위와 후속 수정은 분리해 남긴다. PR #24는 로컬 검토·수정·검사는 했으나 GitHub 승인 리뷰를 생략한 채 병합했다. 이후 절차에는 이 단계를 포함한다. 자기 계정이 작성한 릴리스 PR은 GitHub에서 자기 승인할 수 없으므로 외부 기여 PR과 구분한다.
