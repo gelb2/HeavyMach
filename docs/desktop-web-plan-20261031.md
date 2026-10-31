@@ -202,6 +202,12 @@ Tauri의 최신 공식 문서는 `@wdio/tauri-service`와 앱 안의 WebDriver �
 
 **브라우저 실행과 PWA 설치·오프라인 플레이를 같은 단계에서 만든다.** GitHub Pages의 `https://gelb2.github.io/HeavyMach/`를 배포 주소로 계획한다. 2026-11-01부터 전용 배포 도구가 생성물을 `gh-pages`에 올리고 GitHub Pages가 배포한다. 별도 웹 빌드 CI 자동화는 후속 과제다. Tauri 설치본은 GitHub Releases에 둔다. [Pages 사용자 지정 배포](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages).
 
+### 설치 우선 시작 화면
+
+첫 접속에서는 메뉴·설치 안내만 받는다. **Install game**을 주 버튼, **Play in browser**를 보조 버튼으로 둔다. 설치한 PWA를 처음 열면 에셋과 WebAssembly를 다운로드한다. 브라우저로 계속할 때는 Play in browser를 누른 뒤 받는다. 다운로드 용량과 검증 진행률을 표시하고, 검증된 파일은 재시도 때 다시 받지 않는다. 새 버전이나 삭제된 캐시는 다시 받아야 한다.
+
+Safari 설치 버튼은 공유 → 홈 화면에 추가 → 웹 앱으로 열기를 안내한다. 브라우저의 설치 요청 API가 있으면 그 창을 연다. 설치한 앱에서는 Play를 주 버튼으로 둔다. [Apple iPad 설치 안내](https://support.apple.com/en-ie/guide/ipad/ipad8f1f7a29/ipados).
+
 ### 기존 게임과 PWA 파일 분리
 
 `Distribution/Web/pwa/`에 별도 시작 화면·manifest·192/512px 설치 아이콘·Service Worker를 둔다. 배포 후 시작 주소와 manifest의 `start_url`·`scope`는 `/HeavyMach/`를 가리킨다. `id`는 생략해 `start_url`을 앱 식별자로 사용한다. 브라우저별 설치 방법을 안내하고, 설치하지 않은 브라우저에서도 같은 게임을 연다. iPhone·iPad에서는 홈 화면 추가 절차를 안내한다. [PWA 설치 조건](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Guides/Making_PWAs_installable).
@@ -212,7 +218,7 @@ Tauri의 최신 공식 문서는 `@wdio/tauri-service`와 앱 안의 WebDriver �
 
 ### 오프라인 다운로드와 업데이트
 
-Service Worker는 배포 경로의 `/HeavyMach/sw.js`에서 등록하고 `/HeavyMach/` 범위만 담당한다. 배포 도구가 HTML·JS·Wasm·모든 자원과 시작 화면·아이콘의 목록·크기·해시를 만든다. 첫 온라인 접속에서 한 버전 전체를 내려받고 검사한 뒤 **오프라인 준비 완료**를 표시한다. 설치 아이콘을 추가했어도 다운로드가 끝나지 않았으면 준비 완료로 표시하지 않는다. [Service Worker 범위](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerContainer/register), [오프라인 동작](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Guides/Offline_and_background_operation).
+Service Worker는 배포 경로의 `/HeavyMach/sw.js`에서 등록하고 `/HeavyMach/` 범위만 담당한다. 배포 도구가 HTML·JS·Wasm·모든 자원과 시작 화면·아이콘의 목록·크기·해시를 만든다. 설치형 앱 첫 실행 또는 브라우저 플레이 선택 때 한 버전 전체를 내려받고 검사한 뒤 **오프라인 준비 완료**를 표시한다. 설치 아이콘을 추가했어도 다운로드가 끝나지 않았으면 준비 완료로 표시하지 않는다. [Service Worker 범위](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerContainer/register), [오프라인 동작](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Guides/Offline_and_background_operation).
 
 캐시는 버전별로 나눈다. 새 버전 전체 다운로드가 끝나야 전환 후보로 올리고, 실행 중인 전투를 새로고침하지 않는다. 새 버전은 다음 시작 때 적용한다. 이전 HTML과 새 Wasm·자원이 섞이지 않게 한다. 이전 버전을 쓰는 창이 모두 닫힐 때까지 해당 캐시를 유지하고, 실패한 다운로드는 기존 정상 버전에 영향을 주지 않게 처리한다. Pages에서 제공하는 MIME·하위 경로·캐시 응답을 검사하며 버전별 경로와 Service Worker로 갱신을 관리한다.
 
@@ -226,7 +232,7 @@ Service Worker는 배포 경로의 `/HeavyMach/sw.js`에서 등록하고 `/Heavy
 
 | 검사 | 확인할 결과 |
 |---|---|
-| 첫 접속·설치 | 전체 자원 다운로드와 해시 검사 후 준비 완료 표시, 올바른 아이콘·시작 주소로 설치 |
+| 첫 접속·설치 | 설치를 먼저 안내하고 게임 다운로드는 보류. 설치형 앱 첫 실행 또는 브라우저 플레이 선택 시 다운로드·해시 검사·준비 완료 표시 |
 | 인터넷 차단 | 준비 완료 → 비행기 모드 → PWA 시작 → 전투·미션 클리어·저장 → 완전 종료 → 재실행에서 진행 복원 |
 | 입력·화면 | 브라우저와 PWA에서 이동·점프·전체 무기·수동/자동 조준·HUD 편집, 틸트·회전·음향·복귀 확인 |
 | 다운로드 실패·용량 부족 | 준비 완료를 표시하지 않고 재시도, 기존 정상 캐시·진행 유지 |

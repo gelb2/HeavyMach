@@ -1,10 +1,12 @@
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
 mod backup;
+mod recovery;
 use std::sync::{
     atomic::{AtomicBool, Ordering},
     Arc, Mutex,
 };
 use tauri::{Manager, WebviewUrl, WebviewWindow};
+use tauri_plugin_dialog::DialogExt;
 struct State {
     writes: Arc<Mutex<()>>,
     allow_exit: AtomicBool,
@@ -18,6 +20,95 @@ fn local(w: &WebviewWindow) -> Result<(), String> {
         return Err("Local game window required".into());
     }
     Ok(())
+}
+fn launcher(w: &WebviewWindow) -> Result<std::path::PathBuf, String> {
+    local(w)?;
+    if !matches!(
+        w.url().map_err(|e| e.to_string())?.path(),
+        "" | "/" | "/index.html"
+    ) {
+        return Err("Open the launcher to manage saves".into());
+    }
+    w.app_handle()
+        .path()
+        .app_data_dir()
+        .map_err(|e| e.to_string())
+}
+#[tauri::command]
+fn restore_status(w: WebviewWindow) -> Result<Option<recovery::Pending>, String> {
+    recovery::pending(&launcher(&w)?)
+}
+#[tauri::command]
+async fn export_save(w: WebviewWindow, snapshot: backup::Snapshot) -> Result<bool, String> {
+    launcher(&w)?;
+    snapshot.validate()?;
+    let app = w.app_handle().clone();
+    tauri::async_runtime::spawn_blocking(move || {
+        let Some(file) = app
+            .dialog()
+            .file()
+            .add_filter("Heavy Mach save", &["json"])
+            .set_file_name("HeavyMach-save.json")
+            .blocking_save_file()
+        else {
+            return Ok(false);
+        };
+        backup::export(&file.into_path().map_err(|e| e.to_string())?, snapshot)?;
+        Ok(true)
+    })
+    .await
+    .map_err(|e| e.to_string())?
+}
+#[tauri::command]
+async fn import_save(w: WebviewWindow) -> Result<Option<backup::Envelope>, String> {
+    launcher(&w)?;
+    let app = w.app_handle().clone();
+    tauri::async_runtime::spawn_blocking(move || {
+        let Some(file) = app
+            .dialog()
+            .file()
+            .add_filter("Heavy Mach save", &["json"])
+            .blocking_pick_file()
+        else {
+            return Ok(None);
+        };
+        Ok(Some(backup::read(
+            &file.into_path().map_err(|e| e.to_string())?,
+        )?))
+    })
+    .await
+    .map_err(|e| e.to_string())?
+}
+#[tauri::command]
+async fn restore_begin(
+    w: WebviewWindow,
+    state: tauri::State<'_, State>,
+    chosen: backup::Envelope,
+    current: backup::Snapshot,
+) -> Result<recovery::Pending, String> {
+    let root = launcher(&w)?;
+    let lock = state.writes.clone();
+    tauri::async_runtime::spawn_blocking(move || {
+        let _guard = lock.lock().map_err(|e| e.to_string())?;
+        recovery::begin(&root, chosen, current)
+    })
+    .await
+    .map_err(|e| e.to_string())?
+}
+#[tauri::command]
+async fn restore_finish(
+    w: WebviewWindow,
+    state: tauri::State<'_, State>,
+    current: backup::Snapshot,
+) -> Result<(), String> {
+    let root = launcher(&w)?;
+    let lock = state.writes.clone();
+    tauri::async_runtime::spawn_blocking(move || {
+        let _guard = lock.lock().map_err(|e| e.to_string())?;
+        recovery::finish(&root, current)
+    })
+    .await
+    .map_err(|e| e.to_string())?
 }
 #[tauri::command]
 fn backup_status(w: WebviewWindow) -> Result<backup::Status, String> {
@@ -46,6 +137,9 @@ async fn backup_write(
         .join("saves");
     tauri::async_runtime::spawn_blocking(move || {
         let _guard = lock.lock().map_err(|e| e.to_string())?;
+        if recovery::pending(dir.parent().ok_or("Missing data folder")?)?.is_some() {
+            return Err("Finish the pending restore before playing".into());
+        }
         backup::write(&dir, snapshot)
     })
     .await
@@ -83,6 +177,7 @@ fn request_close(w: &WebviewWindow) {
 }
 fn main() {
     let app = tauri::Builder::default()
+        .plugin(tauri_plugin_dialog::init())
         .plugin(tauri_plugin_single_instance::init(|app, _, _| {
             if let Some(w) = app.get_webview_window("main") {
                 let _ = w.set_focus();
@@ -96,7 +191,12 @@ fn main() {
             backup_status,
             backup_write,
             finish_close,
-            diagnostics_write
+            diagnostics_write,
+            restore_status,
+            export_save,
+            import_save,
+            restore_begin,
+            restore_finish
         ])
         .setup(|app| {
             use tauri::menu::{MenuBuilder, MenuItemBuilder, SubmenuBuilder};

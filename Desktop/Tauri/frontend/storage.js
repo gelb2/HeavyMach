@@ -46,6 +46,26 @@
       localStorage.removeItem(JOURNAL);
     }finally{db.close();}
   }
+  async function restoreSelected(snapshot){
+    // Only a native-validated, durable restore intent reaches this method.
+    const encoded=JSON.stringify(snapshot);
+    localStorage.setItem(JOURNAL,encoded);
+    const db=await openDB();
+    try{
+      const tx=db.transaction('FILE_DATA','readwrite'),done=transactionDone(tx),store=tx.objectStore('FILE_DATA');
+      const keys=await request(store.getAllKeys());
+      if(keys.some(k=>!FILES.includes(k))){tx.abort();await done;}
+      store.clear();
+      for(const r of snapshot.records){const value={timestamp:new Date(r.timestamp),mode:r.mode};if(r.contents!==null)value.contents=new Uint8Array(r.contents);store.put(value,r.path);}
+      await done;
+      for(const k of KEYS){const value=snapshot.settings[k];if(value===null)localStorage.removeItem(k);else localStorage.setItem(k,value);}
+      const actual=await read();const sorted=s=>JSON.stringify({...s,records:[...s.records].sort((a,b)=>a.path.localeCompare(b.path)),settings:Object.fromEntries(KEYS.map(k=>[k,s.settings[k]]))});
+      if(sorted(actual)!==sorted(snapshot))throw Error('Restore verification failed.');
+      // Native finish commits the OS backup before clearing this journal.
+      return actual;
+    }finally{db.close();}
+  }
+  function finishSelected(){localStorage.removeItem(JOURNAL);}
   const idle=s=>s?.loaded&&!s.loading&&!s.syncing&&!s.dirty&&!s.blocked;
   async function committed(game){
     if(!idle(game.hmStorageState?.()))return null;
@@ -56,5 +76,5 @@
     if(!idle(game.hmStorageState?.())||JSON.stringify(first)!==JSON.stringify(second))return null;
     return second;
   }
-  window.__hmDesktopStorage={read,empty,restoreMissing,pendingRestore,committed};
+  window.__hmDesktopStorage={read,empty,restoreMissing,restoreSelected,finishSelected,pendingRestore,committed};
 })();

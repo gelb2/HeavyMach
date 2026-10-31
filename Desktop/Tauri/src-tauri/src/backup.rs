@@ -117,7 +117,7 @@ impl Snapshot {
         hash(&serde_json::to_vec(&copy).expect("Serializable snapshot"))
     }
 }
-fn read(path: &Path) -> Result<Envelope, String> {
+pub fn read(path: &Path) -> Result<Envelope, String> {
     let f = File::open(path).map_err(|e| e.to_string())?;
     if f.metadata().map_err(|e| e.to_string())?.len() > MAX_BYTES {
         return Err("Backup too large".into());
@@ -136,6 +136,46 @@ fn read(path: &Path) -> Result<Envelope, String> {
     }
     Ok(e)
 }
+
+pub fn sync_directory(path: &Path) -> Result<(), String> {
+    #[cfg(unix)]
+    File::open(path)
+        .and_then(|f| f.sync_all())
+        .map_err(|e| e.to_string())?;
+    Ok(())
+}
+pub fn envelope(snapshot: Snapshot) -> Result<Envelope, String> {
+    snapshot.validate()?;
+    Ok(Envelope {
+        sequence: 0,
+        digest: hash(&serde_json::to_vec(&snapshot).map_err(|e| e.to_string())?),
+        snapshot,
+    })
+}
+pub fn validate_envelope(e: &Envelope) -> Result<(), String> {
+    e.snapshot.validate()?;
+    if hash(&serde_json::to_vec(&e.snapshot).map_err(|e| e.to_string())?) != e.digest {
+        return Err("Backup checksum mismatch".into());
+    }
+    Ok(())
+}
+pub fn export(path: &Path, snapshot: Snapshot) -> Result<(), String> {
+    let e = envelope(snapshot)?;
+    let bytes = serde_json::to_vec(&e).map_err(|e| e.to_string())?;
+    if bytes.len() as u64 > MAX_BYTES {
+        return Err("Backup too large".into());
+    }
+    let parent = path.parent().ok_or("Missing export folder")?;
+    let mut tmp = tempfile::NamedTempFile::new_in(parent).map_err(|e| e.to_string())?;
+    tmp.write_all(&bytes)
+        .and_then(|_| tmp.as_file().sync_all())
+        .map_err(|e| e.to_string())?;
+    read(tmp.path())?;
+    tmp.persist(path).map_err(|e| e.to_string())?;
+    sync_directory(parent)?;
+    Ok(())
+}
+
 pub fn status(dir: &Path) -> Result<Status, String> {
     if !dir.exists() {
         return Ok(Status {

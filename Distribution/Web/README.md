@@ -13,7 +13,9 @@ python3 Distribution/Web/scripts/package.py
 python3 -m http.server 48726 --directory Distribution/Web/build/site
 ```
 
-Open `http://localhost:48726/`. The first download is about 75 MB. **Play** becomes available after every cached file passes SHA-256 verification. Install from the browser menu or the **Install** button when offered. Installation and first download require a connection. After that, the cached game can start offline.
+Open `http://localhost:48726/`. **Install game** is the main action. The initial page downloads only the launcher. Open the installed app to download the game (about 75 MB), or choose **Play in browser** to download and play there. The progress bar shows verified bytes; interrupted downloads reuse verified files. Play starts after every file passes SHA-256 verification. Safari shows home-screen installation instructions; browsers with an installation prompt open that prompt. Once downloaded, the game can start offline. Updates or cleared caches require another download.
+
+`launcher/` contains launcher artwork preparation and CSS shared with `Desktop/Tauri/`. Both build scripts read the original menu assets and create derivatives only in their own generated build folders.
 
 ## Saves and updates
 

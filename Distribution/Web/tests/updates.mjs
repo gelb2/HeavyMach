@@ -9,7 +9,7 @@ const server=http.createServer((req,res)=>{let name=decodeURIComponent(req.url.s
 });await new Promise(r=>server.listen(0,'127.0.0.1',r));const url='http://127.0.0.1:'+server.address().port+'/';
 const browser=await puppeteer.launch({executablePath:'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',headless:true,args:['--enable-unsafe-swiftshader']});const context=await browser.createBrowserContext();let page=await context.newPage();
 try{
- await page.goto(url);await page.waitForSelector('#play:not([disabled])',{timeout:120000});await page.reload();await page.waitForSelector('#play:not([disabled])');step('base-cache-active');
+ await page.goto(url);await page.waitForSelector('#play:not([disabled])',{timeout:120000});await page.evaluate(async()=>{const r=await navigator.serviceWorker.ready,c=new MessageChannel();await new Promise((resolve,reject)=>{c.port1.onmessage=e=>e.data.error?reject(Error(e.data.error)):resolve();r.active.postMessage({type:'prepare'},[c.port2]);});});await page.reload();await page.waitForSelector('#play:not([disabled])');step('base-cache-active');
  // Controlled fixture in this disposable origin tests crash recovery between IDB and settings writes.
  await page.evaluate(async()=>{const s=await import('./saves.js');const data={format:1,records:[],settings:{'HeavyMach.KeyboardBindingsV1':null,'HeavyMach.AimModeV1':'1'}};localStorage.setItem('HeavyMach.WebImportV1',await s.encode(data));});
  await page.reload();await page.waitForSelector('#play:not([disabled])');const recovered=await page.evaluate(()=>localStorage.getItem('HeavyMach.AimModeV1')==='1'&&!localStorage.getItem('HeavyMach.WebImportV1'));if(!recovered)throw Error('Import journal did not recover');step('interrupted-import-recovers-before-play');

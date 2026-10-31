@@ -1,0 +1,352 @@
+{
+  "date": "2026-11-01",
+  "branch": "feat/tauri-mac",
+  "web_version": "bb1b6045d1e5c4cf",
+  "game_version": "fff3cea23a1d2bdf",
+  "protected_files": 2190,
+  "launcher": {
+    "steps": [
+      "first-visit-downloads-launcher-only",
+      "install-is-primary-before-game-download",
+      "ipad-install-instructions",
+      "mobile-tablet-desktop-layouts",
+      "interrupted-download-does-not-start-game"
+    ],
+    "ok": false,
+    "error": "TimeoutError: Waiting failed: 120000ms exceeded\n    at new WaitTask (file:///Users/sokol/Git/ProjectGameDev-Hub/HeavyMach/build/pr24-review/Web/tests/node_modules/puppeteer-core/lib/puppeteer/common/WaitTask.js:46:34)\n    at IsolatedWorld.waitForFunction (file:///Users/sokol/Git/ProjectGameDev-Hub/HeavyMach/build/pr24-review/Web/tests/node_modules/puppeteer-core/lib/puppeteer/api/Realm.js:49:26)\n    at CdpFrame.waitForFunction (file:///Users/sokol/Git/ProjectGameDev-Hub/HeavyMach/build/pr24-review/Web/tests/node_modules/puppeteer-core/lib/puppeteer/api/Frame.js:585:43)\n    at CdpFrame.<anonymous> (file:///Users/sokol/Git/ProjectGameDev-Hub/HeavyMach/build/pr24-review/Web/tests/node_modules/puppeteer-core/lib/puppeteer/util/decorators.js:101:27)\n    at CdpPage.waitForFunction (file:///Users/sokol/Git/ProjectGameDev-Hub/HeavyMach/build/pr24-review/Web/tests/node_modules/puppeteer-core/lib/puppeteer/api/Page.js:1542:37)\n    at file:///Users/sokol/Git/ProjectGameDev-Hub/HeavyMach/build/pr24-review/Distribution/Web/tests/launcher.mjs:22:119",
+    "state": {
+      "status": "Checking game files\u2026",
+      "error": "Download checksum failed: game/fff3cea23a1d2bdf/hm-assets-1.data",
+      "events": [
+        {
+          "type": "progress",
+          "version": "b7536a851d1ebc62",
+          "received": 59828,
+          "verified": 59728,
+          "total": 74910489,
+          "phase": "downloading"
+        },
+        {
+          "type": "progress",
+          "version": "b7536a851d1ebc62",
+          "received": 59828,
+          "verified": 59728,
+          "total": 74910489,
+          "phase": "verifying"
+        },
+        {
+          "type": "progress",
+          "version": "b7536a851d1ebc62",
+          "received": 59828,
+          "verified": 59728,
+          "total": 74910489,
+          "phase": "failed",
+          "error": "Download checksum failed: game/fff3cea23a1d2bdf/hm-assets-1.data"
+        }
+      ]
+    },
+    "requests": [
+      "/",
+      "/skin/skin.css",
+      "/host.js",
+      "/skin/title.png",
+      "/config.js",
+      "/saves.js",
+      "/skin/background.png",
+      "/skin/button.png",
+      "/sw.js",
+      "/icon-192.png",
+      "/ASSET-LICENSES.en.md",
+      "/CREDITS.en.md",
+      "/LICENSE",
+      "/LICENSE-SCOPE.en.md",
+      "/LICENSES/OpenAL-Soft-LGPL-2.0.txt",
+      "/LICENSES/engineering-skills-MIT.txt",
+      "/LICENSES/rust-sdl2-MIT.txt",
+      "/LICENSES/stb.txt",
+      "/LICENSES/touchHLE-MPL-2.0.txt",
+      "/THIRD_PARTY_NOTICES.en.md",
+      "/config.js",
+      "/host.css",
+      "/host.js",
+      "/icon-192.png",
+      "/icon-512.png",
+      "/index.html",
+      "/manifest.webmanifest",
+      "/saves.js",
+      "/skin/background.png",
+      "/skin/button-down.png",
+      "/skin/button.png",
+      "/skin/skin.css",
+      "/skin/source-manifest.json",
+      "/skin/title.png",
+      "/game/fff3cea23a1d2bdf/hm-assets-1.data"
+    ]
+  },
+  "updates": {
+    "steps": [
+      "base-cache-active",
+      "interrupted-import-recovers-before-play",
+      "bad-checksum-update-rejected",
+      "old-cache-opens-after-rejected-update-offline",
+      "new-version-waits-for-old-windows-to-close",
+      "new-version-activates-on-reopen",
+      "update-preserves-settings"
+    ],
+    "ok": true
+  },
+  "installed_pwa": {
+    "url": "http://127.0.0.1:48726/",
+    "gpu": false,
+    "installed": true,
+    "steps": [
+      {
+        "name": "manifest",
+        "url": "http://127.0.0.1:48726/manifest.webmanifest",
+        "errors": [],
+        "data": "{\"name\":\"Heavy Mach\",\"short_name\":\"Heavy Mach\",\"start_url\":\"./\",\"scope\":\"./\",\"display\":\"standalone\",\"orientation\":\"landscape\",\"background_color\":\"#151912\",\"theme_color\":\"#20251e\",\"icons\":[{\"src\":\"icon-192.png\",\"sizes\":\"192x192\",\"type\":\"image/png\"},{\"src\":\"icon-512.png\",\"sizes\":\"512x512\",\"type\":\"image/png\"}]}\n",
+        "parsed": {
+          "scope": "http://127.0.0.1:48726/"
+        },
+        "manifest": {
+          "backgroundColor": "rgba(21,25,18,1)",
+          "display": "kStandalone",
+          "icons": [
+            {
+              "url": "http://127.0.0.1:48726/icon-192.png",
+              "sizes": "192x192",
+              "type": "image/png"
+            },
+            {
+              "url": "http://127.0.0.1:48726/icon-512.png",
+              "sizes": "512x512",
+              "type": "image/png"
+            }
+          ],
+          "id": "http://127.0.0.1:48726/",
+          "name": "Heavy Mach",
+          "orientation": "LANDSCAPE",
+          "preferRelatedApplications": false,
+          "scope": "http://127.0.0.1:48726/",
+          "startUrl": "http://127.0.0.1:48726/",
+          "themeColor": "rgba(32,37,30,1)"
+        }
+      },
+      {
+        "name": "installability",
+        "installabilityErrors": []
+      },
+      {
+        "name": "pwa-installed",
+        "badgeCount": 0,
+        "fileHandlers": []
+      },
+      {
+        "name": "pwa-standalone-window"
+      },
+      {
+        "name": "offline-cache-and-title",
+        "state": {
+          "screen": "title",
+          "time": 0,
+          "canvas": [
+            480,
+            320
+          ],
+          "loading": 0,
+          "mission": 0,
+          "stage": 0,
+          "playerX": 0,
+          "playerY": 0,
+          "hp": 0,
+          "enemies": 0,
+          "bullets": 0,
+          "paused": 0,
+          "gameState": 0,
+          "decodes": 29,
+          "loadError": 0,
+          "aimMode": 1,
+          "aimTarget": 0,
+          "inputBlocked": 1,
+          "keyboardFire": 0,
+          "gameMenu": 0,
+          "resumeRequired": 0,
+          "active": 1,
+          "keyboardAimX": 0,
+          "callbackInterval": 0.0017,
+          "ticksPerCallback": 1,
+          "motion": 0,
+          "tilt": [
+            0,
+            0,
+            -1
+          ],
+          "hudEditing": 0,
+          "hudCustomized": 0,
+          "hudFallback": 0,
+          "hudSelected": 2,
+          "hudDraftCustomized": 0,
+          "orientationHold": 0
+        }
+      },
+      {
+        "name": "mission-enter",
+        "state": {
+          "screen": "game",
+          "time": 17.4,
+          "canvas": [
+            480,
+            320
+          ],
+          "loading": 0,
+          "mission": 0,
+          "stage": 0,
+          "playerX": -1040,
+          "playerY": -40.5,
+          "hp": 256,
+          "enemies": 0,
+          "bullets": 0,
+          "paused": 0,
+          "gameState": 0,
+          "decodes": 150,
+          "loadError": 0,
+          "aimMode": 1,
+          "aimTarget": 0,
+          "inputBlocked": 0,
+          "keyboardFire": 0,
+          "gameMenu": 0,
+          "resumeRequired": 0,
+          "active": 1,
+          "keyboardAimX": 0,
+          "callbackInterval": 0.0166,
+          "ticksPerCallback": 1,
+          "motion": 0,
+          "tilt": [
+            0,
+            0,
+            -1
+          ],
+          "hudEditing": 0,
+          "hudCustomized": 0,
+          "hudFallback": 0,
+          "hudSelected": 2,
+          "hudDraftCustomized": 0,
+          "orientationHold": 0
+        }
+      },
+      {
+        "name": "fire",
+        "max": 2
+      },
+      {
+        "name": "move",
+        "from": -1040,
+        "to": -961.35
+      },
+      {
+        "name": "jump",
+        "from": -40.5,
+        "to": 8.07
+      },
+      {
+        "name": "pause"
+      },
+      {
+        "name": "second-window-blocked",
+        "message": "The game is open in another window. Close it and try again."
+      },
+      {
+        "name": "export-save",
+        "bytes": 7652
+      },
+      {
+        "name": "corrupt-import-rejected-data-unchanged"
+      },
+      {
+        "name": "import-roundtrip"
+      },
+      {
+        "name": "offline-reload-game",
+        "state": {
+          "screen": "title",
+          "time": 0.0333,
+          "canvas": [
+            480,
+            320
+          ],
+          "loading": 0,
+          "mission": 0,
+          "stage": 0,
+          "playerX": 0,
+          "playerY": 0,
+          "hp": 0,
+          "enemies": 0,
+          "bullets": 0,
+          "paused": 0,
+          "gameState": 0,
+          "decodes": 29,
+          "loadError": 0,
+          "aimMode": 1,
+          "aimTarget": 0,
+          "inputBlocked": 1,
+          "keyboardFire": 0,
+          "gameMenu": 0,
+          "resumeRequired": 0,
+          "active": 1,
+          "keyboardAimX": 0,
+          "callbackInterval": 0.0046,
+          "ticksPerCallback": 1,
+          "motion": 0,
+          "tilt": [
+            0,
+            0,
+            -1
+          ],
+          "hudEditing": 0,
+          "hudCustomized": 0,
+          "hudFallback": 0,
+          "hudSelected": 2,
+          "hudDraftCustomized": 0,
+          "orientationHold": 0
+        }
+      },
+      {
+        "name": "offline-progress-restored",
+        "bytes": 3624
+      },
+      {
+        "name": "offline-save-content-matches"
+      },
+      {
+        "name": "offline-mission-play",
+        "from": -1040,
+        "to": -962.58
+      }
+    ],
+    "errors": [],
+    "ok": true
+  },
+  "tauri": {
+    "rust_tests": 11,
+    "javascript_tests": 15,
+    "native_ui": [
+      "export via macOS Save panel",
+      "import same JSON via Open panel",
+      "confirm restore",
+      "ready to play",
+      "open original game title"
+    ],
+    "data_check": {
+      "before_preserved": true,
+      "after_matches_export": true,
+      "old_backup_files": 2,
+      "pending_removed": true
+    }
+  },
+  "pending": [
+    "real Tauri process interruption and OS disk/permission faults",
+    "Mac long-duration performance comparison",
+    "mobile visual line and keyboard cursor reproduction",
+    "mobile Safari rotation/HUD/restart save checks"
+  ]
+}

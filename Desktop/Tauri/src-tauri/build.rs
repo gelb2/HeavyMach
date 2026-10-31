@@ -5,6 +5,11 @@ fn main() {
             "backup_write",
             "finish_close",
             "diagnostics_write",
+            "restore_status",
+            "export_save",
+            "import_save",
+            "restore_begin",
+            "restore_finish",
         ]),
     ))
     .expect("Tauri build configuration");

@@ -8,7 +8,7 @@ const report={url,gpu,installed,steps:[],errors:[],ok:false};const step=(name,da
 const browser=await puppeteer.launch({executablePath:process.env.CHROME||'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',headless:!gpu,pipe:true,args:gpu?[]:['--enable-unsafe-swiftshader'],defaultViewport:{width:1200,height:800}});
 const context=installed?browser.defaultBrowserContext():await browser.createBrowserContext();let page=await context.newPage();
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));let game;
-async function title(){await page.waitForSelector('#play:not([disabled])',{timeout:120000});await page.click('#play');await page.waitForSelector('#game:not([hidden])');game=await (await page.$('#game')).contentFrame();await game.waitForFunction(()=>window.hmDebugState?.().screen==='title',{timeout:60000});await game.focus('#canvas');}
+async function title(){await page.waitForSelector('#play:not([disabled])',{timeout:120000});await page.click('#play');await page.waitForSelector('#game:not([hidden])',{timeout:120000});game=await (await page.$('#game')).contentFrame();await game.waitForFunction(()=>window.hmDebugState?.().screen==='title',{timeout:60000});await game.focus('#canvas');}
 const state=()=>game.evaluate(()=>hmDebugState());
 async function tap(x,y){const s=await state(),[w,h]=s.canvas,scale=Math.min(1200/w,800/h);await page.mouse.click((1200-w*scale)/2+x*scale,(800-h*scale)/2+(h-y)*scale,{delay:65});}
 async function waitScreen(name){await game.waitForFunction(name=>window.hmDebugState?.().screen===name&&!hmDebugState().loading,{timeout:20000},name);await sleep(1300);}

@@ -1,5 +1,37 @@
 # Mac 두 버전과 웹·PWA 비교
 
+## 설치 우선 시작 화면과 저장 복구
+
+첫 화면에서 **Install game**을 가장 크게 표시한다. **Play in browser**로 설치 없이도 플레이할 수 있다. 처음 페이지를 열 때는 메뉴만 내려받는다. 설치한 PWA를 처음 실행하거나 브라우저 플레이를 선택하면 게임 에셋과 WebAssembly를 받는다. 받은 용량·전체 용량과 검증률을 표시한다. 검사가 끝난 파일은 재시도 때 다시 받지 않는다.
+
+Safari에서는 설치 버튼으로 공유 → 홈 화면에 추가 → 웹 앱으로 열기 순서를 안내한다. 설치 요청 API가 있는 브라우저에서는 설치 창을 연다. 설치형 앱에서는 설치 버튼을 숨기고 Play를 주 버튼으로 표시한다. 캐시를 지우거나 새 버전으로 업데이트하면 다시 다운로드한다.
+
+![설치를 먼저 안내하는 웹 시작 화면](../assets/mac-web-pwa-20261101/launcher-install-first.png)
+
+원작 `Main_BG`, `Main_Title`, `Common_Btn_OK`를 시작 화면에 재사용했다. 버튼 테두리는 원본에서 가져와 늘어나도록 나눴고 새 글자는 HTML로 표시한다. `Distribution/Web/launcher/`를 웹과 Tauri의 빌드 도구가 함께 사용한다. 게임 안의 메뉴와 자원 원본은 바꾸지 않았다.
+
+Tauri에는 Export save·Import save·Restore last backup을 추가했다. macOS 파일 선택 창에서 백업을 내보내고 가져온다. 복구할 때 기존 진행과 백업을 `recovery/`에 보관한다. 복구 도중 앱이 종료되면 다음 시작에서 같은 파일로 복구를 이어간다. 게임 화면에서는 가져오기 명령을 사용할 수 없다.
+
+확인한 결과:
+
+- 설치 전 첫 방문에서 게임 파일 요청 0건. 설치 버튼 우선 노출과 iPad 설치 안내, 390×844·844×390·1024×768·1200×800 배치 검사 통과.
+- 다운로드 실패 후 재시도, 검증된 파일 재사용, 실제 용량 표시, 재접속 때 게임 재다운로드 없음, 오프라인 시작까지 9단계 통과.
+- Chrome 설치형 PWA에서 첫 실행 다운로드, 이동·점프·사격·정지, 저장 내보내기·가져오기, 오프라인 재실행과 저장 바이트 복원 통과.
+- Tauri 저장 관련 Rust 11개·JavaScript 15개 검사 통과. 손상 파일 보존, 복구 중단, 저장소 용량 오류를 포함한다.
+- 실제 Tauri Mac 앱에서 파일 내보내기·가져오기·복구 완료. 복구 전 진행과 기존 백업 2개를 보존했고, 복구 후 데이터는 내보낸 파일과 일치했다. 복구 후 게임 실행도 확인했다.
+
+## iPhone·iPad 사용자 플레이와 권한 조사
+
+사용자는 iPad Safari에서 키보드 이동·Space 점프·트랙패드 사격, 비행기 모드 전환과 오프라인 프로필 재진입을 확인했다. iPad Air 설치형 PWA에서는 틸트와 자동조준 사격을 확인했다. iPhone 설치형 PWA는 미션 1-4까지 정상 플레이하고 클리어했다.
+
+동작 허용 팝업은 iPad Air PWA를 껐다 켤 때마다 나타난다는 제보다. 원본 `Web/shell.html`은 새 페이지에서 동작 권한 상태를 초기화하고 첫 입력 때 요청한다. WebKit 공개 구현도 권한을 출처별 메모리 맵에서 조회하고, 값이 없으면 요청 대상으로 돌린다. 따라서 재실행 팝업은 이 권한 수명과 일치하는 현상으로 보인다. 해당 iPadOS의 프로세스 종료·권한 상태를 직접 측정한 결과는 아직 없다. 게임 코드를 우회하거나 로컬 값만으로 권한을 얻었다고 처리하지 않는다. [WebKit 권한 구현](https://github.com/WebKit/WebKit/blob/main/Source/WebKit/UIProcess/WebsiteData/WebDeviceOrientationAndMotionAccessController.cpp).
+
+YouTube 음악과 게임 효과음이 AirPods에서 함께 들린다는 사용자 결과는 오류로 분류하지 않는다. Audio Session 초안은 다른 소리와 함께 재생하는 ambient 유형을 정의한다. 현재 게임의 실제 오디오 세션 유형과 기기별 동작은 별도 검사한다. [Audio Session 유형](https://www.w3.org/TR/audio-session/#audio-session-types).
+
+상단 직선과 방향키에 따라 움직이는 `0` 모양은 조사 중이다. 웹 게임에는 방향키 조준 위치에 8×8 사각 테두리를 그리는 코드가 있다. 사용자 화면의 `0`과 같은 것인지는 재현 화면으로 대조해야 한다. 보호된 원본 파일은 수정하지 않았다.
+
+
+
 2026-11-01. `feat/tauri-mac`에서 기존 네이티브 Mac Release, Tauri Mac Release, Chrome 웹·설치형 PWA 실행을 비교했다. 웹·PWA는 [GitHub Pages](https://gelb2.github.io/HeavyMach/)에 배포했다. 개발 소스는 develop·main에 아직 병합하지 않았다.
 
 ## 실행 구조와 저장
@@ -50,7 +82,7 @@ Tauri의 타이틀 측정에는 최대 101 ms, 슬롯 메뉴에는 최대 46 ms 
 
 ## 웹·PWA 실행기에 추가한 것
 
-`Distribution/Web/pwa/`에는 시작 화면·manifest·아이콘·Service Worker·저장 파일 관리만 둔다. 기존 게임은 `game/<내용 해시>/` 아래에 복사한다. 약 75 MB의 모든 파일이 내려받아지고 SHA-256이 일치해야 Play 버튼이 열린다.
+`Distribution/Web/pwa/`에는 시작 화면·manifest·아이콘·Service Worker·저장 파일 관리만 둔다. 기존 게임은 `game/<내용 해시>/` 아래에 복사한다. 설치 또는 브라우저 플레이를 선택한 뒤 약 75 MB를 내려받고, SHA-256이 일치하면 게임을 연다.
 
 웹 저장은 원래 저장 시점을 유지한다. 새 실행기는 시작 전 가져오기와 내보내기만 처리한다. 가져오기 전에는 기존 데이터 사본을 보관한다. 가져오기 중 브라우저가 종료되면 다음 시작에서 나머지 처리를 마친 뒤 게임을 연다. 동시에 열린 브라우저·PWA가 같은 저장소에 쓰지 않도록 Web Lock을 사용한다.
 
@@ -66,6 +98,6 @@ Tauri의 타이틀 측정에는 최대 101 ms, 슬롯 메뉴에는 최대 46 ms 
 - 웹 배포: 전용 `gh-pages` 브랜치와 [배포 도구](../../Distribution/Web/scripts/publish.py). 기존 개발 브랜치를 배포 출력으로 사용하지 않는다.
 - [검사 원본](../evidence/mac-web-pwa-comparison-20261101.json) · [상세 개발 계획](../desktop-web-plan-20261031.md) · [웹 운영 방법](../../Distribution/Web/README.md).
 
-Tauri의 외부 백업 파일 선택 화면·손상 백업 선택 복구·Developer ID 서명과 공증, Safari 설치형 실행과 모바일 PWA의 터치·틸트·회전, Windows 설치본 빌드는 후속 과제다.
+남은 검사는 Tauri 실제 앱 강제 종료·디스크 부족·권한 오류, Mac 장시간 비교, 모바일 회전·HUD 편집·재실행 저장이다. 상단 직선과 조준 표시는 재현 조사 중이다. Developer ID 서명·공증과 Windows 설치본 빌드도 남아 있다.
 
 구현 자료: [Service Worker 수명주기](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers), [Web Locks](https://developer.mozilla.org/en-US/docs/Web/API/Web_Locks_API), [영속 저장 요청](https://developer.mozilla.org/en-US/docs/Web/API/StorageManager/persist), [Chrome PWA 검사 인터페이스](https://chromedevtools.github.io/devtools-protocol/tot/PWA/).

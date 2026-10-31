@@ -51,3 +51,9 @@ JS 검사는 별도 메모리 IndexedDB, Rust 검사는 임시 디렉터리를 �
 게임 실행 중 **Diagnostics → Record 15 Seconds of Frame Timing** (`⌘⇧P`)를 선택하면 화면 갱신 간격과 게임 시각을 15초 동안 읽는다. 결과는 앱 데이터 경로의 `diagnostics/`에 한 번 저장한다. 진단 메뉴를 선택하기 전에는 측정하지 않는다. [Mac·웹·PWA 비교](../../docs/reviews/mac-web-pwa-comparison-20261101.md).
 
 [전체 계획](../../docs/desktop-web-plan-20261031.md) · [현재 상태](../../docs/current-status.md)
+
+## Save files
+
+Open **Saved progress** in the launcher to export a JSON backup, import one through the system file picker, or restore the latest valid backup. Import checks the file structure and checksum before asking you to restore. The old progress and OS backup files stay in the app data directory under `recovery/<operation>/`. An interrupted restore resumes before Play becomes available.
+
+The launcher uses the menu artwork prepared by `Distribution/Web/launcher/`. Game files remain unchanged.
