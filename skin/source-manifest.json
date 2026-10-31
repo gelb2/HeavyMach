@@ -1,0 +1,14 @@
+[
+  {
+    "source": "Resources/Images/Main_BG.png",
+    "sha256": "6d1deaa2d75583483c54469d2fdf43f439b3ead6ef62be5bccf9e488cd025aca"
+  },
+  {
+    "source": "Resources/Images/Main_Title.png",
+    "sha256": "376e18b44cbbb6eb9cc8814c6815b73dd73e0cda9e51a03f267ced71c857562a"
+  },
+  {
+    "source": "Resources/Images/Common_Btn_OK.png",
+    "sha256": "02d427210cb5c177f9ce538972f02ccdc38a952f085e3f49782e327df8791a48"
+  }
+]
