@@ -127,3 +127,8 @@ PR #24 이후 외부 기여를 통합할 때 원저자의 검토 대상 커밋 S
 머지 후 원본 SHA가 대상 브랜치 조상인지 확인하고 GitHub가 원저자 계정과 연결하는지도 검사한다. README·CREDITS·릴리스 노트에 작성자·PR·기여 범위를 적는다. 기본 브랜치 main에 들어간 뒤 Contributors 그래프와 API의 실제 표시를 확인한다. 표시 지연을 기여 완료로 처리하지 않으며 이를 해결하려고 원본 작성자 정보를 바꾸지 않는다. [PR #24 검사](evidence/pr24-merge-preservation-20261031.json) · [남은 확인](usability-todo.md#hm-pr24-integration).
 
 외부 PR의 코드를 검토하고 필요한 수정을 마치면, 검사 대상 커밋·발견한 문제·수정·검사 결과를 GitHub PR 리뷰에 기록하고 `Approve`한다. 그 뒤 merge commit으로 병합한다. 원저자의 기여 범위와 후속 수정은 분리해 남긴다. PR #24는 로컬 검토·수정·검사는 했으나 GitHub 승인 리뷰를 생략한 채 병합했다. 이후 절차에는 이 단계를 포함한다. 자기 계정이 작성한 릴리스 PR은 GitHub에서 자기 승인할 수 없으므로 외부 기여 PR과 구분한다.
+
+
+## Tauri·웹 폴더 — 2026-10-31
+
+Tauri Mac·Windows는 `Desktop/Tauri/`의 한 프로젝트로 관리하고 OS별 설정 파일을 나눈다. 웹 빌드·배포·검사는 `Web/`, 브라우저와 Tauri의 C++ 실행부는 `Sources/Web/`에 둔다. 기존 iOS·Android·네이티브 Mac 폴더에 새 플랫폼 파일을 넣지 않는다. 공용 코어·자원과 기존 세 C++ 헤더는 읽기 입력이며 보호 해시로 검사한다. 폴더별 README에 소비자·입력·출력을 명시한다. [폴더와 개발 순서](desktop-web-plan-20261031.md).

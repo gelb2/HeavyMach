@@ -4,7 +4,7 @@
 
 **PR #24를 develop에 병합했다.** 원저자 fastutlego의 19개 커밋을 보존하고 웹 전용 수정 2개를 추가했다. 병합은 `757523e1`, 검사한 최종 코드는 `fdb16df0`다. 두 파일 트리는 같다. 이어 PR #68로 main `91e4c7a2`에 반영했다. 새 버전 태그는 만들지 않았다.
 
-아래 1~10절은 수정 전 `9d2505f7`을 조사한 기록이다. 당시 실패 화면과 재현 결과를 남겼다. **수정·검사·기여 기록은 11절, Tauri/Electron 비교는 12절, 남은 과제와 글감은 13~14절**에 있다.
+아래 1~10절은 수정 전 `9d2505f7`을 조사한 기록이다. 당시 실패 화면과 재현 결과를 남겼다. **수정·검사·기여 기록은 11절, Tauri/Electron 비교는 12절, 남은 과제와 글감은 13~14절, 최신 개발 순서·폴더 구성은 15절**에 있다.
 
 Android·iOS·native Mac 앱은 유지한다. 웹판은 브라우저에서 같은 코어를 실행하는 추가 플랫폼이다. Tauri·Electron 데스크톱 앱은 아직 만들지 않았다.
 
@@ -258,7 +258,7 @@ GitHub는 기본 브랜치 포함 여부와 계정에 연결된 커밋 이메일
 
 ## 12. Tauri와 Electron 비교
 
-**HeavyMach에는 Tauri 2로 작은 데스크톱 후보를 먼저 만드는 안을 제안한다.** 웹판의 HTML·Wasm을 그대로 활용하고 창과 파일 저장을 추가하면 되기 때문이다. 기존 iOS·Android·native Mac 앱은 유지한다. Tauri는 Vue 전용이 아니며 HTML·CSS·JavaScript를 내보내는 프런트엔드를 받을 수 있다. [Tauri 프런트엔드 설정](https://v2.tauri.app/start/frontend/).
+**Tauri Mac 앱을 먼저 만들고 기존 네이티브 Mac과 비교한다.** 웹판의 HTML·Wasm을 그대로 활용하고 창과 파일 저장을 추가하면 되기 때문이다. 기존 iOS·Android·native Mac 앱은 유지한다. Tauri는 Vue 전용이 아니며 HTML·CSS·JavaScript를 내보내는 프런트엔드를 받을 수 있다. [Tauri 프런트엔드 설정](https://v2.tauri.app/start/frontend/).
 
 사용자는 Electron을 잠깐 사용하며 소스 구조·웹뷰 로딩·자원 사용에 불안정을 느꼈다고 했다. 그 프로젝트를 계측한 결과는 없다. 이번 비교에서는 HeavyMach가 어떤 구조와 검사를 필요로 하는지 정리한다.
 
@@ -266,8 +266,8 @@ GitHub는 기본 브랜치 포함 여부와 계정에 연결된 커밋 이메일
 | --- | --- | --- | --- |
 | 게임 코드 | 기존 Web 산출물 + Rust 창·저장 계층 | 기존 Web 산출물 + main/preload 계층 | 코어와 게임 로직을 다시 작성할 필요가 없다. |
 | 웹 엔진 | Mac WKWebView, Windows WebView2 | 앱에 포함한 Chromium | Tauri는 OS별 엔진 차이, Electron은 선택한 Chromium 버전에서 검사한다. |
-| 설치 크기 | 시스템 웹뷰를 활용 | Chromium·Node 런타임 포함 | 동일 게임 자원을 넣은 실제 설치본 크기를 비교한다. |
-| 메모리 | Rust·웹뷰·GPU 프로세스와 게임 자원 | main·renderer·GPU 프로세스와 게임 자원 | 부모 프로세스 하나만 비교하지 않는다. |
+| 설치 크기 | 시스템 웹뷰를 활용 | Chromium·Node 런타임 포함 | Tauri 설치본 크기를 기록한다. Electron은 구조 비교 자료로 유지한다. |
+| 메모리 | Rust·웹뷰·GPU 프로세스와 게임 자원 | main·renderer·GPU 프로세스와 게임 자원 | 렌더러·GPU를 포함한 전체 관련 프로세스를 계측한다. |
 | 진행 저장 | IndexedDB 또는 Rust를 통한 앱 데이터 파일 | IndexedDB 또는 main의 파일 저장 | 초기 읽기·쓰기 성공 응답·종료·오류 복구를 구현한다. |
 | 로딩 | 앱에 포함한 정적 파일·Wasm·자원 | 앱에 포함한 정적 파일·Wasm·자원 | 파일 경로·MIME·초기화 순서·오프라인 실행을 검사한다. |
 | 유지보수 | Rust와 OS별 웹뷰 검사 필요 | Node·preload·Chromium 업데이트 필요 | 게임 호스트의 API를 저장·창 기능으로 좁힌다. |
@@ -276,15 +276,15 @@ Tauri는 시스템 웹뷰를 사용한다. Electron은 Chromium의 다중 프로
 
 ### 성능과 로딩 안정성
 
-Tauri의 엔진 미포함은 기본 배포 크기를 줄일 수 있다. 게임 자원 비용까지 없애지는 않는다. 현재 웹 자원 묶음은 72,918,871바이트이며 Wasm 설정의 초기 메모리는 128MiB다. 이 값은 실제 프로세스 메모리 사용량이 아니다. 두 후보 모두 이미지 디코딩·텍스처·음향·게임 메모리를 사용한다.
+Tauri는 OS 웹뷰를 사용해 브라우저 엔진을 패키지에 넣지 않는다. 현재 웹 자원 묶음은 72,918,871바이트이며 Wasm 초기 메모리 설정은 128MiB다. 실행 중 이미지 디코딩·텍스처·음향·게임 메모리는 별도로 계측한다.
 
-Tauri로 바꾸면 로딩 오류가 자동으로 사라진다고 볼 수 없다. Wasm과 자원 경로, 초기 저장 읽기, 그래픽 준비, 음향 시작 순서를 맞춰야 한다. Electron은 같은 Chromium 버전을 배포하므로 OS별 엔진 차이를 줄일 수 있다. Tauri는 WKWebView와 WebView2에서 각각 검사해야 한다. 실제 프레임·메모리·시작 시간 비교는 아직 하지 않았다. [Electron 성능 측정 안내](https://www.electronjs.org/docs/latest/tutorial/performance).
+Tauri 실행기는 Wasm·자원 로드, 초기 저장 읽기, 그래픽 준비, 음향 시작을 순서대로 연결해야 한다. Electron은 같은 Chromium 버전을 배포하므로 OS별 엔진 차이를 줄일 수 있다. Tauri는 WKWebView와 WebView2에서 각각 검사해야 한다. 실제 프레임·메모리·시작 시간 비교는 아직 하지 않았다. [Electron 성능 측정 안내](https://www.electronjs.org/docs/latest/tutorial/performance).
 
 Windows의 WebView2 설치 방식도 배포안에 포함한다. 고정 런타임을 함께 넣으면 설치 크기가 달라진다. 인터넷이 없는 새 환경에서도 설치·실행할지에 따라 번들 옵션을 고른다. [Tauri Windows 설치](https://v2.tauri.app/distribute/windows-installer/).
 
 ### 저장은 어느 쪽에서도 구현할 수 있다
 
-브라우저 웹판은 이미 IDBFS/IndexedDB에 저장한다. 단순 웹뷰라는 이유로 저장이 불가능한 것은 아니다. Electron도 영속 세션을 제공하며 사용자 지정 partition은 `persist:` 접두어 여부에 따라 디스크 저장과 메모리 세션이 나뉜다. [Electron session](https://www.electronjs.org/docs/latest/api/session).
+브라우저 웹판은 이미 IDBFS/IndexedDB에 저장한다. Electron도 영속 세션을 제공하며 사용자 지정 partition은 `persist:` 접두어 여부에 따라 디스크 저장과 메모리 세션이 나뉜다. [Electron session](https://www.electronjs.org/docs/latest/api/session).
 
 데스크톱 후보에는 OS 앱 데이터 폴더의 파일 저장을 제안한다. Tauri에서는 Rust, Electron에서는 main이 이를 담당할 수 있다. 저장 포맷과 기존 저장 시점은 유지한다. 초기 읽기를 마치기 전에 게임을 시작하지 않고, 임시 파일 쓰기·교체·백업과 성공 응답을 처리한다. 교체의 원자성·디스크 오류·강제 종료는 OS별로 검사한다. HUD도 파일 저장 성공 뒤 APPLY를 끝낸다. 발사나 프레임마다 파일을 쓰거나 호스트를 호출하지 않는다. [Tauri 파일 시스템](https://v2.tauri.app/plugin/file-system/).
 
@@ -302,15 +302,13 @@ PR의 브라우저 실행 경로는 이미 있다. `Web/`에서 Emscripten으로
 - 오프라인 재실행이 필요하면 Service Worker 캐시와 업데이트 정책을 따로 설계한다. PWA는 설치·오프라인 선택지이며 웹판 실행의 필수 조건은 아니다.
 - Safari·Chromium·실제 모바일에서 멀티터치·틸트 권한·음향 시작·가로 전환·전체 화면·백그라운드 복귀·GPU 복구를 검사한다.
 
-### 후보 구현과 비교 순서
+### 개발 순서 — 최신 사용자 제안 반영
 
-1. `develop`에서 별도 브랜치를 만들고 `Desktop/Tauri/`에 창·설정·Rust 저장 코드를 둔다. 기존 `Web/` 산출물을 앱에 포함해 원격 사이트 없이 실행한다. Apple·Android·코어는 수정하지 않는다.
-2. 같은 Web 산출물로 Electron 비교 앱을 만들 경우 `Desktop/Electron/`에 분리한다. main·preload는 창·저장만 담당한다. Node API를 게임 페이지 전체에 노출하지 않는다.
-3. 동일 Wasm·자원 SHA, 화면 크기·배율, 무기·적 조건을 고정한다. 시작 10회, 전체 프로세스 메모리, 프레임 간격의 중앙값·p95·p99, 30분 전투를 비교한다.
-4. 그래픽 손실·복구, 키보드·포커스·음향·절전·전체 화면, 쓰기 실패·강제 종료·업데이트 후 저장을 검사한다. Mac과 실제 Windows 환경의 결과를 각각 남긴다.
-5. 측정 결과로 배포 후보를 정한다. Windows 설치본과 Mac 앱의 서명·업데이트는 해당 후보의 배포 작업으로 진행한다.
+1. `Desktop/Tauri/`에 Mac 앱을 만들고 **기존 네이티브 Mac 앱과 비교**한다. 같은 미션·무기·화면·저장 복사본으로 조작·전투·저장·음향·표시 간격·메모리를 확인한다.
+2. 같은 웹 실행부를 브라우저 어댑터로 빌드해 순수 웹판을 배포한다. 고정 주소·버전별 자원·저장·업데이트를 검사한다.
+3. 동일 Tauri 프로젝트의 Windows 설치본을 빌드한다. 이번 범위는 빌드·산출물 검사까지이며 Windows 실행·플레이 검사는 후속 과제다.
 
-위 순서는 후속 계획이다. 아직 Tauri·Electron 앱이나 Windows 설치본은 만들지 않았다.
+Electron 비교 앱 제작은 현재 순서에서 제외한다. 기술 비교는 이 절에 유지한다. 실제 구현·저장·폴더·검사·릴리스 계획은 [개발 계획](../desktop-web-plan-20261031.md)에 정리했다.
 
 <a id="followup-todo"></a>
 
@@ -320,9 +318,9 @@ PR의 브라우저 실행 경로는 이미 있다. `Web/`에서 Emscripten으로
 - main의 GitHub 계정 연결과 README·CREDITS·CHANGELOG 표기는 확인했다. Contributors 통계도 fastutlego 19개를 확인했다. 요약 목록의 캐시 갱신과 다음 버전 릴리스 노트는 후속 확인한다.
 - 실제 모바일 브라우저의 틸트·멀티터치·음향·저장·복귀를 검사한다.
 - Apple의 미사용 경험치 미션 진입은 별도 재현한다. 이번 웹 수정으로 Apple 코드가 바뀌지는 않았다.
-- Tauri 후보와 Electron 비교는 12절의 저장·로딩·성능·배포 조건으로 수행한다.
+- Tauri Mac부터 구현하고 기존 네이티브 Mac과 비교한다. 순수 웹 배포, Windows 설치본 빌드가 뒤따른다. Electron은 기술 비교 자료로 유지한다.
 
-[개발 TODO](https://github.com/gelb2/HeavyMach/blob/docs/pr24-followup/docs/usability-todo.md#hm-pr24-integration)에 완료와 남은 항목을 나눴다.
+[개발 TODO](https://github.com/gelb2/HeavyMach/blob/docs/tauri-development-plan/docs/usability-todo.md#hm-pr24-integration)에 완료와 남은 항목을 나눴다.
 
 <a id="first-pr-story"></a>
 
@@ -332,4 +330,26 @@ PR의 브라우저 실행 경로는 이미 있다. `Web/`에서 Emscripten으로
 
 후속 지시에 따라 [첫 PR을 받다. 그 다음 이어진 스케일업, 그리고 타우리](../public/first-pr-and-tauri-20261031.md)를 작성했다. 당시 고민을 개발자 1인칭으로 쓰고 승인 리뷰 생략으로 화가 난 경험도 같은 글에 담았다. 원저자의 웹 구현·Codex의 후속 수정·실제 병합 결과를 구분했다. SaaS 담당 세션의 Apps·Mags 집필 자료에도 연결했다.
 
-[사용자 원문](https://github.com/gelb2/HeavyMach/blob/docs/pr24-followup/docs/references/developer-background/user-first-pr-20261031.md) · [글감 TODO](https://github.com/gelb2/HeavyMach/blob/docs/pr24-followup/docs/usability-todo.md#hm-first-pr-story) · [SaaS 집필 안내](https://github.com/gelb2/HeavyMach/blob/docs/pr24-followup/docs/public/publication-inventory.md).
+[사용자 원문](https://github.com/gelb2/HeavyMach/blob/docs/pr24-followup/docs/references/developer-background/user-first-pr-20261031.md) · [글감 TODO](https://github.com/gelb2/HeavyMach/blob/docs/tauri-development-plan/docs/usability-todo.md#hm-first-pr-story) · [SaaS 집필 안내](https://github.com/gelb2/HeavyMach/blob/docs/tauri-development-plan/docs/public/publication-inventory.md).
+
+
+<a id="desktop-development-plan"></a>
+
+## 15. Tauri Mac·웹·Windows 개발 준비
+
+첫 PR 원고와 기술검토를 PR #69→develop→PR #70→main(`cf3dca50`)으로 게시했다. 게임 소스·자원·빌드 파일의 변경은 없다. 국영문 README에서 원고를 읽을 수 있다.
+
+사용자의 최신 제안은 **Tauri Mac 앱 → 순수 웹판 → Tauri Windows 설치본 빌드**다. 기존 네이티브 Mac을 비교 대상으로 삼는다. 이 순서로 현재 Mac에서 입력·렌더·음향·저장 차이를 먼저 확인하고 다음 두 대상에 반영할 수 있다.
+
+| 항목 | 현재 상태와 처리 |
+|---|---|
+| 개발 시작 | 웹 코어·렌더러·입력·저장이 있어 시작 가능. Tauri 프로젝트와 저장 어댑터는 새로 작성 |
+| Mac 비교 | 같은 미션·무기·화면·저장 복사본, 앱 하나씩 실행. Instruments와 실제 앱 검사로 전투·프레임·메모리·저장·음향 비교 |
+| 폴더 | `Desktop/Tauri/`에 Mac/Windows 실행기, `Web/`에 웹 빌드·배포, `Sources/Web/`에 공용 웹 실행부. iOS·Android 프로젝트 유지 |
+| 기존 의존 | 웹이 `Sources/iOS`의 공용 C++ 헤더 세 개를 읽음. 읽기 목록·해시로 관리하며 이번에 이동·복사하지 않음 |
+| 추가 준비 | Rust·Tauri 도구, Mac Developer ID 서명·공증, Windows 빌드 CI, 공식 웹 배포 주소 |
+| Windows 범위 | 설치본·해시·빌드 로그까지. 실제 설치·전투·저장·성능은 후속 검사 |
+
+최신 Tauri 문서는 앱 안의 WebDriver 플러그인을 통한 macOS 검사도 안내한다. 기존 네이티브 Mac 검사와 함께 사용할 수 있으며 실제 연동 확인은 구현 단계에서 한다. [공식 검사 안내](https://v2.tauri.app/develop/tests/webdriver/).
+
+[전체 개발 계획과 폴더 트리](../desktop-web-plan-20261031.md) · [현황 점검 기록](../evidence/desktop-web-readiness-20261031.json) · [남은 TODO](../usability-todo.md#hm-desktop-web).
