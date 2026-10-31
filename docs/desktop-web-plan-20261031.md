@@ -20,7 +20,17 @@ Tauri를 검토한 목적은 **저장 데이터 보존과 Mac·Windows 지원**�
 
 검사 중 백업의 바이트 변환과 Mac 종료 메뉴를 고쳤다. Emscripten의 `Int8Array`를 그대로 JSON으로 옮기면 음수가 생겨 Rust의 바이트 형식과 맞지 않았다. 새 실행기에서 같은 메모리를 `Uint8Array`로 읽도록 수정했다. 기본 Mac 종료 메뉴의 직접 종료도 전용 메뉴로 바꿔 백업을 기다리게 했다. 게임 저장 함수는 그대로다.
 
-다음은 내보내기·가져오기와 손상 백업 복구 화면, 실제 앱의 설정 복구·쓰기 오류 검사, 기존 네이티브 Mac과의 전투·음향·30분 성능 비교다. PWA와 Windows 빌드는 이후 단계다. [실행 기록](evidence/tauri-mac-start-20261031.json) · [빌드 방법](../Desktop/Tauri/README.md).
+이 첫 구현 뒤의 Mac 비교와 웹·PWA 결과는 아래 2026-11-01 기록에 있다. Tauri 전용 내보내기·가져오기, 손상 백업 선택 화면, 30분 실행·전체 프로세스 메모리·청취 비교와 Windows 빌드는 남아 있다. [실행 기록](evidence/tauri-mac-start-20261031.json) · [빌드 방법](../Desktop/Tauri/README.md).
+
+## Mac 비교와 웹·PWA 구현 — 2026-11-01
+
+기존 네이티브 Mac Release와 Tauri Mac을 실제 창에서 실행했다. 첫 미션 진입·키보드 이동·점프·사격·일시정지를 확인했다. 네이티브 XCTest의 무기 전환·사격 검사와 두 화면 크기의 타이머 검사가 통과했다. Tauri에는 요청할 때만 15초 동안 프레임 간격을 읽는 Diagnostics 메뉴를 추가했다. 게임 프레임·저장 함수를 교체하지 않는다.
+
+순수 웹 실행기와 PWA는 `Distribution/Web/`에 구현했다. [공개 게임](https://gelb2.github.io/HeavyMach/)은 별도 `gh-pages` 배포 브랜치에서 제공한다. 개발 코드는 `feat/tauri-mac`에 유지한다. develop·main에는 병합하지 않았다.
+
+웹 실행기는 전체 파일의 SHA-256 검증, 오프라인 캐시, 업데이트 대기, 동시 창 방지, 저장 내보내기·가져오기를 담당한다. 게임 산출물 10개와 기존 보호 파일 2,190개는 그대로다. 다운로드가 실패하면 이전 캐시로 실행하고, 새 버전은 기존 창이 닫힌 뒤 적용한다. 저장 데이터는 업데이트 때 삭제하지 않는다.
+
+[비교·검사 결과](reviews/mac-web-pwa-comparison-20261101.md) · [웹 빌드·운영 방법](../Distribution/Web/README.md).
 
 ## 1. 개발 순서
 
@@ -47,8 +57,8 @@ Tauri를 검토한 목적은 **저장 데이터 보존과 Mac·Windows 지원**�
 | Tauri 프로젝트 | `Desktop/Tauri/`에서 Mac 앱·백업·시작 전 복구·검사 구현 | 내보내기·가져오기·손상 복구 화면과 기존 Mac 비교 |
 | Mac 공개 배포 | 로컬 키체인에 Apple Development 인증서만 확인 | Developer ID 서명·공증을 사용할 배포 자격 확인 |
 | Windows 빌드 | 저장소에 Windows 작업·self-hosted runner 없음 | GitHub Windows runner의 빌드·패키징 작업 추가 |
-| 웹 배포 | 기여자의 기존 테스트 사이트 기록 존재. 이 저장소의 GitHub Pages는 비활성 | GitHub Actions 배포와 고정 주소 구성 |
-| PWA | 기존 manifest·홈 화면 메타데이터 존재. 설치 아이콘·Service Worker는 없음 | 별도 설치 화면·manifest·아이콘·오프라인 캐시·업데이트 구현 |
+| 웹 배포 | 기여자의 기존 테스트 사이트 기록 존재. `gh-pages`에서 GitHub Pages 배포 완료 | 업데이트·롤백은 웹 전용 배포 도구 사용 |
+| PWA | 새 실행기의 manifest·아이콘·Service Worker 구현 | 설치·오프라인·갱신 검사 결과는 비교 문서에 기록 |
 
 기존 검사는 [PR 수정 검사](evidence/pr24-web-fixes-20261031.json)의 당시 실행 결과다. Tauri 앱의 실행 결과는 개발하면서 추가한다. 개발 도구 준비는 [Tauri 준비물](https://v2.tauri.app/start/prerequisites/)을 따른다.
 

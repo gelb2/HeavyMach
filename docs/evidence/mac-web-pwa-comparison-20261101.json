@@ -1,0 +1,1603 @@
+{
+  "date": "2026-11-01",
+  "branch": "feat/tauri-mac",
+  "frozen_baseline": "c39448af28a727fdb531b2d3fa57358563596bb8",
+  "environment": {
+    "machine": "Mac mini Apple M4 Pro",
+    "os": "macOS 27.0.1",
+    "xcode": "27.1",
+    "chrome": "156.0.8078.74",
+    "rust": "1.99.1",
+    "emscripten": "6.0.13"
+  },
+  "preservation": {
+    "protected_check": "PASS: 2190 protected files and existing workflows unchanged",
+    "identical_game_files": {
+      "hm-assets-1.data": "8176c4e73c8cea236f692545d1e9ba707f0a17f689f1ec4034902da960d36a10",
+      "hm-assets-2.data": "93d5c87fefc1e93427ad101562cce24985327e7b6cc57c5d60fc76e12dda84f8",
+      "hm-assets-3.data": "45fe34130a1a1eb41f60ae8066ff93345119f513943f05b106af1e30805d3a4f",
+      "hm-assets-4.data": "330be5fcd2f4f399a859eec467c0536d2be4a4c73d2a4fb7fd2c316e8fb4f284",
+      "hm-assets.js": "15162cf1e31380e1be9975496ff1b74450ff1bd431ad585233dad2d2fa3efdb7",
+      "hm-assets.json": "1a1e50cfda81e506f6890ecebd13b402fa7f7be844bc772a8034a06158ea38b1",
+      "index.html": "799419943ead2be04a795732fc476beadfa65f418721c408eb495d46f70cbb6c",
+      "index.js": "5f4636d886a6b3c9ea6fe9fd3ca405386d687b02c2fe0dca42d338948e6418ad",
+      "index.wasm": "aa16a8457561c385c90ec58acc396eb20b5aa36024af5e6d17f2a52a08e35df9",
+      "manifest.webmanifest": "65c37e452de3dabbaa9971a8136a51497c8abf1a5034012fd15f56f7eb724e52"
+    }
+  },
+  "native": {
+    "build": "Release, arm64, local ad-hoc signing",
+    "tests_passed": [
+      "testEveryWeaponKeyboardSelectionAndFire",
+      "testKeyboardMoveAimJumpFireAndRelease",
+      "testMacPresentedFrameCostsWithProductionTimer"
+    ],
+    "samples": [
+      {
+        "audio": {
+          "applicationActive": false,
+          "available": true,
+          "backend": "OpenAL Soft 1.22.2 static buffers",
+          "bufferCount": 31,
+          "creationOrder": [
+            "UI_Click",
+            "UI_Btn_OK",
+            "UI_Btn_Cancel",
+            "Game_GetItem",
+            "Game_ChangeWeapon",
+            "Game_WeaponEnd",
+            "Game_LevelUp",
+            "Game_LowHP",
+            "SFX_HitBody01",
+            "SFX_HitBody02",
+            "SFX_HitBody03",
+            "SFX_HitBody04",
+            "SFX_GroundHit",
+            "SFX_ExplGround",
+            "SFX_ExplMach",
+            "Wpn_Gun01",
+            "Wpn_Gun02",
+            "Wpn_Gun03",
+            "Wpn_Shotgun",
+            "Wpn_Canon",
+            "Wpn_Missile",
+            "Wpn_Laser",
+            "Wpn_Default",
+            "Wpn_EnGun",
+            "Wpn_EnCanon",
+            "Wpn_EnMissile",
+            "Loading_Open",
+            "Loading_Close",
+            "Title_TitleIn",
+            "Title_Bang",
+            "Title_TapToStart"
+          ],
+          "error": "",
+          "renderer": "OpenAL Soft",
+          "sourceCount": 31,
+          "startCount": 2,
+          "stopAllCount": 2,
+          "vendor": "OpenAL Community",
+          "version": "1.1 ALSOFT 1.22.2"
+        },
+        "callback_intervals": {
+          "max_ms": 17.307584173977375,
+          "mean_ms": 16.66654768374024,
+          "p95_ms": 17.113625071942806,
+          "samples": 180
+        },
+        "frame_work": {
+          "max_ms": 11.589834000915289,
+          "mean_ms": 10.968217195477337,
+          "p95_ms": 11.421959148719907,
+          "samples": 180
+        },
+        "game_save_calls": 0,
+        "max_bullets": 0,
+        "phase": "native_mac_production_timer",
+        "renderer": {
+          "backend": "macOS OpenGL compatibility",
+          "bufferHeight": 320,
+          "bufferWidth": 480,
+          "drawableInternalFormat": 32856,
+          "drawCalls": 3,
+          "frames": 210,
+          "lastError": "",
+          "logicalHeight": 320,
+          "logicalWidth": 480,
+          "presentation_timings_ms": {
+            "copy": 0.47420826740562916,
+            "quad": 0.21170848049223423,
+            "swap": 1.7140833660960197,
+            "wait_and_restore": 7.406291551887989
+          },
+          "renderer": "Apple M4 Pro",
+          "sceneReallocations": 1,
+          "textureCount": 28,
+          "textureUploads": 28,
+          "vendor": "Apple",
+          "version": "2.1 Metal - 91.7"
+        },
+        "scale": 2,
+        "scene": "title_animation",
+        "size": "1200x800",
+        "view_height": 800,
+        "view_width": 1200
+      },
+      {
+        "audio": {
+          "applicationActive": false,
+          "available": true,
+          "backend": "OpenAL Soft 1.22.2 static buffers",
+          "bufferCount": 31,
+          "creationOrder": [
+            "UI_Click",
+            "UI_Btn_OK",
+            "UI_Btn_Cancel",
+            "Game_GetItem",
+            "Game_ChangeWeapon",
+            "Game_WeaponEnd",
+            "Game_LevelUp",
+            "Game_LowHP",
+            "SFX_HitBody01",
+            "SFX_HitBody02",
+            "SFX_HitBody03",
+            "SFX_HitBody04",
+            "SFX_GroundHit",
+            "SFX_ExplGround",
+            "SFX_ExplMach",
+            "Wpn_Gun01",
+            "Wpn_Gun02",
+            "Wpn_Gun03",
+            "Wpn_Shotgun",
+            "Wpn_Canon",
+            "Wpn_Missile",
+            "Wpn_Laser",
+            "Wpn_Default",
+            "Wpn_EnGun",
+            "Wpn_EnCanon",
+            "Wpn_EnMissile",
+            "Loading_Open",
+            "Loading_Close",
+            "Title_TitleIn",
+            "Title_Bang",
+            "Title_TapToStart"
+          ],
+          "error": "",
+          "renderer": "OpenAL Soft",
+          "sourceCount": 31,
+          "startCount": 0,
+          "stopAllCount": 2,
+          "vendor": "OpenAL Community",
+          "version": "1.1 ALSOFT 1.22.2"
+        },
+        "callback_intervals": {
+          "max_ms": 17.666666069999337,
+          "mean_ms": 16.668249539927476,
+          "p95_ms": 17.34729204326868,
+          "samples": 180
+        },
+        "frame_work": {
+          "max_ms": 6.492582848295569,
+          "mean_ms": 2.86457911780518,
+          "p95_ms": 4.8510420601814985,
+          "samples": 180
+        },
+        "game_save_calls": 0,
+        "max_bullets": 0,
+        "phase": "native_mac_production_timer",
+        "renderer": {
+          "backend": "macOS OpenGL compatibility",
+          "bufferHeight": 320,
+          "bufferWidth": 480,
+          "drawableInternalFormat": 32856,
+          "drawCalls": 151,
+          "frames": 210,
+          "lastError": "",
+          "logicalHeight": 320,
+          "logicalWidth": 480,
+          "presentation_timings_ms": {
+            "copy": 0.3475835546851158,
+            "quad": 0.13566645793616772,
+            "swap": 2.6030000299215317,
+            "wait_and_restore": 0.00362517312169075
+          },
+          "renderer": "Apple M4 Pro",
+          "sceneReallocations": 1,
+          "textureCount": 36,
+          "textureUploads": 42,
+          "vendor": "Apple",
+          "version": "2.1 Metal - 91.7"
+        },
+        "scale": 2,
+        "scene": "slot_preview",
+        "size": "1200x800",
+        "view_height": 800,
+        "view_width": 1200
+      },
+      {
+        "audio": {
+          "applicationActive": false,
+          "available": true,
+          "backend": "OpenAL Soft 1.22.2 static buffers",
+          "bufferCount": 31,
+          "creationOrder": [
+            "UI_Click",
+            "UI_Btn_OK",
+            "UI_Btn_Cancel",
+            "Game_GetItem",
+            "Game_ChangeWeapon",
+            "Game_WeaponEnd",
+            "Game_LevelUp",
+            "Game_LowHP",
+            "SFX_HitBody01",
+            "SFX_HitBody02",
+            "SFX_HitBody03",
+            "SFX_HitBody04",
+            "SFX_GroundHit",
+            "SFX_ExplGround",
+            "SFX_ExplMach",
+            "Wpn_Gun01",
+            "Wpn_Gun02",
+            "Wpn_Gun03",
+            "Wpn_Shotgun",
+            "Wpn_Canon",
+            "Wpn_Missile",
+            "Wpn_Laser",
+            "Wpn_Default",
+            "Wpn_EnGun",
+            "Wpn_EnCanon",
+            "Wpn_EnMissile",
+            "Loading_Open",
+            "Loading_Close",
+            "Title_TitleIn",
+            "Title_Bang",
+            "Title_TapToStart"
+          ],
+          "error": "",
+          "renderer": "OpenAL Soft",
+          "sourceCount": 31,
+          "startCount": 23,
+          "stopAllCount": 2,
+          "vendor": "OpenAL Community",
+          "version": "1.1 ALSOFT 1.22.2"
+        },
+        "callback_intervals": {
+          "max_ms": 18.44170899130404,
+          "mean_ms": 16.664842133306795,
+          "p95_ms": 16.911208163946867,
+          "samples": 180
+        },
+        "frame_work": {
+          "max_ms": 12.939458014443517,
+          "mean_ms": 12.717803937589956,
+          "p95_ms": 12.885208008810878,
+          "samples": 180
+        },
+        "game_save_calls": 0,
+        "max_bullets": 8,
+        "phase": "native_mac_production_timer",
+        "renderer": {
+          "backend": "macOS OpenGL compatibility",
+          "bufferHeight": 320,
+          "bufferWidth": 480,
+          "drawableInternalFormat": 32856,
+          "drawCalls": 49,
+          "frames": 210,
+          "lastError": "",
+          "logicalHeight": 320,
+          "logicalWidth": 480,
+          "presentation_timings_ms": {
+            "copy": 0.07233326323330402,
+            "quad": 0.024833250790834427,
+            "swap": 2.539750188589096,
+            "wait_and_restore": 9.901499841362238
+          },
+          "renderer": "Apple M4 Pro",
+          "sceneReallocations": 1,
+          "textureCount": 114,
+          "textureUploads": 114,
+          "vendor": "Apple",
+          "version": "2.1 Metal - 91.7"
+        },
+        "scale": 2,
+        "scene": "stage01_firing",
+        "size": "1200x800",
+        "view_height": 800,
+        "view_width": 1200
+      },
+      {
+        "audio": {
+          "applicationActive": false,
+          "available": true,
+          "backend": "OpenAL Soft 1.22.2 static buffers",
+          "bufferCount": 31,
+          "creationOrder": [
+            "UI_Click",
+            "UI_Btn_OK",
+            "UI_Btn_Cancel",
+            "Game_GetItem",
+            "Game_ChangeWeapon",
+            "Game_WeaponEnd",
+            "Game_LevelUp",
+            "Game_LowHP",
+            "SFX_HitBody01",
+            "SFX_HitBody02",
+            "SFX_HitBody03",
+            "SFX_HitBody04",
+            "SFX_GroundHit",
+            "SFX_ExplGround",
+            "SFX_ExplMach",
+            "Wpn_Gun01",
+            "Wpn_Gun02",
+            "Wpn_Gun03",
+            "Wpn_Shotgun",
+            "Wpn_Canon",
+            "Wpn_Missile",
+            "Wpn_Laser",
+            "Wpn_Default",
+            "Wpn_EnGun",
+            "Wpn_EnCanon",
+            "Wpn_EnMissile",
+            "Loading_Open",
+            "Loading_Close",
+            "Title_TitleIn",
+            "Title_Bang",
+            "Title_TapToStart"
+          ],
+          "error": "",
+          "renderer": "OpenAL Soft",
+          "sourceCount": 31,
+          "startCount": 2,
+          "stopAllCount": 2,
+          "vendor": "OpenAL Community",
+          "version": "1.1 ALSOFT 1.22.2"
+        },
+        "callback_intervals": {
+          "max_ms": 17.460291041061282,
+          "mean_ms": 16.667713888455182,
+          "p95_ms": 17.397040966898203,
+          "samples": 180
+        },
+        "frame_work": {
+          "max_ms": 4.337000194936991,
+          "mean_ms": 3.107405305167453,
+          "p95_ms": 4.075750010088086,
+          "samples": 180
+        },
+        "game_save_calls": 0,
+        "max_bullets": 0,
+        "phase": "native_mac_production_timer",
+        "renderer": {
+          "backend": "macOS OpenGL compatibility",
+          "bufferHeight": 320,
+          "bufferWidth": 569,
+          "drawableInternalFormat": 32856,
+          "drawCalls": 7,
+          "frames": 210,
+          "lastError": "",
+          "logicalHeight": 320,
+          "logicalWidth": 568.888916015625,
+          "presentation_timings_ms": {
+            "copy": 0.39125001057982445,
+            "quad": 0.13866648077964783,
+            "swap": 1.2520833406597376,
+            "wait_and_restore": 0.003166729584336281
+          },
+          "renderer": "Apple M4 Pro",
+          "sceneReallocations": 2,
+          "textureCount": 28,
+          "textureUploads": 28,
+          "vendor": "Apple",
+          "version": "2.1 Metal - 91.7"
+        },
+        "scale": 2,
+        "scene": "title_animation",
+        "size": "screen_size",
+        "view_height": 1080,
+        "view_width": 1920
+      },
+      {
+        "audio": {
+          "applicationActive": false,
+          "available": true,
+          "backend": "OpenAL Soft 1.22.2 static buffers",
+          "bufferCount": 31,
+          "creationOrder": [
+            "UI_Click",
+            "UI_Btn_OK",
+            "UI_Btn_Cancel",
+            "Game_GetItem",
+            "Game_ChangeWeapon",
+            "Game_WeaponEnd",
+            "Game_LevelUp",
+            "Game_LowHP",
+            "SFX_HitBody01",
+            "SFX_HitBody02",
+            "SFX_HitBody03",
+            "SFX_HitBody04",
+            "SFX_GroundHit",
+            "SFX_ExplGround",
+            "SFX_ExplMach",
+            "Wpn_Gun01",
+            "Wpn_Gun02",
+            "Wpn_Gun03",
+            "Wpn_Shotgun",
+            "Wpn_Canon",
+            "Wpn_Missile",
+            "Wpn_Laser",
+            "Wpn_Default",
+            "Wpn_EnGun",
+            "Wpn_EnCanon",
+            "Wpn_EnMissile",
+            "Loading_Open",
+            "Loading_Close",
+            "Title_TitleIn",
+            "Title_Bang",
+            "Title_TapToStart"
+          ],
+          "error": "",
+          "renderer": "OpenAL Soft",
+          "sourceCount": 31,
+          "startCount": 0,
+          "stopAllCount": 2,
+          "vendor": "OpenAL Community",
+          "version": "1.1 ALSOFT 1.22.2"
+        },
+        "callback_intervals": {
+          "max_ms": 20.8084168843925,
+          "mean_ms": 16.6629555544609,
+          "p95_ms": 17.53037516027689,
+          "samples": 180
+        },
+        "frame_work": {
+          "max_ms": 4.799833055585623,
+          "mean_ms": 3.489481446902371,
+          "p95_ms": 4.34254202991724,
+          "samples": 180
+        },
+        "game_save_calls": 0,
+        "max_bullets": 0,
+        "phase": "native_mac_production_timer",
+        "renderer": {
+          "backend": "macOS OpenGL compatibility",
+          "bufferHeight": 320,
+          "bufferWidth": 569,
+          "drawableInternalFormat": 32856,
+          "drawCalls": 155,
+          "frames": 210,
+          "lastError": "",
+          "logicalHeight": 320,
+          "logicalWidth": 568.888916015625,
+          "presentation_timings_ms": {
+            "copy": 0.33133337274193764,
+            "quad": 0.1166248694062233,
+            "swap": 1.359541667625308,
+            "wait_and_restore": 0.004958361387252808
+          },
+          "renderer": "Apple M4 Pro",
+          "sceneReallocations": 2,
+          "textureCount": 36,
+          "textureUploads": 42,
+          "vendor": "Apple",
+          "version": "2.1 Metal - 91.7"
+        },
+        "scale": 2,
+        "scene": "slot_preview",
+        "size": "screen_size",
+        "view_height": 1080,
+        "view_width": 1920
+      },
+      {
+        "audio": {
+          "applicationActive": false,
+          "available": true,
+          "backend": "OpenAL Soft 1.22.2 static buffers",
+          "bufferCount": 31,
+          "creationOrder": [
+            "UI_Click",
+            "UI_Btn_OK",
+            "UI_Btn_Cancel",
+            "Game_GetItem",
+            "Game_ChangeWeapon",
+            "Game_WeaponEnd",
+            "Game_LevelUp",
+            "Game_LowHP",
+            "SFX_HitBody01",
+            "SFX_HitBody02",
+            "SFX_HitBody03",
+            "SFX_HitBody04",
+            "SFX_GroundHit",
+            "SFX_ExplGround",
+            "SFX_ExplMach",
+            "Wpn_Gun01",
+            "Wpn_Gun02",
+            "Wpn_Gun03",
+            "Wpn_Shotgun",
+            "Wpn_Canon",
+            "Wpn_Missile",
+            "Wpn_Laser",
+            "Wpn_Default",
+            "Wpn_EnGun",
+            "Wpn_EnCanon",
+            "Wpn_EnMissile",
+            "Loading_Open",
+            "Loading_Close",
+            "Title_TitleIn",
+            "Title_Bang",
+            "Title_TapToStart"
+          ],
+          "error": "",
+          "renderer": "OpenAL Soft",
+          "sourceCount": 31,
+          "startCount": 23,
+          "stopAllCount": 2,
+          "vendor": "OpenAL Community",
+          "version": "1.1 ALSOFT 1.22.2"
+        },
+        "callback_intervals": {
+          "max_ms": 19.130917033180594,
+          "mean_ms": 16.66681921083687,
+          "p95_ms": 17.221624962985516,
+          "samples": 180
+        },
+        "frame_work": {
+          "max_ms": 14.232417102903128,
+          "mean_ms": 13.592629388181699,
+          "p95_ms": 14.066332951188087,
+          "samples": 180
+        },
+        "game_save_calls": 0,
+        "max_bullets": 8,
+        "phase": "native_mac_production_timer",
+        "renderer": {
+          "backend": "macOS OpenGL compatibility",
+          "bufferHeight": 320,
+          "bufferWidth": 569,
+          "drawableInternalFormat": 32856,
+          "drawCalls": 59,
+          "frames": 210,
+          "lastError": "",
+          "logicalHeight": 320,
+          "logicalWidth": 568.888916015625,
+          "presentation_timings_ms": {
+            "copy": 0.08399994112551212,
+            "quad": 0.03004167228937149,
+            "swap": 0.23262505419552326,
+            "wait_and_restore": 12.9507917445153
+          },
+          "renderer": "Apple M4 Pro",
+          "sceneReallocations": 2,
+          "textureCount": 121,
+          "textureUploads": 121,
+          "vendor": "Apple",
+          "version": "2.1 Metal - 91.7"
+        },
+        "scale": 2,
+        "scene": "stage01_firing",
+        "size": "screen_size",
+        "view_height": 1080,
+        "view_width": 1920
+      }
+    ]
+  },
+  "tauri": {
+    "build": "Release arm64",
+    "js_tests_passed": 12,
+    "rust_tests_passed": 8,
+    "samples": [
+      {
+        "platform": "tauri-wkwebview",
+        "seconds": 15.008,
+        "viewport": [
+          1200,
+          768
+        ],
+        "pixelRatio": 2,
+        "canvas": [
+          2400,
+          1536
+        ],
+        "renderer": "WebKit WebGL",
+        "raf": {
+          "samples": 895,
+          "mean_ms": 16.75977653631285,
+          "p95_ms": 18,
+          "max_ms": 101
+        },
+        "gameTicksPerSecond": 59.70135616138496,
+        "hiddenSamples": 0,
+        "maxBullets": 0,
+        "first": {
+          "screen": "title",
+          "time": 16.4167,
+          "canvas": [
+            500,
+            320
+          ],
+          "loading": 0,
+          "mission": 0,
+          "stage": 0,
+          "playerX": 0,
+          "playerY": 0,
+          "hp": 0,
+          "enemies": 0,
+          "bullets": 0,
+          "paused": 0,
+          "gameState": 0,
+          "decodes": 29,
+          "loadError": 0,
+          "aimMode": 1,
+          "aimTarget": 0,
+          "inputBlocked": 1,
+          "keyboardFire": 0,
+          "gameMenu": 0,
+          "resumeRequired": 0,
+          "active": 1,
+          "keyboardAimX": 0,
+          "callbackInterval": 0.0176,
+          "ticksPerCallback": 1,
+          "motion": 0,
+          "tilt": [
+            0,
+            0,
+            -1
+          ],
+          "hudEditing": 0,
+          "hudCustomized": 0,
+          "hudFallback": 0,
+          "hudSelected": 2,
+          "hudDraftCustomized": 0,
+          "orientationHold": 0
+        },
+        "final": {
+          "screen": "title",
+          "time": 31.35,
+          "canvas": [
+            500,
+            320
+          ],
+          "loading": 0,
+          "mission": 0,
+          "stage": 0,
+          "playerX": 0,
+          "playerY": 0,
+          "hp": 0,
+          "enemies": 0,
+          "bullets": 0,
+          "paused": 0,
+          "gameState": 0,
+          "decodes": 29,
+          "loadError": 0,
+          "aimMode": 1,
+          "aimTarget": 0,
+          "inputBlocked": 1,
+          "keyboardFire": 0,
+          "gameMenu": 0,
+          "resumeRequired": 0,
+          "active": 1,
+          "keyboardAimX": 0,
+          "callbackInterval": 0.0167,
+          "ticksPerCallback": 1,
+          "motion": 0,
+          "tilt": [
+            0,
+            0,
+            -1
+          ],
+          "hudEditing": 0,
+          "hudCustomized": 0,
+          "hudFallback": 0,
+          "hudSelected": 2,
+          "hudDraftCustomized": 0,
+          "orientationHold": 0
+        },
+        "storage": {
+          "loaded": true,
+          "loading": false,
+          "syncing": false,
+          "dirty": false,
+          "blocked": false
+        }
+      },
+      {
+        "platform": "tauri-wkwebview",
+        "seconds": 15.016,
+        "viewport": [
+          1200,
+          768
+        ],
+        "pixelRatio": 2,
+        "canvas": [
+          2400,
+          1536
+        ],
+        "renderer": "WebKit WebGL",
+        "raf": {
+          "samples": 899,
+          "mean_ms": 16.685205784204673,
+          "p95_ms": 18,
+          "max_ms": 46
+        },
+        "gameTicksPerSecond": 59.86973582267517,
+        "hiddenSamples": 0,
+        "maxBullets": 0,
+        "first": {
+          "screen": "menu",
+          "time": 117.9833,
+          "canvas": [
+            500,
+            320
+          ],
+          "loading": 0,
+          "mission": 0,
+          "stage": 0,
+          "playerX": 0,
+          "playerY": 0,
+          "hp": 0,
+          "enemies": 0,
+          "bullets": 0,
+          "paused": 0,
+          "gameState": 0,
+          "decodes": 44,
+          "loadError": 0,
+          "aimMode": 1,
+          "aimTarget": 0,
+          "inputBlocked": 1,
+          "keyboardFire": 0,
+          "gameMenu": 0,
+          "resumeRequired": 0,
+          "active": 1,
+          "keyboardAimX": 0,
+          "callbackInterval": 0.0167,
+          "ticksPerCallback": 1,
+          "motion": 0,
+          "tilt": [
+            0,
+            0,
+            -1
+          ],
+          "hudEditing": 0,
+          "hudCustomized": 0,
+          "hudFallback": 0,
+          "hudSelected": 2,
+          "hudDraftCustomized": 0,
+          "orientationHold": 0
+        },
+        "final": {
+          "screen": "menu",
+          "time": 132.9667,
+          "canvas": [
+            500,
+            320
+          ],
+          "loading": 0,
+          "mission": 0,
+          "stage": 0,
+          "playerX": 0,
+          "playerY": 0,
+          "hp": 0,
+          "enemies": 0,
+          "bullets": 0,
+          "paused": 0,
+          "gameState": 0,
+          "decodes": 44,
+          "loadError": 0,
+          "aimMode": 1,
+          "aimTarget": 0,
+          "inputBlocked": 1,
+          "keyboardFire": 0,
+          "gameMenu": 0,
+          "resumeRequired": 0,
+          "active": 1,
+          "keyboardAimX": 0,
+          "callbackInterval": 0.0166,
+          "ticksPerCallback": 1,
+          "motion": 0,
+          "tilt": [
+            0,
+            0,
+            -1
+          ],
+          "hudEditing": 0,
+          "hudCustomized": 0,
+          "hudFallback": 0,
+          "hudSelected": 2,
+          "hudDraftCustomized": 0,
+          "orientationHold": 0
+        },
+        "storage": {
+          "loaded": true,
+          "loading": false,
+          "syncing": false,
+          "dirty": false,
+          "blocked": false
+        }
+      },
+      {
+        "platform": "tauri-wkwebview",
+        "seconds": 15.013,
+        "viewport": [
+          1200,
+          768
+        ],
+        "pixelRatio": 2,
+        "canvas": [
+          2400,
+          1536
+        ],
+        "renderer": "WebKit WebGL",
+        "raf": {
+          "samples": 900,
+          "mean_ms": 16.66777777777778,
+          "p95_ms": 18,
+          "max_ms": 18
+        },
+        "gameTicksPerSecond": 60.01478405442531,
+        "hiddenSamples": 0,
+        "maxBullets": 1,
+        "first": {
+          "screen": "game",
+          "time": 257.65,
+          "canvas": [
+            500,
+            320
+          ],
+          "loading": 0,
+          "mission": 0,
+          "stage": 0,
+          "playerX": -1040,
+          "playerY": -40.5,
+          "hp": 126,
+          "enemies": 2,
+          "bullets": 1,
+          "paused": 0,
+          "gameState": 0,
+          "decodes": 161,
+          "loadError": 0,
+          "aimMode": 1,
+          "aimTarget": 0,
+          "inputBlocked": 0,
+          "keyboardFire": 1,
+          "gameMenu": 0,
+          "resumeRequired": 0,
+          "active": 1,
+          "keyboardAimX": 120,
+          "callbackInterval": 0.0167,
+          "ticksPerCallback": 1,
+          "motion": 0,
+          "tilt": [
+            0,
+            0,
+            -1
+          ],
+          "hudEditing": 0,
+          "hudCustomized": 0,
+          "hudFallback": 0,
+          "hudSelected": 2,
+          "hudDraftCustomized": 0,
+          "orientationHold": 0
+        },
+        "final": {
+          "screen": "game",
+          "time": 272.6667,
+          "canvas": [
+            500,
+            320
+          ],
+          "loading": 0,
+          "mission": 0,
+          "stage": 0,
+          "playerX": -1040,
+          "playerY": -40.5,
+          "hp": 66,
+          "enemies": 2,
+          "bullets": 0,
+          "paused": 0,
+          "gameState": 0,
+          "decodes": 161,
+          "loadError": 0,
+          "aimMode": 1,
+          "aimTarget": 0,
+          "inputBlocked": 0,
+          "keyboardFire": 1,
+          "gameMenu": 0,
+          "resumeRequired": 0,
+          "active": 1,
+          "keyboardAimX": 120,
+          "callbackInterval": 0.0167,
+          "ticksPerCallback": 1,
+          "motion": 0,
+          "tilt": [
+            0,
+            0,
+            -1
+          ],
+          "hudEditing": 0,
+          "hudCustomized": 0,
+          "hudFallback": 0,
+          "hudSelected": 2,
+          "hudDraftCustomized": 0,
+          "orientationHold": 0
+        },
+        "storage": {
+          "loaded": true,
+          "loading": false,
+          "syncing": false,
+          "dirty": false,
+          "blocked": false
+        }
+      }
+    ]
+  },
+  "browser_gpu": {
+    "url": "http://127.0.0.1:48726/",
+    "gpu": true,
+    "steps": [
+      {
+        "name": "offline-cache-and-title",
+        "state": {
+          "screen": "title",
+          "time": 0,
+          "canvas": [
+            480,
+            320
+          ],
+          "loading": 0,
+          "mission": 0,
+          "stage": 0,
+          "playerX": 0,
+          "playerY": 0,
+          "hp": 0,
+          "enemies": 0,
+          "bullets": 0,
+          "paused": 0,
+          "gameState": 0,
+          "decodes": 29,
+          "loadError": 0,
+          "aimMode": 1,
+          "aimTarget": 0,
+          "inputBlocked": 1,
+          "keyboardFire": 0,
+          "gameMenu": 0,
+          "resumeRequired": 0,
+          "active": 1,
+          "keyboardAimX": 0,
+          "callbackInterval": 0.0006,
+          "ticksPerCallback": 1,
+          "motion": 0,
+          "tilt": [
+            0,
+            0,
+            -1
+          ],
+          "hudEditing": 0,
+          "hudCustomized": 0,
+          "hudFallback": 0,
+          "hudSelected": 2,
+          "hudDraftCustomized": 0,
+          "orientationHold": 0
+        }
+      },
+      {
+        "name": "mission-enter",
+        "state": {
+          "screen": "game",
+          "time": 17.55,
+          "canvas": [
+            480,
+            320
+          ],
+          "loading": 0,
+          "mission": 0,
+          "stage": 0,
+          "playerX": -1040,
+          "playerY": -40.5,
+          "hp": 256,
+          "enemies": 0,
+          "bullets": 0,
+          "paused": 0,
+          "gameState": 0,
+          "decodes": 150,
+          "loadError": 0,
+          "aimMode": 1,
+          "aimTarget": 0,
+          "inputBlocked": 0,
+          "keyboardFire": 0,
+          "gameMenu": 0,
+          "resumeRequired": 0,
+          "active": 1,
+          "keyboardAimX": 0,
+          "callbackInterval": 0.0167,
+          "ticksPerCallback": 1,
+          "motion": 0,
+          "tilt": [
+            0,
+            0,
+            -1
+          ],
+          "hudEditing": 0,
+          "hudCustomized": 0,
+          "hudFallback": 0,
+          "hudSelected": 2,
+          "hudDraftCustomized": 0,
+          "orientationHold": 0
+        }
+      },
+      {
+        "name": "gpu-frame-timing",
+        "mean_ms": 16.667,
+        "p95_ms": 17.600000000002183,
+        "max_ms": 17.80000000000291,
+        "samples": 900,
+        "gameTicksPerSecond": 60.04197951554845,
+        "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)",
+        "viewport": [
+          1200,
+          800
+        ],
+        "first": {
+          "screen": "game",
+          "time": 17.55,
+          "canvas": [
+            480,
+            320
+          ],
+          "loading": 0,
+          "mission": 0,
+          "stage": 0,
+          "playerX": -1040,
+          "playerY": -40.5,
+          "hp": 256,
+          "enemies": 0,
+          "bullets": 0,
+          "paused": 0,
+          "gameState": 0,
+          "decodes": 150,
+          "loadError": 0,
+          "aimMode": 1,
+          "aimTarget": 0,
+          "inputBlocked": 0,
+          "keyboardFire": 0,
+          "gameMenu": 0,
+          "resumeRequired": 0,
+          "active": 1,
+          "keyboardAimX": 0,
+          "callbackInterval": 0.0167,
+          "ticksPerCallback": 1,
+          "motion": 0,
+          "tilt": [
+            0,
+            0,
+            -1
+          ],
+          "hudEditing": 0,
+          "hudCustomized": 0,
+          "hudFallback": 0,
+          "hudSelected": 2,
+          "hudDraftCustomized": 0,
+          "orientationHold": 0
+        },
+        "final": {
+          "screen": "game",
+          "time": 32.5667,
+          "canvas": [
+            480,
+            320
+          ],
+          "loading": 0,
+          "mission": 0,
+          "stage": 0,
+          "playerX": -1040,
+          "playerY": -40.5,
+          "hp": 256,
+          "enemies": 0,
+          "bullets": 0,
+          "paused": 0,
+          "gameState": 0,
+          "decodes": 150,
+          "loadError": 0,
+          "aimMode": 1,
+          "aimTarget": 0,
+          "inputBlocked": 0,
+          "keyboardFire": 0,
+          "gameMenu": 0,
+          "resumeRequired": 0,
+          "active": 1,
+          "keyboardAimX": 0,
+          "callbackInterval": 0.0166,
+          "ticksPerCallback": 1,
+          "motion": 0,
+          "tilt": [
+            0,
+            0,
+            -1
+          ],
+          "hudEditing": 0,
+          "hudCustomized": 0,
+          "hudFallback": 0,
+          "hudSelected": 2,
+          "hudDraftCustomized": 0,
+          "orientationHold": 0
+        }
+      },
+      {
+        "name": "fire",
+        "max": 3
+      },
+      {
+        "name": "move",
+        "from": -1040,
+        "to": -961.42
+      },
+      {
+        "name": "jump",
+        "from": -40.5,
+        "to": 8.07
+      },
+      {
+        "name": "pause"
+      },
+      {
+        "name": "second-window-blocked",
+        "message": "The game is open in another window. Close it and try again."
+      },
+      {
+        "name": "export-save",
+        "bytes": 7652
+      },
+      {
+        "name": "corrupt-import-rejected-data-unchanged"
+      },
+      {
+        "name": "import-roundtrip"
+      },
+      {
+        "name": "offline-reload-game",
+        "state": {
+          "screen": "title",
+          "time": 0,
+          "canvas": [
+            480,
+            320
+          ],
+          "loading": 0,
+          "mission": 0,
+          "stage": 0,
+          "playerX": 0,
+          "playerY": 0,
+          "hp": 0,
+          "enemies": 0,
+          "bullets": 0,
+          "paused": 0,
+          "gameState": 0,
+          "decodes": 29,
+          "loadError": 0,
+          "aimMode": 1,
+          "aimTarget": 0,
+          "inputBlocked": 1,
+          "keyboardFire": 0,
+          "gameMenu": 0,
+          "resumeRequired": 0,
+          "active": 1,
+          "keyboardAimX": 0,
+          "callbackInterval": 0.0004,
+          "ticksPerCallback": 1,
+          "motion": 0,
+          "tilt": [
+            0,
+            0,
+            -1
+          ],
+          "hudEditing": 0,
+          "hudCustomized": 0,
+          "hudFallback": 0,
+          "hudSelected": 2,
+          "hudDraftCustomized": 0,
+          "orientationHold": 0
+        }
+      },
+      {
+        "name": "offline-progress-restored",
+        "bytes": 3624
+      }
+    ],
+    "errors": [],
+    "ok": true
+  },
+  "installed_pwa": {
+    "url": "https://gelb2.github.io/HeavyMach/",
+    "gpu": true,
+    "installed": true,
+    "steps": [
+      {
+        "name": "manifest",
+        "url": "https://gelb2.github.io/HeavyMach/manifest.webmanifest",
+        "errors": [],
+        "data": "{\"name\":\"Heavy Mach\",\"short_name\":\"Heavy Mach\",\"start_url\":\"./\",\"scope\":\"./\",\"display\":\"standalone\",\"orientation\":\"landscape\",\"background_color\":\"#151912\",\"theme_color\":\"#20251e\",\"icons\":[{\"src\":\"icon-192.png\",\"sizes\":\"192x192\",\"type\":\"image/png\"},{\"src\":\"icon-512.png\",\"sizes\":\"512x512\",\"type\":\"image/png\"}]}\n",
+        "parsed": {
+          "scope": "https://gelb2.github.io/HeavyMach/"
+        },
+        "manifest": {
+          "backgroundColor": "rgba(21,25,18,1)",
+          "display": "kStandalone",
+          "icons": [
+            {
+              "url": "https://gelb2.github.io/HeavyMach/icon-192.png",
+              "sizes": "192x192",
+              "type": "image/png"
+            },
+            {
+              "url": "https://gelb2.github.io/HeavyMach/icon-512.png",
+              "sizes": "512x512",
+              "type": "image/png"
+            }
+          ],
+          "id": "https://gelb2.github.io/HeavyMach/",
+          "name": "Heavy Mach",
+          "orientation": "LANDSCAPE",
+          "preferRelatedApplications": false,
+          "scope": "https://gelb2.github.io/HeavyMach/",
+          "startUrl": "https://gelb2.github.io/HeavyMach/",
+          "themeColor": "rgba(32,37,30,1)"
+        }
+      },
+      {
+        "name": "installability",
+        "installabilityErrors": []
+      },
+      {
+        "name": "pwa-installed",
+        "badgeCount": 0,
+        "fileHandlers": []
+      },
+      {
+        "name": "pwa-standalone-window"
+      },
+      {
+        "name": "offline-cache-and-title",
+        "state": {
+          "screen": "title",
+          "time": 0,
+          "canvas": [
+            480,
+            320
+          ],
+          "loading": 0,
+          "mission": 0,
+          "stage": 0,
+          "playerX": 0,
+          "playerY": 0,
+          "hp": 0,
+          "enemies": 0,
+          "bullets": 0,
+          "paused": 0,
+          "gameState": 0,
+          "decodes": 29,
+          "loadError": 0,
+          "aimMode": 1,
+          "aimTarget": 0,
+          "inputBlocked": 1,
+          "keyboardFire": 0,
+          "gameMenu": 0,
+          "resumeRequired": 0,
+          "active": 1,
+          "keyboardAimX": 0,
+          "callbackInterval": 0,
+          "ticksPerCallback": 1,
+          "motion": 0,
+          "tilt": [
+            0,
+            0,
+            -1
+          ],
+          "hudEditing": 0,
+          "hudCustomized": 0,
+          "hudFallback": 0,
+          "hudSelected": 2,
+          "hudDraftCustomized": 0,
+          "orientationHold": 0
+        }
+      },
+      {
+        "name": "mission-enter",
+        "state": {
+          "screen": "game",
+          "time": 17.5833,
+          "canvas": [
+            480,
+            320
+          ],
+          "loading": 0,
+          "mission": 0,
+          "stage": 0,
+          "playerX": -1040,
+          "playerY": -40.5,
+          "hp": 256,
+          "enemies": 0,
+          "bullets": 0,
+          "paused": 0,
+          "gameState": 0,
+          "decodes": 150,
+          "loadError": 0,
+          "aimMode": 1,
+          "aimTarget": 0,
+          "inputBlocked": 0,
+          "keyboardFire": 0,
+          "gameMenu": 0,
+          "resumeRequired": 0,
+          "active": 1,
+          "keyboardAimX": 0,
+          "callbackInterval": 0.0167,
+          "ticksPerCallback": 1,
+          "motion": 0,
+          "tilt": [
+            0,
+            0,
+            -1
+          ],
+          "hudEditing": 0,
+          "hudCustomized": 0,
+          "hudFallback": 0,
+          "hudSelected": 2,
+          "hudDraftCustomized": 0,
+          "orientationHold": 0
+        }
+      },
+      {
+        "name": "gpu-frame-timing",
+        "mean_ms": 16.669299221357065,
+        "p95_ms": 18.299999999999272,
+        "max_ms": 18.80000000000291,
+        "samples": 899,
+        "gameTicksPerSecond": 59.98200227007529,
+        "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)",
+        "viewport": [
+          1200,
+          800
+        ],
+        "first": {
+          "screen": "game",
+          "time": 18.1,
+          "canvas": [
+            480,
+            320
+          ],
+          "loading": 0,
+          "mission": 0,
+          "stage": 0,
+          "playerX": -1040,
+          "playerY": -40.5,
+          "hp": 256,
+          "enemies": 0,
+          "bullets": 0,
+          "paused": 0,
+          "gameState": 0,
+          "decodes": 150,
+          "loadError": 0,
+          "aimMode": 1,
+          "aimTarget": 0,
+          "inputBlocked": 0,
+          "keyboardFire": 1,
+          "gameMenu": 0,
+          "resumeRequired": 0,
+          "active": 1,
+          "keyboardAimX": 240,
+          "callbackInterval": 0.0165,
+          "ticksPerCallback": 1,
+          "motion": 0,
+          "tilt": [
+            0,
+            0,
+            -1
+          ],
+          "hudEditing": 0,
+          "hudCustomized": 0,
+          "hudFallback": 0,
+          "hudSelected": 2,
+          "hudDraftCustomized": 0,
+          "orientationHold": 0
+        },
+        "final": {
+          "screen": "game",
+          "time": 33.1,
+          "canvas": [
+            480,
+            320
+          ],
+          "loading": 0,
+          "mission": 0,
+          "stage": 0,
+          "playerX": -1040,
+          "playerY": -40.5,
+          "hp": 256,
+          "enemies": 0,
+          "bullets": 2,
+          "paused": 0,
+          "gameState": 0,
+          "decodes": 153,
+          "loadError": 0,
+          "aimMode": 1,
+          "aimTarget": 0,
+          "inputBlocked": 0,
+          "keyboardFire": 1,
+          "gameMenu": 0,
+          "resumeRequired": 0,
+          "active": 1,
+          "keyboardAimX": 240,
+          "callbackInterval": 0.0167,
+          "ticksPerCallback": 1,
+          "motion": 0,
+          "tilt": [
+            0,
+            0,
+            -1
+          ],
+          "hudEditing": 0,
+          "hudCustomized": 0,
+          "hudFallback": 0,
+          "hudSelected": 2,
+          "hudDraftCustomized": 0,
+          "orientationHold": 0
+        }
+      },
+      {
+        "name": "fire",
+        "max": 4
+      },
+      {
+        "name": "move",
+        "from": -1040,
+        "to": -960.89
+      },
+      {
+        "name": "jump",
+        "from": -40.5,
+        "to": 8.07
+      },
+      {
+        "name": "pause"
+      },
+      {
+        "name": "second-window-blocked",
+        "message": "The game is open in another window. Close it and try again."
+      },
+      {
+        "name": "export-save",
+        "bytes": 7648
+      },
+      {
+        "name": "corrupt-import-rejected-data-unchanged"
+      },
+      {
+        "name": "import-roundtrip"
+      },
+      {
+        "name": "offline-reload-game",
+        "state": {
+          "screen": "title",
+          "time": 0,
+          "canvas": [
+            480,
+            320
+          ],
+          "loading": 0,
+          "mission": 0,
+          "stage": 0,
+          "playerX": 0,
+          "playerY": 0,
+          "hp": 0,
+          "enemies": 0,
+          "bullets": 0,
+          "paused": 0,
+          "gameState": 0,
+          "decodes": 29,
+          "loadError": 0,
+          "aimMode": 1,
+          "aimTarget": 0,
+          "inputBlocked": 1,
+          "keyboardFire": 0,
+          "gameMenu": 0,
+          "resumeRequired": 0,
+          "active": 1,
+          "keyboardAimX": 0,
+          "callbackInterval": 0.0004,
+          "ticksPerCallback": 1,
+          "motion": 0,
+          "tilt": [
+            0,
+            0,
+            -1
+          ],
+          "hudEditing": 0,
+          "hudCustomized": 0,
+          "hudFallback": 0,
+          "hudSelected": 2,
+          "hudDraftCustomized": 0,
+          "orientationHold": 0
+        }
+      },
+      {
+        "name": "offline-progress-restored",
+        "bytes": 3624
+      },
+      {
+        "name": "offline-save-content-matches"
+      },
+      {
+        "name": "offline-mission-play",
+        "from": -1040,
+        "to": -961.45
+      }
+    ],
+    "errors": [],
+    "ok": true
+  },
+  "web_recovery": {
+    "passed": 19,
+    "checks": [
+      "pending EXP pauses combat",
+      "keyboard cannot bypass upgrade",
+      "foreground retains upgrade",
+      "upgrade selection and OK resume combat",
+      "context loss freezes session 0",
+      "context restored with same session 0",
+      "WebGL valid after restore 0",
+      "explicit resume after restore 0",
+      "context loss freezes session 1",
+      "context restored with same session 1",
+      "WebGL valid after restore 1",
+      "explicit resume after restore 1",
+      "HUD waits for commit",
+      "pending HUD save cannot close editor",
+      "HUD write failure keeps draft",
+      "HUD retry commits draft",
+      "failed read blocks startup",
+      "read retry preserves exact save",
+      "no runtime JS exceptions"
+    ]
+  },
+  "hud": {
+    "passed": 11,
+    "steps": [
+      "mission-no-entry",
+      "pause",
+      "open-editor",
+      "drag",
+      "apply",
+      "resume",
+      "menu-button-after-layout",
+      "reload",
+      "reopen-from-pause",
+      "sample-scene",
+      "reset"
+    ]
+  },
+  "updates": {
+    "steps": [
+      "base-cache-active",
+      "interrupted-import-recovers-before-play",
+      "bad-checksum-update-rejected",
+      "old-cache-opens-after-rejected-update-offline",
+      "new-version-waits-for-old-windows-to-close",
+      "new-version-activates-on-reopen",
+      "update-preserves-settings"
+    ],
+    "ok": true
+  },
+  "deployment": {
+    "url": "https://gelb2.github.io/HeavyMach/",
+    "branch": "gh-pages",
+    "commit": "e0ca4272ff65227c1c648dbad9f04d23f42bca8e",
+    "version": "814b75c5268eb9b1",
+    "game_version": "fff3cea23a1d2bdf",
+    "cached_bytes": 74457913
+  },
+  "pending": [
+    "30-minute matched-scene performance and total process memory",
+    "audio listening comparison",
+    "Safari and mobile PWA input and installation",
+    "Tauri external backup import/export UI and signed distribution",
+    "Windows build"
+  ]
+}

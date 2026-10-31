@@ -58,6 +58,26 @@ fn finish_close(w: WebviewWindow, state: tauri::State<State>) -> Result<(), Stri
     w.app_handle().exit(0);
     Ok(())
 }
+#[tauri::command]
+fn diagnostics_write(w: WebviewWindow, report: String) -> Result<(), String> {
+    local(&w)?;
+    if report.len() > 65536 {
+        return Err("Report too large".into());
+    }
+    let _: serde_json::Value = serde_json::from_str(&report).map_err(|e| e.to_string())?;
+    let dir = w
+        .app_handle()
+        .path()
+        .app_data_dir()
+        .map_err(|e| e.to_string())?
+        .join("diagnostics");
+    std::fs::create_dir_all(&dir).map_err(|e| e.to_string())?;
+    let stamp = std::time::SystemTime::now()
+        .duration_since(std::time::UNIX_EPOCH)
+        .map_err(|e| e.to_string())?
+        .as_millis();
+    std::fs::write(dir.join(format!("frames-{stamp}.json")), report).map_err(|e| e.to_string())
+}
 fn request_close(w: &WebviewWindow) {
     let _ = w.eval("window.__hmDesktop?.requestClose()");
 }
@@ -75,7 +95,8 @@ fn main() {
         .invoke_handler(tauri::generate_handler![
             backup_status,
             backup_write,
-            finish_close
+            finish_close,
+            diagnostics_write
         ])
         .setup(|app| {
             use tauri::menu::{MenuBuilder, MenuItemBuilder, SubmenuBuilder};
@@ -100,16 +121,28 @@ fn main() {
                 .paste()
                 .select_all()
                 .build()?;
+            let measure =
+                MenuItemBuilder::with_id("measure-frames", "Record 15 Seconds of Frame Timing")
+                    .accelerator("CmdOrCtrl+Shift+P")
+                    .build(app)?;
+            let diagnostics_menu = SubmenuBuilder::new(app, "Diagnostics")
+                .item(&measure)
+                .build()?;
             let window_menu = SubmenuBuilder::new(app, "Window")
                 .minimize()
                 .maximize()
                 .build()?;
             app.set_menu(
                 MenuBuilder::new(app)
-                    .items(&[&app_menu, &edit_menu, &window_menu])
+                    .items(&[&app_menu, &edit_menu, &window_menu, &diagnostics_menu])
                     .build()?,
             )?;
             app.on_menu_event(|app, event| {
+                if event.id().as_ref() == "measure-frames" {
+                    if let Some(w) = app.get_webview_window("main") {
+                        let _ = w.eval("window.__hmMeasure?.()");
+                    }
+                }
                 if event.id().as_ref() == "quit-after-backup" {
                     if let Some(w) = app.get_webview_window("main") {
                         request_close(&w);
@@ -119,12 +152,14 @@ fn main() {
             let script = concat!(
                 include_str!("../../frontend/storage.js"),
                 "\n",
-                include_str!("../../frontend/observer.js")
+                include_str!("../../frontend/observer.js"),
+                "\n",
+                include_str!("../../frontend/diagnostics.js")
             );
             let window =
                 tauri::WebviewWindowBuilder::new(app, "main", WebviewUrl::App("index.html".into()))
                     .title("Heavy Mach Desktop")
-                    .inner_size(1280., 720.)
+                    .inner_size(1200., 800.)
                     .min_inner_size(640., 360.)
                     .initialization_script(script)
                     .on_new_window(|_, _| tauri::webview::NewWindowResponse::Deny)

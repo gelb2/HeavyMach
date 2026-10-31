@@ -13,7 +13,7 @@
 | `protected-files.json` | 개발 시작 전 기존 파일의 경로·SHA-256 |
 | `build/`, `src-tauri/target/` | Git에서 제외한 생성물 |
 
-기존 `Web/`, `Sources/`, Apple·Android 프로젝트를 수정하지 않는다. PWA는 다음 단계의 `Distribution/Web/`에서 개발한다. Tauri 앱은 Service Worker를 사용하지 않는다.
+기존 `Web/`, `Sources/`, Apple·Android 프로젝트를 수정하지 않는다. 웹·PWA 실행기는 `Distribution/Web/`에 있다. Tauri 앱은 Service Worker를 사용하지 않는다.
 
 ## 준비와 빌드
 
@@ -47,5 +47,7 @@ cargo test --locked --manifest-path Desktop/Tauri/src-tauri/Cargo.toml
 ```
 
 JS 검사는 별도 메모리 IndexedDB, Rust 검사는 임시 디렉터리를 쓴다. 실제 사용자의 진행 데이터에 쓰지 않는다. 앱 안의 WKWebView 저장 복구·플레이·기존 네이티브 Mac과의 성능 비교는 별도 실행 검사다.
+
+게임 실행 중 **Diagnostics → Record 15 Seconds of Frame Timing** (`⌘⇧P`)를 선택하면 화면 갱신 간격과 게임 시각을 15초 동안 읽는다. 결과는 앱 데이터 경로의 `diagnostics/`에 한 번 저장한다. 진단 메뉴를 선택하기 전에는 측정하지 않는다. [Mac·웹·PWA 비교](../../docs/reviews/mac-web-pwa-comparison-20261101.md).
 
 [전체 계획](../../docs/desktop-web-plan-20261031.md) · [현재 상태](../../docs/current-status.md)

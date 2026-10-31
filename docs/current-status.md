@@ -1,14 +1,21 @@
 # 2026-10-25 문서·코드·앱 일치 체계 점검 및 보완
 
+## Mac 비교와 웹·PWA 배포 — 2026-11-01
+
+기존 네이티브 Mac·Tauri Mac·Chrome 웹·설치형 PWA에서 첫 미션과 입력을 검사했다. 짧은 게임 장면 측정은 모두 약 60회/초였다. Tauri 타이틀·슬롯 메뉴에서는 최대 101 ms·46 ms 간격도 관측됐다. [실행 비교와 수치](reviews/mac-web-pwa-comparison-20261101.md).
+
+웹·PWA는 [GitHub Pages](https://gelb2.github.io/HeavyMach/)에서 실행한다. 최초 전체 다운로드 뒤 오프라인 실행, 저장 내보내기·가져오기, 동시 실행 차단, 손상 업데이트 거부와 다음 실행 때 업데이트 적용을 구현했다. `feat/tauri-mac` 작업이며 develop·main 병합과 새 태그는 하지 않았다. 기존 보호 파일 2,190개와 게임 산출물 10개의 바이트는 그대로다. 장시간 성능·전체 프로세스 메모리·음향 청취 비교, Safari·모바일 PWA, Tauri 외부 복구 화면·공증·Windows는 남아 있다.
+
+
 ## Tauri Mac 개발 시작과 실제 복구 검사 — 2026-10-31
 
 `feat/tauri-mac`에서 `Desktop/Tauri/`를 만들고 Apple Silicon Mac 앱을 빌드했다. 실제 앱에서 첫 미션·점프·사격·정지 메뉴·재실행 슬롯을 확인했다. 이 테스트 앱의 웹 저장소를 별도 보관한 뒤 OS 백업으로 같은 슬롯을 복구했다. JS 12개와 Rust 8개가 통과했고 보호 파일 2,190개·포함 게임 파일 10개는 기준과 같다. [실행 기록](evidence/tauri-mac-start-20261031.json), [계획과 결과](desktop-web-plan-20261031.md), [빌드](../Desktop/Tauri/README.md).
 
-백업에서 Emscripten의 부호 있는 바이트를 변환하고 Mac 종료 메뉴가 백업을 기다리도록 수정했다. 기존 게임 파일은 수정하지 않았다. 내보내기·가져오기·손상 복구 화면, 실제 설정 복구와 I/O 실패, 네이티브 Mac 비교·음향·장시간 실행, PWA·Windows는 남아 있다. develop·main 병합과 새 태그는 하지 않았다.
+백업에서 Emscripten의 부호 있는 바이트를 변환하고 Mac 종료 메뉴가 백업을 기다리도록 수정했다. 기존 게임 파일은 수정하지 않았다. 내보내기·가져오기·손상 복구 화면, 실제 설정 복구와 I/O 실패, 음향·장시간 실행·Windows는 남아 있다. Mac 첫 비교와 PWA 구현은 위 11월 1일 항목에 기록했다. develop·main 병합과 새 태그는 하지 않았다.
 
 ## Tauri 개발 순서·폴더 검토 — 2026-10-31
 
-Tauri Mac·기존 Mac 비교 → 순수 웹·PWA → Windows 빌드 순서의 [계획](desktop-web-plan-20261031.md)을 갱신했다. 최신 지시는 기여자의 웹 구현과 후속 수정 3건까지 수정 금지이며, Tauri의 목적은 저장 데이터 보존과 지원 플랫폼 확대다. 새 작업은 `Desktop/Tauri/`·`Distribution/Web/`에 둔다. 기존 IDBFS를 유지하고 외부 실행기에서 OS 파일 백업·시작 전 복구를 처리하는 설계와 검사를 추가했다. Web/host·Web/deploy 추가, 웹 저장 함수 교체 계획은 철회했다. PWA 설치·전체 다운로드·오프라인 플레이·저장·재실행·업데이트 검사를 2단계에 포함했다. GitHub Pages 주소와 배포 방식을 계획했으며 현재 Pages는 비활성이다. 이 계획 이후 첫 Tauri Mac 앱·백업·보호 검사를 구현했다. 실행 범위는 위 최신 항목에 기록했다. PWA는 미구현이다. Windows 실행 검사는 후속 과제다.
+Tauri Mac·기존 Mac 비교 → 순수 웹·PWA → Windows 빌드 순서의 [계획](desktop-web-plan-20261031.md)을 갱신했다. 최신 지시는 기여자의 웹 구현과 후속 수정 3건까지 수정 금지이며, Tauri의 목적은 저장 데이터 보존과 지원 플랫폼 확대다. 새 작업은 `Desktop/Tauri/`·`Distribution/Web/`에 둔다. 기존 IDBFS를 유지하고 외부 실행기에서 OS 파일 백업·시작 전 복구를 처리하는 설계와 검사를 추가했다. Web/host·Web/deploy 추가, 웹 저장 함수 교체 계획은 철회했다. PWA 설치·전체 다운로드·오프라인 플레이·저장·재실행·업데이트 검사를 2단계에 포함했다. GitHub Pages 주소와 배포 방식을 계획했으며 계획 수립 시 Pages는 비활성이었다. 이 계획 이후 첫 Tauri Mac 앱·백업·보호 검사를 구현했다. 실행 범위는 위 최신 항목에 기록했다. PWA 구현·Pages 배포는 위 11월 1일 항목에 기록했다. Windows 실행 검사는 후속 과제다.
 
 ## 첫 PR과 Tauri 원고 — 2026-10-31
 

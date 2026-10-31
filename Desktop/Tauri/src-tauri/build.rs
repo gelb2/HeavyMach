@@ -4,6 +4,7 @@ fn main() {
             "backup_status",
             "backup_write",
             "finish_close",
+            "diagnostics_write",
         ]),
     ))
     .expect("Tauri build configuration");
