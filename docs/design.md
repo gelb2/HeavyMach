@@ -86,3 +86,7 @@ MAP/MCH 관찰 구조는 LE u32 `declared_size,type,data_size`, payload, LE u32 
 `Android/app/src/main/java`의 Activity가 Surface·터치·키·센서·오디오 포커스를 받는다. `GameEngine`이 전용 HandlerThread에 JNI 호출을 순서대로 전달한다. Android C++ `Runtime`이 기존 코어와 메뉴·HUD·저장을 연결하고 `Media`와 `Audio`가 EGL/GLES·OpenAL을 담당한다. Activity가 다시 만들어져도 프로세스 내 게임 세션은 유지한다.
 
 기존 Apple 파일과 `Sources/Core`를 수정하지 않고 이 호스트를 추가했다. 새 게임 규칙 복사본은 만들지 않았다. [폴더·빌드](../Android/README.md), [검사 범위](android-implementation-20261030.md).
+
+## 웹 빌드
+
+`Sources/Web`은 HMGameView·HMMenus·HMGameHUD·HMMedia·HMOpenALAudio를 C++로 옮긴 브라우저 호스트다. 호출 흐름은 WebGameView → GameSession/World → RenderCommand → Media → GLRenderer로 iOS와 같다. `WebGLRenderer`는 WebGL2 셰이더로 GL_REPLACE/MODULATE, 원본 블렌드 표, 가위 영역, float 행렬, RGBA8 장면 버퍼→복사 텍스처→최종 사각형을 재현한다. 메뉴·HUD·프레임 조립은 플랫폼별 호스트에 있다. 기존 Apple·Android·공용 코어를 이동하거나 수정하지 않고 웹 호스트에서 필요한 수정을 한다. [이식 문서](web-port-20261028.md).

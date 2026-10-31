@@ -1,5 +1,13 @@
 # 버그 수정·사용성 개선 과제
 
+## 웹 PR 통합과 데스크톱 검토 — 2026-10-31
+
+- 웹 업그레이드 정지·IndexedDB 실패 복구·HUD 비동기 저장·WebGL 복구 수정과 회귀 검사 완료. [결과](evidence/pr24-web-fixes-20261031.json).
+- 기여자의 19개 커밋·작성자 기록 보존. README·CREDITS·CHANGELOG의 국영문에 fastutlego와 PR #24 연결.
+- Tauri와 Electron을 저장·웹뷰·WebGL·음향·입력·메모리·배포 관점에서 비교하고 기존 보고서에 추가한다. 데스크톱 제품 빌드는 별도 작업이다.
+- Apple의 미사용 경험치가 남은 미션 진입을 검사한다. 기존 HMGameView의 강제 정지 해제문은 웹과 같은 형태이며 이번 PR에서 수정하지 않았다.
+
+
 <a id="hm-gui-install-guide"></a>
 
 ## HM-GUI-INSTALL-GUIDE — IDE GUI 중심 설치·실행 안내 연구 · 2026-10-30
@@ -46,6 +54,39 @@ main에 배포한 버전마다 변경 내용과 검사 결과를 정리하고 Gi
 - [x] 원고 추출·태그 링크 변환·압축본·해시·Release 초안 생성·게시 도구를 구현했다. v0.16 압축본과 실패·재개 17개 검사를 통과했다. [사용법·검사](release-notes-plan.md#릴리스-도구).
 - [x] v0.17에서 실제 업로드·공개와 첨부 3개의 서버 해시·태그·본문을 대조했다. [검사 기록](evidence/release-v0.17-20261030.json).
 - [ ] 릴리스 초안 생성 직후 목록 조회가 비어 중단되는 경우를 처리한다. 생성 응답의 ID를 바로 기록하고 해당 ID로 조회하도록 개선한다. v0.17은 초안 대조 후 재개해 게시했다.
+
+<a id="hm-web"></a>
+
+## HM-WEB — 웹(WebAssembly) 빌드 후속 · 2026-10-28
+
+`porting/wasm`에 일반 앱 웹 빌드를 구현했다. 헤드리스 Chrome 자동 검사와 Wasm 코어 검사21개는 통과했다. [이식 문서](web-port-20261028.md).
+
+- [ ] 실제 iPhone Safari·Android Chrome에서 양쪽 가로 방향 틸트, 멀티터치, 소리, 안전영역, 프레임을 확인한다. DeviceMotion 축·부호 변환을 실측과 대조한다.
+- [x] 데스크톱 Safari·Chrome·ego lite 확인(Firefox 제외 — 2026-10-29 사용자 범위).
+- [ ] 실제 스피커 출력 확인.
+- [x] 120Hz 표시 장치(Android 패드) 초당59.9틱 확인(2026-10-29).
+- [x] 치트 웹 빌드: 만들지 않는다(2026-10-29 사용자 결정). 무기 검증은 iOS·Mac 치트 앱으로 한다.
+- [x] fastutle.com `/game/heavy_mach/` 테스트 배포(2026-10-29, fastutle-site `0be8788`). 배포 주소에서 헤드리스 검사 통과.
+- [ ] 원작 자원(46MB)을 fastutle.com에 계속 공개할지 정한다. 재배포 허락은 미확인이다.
+- [x] iPad mini 6 로컬 빌드에서 전체 화면·기울기 권한·이동 방향·초당60틱 확인(2026-10-29).
+- [x] 수정본을 fastutle.com에 배포(fastutle-site `8f09692`)하고 iPad에서 로드·초당60틱 확인(2026-10-29).
+- [x] HUD 편집기·Android 부호·세로 보류 빌드 배포(fastutle-site `8e13936`, 배포 주소 헤드리스3종 통과, 2026-10-29).
+- [ ] iPad Safari 전체 화면의 닫기(X) 버튼이 LV·EXP를 가리는 문제: HUD 편집기로 LV·EXP를 옮길 수 있게 했다. 실제 iPad에서 편집·저장을 확인한다.
+- [x] Android 패드 양쪽 가로 방향 기울기 이동 확인, Android 부호 판별 수정(2026-10-29).
+- [x] iPad mini 6 fastutle.com 양쪽 가로 기울기·HUD 편집기·초당60틱 확인(2026-10-29).
+- [ ] iPhone 기울기 확인. 다른 iPadOS 버전에서 반대 가로의 방향 값(`window.orientation` 0으로 보고) 확인.
+- [x] 세로를 지날 때 멈춤 메뉴 대신 보류 후 가로 복귀 시 자동 재개(2026-10-29 사용자 결정, 헤드리스·Android 패드 실기기 확인). iPhone 확인은 남음.
+- [x] v0.14 HUD 편집기를 웹에 옮겼다(2026-10-29, 헤드리스 검사 통과). 실제 iPad 확인은 아래 항목.
+- [ ] iOS·웹·Android가 함께 쓰는 `Sources/Platform`으로 메뉴·HUD·프레임 조립을 합친다.
+
+<a id="hm-keyboard-aim-threshold"></a>
+
+## HM-KEYBOARD-AIM-THRESHOLD — 키보드 첫 사격이 시작되지 않는 경우 · 2026-10-28
+
+키보드 사격의 첫 조준점은 플레이어 +100이다(`ensureKeyboardAim`, iOS·Mac·웹 공용). 원작 `setTap` 0x1d300은 포신 기준 100단위를 넘는 탭에만 사격한다. 포신 위치가 차체 흔들림으로 움직여, 조준키 없이 바로 사격하면 사격이 시작되지 않는 경우가 있다. 웹 헤드리스 검사에서 6회 중 2회 재현했고, 조준키로 조준점을 옮긴 뒤에는 10회 모두 사격했다.
+
+- [ ] iPad·Mac 키보드에서 같은 현상을 재현한다.
+- [ ] 첫 조준점 거리를 원작 터치 규칙과 맞추는 수정안을 정한다. 원작 `setTap` 판정과 수동 사격 대조 검사는 유지한다.
 
 <a id="hm-lux-formation"></a>
 

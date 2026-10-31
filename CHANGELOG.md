@@ -6,6 +6,10 @@
 
 [최신 릴리스](https://github.com/gelb2/HeavyMach/releases/latest) · [GitHub 전체 릴리스](https://github.com/gelb2/HeavyMach/releases)
 
+## 다음 릴리스 — 웹판
+
+[fastutlego](https://github.com/fastutlego)의 [PR #24](https://github.com/gelb2/HeavyMach/pull/24)가 WebAssembly·WebGL2 웹판과 브라우저 검사를 추가한다. 원래 커밋·작성자 기록을 보존한다. Codex의 후속 수정은 업그레이드 창 정지, IndexedDB 읽기·쓰기 실패 처리, HUD 저장 완료 확인, WebGL 컨텍스트 복구다. 기존 Apple·Android·공용 코어·자원은 변경하지 않는다.
+
 | 버전 | 태그 기준일 | 주요 변경 |
 |---|---|---|
 | [v0.17](#v017) | 2026-10-30 | Android 앱·업그레이드 창 오류 수정 |

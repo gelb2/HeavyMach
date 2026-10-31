@@ -1,0 +1,9 @@
+{
+  "name": "heavymach-web-tests",
+  "private": true,
+  "type": "module",
+  "description": "Browser smoke test for the HeavyMach WebAssembly build (uses the local Google Chrome).",
+  "dependencies": {
+    "puppeteer-core": "25.16.0"
+  }
+}

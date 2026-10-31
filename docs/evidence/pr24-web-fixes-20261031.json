@@ -1,0 +1,981 @@
+{
+  "base": "2f82c85214d84c470a3936c452a2d46a524eeb32",
+  "contributor_head": "9d2505f74ad95dc0c24692f2360623401fbe15b2",
+  "contributor_commits": [
+    "00dc422f54f79bf3116387eaec9ef2a2621246d5",
+    "7ceedef63eeb06319bc557efaecc82b7a97c234b",
+    "9c809f7a623332d306320703401bb6e85b910c74",
+    "940439ca37530f4bcf73379116bd6ae0be3f35b1",
+    "3307933260df5eb496966d87279e2472823715df",
+    "87bf7d2ac6f811b452644c0adc3fff9594d4814e",
+    "03fb7a10f0148d6b829d8b543e06f5383c16ab6d",
+    "26312b0376c71e406b075345f20a49cfd5cac910",
+    "fc7db544bd8bf54b6f7e013907b667e5c9d562d0",
+    "49faba39f1eb6b9a1b85fe2e178af360886366ec",
+    "caae371c01a904a1078907d71edaf155cda9878a",
+    "1abe5c81bee0e8d5e5ae7370f8f8c1c089da5106",
+    "c9f3e8026f00ac2068fe174088cb2b62bc85d1d0",
+    "62f09a5186cbc797520651a7d6f3f1bd7e923eb6",
+    "ddea4e0a356cb49052cdf90f54f1ce99741d2b13",
+    "67fb3814c069f5e2db8b31c1058747b72186538d",
+    "19707b3db8ee253df0aa992193ad9f2ecdcf9114",
+    "2eabecfc1f615b8fb9631ecc02094cc9cafa6245",
+    "9d2505f74ad95dc0c24692f2360623401fbe15b2"
+  ],
+  "contributor_commits_preserved": 19,
+  "protected_paths": [
+    "Sources/Core",
+    "Sources/iOS",
+    "Sources/Apple",
+    "Sources/Mac",
+    "Android",
+    "Resources",
+    "Art",
+    "vendor",
+    "iOS",
+    "macOS",
+    "Modules",
+    "HeavyMach.xcworkspace",
+    "CMakeLists.txt",
+    "tools",
+    "Tests"
+  ],
+  "protected_files": 2143,
+  "changed_protected_files": [],
+  "web_recovery": {
+    "checks": [
+      {
+        "name": "pending EXP pauses combat",
+        "ok": true,
+        "a": {
+          "screen": "game",
+          "time": 18.3167,
+          "canvas": [
+            694.857,
+            320
+          ],
+          "loading": 0,
+          "mission": 1,
+          "stage": 0,
+          "playerX": -4121,
+          "playerY": -51.03,
+          "hp": 256,
+          "enemies": 2,
+          "bullets": 0,
+          "paused": 1,
+          "gameState": 0,
+          "decodes": 163,
+          "loadError": 0,
+          "aimMode": 1,
+          "aimTarget": 0,
+          "inputBlocked": 1,
+          "keyboardFire": 0,
+          "gameMenu": 0,
+          "resumeRequired": 0,
+          "active": 1,
+          "keyboardAimX": 0,
+          "callbackInterval": 0.0167,
+          "ticksPerCallback": 1,
+          "motion": 0,
+          "tilt": [
+            0,
+            0,
+            -1
+          ],
+          "hudEditing": 0,
+          "hudCustomized": 0,
+          "hudFallback": 0,
+          "hudSelected": 2,
+          "hudDraftCustomized": 0,
+          "orientationHold": 0
+        },
+        "b": {
+          "screen": "game",
+          "time": 19.2167,
+          "canvas": [
+            694.857,
+            320
+          ],
+          "loading": 0,
+          "mission": 1,
+          "stage": 0,
+          "playerX": -4121,
+          "playerY": -51.03,
+          "hp": 256,
+          "enemies": 2,
+          "bullets": 0,
+          "paused": 1,
+          "gameState": 0,
+          "decodes": 163,
+          "loadError": 0,
+          "aimMode": 1,
+          "aimTarget": 0,
+          "inputBlocked": 1,
+          "keyboardFire": 0,
+          "gameMenu": 0,
+          "resumeRequired": 0,
+          "active": 1,
+          "keyboardAimX": 0,
+          "callbackInterval": 0.0167,
+          "ticksPerCallback": 1,
+          "motion": 0,
+          "tilt": [
+            0,
+            0,
+            -1
+          ],
+          "hudEditing": 0,
+          "hudCustomized": 0,
+          "hudFallback": 0,
+          "hudSelected": 2,
+          "hudDraftCustomized": 0,
+          "orientationHold": 0
+        }
+      },
+      {
+        "name": "keyboard cannot bypass upgrade",
+        "ok": true
+      },
+      {
+        "name": "foreground retains upgrade",
+        "ok": true
+      },
+      {
+        "name": "upgrade selection and OK resume combat",
+        "ok": true,
+        "state": {
+          "screen": "game",
+          "time": 20.7333,
+          "canvas": [
+            694.857,
+            320
+          ],
+          "loading": 0,
+          "mission": 1,
+          "stage": 0,
+          "playerX": -4121.01,
+          "playerY": -60.57,
+          "hp": 256,
+          "enemies": 2,
+          "bullets": 0,
+          "paused": 0,
+          "gameState": 0,
+          "decodes": 165,
+          "loadError": 0,
+          "aimMode": 1,
+          "aimTarget": 0,
+          "inputBlocked": 0,
+          "keyboardFire": 0,
+          "gameMenu": 0,
+          "resumeRequired": 0,
+          "active": 1,
+          "keyboardAimX": 0,
+          "callbackInterval": 0.0167,
+          "ticksPerCallback": 1,
+          "motion": 0,
+          "tilt": [
+            0,
+            0,
+            -1
+          ],
+          "hudEditing": 0,
+          "hudCustomized": 0,
+          "hudFallback": 0,
+          "hudSelected": 2,
+          "hudDraftCustomized": 0,
+          "orientationHold": 0
+        }
+      },
+      {
+        "name": "context loss freezes session 0",
+        "ok": true,
+        "a": {
+          "screen": "boot",
+          "time": 20.8667,
+          "canvas": [
+            694.857,
+            320
+          ],
+          "loading": 0,
+          "mission": 1,
+          "stage": 0,
+          "playerX": -4121.01,
+          "playerY": -60.57,
+          "hp": 256,
+          "enemies": 2,
+          "bullets": 0,
+          "paused": 1,
+          "gameState": 0,
+          "decodes": 165,
+          "loadError": 0,
+          "aimMode": 1,
+          "aimTarget": 0,
+          "inputBlocked": 1,
+          "keyboardFire": 0,
+          "gameMenu": 1,
+          "resumeRequired": 1,
+          "active": 0,
+          "keyboardAimX": 0,
+          "callbackInterval": 0.0167,
+          "ticksPerCallback": 1,
+          "motion": 0,
+          "tilt": [
+            0,
+            0,
+            -1
+          ],
+          "hudEditing": 0,
+          "hudCustomized": 0,
+          "hudFallback": 0,
+          "hudSelected": 2,
+          "hudDraftCustomized": 0,
+          "orientationHold": 0
+        },
+        "b": {
+          "screen": "boot",
+          "time": 20.8667,
+          "canvas": [
+            694.857,
+            320
+          ],
+          "loading": 0,
+          "mission": 1,
+          "stage": 0,
+          "playerX": -4121.01,
+          "playerY": -60.57,
+          "hp": 256,
+          "enemies": 2,
+          "bullets": 0,
+          "paused": 1,
+          "gameState": 0,
+          "decodes": 165,
+          "loadError": 0,
+          "aimMode": 1,
+          "aimTarget": 0,
+          "inputBlocked": 1,
+          "keyboardFire": 0,
+          "gameMenu": 1,
+          "resumeRequired": 1,
+          "active": 0,
+          "keyboardAimX": 0,
+          "callbackInterval": 0.0167,
+          "ticksPerCallback": 1,
+          "motion": 0,
+          "tilt": [
+            0,
+            0,
+            -1
+          ],
+          "hudEditing": 0,
+          "hudCustomized": 0,
+          "hudFallback": 0,
+          "hudSelected": 2,
+          "hudDraftCustomized": 0,
+          "orientationHold": 0
+        }
+      },
+      {
+        "name": "context restored with same session 0",
+        "ok": true,
+        "state": {
+          "screen": "game",
+          "time": 20.8667,
+          "canvas": [
+            694.857,
+            320
+          ],
+          "loading": 0,
+          "mission": 1,
+          "stage": 0,
+          "playerX": -4121.01,
+          "playerY": -60.57,
+          "hp": 256,
+          "enemies": 2,
+          "bullets": 0,
+          "paused": 1,
+          "gameState": 0,
+          "decodes": 165,
+          "loadError": 0,
+          "aimMode": 1,
+          "aimTarget": 0,
+          "inputBlocked": 1,
+          "keyboardFire": 0,
+          "gameMenu": 1,
+          "resumeRequired": 1,
+          "active": 1,
+          "keyboardAimX": 0,
+          "callbackInterval": 0,
+          "ticksPerCallback": 1,
+          "motion": 0,
+          "tilt": [
+            0,
+            0,
+            -1
+          ],
+          "hudEditing": 0,
+          "hudCustomized": 0,
+          "hudFallback": 0,
+          "hudSelected": 2,
+          "hudDraftCustomized": 0,
+          "orientationHold": 0
+        }
+      },
+      {
+        "name": "WebGL valid after restore 0",
+        "ok": true
+      },
+      {
+        "name": "explicit resume after restore 0",
+        "ok": true
+      },
+      {
+        "name": "context loss freezes session 1",
+        "ok": true,
+        "a": {
+          "screen": "boot",
+          "time": 21.3333,
+          "canvas": [
+            694.857,
+            320
+          ],
+          "loading": 0,
+          "mission": 1,
+          "stage": 0,
+          "playerX": -4121.01,
+          "playerY": -60.57,
+          "hp": 256,
+          "enemies": 2,
+          "bullets": 0,
+          "paused": 1,
+          "gameState": 0,
+          "decodes": 200,
+          "loadError": 0,
+          "aimMode": 1,
+          "aimTarget": 0,
+          "inputBlocked": 1,
+          "keyboardFire": 0,
+          "gameMenu": 1,
+          "resumeRequired": 1,
+          "active": 0,
+          "keyboardAimX": 0,
+          "callbackInterval": 0.0201,
+          "ticksPerCallback": 1,
+          "motion": 0,
+          "tilt": [
+            0,
+            0,
+            -1
+          ],
+          "hudEditing": 0,
+          "hudCustomized": 0,
+          "hudFallback": 0,
+          "hudSelected": 2,
+          "hudDraftCustomized": 0,
+          "orientationHold": 0
+        },
+        "b": {
+          "screen": "boot",
+          "time": 21.3333,
+          "canvas": [
+            694.857,
+            320
+          ],
+          "loading": 0,
+          "mission": 1,
+          "stage": 0,
+          "playerX": -4121.01,
+          "playerY": -60.57,
+          "hp": 256,
+          "enemies": 2,
+          "bullets": 0,
+          "paused": 1,
+          "gameState": 0,
+          "decodes": 200,
+          "loadError": 0,
+          "aimMode": 1,
+          "aimTarget": 0,
+          "inputBlocked": 1,
+          "keyboardFire": 0,
+          "gameMenu": 1,
+          "resumeRequired": 1,
+          "active": 0,
+          "keyboardAimX": 0,
+          "callbackInterval": 0.0201,
+          "ticksPerCallback": 1,
+          "motion": 0,
+          "tilt": [
+            0,
+            0,
+            -1
+          ],
+          "hudEditing": 0,
+          "hudCustomized": 0,
+          "hudFallback": 0,
+          "hudSelected": 2,
+          "hudDraftCustomized": 0,
+          "orientationHold": 0
+        }
+      },
+      {
+        "name": "context restored with same session 1",
+        "ok": true,
+        "state": {
+          "screen": "game",
+          "time": 21.3333,
+          "canvas": [
+            694.857,
+            320
+          ],
+          "loading": 0,
+          "mission": 1,
+          "stage": 0,
+          "playerX": -4121.01,
+          "playerY": -60.57,
+          "hp": 256,
+          "enemies": 2,
+          "bullets": 0,
+          "paused": 1,
+          "gameState": 0,
+          "decodes": 200,
+          "loadError": 0,
+          "aimMode": 1,
+          "aimTarget": 0,
+          "inputBlocked": 1,
+          "keyboardFire": 0,
+          "gameMenu": 1,
+          "resumeRequired": 1,
+          "active": 1,
+          "keyboardAimX": 0,
+          "callbackInterval": 0,
+          "ticksPerCallback": 1,
+          "motion": 0,
+          "tilt": [
+            0,
+            0,
+            -1
+          ],
+          "hudEditing": 0,
+          "hudCustomized": 0,
+          "hudFallback": 0,
+          "hudSelected": 2,
+          "hudDraftCustomized": 0,
+          "orientationHold": 0
+        }
+      },
+      {
+        "name": "WebGL valid after restore 1",
+        "ok": true
+      },
+      {
+        "name": "explicit resume after restore 1",
+        "ok": true
+      },
+      {
+        "name": "HUD waits for commit",
+        "ok": true
+      },
+      {
+        "name": "pending HUD save cannot close editor",
+        "ok": true
+      },
+      {
+        "name": "HUD write failure keeps draft",
+        "ok": true
+      },
+      {
+        "name": "HUD retry commits draft",
+        "ok": true
+      },
+      {
+        "name": "failed read blocks startup",
+        "ok": true
+      },
+      {
+        "name": "read retry preserves exact save",
+        "ok": true
+      },
+      {
+        "name": "no runtime JS exceptions",
+        "ok": true,
+        "errors": []
+      }
+    ],
+    "errors": [],
+    "ok": true
+  },
+  "web_regression": {
+    "smoke": {
+      "passed": true,
+      "steps": 14
+    },
+    "hud": {
+      "passed": true,
+      "steps": 11
+    },
+    "orientation": {
+      "passed": true,
+      "steps": 5
+    }
+  },
+  "apple_tests": {
+    "apple": {
+      "result": "Passed",
+      "passedTests": 30,
+      "failedTests": 0,
+      "totalTestCount": 30,
+      "devicesAndConfigurations": [
+        {
+          "device": {
+            "architecture": "arm64",
+            "deviceId": "5177F449-414C-471D-AB92-79DF7F768DC9",
+            "deviceName": "iPad Pro 13-inch (M5)",
+            "modelName": "iPad Pro 13-inch (M5)",
+            "osBuildNumber": "23F77",
+            "osVersion": "26.5",
+            "platform": "iOS Simulator"
+          },
+          "expectedFailures": 0,
+          "failedTests": 0,
+          "passedTests": 30,
+          "skippedTests": 0,
+          "testPlanConfiguration": {
+            "configurationId": "1",
+            "configurationName": "Test Scheme Action"
+          }
+        }
+      ]
+    },
+    "iphone": {
+      "result": "Passed",
+      "passedTests": 4,
+      "failedTests": 0,
+      "totalTestCount": 4,
+      "devicesAndConfigurations": [
+        {
+          "device": {
+            "architecture": "arm64",
+            "deviceId": "0DBFD53A-3BD6-4279-8D85-0C1CF0049585",
+            "deviceName": "iPhone 17 Pro",
+            "modelName": "iPhone 17 Pro",
+            "osBuildNumber": "23F77",
+            "osVersion": "26.5",
+            "platform": "iOS Simulator"
+          },
+          "expectedFailures": 0,
+          "failedTests": 0,
+          "passedTests": 4,
+          "skippedTests": 0,
+          "testPlanConfiguration": {
+            "configurationId": "1",
+            "configurationName": "Test Scheme Action"
+          }
+        }
+      ]
+    }
+  },
+  "android_tests": {
+    "runtime": {
+      "total": 31,
+      "passed": 31,
+      "checks": [
+        {
+          "name": "game started",
+          "passed": true
+        },
+        {
+          "name": "keyboard forward",
+          "passed": true
+        },
+        {
+          "name": "keyboard backward",
+          "passed": true
+        },
+        {
+          "name": "jump rises",
+          "passed": true
+        },
+        {
+          "name": "touch fire at expanded right side",
+          "passed": true
+        },
+        {
+          "name": "firing does not save",
+          "passed": true
+        },
+        {
+          "name": "background/foreground pauses world",
+          "passed": true
+        },
+        {
+          "name": "explicit resume advances world",
+          "passed": true
+        },
+        {
+          "name": "audio focus loss pauses and recovery retains pause",
+          "passed": true
+        },
+        {
+          "name": "audio requests resume after focus recovery",
+          "passed": true
+        },
+        {
+          "name": "automatic aim mode remains enabled",
+          "passed": true
+        },
+        {
+          "name": "weapon P_Wpn_Gun01",
+          "passed": true
+        },
+        {
+          "name": "weapon P_Wpn_RaderBomb",
+          "passed": true
+        },
+        {
+          "name": "weapon P_Wpn_RaderMsl",
+          "passed": true
+        },
+        {
+          "name": "weapon P_Wpn_RaderLsr",
+          "passed": true
+        },
+        {
+          "name": "weapon P_Wpn_Canon01",
+          "passed": true
+        },
+        {
+          "name": "weapon P_Wpn_Canon02",
+          "passed": true
+        },
+        {
+          "name": "weapon P_Wpn_Canon03",
+          "passed": true
+        },
+        {
+          "name": "weapon P_Wpn_ElShock",
+          "passed": true
+        },
+        {
+          "name": "weapon P_Wpn_Gun02",
+          "passed": true
+        },
+        {
+          "name": "weapon P_Wpn_Gun03",
+          "passed": true
+        },
+        {
+          "name": "weapon P_Wpn_Gun04",
+          "passed": true
+        },
+        {
+          "name": "weapon P_Wpn_Gun05",
+          "passed": true
+        },
+        {
+          "name": "weapon P_Wpn_Gun06",
+          "passed": true
+        },
+        {
+          "name": "weapon P_Wpn_Gun07",
+          "passed": true
+        },
+        {
+          "name": "weapon P_Wpn_Laser",
+          "passed": true
+        },
+        {
+          "name": "weapon P_Wpn_Missile01",
+          "passed": true
+        },
+        {
+          "name": "weapon P_Wpn_Missile02",
+          "passed": true
+        },
+        {
+          "name": "weapon P_Wpn_Missile03",
+          "passed": true
+        },
+        {
+          "name": "weapon P_Wpn_Shotgun01",
+          "passed": true
+        },
+        {
+          "name": "weapon P_Wpn_Shotgun02",
+          "passed": true
+        }
+      ]
+    },
+    "hud": {
+      "total": 9,
+      "passed": 9,
+      "checks": [
+        {
+          "name": "HUD drag freezes world and does not save",
+          "passed": true
+        },
+        {
+          "name": "sample scene preserves live world",
+          "passed": true
+        },
+        {
+          "name": "Apply saves moved HUD once",
+          "passed": true
+        },
+        {
+          "name": "moved Jump responds at new position",
+          "passed": true
+        },
+        {
+          "name": "old Jump position no longer jumps",
+          "passed": true
+        },
+        {
+          "name": "Cancel retains applied file",
+          "passed": true
+        },
+        {
+          "name": "HUD persists across process restart",
+          "passed": true
+        },
+        {
+          "name": "Reset restores default positions",
+          "passed": true
+        },
+        {
+          "name": "GPU rebuild retains paused world",
+          "passed": true
+        }
+      ]
+    },
+    "campaign": {
+      "total": 39,
+      "passed": 39,
+      "checks": [
+        {
+          "name": "campaign 1-1 starts",
+          "passed": true
+        },
+        {
+          "name": "campaign 1-2 starts",
+          "passed": true
+        },
+        {
+          "name": "campaign 1-3 starts",
+          "passed": true
+        },
+        {
+          "name": "campaign 1-4 starts",
+          "passed": true
+        },
+        {
+          "name": "campaign 2-1 starts",
+          "passed": true
+        },
+        {
+          "name": "campaign 2-2 starts",
+          "passed": true
+        },
+        {
+          "name": "campaign 2-3 starts",
+          "passed": true
+        },
+        {
+          "name": "campaign 2-4 starts",
+          "passed": true
+        },
+        {
+          "name": "campaign 2-5 starts",
+          "passed": true
+        },
+        {
+          "name": "campaign 3-1 starts",
+          "passed": true
+        },
+        {
+          "name": "campaign 3-2 starts",
+          "passed": true
+        },
+        {
+          "name": "campaign 3-3 starts",
+          "passed": true
+        },
+        {
+          "name": "campaign 3-4 starts",
+          "passed": true
+        },
+        {
+          "name": "campaign 3-5 starts",
+          "passed": true
+        },
+        {
+          "name": "campaign 4-1 starts",
+          "passed": true
+        },
+        {
+          "name": "campaign 4-2 starts",
+          "passed": true
+        },
+        {
+          "name": "campaign 4-3 starts",
+          "passed": true
+        },
+        {
+          "name": "campaign 4-4 starts",
+          "passed": true
+        },
+        {
+          "name": "campaign 4-5 starts",
+          "passed": true
+        },
+        {
+          "name": "campaign 5-1 starts",
+          "passed": true
+        },
+        {
+          "name": "campaign 5-2 starts",
+          "passed": true
+        },
+        {
+          "name": "campaign 5-3 starts",
+          "passed": true
+        },
+        {
+          "name": "campaign 5-4 starts",
+          "passed": true
+        },
+        {
+          "name": "campaign 5-5 starts",
+          "passed": true
+        },
+        {
+          "name": "campaign 6-1 starts",
+          "passed": true
+        },
+        {
+          "name": "campaign 6-2 starts",
+          "passed": true
+        },
+        {
+          "name": "campaign 6-3 starts",
+          "passed": true
+        },
+        {
+          "name": "campaign 6-4 starts",
+          "passed": true
+        },
+        {
+          "name": "campaign 6-5 starts",
+          "passed": true
+        },
+        {
+          "name": "campaign 7-1 starts",
+          "passed": true
+        },
+        {
+          "name": "campaign 7-2 starts",
+          "passed": true
+        },
+        {
+          "name": "campaign 7-3 starts",
+          "passed": true
+        },
+        {
+          "name": "campaign 7-4 starts",
+          "passed": true
+        },
+        {
+          "name": "campaign 7-5 starts",
+          "passed": true
+        },
+        {
+          "name": "campaign 7-6 starts",
+          "passed": true
+        },
+        {
+          "name": "automatic aim acquires boss-stage enemy",
+          "passed": true
+        },
+        {
+          "name": "auto-aim fires original weapon",
+          "passed": true
+        },
+        {
+          "name": "Android F key fires",
+          "passed": true
+        },
+        {
+          "name": "Android E key changes weapon",
+          "passed": true
+        }
+      ]
+    },
+    "upgrade": {
+      "total": 12,
+      "passed": 12,
+      "checks": [
+        {
+          "name": "pending EXP entry freezes combat",
+          "passed": true
+        },
+        {
+          "name": "pending EXP levels once and keeps total",
+          "passed": true
+        },
+        {
+          "name": "combat input and Resume cannot bypass upgrade",
+          "passed": true
+        },
+        {
+          "name": "background return preserves upgrade without menu overlap",
+          "passed": true
+        },
+        {
+          "name": "upgrade owns modal",
+          "passed": true
+        },
+        {
+          "name": "touch selection and OK apply one movement upgrade",
+          "passed": true
+        },
+        {
+          "name": "combat resumes after panel closes",
+          "passed": true
+        },
+        {
+          "name": "earned EXP upgrade freezes combat",
+          "passed": true
+        },
+        {
+          "name": "focus loss during close stays paused",
+          "passed": true
+        },
+        {
+          "name": "closed upgrade hands interruption to Resume menu",
+          "passed": true
+        },
+        {
+          "name": "Resume after interrupted close advances combat",
+          "passed": true
+        },
+        {
+          "name": "original cheat save restored",
+          "passed": true
+        }
+      ]
+    }
+  },
+  "physical_devices": "Unavailable during this review; no physical-device tests performed",
+  "core_tests": {
+    "passed": 24,
+    "backend": "Emscripten/Node, Debug assertions"
+  },
+  "resource_hashes": {
+    "passed": 1504
+  },
+  "builds": [
+    "iOS Simulator normal",
+    "iOS Simulator cheat",
+    "Android arm64 normal debug",
+    "Android arm64 cheat debug",
+    "WebAssembly Release"
+  ]
+}

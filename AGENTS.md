@@ -41,3 +41,5 @@
 - 사용자 후속 지시(2026-10-27): 위 자동조준 미병합 지시 이후 develop→main 병합과 버전 태그를 요청했다. `v0.11`로 원격 반영 완료. 신규 F-22·Su-57·MiG-31 작업은 `feat/lux-lunae-fighters`와 `docs/lux-lunae-plan-20261027.md`를 따른다.
 
 - 사용자 지시(2026-10-29): main 병합 직전에 원격 main·develop을 fetch하고 main에서 사용자가 직접 수정한 문서·커밋을 확인한다. 공통 조상 이후 양쪽 변경과 병합 후보의 최종 본문을 대조한다. Git 충돌이 없어도 최신 사용자 문구가 덮이지 않았는지 확인한다. 충돌은 최신 사용자 원문을 보존해 해결하며 ours/theirs 일괄 선택으로 처리하지 않는다. 상세 절차는 `docs/repository-management.md`의 main 직접 수정 문서 보존 항목을 따른다.
+
+- 웹 기여(PR #24, fastutlego): HeavyMach 웹(WebAssembly) 이식은 `porting/wasm`에서 진행한다. `docs/web-port-20261028.md`와 `document_contract.py plan --task web`을 읽는다. 웹 빌드는 `Sources/Core`를 그대로 쓰고 `Sources/Web`·`Web/`만 추가한다. 헤드리스 자동 검사와 실제 휴대폰 확인을 구분한다.

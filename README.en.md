@@ -194,6 +194,7 @@ Wider screens, iPad and Mac support, and keyboard controls were also my requests
 | iPad | Aspect-ratio canvas, combined touch, tilt and keyboard | iPad Air 13-inch M2 installation, input and combat tests; my play |
 | Mac | AppKit app, window/full-screen modes, keyboard | Mac mini execution, 33 tests, zero leaks in development-signed apps |
 | Android | Regular and cheat apps using the shared C++ core | Galaxy USB/wireless installation and gameplay checked. [Installation](Android/README.md) · [Development and screenshots](docs/public/android-development-20261030.md) |
+| Web | WebAssembly·WebGL2, mouse, keyboard, touch and tilt (`porting/wasm`) | Contributor-tested Chrome·Safari·ego lite, iPad mini Safari and Android tablet Chrome. [Web port](docs/web-port-20261028.md) |
 
 I saw no frame drops or malfunctions while playing the installed iPhone and iPad apps. Device automation still has display-timing threshold failures. [Measurement conditions and results](docs/en/public/validation.md)
 
@@ -253,6 +254,10 @@ adb -s SERIAL install -r app/build/outputs/apk/normal/debug/app-normal-debug.apk
 Replace `SERIAL` with the target device ID. Install the cheat app from `app/build/outputs/apk/cheat/debug/app-cheat-debug.apk` the same way. Current APKs are optimized builds with debug signing.
 
 [SDK setup, APK paths and USB/wireless installation](docs/en/public/build-and-install.md#android-빌드와-설치) · [Android tools and test procedures](Android/README.md)
+
+Build the web version with Emscripten. Run `emcmake cmake -S Web -B build/web && cmake --build build/web`, then serve `build/web/dist` with a static server. [Web build guide](docs/web-port-20261028.md)
+
+The web version was contributed by [fastutlego](https://github.com/fastutlego). [PR #24](https://github.com/gelb2/HeavyMach/pull/24) adds the WebAssembly host, WebGL2 renderer, input, audio, persistence and browser tests.
 
 <a id="개발-중-고친-문제"></a>
 

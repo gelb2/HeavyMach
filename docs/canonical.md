@@ -67,3 +67,7 @@ Apple 플랫폼 공용 모듈·native Mac·키보드 요구는 2026-10-26 사용
 ## 쉴카·퉁구스카 — 2026-10-28
 
 신규 지상 적 작업은 [조립·무장·배치](ground-aa-expansion.md)를 읽는다. 쉴카는 흰색 총탄 6발, 퉁구스카는 흰색 총탄 4발과 미사일 2발을 연사한다. 레이더는 포신과 독립적으로 회전한다. 원작 배치를 유지하고 35개 스테이지에 두 종류 합계 152대를 추가했다. 최종 파츠와 포탑 수정까지 v0.13에 포함한다.
+
+## 웹(WebAssembly) 빌드 — 2026-10-28
+
+fastutlego가 `porting/wasm`에서 웹 빌드를 작성해 PR #24로 기여했다. `Sources/Core`를 그대로 소비하고 iOS 플랫폼 계층의 번역인 `Sources/Web`, 빌드 구성 `Web/`을 사용한다. 그래픽은 WebGL2에서 GLES 1.1 상태를 재현하고 음향은 Emscripten OpenAL, 저장은 IndexedDB의 HvM.dat다. 일반 앱만 대상이며 치트 웹 빌드는 없다. 관련 업무는 document-map의 web을 읽는다. [이식 문서](web-port-20261028.md).

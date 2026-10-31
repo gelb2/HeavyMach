@@ -22,6 +22,8 @@
 
 Codex는 동작 분석, C++·Objective-C++ 구현, 이미지 제작·연결, 빌드·검사·설치와 문서 작성을 수행했다. 잘못 구현한 부분과 수정 과정은 [트러블슈팅](docs/public/troubleshooting.md)에 기록했다.
 
+웹판 개발: [fastutlego](https://github.com/fastutlego), [PR #24](https://github.com/gelb2/HeavyMach/pull/24). 기존 C++ 코어를 사용하는 WebAssembly 호스트, WebGL2 렌더러, 브라우저 입력·음향·IndexedDB 저장, HUD 편집과 자동 검사를 구현했다. 원래 커밋·작성자·공동 작성자 기록을 유지하고, 검토 중 발견한 오류의 후속 수정은 Codex 작업으로 별도 커밋한다.
+
 ## 그림과 플레이 자료
 
 기존 게임 이미지·음원·맵은 [자원 목록](docs/build-resources.json)으로 관리한다. Codex가 imagegen으로 메뉴의 좌우 확장 그림과 추가 항공기 그림을 만들었고, 나는 시안을 검토하고 선택했다. 실제 기체 사진·도면과 기존 게임의 색조를 대조한 과정, 프롬프트와 파일 해시는 [VTOL](docs/public/vtol-art-and-loadout-20261027.md)·[전투기](docs/public/lux-lunae-design-20261027.md) 문서에 있다.

@@ -1,0 +1,510 @@
+{
+ "schema_version": 1,
+ "date": "2026-10-28",
+ "request": "사용자 지시: 프로젝트를 확인해 Wasm으로 이식하고 웹에서 실행한다. porting/wasm 브랜치에서 진행한다.",
+ "branch": "porting/wasm",
+ "base_commit": "db0a66c667abf3184b95babf3c056f18f8007a28",
+ "executor": "Claude Code (agent direct execution)",
+ "tools": {
+  "emscripten": "6.0.13 (Homebrew)",
+  "cmake": "4.4.2",
+  "node": "26.12.1",
+  "chrome": "Google Chrome 156.0.8078.48 (headless, SwiftShader WebGL2)",
+  "puppeteer_core": "25.16.0",
+  "git_lfs": "Homebrew git-lfs"
+ },
+ "resources": {
+  "command": "python3 tools/verify_build_resources.py",
+  "result": "PASS: 1482 build/test assets; all SHA-256 hashes match"
+ },
+ "web_build": {
+  "commands": [
+   "emcmake cmake -S Web -B build/web -DCMAKE_BUILD_TYPE=Release",
+   "cmake --build build/web"
+  ],
+  "outputs": {
+   "index.wasm": {
+    "bytes": 618169,
+    "sha256": "9fe0f282c8637e6defa82de3ce542210631f530222bc64e6cdd73ea091481303"
+   },
+   "index.js": {
+    "sha256": "5f5941e4bdb2d5bbe55a538b978bbcc7785761d18a8879caa8ac11a7b3cd9072"
+   },
+   "index.html": {
+    "sha256": "2d9ffe3eb1b77dcc56eb6492e500301de721113321a98aef360844ec2d6aacf6"
+   },
+   "hm-assets.js": {
+    "sha256": "52fdfe78453e6ead926b5738a5b5953096f320e75a15c6a38a521cc5926a000c"
+   },
+   "asset_packages": {
+    "tool": "Web/tools/package_assets.py --cap-mib 20 (Emscripten file_packager per package)",
+    "files": 783,
+    "total_bytes": 46159220,
+    "packages": [
+     {
+      "data": "hm-assets-1.data",
+      "files": 468,
+      "bytes": 20905496,
+      "sha256": "8176c4e73c8cea236f692545d1e9ba707f0a17f689f1ec4034902da960d36a10"
+     },
+     {
+      "data": "hm-assets-2.data",
+      "files": 311,
+      "bytes": 20421632,
+      "sha256": "abcc9a346de16c88bf3b6aaf09dcf54be830aab25592df6846828bb46fb4dac2"
+     },
+     {
+      "data": "hm-assets-3.data",
+      "files": 4,
+      "bytes": 4832092,
+      "sha256": "0d48bef7ad508a65c721691db18b3b97a3f61aa7dd175feb26371f2b12013ac9"
+     }
+    ],
+    "contents": [
+     "Resources/OriginalImages",
+     "Resources/Audio",
+     "Resources/RawData",
+     "Art/Extensions"
+    ],
+    "reason": "Cloudflare Pages rejects files over 25 MiB; the earlier single index.data was 46,159,220 bytes. Same 783 files and /assets paths; total bytes unchanged."
+   },
+   "superseded_2026_10_28": {
+    "index.wasm_sha256": "6e99cea7295d08d0de13a8288ffd3a05764db714f73ff03e6e93a58b23246f74",
+    "index.data_sha256": "08a1df1aead1815c198658fa7940551a1362e4fd35effde3f4f2f7c302dc362d"
+   }
+  },
+  "warnings": "Existing GameSession missing-field-initializer warnings (9) and unused stb functions; no new errors."
+ },
+ "core_tests_wasm": {
+  "commands": [
+   "emcmake cmake -S . -B build/web-core-tests -DCMAKE_BUILD_TYPE=Release -DHM_BUILD_VALIDATION_TESTS=ON -DCMAKE_CXX_FLAGS=-fwasm-exceptions -DCMAKE_EXE_LINKER_FLAGS='-fwasm-exceptions -sNODERAWFS=1 -sALLOW_MEMORY_GROWTH=1 -sSTACK_SIZE=8MB'",
+   "cmake --build build/web-core-tests",
+   "ctest --output-on-failure -j4"
+  ],
+  "result": "100% tests passed out of 21 (Node, NODERAWFS)"
+ },
+ "browser_smoke": {
+  "script": "Web/tests/browser-smoke.mjs",
+  "viewport": "912x420 landscape (iPhone Air logical ratio)",
+  "desktop_runs": {
+   "count": 10,
+   "passed": 10,
+   "fire_start_max_bullets": [
+    3,
+    3,
+    5,
+    3,
+    4,
+    4,
+    2,
+    4,
+    3,
+    3
+   ]
+  },
+  "touch_emulation_run": {
+   "passed": true,
+   "deviceScaleFactor": 2,
+   "game_frames_per_second": 59.9
+  },
+  "checked_steps": [
+   "title 59.9-60.4 game ticks/s",
+   "title -> slots -> mode -> mission -> stage 1-1",
+   "keyboard move right (x -1040 -> about -867)",
+   "keyboard fire (bullets > 0)",
+   "jump (y -40.5 -> about 13)",
+   "auto-aim A on/off with LOCKED target",
+   "Escape pause",
+   "HvM.dat 3624 bytes after slot select",
+   "reload restores 3624-byte save and occupied slot"
+  ],
+  "console_errors_final": 0,
+  "runs_2026_10_29": [
+   {
+    "url": "http://127.0.0.1:8765/",
+    "viewport": "912x420",
+    "passed": true,
+    "canvas": [
+     694.857,
+     320
+    ],
+    "note": "split asset packages, after 4:3 cap"
+   },
+   {
+    "url": "http://127.0.0.1:8765/",
+    "viewport": "690x805",
+    "passed": true,
+    "canvas": [
+     480,
+     360
+    ],
+    "note": "tall window letterboxed to 4:3"
+   },
+   {
+    "url": "http://127.0.0.1:8788/game/heavy_mach/",
+    "server": "wrangler 4 pages dev on fastutle-site _site (branch test/heavy-mach-web, local)",
+    "viewport": "912x420",
+    "passed": true,
+    "console_errors": 0
+   },
+   {
+    "url": "http://127.0.0.1:8788/game/heavy_mach/",
+    "server": "same",
+    "viewport": "690x805",
+    "passed": true,
+    "console_errors": 0
+   }
+  ]
+ },
+ "findings": [
+  {
+   "id": "idbfs-global",
+   "result": "fixed",
+   "detail": "IDBFS not exported as a global; exported via EXPORTED_RUNTIME_METHODS and mounted with Module.IDBFS."
+  },
+  {
+   "id": "audio-resume-mouse",
+   "result": "fixed",
+   "detail": "pointerdown preventDefault suppressed mousedown that resumes the Emscripten OpenAL AudioContext."
+  },
+  {
+   "id": "portrait-running",
+   "result": "fixed",
+   "detail": "Portrait phone notice covered a still-running game; portrait is now treated as inactive."
+  },
+  {
+   "id": "keyboard-aim-threshold",
+   "result": "shared behaviour, moved to TODO",
+   "detail": "Keyboard aim starts at player+100, on the setTap 0x1d300 100-unit threshold from the moving muzzle. Immediate fire without aim keys did not start in 2 of 6 headless runs; after moving the aim with ArrowRight, 10 of 10 fired. iOS/Mac use the same ensureKeyboardAim code."
+  },
+  {
+   "id": "tall-window-canvas",
+   "result": "fixed",
+   "detail": "A desktop browser window taller than 4:3 (user report, 690x805 CSS) produced a 480x560 logical canvas, outside the Apple range (iPad 4:3, 480x360). WebGameView now caps the drawable height used for CanvasGeometry at width*3/4; Viewport::drawable letterboxes the rest. Core and iOS unchanged."
+  }
+ ],
+ "not_checked": [
+  "physical phone tilt/touch/audio",
+  "Safari and Firefox",
+  "speaker output",
+  "90/120 Hz displays",
+  "cheat web build (not built)",
+  "physical phone on https://fastutle.com/game/heavy_mach/",
+  "asset redistribution permission"
+ ],
+ "unchanged": [
+  "Sources/Core",
+  "Sources/iOS",
+  "Sources/Apple",
+  "Sources/Mac",
+  "Xcode projects"
+ ],
+ "site_test_deployment": {
+  "repository": "fastutle-site main (fastutlego/fastutle-site)",
+  "path": "/game/heavy_mach/",
+  "headers": "_headers detaches the site CSP and sets one with wasm-unsafe-eval; X-Robots-Tag noindex; excluded from sitemap",
+  "site_tests": "scripts/build.sh && python3 -m unittest tests.test_site: 117 passed",
+  "wrangler_headers_checked": "/game/heavy_mach/ returns a single CSP with wasm-unsafe-eval; / keeps the site CSP; /game/heavy_mach 308 -> /game/heavy_mach/; index.wasm application/wasm",
+  "deployed": true,
+  "commit": "0be8788",
+  "push": "2d92fa4..0be8788 main, 2026-10-29, user instruction",
+  "url": "https://fastutle.com/game/heavy_mach/",
+  "live_checks": {
+   "responses": "index.wasm 200 application/wasm 618169B; hm-assets-1/2/3.data 200; /game/heavy_mach 308; / keeps site CSP; sitemap has no /game/",
+   "browser_smoke": [
+    {
+     "viewport": "912x420",
+     "steps_passed": true,
+     "canvas": [
+      694.857,
+      320
+     ]
+    },
+    {
+     "viewport": "690x805",
+     "steps_passed": true,
+     "canvas": [
+      480,
+      360
+     ]
+    }
+   ],
+   "console": "Only error: Cloudflare Web Analytics beacon (static.cloudflareinsights.com) blocked by CSP; same error on https://fastutle.com/ and /comicviewer/ (site-wide, pre-existing)."
+  }
+ },
+ "ipad_device_check_20261029": {
+  "device": "iPad mini (6th generation), iPadOS 18.7, Safari 27.0.1",
+  "transport": "wired (devicectl transportType wired)",
+  "access": "local HTTPS server on the same Wi-Fi (mkcert certificate, same game CSP as fastutle.com); Safari remote Web Inspector via pymobiledevice3",
+  "operator": "user tapped, allowed motion permission and tilted the device; agent read state and drove menus through Module._hm_pointer",
+  "wda": "not available: xcodebuild had no Xcode account to sign WebDriverAgent; installed runner failed initializationForUITesting",
+  "findings": {
+   "motion_prompt": "requestPermission and requestFullscreen in the same pointerup left the permission pending without a prompt",
+   "motion_sign": "landscape, window.orientation 90, device +X up: accelerationIncludingGravity x -9.29, y -0.11, z -3.14 (CoreMotion sign)",
+   "orientation_angle": "screen.orientation type landscape-primary angle 0 while window.orientation 90",
+   "safe_area_fullscreen": "top 32px, bottom 33px; Safari close button overlaps LV/EXP"
+  },
+  "results": {
+   "fullscreen": true,
+   "motion_permission": "granted, restored without a tap after reload",
+   "tilt_movement": "raw y -0.21..-0.34 (right side down): playerX 497 -> 738; y +0.16..+0.31: 765 -> 629; repeated segments agree",
+   "ticks_per_second": {
+    "title": 60.0,
+    "combat": 60.0
+   },
+   "display_callback_interval_s": 0.0167
+  },
+  "headless_after_fix": {
+   "60Hz": "pass 59.9",
+   "30Hz (?fps=30)": "pass 59.5",
+   "touch emulation": "pass 56.9"
+  },
+  "deployment": {
+   "heavymach_fork": "porting/wasm be4e9aa..3bfed10",
+   "fastutle_site": "main 0be8788..8f09692",
+   "live_index_html_matches_local": true,
+   "ipad_live": {
+    "loaded": true,
+    "ticks_per_second": 60.2,
+    "motion_permission": "asked again per origin on first tap"
+   }
+  }
+ },
+ "hud_editor_20261029": {
+  "decision": "user: port the v0.14 HUD editor (X button covers LV/EXP); no cheat web build",
+  "files": [
+   "Sources/Web/WebHUDEditor.inc",
+   "Sources/Web/WebGameHUD.cpp",
+   "Sources/Web/WebMedia.cpp (drawRegion)",
+   "Sources/Web/WebGLRenderer.cpp (drawRegion)",
+   "Sources/Web/WebMenus.cpp (isMissionSelection)",
+   "Web/shell.html (DOM tool panel)"
+  ],
+  "storage": "/persist/HUDLayoutV1-web.json",
+  "headless_hud_editor": {
+   "script": "Web/tests/hud-editor.mjs",
+   "viewport": "912x420",
+   "passed": true,
+   "saved": "{\"version\":1,\"positions\":[null,[0.28240962895373811,0.76109215017064846],null,null,null,null,null,null,null,null]}",
+   "checks": [
+    "mission entry visible",
+    "pause SET GAME UI opens editor",
+    "drag LEVEL/EXP, time frozen",
+    "TOOLS then APPLY writes 10 entries",
+    "MENU works with custom layout",
+    "restored after reload",
+    "mission entry + sample scene",
+    "RESET LAYOUT + APPLY writes all null"
+   ]
+  },
+  "regression": {
+   "60Hz": "pass 58.9 (2 s window)",
+   "30Hz ?fps=30": "pass, callbackInterval 0.0333, ticksPerCallback 2, 10 s average 60.0 ticks/s",
+   "touch": "pass 59.6"
+  },
+  "note": "the earlier ?fps=30 run used a broken regex (\\\\d escaped to d) and ran at 60 Hz; fixed to [0-9]",
+  "not_checked": [
+   "physical iPad editor",
+   "Safari/Firefox desktop"
+  ]
+ },
+ "desktop_browsers_20261029": {
+  "scope": "user: Safari, Chrome, ego lite (no Firefox)",
+  "chrome_headless": "browser-smoke.mjs and hud-editor.mjs pass",
+  "ego_lite": {
+   "engine": "Chrome/156 UA",
+   "viewport": [
+    1512,
+    817,
+    2
+   ],
+   "move": [
+    -1040,
+    -957.62
+   ],
+   "jump": [
+    -40.5,
+    -29.72
+   ],
+   "fire_max_bullets": 7,
+   "callback_interval_s": 0.0347,
+   "ticks_per_callback": 2,
+   "combat_ticks_per_second": 57.2,
+   "hud_editor": "drag LEVEL/EXP, TOOLS, APPLY saved positions[1]; test file removed afterwards",
+   "note": "each agent command flips visibility hidden->visible within 1 ms; the game pauses as for a tab switch"
+  },
+  "safari": {
+   "version": "27.0.1",
+   "url": "https://fastutle.com/game/heavy_mach/ (8e13936)",
+   "method": "AppleScript do JavaScript (user enabled Apple Events JavaScript); game driven through Module._hm_pointer/_hm_key",
+   "window": [
+    710,
+    549
+   ],
+   "canvas": [
+    480,
+    360
+   ],
+   "forced_active": "Module._hm_active(1) because the window lost focus while the user typed in another app",
+   "results": {
+    "mission_entry": true,
+    "move": [
+     -1040,
+     -917.44
+    ],
+    "jump": [
+     -40.5,
+     17.24
+    ],
+    "fire_max_bullets": 5,
+    "callback_interval_s": 0.0333,
+    "ticks_per_callback": 2,
+    "combat_ticks_per_second": 60.2,
+    "hud_editor": "opened from pause, CANCEL without layout file, resumed"
+   }
+  }
+ },
+ "android_pad_20261029": {
+  "device": "Lenovo TB322FC, Android 16, 1904x3040, 120 Hz",
+  "browser": "Chrome 156.0.8078.47",
+  "access": "adb reverse tcp:8765; CDP via adb forward to chrome_devtools_remote; only the game tab was driven",
+  "motion_sign": {
+   "finding": "Android Chrome 156 exposes DeviceMotionEvent.requestPermission; previous check applied the iOS sign",
+   "ipad_x_landscape90": -9.29,
+   "android_x_landscape90": 9.3,
+   "fix": "Apple mobile WebKit by UA (iPhone|iPad|iPod or Macintosh with maxTouchPoints>1)"
+  },
+  "tilt_movement": {
+   "orientation_90": {
+    "y_negative": "-1031 -> -872 (right)",
+    "y_positive": "-950 -> -1031 (left)"
+   },
+   "orientation_minus90": {
+    "y_positive": "674 -> 978 (right)",
+    "y_negative": "993 -> 834 (left)"
+   }
+  },
+  "fullscreen": "first tap; innerHeight 557 -> 692",
+  "frame": {
+   "callback_interval_s": 0.0084,
+   "ticks_per_callback": 1,
+   "ticks_per_second": 59.9
+  },
+  "input": {
+   "jump": [
+    -40.5,
+    14.7
+   ],
+   "touch_fire_max_bullets": 9,
+   "hud_editor": "touch drag, TOOLS, APPLY saved positions[1]"
+  },
+  "note": "passing through portrait while rotating pauses the game (portrait inactive rule)"
+ },
+ "orientation_hold_20261029": {
+  "decision": "user: passing through portrait continues automatically back in landscape",
+  "api": "hm_active(state): 1 active, 0 interruption, 2 portrait only",
+  "headless": {
+   "script": "Web/tests/orientation-hold.mjs",
+   "passed": true,
+   "portrait": "active 0, hold 1, no menu, time frozen",
+   "landscape": "continues, no menu",
+   "blur_during_hold": "becomes ordinary pause with menu, kept after landscape"
+  },
+  "device": {
+   "device": "Lenovo TB322FC, Chrome 156",
+   "rows": [
+    "0.0 -90 active",
+    "17.2 90 active (direct 180 turn, no portrait)",
+    "21.6 0 hold=1 active=0 time 40.53 frozen, no menu",
+    "22.0 -90 active, no menu, time continues to 52.07"
+   ],
+   "result": "pass"
+  }
+ },
+ "lv_exp_report_20261029": {
+  "report": "user: LV/EXP at the top looked slightly misaligned on the pad",
+  "cause": "test layout left by the touch HUD-editor check (positions[1]=[0.18474,0.76023])",
+  "action": "removed /persist/HUDLayoutV1-web.json on the pad, reloaded with the default layout",
+  "comparison": "headless web 480x360 vs iOS iPad capture docs/public/media/auto-aim/hud-integrated-ipad.png, 180x60 top-left crop: same plate, number box and EXP bar positions"
+ },
+ "deploy_20261029_b": {
+  "source": "porting/wasm 584c6ea",
+  "fastutle_site": "main 8f09692..8e13936",
+  "changed_files": [
+   "index.html",
+   "index.js",
+   "index.wasm"
+  ],
+  "live_matches_local": true,
+  "live_checks": {
+   "browser-smoke.mjs": "all steps",
+   "hud-editor.mjs": "all steps",
+   "orientation-hold.mjs": "all steps"
+  },
+  "console": "only the site-wide Cloudflare Web Analytics beacon blocked by CSP"
+ },
+ "ipad_live_20261029": {
+  "device": "iPad mini 6, iPadOS 18.7, Safari 27.0.1, wired",
+  "url": "https://fastutle.com/game/heavy_mach/ (fastutle-site 8e13936)",
+  "ticks_per_second": [
+   60.1,
+   60.1,
+   60.0
+  ],
+  "hud_editor": "pause SET GAME UI opened over the live 1-2 scene; CANCEL, no layout file; RESUME",
+  "tilt": {
+   "orientation_90": "y -0.6 -> right (-1000 -> -772)",
+   "reverse_landscape": "y +0.3 -> right (-940 -> -825); y -0.5 -> left (-770 -> -964)"
+  },
+  "reverse_landscape_reports": {
+   "window.orientation": 0,
+   "screen.orientation": "portrait-primary 90",
+   "portrait_media_query": false,
+   "handled_as": "LandscapeLeft (not 90), matches measured movement",
+   "physical": "user: charging port left, top camera right = UIInterfaceOrientationLandscapeLeft"
+  }
+ },
+ "v015_sync_20261029": {
+  "upstream_develop": "805b857 (merge of #23)",
+  "conflicts": [
+   "docs/current-status.md",
+   "docs/rendering-policy.md (both sides kept)"
+  ],
+  "web_change": "WebHUDEditor.inc updateHUDEntry/openHUDEditor conditions copied from iOS HMHUDEditor.inc v0.15 (no mission-selection entry)",
+  "headless": {
+   "hud-editor.mjs": "pass (mission-no-entry, reopen-from-pause, sample-scene, reset)",
+   "browser-smoke.mjs": "pass",
+   "orientation-hold.mjs": "pass"
+  },
+  "build_resources": "PASS 1504 hashes",
+  "fastutle_com": {
+   "source": "986d54c",
+   "fastutle_site": "main e11324f..2b4c504",
+   "changed": [
+    "index.wasm"
+   ],
+   "live_matches_local": true,
+   "live_checks": {
+    "hud-editor.mjs": "all steps",
+    "browser-smoke.mjs": "pass on rerun (first run timed out waiting for title while downloading assets)"
+   }
+  }
+ },
+ "rebase_20261031": {
+  "onto": "upstream develop 2f82c85 (v0.17)",
+  "commits_replayed": 18,
+  "dropped": "9e170e3 merge of develop (v0.15)",
+  "web_code_vs_before": "identical (Sources/Web, Web)",
+  "checks": {
+   "web_build": "pass",
+   "browser-smoke.mjs": "pass",
+   "hud-editor.mjs": "pass",
+   "orientation-hold.mjs": "pass",
+   "core_ctest": "24/24 (macOS native, Xcode 26.6 SDK; CommandLineTools SDK fails to link on this Mac)",
+   "build_resources": "PASS 1504",
+   "document_contract": "PASS",
+   "check_publication": "PASS"
+  },
+  "backup_branch": "backup/porting-wasm-pre-rebase-20261031 (local)"
+ }
+}
