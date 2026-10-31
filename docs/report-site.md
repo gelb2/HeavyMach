@@ -846,3 +846,14 @@ VTOL 첫 생성 프롬프트와 스킬 수정 커밋을 대조했다. 요청에 
 - deployment: `appgdep_6ae5ed2218208191829f07e92ca3a7b5` · succeeded · 2026-10-31T13:29:23Z
 - 기존 접근 범위·앵커·원문 다운로드를 유지했다. 세 페이지의 링크·절 순서·다운로드 일치와 로컬 HTTP 200을 검사했다. Safari 화면 검사는 `cgWindowNotFound`로 완료하지 못했다.
 - 앞선 첫 PR 원고는 PR #69·#70으로 main `cf3dca50`에 게시했다. 이번 후속 계획은 `docs/tauri-development-plan`에 커밋했다.
+
+## 2026-10-31 웹 코드 보존·Tauri 데이터 백업 계획
+
+[개발 계획](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/desktop-web-plan#4-tauri-mac), [기술검토](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/pr24-web-review#desktop-development-plan), 첫 PR 원고·TODO·다운로드를 갱신했다. 기여자의 웹 구현과 후속 수정 3건을 고정하고, 새 Desktop/Tauri·Distribution/Web에서 작업한다. 기존 웹 저장을 유지한 OS 파일 백업·시작 전 복구·종료·내보내기/가져오기 설계를 담았다.
+
+- 문서 커밋: `c31d691d`, `docs/tauri-development-plan` 원격 반영. main 병합은 하지 않았다.
+- Site source: `ca77425d5c521ebabde7374e01ac2f2986dcdb4e`
+- deployment: `appgdep_6ae5f2a729788191823bee288dc26f09` · succeeded · 2026-10-31T13:52:55Z
+- 기존 소유자 전용 접근 유지. 원고 3개의 다운로드 바이트·앵커·링크·절 순서를 검사했다. 문서 연결·공개 문서·21개 번역 쌍 검사도 통과했다.
+- Safari 접근이 복구돼 로컬 목차 클릭·저장 설계 표를 확인했다. 게시 주소에서도 로그인된 기존 세션으로 최신 보호 범위·파일 백업·Distribution/Web 문구와 화면을 직접 확인했다.
+- 기존 게임·빌드 경로 2,121개를 기록했고 기준 main 대비 변경은 0개다. Tauri 앱·백업 기능·보호 검사 도구는 아직 구현하지 않았다.
