@@ -837,3 +837,12 @@ VTOL 첫 생성 프롬프트와 스킬 수정 커밋을 대조했다. 요청에 
 - source: `69fc0be1766e1e451f6283752f3879a4b43f8f6e`
 - deployment: `appgdep_6ae5e88fdfc481919dac3696ab6b15cc` · succeeded · 2026-10-31T13:09:50Z
 - 원고 6절의 순서·기존 앵커·링크·다운로드 일치를 검사했다. Safari 화면 확인은 `cgWindowNotFound`로 완료하지 못했다.
+
+## 2026-10-31 Tauri 개발 순서·폴더 검토
+
+[상세 계획](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/desktop-web-plan.html)을 같은 사이트 목차에 추가했다. Tauri Mac·기존 Mac 비교 → 순수 웹 배포 → Windows 설치본 빌드 순서, 저장 연결·플랫폼별 폴더·검사·릴리스 준비를 담았다. 기존 PR 검토 15절과 첫 PR 원고·다운로드·TODO도 같은 순서로 갱신했다.
+
+- source: `eb5a4f26ad9acaf30a81c955ae0e2e9a88de5f8a`
+- deployment: `appgdep_6ae5ed2218208191829f07e92ca3a7b5` · succeeded · 2026-10-31T13:29:23Z
+- 기존 접근 범위·앵커·원문 다운로드를 유지했다. 세 페이지의 링크·절 순서·다운로드 일치와 로컬 HTTP 200을 검사했다. Safari 화면 검사는 `cgWindowNotFound`로 완료하지 못했다.
+- 앞선 첫 PR 원고는 PR #69·#70으로 main `cf3dca50`에 게시했다. 이번 후속 계획은 `docs/tauri-development-plan`에 커밋했다.
