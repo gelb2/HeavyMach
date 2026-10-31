@@ -1,5 +1,16 @@
 # HeavyMach 보고 사이트
 
+## Tauri Mac 첫 구현과 저장 복구 — 2026-10-31
+
+[개발 계획과 실행 결과](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/desktop-web-plan.html)에 별도 브랜치, 첫 Mac 앱, 실제 슬롯 복구, JS/Rust 20개 검사와 남은 작업을 반영했다. 기술검토·원고 다운로드·TODO·검사 JSON을 함께 갱신했다.
+
+- 개발 커밋: `3ef3004e` · `feat/tauri-mac`. develop·main 병합 없음.
+- source: `b75d59d07fbb0ec14d6c7a0064557ff1beb65df5`
+- deployment: `appgdep_6ae5fdd6bb70819181c98658b6a99c85` · succeeded
+- version: `appgprj_6addbf55aea081918d3d182d7e496e88~appgver_b7f234bb2fa48191bd1e85d5961c5c0e`
+- 소유자 전용 접근 유지. 로컬 HTTP 200, 세 페이지의 링크·절 앵커·다운로드 원고 일치를 확인했다. 이번 보고서 화면 검사는 Safari `cgWindowNotFound`와 Chrome 브라우저 제어 미제공으로 완료하지 못했다. 게임 앱의 화면 검사는 CUA로 수행했다.
+
+
 ## 리센코 인용 강조와 바빌로프 연구 설명 — 2026-10-30
 
 [원고 9절](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/ai-project-experience.html#part-9)을 실제 인용·쉬운 해설·현대 연구·바빌로프 연구 방법으로 구분하고 표제·핵심 문장을 강조했다. 사용자가 제공한 해설과 권력·사실에 관한 문단을 추가했다. 제목은 ‘신(新) 리센코주의와 정렬세’로 맞췄다. 국문·영문·다운로드, 제목의 新, HTML 인용·강조 구조와 문서 링크를 검사했다. Safari 직접 화면 검사는 앞선 CUA 응답 시간 초과 이후 미실행이다.
