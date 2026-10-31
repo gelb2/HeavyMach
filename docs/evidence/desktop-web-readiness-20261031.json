@@ -155,5 +155,25 @@
     "tauri_app_built": false,
     "native_backup_implemented": false,
     "runtime_preservation_tested": false
+  },
+  "pwa_plan": {
+    "observed_at": "2026-10-31",
+    "existing_manifest": "Web/manifest.webmanifest",
+    "existing_manifest_icons": false,
+    "existing_service_worker_registration": false,
+    "github_pages_enabled": false,
+    "planned_url": "https://gelb2.github.io/HeavyMach/",
+    "new_files_root": "Distribution/Web/",
+    "stage": 2,
+    "scope": [
+      "installation",
+      "complete offline asset cache",
+      "offline play/save/relaunch",
+      "version update without live-game reload",
+      "export/import",
+      "existing product files unchanged"
+    ],
+    "implementation_started": false,
+    "offline_runtime_tested": false
   }
 }

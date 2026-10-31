@@ -305,13 +305,15 @@ PR의 브라우저 실행 경로는 이미 있다. `Web/`에서 Emscripten으로
 - 같은 버전의 HTML·JavaScript·Wasm·자원만 함께 배포한다. Wasm의 `application/wasm` MIME, 상대 자원 경로, 압축·캐시 헤더를 확인하고 이전 HTML이 새 Wasm을 잘못 읽지 않게 한다.
 - HTTPS의 고정 도메인·경로를 사용한다. 저장은 IndexedDB/IDBFS에 두며 초기 `syncfs(true)`가 끝나야 실행한다. 쓰기 완료와 실패 처리는 이번 수정본에 들어 있다. [Emscripten 파일 시스템](https://emscripten.org/docs/api_reference/Filesystem-API.html).
 - 브라우저 데이터 삭제·비공개 모드·저장 공간 정리와 origin 변경에서 진행이 어떻게 되는지 검사한다. 저장 내보내기·가져오기와 영속 저장 요청을 검토한다. 브라우저 저장은 계정 동기화가 아니며 서버 없이 다른 기기에 자동으로 이어지지는 않는다. [브라우저 저장 정책](https://developer.mozilla.org/en-US/docs/Web/API/Storage_API/Storage_quotas_and_eviction_criteria).
-- 오프라인 재실행이 필요하면 Service Worker 캐시와 업데이트 정책을 따로 설계한다. PWA는 설치·오프라인 선택지이며 웹판 실행의 필수 조건은 아니다.
+- **PWA를 순수 웹 개발 단계에 포함한다.** 새 시작 화면·manifest·아이콘·Service Worker는 `Distribution/Web/`에 둔다. GitHub Pages 배포 주소는 `https://gelb2.github.io/HeavyMach/`로 계획했다. 현재 Pages는 비활성이다.
+- 전체 자원을 내려받고 검증한 뒤 오프라인 준비 완료를 표시한다. 비행기 모드에서 플레이·저장·종료·재실행을 검사한다. 업데이트는 다음 시작에 적용하고 이전 정상 캐시와 진행을 보존한다.
+- 기존 manifest에는 설치 아이콘이 없고 Service Worker도 없다. 별도 시작 화면에서 원본 게임을 불러오는 방식의 입력·틸트·음향·전체 화면, 설치 전후 저장 공유 여부를 검사한다. [PWA 구현·검사 계획](../desktop-web-plan-20261031.md#web-pwa).
 - Safari·Chromium·실제 모바일에서 멀티터치·틸트 권한·음향 시작·가로 전환·전체 화면·백그라운드 복귀·GPU 복구를 검사한다.
 
 ### 개발 순서 — 최신 사용자 제안 반영
 
 1. `Desktop/Tauri/`에 Mac 앱을 만들고 **기존 네이티브 Mac 앱과 비교**한다. 같은 미션·무기·화면·저장 복사본으로 조작·전투·저장·음향·표시 간격·메모리를 확인한다.
-2. 같은 원본 웹 산출물을 `Distribution/Web/`의 별도 설정으로 배포한다. 고정 주소·버전별 자원·저장·업데이트를 검사한다.
+2. 같은 원본 웹 산출물을 `Distribution/Web/`의 별도 시작 화면으로 배포한다. GitHub Pages·PWA 설치·오프라인 플레이와 저장·업데이트를 구현하고 검사한다.
 3. 동일 Tauri 프로젝트의 Windows 설치본을 빌드한다. 이번 범위는 빌드·산출물 검사까지이며 Windows 실행·플레이 검사는 후속 과제다.
 
 Electron 비교 앱 제작은 현재 순서에서 제외한다. 기술 비교는 이 절에 유지한다. 실제 구현·저장·폴더·검사·릴리스 계획은 [개발 계획](../desktop-web-plan-20261031.md)에 정리했다.
@@ -324,7 +326,7 @@ Electron 비교 앱 제작은 현재 순서에서 제외한다. 기술 비교는
 - main의 GitHub 계정 연결과 README·CREDITS·CHANGELOG 표기는 확인했다. Contributors 통계도 fastutlego 19개를 확인했다. 요약 목록의 캐시 갱신과 다음 버전 릴리스 노트는 후속 확인한다.
 - 실제 모바일 브라우저의 틸트·멀티터치·음향·저장·복귀를 검사한다.
 - Apple의 미사용 경험치 미션 진입은 별도 재현한다. 이번 웹 수정으로 Apple 코드가 바뀌지는 않았다.
-- 기여자 웹 구현·후속 수정 3건을 고정하고 새 실행기·배포 폴더만 추가한다. 별도 파일 백업과 복구를 검사한 뒤 Tauri Mac을 기존 네이티브 Mac과 비교한다. 순수 웹 배포, Windows 설치본 빌드가 뒤따른다. Electron은 기술 비교 자료로 유지한다.
+- 기여자 웹 구현·후속 수정 3건을 고정하고 새 실행기·배포 폴더만 추가한다. 별도 파일 백업과 복구를 검사한 뒤 Tauri Mac을 기존 네이티브 Mac과 비교한다. 순수 웹·PWA 배포, Windows 설치본 빌드가 뒤따른다. Electron은 기술 비교 자료로 유지한다.
 
 [개발 TODO](https://github.com/gelb2/HeavyMach/blob/docs/tauri-development-plan/docs/usability-todo.md#hm-pr24-integration)에 완료와 남은 항목을 나눴다.
 
@@ -345,7 +347,7 @@ Electron 비교 앱 제작은 현재 순서에서 제외한다. 기술 비교는
 
 첫 PR 원고와 기술검토를 PR #69→develop→PR #70→main(`cf3dca50`)으로 게시했다. 게임 소스·자원·빌드 파일의 변경은 없다. 국영문 README에서 원고를 읽을 수 있다.
 
-사용자의 최신 제안은 **Tauri Mac 앱 → 순수 웹판 → Tauri Windows 설치본 빌드**다. 기존 네이티브 Mac을 비교 대상으로 삼는다. 이 순서로 현재 Mac에서 입력·렌더·음향·저장 차이를 먼저 확인하고 다음 두 대상에 반영할 수 있다.
+사용자의 최신 제안은 **Tauri Mac 앱 → 순수 웹·PWA → Tauri Windows 설치본 빌드**다. 기존 네이티브 Mac을 비교 대상으로 삼는다. 이 순서로 현재 Mac에서 입력·렌더·음향·저장 차이를 먼저 확인하고 다음 두 대상에 반영할 수 있다.
 
 | 항목 | 현재 상태와 처리 |
 |---|---|
@@ -354,6 +356,7 @@ Electron 비교 앱 제작은 현재 순서에서 제외한다. 기술 비교는
 | 폴더 | 새 `Desktop/Tauri/`는 Mac/Windows 실행기, 새 `Distribution/Web/`는 웹 배포. 기존 Web·Sources/Web·Apple·Android·코어·자원·도구는 수정 금지 |
 | 기존 의존 | 웹이 `Sources/iOS`의 공용 C++ 헤더 세 개를 읽음. 읽기 목록·해시로 관리하며 이번에 이동·복사하지 않음 |
 | 추가 준비 | Rust·Tauri 도구, Mac Developer ID 서명·공증, Windows 빌드 CI, 공식 웹 배포 주소 |
+| PWA 범위 | 별도 시작 화면·설치 아이콘·Service Worker·전체 다운로드·오프라인 저장·재실행·업데이트. 구현과 실행 검사는 아직 |
 | Windows 범위 | 설치본·해시·빌드 로그까지. 실제 설치·전투·저장·성능은 후속 검사 |
 
 **보호 기준은 main `cf3dca50`의 웹 구현과 후속 수정 3건을 포함한다.** 새 작업에서 기존 파일을 변경·이동·삭제하거나 생성된 JS를 패치하지 않는다. 원본 19개 커밋과 후속 2개 커밋을 보존하고, 작업 전후 보호 해시 및 패키지에 포함한 게임 파일을 대조한다. 별도 실행기는 게임 함수를 재정의하지 않는다.

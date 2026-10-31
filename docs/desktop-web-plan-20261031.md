@@ -1,6 +1,6 @@
 # Tauri Mac·웹·Windows 개발 계획
 
-2026-10-31. 개발 순서는 **Tauri Mac 앱 → 순수 웹판 → Tauri Windows 설치본 빌드**다. Mac에서는 기존 네이티브 HeavyMach와 비교한다. Electron은 기술 비교 자료로 남긴다.
+2026-10-31. 개발 순서는 **Tauri Mac 앱 → 순수 웹·PWA → Tauri Windows 설치본 빌드**다. Mac에서는 기존 네이티브 HeavyMach와 비교한다. Electron은 기술 비교 자료로 남긴다.
 
 **기여자의 웹 구현과 후속 버그 수정 3건을 현재 상태로 고정한다.** 업그레이드 정지·저장 복구·GPU 복구까지 포함한 `Web/`·`Sources/Web/` 파일은 이번 Tauri·순수 웹 개발에서 수정하지 않는다. Apple·Android·공용 코어·자원·기존 빌드 도구도 그대로 읽는다.
 
@@ -11,7 +11,7 @@ Tauri를 검토한 목적은 **저장 데이터 보존과 Mac·Windows 지원**�
 | 단계 | 할 일 | 완료할 결과 |
 |---|---|---|
 | 1. Tauri Mac | 기존 웹판을 앱에 포함하고 창·별도 파일 백업·시작 전 복구·종료 처리를 추가한다. 기존 네이티브 Mac 앱과 비교한다 | Apple Silicon Mac에서 설치·플레이·재실행·저장 복구가 되는 앱과 비교 결과 |
-| 2. 순수 웹 | 수정하지 않은 웹 산출물을 고정 HTTPS 주소로 배포한다 | 게임 주소, 버전별 웹 묶음, 저장 유지·업데이트·브라우저 검사 결과 |
+| 2. 순수 웹·PWA | 같은 웹 산출물을 GitHub Pages에 배포하고 설치·오프라인 실행을 추가한다 | 브라우저 주소, 홈 화면 설치, 오프라인 플레이·저장·재실행, 업데이트 검사 결과 |
 | 3. Tauri Windows | 같은 Tauri 프로젝트를 Windows용으로 빌드하고 설치본을 만든다 | Windows x64 빌드 결과, 설치 파일, 해시·빌드 로그 |
 
 첫 단계에서도 Mac 앱에 넣을 Wasm·자원을 빌드한다. 두 번째 단계는 그 실행부의 브라우저 배포다. 순수 웹판은 Tauri나 Rust 설치 없이 브라우저에서 실행한다. Windows 설치·플레이·성능 검사는 이번 세 번째 단계 이후의 별도 과제다.
@@ -31,7 +31,8 @@ Tauri를 검토한 목적은 **저장 데이터 보존과 Mac·Windows 지원**�
 | Tauri 프로젝트 | `Desktop/` 추적 파일 없음 | 새 프로젝트·백업 코드·외부 검사·빌드 도구 작성 |
 | Mac 공개 배포 | 로컬 키체인에 Apple Development 인증서만 확인 | Developer ID 서명·공증을 사용할 배포 자격 확인 |
 | Windows 빌드 | 저장소에 Windows 작업·self-hosted runner 없음 | GitHub Windows runner의 빌드·패키징 작업 추가 |
-| 웹 배포 | 기여자의 기존 테스트 사이트 기록 존재 | 이 저장소 수정본의 공식 주소·업데이트 구성 |
+| 웹 배포 | 기여자의 기존 테스트 사이트 기록 존재. 이 저장소의 GitHub Pages는 비활성 | GitHub Actions 배포와 고정 주소 구성 |
+| PWA | 기존 manifest·홈 화면 메타데이터 존재. 설치 아이콘·Service Worker는 없음 | 별도 설치 화면·manifest·아이콘·오프라인 캐시·업데이트 구현 |
 
 기존 검사는 [PR 수정 검사](evidence/pr24-web-fixes-20261031.json)의 당시 실행 결과다. Tauri 앱의 실행 결과는 개발하면서 추가한다. 개발 도구 준비는 [Tauri 준비물](https://v2.tauri.app/start/prerequisites/)을 따른다.
 
@@ -66,7 +67,8 @@ HeavyMach/
         ├── README.md           공식 웹 배포·갱신·롤백 절차
         ├── scripts/            기존 웹 빌드 호출·산출물 복사·해시 검사
         ├── hosting/            MIME·캐시·고정 주소·배포 설정
-        └── tests/              공개 주소·저장 유지·브라우저 검사
+        ├── pwa/                시작 화면·manifest·아이콘·Service Worker
+        └── tests/              브라우저·설치·오프라인·저장·업데이트 검사
 ```
 
 Mac과 Windows는 하나의 Tauri 프로젝트를 쓴다. OS별 차이는 전용 설정 파일과 Rust 분기로 둔다. Tauri 모바일 프로젝트는 생성하지 않는다. 기존 `macOS/`나 `Android/`에는 새 파일을 넣지 않는다.
@@ -164,15 +166,46 @@ Tauri의 최신 공식 문서는 `@wdio/tauri-service`와 앱 안의 WebDriver �
 
 첫 대상은 Apple Silicon arm64다. 기존 Intel Mac 미지원 방침을 유지한다. 로컬 검증 앱과 일반 배포 앱을 구분하고, 배포 앱에는 검사 서버·치트 패널을 포함하지 않는다. 공개 설치본은 Developer ID 서명·공증·DMG 검사를 거친다. 현재 확인된 Apple Development 인증서는 배포용 Developer ID와 다르다. [Mac 패키지](https://v2.tauri.app/distribute/macos-application-bundle/), [서명·공증](https://v2.tauri.app/distribute/sign/macos/).
 
-## 5. 두 번째 단계: 순수 웹판
+<a id="web-pwa"></a>
 
-Mac에 포함한 것과 같은 원본 웹 산출물을 `Distribution/Web/`의 설정으로 배포한다. 새 브라우저 저장 어댑터를 만들거나 `Web/` 안에 배포 파일을 추가하지 않는다. 기존 기여자 사이트와 이번 공식 배포를 구분한다.
+## 5. 두 번째 단계: 순수 웹·PWA
 
-고정 HTTPS origin을 정하고 같은 버전의 HTML·JS·Wasm·자원을 함께 배포한다. 이전 HTML과 새 Wasm이 섞이지 않게 서버의 버전 경로·캐시 헤더를 구성한다. Wasm MIME·CSP·하위 경로·다운로드 실패·이전 버전 복귀를 검사한다. 자원 분할 도구도 그대로 읽어 실행한다.
+**브라우저 실행과 PWA 설치·오프라인 플레이를 같은 단계에서 만든다.** GitHub Pages의 `https://gelb2.github.io/HeavyMach/`를 배포 주소로 계획한다. 현재 이 저장소의 Pages는 비활성이다. 새 GitHub Actions 작업에서 기존 웹 빌드를 호출하고 `Distribution/Web/`의 파일과 합쳐 배포한다. Tauri 설치본은 GitHub Releases에 둔다. [Pages 사용자 지정 배포](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages).
 
-브라우저 진행은 기존 IndexedDB, 설정은 기존 localStorage를 쓴다. 저장소 사용 불가·용량 초과·새로고침·동시 탭·업데이트를 검사한다. 현재 없는 동시 탭 잠금·영속 저장 요청·내보내기/가져오기는 별도 배포 화면에서 구현 가능한지 후속 검토한다. 게임 코드 수정이 필요한 경우 이번 범위에 끼워 넣지 않는다. 순수 웹은 Tauri의 OS 파일 백업을 쓸 수 없으므로 사용자가 사이트 데이터를 삭제하면 별도 내보낸 파일 없이는 복구할 수 없다. 서버 계정 동기화는 추가하지 않는다.
+### 기존 게임과 PWA 파일 분리
 
-Mac Safari·Chrome과 모바일 브라우저의 터치·틸트·가로 회전·소리·복귀를 검사한다. 사용자가 제외했던 Firefox는 이번 기본 검사 대상에서도 제외한다. 웹 manifest는 이미 있으며 Service Worker 오프라인 캐시는 별도 후속 과제로 둔다. Tauri 앱의 오프라인 실행은 앱 내부 자원으로 처리한다.
+`Distribution/Web/pwa/`에 별도 시작 화면·manifest·192/512px 설치 아이콘·Service Worker를 둔다. 배포 후 시작 주소와 manifest의 `id`·`start_url`·`scope`는 `/HeavyMach/`로 고정한다. 브라우저별 설치 방법을 안내하고, 설치하지 않은 브라우저에서도 같은 게임을 연다. iPhone·iPad에서는 홈 화면 추가 절차를 안내한다. [PWA 설치 조건](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Guides/Making_PWAs_installable).
+
+초기안은 시작 화면 안의 같은 출처 iframe에 수정하지 않은 게임 페이지를 전체 크기로 표시하는 방식이다. 게임 묶음은 `game/<version>/` 아래에 복사하고 원본 상대 경로를 유지한다. iframe의 키보드 포커스·터치·틸트 권한·음향 시작·가로 회전·전체 화면을 실제 브라우저와 설치된 PWA에서 검사한다. 이 연결에 필요한 코드는 새 시작 화면에만 둔다. 생성된 게임 HTML·JS나 게임 함수를 패치하지 않는다.
+
+기존 `Web/manifest.webmanifest`에는 이름·시작 주소·가로 방향 등이 있지만 아이콘과 Service Worker가 없다. 기존 파일은 그대로 두고 외부 시작 화면이 새 manifest를 사용한다. Tauri 앱은 앱에 포함한 자원으로 실행하며 PWA Service Worker를 등록하지 않는다.
+
+### 오프라인 다운로드와 업데이트
+
+Service Worker는 배포 경로의 `/HeavyMach/sw.js`에서 등록하고 `/HeavyMach/` 범위만 담당한다. 배포 도구가 HTML·JS·Wasm·모든 자원과 시작 화면·아이콘의 목록·크기·해시를 만든다. 첫 온라인 접속에서 한 버전 전체를 내려받고 검사한 뒤 **오프라인 준비 완료**를 표시한다. 설치 아이콘을 추가했어도 다운로드가 끝나지 않았으면 준비 완료로 표시하지 않는다. [Service Worker 범위](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerContainer/register), [오프라인 동작](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Guides/Offline_and_background_operation).
+
+캐시는 버전별로 나눈다. 새 버전 전체 다운로드가 끝나야 전환 후보로 올리고, 실행 중인 전투를 새로고침하지 않는다. 새 버전은 다음 시작 때 적용한다. 이전 HTML과 새 Wasm·자원이 섞이지 않게 한다. 이전 버전을 쓰는 창이 모두 닫힐 때까지 해당 캐시를 유지하고, 실패한 다운로드는 기존 정상 버전에 영향을 주지 않게 처리한다. Pages에서 제공하는 MIME·하위 경로·캐시 응답을 검사하며 버전별 경로와 Service Worker로 갱신을 관리한다.
+
+### 오프라인 저장
+
+게임 진행은 기존 IDBFS/IndexedDB, 설정은 기존 localStorage에 기록한다. 인터넷이 없어도 이 저장을 사용한다. 게임 파일 캐시를 갱신하거나 지울 때 진행 저장소는 건드리지 않는다. 별도 시작 화면에서 영속 저장 요청과 백업 내보내기·가져오기를 연결하고, 가져오기는 게임을 닫은 상태에서만 수행한다. 저장 형식과 게임 저장 함수는 유지한다.
+
+같은 출처의 저장소는 경로만 바꾼다고 분리되지 않는다. 기존 DB 이름 `/persist`와 설정 키를 유지하므로 `gelb2.github.io`의 다른 게임 배포와 충돌하는지 확인한다. 시작 화면에서 동시 게임 실행을 막고 버전별 게임 경로도 같은 진행을 읽게 한다. 브라우저와 설치된 PWA가 저장을 공유하는지는 OS별로 검사한다. 사이트 데이터를 직접 지우거나 OS가 저장소를 정리하면 진행이 사라질 수 있으므로 별도로 내보낸 파일로 복구하는 경로를 제공한다. [저장소 정책](https://developer.mozilla.org/en-US/docs/Web/API/Storage_API/Storage_quotas_and_eviction_criteria), [WebKit 저장 정책](https://webkit.org/blog/14403/updates-to-storage-policy/).
+
+### 완료 검사
+
+| 검사 | 확인할 결과 |
+|---|---|
+| 첫 접속·설치 | 전체 자원 다운로드와 해시 검사 후 준비 완료 표시, 올바른 아이콘·시작 주소로 설치 |
+| 인터넷 차단 | 준비 완료 → 비행기 모드 → PWA 시작 → 전투·미션 클리어·저장 → 완전 종료 → 재실행에서 진행 복원 |
+| 입력·화면 | 브라우저와 PWA에서 이동·점프·전체 무기·수동/자동 조준·HUD 편집, 틸트·회전·음향·복귀 확인 |
+| 다운로드 실패·용량 부족 | 준비 완료를 표시하지 않고 재시도, 기존 정상 캐시·진행 유지 |
+| 업데이트 | 게임 중 강제 갱신 없음, 다음 시작에 한 버전 전체 적용, 진행·HUD·키·조준 설정 유지 |
+| 저장·복구 | 오프라인 저장, 동시 실행 방지, 내보내기/가져오기, 사이트 데이터 삭제 후 외부 백업 복구 |
+| 브라우저·PWA 관계 | 각 OS의 설치 전후 진행 유지 여부, 별도 저장이면 백업 이동 절차 확인 |
+| 게임 보존 | 원본 웹 산출물과 포함한 게임 파일의 SHA-256 일치, 보호 소스 차이 없음 |
+
+Mac Safari·Chrome, iPhone·iPad Safari 및 홈 화면 앱, Android Chrome 및 설치된 PWA를 검사한다. 사용자가 제외한 Firefox는 기본 검사 대상에서 제외한다. 현재는 개발 계획이며 PWA 코드 작성·오프라인 실행 검사는 아직 하지 않았다.
 
 ## 6. 세 번째 단계: Windows 빌드
 
@@ -184,14 +217,14 @@ Mac Safari·Chrome과 모바일 브라우저의 터치·틸트·가로 회전·�
 
 ## 7. 기존 플랫폼·기여 보존과 릴리스
 
-보호 기준은 현재 main `cf3dca50099d2b7e840de5e3f79c6c1d017369de`의 게임·빌드 파일이다. 기여자의 원본 19개 커밋과 후속 수정 2개 커밋에 담긴 업그레이드 정지·저장 복구·GPU 복구 3건을 함께 보존한다. `Web/`·`Sources/Web/`뿐 아니라 Apple·Android·Core·Resources·Art·vendor·기존 빌드/검사 도구를 보호한다.
+보호 기준은 계획 수립 당시 main `cf3dca50099d2b7e840de5e3f79c6c1d017369de`의 게임·빌드 파일이다. 기여자의 원본 19개 커밋과 후속 수정 2개 커밋에 담긴 업그레이드 정지·저장 복구·GPU 복구 3건을 함께 보존한다. `Web/`·`Sources/Web/`뿐 아니라 Apple·Android·Core·Resources·Art·vendor·기존 빌드/검사 도구를 보호한다.
 
-구현 착수 때 최신 develop을 fetch하고 기준 이후 변경을 먼저 확인한다. 사용자·기여자의 새 변경을 덮지 않고, 실제 사용할 기준 SHA와 보호 파일 SHA-256 목록을 기록한다. 수정 허용 경로는 새 `Desktop/Tauri/`·`Distribution/Web/`, 새 전용 CI 파일, 필요한 ignore 항목과 관련 문서다. `.github/workflows/desktop-tauri.yml`은 새로 추가하며 기존 Apple·Android·웹 workflow를 수정하지 않는다. 파일 추가·삭제·이동도 보호 검사에 포함한다.
+구현 착수 때 최신 develop을 fetch하고 기준 이후 변경을 먼저 확인한다. 사용자·기여자의 새 변경을 덮지 않고, 실제 사용할 기준 SHA와 보호 파일 SHA-256 목록을 기록한다. 수정 허용 경로는 새 `Desktop/Tauri/`·`Distribution/Web/`, 새 전용 CI 파일, 필요한 ignore 항목과 관련 문서다. `.github/workflows/desktop-tauri.yml`과 `.github/workflows/web-pages.yml`은 새로 추가하며 기존 Apple·Android·웹 workflow를 수정하지 않는다. 파일 추가·삭제·이동도 보호 검사에 포함한다.
 
 패키지에 넣은 게임 HTML·JS·Wasm·자원은 원본 웹 빌드 산출물과 바이트로 대조한다. 원본 함수 교체·저장 요청 가로채기·생성물 패치는 금지한다. 소스 보존뿐 아니라 기존 웹 검사와 저장 전후 관측으로 실행 동작도 비교한다. 연결이 막히면 새 실행기 쪽에서 원인을 좁히고, 보호 파일 수정이 필요할 때는 파일과 이유를 먼저 보고한다.
 
 기여자 원본 19개 SHA·작성자·공동 작성자·커밋 메시지를 유지한다. 원본을 리베이스하거나 squash하지 않는다. fastutlego의 웹 구현과 이후 Tauri 실행기·백업·배포 작업을 구분해 기록한다.
 
-릴리스 때 `CHANGELOG`에 Mac 비교·파일 복구 결과, 웹 주소, Windows 빌드 상태를 나눠 적는다. develop→main 병합 후 새 태그에 소스·자원 묶음과 플랫폼별 산출물·해시·고지를 연결한다. 기존 릴리스 도구를 고치는 대신 새 플랫폼의 패키징·첨부 도구를 전용 폴더에 추가한다. [릴리스 절차](release-notes-plan.md).
+릴리스 때 `CHANGELOG`에 Mac 비교·파일 복구 결과, 웹 주소·PWA 설치·오프라인 검사 결과, Windows 빌드 상태를 나눠 적는다. develop→main 병합 후 새 태그에 소스·자원 묶음과 플랫폼별 산출물·해시·고지를 연결한다. 기존 릴리스 도구를 고치는 대신 새 플랫폼의 패키징·첨부 도구를 전용 폴더에 추가한다. [릴리스 절차](release-notes-plan.md).
 
 다음 구현은 develop에서 별도 `feat/tauri-mac` 브랜치를 만든 뒤 시작한다. 이번 문서 작업에서는 Tauri 앱·보호 검사 도구·백업 기능을 구현하지 않았다.

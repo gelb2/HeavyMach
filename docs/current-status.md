@@ -2,7 +2,7 @@
 
 ## Tauri 개발 순서·폴더 검토 — 2026-10-31
 
-Tauri Mac·기존 Mac 비교 → 순수 웹 → Windows 빌드 순서의 [계획](desktop-web-plan-20261031.md)을 갱신했다. 최신 지시는 기여자의 웹 구현과 후속 수정 3건까지 수정 금지이며, Tauri의 목적은 저장 데이터 보존과 지원 플랫폼 확대다. 새 작업은 `Desktop/Tauri/`·`Distribution/Web/`에 둔다. 기존 IDBFS를 유지하고 외부 실행기에서 OS 파일 백업·시작 전 복구를 처리하는 설계와 검사를 추가했다. Web/host·Web/deploy 추가, 웹 저장 함수 교체 계획은 철회했다. 현재는 문서·보고서 갱신이며 Tauri 앱·백업·보호 검사 도구는 미구현이다. Windows 실행 검사는 후속 과제다.
+Tauri Mac·기존 Mac 비교 → 순수 웹·PWA → Windows 빌드 순서의 [계획](desktop-web-plan-20261031.md)을 갱신했다. 최신 지시는 기여자의 웹 구현과 후속 수정 3건까지 수정 금지이며, Tauri의 목적은 저장 데이터 보존과 지원 플랫폼 확대다. 새 작업은 `Desktop/Tauri/`·`Distribution/Web/`에 둔다. 기존 IDBFS를 유지하고 외부 실행기에서 OS 파일 백업·시작 전 복구를 처리하는 설계와 검사를 추가했다. Web/host·Web/deploy 추가, 웹 저장 함수 교체 계획은 철회했다. PWA 설치·전체 다운로드·오프라인 플레이·저장·재실행·업데이트 검사를 2단계에 포함했다. GitHub Pages 주소와 배포 방식을 계획했으며 현재 Pages는 비활성이다. 현재는 문서·보고서 갱신이며 Tauri 앱·백업·PWA·보호 검사 도구는 미구현이다. Windows 실행 검사는 후속 과제다.
 
 ## 첫 PR과 Tauri 원고 — 2026-10-31
 
