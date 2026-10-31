@@ -22,9 +22,11 @@ Tauri에는 Export save·Import save·Restore last backup을 추가했다. macOS
 - 최종 Release 앱을 메뉴에서 강제 종료한 뒤 다시 실행했다. 시작 화면과 게임이 열렸으며 기존 백업의 해시는 같았다.
 - 실제 Tauri Mac 앱에서 파일 내보내기·가져오기·복구 완료. 복구 전 진행과 기존 백업 2개를 보존했고, 복구 후 데이터는 내보낸 파일과 일치했다. 복구 후 게임 실행도 확인했다.
 
-## iPhone·iPad 사용자 플레이와 권한 조사
+## iPhone·iPad·갤럭시 사용자 플레이와 권한 조사
 
 사용자는 iPad Safari에서 키보드 이동·Space 점프·트랙패드 사격, 비행기 모드 전환과 오프라인 프로필 재진입을 확인했다. iPad Air 설치형 PWA에서는 틸트와 자동조준 사격을 확인했다. iPhone 설치형 PWA는 미션 1-4까지 정상 플레이하고 클리어했다.
+
+2026-11-01 사용자 실제 플레이 확인: 갤럭시 순수 웹판에서 틸트 조작과 자동조준·수동조준이 모두 정상 동작했다.
 
 동작 허용 팝업은 iPad Air PWA를 껐다 켤 때마다 나타난다는 제보다. 원본 `Web/shell.html`은 새 페이지에서 동작 권한 상태를 초기화하고 첫 입력 때 요청한다. WebKit 공개 구현도 권한을 출처별 메모리 맵에서 조회하고, 값이 없으면 요청 대상으로 돌린다. 따라서 재실행 팝업은 이 권한 수명과 일치하는 현상으로 보인다. 해당 iPadOS의 프로세스 종료·권한 상태를 직접 측정한 결과는 아직 없다. 게임 코드를 우회하거나 로컬 값만으로 권한을 얻었다고 처리하지 않는다. [WebKit 권한 구현](https://github.com/WebKit/WebKit/blob/main/Source/WebKit/UIProcess/WebsiteData/WebDeviceOrientationAndMotionAccessController.cpp).
 
