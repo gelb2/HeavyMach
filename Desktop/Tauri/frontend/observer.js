@@ -25,7 +25,10 @@
           if(!done)throw new Error('The game has not finished saving. Keep it open and retry.');
         }
         await invoke('finish_close');
-      }catch(e){lastError=String(e);console.error('HeavyMach desktop backup:',lastError);alert('Could not finish the backup. The game will stay open.\n'+lastError);}
+      }catch(e){
+        lastError=String(e);console.error('HeavyMach desktop backup:',lastError);
+        await invoke('close_error',{message:lastError});
+      }
       finally{closing=false;}
     }
   };

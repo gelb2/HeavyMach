@@ -23,7 +23,7 @@ export function validate(s){
   }else throw Error('Unknown saved file');
  }
  const aim=s.settings[KEYS[1]],binding=s.settings[KEYS[0]];
- if(aim!==null&&!['0','1'].includes(aim))throw Error('Invalid aim setting');
+ if(aim!==null&&!['0','1','2'].includes(aim))throw Error('Invalid aim setting');
  if(binding!==null){if(typeof binding!=='string'||!/^\d+(,\d+){14,15}$/.test(binding))throw Error('Invalid keyboard bindings');const codes=binding.split(',').map(Number);if(new Set(codes).size!==codes.length||codes.some(n=>n<=0||n>=256||n===227||n===231))throw Error('Invalid keyboard bindings');}
  return s;
 }

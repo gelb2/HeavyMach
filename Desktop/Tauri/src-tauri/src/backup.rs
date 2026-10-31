@@ -90,7 +90,8 @@ impl Snapshot {
             return Err("Unexpected settings keys".into());
         }
         if let Some(v) = &self.settings["HeavyMach.AimModeV1"] {
-            if v != "0" && v != "1" {
+            // Sources/Core/AutoAim.hpp: off=0, manual=1, automatic=2.
+            if v != "0" && v != "1" && v != "2" {
                 return Err("Invalid aim mode".into());
             }
         }
@@ -287,6 +288,18 @@ mod tests {
                 ("HeavyMach.KeyboardBindingsV1".into(), None),
             ]),
         }
+    }
+    #[test]
+    fn automatic_aim_roundtrip() {
+        let d = tempfile::tempdir().unwrap();
+        let mut s = sample(1);
+        s.settings
+            .insert("HeavyMach.AimModeV1".into(), Some("2".into()));
+        assert!(write(d.path(), s.clone()).unwrap());
+        assert_eq!(status(d.path()).unwrap().latest.unwrap().snapshot, s);
+        s.settings
+            .insert("HeavyMach.AimModeV1".into(), Some("3".into()));
+        assert!(s.validate().is_err());
     }
     #[test]
     fn no_write_for_same_content() {

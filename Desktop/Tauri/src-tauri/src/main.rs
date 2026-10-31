@@ -153,6 +153,14 @@ fn finish_close(w: WebviewWindow, state: tauri::State<State>) -> Result<(), Stri
     Ok(())
 }
 #[tauri::command]
+fn close_error(w: WebviewWindow, message: String) -> Result<(), String> {
+    local(&w)?;
+    let detail: String = message.chars().take(500).collect();
+    w.dialog().message(format!("Could not finish the backup. The game is still open.\n{detail}\nRetry Quit after resolving the error."))
+        .title("Heavy Mach Desktop").show(|_| {});
+    Ok(())
+}
+#[tauri::command]
 fn diagnostics_write(w: WebviewWindow, report: String) -> Result<(), String> {
     local(&w)?;
     if report.len() > 65536 {
@@ -173,8 +181,14 @@ fn diagnostics_write(w: WebviewWindow, report: String) -> Result<(), String> {
     std::fs::write(dir.join(format!("frames-{stamp}.json")), report).map_err(|e| e.to_string())
 }
 fn request_close(w: &WebviewWindow) {
-    let _ = w.eval("window.__hmDesktop?.requestClose()");
+    if let Err(e) = w.eval("window.__hmDesktop?.requestClose()") {
+        w.dialog()
+            .message(format!("Could not request quit. Retry.\n{e}"))
+            .title("Heavy Mach Desktop")
+            .show(|_| {});
+    }
 }
+
 fn main() {
     let app = tauri::Builder::default()
         .plugin(tauri_plugin_dialog::init())
@@ -191,6 +205,7 @@ fn main() {
             backup_status,
             backup_write,
             finish_close,
+            close_error,
             diagnostics_write,
             restore_status,
             export_save,

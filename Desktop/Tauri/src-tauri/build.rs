@@ -4,6 +4,7 @@ fn main() {
             "backup_status",
             "backup_write",
             "finish_close",
+            "close_error",
             "diagnostics_write",
             "restore_status",
             "export_save",

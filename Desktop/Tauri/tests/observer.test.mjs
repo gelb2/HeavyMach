@@ -15,8 +15,8 @@ test('quit waits for native backup completion before exit',async()=>{
  release();await close;assert.deepEqual(calls,['backup_write','finish_close']);
 });
 test('failed OS backup keeps window open and reports the failure',async()=>{
- const calls=[];const e=env(async()=>({format:1}),async name=>{calls.push(name);throw Error('Disk full');});
- await e.api.requestClose();assert.deepEqual(calls,['backup_write']);assert.match(e.alerts[0],/Disk full/);
+ const calls=[];let message;const e=env(async()=>({format:1}),async (name,args)=>{calls.push(name);if(name==='backup_write')throw Error('Disk full');message=args.message;});
+ await e.api.requestClose();assert.deepEqual(calls,['backup_write','close_error']);assert.match(message,/Disk full/);
 });
 test('pending game save retries without forcing game writes',async()=>{
  let tries=0;const calls=[];const e=env(async()=>++tries<3?null:{format:1},async name=>calls.push(name));

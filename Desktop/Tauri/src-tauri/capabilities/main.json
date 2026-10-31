@@ -8,6 +8,7 @@
     "allow-backup-status",
     "allow-backup-write",
     "allow-finish-close",
+    "allow-close-error",
     "allow-diagnostics-write",
     "allow-restore-status",
     "allow-export-save",

@@ -40,12 +40,13 @@ try{
  await page.keyboard.down('ArrowRight');await sleep(300);await page.keyboard.up('ArrowRight');await page.keyboard.down('KeyF');let max=0;for(let i=0;i<15;i++){max=Math.max(max,(await state()).bullets);await sleep(80);}await page.keyboard.up('KeyF');if(!max)throw Error('No bullets');step('fire',{max});
  let before=await state();await page.keyboard.down('KeyD');await sleep(1300);await page.keyboard.up('KeyD');s=await state();if(s.playerX<=before.playerX)throw Error('No movement');step('move',{from:before.playerX,to:s.playerX});
  before=await state();await page.keyboard.press('Space');await sleep(300);s=await state();if(s.playerY<=before.playerY)throw Error('No jump');step('jump',{from:before.playerY,to:s.playerY});
+ const aimState=await state();await tap((aimState.canvas[0]-480)/2+357,(aimState.canvas[1]-320)/2+33);await sleep(300);if((await state()).aimMode!==2)throw Error('Automatic aim did not enable');step('automatic-aim-enabled');
  await page.keyboard.press('Escape');await sleep(300);if(!(await state()).paused)throw Error('No pause');step('pause');
  await page.screenshot({path:new URL('game.png',out).pathname});
  const other=await context.newPage();await other.goto(url);await other.waitForFunction(()=>!document.getElementById('error').hidden);step('second-window-blocked',{message:await other.$eval('#error',e=>e.textContent)});await other.close();
  await game.waitForFunction(()=>{const s=hmStorageState();return s.loaded&&!s.syncing&&!s.dirty&&!s.blocked;});
  await page.reload();await page.waitForSelector('#play:not([disabled])');
- const saved=await page.evaluate(async()=>{const s=await import('./saves.js');return s.encode(await s.read());});const decoded=JSON.parse(saved);if(!decoded.snapshot.records.some(r=>r.path==='/persist/HvM.dat'&&r.contents.length===3624))throw Error('No saved game');step('export-save',{bytes:saved.length});
+ const saved=await page.evaluate(async()=>{const s=await import('./saves.js');return s.encode(await s.read());});const decoded=JSON.parse(saved);if(decoded.snapshot.settings['HeavyMach.AimModeV1']!=='2')throw Error('Automatic aim missing from export');if(!decoded.snapshot.records.some(r=>r.path==='/persist/HvM.dat'&&r.contents.length===3624))throw Error('No saved game');step('export-save',{bytes:saved.length});
  const corrupted=JSON.parse(saved);corrupted.digest='bad';const reject=await page.evaluate(async text=>{const s=await import('./saves.js');const before=await s.encode(await s.read());try{await s.restore(text);return false;}catch{return before===await s.encode(await s.read());}},JSON.stringify(corrupted));if(!reject)throw Error('Bad save was accepted');step('corrupt-import-rejected-data-unchanged');
  await page.evaluate(async text=>{const s=await import('./saves.js');await s.restore(text);},saved);const round=await page.evaluate(async()=>{const s=await import('./saves.js');return s.encode(await s.read());});if(round!==saved)throw Error('Import roundtrip mismatch');step('import-roundtrip');
  // Network disabled in this isolated browser; SW cache must serve every asset.
@@ -53,7 +54,7 @@ try{
  const size=await game.evaluate(()=>Module.FS.stat('/persist/HvM.dat').size);if(size!==3624)throw Error('Offline save lost');step('offline-progress-restored',{bytes:size});
  const expected=decoded.snapshot.records.find(r=>r.path==='/persist/HvM.dat').contents;
  const actual=await game.evaluate(()=>Array.from(Module.FS.readFile('/persist/HvM.dat')));
- if(JSON.stringify(actual)!==JSON.stringify(expected))throw Error('Offline save content changed');step('offline-save-content-matches');
+ if(JSON.stringify(actual)!==JSON.stringify(expected))throw Error('Offline save content changed');step('offline-save-content-matches');if((await state()).aimMode!==2)throw Error('Automatic aim preference lost');step('automatic-aim-restored');
  await sleep(6500);await tap(347,160);await waitScreen('menu');s=await state();
  await tap(s.canvas[0]-58,21+(s.canvas[1]-320)/2);await sleep(1800);
  await tap(434+s.canvas[0]/2-240,56+(s.canvas[1]-320)/2);await sleep(1800);
