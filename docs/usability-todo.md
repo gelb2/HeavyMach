@@ -46,7 +46,7 @@
 - [x] 웹 게임이라는 발상은 이 PR을 보기 전에는 생각하지 못했다는 경험을 담는다. Windows·Mac·웹 지원 고민을 떠올린 뒤 PR을 다시 본 순서로 쓴다.
 - [x] 기여자의 기술적 성취를 프로젝트에 남길 방법을 코드·원본 커밋·크레딧·릴리스 기록과 연결한다. 작성자의 웹 구현을 프로젝트 소유자나 Codex가 만든 것으로 서술하지 않는다.
 - [x] 기술 검토·수정·검사·develop→main 병합 결과와 이후 실제 데스크톱 개발 결과를 구분한다. Tauri 채택·앱 완성·Contributor 표시를 미리 완료로 쓰지 않는다.
-- [ ] GitHub 완성 원고의 위치·README 연결을 정하고 SaaS 담당 세션에 같은 원문·기술 근거를 전달한다. 원고는 작성했고 별도 문서 브랜치와 보고 사이트에서 제공한다. README·main 반영은 후속 작업이다.
+- [x] GitHub 원고를 `docs/public/first-pr-and-tauri-20261031.md`에 두고 국영문 README에서 연결했다. SaaS 집필 안내에서 같은 원고·제공 원문·기술 근거를 읽을 수 있다.
 
 [집필 자료 안내](public/publication-inventory.md) · [검토 보고서](reviews/pr24-web-review-20261031.md).
 
