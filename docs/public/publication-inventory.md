@@ -171,8 +171,12 @@ Apps의 Android 구현·검사 설명은 [개발 과정](android-development-202
 
 [첫 PR을 받다. 그 다음 이어진 스케일업, 그리고 타우리](first-pr-and-tauri-20261031.md)에 첫 기여, 네이티브 유지와 웹 확장 고민, 저장 구조, Tauri/Electron 검토, 승인 리뷰 생략 경험, main 병합과 기여 보존 결과를 한 문서로 작성했다. 최신 원문은 앞의 제공 원문 파일에 이어 보존했다. GitHub README의 웹 기여 원고 링크와 이 집필 안내에서 전문을 읽을 수 있다.
 
-후속 [개발 계획](../desktop-web-plan-20261031.md)은 Tauri Mac·기존 Mac 비교 → 순수 웹·PWA 배포 → Windows 설치본 빌드 순서다. Windows 실행 검사는 별도 후속 과제다. 구현·검사 결과는 current-status에 기록한다. 현재 Tauri 앱은 미구현이다.
+후속 [개발 계획](../desktop-web-plan-20261031.md)은 Tauri Mac·기존 Mac 비교 → 순수 웹·PWA 배포 → Windows 설치본 빌드 순서다. Windows 실행 검사는 별도 후속 과제다. 구현·검사 결과는 current-status에 기록한다. 첫 Tauri Mac 앱과 실제 복구 결과는 아래 최신 기록을 따른다.
 
-최신 개발 조건은 기여자 웹 구현과 후속 수정 3건을 고정하고 새 실행기·배포 코드만 추가하는 것이다. Tauri를 검토한 목적은 저장 데이터 보존과 Mac·Windows 지원이다. 기존 IDBFS·localStorage 유지, OS 파일 백업·게임 시작 전 복구 계획은 위 개발 계획 4절을 읽는다. 현재 설계 단계이며 앱 실행 결과는 아직 없다.
+최신 개발 조건은 기여자 웹 구현과 후속 수정 3건을 고정하고 새 실행기·배포 코드만 추가하는 것이다. Tauri를 검토한 목적은 저장 데이터 보존과 Mac·Windows 지원이다. 기존 IDBFS·localStorage 유지, OS 파일 백업·게임 시작 전 복구 계획은 위 개발 계획 4절을 읽는다. 첫 실행·복구 기록은 아래에 연결했다.
 
 PWA 설치·오프라인 플레이·진행 저장·업데이트와 GitHub Pages 배포 계획은 개발 계획 5절에 있다. 현재 구현 전이며 Apps·Mags에서 완료된 기능으로 소개하지 않는다.
+
+### Tauri Mac 첫 구현 — 2026-10-31
+
+[개발 계획의 실행 결과](../desktop-web-plan-20261031.md)와 [검사 기록](../evidence/tauri-mac-start-20261031.json)을 함께 읽는다. 별도 브랜치에서 첫 Mac 앱과 OS 백업 복구까지 확인했다. 기존 네이티브 Mac 비교·공개 배포·PWA·Windows는 아직 완료하지 않았다.

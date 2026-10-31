@@ -94,4 +94,4 @@ MAP/MCH 관찰 구조는 LE u32 `declared_size,type,data_size`, payload, LE u32 
 
 ## Tauri·웹 확장 계획 — 2026-10-31
 
-새 실행기·시작 전 복구·OS 파일 백업은 `Desktop/Tauri/`, 새 순수 웹 배포와 PWA 시작 화면·manifest·아이콘·Service Worker는 `Distribution/Web/`가 담당한다. 게임 파일은 원본 그대로 포함하고 오프라인 캐시와 진행 저장을 분리한다. 기존 `Web/`·`Sources/Web/`는 수정하지 않고 빌드 입력으로만 쓴다. IDBFS·localStorage를 교체하지 않는다. 별도 실행기가 이미 저장된 내용을 백업하고 게임 시작 전에 복구한다. 세 공용 C++ 헤더의 기존 iOS 경로 읽기는 명시적으로 유지한다. [개발 계획](desktop-web-plan-20261031.md). 현재 Tauri 실행기는 미구현이다.
+새 실행기·시작 전 복구·OS 파일 백업은 `Desktop/Tauri/`, 새 순수 웹 배포와 PWA 시작 화면·manifest·아이콘·Service Worker는 `Distribution/Web/`가 담당한다. 게임 파일은 원본 그대로 포함하고 오프라인 캐시와 진행 저장을 분리한다. 기존 `Web/`·`Sources/Web/`는 수정하지 않고 빌드 입력으로만 쓴다. IDBFS·localStorage를 교체하지 않는다. 별도 실행기가 이미 저장된 내용을 백업하고 게임 시작 전에 복구한다. 세 공용 C++ 헤더의 기존 iOS 경로 읽기는 명시적으로 유지한다. [개발 계획](desktop-web-plan-20261031.md). `feat/tauri-mac`의 첫 Mac 실행기·OS 백업·시작 전 복구를 구현했다. 실제 슬롯 복구와 JS/Rust 20개 검사를 통과했다. 네이티브 Mac 비교·배포와 PWA·Windows는 남아 있다. [실행 기록](evidence/tauri-mac-start-20261031.json).

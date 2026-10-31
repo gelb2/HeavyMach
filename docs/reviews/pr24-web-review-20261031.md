@@ -6,7 +6,7 @@
 
 아래 1~10절은 수정 전 `9d2505f7`을 조사한 기록이다. 당시 실패 화면과 재현 결과를 남겼다. **수정·검사·기여 기록은 11절, Tauri/Electron 비교는 12절, 남은 과제와 글감은 13~14절, 최신 개발 순서·폴더 구성은 15절**에 있다.
 
-Android·iOS·native Mac 앱은 유지한다. 웹판은 브라우저에서 같은 코어를 실행하는 추가 플랫폼이다. Tauri·Electron 데스크톱 앱은 아직 만들지 않았다.
+Android·iOS·native Mac 앱은 유지한다. 웹판은 브라우저에서 같은 코어를 실행하는 추가 플랫폼이다. Tauri Mac 첫 앱은 이후 별도 브랜치에서 구현했다. 실행 결과는 이 문서 마지막 절에 있다. Electron 앱은 만들지 않았다.
 
 ## 1. 리베이스 전후와 develop 차이
 
@@ -294,7 +294,7 @@ Tauri를 선택한 목적은 **저장 데이터 보존과 Mac·Windows 지원**�
 
 일반 HTTP 캐시 삭제와 사이트 데이터 삭제는 다르다. 사이트 데이터 삭제는 브라우저 진행을 지울 수 있다. Tauri 앱의 웹뷰 프로필은 일반 브라우저와 분리하고, OS 백업은 그 프로필 밖에 둔다. 웹뷰 프로필 삭제 뒤 복구를 시험한다. 앱 데이터 폴더 전체 삭제에는 외부로 내보낸 파일이 필요하다. [브라우저 저장 수명](https://developer.mozilla.org/en-US/docs/Web/API/Storage_API/Storage_quotas_and_eviction_criteria).
 
-앱 ID·origin·scheme·프로필은 업데이트 때도 유지한다. Windows는 고정 dataDirectory, Mac은 영속 WKWebView 저장소를 사용한다. macOS 14 이상은 dataStoreIdentifier를 지정할 수 있다. [Tauri 설정](https://v2.tauri.app/reference/config/). 백업의 연결 가능성은 소스와 API로 검토했으며 실제 Tauri 복구 검사는 아직이다.
+앱 ID·origin·scheme·프로필은 업데이트 때도 유지한다. Windows는 고정 dataDirectory, Mac은 영속 WKWebView 저장소를 사용한다. macOS 14 이상은 dataStoreIdentifier를 지정할 수 있다. [Tauri 설정](https://v2.tauri.app/reference/config/). 이 설계를 첫 Mac 앱에 연결했고 실제 슬롯 복구를 확인했다. 설정·오류 주입·업데이트 검사는 후속 과제다.
 
 ### 순수 웹페이지 버전
 
@@ -361,8 +361,12 @@ Electron 비교 앱 제작은 현재 순서에서 제외한다. 기술 비교는
 
 **보호 기준은 main `cf3dca50`의 웹 구현과 후속 수정 3건을 포함한다.** 새 작업에서 기존 파일을 변경·이동·삭제하거나 생성된 JS를 패치하지 않는다. 원본 19개 커밋과 후속 2개 커밋을 보존하고, 작업 전후 보호 해시 및 패키지에 포함한 게임 파일을 대조한다. 별도 실행기는 게임 함수를 재정의하지 않는다.
 
-저장 데이터 보존은 첫 Mac 단계의 필수 검사다. 웹뷰 프로필을 삭제한 뒤 OS 파일 백업에서 복구하는지, 쓰기 실패·강제 종료·업데이트 뒤에도 정상본이 남는지 확인한다. 현재 앱과 백업 기능은 미구현이다.
+저장 데이터 보존은 첫 Mac 단계의 필수 검사다. 웹뷰 프로필을 삭제한 뒤 OS 파일 백업에서 복구하는지, 쓰기 실패·강제 종료·업데이트 뒤에도 정상본이 남는지 확인한다. 첫 Mac 앱·백업·실제 슬롯 복구를 확인했다. 아래에 실행 결과와 남은 검사를 기록했다.
 
 최신 Tauri 문서는 앱 안의 WebDriver 플러그인을 통한 macOS 검사도 안내한다. 기존 네이티브 Mac 검사와 함께 사용할 수 있으며 실제 연동 확인은 구현 단계에서 한다. [공식 검사 안내](https://v2.tauri.app/develop/tests/webdriver/).
 
 [전체 개발 계획과 폴더 트리](../desktop-web-plan-20261031.md) · [현황 점검 기록](../evidence/desktop-web-readiness-20261031.json) · [남은 TODO](../usability-todo.md#hm-desktop-web).
+
+### Tauri Mac 개발 시작 — 2026-10-31
+
+`feat/tauri-mac`에서 첫 Mac 앱과 별도 OS 백업을 구현했다. 첫 미션·재실행·웹 저장소가 없는 상태의 슬롯 복구를 실제 앱에서 확인했다. 보호 파일 2,190개와 포함 게임 파일 10개는 그대로다. JS/Rust 20개 검사가 통과했다. 내보내기·가져오기, 네이티브 Mac 비교와 PWA·Windows는 남아 있다. [개발 결과](../desktop-web-plan-20261031.md) · [검사 기록](../evidence/tauri-mac-start-20261031.json).

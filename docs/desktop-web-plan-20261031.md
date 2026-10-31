@@ -4,7 +4,23 @@
 
 **기여자의 웹 구현과 후속 버그 수정 3건을 현재 상태로 고정한다.** 업그레이드 정지·저장 복구·GPU 복구까지 포함한 `Web/`·`Sources/Web/` 파일은 이번 Tauri·순수 웹 개발에서 수정하지 않는다. Apple·Android·공용 코어·자원·기존 빌드 도구도 그대로 읽는다.
 
-Tauri를 검토한 목적은 **저장 데이터 보존과 Mac·Windows 지원**이다. 웹판의 저장 경로를 유지하면서, 별도 실행기가 OS 파일 백업과 복구를 담당하는 안을 세웠다. 실행기와 백업 기능은 아직 미구현이다. 이번 검토에서는 소스 의존 관계, 도구, 배포 절차를 확인했다. [점검 기록](evidence/desktop-web-readiness-20261031.json).
+Tauri를 검토한 목적은 **저장 데이터 보존과 Mac·Windows 지원**이다. 웹판의 저장 경로를 유지하면서, 별도 실행기가 OS 파일 백업과 복구를 담당하는 안을 세웠다. 최종 점검 뒤 별도 브랜치에서 첫 Mac 실행기와 백업을 구현하고 실제 복구를 검사했다. 아래에 이번 결과와 후속 개발을 구분했다. [점검 기록](evidence/desktop-web-readiness-20261031.json).
+
+### 첫 Mac 구현과 검사
+
+최종 점검 후 develop `c39448af`에서 `feat/tauri-mac`을 만들었다. 검토한 계획 문서만 합치고 새 실행기는 `Desktop/Tauri/`에 추가했다. develop·main에는 병합하지 않았다.
+
+| 항목 | 이번 실행 결과 |
+|---|---|
+| 기존 코드 보존 | 보호 파일 2,190개와 기존 workflow가 기준과 같다. 웹 빌드에서 복사한 게임 파일 10개도 바이트가 같다 |
+| Mac 앱 | Apple Silicon Release `.app` 빌드 성공. 실제 창에서 첫 미션 진입·점프·사격·정지 메뉴 확인 |
+| 저장 | 재실행 후 기존 슬롯을 읽었다. 진행 파일 3,624바이트를 OS 파일에 백업했다 |
+| 실제 복구 | 이 테스트 앱의 웹 저장소를 별도 보관하고 재실행했다. OS 백업을 읽은 뒤 같은 슬롯·장비가 표시됐다 |
+| 자동 검사 | JS 12개, Rust 8개 통과. 저장 대기·부호 있는 바이트·쓰기 실패·손상·복구 중단을 검사했다 |
+
+검사 중 백업의 바이트 변환과 Mac 종료 메뉴를 고쳤다. Emscripten의 `Int8Array`를 그대로 JSON으로 옮기면 음수가 생겨 Rust의 바이트 형식과 맞지 않았다. 새 실행기에서 같은 메모리를 `Uint8Array`로 읽도록 수정했다. 기본 Mac 종료 메뉴의 직접 종료도 전용 메뉴로 바꿔 백업을 기다리게 했다. 게임 저장 함수는 그대로다.
+
+다음은 내보내기·가져오기와 손상 백업 복구 화면, 실제 앱의 설정 복구·쓰기 오류 검사, 기존 네이티브 Mac과의 전투·음향·30분 성능 비교다. PWA와 Windows 빌드는 이후 단계다. [실행 기록](evidence/tauri-mac-start-20261031.json) · [빌드 방법](../Desktop/Tauri/README.md).
 
 ## 1. 개발 순서
 
@@ -27,8 +43,8 @@ Tauri를 검토한 목적은 **저장 데이터 보존과 Mac·Windows 지원**�
 | 진행 저장 | `Web/shell.html`의 IDBFS, 초기 읽기 대기·실패 재시도·쓰기 완료 처리 존재 | 기존 IDBFS 유지, 별도 OS 파일 백업·복구 실행기 |
 | 설정 저장 | HUD는 `/persist/HUDLayoutV1-web.json`, 키 설정·자동조준 설정은 localStorage | 진행·HUD·두 설정 키를 한 백업 묶음으로 보존 |
 | 복구 검사 | 웹 복구 19개, Wasm 코어 24개와 Apple·Android 검사 기록 존재 | 실제 Tauri 앱에 같은 시나리오 적용 |
-| 도구 | Xcode 27.1, Emscripten 6.0.13의 로컬 설치 확인 | Rust·Cargo·Tauri CLI와 의존성 버전 고정 |
-| Tauri 프로젝트 | `Desktop/` 추적 파일 없음 | 새 프로젝트·백업 코드·외부 검사·빌드 도구 작성 |
+| 도구 | Xcode 27.1·Emscripten 6.0.13·Rust 1.99.1·Tauri 2.12.5 사용, 의존성 잠금 파일 추가 | Windows 도구·CI 준비 |
+| Tauri 프로젝트 | `Desktop/Tauri/`에서 Mac 앱·백업·시작 전 복구·검사 구현 | 내보내기·가져오기·손상 복구 화면과 기존 Mac 비교 |
 | Mac 공개 배포 | 로컬 키체인에 Apple Development 인증서만 확인 | Developer ID 서명·공증을 사용할 배포 자격 확인 |
 | Windows 빌드 | 저장소에 Windows 작업·self-hosted runner 없음 | GitHub Windows runner의 빌드·패키징 작업 추가 |
 | 웹 배포 | 기여자의 기존 테스트 사이트 기록 존재. 이 저장소의 GitHub Pages는 비활성 | GitHub Actions 배포와 고정 주소 구성 |

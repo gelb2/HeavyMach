@@ -573,16 +573,23 @@
         "Sources/Core/*",
         "Sources/iOS/HMButtonState.hpp",
         "Sources/iOS/HMAimOverlay.hpp",
-        "Sources/iOS/HMCompatibilityPixels.hpp"
+        "Sources/iOS/HMCompatibilityPixels.hpp",
+        "Desktop/Tauri/frontend/*",
+        "Desktop/Tauri/src-tauri/src/*",
+        "Desktop/Tauri/scripts/*"
       ],
       "tests": [
         "Web/tests/recovery.mjs",
         "Web/tests/browser-smoke.mjs",
-        "Web/tests/hud-editor.mjs"
+        "Web/tests/hud-editor.mjs",
+        "Desktop/Tauri/tests/storage.test.mjs",
+        "Desktop/Tauri/src-tauri/src/backup.rs",
+        "Desktop/Tauri/tests/observer.test.mjs"
       ],
       "evidence": [
         "docs/evidence/desktop-web-readiness-20261031.json",
-        "docs/current-status.md"
+        "docs/current-status.md",
+        "docs/evidence/tauri-mac-start-20261031.json"
       ]
     }
   }
