@@ -5,8 +5,8 @@
   "documents": {
     "README.md": {
       "english": "README.en.md",
-      "source_sha256": "a97cf7f1b94526334a097bd91a8aa48ddfe3344add3d23687d28e3fcfef0295a",
-      "english_sha256": "90852159b82a82320f3e336296e57577ebd04d5a2b272524cba145955237b262",
+      "source_sha256": "90d314626775239b0d079a650890cd9131d5d14629eb981b4300dbcc287b25f7",
+      "english_sha256": "58726c20075aae31811eb6ce93cc4c17a0fc2206bcc7d4635b9bfedc46b08fe8",
       "reviewed_numeric_difference": {
         "source_only": {
           "7": 1,
@@ -23,7 +23,7 @@
           "13": 2
         }
       },
-      "review_note": "July, nine years/three months, aircraft and clip quantities use English words; source punctuation attaches Korean suffixes to digits. Shared personal paragraphs match the English statement. User-approved correction: 이승에서나 → in this life. Updated Android availability; personal paragraphs unchanged. Added iOS gallery and four physical-device cheat captures in both languages. Reviewed Android overview, regular Galaxy gameplay images/GIF, OS table, Gradle installation, shared-core paragraph and current-main versus v0.16 distinction; author opening unchanged. Reviewed 2026-10-30 Android coverage/link audit; current main and released v0.16 remain distinct. Lux sentence follows author commit 39b05834 where applicable. Reviewed v0.17 Android release, download links and current-version wording; historical v0.16 test results retained. Reviewed the Android experience essay, firsthand accounts, qualified hypotheses, public sources, author voice and README link. Private evidence stays outside Git. Reviewed Lysenko history expansion: vernalization versus heritable claims, Vavilov persecution, arrest and prison death, 1948 Party endorsement and institutional purge. Citations and dates match in both languages. Korean hypothesis name follows the author: 신 리셴코주의. Final title follows the latest author instruction: 신(新) 리센코주의와 정렬세. Reviewed web PR #24 attribution, web build instructions and follow-up fixes; personal paragraphs preserved. Added matching links to the Korean first-PR article."
+      "review_note": "July, nine years/three months, aircraft and clip quantities use English words; source punctuation attaches Korean suffixes to digits. Shared personal paragraphs match the English statement. User-approved correction: 이승에서나 → in this life. Updated Android availability; personal paragraphs unchanged. Added iOS gallery and four physical-device cheat captures in both languages. Reviewed Android overview, regular Galaxy gameplay images/GIF, OS table, Gradle installation, shared-core paragraph and current-main versus v0.16 distinction; author opening unchanged. Reviewed 2026-10-30 Android coverage/link audit; current main and released v0.16 remain distinct. Lux sentence follows author commit 39b05834 where applicable. Reviewed v0.17 Android release, download links and current-version wording; historical v0.16 test results retained. Reviewed the Android experience essay, firsthand accounts, qualified hypotheses, public sources, author voice and README link. Private evidence stays outside Git. Reviewed Lysenko history expansion: vernalization versus heritable claims, Vavilov persecution, arrest and prison death, 1948 Party endorsement and institutional purge. Citations and dates match in both languages. Korean hypothesis name follows the author: 신 리셴코주의. Final title follows the latest author instruction: 신(新) 리센코주의와 정렬세. Reviewed web PR #24 attribution, web build instructions and follow-up fixes; personal paragraphs preserved. Added matching links to the Korean first-PR article. Separated the first-PR/Tauri link into its own level-two section in both READMEs; retained the Android essay and platform anchors."
     },
     "CHANGELOG.md": {
       "english": "CHANGELOG.en.md",
