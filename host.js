@@ -1,8 +1,9 @@
 import {GAME_URL} from './config.js';
 import * as saves from './saves.js';
 const $=id=>document.getElementById(id),status=$('status'),error=$('error');
-const fail=e=>{error.textContent=e.message||String(e);error.hidden=false;};
-let release,registration;
+const fail=e=>{error.textContent=e.message||String(e);error.hidden=false;$('retry').hidden=false;};
+let registration;
+$('retry').onclick=()=>location.reload();
 async function exclusive(fn){
  if(!navigator.locks)throw Error('This browser needs Web Locks support. Please update your browser.');
  return navigator.locks.request('HeavyMach-save-owner',{ifAvailable:true},async lock=>{if(!lock)throw Error('The game is open in another window. Close it and try again.');return fn();});
@@ -23,7 +24,7 @@ $('play').onclick=()=>exclusive(async()=>{
  navigator.storage?.persist?.().catch(()=>{});
  const frame=$('game');frame.src=GAME_URL;frame.hidden=false;$('launcher').hidden=true;
  frame.onload=()=>{frame.contentWindow.focus();frame.contentDocument?.getElementById('canvas')?.focus();};
- await new Promise(r=>{release=r;});
+ await new Promise(()=>{});
 }).catch(fail);
 $('export').onclick=()=>exclusive(async()=>{await saves.recover();saves.download(await saves.encode(await saves.read()));}).catch(fail);
 $('import').onchange=async event=>{const file=event.target.files[0];event.target.value='';if(!file)return;
@@ -33,6 +34,6 @@ $('import').onchange=async event=>{const file=event.target.files[0];event.target
  }catch(e){fail(e);}
 };
 window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();$('install').hidden=false;$('install').onclick=async()=>{await e.prompt();$('install').hidden=true;};});
-window.addEventListener('pagehide',()=>{release?.();});
+window.addEventListener('pageshow',event=>{if(event.persisted)location.reload();});
 // The iframe owns game pause/resume handling. No game functions or saves are replaced.
 if(!('serviceWorker' in navigator))fail(Error('Open this game over HTTPS in a current browser.'));else ready().catch(fail);
