@@ -18,6 +18,8 @@ Tauri에는 Export save·Import save·Restore last backup을 추가했다. macOS
 - 다운로드 실패 후 재시도, 검증된 파일 재사용, 실제 용량 표시, 재접속 때 게임 재다운로드 없음, 오프라인 시작까지 9단계 통과.
 - Chrome 설치형 PWA에서 첫 실행 다운로드, 이동·점프·사격·정지, 저장 내보내기·가져오기, 오프라인 재실행과 저장 바이트 복원 통과.
 - Tauri 저장 관련 Rust 11개·JavaScript 15개 검사 통과. 손상 파일 보존, 복구 중단, 저장소 용량 오류를 포함한다.
+- 운영체제 저장 오류 검사도 통과했다. 쓰기 권한 거부와 16 MiB 임시 디스크의 공간 부족에서 이전 백업이 남았다. 공간을 비운 뒤 쓰기도 성공했다. 실제 백업 코드를 실행하는 별도 프로세스를 강제 종료해도 완성된 백업을 읽었고 다음 저장이 성공했다.
+- 최종 Release 앱을 메뉴에서 강제 종료한 뒤 다시 실행했다. 시작 화면과 게임이 열렸으며 기존 백업의 해시는 같았다.
 - 실제 Tauri Mac 앱에서 파일 내보내기·가져오기·복구 완료. 복구 전 진행과 기존 백업 2개를 보존했고, 복구 후 데이터는 내보낸 파일과 일치했다. 복구 후 게임 실행도 확인했다.
 
 ## iPhone·iPad 사용자 플레이와 권한 조사
@@ -28,7 +30,11 @@ Tauri에는 Export save·Import save·Restore last backup을 추가했다. macOS
 
 YouTube 음악과 게임 효과음이 AirPods에서 함께 들린다는 사용자 결과는 오류로 분류하지 않는다. Audio Session 초안은 다른 소리와 함께 재생하는 ambient 유형을 정의한다. 현재 게임의 실제 오디오 세션 유형과 기기별 동작은 별도 검사한다. [Audio Session 유형](https://www.w3.org/TR/audio-session/#audio-session-types).
 
-상단 직선과 방향키에 따라 움직이는 `0` 모양은 조사 중이다. 웹 게임에는 방향키 조준 위치에 8×8 사각 테두리를 그리는 코드가 있다. 사용자 화면의 `0`과 같은 것인지는 재현 화면으로 대조해야 한다. 보호된 원본 파일은 수정하지 않았다.
+방향키로 움직이는 `0` 모양은 Chrome 터치 환경에서도 재현됐다. 웹 게임이 수동 조준 위치에 그리는 노란 8×8 사각 테두리다. 방향키 오른쪽·왼쪽 입력에 따라 조준 좌표와 표시가 함께 움직였다. 상단 직선은 같은 검사 화면에서 재현되지 않았다. iPad Safari에서 추가 확인이 필요하다.
+
+![방향키로 이동하는 노란 사각 조준 표시](../assets/mac-web-pwa-20261101/keyboard-aim.png)
+
+Chrome 터치 에뮬레이션에서 미션 진입, 방향키 조준, 세로 회전 때 게임 정지, 가로 복귀, 정지 메뉴의 HUD 편집 진입, 터치 드래그·저장, 새로고침 뒤 같은 HUD 파일 복원을 확인했다. 실제 iPad 검사와는 구분해 기록했다.
 
 
 
@@ -63,7 +69,7 @@ Mac mini의 Apple M4 Pro에서 측정했다. 게임 앱과 성능 검사 브라�
 
 네이티브는 장면마다 준비 30회 뒤 180회를, Tauri와 Chrome은 각각 15초를 측정했다. 네이티브의 두 해상도·세 장면 검사에서 저장 함수 호출은 모두 0회였다. 프레임 처리 비용의 95백분위도 16.67 ms 안에 들어왔다. 장면 종료 뒤 화면·미디어·렌더러·오디오 객체의 해제를 확인했다.
 
-Tauri의 타이틀 측정에는 최대 101 ms, 슬롯 메뉴에는 최대 46 ms 간격이 각각 있었다. 첫 미션 사격 구간에서는 최대 18 ms였다. Chrome GPU 검사에는 `ANGLE Metal Renderer: Apple M4 Pro`가 기록됐다.
+Tauri의 첫 타이틀 측정에는 최대 101 ms, 슬롯 메뉴에는 최대 46 ms 간격이 각각 있었다. 최종 빌드의 재측정에서는 타이틀 평균 16.724 ms·95백분위 18 ms·최대 43 ms, 슬롯 메뉴 평균 16.742 ms·95백분위 18 ms·최대 65 ms였다. 메뉴에서 간헐적으로 긴 간격이 발생하는 현상은 남아 있다. 첫 미션 사격 구간에서는 최대 18 ms였다. Chrome GPU 검사에는 `ANGLE Metal Renderer: Apple M4 Pro`가 기록됐다.
 
 이 표는 짧은 실행 결과다. 장면의 적 수·입력 시간·창 높이가 완전히 같지는 않다. 전체 프로세스 메모리·30분 플레이·음향 청취 비교는 남아 있다.
 
@@ -96,8 +102,8 @@ Tauri의 타이틀 측정에는 최대 101 ms, 슬롯 메뉴에는 최대 46 ms 
 - 원본 웹 빌드의 게임 파일 10개와 Tauri·웹 패키지의 파일 SHA-256 일치.
 - Tauri 변경: 1200×800 기본 창 설정, 요청할 때만 실행하는 15초 프레임 진단 메뉴. 기록은 측정 종료 때 앱의 `diagnostics/`에 한 번 쓴다.
 - 웹 배포: 전용 `gh-pages` 브랜치와 [배포 도구](../../Distribution/Web/scripts/publish.py). 기존 개발 브랜치를 배포 출력으로 사용하지 않는다.
-- [검사 원본](../evidence/mac-web-pwa-comparison-20261101.json) · [상세 개발 계획](../desktop-web-plan-20261031.md) · [웹 운영 방법](../../Distribution/Web/README.md).
+- [설치·저장 추가 검사](../evidence/launcher-save-20261101.json) · [초기 비교 검사](../evidence/mac-web-pwa-comparison-20261101.json) · [상세 개발 계획](../desktop-web-plan-20261031.md) · [웹 운영 방법](../../Distribution/Web/README.md).
 
-남은 검사는 Tauri 실제 앱 강제 종료·디스크 부족·권한 오류, Mac 장시간 비교, 모바일 회전·HUD 편집·재실행 저장이다. 상단 직선과 조준 표시는 재현 조사 중이다. Developer ID 서명·공증과 Windows 설치본 빌드도 남아 있다.
+남은 검사는 Mac 장시간 비교와 전체 프로세스 메모리, 실제 모바일 회전·HUD 편집·재실행 저장이다. 상단 직선은 iPad Safari에서 추가 재현한다. Developer ID 서명·공증과 Windows 설치본 빌드도 남아 있다.
 
 구현 자료: [Service Worker 수명주기](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers), [Web Locks](https://developer.mozilla.org/en-US/docs/Web/API/Web_Locks_API), [영속 저장 요청](https://developer.mozilla.org/en-US/docs/Web/API/StorageManager/persist), [Chrome PWA 검사 인터페이스](https://chromedevtools.github.io/devtools-protocol/tot/PWA/).

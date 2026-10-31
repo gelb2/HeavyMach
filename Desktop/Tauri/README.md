@@ -36,7 +36,7 @@ Mac 앱은 `src-tauri/target/release/bundle/macos/Heavy Mach Desktop.app`에 만
 
 OS 파일 백업은 앱 데이터 경로의 `saves/`에 있다. Mac에서는 `~/Library/Application Support/com.gelb2.heavymach.desktop/saves/`다. 게임이 저장을 끝낸 뒤 5초 간격으로 확인하고 내용이 바뀌었을 때만 새 파일을 쓴다. 발사·피격·프레임에서 저장을 호출하지 않는다. 정상 종료 때 마지막 백업을 기다린다.
 
-웹 저장이 비어 있으면 시작 화면에서 마지막 정상 파일을 복구한다. 기존 진행은 덮어쓰지 않는다. 복구 중 중단은 별도 복구 기록으로 재개한다. 손상 백업은 보존하고 시작을 중단한다. 손상본 선택·내보내기·가져오기 화면은 후속 구현이다. 강제 종료는 마지막으로 기록이 끝난 백업까지 복구한다.
+웹 저장이 비어 있으면 시작 화면에서 마지막 정상 파일을 복구한다. 기존 진행은 덮어쓰지 않는다. 복구 중 중단은 별도 복구 기록으로 재개한다. 손상 백업은 보존하고 시작을 중단한다. 시작 화면의 Saved progress에서 외부 백업을 가져오거나 마지막 정상 백업을 선택한다. 복구 전 진행과 백업은 recovery/에 보관한다. 강제 종료는 마지막으로 기록이 끝난 백업까지 복구한다.
 
 ## 검사
 
@@ -57,3 +57,5 @@ JS 검사는 별도 메모리 IndexedDB, Rust 검사는 임시 디렉터리를 �
 Open **Saved progress** in the launcher to export a JSON backup, import one through the system file picker, or restore the latest valid backup. Import checks the file structure and checksum before asking you to restore. The old progress and OS backup files stay in the app data directory under `recovery/<operation>/`. An interrupted restore resumes before Play becomes available.
 
 The launcher uses the menu artwork prepared by `Distribution/Web/launcher/`. Game files remain unchanged.
+
+OS 오류 회귀는 `src-tauri/tests/storage_faults.rs`에서 실제 저장 모듈을 사용한다. 기본 실행은 임시 폴더의 권한 거부와 별도 저장 프로세스 강제 종료를 검사한다. 디스크 부족 검사는 별도로 마운트한 시험 디스크에 `heavymach-test-volume` 표식을 만들고, `HM_FULL_DISK`에 그 경로를 지정해 `cargo test --test storage_faults -- --ignored --exact disk_full_retains_save`로 실행한다. 앱 저장 경로를 지정하지 않는다.

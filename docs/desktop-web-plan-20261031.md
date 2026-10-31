@@ -263,4 +263,4 @@ Mac Safari·Chrome, iPhone·iPad Safari 및 홈 화면 앱, Android Chrome 및 �
 
 릴리스 때 `CHANGELOG`에 Mac 비교·파일 복구 결과, 웹 주소·PWA 설치·오프라인 검사 결과, Windows 빌드 상태를 나눠 적는다. develop→main 병합 후 새 태그에 소스·자원 묶음과 플랫폼별 산출물·해시·고지를 연결한다. 기존 릴리스 도구를 고치는 대신 새 플랫폼의 패키징·첨부 도구를 전용 폴더에 추가한다. [릴리스 절차](release-notes-plan.md).
 
-개발은 develop에서 분기한 `feat/tauri-mac`에서 진행 중이다. Tauri Mac·보호 검사·백업·웹·PWA를 구현했다. 남은 작업은 Tauri 외부 복구 화면, 추가 실행 검사, 배포 패키지와 Windows 빌드다.
+개발은 develop에서 분기한 `feat/tauri-mac`에서 진행 중이다. Tauri Mac·보호 검사·백업·웹·PWA를 구현했다. 외부 복구 화면과 실제 Mac 파일 선택 검사를 완료했다. 남은 작업은 Mac 장시간 비교, 실제 모바일 추가 검사, 배포 패키지와 Windows 빌드다.

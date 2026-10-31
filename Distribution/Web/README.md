@@ -32,6 +32,8 @@ Uses the repository's existing Puppeteer dependency (`cd Web/tests && npm ci`):
 ```sh
 node Distribution/Web/tests/pwa.mjs http://127.0.0.1:48726/
 node Distribution/Web/tests/updates.mjs
+node Distribution/Web/tests/launcher.mjs
+node Distribution/Web/tests/mobile.mjs http://127.0.0.1:48726/
 HM_GPU=1 HM_INSTALLED=1 node Distribution/Web/tests/pwa.mjs https://gelb2.github.io/HeavyMach/
 python3 Desktop/Tauri/scripts/protected.py check
 ```

@@ -15,7 +15,7 @@
     "ok": false,
     "error": "TimeoutError: Waiting failed: 120000ms exceeded\n    at new WaitTask (file:///Users/sokol/Git/ProjectGameDev-Hub/HeavyMach/build/pr24-review/Web/tests/node_modules/puppeteer-core/lib/puppeteer/common/WaitTask.js:46:34)\n    at IsolatedWorld.waitForFunction (file:///Users/sokol/Git/ProjectGameDev-Hub/HeavyMach/build/pr24-review/Web/tests/node_modules/puppeteer-core/lib/puppeteer/api/Realm.js:49:26)\n    at CdpFrame.waitForFunction (file:///Users/sokol/Git/ProjectGameDev-Hub/HeavyMach/build/pr24-review/Web/tests/node_modules/puppeteer-core/lib/puppeteer/api/Frame.js:585:43)\n    at CdpFrame.<anonymous> (file:///Users/sokol/Git/ProjectGameDev-Hub/HeavyMach/build/pr24-review/Web/tests/node_modules/puppeteer-core/lib/puppeteer/util/decorators.js:101:27)\n    at CdpPage.waitForFunction (file:///Users/sokol/Git/ProjectGameDev-Hub/HeavyMach/build/pr24-review/Web/tests/node_modules/puppeteer-core/lib/puppeteer/api/Page.js:1542:37)\n    at file:///Users/sokol/Git/ProjectGameDev-Hub/HeavyMach/build/pr24-review/Distribution/Web/tests/launcher.mjs:22:119",
     "state": {
-      "status": "Checking game files\u2026",
+      "status": "Checking game files…",
       "error": "Download checksum failed: game/fff3cea23a1d2bdf/hm-assets-1.data",
       "events": [
         {
@@ -341,12 +341,110 @@
       "after_matches_export": true,
       "old_backup_files": 2,
       "pending_removed": true
+    },
+    "os_fault_tests": {
+      "permission_denied": "PASS: mode 0500, prior snapshot retained",
+      "disk_full": "PASS: isolated 16 MiB HFS+ image, OS ENOSPC, prior snapshot retained, successful write after removing filler",
+      "writer_sigkill": "PASS: separate process running production backup code killed; complete generation readable and next write successful",
+      "native_app_sigkill": "PASS: Release app killed at menu, restarted Ready to play, existing backup hashes unchanged"
     }
   },
   "pending": [
-    "real Tauri process interruption and OS disk/permission faults",
-    "Mac long-duration performance comparison",
-    "mobile visual line and keyboard cursor reproduction",
-    "mobile Safari rotation/HUD/restart save checks"
-  ]
+    "Mac long-duration performance and complete process memory comparison",
+    "iPad Safari horizontal line reproduction",
+    "physical Safari rotation/HUD/restart save checks",
+    "motion permission lifecycle on exact iPadOS version"
+  ],
+  "mobile_emulation": {
+    "environment": "Chromium touch emulation, SwiftShader",
+    "steps": [
+      {
+        "name": "touch-enters-mission",
+        "state": {
+          "screen": "game",
+          "time": 19.0167,
+          "canvas": [
+            483.179,
+            320
+          ],
+          "loading": 0,
+          "mission": 0,
+          "stage": 0,
+          "playerX": -1040,
+          "playerY": -40.5,
+          "hp": 256,
+          "enemies": 2,
+          "bullets": 1,
+          "paused": 0,
+          "gameState": 0,
+          "decodes": 159,
+          "loadError": 0,
+          "aimMode": 1,
+          "aimTarget": 0,
+          "inputBlocked": 0,
+          "keyboardFire": 0,
+          "gameMenu": 0,
+          "resumeRequired": 0,
+          "active": 1,
+          "keyboardAimX": 0,
+          "callbackInterval": 0.0167,
+          "ticksPerCallback": 1,
+          "motion": 0,
+          "tilt": [
+            0,
+            0,
+            -1
+          ],
+          "hudEditing": 0,
+          "hudCustomized": 0,
+          "hudFallback": 0,
+          "hudSelected": 2,
+          "hudDraftCustomized": 0,
+          "orientationHold": 0
+        }
+      },
+      {
+        "name": "arrow-keys-move-manual-aim"
+      },
+      {
+        "name": "portrait-holds-game"
+      },
+      {
+        "name": "landscape-resumes"
+      },
+      {
+        "name": "pause-opens-hud-editor"
+      },
+      {
+        "name": "touch-hud-drag-and-save",
+        "layout": {
+          "version": 1,
+          "positions": [
+            null,
+            [
+              0.16261856942578687,
+              0.7595100272637585
+            ],
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        }
+      },
+      {
+        "name": "hud-restored-after-reload"
+      }
+    ],
+    "ok": true
+  },
+  "production_url_regression": {
+    "url": "https://gelb2.github.io/HeavyMach/",
+    "steps_passed": 14,
+    "errors": []
+  }
 }
