@@ -13,7 +13,7 @@
 - [x] main 병합 직전 사용자 웹 편집·원격 변경을 확인했다. main 전용 커밋은 기존 병합 3개이고 파일 차이는 없었다. develop→main merge commit으로 원본 19개 SHA와 공동 작성자 기록을 유지했다.
 - [x] main 병합 후 원본 19개 SHA의 조상 관계·GitHub 계정 연결·README/CREDITS/CHANGELOG 국영문 6개 표기를 다시 검사했다. main 트리는 검사한 최종 코드와 같다.
 - [x] main 병합 뒤 GitHub Contributors 통계 API에서 **fastutlego 19개 기여**를 확인했다. 공동 작성자 claude도 19개로 집계된다. 원저자 SHA·계정 연결과 원래 공동 작성자 표기를 유지했다.
-- [ ] 저장소 요약 Contributors 목록의 캐시 갱신도 확인한다. 통계 API에는 반영됐지만 요약 API는 이전 목록을 반환했다. 이번 브라우저 직접 확인은 창 접근 오류로 수행하지 못했다.
+- [ ] 저장소 요약 Contributors 목록의 캐시 갱신도 확인한다. 통계 API에는 반영됐지만 요약 API는 이전 목록을 반환했다. Safari에서 Contributors 화면과 main 원저자 커밋 목록 19개를 직접 확인했다.
 - [ ] 이후 외부 PR은 검토 결과를 GitHub 리뷰로 남기고 Approve한 뒤 merge commit으로 병합한다. PR #24에서는 승인 리뷰를 생략했다.
 - [ ] 새 릴리스에서 PR·작성자·웹 기능을 소개한다. 기존 네이티브 앱을 웹판으로 교체했다고 쓰지 않는다.
 - [ ] 실제 iPhone Safari·Android Chrome의 입력·음향·저장·복귀를 검사한다. 이번 Apple 검사는 시뮬레이터, Android 검사는 에뮬레이터에서 했다.

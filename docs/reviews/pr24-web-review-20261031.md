@@ -248,7 +248,7 @@ PR #24의 GitHub 상태는 `MERGED`다. 변경을 버리고 닫은 PR이 아니�
 
 원본 19개 SHA가 모두 develop과 main의 조상으로 남아 있다. GitHub API도 19개 모두를 fastutlego 계정에 연결한다. 동일 SHA는 작성자·시각·메시지·공동 작성자 정보가 바뀌지 않았다는 뜻이다. README·CREDITS·CHANGELOG 국영문에 웹 구현 기여와 PR 링크를 추가했다. 후속 수정은 별도 커밋으로 기록했다.
 
-**GitHub Contributors 통계에서 fastutlego의 19개 기여를 확인했다.** 기본 브랜치 main에 원본 19개 커밋이 포함됐고, 통계 API는 fastutlego 19개·공동 작성자 claude 19개를 반환했다. README·CREDITS·CHANGELOG 국영문 6개도 main에서 확인했다. 저장소 요약 Contributors API는 아직 이전 캐시를 반환했다. 이번 화면 조작 도구는 브라우저 창에 접근하지 못해 직접 화면 검사는 하지 못했다.
+**GitHub Contributors 통계에서 fastutlego의 19개 기여를 확인했다.** 기본 브랜치 main에 원본 19개 커밋이 포함됐고, 통계 API는 fastutlego 19개·공동 작성자 claude 19개를 반환했다. README·CREDITS·CHANGELOG 국영문 6개도 main에서 확인했다. 저장소 요약 Contributors API는 아직 이전 캐시를 반환했다. 후속 Safari 검사에서 Contributors 화면의 fastutlego — 19 commits와 main 작성자별 목록의 원본 19개를 직접 확인했다.
 
 GitHub는 기본 브랜치 포함 여부와 계정에 연결된 커밋 이메일을 Contributors 조건으로 설명한다. [GitHub 공식 설명](https://docs.github.com/en/repositories/viewing-activity-and-data-for-your-repository/viewing-a-projects-contributors).
 
