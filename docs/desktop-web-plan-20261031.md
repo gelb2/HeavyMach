@@ -196,11 +196,11 @@ Tauri의 최신 공식 문서는 `@wdio/tauri-service`와 앱 안의 WebDriver �
 
 ## 5. 두 번째 단계: 순수 웹·PWA
 
-**브라우저 실행과 PWA 설치·오프라인 플레이를 같은 단계에서 만든다.** GitHub Pages의 `https://gelb2.github.io/HeavyMach/`를 배포 주소로 계획한다. 현재 이 저장소의 Pages는 비활성이다. 새 GitHub Actions 작업에서 기존 웹 빌드를 호출하고 `Distribution/Web/`의 파일과 합쳐 배포한다. Tauri 설치본은 GitHub Releases에 둔다. [Pages 사용자 지정 배포](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages).
+**브라우저 실행과 PWA 설치·오프라인 플레이를 같은 단계에서 만든다.** GitHub Pages의 `https://gelb2.github.io/HeavyMach/`를 배포 주소로 계획한다. 2026-11-01부터 전용 배포 도구가 생성물을 `gh-pages`에 올리고 GitHub Pages가 배포한다. 별도 웹 빌드 CI 자동화는 후속 과제다. Tauri 설치본은 GitHub Releases에 둔다. [Pages 사용자 지정 배포](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages).
 
 ### 기존 게임과 PWA 파일 분리
 
-`Distribution/Web/pwa/`에 별도 시작 화면·manifest·192/512px 설치 아이콘·Service Worker를 둔다. 배포 후 시작 주소와 manifest의 `id`·`start_url`·`scope`는 `/HeavyMach/`로 고정한다. 브라우저별 설치 방법을 안내하고, 설치하지 않은 브라우저에서도 같은 게임을 연다. iPhone·iPad에서는 홈 화면 추가 절차를 안내한다. [PWA 설치 조건](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Guides/Making_PWAs_installable).
+`Distribution/Web/pwa/`에 별도 시작 화면·manifest·192/512px 설치 아이콘·Service Worker를 둔다. 배포 후 시작 주소와 manifest의 `start_url`·`scope`는 `/HeavyMach/`를 가리킨다. `id`는 생략해 `start_url`을 앱 식별자로 사용한다. 브라우저별 설치 방법을 안내하고, 설치하지 않은 브라우저에서도 같은 게임을 연다. iPhone·iPad에서는 홈 화면 추가 절차를 안내한다. [PWA 설치 조건](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Guides/Making_PWAs_installable).
 
 초기안은 시작 화면 안의 같은 출처 iframe에 수정하지 않은 게임 페이지를 전체 크기로 표시하는 방식이다. 게임 묶음은 `game/<version>/` 아래에 복사하고 원본 상대 경로를 유지한다. iframe의 키보드 포커스·터치·틸트 권한·음향 시작·가로 회전·전체 화면을 실제 브라우저와 설치된 PWA에서 검사한다. 이 연결에 필요한 코드는 새 시작 화면에만 둔다. 생성된 게임 HTML·JS나 게임 함수를 패치하지 않는다.
 
@@ -231,7 +231,7 @@ Service Worker는 배포 경로의 `/HeavyMach/sw.js`에서 등록하고 `/Heavy
 | 브라우저·PWA 관계 | 각 OS의 설치 전후 진행 유지 여부, 별도 저장이면 백업 이동 절차 확인 |
 | 게임 보존 | 원본 웹 산출물과 포함한 게임 파일의 SHA-256 일치, 보호 소스 차이 없음 |
 
-Mac Safari·Chrome, iPhone·iPad Safari 및 홈 화면 앱, Android Chrome 및 설치된 PWA를 검사한다. 사용자가 제외한 Firefox는 기본 검사 대상에서 제외한다. 현재는 개발 계획이며 PWA 코드 작성·오프라인 실행 검사는 아직 하지 않았다.
+Mac Safari·Chrome, iPhone·iPad Safari 및 홈 화면 앱, Android Chrome 및 설치된 PWA를 검사한다. 사용자가 제외한 Firefox는 기본 검사 대상에서 제외한다. Mac Chrome 웹·설치형 PWA 구현과 오프라인 실행 검사는 완료했다. iPad Safari의 사용자 플레이 확인은 [투두의 실제 플레이 기록](usability-todo.md#hm-web-ipad-safari-visual-input)에 있다. 나머지 브라우저·설치형 환경과 장시간·오류 주입 검사는 남아 있다.
 
 ## 6. 세 번째 단계: Windows 빌드
 
@@ -253,4 +253,4 @@ Mac Safari·Chrome, iPhone·iPad Safari 및 홈 화면 앱, Android Chrome 및 �
 
 릴리스 때 `CHANGELOG`에 Mac 비교·파일 복구 결과, 웹 주소·PWA 설치·오프라인 검사 결과, Windows 빌드 상태를 나눠 적는다. develop→main 병합 후 새 태그에 소스·자원 묶음과 플랫폼별 산출물·해시·고지를 연결한다. 기존 릴리스 도구를 고치는 대신 새 플랫폼의 패키징·첨부 도구를 전용 폴더에 추가한다. [릴리스 절차](release-notes-plan.md).
 
-다음 구현은 develop에서 별도 `feat/tauri-mac` 브랜치를 만든 뒤 시작한다. 이번 문서 작업에서는 Tauri 앱·보호 검사 도구·백업 기능을 구현하지 않았다.
+개발은 develop에서 분기한 `feat/tauri-mac`에서 진행 중이다. Tauri Mac·보호 검사·백업·웹·PWA를 구현했다. 남은 작업은 Tauri 외부 복구 화면, 추가 실행 검사, 배포 패키지와 Windows 빌드다.
