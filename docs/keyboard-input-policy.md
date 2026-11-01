@@ -15,10 +15,14 @@ iPhone/iPad의 터치·기울기 조작을 유지한다. iPad에서 키보드를
 | 방향키 | 메뉴에서 버튼 선택 이동 |
 | Esc | 전투 일시정지·재개, 메뉴에서 슬롯으로 복귀 |
 | F2 | 키 설정 |
+| F3 | 저장 슬롯 화면에서 복원 코드 창 열기 |
+| F6 | HUD 편집에서 배치 이동과 도구 버튼 선택 전환 |
 
 키 설정은 ↑↓로 동작 선택, Enter 후 새 키 입력, Backspace로 기본값 복원, Esc로 취소·닫기다. 키가 겹치면 두 동작의 배정을 교환한다. 설정은 확정할 때 UserDefaults에 저장한다. 사격이나 프레임마다 저장하지 않는다. macOS Command 단축키와 iOS 시스템 키 조합은 게임이 가로채지 않는다.
 
 이 배치를 게임업계의 단일 표준이라고 부르지 않는다. A/D 이동과 Space 점프처럼 익숙한 구성을 사용하고, HeavyMach에 필요한 별도 조준·발사·무기 전환을 배정했다. [Xbox XAG107](https://learn.microsoft.com/en-us/xbox/accessibility/xbox-accessibility-guidelines/107)은 아날로그와 메뉴를 포함한 키보드 대체를, [Game Accessibility Guidelines](https://gameaccessibilityguidelines.com/allow-controls-to-be-remapped-reconfigured/)는 키 재지정을 다룬다. [Factorio 공식 조작표](https://wiki.factorio.com/Controls)는 기본값과 재지정을 제공하는 실제 사례다. [프로젝트 스킬](../.agents/skills/game-keyboard-input/SKILL.md)에 적용 절차를 남긴다.
+
+HUD 도구 버튼을 선택하는 동안 Tab·Shift+Tab으로 항목을 고르고 Enter로 누른다. F6으로 배치 이동에 돌아오면 기존 HUD 선택·이동 키를 사용한다. 복원 코드 입력란에 글자를 입력하는 동안 게임 키 입력을 막는다.
 
 ## 입력 처리
 

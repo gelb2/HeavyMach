@@ -169,13 +169,13 @@
     },
     "docs/public/gameplay-guide.md": {
       "english": "docs/en/public/gameplay-guide.md",
-      "source_sha256": "de59092c09ddd74fc0b693fa7bdc38465bd168b4d71952e16dff3be63b6f65e8",
-      "english_sha256": "5eb5360f870fe05153924ec48700313d8fe32406b25f27ea0a185f59fb93e6d4",
+      "source_sha256": "ab80726966263e562a22b7c366e63533b4d5ee567ed9440a1663ac69321d22ea",
+      "english_sha256": "efe39d7e5591582aed57ce997eed66486202eb8dd5384a19b40c6be58dfab88a",
       "reviewed_numeric_difference": {
         "source_only": {},
         "english_only": {}
       },
-      "review_note": "Compared source and English meaning, tables, commands, attribution and current/planned status. Numeric tokens match. Reviewed 2026-10-30 Android coverage/link audit; current main and released v0.16 remain distinct. Lux sentence follows author commit 39b05834 where applicable."
+      "review_note": "Compared source and English meaning, tables, commands, attribution and current/planned status. Numeric tokens match. Reviewed 2026-10-30 Android coverage/link audit; current main and released v0.16 remain distinct. Lux sentence follows author commit 39b05834 where applicable. Reviewed F3 recovery-code steps and F6 HUD tool focus in both languages."
     },
     "docs/public/architecture.md": {
       "english": "docs/en/public/architecture.md",

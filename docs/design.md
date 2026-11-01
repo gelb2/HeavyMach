@@ -22,7 +22,7 @@ Apple 구성은 [공용 모듈](apple-platforms.md)을 따른다. 세 프로젝�
 | 성장·영속화 | GlobalInfo, GameMain | 슬롯·EXP·부품·무기·저장 |
 | 자원·음향 | ResMgr_Tile, SoundManager, MAP/MCH/WAV | 원본 데이터 해석·표시·음향 재생 |
 
-현재 게임 그래픽은 HMGLRenderer의 OpenGL ES 1.1, 음향은 HMOpenALAudio의 OpenAL Soft 1.22.2를 사용한다. UIKit은 창·입력·검증 패널을 맡는다. SpriteRaster/TrailRaster는 비교용 CPU 구현이며 현재 제품의 프레임 합성 경로가 아니다. 게임 규칙과 플랫폼 출력 연결을 분리하여 동일 입력·상태를 비교한다.
+현재 게임 그래픽은 HMGLRenderer의 OpenGL ES 1.1, 음향은 HMOpenALAudio의 OpenAL Soft 1.22.2를 사용한다. UIKit은 창·생명주기·터치 전달·코드 텍스트 입력을 맡는다. 검증 패널과 추가 버튼은 게임 렌더러로 그린다. SpriteRaster/TrailRaster는 비교용 CPU 구현이며 현재 제품의 프레임 합성 경로가 아니다. 게임 규칙과 플랫폼 출력 연결을 분리하여 동일 입력·상태를 비교한다.
 
 [정본](canonical.md)을 시작점으로 [좌표](coordinate-policy.md), [렌더](rendering-policy.md), [수치](game-calculation-policy.md), [시간·저장·음향](runtime-policy.md)을 적용한다. 최신 사용자 요청의 사용성 개선은 [TODO](usability-todo.md), 시야 확장 구현과 검사는 [캔버스 기록](wide-canvas-plan.md)에 둔다. 아직 구현하지 않은 계획을 현행 동작으로 읽지 않는다.
 

@@ -1,6 +1,6 @@
 {
   "date": "2026-11-02",
-  "status": "functional_checks_passed_final_deployment_in_progress",
+  "status": "native_functional_checks_and_ipad_safari_installed_pwa_post_main_passed",
   "physical_tests": [
     {
       "device": "iPad Air 13 M2",
@@ -39,6 +39,20 @@
       "failures": 0,
       "evidence": "build/game-buttons-iphone-final-cancel.xcresult",
       "includes": "final sans serif atlas and cancel capture fix"
+    },
+    {
+      "device": "iPad Air 13 M2",
+      "tests": 3,
+      "failures": 0,
+      "evidence": "build/game-buttons-ipad-final-all.xcresult",
+      "includes": "Final modal background and HUD remaining-finger release, keyboard settings, restore and original MENU/SET GAME UI"
+    },
+    {
+      "device": "iPhone Air",
+      "tests": 3,
+      "failures": 0,
+      "evidence": "build/game-buttons-iphone-final-all.xcresult",
+      "includes": "Final modal background and HUD remaining-finger release, keyboard settings, restore and original MENU/SET GAME UI"
     }
   ],
   "coverage": [
@@ -161,15 +175,73 @@
     "diagnostic": "enable_updates_common timed out waiting for updates to reenable",
     "baseline_comparison": "Original title and slot screens exceeded the same budget. A separate previous-revision baseline was not run. Cause not isolated."
   },
-  "post_main_retest": "pending",
+  "post_main_retest": {
+    "main_commit": "caa44df0",
+    "product_tree_unchanged_from": "3d1e12ca",
+    "results": [
+      {
+        "platform": "mac",
+        "tests": 3,
+        "failures": 0,
+        "evidence": "build/game-buttons-mac-post-main.xcresult"
+      },
+      {
+        "platform": "ipad",
+        "tests": 3,
+        "failures": 0,
+        "evidence": "build/game-buttons-ipad-post-main.xcresult"
+      },
+      {
+        "platform": "iphone",
+        "tests": 3,
+        "failures": 0,
+        "evidence": "build/game-buttons-iphone-post-main.xcresult"
+      }
+    ],
+    "iphone": "Passed after device became available",
+    "public_safari_pwa": {
+      "device": "iPad Air 13 M2",
+      "url": "https://gelb2.github.io/HeavyMach/",
+      "public_game_path": "game/3665a237a9dccd69/index.html",
+      "public_sw_version": "7c03b1eb844c409c",
+      "safari": "Passed actual clicks and recovery input",
+      "steps": [
+        "Initial navigation displayed an older Play/Export save/Import save cached page. Ordinary refresh retained it.",
+        "Closing that game tab and reopening the exact URL displayed INSTALL GAME / PLAY IN BROWSER and offline-ready status without clearing storage.",
+        "Opened game and original slot screen; bottom TRANSFER PROGRESS visible and clickable.",
+        "CREATE CODE and CHECK CODE displayed existing slot summary.",
+        "Focused text field, selected all and typed TEST. CHECK CODE rejected invalid code.",
+        "Created current save code again, opened RESTORE confirmation, cancelled, reopened and restored that same code.",
+        "Game returned to landing page. Reopened game and observed the same level-1 tank, selected slot and creation/access timestamps."
+      ],
+      "save_comparison": "Visual comparison of existing Safari save only. No browser storage was cleared. Byte-level restoration checks were performed separately by native automated tests.",
+      "installed_pwa": {
+        "result": "Passed installed-PWA update, slot button visibility and transfer-panel entry",
+        "steps": [
+          "Existing Heavy Mach - Web home icon initially displayed the older Play/Export save/Import save landing page.",
+          "Terminated the running Web app process and reopened the same installed home icon without clearing website storage.",
+          "Latest READY FOR BATTLE / PLAY / Ready to play offline landing page appeared.",
+          "PLAY opened the original slot screen. Existing slot 2 level 1 and its creation/access timestamps remained visible.",
+          "Clicked bottom TRANSFER PROGRESS and observed the new game-rendered transfer panel, recovery text field and all English game buttons.",
+          "Closed the transfer panel and returned the iPad to its home screen."
+        ],
+        "save_comparison": "Visual inspection only; PWA save was not overwritten or cleared. Full same-code restoration was checked separately in actual iPad Safari.",
+        "screenshots": [
+          "build/game-buttons-ipad-pwa-landing-post-main.png",
+          "build/game-buttons-ipad-pwa-slots-post-main.png",
+          "build/game-buttons-ipad-pwa-transfer-post-main.png"
+        ]
+      }
+    }
+  },
   "private_artifacts": "Device IDs, save files and recovery codes remain in ignored build/ evidence.",
   "mac_functional": {
     "tests": 2,
     "failures": 0,
     "evidence": "build/game-buttons-mac-freeze2.xcresult",
     "includes": "all game setting buttons, transfer restore and loading state 0 guard",
-    "latest_evidence": "build/game-buttons-mac-final-input.xcresult",
-    "latest_tests": 2,
+    "latest_evidence": "build/game-buttons-mac-final-all.xcresult",
+    "latest_tests": 3,
     "latest_failures": 0
   },
   "mac_manual_text_input": [
@@ -187,6 +259,41 @@
     "build/game-buttons-mac-slot-final.png",
     "build/game-buttons-mac-transfer-final.png",
     "build/game-buttons-mac-text-shortcuts-final.png",
-    "build/game-buttons-ipad-native-final.png"
-  ]
+    "build/game-buttons-ipad-native-final.png",
+    "build/game-buttons-iphone-slot-final.png",
+    "build/game-buttons-iphone-native-final.png",
+    "build/game-buttons-mac-normal-text-final.png",
+    "build/game-buttons-ipad-slot-final.png",
+    "build/game-buttons-ipad-native-final-all.png",
+    "build/game-buttons-ipad-safari-landing-post-main.png",
+    "build/game-buttons-ipad-safari-transfer-post-main.png",
+    "build/game-buttons-ipad-safari-restored-post-main.png"
+  ],
+  "manual_iPhone_regular": [
+    "Original title and slot buttons",
+    "Bottom transfer entry visible without overlapping original buttons",
+    "CREATE CODE / COPY / CHECK CODE / RESTORE confirmation / CANCEL / CLOSE"
+  ],
+  "mac_regular_final_build": "Xcode Build Succeeded 2026-11-02 03:09 KST; actual native text Cmd+A/C/X/V, invalid-code check, CLOSE, Cmd+Q verified",
+  "final_artifacts": [
+    {
+      "app": "Debug-iphoneos/HeavyMachRestored.app",
+      "executable_sha256": "6bd28e3a364f05bf313d7d8403642a7c9fd27ff65391ebe4d8979b4241f3e53b"
+    },
+    {
+      "app": "Debug-iphoneos/HeavyMachValidation.app",
+      "executable_sha256": "5ec253e29fad2f030341669fd10517494aa4dabbc5cd11821617f90a70e6a80b"
+    },
+    {
+      "app": "Debug/HeavyMachMac.app",
+      "executable_sha256": "7858fe928d8aaa5ad557661c1ba1e4f1473ef567f8612acd5e902acd47ed59b2"
+    },
+    {
+      "app": "Debug/HeavyMachMacValidation.app",
+      "executable_sha256": "03fd316ba8f1b8c5129c4fa5712d7685179ef7266c6268fa93fb1167e9c8aecd"
+    }
+  ],
+  "final_source_commit": "3d1e12cabf5ecec962c53c5f0b99bc8f11b4076e",
+  "device_cleanup": "iPhone and iPad regular apps returned to home and terminated after checks. Mac regular app quit with Cmd+Q.",
+  "final_glyph_atlas_all_four_apps_sha256": "447977393ad822a3508634f4b725368dfcb5a9b2affe0a4ed187e610142a487b"
 }
