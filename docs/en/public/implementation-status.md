@@ -6,7 +6,7 @@
 [한국어](../../public/implementation-status.md) | [English](implementation-status.md)
 <!-- language-nav:end -->
 
-This describes main on November 2, 2026. The latest release tag, **v0.17**, includes Apple and Android apps. Later main changes add the public Web/PWA, Tauri Mac app, shared recovery codes and replacement game buttons. There is no v0.18 tag yet.
+This describes main on November 2, 2026. The latest stable release tag, **v0.17**, includes Apple and Android apps. Later main changes add the public Web/PWA, Tauri Mac app, shared recovery codes and replacement game buttons. There is no v0.18 tag yet.
 
 <a id="플랫폼별-상태"></a>
 
@@ -18,7 +18,7 @@ This describes main on November 2, 2026. The latest release tag, **v0.17**, incl
 | Native Mac | AppKit regular/cheat apps, keyboard combat, recovery codes and exit | Xcode source builds. Frame processing exceeded the threshold on November 2 |
 | Android | Regular/cheat APKs, Galaxy USB/wireless installation, combat, restoration and restart | Gradle/Android Studio source builds. Distribution signing, tablets and extended tests remain |
 | Web/PWA | Public play, installation, offline restart and recovery codes | Live on [GitHub Pages](https://gelb2.github.io/HeavyMach/). Actual long-inactivity retention tests remain |
-| Tauri Mac | Local app build, combat, OS backups, self-code restoration, restart and exit | Public installer, distribution signing and notarization incomplete |
+| Tauri Mac | Local app build, combat, OS backups, self-code restoration, restart and exit | [Download Tauri Mac](https://github.com/gelb2/HeavyMach/releases/tag/tauri-mac-20261102) available. Ad-hoc signed; notarization pending |
 | Tauri Windows | Development plan | Windows build, runtime testing and distribution incomplete |
 
 [Build and installation](build-and-install.md) · [Platform tests](validation.md)
@@ -77,7 +77,7 @@ Remaining tests cover display timing including Mac, long-session heat/memory, ke
 
 ## Distribution and versions
 
-Web/PWA builds from current main are published on [GitHub Pages](https://gelb2.github.io/HeavyMach/). Tauri Mac can be [built from source](../../../Desktop/Tauri/README.md); no public installer is available yet.
+Web/PWA builds from current main are published on [GitHub Pages](https://gelb2.github.io/HeavyMach/). Tauri Mac can be [built from source](../../../Desktop/Tauri/README.md); [Download Tauri Mac](https://github.com/gelb2/HeavyMach/releases/tag/tauri-mac-20261102) is also available as a ZIP. Notarization remains pending.
 
 The repository became public on October 28, 2026. The unified report site requires owner login. Git tags run from v0.9 through v0.17; v0.17 Releases offers a source-and-resource archive. Build and install iPhone, iPad and Mac apps through Xcode. A fresh clone builds using Git/LFS resources. v0.9 predates resource registration and needs additional resource preparation to build that historical code. [Installation](build-and-install.md) · [Version restoration](../../repository-management.md)
 

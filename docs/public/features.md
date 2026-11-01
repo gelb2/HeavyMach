@@ -28,7 +28,7 @@ Android 일반·치트 앱도 같은 C++ 게임 규칙과 자원을 사용한다
 
 [웹판](https://gelb2.github.io/HeavyMach/)은 브라우저에서 실행하거나 홈 화면에 PWA로 설치할 수 있다. 시작 화면에서 설치를 먼저 안내하고 브라우저 플레이도 제공한다. 자원 다운로드와 검사가 끝나면 오프라인으로 실행할 수 있다. 같은 C++ 게임 규칙을 WebAssembly로 빌드하며 터치·틸트·키보드·트랙패드를 지원한다.
 
-Tauri Mac은 이 웹 게임을 앱에 포함하고 OS 파일 백업을 더한다. 웹 저장소가 비면 마지막 정상 파일에서 복구한다. 로컬 앱 빌드와 플레이·복원·종료를 확인했다. 공개 설치본·공증과 Windows 버전은 남은 과제다. [웹/PWA 설치](../../Distribution/Web/README.md) · [Tauri 빌드·저장](../../Desktop/Tauri/README.md).
+Tauri Mac은 이 웹 게임을 앱에 포함하고 OS 파일 백업을 더한다. 웹 저장소가 비면 마지막 정상 파일에서 복구한다. 로컬 앱 빌드와 플레이·복원·종료를 확인했다. [Tauri Mac 다운로드](https://github.com/gelb2/HeavyMach/releases/tag/tauri-mac-20261102) ZIP을 제공한다. 공증과 Windows 버전은 남은 과제다. [웹/PWA 설치](../../Distribution/Web/README.md) · [Tauri 빌드·저장](../../Desktop/Tauri/README.md).
 
 ## 복원 코드
 
@@ -152,6 +152,6 @@ Codex는 코어 21개 검사와 iPhone·iPad·Mac의 전투·입력·화면 밖 
 
 ## 다음 기능
 
-자동조준의 표적 상태 안내, 튜토리얼 미션 0-0~0-4와 접힌 화면의 조작부 분리는 후속 작업이다. Android 장시간·태블릿 검사, Mac 성능 개선, Tauri 공개 설치본과 Windows 빌드도 남아 있다. [세부 상태](implementation-status.md)
+자동조준의 표적 상태 안내, 튜토리얼 미션 0-0~0-4와 접힌 화면의 조작부 분리는 후속 작업이다. Android 장시간·태블릿 검사, Mac 성능 개선, Tauri 공증과 Windows 빌드도 남아 있다. [세부 상태](implementation-status.md)
 
 [복원 코드 기획·버튼 수정과 실제 화면](save-recovery-20261102.md)

@@ -159,6 +159,6 @@ Level-19 slot after restoring and restarting Tauri.
 
 ## Deployment and remaining work
 
-Web/PWA runs on [GitHub Pages](https://gelb2.github.io/HeavyMach/). Tauri Mac has passed local launch and recovery checks; a public installer and notarization remain. The Windows build is also pending.
+Web/PWA runs on [GitHub Pages](https://gelb2.github.io/HeavyMach/). [Download Tauri Mac](https://github.com/gelb2/HeavyMach/releases/tag/tauri-mac-20261102) is available as a ZIP. The extracted app passed launch, recovery-input and quit checks; notarization remains pending. The Windows build is also pending.
 
-The latest release tag is v0.17. Current main includes the subsequent Web/PWA, Tauri, recovery-code and button changes. The next release also needs consistent displayed app versions: iPhone currently shows 1.13 and Android shows 0.16-android-dev. Word wrapping in recovery instructions at 480 logical width and the native Mac frame comparison remain open. [Implementation status](implementation-status.md) · [Remaining work](roadmap.md)
+The latest stable release tag is v0.17. Current main includes the subsequent Web/PWA, Tauri, recovery-code and button changes. The next release also needs consistent displayed app versions: iPhone currently shows 1.13 and Android shows 0.16-android-dev. Word wrapping in recovery instructions at 480 logical width and the native Mac frame comparison remain open. [Implementation status](implementation-status.md) · [Remaining work](roadmap.md)

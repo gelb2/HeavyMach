@@ -2,7 +2,7 @@
 
 HeavyMach에 관해 내가 쓴 원문과 기술 설명·수정 과정·이미지를 이 저장소에 모았다. Apps는 기술 설명, Mags는 매거진 인터뷰 형식이다. 두 곳 모두 현재 기능과 시정 과정을 다룬다. SaaS 담당 세션이 이 자료로 원고를 작성하고 서비스에 반영한다.
 
-집필은 이 저장소 **main의 최신 문서**에서 시작한다. Apple·Android 게임 릴리스는 **v0.17**이다. Android 추가 자료는 [개발 원고](android-development-20261030.md)에 있다. 현재 main에는 웹/PWA·Tauri Mac·복원 코드·게임 버튼 수정도 들어 있다. 새 릴리스 태그는 아직 없다.
+집필은 이 저장소 **main의 최신 문서**에서 시작한다. Apple·Android 게임 릴리스는 **v0.17**이다. Android 추가 자료는 [개발 원고](android-development-20261030.md)에 있다. 현재 main에는 웹/PWA·Tauri Mac·복원 코드·게임 버튼 수정도 들어 있다. Tauri Mac 다운로드는 날짜 태그 tauri-mac-20261102로 별도 제공한다. 전체 플랫폼의 다음 정식 릴리스는 아직 없다.
 
 ```sh
 python3 tools/document_contract.py plan --task developer_story
@@ -18,7 +18,7 @@ python3 tools/document_contract.py check
 - **Apps:** 원작 슬롯→직렬화·압축·손상 검사→플랫폼 저장 연결→복원 재개 순서를 설명한다. 게임 코어와 복원 모듈을 구분한다.
 - **Mags:** 아이폰 진행을 다른 기기로 옮기고 싶었던 이유, 서버를 추가하지 않겠다는 판단, 게임 버튼을 원작 방식으로 다시 만들도록 지시한 과정을 다룬다. 화자는 나다.
 - **이미지:** 원고의 플레이·코드 생성·확인·복원 후 슬롯 화면을 사용한다. [촬영 정보](media/desktop-web-recovery-20261102/README.md)에서 플랫폼과 검사 저장을 확인한다.
-- **실제 상태:** [구현 상태](implementation-status.md), [검증](validation.md), [남은 과제](roadmap.md)를 함께 읽는다. Tauri 공개 설치본·Windows·Mac 성능 비교와 앱 버전 표기 정리는 남아 있다.
+- **실제 상태:** [구현 상태](implementation-status.md), [검증](validation.md), [남은 과제](roadmap.md)를 함께 읽는다. Tauri 공증·Windows·Mac 성능 비교와 앱 버전 표기 정리는 남아 있다.
 - **원문:** 버튼 구현에 대한 내 글감 전체는 [TODO](../usability-todo.md#hm-ui-incident-writing--추가-버튼-구현과-작업-방식에-관한-글감--2026-11-02), 조사·수정 내역은 [경위서](../reviews/game-button-incident-20261101.md)에 있다.
 
 ## 읽는 순서
@@ -75,7 +75,7 @@ python3 tools/document_contract.py check
 
 ## 버전과 남은 근거
 
-최신 릴리스 태그는 v0.17이며 Android 일반·치트 앱을 포함한다. 현재 구현과 남은 일은 [구현 상태](implementation-status.md)와 [내부 TODO](../usability-todo.md), 변경 순서는 [작업 이력](../current-status.md)에 있다. 작업 이력의 날짜별 항목은 당시 상태를 담고 있다. [변경 이력](../../CHANGELOG.md)과 [전체 문서 목차](../README.md)로 연결된다.
+최신 정식 릴리스 태그는 v0.17이며 Android 일반·치트 앱을 포함한다. 현재 구현과 남은 일은 [구현 상태](implementation-status.md)와 [내부 TODO](../usability-todo.md), 변경 순서는 [작업 이력](../current-status.md)에 있다. 작업 이력의 날짜별 항목은 당시 상태를 담고 있다. [변경 이력](../../CHANGELOG.md)과 [전체 문서 목차](../README.md)로 연결된다.
 
 빌드 경고는 아직 전수조사하지 않았다. deprecated API 관련이라는 추정을 확인하고 추가 기능 개발과 병행해 수정할 예정이다. 빌드·실행 스크립트는 사례 조사를 마쳤고 구현이 남았다. [스크립트 조사·브랜치 정리](github-followup-20261028.md).
 

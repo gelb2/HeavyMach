@@ -4,7 +4,7 @@
 [한국어](implementation-status.md) | [English](../en/public/implementation-status.md)
 <!-- language-nav:end -->
 
-2026년 11월 2일 main 기준이다. 최신 릴리스 태그 **v0.17**은 Apple·Android 앱을 포함한다. 이후 main에는 웹/PWA 공개, Tauri Mac 앱, 공용 복원 코드와 게임 버튼 교체가 추가됐다. v0.18 태그는 아직 없다.
+2026년 11월 2일 main 기준이다. 최신 정식 릴리스 태그 **v0.17**은 Apple·Android 앱을 포함한다. 이후 main에는 웹/PWA 공개, Tauri Mac 앱, 공용 복원 코드와 게임 버튼 교체가 추가됐다. v0.18 태그는 아직 없다.
 
 ## 플랫폼별 상태
 
@@ -14,7 +14,7 @@
 | 네이티브 Mac | AppKit 일반·치트 앱, 키보드 전투·복원 코드·종료 | Xcode 소스 빌드. 11월 2일 프레임 처리시간 기준 실패 |
 | Android | 일반·치트 APK, Galaxy 유선·무선 설치, 전투·복원·재시작 | Gradle/Android Studio 소스 빌드. 배포 서명·태블릿·장시간 검사 남음 |
 | 웹/PWA | 공개 주소 플레이·설치·오프라인 재시작·복원 코드 | [GitHub Pages](https://gelb2.github.io/HeavyMach/) 공개. 실제 장기 미접속 보존 검사 남음 |
-| Tauri Mac | 로컬 앱 빌드, 전투·OS 백업·자기 코드 복원·재시작·종료 | 공개 설치본·배포 서명·공증 미완료 |
+| Tauri Mac | 로컬 앱 빌드, 전투·OS 백업·자기 코드 복원·재시작·종료 | [Tauri Mac 다운로드](https://github.com/gelb2/HeavyMach/releases/tag/tauri-mac-20261102) 제공. ad-hoc 서명·공증 미완료 |
 | Tauri Windows | 개발 계획 | Windows 빌드·실행·배포 미완료 |
 
 [설치와 실행](build-and-install.md) · [플랫폼별 검사](validation.md)
@@ -65,7 +65,7 @@ HUD 편집·복원·키 설정의 추가 버튼을 원작의 그림·눌림·입
 
 ## 배포와 버전
 
-웹/PWA는 현재 main에서 빌드해 [GitHub Pages](https://gelb2.github.io/HeavyMach/)에 게시했다. Tauri Mac은 [소스에서 빌드](../../Desktop/Tauri/README.md)할 수 있으며 공개 설치본은 아직 없다.
+웹/PWA는 현재 main에서 빌드해 [GitHub Pages](https://gelb2.github.io/HeavyMach/)에 게시했다. Tauri Mac은 [소스에서 빌드](../../Desktop/Tauri/README.md)할 수 있으며 [Tauri Mac 다운로드](https://github.com/gelb2/HeavyMach/releases/tag/tauri-mac-20261102) ZIP도 제공한다. 공증은 남아 있다.
 
 저장소는 2026-10-28 공개했다. 통합 보고 사이트는 소유자 로그인으로 열람한다. Git 태그는 v0.9~v0.17이며, v0.17 Releases에서 소스·자원 압축본을 받을 수 있다. iPhone·iPad·Mac 앱은 Xcode에서 빌드해 설치한다. 새 clone은 Git/LFS 자원으로 빌드한다. v0.9는 자원 등록 이전 태그이므로 당시 코드를 빌드할 때 자원 준비가 추가로 필요하다. [설치](build-and-install.md) · [버전 복원](../repository-management.md)
 

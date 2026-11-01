@@ -14,7 +14,7 @@ Open the [HeavyMach web page](https://gelb2.github.io/HeavyMach/) and choose **I
 
 To move progress to another device, select **TRANSFER PROGRESS** on the game's save-slot screen. Use **CREATE CODE**, enter the code on the other device, then select **CHECK CODE → RESTORE**. Check the slots, experience and levels in the confirmation panel. **CANCEL** keeps the current save.
 
-The Tauri Mac app runs the same web game in an app window and also backs up saves to OS files. It targets Apple Silicon and macOS 14 or later. Build it with the [Tauri instructions](../../../Desktop/Tauri/README.md). Public installer signing and notarization remain pending. [Platform storage and checks (Korean)](../../reviews/mac-web-pwa-comparison-20261101.md).
+The Tauri Mac app runs the same web game in an app window and also backs up saves to OS files. It targets Apple Silicon and macOS 14 or later. Build it with the [Tauri instructions](../../../Desktop/Tauri/README.md). [Download Tauri Mac](https://github.com/gelb2/HeavyMach/releases/tag/tauri-mac-20261102) as a ZIP, unzip it and move the app to Applications. It is ad-hoc signed and not notarized. If the first launch is blocked, choose **Open Anyway** for this app in System Settings → Privacy & Security. [Apple instructions](https://support.apple.com/102445). [Platform storage and checks (Korean)](../../reviews/mac-web-pwa-comparison-20261101.md).
 
 
 Build the regular and cheat validation apps for Apple and Android from current main. They share the game core and use separate app IDs and saves.
