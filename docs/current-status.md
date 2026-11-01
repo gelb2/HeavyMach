@@ -1,5 +1,11 @@
 # 2026-10-25 문서·코드·앱 일치 체계 점검 및 보완
 
+## main 병합과 실행 확인 — 2026-11-01
+
+웹·PWA·Tauri Mac·복원 코드 구현을 develop을 거쳐 main `777cfc8b`에 병합했다. 병합 후 iPhone 검사 4건, Galaxy 검사 31건, 웹 시작 화면 9건·복원 11건이 통과했다. GitHub Apple 빌드·코어 검사도 통과했다. Tauri Release 앱에서 저장 슬롯을 열고 전투·점프·사격과 Cmd-Q 종료를 확인했다. 전투 중 SET GAME UI가 노출되는 문제는 남아 있어 TODO에 추가했다. [검사 기록](evidence/main-integration-20261101.json).
+
+GitHub Pages의 공개 버전은 `1655aa24dce8356d`다. 복원 코드와 설치 안내를 함께 배포했다. HUD 편집 도구·복원 버튼·코드 입력창 등 별도 UI의 [전수조사 계획](ui-implementation-audit.md)을 작성했다. 버튼 교체는 후속 과제다. 아래는 각 작업 당시 기록이다.
+
 ## 네이티브 병합 전 검사 — 2026-11-01
 
 iPhone Air 14개, Galaxy SM-S731N 동작 31개·HUD 9개 검사가 통과했다. iPhone 버튼 원본 이미지 캐시 19,344바이트 보관을 수정한 뒤 재검사했다. 일반 저장을 대조하고 치트 저장을 복원했다. 게임 코어·에셋은 main과 같다. 복원 코드 연결 등 네이티브 변경은 포함된다. [결과와 남은 검사](reviews/mac-web-pwa-comparison-20261101.md#iphoneandroid-네이티브-병합-전-검사--2026-11-01).
@@ -10,7 +16,7 @@ iPhone Air 14개, Galaxy SM-S731N 동작 31개·HUD 9개 검사가 통과했다.
 
 첫 화면에 설치 권장 문구와 iPhone·iPad 홈 화면 앱의 Safari 7일 미사용 정리 예외를 추가했다. 설치한 앱으로 열면 설치 권장 보충 문구를 숨긴다. 별도 서버·서버리스·푸시 인프라는 추가하지 않는다. [WebKit 정책](https://webkit.org/tracking-prevention/).
 
-로컬 배포 후보 `1655aa24dce8356d`의 시작 화면·설치 안내·4개 화면 크기·다운로드 중단/재시도·오프라인 실행 9개 검사가 통과했다. 휴대폰 폭의 실제 렌더 이미지를 확인했다. 게임 산출물은 `987c248e0bd9d674`로 유지했다. **공개 GitHub Pages에는 아직 복원 코드 기능이 없으므로, 두 버튼 제거도 복원 코드 배포와 함께 반영한다.** 현재 공개본의 백업 수단을 먼저 없애지 않는다.
+로컬 배포 후보 `1655aa24dce8356d`의 시작 화면·설치 안내·4개 화면 크기·다운로드 중단/재시도·오프라인 실행 9개 검사가 통과했다. 휴대폰 폭의 실제 렌더 이미지를 확인했다. 게임 산출물은 `987c248e0bd9d674`로 유지했다. 이 후보는 이후 main 병합과 함께 공개 GitHub Pages에 배포했다.
 
 
 2026-11-01 복원 모듈 부모 브랜치 통합: 구현 커밋 `9aed4591`을 `feat/tauri-mac`에 merge commit `7e4d365c`으로 병합했다. 병합 트리는 검사한 구현 커밋과 같다. `feat/save-transfer`에서 세 슬롯과 설정을 옮기는 공통 C++ 모듈을 구현했다. iPhone 백업을 iPad·Galaxy·네이티브 Mac·Tauri·로컬 설치형 PWA에 복원하고 저장값을 대조했다. iPad의 복원 후 전투·이동·점프·사격, 로컬 PWA의 오프라인 재실행을 확인했다. 전투 중 SET GAME UI 노출과 Android의 기본 HUD 위치 복원을 수정했다. Galaxy·Tauri·최신 Mac 빌드의 남은 화면 검사, iPhone 앱의 코드 생성, 복원 중단·용량 부족 검사와 공개 배포가 남았다. main 병합은 하지 않았다. [검사 결과](reviews/mac-web-pwa-comparison-20261101.md#unified-save-work-order).
