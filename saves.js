@@ -40,7 +40,7 @@ export async function decode(text){
  if(typeof text!=='string'||text.length>262144)throw Error('Save file is too large');
  const e=JSON.parse(text);if(e.kind!=='HeavyMachWebSave'||e.version!==1||await digest(JSON.stringify(e.snapshot))!==e.digest)throw Error('Save checksum does not match');return validate(e.snapshot);
 }
-async function apply(s){
+export async function apply(s){
  validate(s);const db=await open();try{
   const tx=db.transaction('FILE_DATA','readwrite'),finished=done(tx),store=tx.objectStore('FILE_DATA');
   store.clear();for(const r of s.records){const value={timestamp:new Date(r.timestamp),mode:r.mode};if(r.contents!==null)value.contents=new Uint8Array(r.contents);store.put(value,r.path);}await finished;
