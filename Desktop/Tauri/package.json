@@ -1,0 +1,17 @@
+{
+  "name": "heavymach-tauri",
+  "version": "0.17.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "prepare:game": "python3 scripts/prepare.py",
+    "check:protected": "python3 scripts/protected.py check",
+    "test": "node --test tests/*.test.mjs",
+    "tauri": "tauri",
+    "build": "tauri build --bundles app"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "2.12.4",
+    "fake-indexeddb": "6.2.7"
+  }
+}

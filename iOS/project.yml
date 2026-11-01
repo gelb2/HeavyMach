@@ -33,6 +33,8 @@ targets:
       outputFiles:
       - $(SRCROOT)/../build/openal/$(PLATFORM_NAME)/libopenal.a
     dependencies:
+    - target: Modules/HeavyMachSaveTransfer_iOS
+      embed: false
     - sdk: UIKit.framework
     - sdk: QuartzCore.framework
     - sdk: AVFoundation.framework
@@ -111,6 +113,8 @@ targets:
       outputFiles:
       - $(SRCROOT)/../build/openal/$(PLATFORM_NAME)/libopenal.a
     dependencies:
+    - target: Modules/HeavyMachSaveTransfer_iOS
+      embed: false
     - sdk: UIKit.framework
     - sdk: QuartzCore.framework
     - sdk: AVFoundation.framework

@@ -6,9 +6,17 @@
 
 [최신 릴리스](https://github.com/gelb2/HeavyMach/releases/latest) · [GitHub 전체 릴리스](https://github.com/gelb2/HeavyMach/releases)
 
-## 다음 릴리스 — 웹판
+## main 통합 — 웹·PWA·Tauri 및 복원 코드
 
-[fastutlego](https://github.com/fastutlego)의 [PR #24](https://github.com/gelb2/HeavyMach/pull/24)가 WebAssembly·WebGL2 웹판과 브라우저 검사를 추가한다. 원래 커밋·작성자 기록을 보존한다. Codex의 후속 수정은 업그레이드 창 정지, IndexedDB 읽기·쓰기 실패 처리, HUD 저장 완료 확인, WebGL 컨텍스트 복구다. 기존 Apple·Android·공용 코어·자원은 변경하지 않는다.
+[fastutlego](https://github.com/fastutlego)의 [PR #24](https://github.com/gelb2/HeavyMach/pull/24) 웹 이식을 기반으로 순수 웹 배포, 오프라인 PWA, Tauri Apple Silicon Mac 실행기를 추가했다. 기여자의 커밋·작성자 기록을 보존한다.
+
+- 설치 우선 시작 화면, 다운로드 진행률·해시 확인, 오프라인 캐시와 업데이트를 제공한다.
+- Tauri는 OS 파일 백업·복구와 종료 시 저장 대기를 처리한다. 공개 서명·공증과 Windows 빌드는 후속 과제다.
+- 공통 C++ 복원 코드로 세 슬롯·HUD·키·조준 설정을 옮긴다. Apple·Android 연결부와 빌드 구성 변경을 포함하며 기존 전투 코어·에셋은 유지한다.
+- iPhone 14개·Galaxy 40개 기능 검사를 통과했다. iPhone 버튼 원본 캐시 19,344바이트 보관을 수정했다.
+- 별도 UI 구현 전수조사와 복원 입력창·용량 부족·장시간 성능의 남은 검사를 [TODO](docs/usability-todo.md)에 기록했다.
+
+[플랫폼 설명·검사](docs/reviews/mac-web-pwa-comparison-20261101.md) · [복원 모듈](Modules/SaveTransfer/README.md). 새 버전 태그와 설치본 릴리스는 별도 기록한다.
 
 | 버전 | 태그 기준일 | 주요 변경 |
 |---|---|---|

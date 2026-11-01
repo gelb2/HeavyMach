@@ -78,7 +78,10 @@
     for(int i=0;i<titles.count;++i){auto b=[self editorButton:titles[i] action:@selector(hudEditorAction:) tag:i];[(i==1||i==2)?_hudToolbar:_hudToolRows addSubview:b];[buttons addObject:b];}_hudEditorButtons=buttons;
 }
 - (void)updateHUDEntry {
-    BOOL hidden=_hudEditing||_loading.visible()||_keyboardSettingsOpen||!(!_showMenu&&_hudLayoutFallback&&!_gameMenu&&_session&&_session->world().gameState==0);
+    _transferEntry.hidden=![self transferAvailable];
+    CGRect transferSafe=[self safeContentRect];_transferEntry.frame=CGRectMake(CGRectGetMaxX(transferSafe)-176,CGRectGetMinY(transferSafe)+8,168,44);
+    // HUD editing remains in the pause menu, including layouts from another device.
+    BOOL hidden=YES;
     if(_hudEntry.hidden!=hidden)_hudEntry.hidden=hidden;
 }
 - (void)updateHUDEditorGeometry {

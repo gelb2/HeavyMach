@@ -1,0 +1,81 @@
+{
+  "recorded_at": "2026-10-31T14:35:29.144742+00:00",
+  "branch": "feat/tauri-mac",
+  "baseline": "c39448af28a727fdb531b2d3fa57358563596bb8",
+  "initial_feature_merge": "a725e6fa029a1d6280e932c60280729906350944",
+  "scope": "Initial Apple Silicon Tauri host; no develop/main merge or release",
+  "protected_files": 2190,
+  "game_output_hashes": {
+    "hm-assets-1.data": "8176c4e73c8cea236f692545d1e9ba707f0a17f689f1ec4034902da960d36a10",
+    "hm-assets-2.data": "93d5c87fefc1e93427ad101562cce24985327e7b6cc57c5d60fc76e12dda84f8",
+    "hm-assets-3.data": "45fe34130a1a1eb41f60ae8066ff93345119f513943f05b106af1e30805d3a4f",
+    "hm-assets-4.data": "330be5fcd2f4f399a859eec467c0536d2be4a4c73d2a4fb7fd2c316e8fb4f284",
+    "hm-assets.js": "15162cf1e31380e1be9975496ff1b74450ff1bd431ad585233dad2d2fa3efdb7",
+    "hm-assets.json": "1a1e50cfda81e506f6890ecebd13b402fa7f7be844bc772a8034a06158ea38b1",
+    "index.html": "799419943ead2be04a795732fc476beadfa65f418721c408eb495d46f70cbb6c",
+    "index.js": "5f4636d886a6b3c9ea6fe9fd3ca405386d687b02c2fe0dca42d338948e6418ad",
+    "index.wasm": "aa16a8457561c385c90ec58acc396eb20b5aa36024af5e6d17f2a52a08e35df9",
+    "manifest.webmanifest": "65c37e452de3dabbaa9971a8136a51497c8abf1a5034012fd15f56f7eb724e52"
+  },
+  "toolchains": {
+    "rust": "1.99.1",
+    "tauri": "2.12.5",
+    "tauri_cli": "2.12.4",
+    "emscripten": "6.0.13",
+    "xcode": "27.1"
+  },
+  "checks": {
+    "javascript_tests": {
+      "passed": 12
+    },
+    "rust_tests": {
+      "passed": 8
+    },
+    "web_release_build": "passed",
+    "mac_release_app_build": "passed"
+  },
+  "binary": {
+    "path": "Desktop/Tauri/src-tauri/target/release/bundle/macos/Heavy Mach Desktop.app/Contents/MacOS/heavymach-desktop",
+    "size_bytes": 80994528,
+    "sha256": "95520a79ec6ee5ced4c2fa6eec24b22fbb7156e332ebbc1ea701cad421317214"
+  },
+  "direct_ui": {
+    "tool": "cua_repl",
+    "checks": [
+      "launcher ready",
+      "title and original door transition",
+      "slot creation",
+      "mission 01-01 entry",
+      "jump and firing",
+      "pause menu",
+      "relaunch reads existing level-1 slot",
+      "Cmd-Q exits",
+      "empty WebKit profile restores OS backup before game",
+      "restored game shows same slot creation time and equipment"
+    ],
+    "save_slot_creation": "2026/10/31 23:20:21",
+    "full_mission_clear": false,
+    "audio_listening": false,
+    "native_mac_performance_comparison": false
+  },
+  "recovery": {
+    "method": "Closed this new test app, moved its WebKit profile to ignored build/recovery-check/webkit-before, retained OS backups, reopened app and game",
+    "launcher_result": "Saved progress restored.",
+    "save_bytes": 3624,
+    "save_sha256": "20aeea975e1275aae6b51c05811fce5f2cacb00dd127aea467ca951ff4c3e817",
+    "backup_sequence": 2,
+    "test_app_exited": true
+  },
+  "fixed_during_validation": [
+    "Emscripten Int8Array must be read as unsigned bytes before serializing to Rust Vec<u8>",
+    "macOS predefined Quit sends terminate: directly; custom Cmd-Q menu waits for backup"
+  ],
+  "remaining": [
+    "Native Mac comparison including 30-minute run, sound, all weapons and input",
+    "Real-app HUD/key/aim restore and injected I/O failures",
+    "Backup export/import and damaged-backup recovery UI",
+    "Developer ID notarization and DMG",
+    "Pure web and PWA implementation/deployment",
+    "Windows installer build"
+  ]
+}

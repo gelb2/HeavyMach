@@ -23,6 +23,7 @@
 		66603CEE518D629B0C588245 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3BD5043DB2F1EBD82A09621 /* AudioToolbox.framework */; };
 		714353AF60FE32D4C1D8B16A /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B15AC064D89D9A744587670A /* AppKit.framework */; };
 		7B48F9E09F3F51118778206F /* HMAudioTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = 75B9FB8B13B8B8DB1C3356DB /* HMAudioTests.mm */; };
+		8492C588B758D85318C03114 /* HeavyMachSaveTransfer_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10D09C2CB860E3D27461B7D7 /* HeavyMachSaveTransfer_macOS.framework */; };
 		8805A63C90C4D769FFDCE985 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41A539FE243565D5D4EFEDDC /* Foundation.framework */; };
 		89BB91E997FB1EC5653754EF /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79F82438B691E36E863F62A2 /* QuartzCore.framework */; };
 		8E6FA4682420ACAE9860EAE3 /* HMGLReferenceTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = 409931DCADC8C5DF35AA3535 /* HMGLReferenceTests.mm */; };
@@ -31,6 +32,7 @@
 		97C6DA9538FCBEC6D5D12552 /* Application.mm in Sources */ = {isa = PBXBuildFile; fileRef = 61F059005E8C581B1D89A9CF /* Application.mm */; };
 		99547859F874C5B479B706A0 /* Application.mm in Sources */ = {isa = PBXBuildFile; fileRef = 61F059005E8C581B1D89A9CF /* Application.mm */; };
 		B593047F5564A1E68872B9BC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAE50A6D593570089B65CA5F /* CoreGraphics.framework */; };
+		BA0410C04B52A9125A507A63 /* HeavyMachSaveTransfer_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10D09C2CB860E3D27461B7D7 /* HeavyMachSaveTransfer_macOS.framework */; };
 		C307B0E43B59A13EC5A49622 /* HeavyMachAppleRuntime_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 816FA3C3880F3E1262DF060B /* HeavyMachAppleRuntime_macOS.framework */; };
 		C770CCAD246345BA5EC787AF /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79F82438B691E36E863F62A2 /* QuartzCore.framework */; };
 		CBD23DCD6670B188781E39AE /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 529E08B5127E6D63C9DBB880 /* CoreText.framework */; };
@@ -70,12 +72,26 @@
 			remoteGlobalIDString = 0E6A04E7BA907DA8B8558A4A;
 			remoteInfo = HeavyMachMacValidation;
 		};
+		6A2F2A466217AC32302D65B3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7C975524DE506E9D2E096BD3 /* Modules */;
+			proxyType = 1;
+			remoteGlobalIDString = E11C81477709C2EEC86CAA69;
+			remoteInfo = HeavyMachSaveTransfer_macOS;
+		};
 		7270A2B46CE98EEFCF1F6B3A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 7C975524DE506E9D2E096BD3 /* Modules */;
 			proxyType = 1;
 			remoteGlobalIDString = A664E6E141098266A41BEE8A;
 			remoteInfo = HeavyMachAssets_macOS;
+		};
+		75FFB426D6D56C78618FE107 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7C975524DE506E9D2E096BD3 /* Modules */;
+			proxyType = 1;
+			remoteGlobalIDString = E11C81477709C2EEC86CAA69;
+			remoteInfo = HeavyMachSaveTransfer_macOS;
 		};
 		77B810A431DF8CC800467654 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -118,6 +134,13 @@
 			proxyType = 2;
 			remoteGlobalIDString = 79E04E8C2DD01535EF2904F1;
 			remoteInfo = HeavyMachAssets_macOS;
+		};
+		CE57352D2A35C739ADF5F7C8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7C975524DE506E9D2E096BD3 /* Modules */;
+			proxyType = 2;
+			remoteGlobalIDString = 8B87D73C9C6F6755AA6753E2;
+			remoteInfo = HeavyMachSaveTransfer_macOS;
 		};
 		E6FA56F05F666B768B302280 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -201,6 +224,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8492C588B758D85318C03114 /* HeavyMachSaveTransfer_macOS.framework in Frameworks */,
 				C307B0E43B59A13EC5A49622 /* HeavyMachAppleRuntime_macOS.framework in Frameworks */,
 				E4FC00BCF6ABAF553BFBFF11 /* HeavyMachCore_macOS.framework in Frameworks */,
 				2FABA3276A988085DCCE0E05 /* AppKit.framework in Frameworks */,
@@ -219,6 +243,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA0410C04B52A9125A507A63 /* HeavyMachSaveTransfer_macOS.framework in Frameworks */,
 				91ECD8B46E2C69F4209CAB0E /* HeavyMachValidationRuntime_macOS.framework in Frameworks */,
 				1A59352DBBB4D37D8DA6265D /* HeavyMachValidationCore_macOS.framework in Frameworks */,
 				714353AF60FE32D4C1D8B16A /* AppKit.framework in Frameworks */,
@@ -285,6 +310,7 @@
 		5B061A06B93B7D74AF3610A8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
+				10D09C2CB860E3D27461B7D7 /* HeavyMachSaveTransfer_macOS.framework */,
 				816FA3C3880F3E1262DF060B /* HeavyMachAppleRuntime_macOS.framework */,
 				1B19751A4E7E2E941435651D /* HeavyMachCore_macOS.framework */,
 				85F8C93053298A485283036B /* HeavyMachAssets_macOS.bundle */,
@@ -361,6 +387,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				33BCE0A96954024E14935A59 /* PBXTargetDependency */,
 				B7A81C257404591051D2EB30 /* PBXTargetDependency */,
 				3031D1DE73DE8B765AA0553B /* PBXTargetDependency */,
 				4447C0D00D234122BFAC497A /* PBXTargetDependency */,
@@ -404,6 +431,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				F4C922B59E7992DC185BC90A /* PBXTargetDependency */,
 				3998E241C8E7019A87C3032F /* PBXTargetDependency */,
 				A5F08172889E5896BB9E20DF /* PBXTargetDependency */,
 				A80C3B4A8A155E65A7122FF0 /* PBXTargetDependency */,
@@ -466,6 +494,13 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		10D09C2CB860E3D27461B7D7 /* HeavyMachSaveTransfer_macOS.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = HeavyMachSaveTransfer_macOS.framework;
+			remoteRef = CE57352D2A35C739ADF5F7C8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		1B19751A4E7E2E941435651D /* HeavyMachCore_macOS.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -603,6 +638,11 @@
 			name = HeavyMachValidationCore_macOS;
 			targetProxy = 95E50692C6F5E209001AAC22 /* PBXContainerItemProxy */;
 		};
+		33BCE0A96954024E14935A59 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = HeavyMachSaveTransfer_macOS;
+			targetProxy = 6A2F2A466217AC32302D65B3 /* PBXContainerItemProxy */;
+		};
 		3998E241C8E7019A87C3032F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = HeavyMachAppleRuntime_macOS;
@@ -632,6 +672,11 @@
 			isa = PBXTargetDependency;
 			name = HeavyMachValidationRuntime_macOS;
 			targetProxy = 42F32FE105DD304F55A72ECE /* PBXContainerItemProxy */;
+		};
+		F4C922B59E7992DC185BC90A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = HeavyMachSaveTransfer_macOS;
+			targetProxy = 75FFB426D6D56C78618FE107 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

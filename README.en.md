@@ -4,6 +4,15 @@
 [한국어](README.md) | [English](README.en.md)
 <!-- language-nav:end -->
 
+## Quick Play — PWA · Mac
+
+**[Play on the web · Install the PWA](https://gelb2.github.io/HeavyMach/)** · [Tauri Mac app](#tauri-mac)
+
+If building with Xcode or Android Studio is difficult, use the web/PWA version. Follow the link and choose **Install game** to add it to your home screen, or **Play in browser** to play in a tab. A Tauri Mac app is also built; its public installer is being prepared. For native iOS, iPadOS, Android and macOS apps, see [Build](#build) below.
+
+Thank you to [fastutlego](https://github.com/fastutlego) for bringing HeavyMach to web browsers. The WebAssembly host, WebGL2 renderer, input, audio and saves in [the first web port, PR #24](https://github.com/gelb2/HeavyMach/pull/24), became the foundation for the PWA and Tauri Mac versions.
+
+
 [![Git tag v0.17](docs/public/media/badges/version.svg)](https://github.com/gelb2/HeavyMach/tree/v0.17)
 [![Platforms iOS iPadOS macOS Android](docs/public/media/badges/platforms.svg)](docs/en/public/validation.md)
 [![Architecture arm64](docs/public/media/badges/arch.svg)](docs/en/public/build-and-install.md)
@@ -187,6 +196,22 @@ I recorded the unease I felt while building the Android version: refusals and fa
 ## The first PR and Tauri
 
 [The first PR and Tauri (Korean)](docs/public/first-pr-and-tauri-20261031.md): accepting the web contribution, the missing approval review, and the Tauri evaluation.
+
+<a id="web-pwa"></a>
+
+## Browser and PWA
+
+Open the [game page](https://gelb2.github.io/HeavyMach/) to play in a browser or install it on your home screen. The PWA downloads the game files on first launch. Once the download finishes, you can play and save progress offline. On iPhone and iPad, choose **Add to Home Screen** from Safari’s Share menu. On Android, use **Install game** on the launcher.
+
+Touch, tilt, keyboard and mouse controls are supported. Progress is stored in the browser or installed PWA you use. [Controls](docs/en/public/gameplay-guide.md) · [Web implementation and build](docs/web-port-20261028.md)
+
+<a id="tauri-mac"></a>
+
+## Tauri Mac app
+
+The Tauri app runs the web version on Mac and also backs up progress and settings to the app’s data folder, outside WebView storage. If WebView saves are missing on the next launch, the app restores them from this backup. The existing AppKit-based native Mac app remains available.
+
+The app has been built and run on Apple Silicon Macs. Its public installer is being prepared. [Tauri build instructions](Desktop/Tauri/README.md) · [Architecture and development](docs/desktop-web-plan-20261031.md)
 
 <a id="플랫폼과-개발-상태"></a>
 

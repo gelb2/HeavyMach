@@ -1,0 +1,20 @@
+{
+  "identifier": "main",
+  "description": "Local backup commands for the packaged game only",
+  "windows": [
+    "main"
+  ],
+  "permissions": [
+    "allow-backup-status",
+    "allow-backup-write",
+    "allow-finish-close",
+    "allow-close-error",
+    "allow-diagnostics-write",
+    "allow-restore-status",
+    "allow-export-save",
+    "allow-import-save",
+    "allow-restore-begin",
+    "allow-restore-finish",
+    "allow-transfer-file"
+  ]
+}

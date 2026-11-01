@@ -38,6 +38,7 @@
 | 전투·성장 | [계산](game-calculation-policy.md), [자동조준](auto-aim-plan-20261026.md), [전체 무기 검사](weapon-validation-procedure.md) |
 | 실행·저장 | [시간·음향·생명주기](runtime-policy.md), [Apple 플랫폼](apple-platforms.md), [무선 기기](wireless-device-workflow.md) |
 | Android 개발 | [구현과 검사](android-implementation-20261030.md), [이식 계획과 보존 조건](android-port-plan-20261026.md), [빌드·기기 도구](../Android/README.md) |
+| Mac·웹·PWA | [개발 계획](desktop-web-plan-20261031.md), [실행 비교](reviews/mac-web-pwa-comparison-20261101.md), [웹 실행·설치](../Distribution/Web/README.md) |
 | 후속 개발 | [투두](usability-todo.md) |
 
 ```sh
