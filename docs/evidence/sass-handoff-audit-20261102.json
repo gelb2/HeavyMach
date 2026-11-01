@@ -1,0 +1,22 @@
+{
+  "date": "2026-11-02",
+  "baseMain": "a119ea6fbe4c50e80ec9bd0fe7a369df1456cb02",
+  "brief": "docs/editorial/web-tauri-sass-handoff-20261102.md",
+  "briefSha256": "c148856a3f2daed7f127616c8a062774384f0903472dbf9cf30ac783a03c02dd",
+  "topics": [
+    "first PR and contributor attribution",
+    "native apps retained and web expansion",
+    "PWA installation, offline use and storage",
+    "Tauri Mac backup, quit fix and public download",
+    "shared recovery code and original save slots",
+    "game-button investigation, art, input and post-deployment checks"
+  ],
+  "localBriefLinksChecked": 48,
+  "originalContributorCommitsStillInMain": 19,
+  "mediaManifest": "docs/public/media/desktop-web-recovery-20261102/provenance.json",
+  "historicalPlansDistinguishedFromCurrentState": true,
+  "sassHubLetterPrepared": true,
+  "existingHubHandoverBodiesPreserved": true,
+  "sassWebAndCMSChanged": false,
+  "productCodeChanged": false
+}

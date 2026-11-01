@@ -11,6 +11,10 @@ python3 tools/document_contract.py check
 
 첫 명령은 원문·기술 문서·그림·글쓰기 스킬의 읽기 목록을 출력한다. 아래 순서로 읽고, 기능의 세부 조건은 연결된 정책과 코드에서 확인한다.
 
+## 이번 후속 집필 — 2026-11-02
+
+[PWA·Tauri·첫 PR·버튼 수정 집필 안내](../editorial/web-tauri-sass-handoff-20261102.md)에서 시작한다. 주제별 기획 의도·구현·문제·검사·현재 배포, Apps의 절 순서, Mags의 질문과 제공 답변, 사용할 이미지와 캡션을 연결했다. 아래 날짜별 기록은 각 작업 시점의 자료다. [문서·기여 보존 검사](../evidence/sass-handoff-audit-20261102.json).
+
 ## 웹·PWA·Tauri와 복원 코드 집필
 
 [서버 없이 진행도를 옮기는 복원 코드](save-recovery-20261102.md)를 먼저 읽는다. 이 한 문서에 내가 코드를 제안한 이유, 원작 슬롯 보존, 공용 C++ 모듈, 저장소별 연결, 버튼을 잘못 구현한 경위와 수정, 플랫폼별 검사, 실제 캡처를 모았다.
@@ -189,8 +193,8 @@ PWA 설치·오프라인 플레이·진행 저장·업데이트와 GitHub Pages 
 
 ### Tauri Mac 첫 구현 — 2026-10-31
 
-[개발 계획의 실행 결과](../desktop-web-plan-20261031.md)와 [검사 기록](../evidence/tauri-mac-start-20261031.json)을 함께 읽는다. 별도 브랜치에서 첫 Mac 앱과 OS 백업 복구까지 확인했다. 기존 네이티브 Mac 비교·공개 배포·PWA·Windows는 아직 완료하지 않았다.
+[개발 계획의 실행 결과](../desktop-web-plan-20261031.md)와 [검사 기록](../evidence/tauri-mac-start-20261031.json)을 함께 읽는다. 별도 브랜치에서 첫 Mac 앱과 OS 백업 복구까지 확인한 당시 기록이다. 이후 웹/PWA 공개와 Tauri Mac ZIP 배포, 복원 코드·버튼 교체를 완료했다. 현재 검사와 남은 작업은 [후속 집필 안내](../editorial/web-tauri-sass-handoff-20261102.md)를 따른다.
 
 ## 추가 버튼 구현·교체 기록 — 2026-11-02
 
-Sass Apps·Mags에서 이번 UI 수정과 작업 방식에 관한 글을 쓸 때 [버튼 경위서](../reviews/game-button-incident-20261101.md), [사용자 원문과 집필 TODO](../usability-todo.md#hm-ui-incident-writing--추가-버튼-구현과-작업-방식에-관한-글감--2026-11-02), [현재 검사·배포 상태](../current-status.md)를 함께 읽는다. 원작 버튼은 보존하고 추가했던 네이티브·웹 버튼을 원작 절차로 바꾸는 작업이다.
+Sass Apps·Mags에서 이번 UI 수정과 작업 방식에 관한 글을 쓸 때 [버튼 경위서](../reviews/game-button-incident-20261101.md), [사용자 원문과 집필 TODO](../usability-todo.md#hm-ui-incident-writing--추가-버튼-구현과-작업-방식에-관한-글감--2026-11-02), [현재 검사·배포 상태](../current-status.md)를 함께 읽는다. 원작 버튼은 보존하고 추가했던 네이티브·웹 버튼을 원작 절차로 교체했다. 경위서 11절에 수정 후 검사와 배포 결과가 있다.
