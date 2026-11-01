@@ -28,3 +28,6 @@ else()
  target_link_libraries(heavymach PRIVATE HeavyMachCore)
 endif()
 target_link_libraries(heavymach PRIVATE OpenAL EGL GLESv1_CM android log)
+
+add_subdirectory("${HM_ROOT}/Modules/SaveTransfer" transfer)
+target_link_libraries(heavymach PRIVATE HeavyMachSaveTransfer)

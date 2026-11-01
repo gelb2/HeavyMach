@@ -18,6 +18,8 @@ targets:
     - ../Sources/Mac/Application.mm
     - path: ../Resources/Assets.xcassets
     dependencies:
+    - target: Modules/HeavyMachSaveTransfer_macOS
+      embed: false
     - target: Modules/HeavyMachAppleRuntime_macOS
       embed: false
     - target: Modules/HeavyMachCore_macOS
@@ -76,6 +78,8 @@ targets:
       type: folder
       buildPhase: resources
     dependencies:
+    - target: Modules/HeavyMachSaveTransfer_macOS
+      embed: false
     - target: Modules/HeavyMachValidationRuntime_macOS
       embed: false
     - target: Modules/HeavyMachValidationCore_macOS

@@ -9,6 +9,8 @@
 #include "KeyboardInput.hpp"
 #include "CanvasGeometry.hpp"
 #include <set>
+#include "SaveTransfer.hpp"
+#include "FileStore.hpp"
 namespace hm {
 class Runtime {
  AAssetManager* assets_;std::string files_;
@@ -25,6 +27,7 @@ class Runtime {
  heavymach::GameData exampleData_;heavymach::SaveSlot exampleSlot_;heavymach::PlayerPassives examplePassives_;
  std::unique_ptr<heavymach::GameSession> exampleSession_;uint32_t exampleRandom_=12345;
  int _slotIndex=0,_ammoPreview=-1;float _hpGauge=1,_expGauge=0,_reloadGauge=0;
+ int transferScreen_=0;
  bool _active=false,_showMenu=false,_gameMenu=false,_resumeRequired=false,_keyboardFire=false;
  bool _hudEditing=false,_hudExample=false,_hudHideGuides=false,_hasKeyboardAim=false,_keyboardAimVisible=false;
  bool _keyboardSettingsOpen=false,_capturingKey=false,settingsWasPaused_=false;unsigned _settingsSelection=0;
@@ -53,7 +56,11 @@ class Runtime {
  CGRect aimControlRect(int)const;bool routeAimPoint(CGPoint,int,int);
  void openHUDEditor();void closeHUDEditor();void hudEditorPoint(CGPoint,int,int);void prepareHUDExample();void drawHUDEditor();
  int32_t nextOriginalRandom();
+bool transferAvailable()const{return transferScreen_==3&&_showMenu&&!_session&&!_hudEditing&&!_keyboardSettingsOpen&&!_loading.visible()&&error.empty();}
+ heavymach::transfer::Snapshot transferSnapshot();
+ heavymach::transfer::FileStore transferStore();
 public:
+ std::string transfer(const std::string&,const std::string&,int=-1,int=-1);
  Runtime(AAssetManager*,std::string);~Runtime();
  void surface(ANativeWindow*);void insets(int,int,int,int);void active(bool);
  void frame(double);void sensor(double,double,double);void touch(int,int,float,float);bool key(unsigned,bool);

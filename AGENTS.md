@@ -43,3 +43,5 @@
 - 사용자 지시(2026-10-29): main 병합 직전에 원격 main·develop을 fetch하고 main에서 사용자가 직접 수정한 문서·커밋을 확인한다. 공통 조상 이후 양쪽 변경과 병합 후보의 최종 본문을 대조한다. Git 충돌이 없어도 최신 사용자 문구가 덮이지 않았는지 확인한다. 충돌은 최신 사용자 원문을 보존해 해결하며 ours/theirs 일괄 선택으로 처리하지 않는다. 상세 절차는 `docs/repository-management.md`의 main 직접 수정 문서 보존 항목을 따른다.
 
 - 웹 기여(PR #24, fastutlego): HeavyMach 웹(WebAssembly) 이식은 `porting/wasm`에서 진행한다. `docs/web-port-20261028.md`와 `document_contract.py plan --task web`을 읽는다. 웹 빌드는 `Sources/Core`를 그대로 쓰고 `Sources/Web`·`Web/`만 추가한다. 헤드리스 자동 검사와 실제 휴대폰 확인을 구분한다.
+
+- 사용자 지시(2026-10-31): Tauri Mac·순수 웹 배포·Tauri Windows 개발에서는 기여자 웹 구현과 후속 수정 3건(업그레이드 정지·저장 복구·GPU 복구)을 포함한 `Web/`·`Sources/Web/` 및 기존 Apple·Android·공용 코어·자원·빌드/검사 도구를 수정하지 않는다. 새 실행기·백업은 `Desktop/Tauri/`, 새 웹 배포는 `Distribution/Web/`에서 구현한다. 기존 웹 저장을 바꾸지 않고 별도 OS 백업·시작 전 복구를 연결한다. 생성된 HTML/JS 패치·원본 함수 재정의로 이 조건을 우회하지 않는다. 보호 파일의 내용·추가/삭제·경로와 포함한 게임 산출물 해시를 검사한다. 수정이 필요하면 정확한 파일과 이유를 먼저 보고한다. [개발 계획](docs/desktop-web-plan-20261031.md)을 따른다.

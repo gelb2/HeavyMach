@@ -1,5 +1,47 @@
 # HeavyMach 보고 사이트
 
+## 7·14·30·40일 시각 변경 검사 — 2026-11-01
+
+[결과와 하트비트 검토](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/mac-web-pwa-comparison.html#date-test-results)를 게시했다. Chrome 일반 창·설치 PWA의 페이지 시각 변경/원복 8조건, 영구 저장 승인 관측과 시험 JSON을 연결했다. OS 시각·브라우저 내부 정리 시계·실제 장기 미사용은 미검사로 명시했다.
+
+- source: `892cafbfed4c4f1d58c8e9ab43a8ef13559e5619`
+- deployment: `appgdep_6ae72d39a7cc8191a47eeddc2e2108f5` · succeeded
+- version: `appgprj_6addbf55aea081918d3d182d7e496e88~appgver_1f3965c380d08191a58084f188006c91`
+- 소유자 전용 접근 유지. 원고 다운로드·링크·앵커·문서 연결을 검사했다. 이번 갱신 화면 검사는 미실행이다. 게임 코드는 변경하지 않았다.
+
+
+## Mac mini 웹·PWA 저장 검사 계획 — 2026-11-01
+
+[검사 보고서](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/mac-web-pwa-comparison.html#storage-test-mac-plan)에 날짜 변경의 범위, WebKit 사용 날짜·시험용 API 조사, Mac 검사 S01~S12, 모바일 최종 확인과 장기 관측을 추가했다. 개발 계획·TODO·다운로드도 갱신했다.
+
+- source: `8ab253feb041af735a9be64babaee44fda9193c3`
+- deployment: `appgdep_6ae72b4511e08191a3106202f32d6ff3` · succeeded
+- version: `appgprj_6addbf55aea081918d3d182d7e496e88~appgver_fd5cf0890da881919f445052508707f2`
+- 소유자 전용 접근 유지. 원고/다운로드 일치, 페이지 링크·앵커와 문서 연결 검사 통과. Safari에서 로컬 보고서의 새 본문·목차를 확인했다. 최종 화면 캡처는 도구 시간 초과로 미완료다. 시스템 날짜 변경과 새 게임 저장 검사는 실행하지 않았다.
+
+
+## Mac 두 버전과 웹·PWA 비교 — 2026-11-01
+
+[비교 보고서](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/mac-web-pwa-comparison.html)에 네이티브 Mac·Tauri·Chrome 웹·설치형 PWA의 실행 구조, 프레임 수치, 입력·오프라인·저장·업데이트 검사와 실제 화면을 올렸다. 기존 사이트 목차·개발 계획에서 연결하고 원고·검사 JSON 다운로드를 제공한다. [웹 게임](https://gelb2.github.io/HeavyMach/)도 배포했다.
+
+- 개발 커밋: `433c9e44` · `feat/tauri-mac`. develop·main 병합 없음.
+- source: `36d1c3a5b7b5186caa9befd58aaf1f84ecfc8cb0`
+- deployment: `appgdep_6ae623f5ba308191aa085b4acdfca9da` · succeeded
+- version: `appgprj_6addbf55aea081918d3d182d7e496e88~appgver_183885459a18819181399691f064a739`
+- 소유자 전용 접근 유지. 1440px·390px 로컬 Chrome 렌더에서 이미지 로드·가로 넘침 없음, 네 페이지 링크·앵커·다운로드 원고 일치를 확인했다. Mac 게임 두 앱은 CUA로 조작했고 설치형 PWA는 Chrome 검사 인터페이스로 설치·실행했다.
+
+
+## Tauri Mac 첫 구현과 저장 복구 — 2026-10-31
+
+[개발 계획과 실행 결과](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/desktop-web-plan.html)에 별도 브랜치, 첫 Mac 앱, 실제 슬롯 복구, JS/Rust 20개 검사와 남은 작업을 반영했다. 기술검토·원고 다운로드·TODO·검사 JSON을 함께 갱신했다.
+
+- 개발 커밋: `3ef3004e` · `feat/tauri-mac`. develop·main 병합 없음.
+- source: `b75d59d07fbb0ec14d6c7a0064557ff1beb65df5`
+- deployment: `appgdep_6ae5fdd6bb70819181c98658b6a99c85` · succeeded
+- version: `appgprj_6addbf55aea081918d3d182d7e496e88~appgver_b7f234bb2fa48191bd1e85d5961c5c0e`
+- 소유자 전용 접근 유지. 로컬 HTTP 200, 세 페이지의 링크·절 앵커·다운로드 원고 일치를 확인했다. 이번 보고서 화면 검사는 Safari `cgWindowNotFound`와 Chrome 브라우저 제어 미제공으로 완료하지 못했다. 게임 앱의 화면 검사는 CUA로 수행했다.
+
+
 ## 리센코 인용 강조와 바빌로프 연구 설명 — 2026-10-30
 
 [원고 9절](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/ai-project-experience.html#part-9)을 실제 인용·쉬운 해설·현대 연구·바빌로프 연구 방법으로 구분하고 표제·핵심 문장을 강조했다. 사용자가 제공한 해설과 권력·사실에 관한 문단을 추가했다. 제목은 ‘신(新) 리센코주의와 정렬세’로 맞췄다. 국문·영문·다운로드, 제목의 新, HTML 인용·강조 구조와 문서 링크를 검사했다. Safari 직접 화면 검사는 앞선 CUA 응답 시간 초과 이후 미실행이다.
@@ -837,3 +879,34 @@ VTOL 첫 생성 프롬프트와 스킬 수정 커밋을 대조했다. 요청에 
 - source: `69fc0be1766e1e451f6283752f3879a4b43f8f6e`
 - deployment: `appgdep_6ae5e88fdfc481919dac3696ab6b15cc` · succeeded · 2026-10-31T13:09:50Z
 - 원고 6절의 순서·기존 앵커·링크·다운로드 일치를 검사했다. Safari 화면 확인은 `cgWindowNotFound`로 완료하지 못했다.
+
+## 2026-10-31 Tauri 개발 순서·폴더 검토
+
+[상세 계획](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/desktop-web-plan.html)을 같은 사이트 목차에 추가했다. Tauri Mac·기존 Mac 비교 → 순수 웹 배포 → Windows 설치본 빌드 순서, 저장 연결·플랫폼별 폴더·검사·릴리스 준비를 담았다. 기존 PR 검토 15절과 첫 PR 원고·다운로드·TODO도 같은 순서로 갱신했다.
+
+- source: `eb5a4f26ad9acaf30a81c955ae0e2e9a88de5f8a`
+- deployment: `appgdep_6ae5ed2218208191829f07e92ca3a7b5` · succeeded · 2026-10-31T13:29:23Z
+- 기존 접근 범위·앵커·원문 다운로드를 유지했다. 세 페이지의 링크·절 순서·다운로드 일치와 로컬 HTTP 200을 검사했다. Safari 화면 검사는 `cgWindowNotFound`로 완료하지 못했다.
+- 앞선 첫 PR 원고는 PR #69·#70으로 main `cf3dca50`에 게시했다. 이번 후속 계획은 `docs/tauri-development-plan`에 커밋했다.
+
+## 2026-10-31 웹 코드 보존·Tauri 데이터 백업 계획
+
+[개발 계획](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/desktop-web-plan#4-tauri-mac), [기술검토](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/pr24-web-review#desktop-development-plan), 첫 PR 원고·TODO·다운로드를 갱신했다. 기여자의 웹 구현과 후속 수정 3건을 고정하고, 새 Desktop/Tauri·Distribution/Web에서 작업한다. 기존 웹 저장을 유지한 OS 파일 백업·시작 전 복구·종료·내보내기/가져오기 설계를 담았다.
+
+- 문서 커밋: `c31d691d`, `docs/tauri-development-plan` 원격 반영. main 병합은 하지 않았다.
+- Site source: `ca77425d5c521ebabde7374e01ac2f2986dcdb4e`
+- deployment: `appgdep_6ae5f2a729788191823bee288dc26f09` · succeeded · 2026-10-31T13:52:55Z
+- 기존 소유자 전용 접근 유지. 원고 3개의 다운로드 바이트·앵커·링크·절 순서를 검사했다. 문서 연결·공개 문서·21개 번역 쌍 검사도 통과했다.
+- Safari 접근이 복구돼 로컬 목차 클릭·저장 설계 표를 확인했다. 게시 주소에서도 로그인된 기존 세션으로 최신 보호 범위·파일 백업·Distribution/Web 문구와 화면을 직접 확인했다.
+- 기존 게임·빌드 경로 2,121개를 기록했고 기준 main 대비 변경은 0개다. Tauri 앱·백업 기능·보호 검사 도구는 아직 구현하지 않았다.
+
+## 2026-10-31 PWA 개발 범위 반영
+
+순수 웹 단계에 PWA 설치·전체 자원 다운로드·오프라인 플레이·저장·재실행·업데이트를 포함했다. `/desktop-web-plan#web-pwa`와 PR 기술검토·첫 PR 원고·다운로드 TODO를 같은 사이트에서 갱신했다.
+
+- 문서 커밋: `df2a5098` (`docs/tauri-development-plan`).
+- 사이트 소스: `5284b627de0ec37270f851c752cc6930d4af8a3b`.
+- 배포: `appgdep_6ae5f6a3e7b48191895afa7e11afa938`, succeeded, 2026-10-31T14:09:55Z.
+- 검사: 문서 구조·공개 문서·번역 연결, 원고/다운로드 일치, 보고서 3개 링크·기존 앵커, Safari 로컬 미리보기의 PWA 본문 배치.
+- 게시 후 Safari 창 조회는 `cgWindowNotFound`로 실패했다. 게시 성공은 Sites 배포 응답으로 확인했다. 기존 소유자 전용 공개 범위를 유지했다.
+- 게임 코드 변경 없음. PWA 구현·게임 오프라인 검사는 개발 단계에서 수행한다.

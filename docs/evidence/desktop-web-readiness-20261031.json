@@ -1,0 +1,179 @@
+{
+  "checked_at": "2026-10-31T13:26:13.509409+00:00",
+  "scope": "documentation merge and desktop/web implementation-readiness inspection; no Tauri application built",
+  "main_merge": {
+    "pr": 70,
+    "sha": "cf3dca50099d2b7e840de5e3f79c6c1d017369de",
+    "develop_sha": "3892e3f2ac50e458527581d14470fa7441009b08",
+    "trees_equal": true,
+    "protected_changes_from_previous_main": [],
+    "original_19_commits": [
+      {
+        "sha": "00dc422f54f79bf3116387eaec9ef2a2621246d5",
+        "ancestor_of_main": true
+      },
+      {
+        "sha": "7ceedef63eeb06319bc557efaecc82b7a97c234b",
+        "ancestor_of_main": true
+      },
+      {
+        "sha": "9c809f7a623332d306320703401bb6e85b910c74",
+        "ancestor_of_main": true
+      },
+      {
+        "sha": "940439ca37530f4bcf73379116bd6ae0be3f35b1",
+        "ancestor_of_main": true
+      },
+      {
+        "sha": "3307933260df5eb496966d87279e2472823715df",
+        "ancestor_of_main": true
+      },
+      {
+        "sha": "87bf7d2ac6f811b452644c0adc3fff9594d4814e",
+        "ancestor_of_main": true
+      },
+      {
+        "sha": "03fb7a10f0148d6b829d8b543e06f5383c16ab6d",
+        "ancestor_of_main": true
+      },
+      {
+        "sha": "26312b0376c71e406b075345f20a49cfd5cac910",
+        "ancestor_of_main": true
+      },
+      {
+        "sha": "fc7db544bd8bf54b6f7e013907b667e5c9d562d0",
+        "ancestor_of_main": true
+      },
+      {
+        "sha": "49faba39f1eb6b9a1b85fe2e178af360886366ec",
+        "ancestor_of_main": true
+      },
+      {
+        "sha": "caae371c01a904a1078907d71edaf155cda9878a",
+        "ancestor_of_main": true
+      },
+      {
+        "sha": "1abe5c81bee0e8d5e5ae7370f8f8c1c089da5106",
+        "ancestor_of_main": true
+      },
+      {
+        "sha": "c9f3e8026f00ac2068fe174088cb2b62bc85d1d0",
+        "ancestor_of_main": true
+      },
+      {
+        "sha": "62f09a5186cbc797520651a7d6f3f1bd7e923eb6",
+        "ancestor_of_main": true
+      },
+      {
+        "sha": "ddea4e0a356cb49052cdf90f54f1ce99741d2b13",
+        "ancestor_of_main": true
+      },
+      {
+        "sha": "67fb3814c069f5e2db8b31c1058747b72186538d",
+        "ancestor_of_main": true
+      },
+      {
+        "sha": "19707b3db8ee253df0aa992193ad9f2ecdcf9114",
+        "ancestor_of_main": true
+      },
+      {
+        "sha": "2eabecfc1f615b8fb9631ecc02094cc9cafa6245",
+        "ancestor_of_main": true
+      },
+      {
+        "sha": "9d2505f74ad95dc0c24692f2360623401fbe15b2",
+        "ancestor_of_main": true
+      }
+    ]
+  },
+  "sequence": [
+    "Tauri macOS arm64 implementation and comparison against native Mac",
+    "pure browser build and hosting",
+    "Tauri Windows x64 installer build only"
+  ],
+  "existing_web_ios_header_dependencies": [
+    {
+      "path": "Sources/iOS/HMButtonState.hpp",
+      "sha256": "8e8f3035cc7dd2fd422122d99d9ccb9278d629663035bce4f9543cfb83808e52"
+    },
+    {
+      "path": "Sources/iOS/HMAimOverlay.hpp",
+      "sha256": "bfb02fd0eaece8d7f909ed4dab340f1e8ff85328c4071ce9eb15e631f58ae638"
+    },
+    {
+      "path": "Sources/iOS/HMCompatibilityPixels.hpp",
+      "sha256": "d4403e9db4bebeb6fe5c9e2eff45e956d6a8c369388817fa34c492e9cc968a79"
+    }
+  ],
+  "tauri_tracked_files": [],
+  "toolchain": {
+    "xcode": "27.1 (27A9275)",
+    "emscripten": "6.0.13, existing local pr24-tools/emsdk installation",
+    "rust_cargo": "not found in PATH or ~/.cargo/bin",
+    "tauri_project": "absent",
+    "mac_signing": "two Apple Development identities found; no Developer ID Application identity in local codesigning list",
+    "github_self_hosted_runners": 0,
+    "windows_runtime_test": "not performed; deferred by user sequence"
+  },
+  "inspected_sources": [
+    "Web/CMakeLists.txt",
+    "Web/shell.html",
+    "Web/manifest.webmanifest",
+    "Sources/Web/WebGameView.cpp",
+    "Sources/Web/WebHUDEditor.inc",
+    "Sources/Web/WebMain.cpp",
+    "CMakeLists.txt"
+  ],
+  "existing_tests": "docs/evidence/pr24-web-fixes-20261031.json",
+  "new_runtime_tests": [],
+  "frozen_web_plan_update": {
+    "checked_at": "2026-10-31T13:50:36.660270+00:00",
+    "baseline_main": "cf3dca50099d2b7e840de5e3f79c6c1d017369de",
+    "protected_paths": [
+      "Web",
+      "Sources",
+      "Android",
+      "iOS",
+      "macOS",
+      "Modules",
+      "HeavyMach.xcworkspace",
+      "Resources",
+      "Art",
+      "vendor",
+      "tools",
+      ".github/workflows"
+    ],
+    "working_tree_changes_from_baseline": [],
+    "observed_file_count": 2121,
+    "working_file_sha256_manifest_digest": "6f65b16ea19fa099e2adabc0f5f879845fee5eb53be695550e65dd20757f5d9d",
+    "allowed_new_product_roots": [
+      "Desktop/Tauri/",
+      "Distribution/Web/"
+    ],
+    "existing_web_storage": "unchanged IDBFS and localStorage",
+    "proposed_desktop_persistence": "separate host observes committed browser storage and writes OS file backups; restore before loading unchanged game",
+    "tauri_app_built": false,
+    "native_backup_implemented": false,
+    "runtime_preservation_tested": false
+  },
+  "pwa_plan": {
+    "observed_at": "2026-10-31",
+    "existing_manifest": "Web/manifest.webmanifest",
+    "existing_manifest_icons": false,
+    "existing_service_worker_registration": false,
+    "github_pages_enabled": false,
+    "planned_url": "https://gelb2.github.io/HeavyMach/",
+    "new_files_root": "Distribution/Web/",
+    "stage": 2,
+    "scope": [
+      "installation",
+      "complete offline asset cache",
+      "offline play/save/relaunch",
+      "version update without live-game reload",
+      "export/import",
+      "existing product files unchanged"
+    ],
+    "implementation_started": false,
+    "offline_runtime_tested": false
+  }
+}

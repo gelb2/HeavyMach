@@ -95,6 +95,8 @@ targets:
       - Application.mm
     - path: ../Sources/Apple
     dependencies:
+    - target: HeavyMachSaveTransfer_iOS
+      embed: false
     - target: HeavyMachCore_iOS
       embed: false
     - sdk: Foundation.framework
@@ -117,6 +119,7 @@ targets:
         - $(SRCROOT)/../Sources/Core
         - $(SRCROOT)/../Sources/iOS
         - $(SRCROOT)/../Sources/Apple
+        - $(SRCROOT)/SaveTransfer
         DEFINES_MODULE: 'NO'
         OTHER_LDFLAGS:
         - $(inherited)
@@ -133,6 +136,8 @@ targets:
       excludes:
       - Application.mm
     dependencies:
+    - target: HeavyMachSaveTransfer_macOS
+      embed: false
     - target: HeavyMachCore_macOS
       embed: false
     - sdk: Foundation.framework
@@ -153,6 +158,7 @@ targets:
         - $(SRCROOT)/../Sources/Core
         - $(SRCROOT)/../Sources/iOS
         - $(SRCROOT)/../Sources/Apple
+        - $(SRCROOT)/SaveTransfer
         DEFINES_MODULE: 'NO'
         OTHER_LDFLAGS:
         - $(inherited)
@@ -166,6 +172,8 @@ targets:
       - Application.mm
     - path: ../Sources/Apple
     dependencies:
+    - target: HeavyMachSaveTransfer_iOS
+      embed: false
     - target: HeavyMachValidationCore_iOS
       embed: false
     - sdk: Foundation.framework
@@ -188,6 +196,7 @@ targets:
         - $(SRCROOT)/../Sources/Core
         - $(SRCROOT)/../Sources/iOS
         - $(SRCROOT)/../Sources/Apple
+        - $(SRCROOT)/SaveTransfer
         DEFINES_MODULE: 'NO'
         OTHER_LDFLAGS:
         - $(inherited)
@@ -204,6 +213,8 @@ targets:
       excludes:
       - Application.mm
     dependencies:
+    - target: HeavyMachSaveTransfer_macOS
+      embed: false
     - target: HeavyMachValidationCore_macOS
       embed: false
     - sdk: Foundation.framework
@@ -224,7 +235,22 @@ targets:
         - $(SRCROOT)/../Sources/Core
         - $(SRCROOT)/../Sources/iOS
         - $(SRCROOT)/../Sources/Apple
+        - $(SRCROOT)/SaveTransfer
         DEFINES_MODULE: 'NO'
         OTHER_LDFLAGS:
         - $(inherited)
         - -ObjC
+
+  HeavyMachSaveTransfer:
+    type: framework.static
+    platform:
+    - iOS
+    - macOS
+    sources:
+    - path: SaveTransfer/SaveTransfer.cpp
+    - path: SaveTransfer/SaveTransfer.hpp
+    - path: SaveTransfer/FileStore.hpp
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.gelb2.HeavyMachSaveTransfer
+        DEFINES_MODULE: 'NO'

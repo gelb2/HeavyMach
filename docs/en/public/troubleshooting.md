@@ -185,3 +185,15 @@ Engineering disgust.
 ## Combat continued behind the upgrade panel at Android mission entry
 
 After the first boss, entering 2-1 opened the upgrade panel while combat continued. Selection and confirmation buttons did not respond. Remaining experience opened the panel, then the screen startup code cleared the pause. The Android host now keeps combat paused until the upgrade finishes. Twelve regression checks passed on Galaxy and twelve on the emulator. [Save data, cause and before/after screenshots](../../public/android-development-20261030.md#직접-플레이에서-발견한-업그레이드-오류).
+
+## Recovery controls bypassed the existing game buttons
+
+On November 1, 2026, I requested iOS and Android checks before merging recovery-code support. A check found a retained source image for the new controls. Codex released that cache. I then asked whether the controls had bypassed the original implementation, as the earlier UIKit game renderer had.
+
+The pause menu's `SET GAME UI` button assembles letters and a background from `GameMenuSub.png`. It uses the game renderer, button press state and touch handling. The new recovery entry instead uses `UIButton` on iOS, `Button` on Android and HTML/CSS on the web and in Tauri. The Apple implementation reused the HUD editor's `editorButton` helper rather than the pause-menu button implementation. Web and Tauri share the separate HTML control.
+
+Using platform text input to paste and copy a recovery code does not require a separate implementation for the button that opens it. The existing game-button implementation was available but was not reused. Saying that the original artwork was reused did not explain this difference.
+
+The 19,344-byte source-image cache has been released. Replacing the entry controls with game-rendered buttons remains unfinished. The iPhone's 14 functional tests and Galaxy's 40 checks passed; the new button's frame cost has not been measured. [Functional test results](../../evidence/native-regression-20261101.json).
+
+Sharing a factory does not make the HUD editor tools and recovery entry follow the same display and input flow. I requested a full audit of unnecessary platform UI after merging and checking the working version. [Audit plan (Korean)](../../ui-implementation-audit.md).

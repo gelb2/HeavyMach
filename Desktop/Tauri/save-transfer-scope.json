@@ -1,0 +1,33 @@
+{
+  "purpose": "2026-11-01 user-approved common save transfer; core/assets remain frozen",
+  "changed_files": {
+    "Android/app/src/main/cpp/Bridge.cpp": "Save transfer platform adapter, build wiring, or manual marker removal.",
+    "Android/app/src/main/cpp/Runtime.cpp": "Save transfer platform adapter, build wiring, or manual marker removal.",
+    "Android/app/src/main/cpp/Runtime.hpp": "Save transfer platform adapter, build wiring, or manual marker removal.",
+    "Android/app/src/main/java/com/gelb2/heavymach/GameActivity.kt": "Save transfer platform adapter, build wiring, or manual marker removal.",
+    "Android/app/src/main/java/com/gelb2/heavymach/GameEngine.kt": "Save transfer platform adapter, build wiring, or manual marker removal.",
+    "Android/app/src/main/java/com/gelb2/heavymach/Native.kt": "Save transfer platform adapter, build wiring, or manual marker removal.",
+    "Android/cmake/CMakeLists.txt": "Save transfer platform adapter, build wiring, or manual marker removal.",
+    "Modules/HeavyMachModules.xcodeproj/project.pbxproj": "Save transfer platform adapter, build wiring, or manual marker removal.",
+    "Modules/project.yml": "Save transfer platform adapter, build wiring, or manual marker removal.",
+    "Sources/Web/WebGameView.cpp": "Save transfer platform adapter, build wiring, or manual marker removal.",
+    "Sources/Web/WebGameView.hpp": "Save transfer platform adapter, build wiring, or manual marker removal.",
+    "Sources/Web/WebMain.cpp": "Save transfer platform adapter, build wiring, or manual marker removal.",
+    "Sources/iOS/HMGameView.mm": "Save transfer platform adapter, build wiring, or manual marker removal.",
+    "Sources/iOS/HMHUDEditor.inc": "Save transfer platform adapter, build wiring, or manual marker removal.",
+    "Web/CMakeLists.txt": "Save transfer platform adapter, build wiring, or manual marker removal.",
+    "iOS/project.yml": "Link the shared save transfer static framework into each application.",
+    "iOS/HeavyMachRestored.xcodeproj/project.pbxproj": "Link the shared save transfer static framework into each application.",
+    "macOS/project.yml": "Link the shared save transfer static framework into each application.",
+    "macOS/HeavyMachMac.xcodeproj/project.pbxproj": "Link the shared save transfer static framework into each application.",
+    "tools/check_publication.py": "2026-11-01 user-requested README Quick Play placement and contributor links: update document layout assertions; preserve approved author manuscript checks.",
+    "Tests/iOS/HMSaveParityTests.mm": "2026-11-01 requested native regression: add isolated native save-transfer roundtrip, startup recovery and malformed-code preservation checks; retain original no-shot-save test."
+  },
+  "new_files": [
+    "Sources/iOS/HMTransfer.inc",
+    "Android/app/src/main/cpp/Transfer.inc"
+  ],
+  "new_roots": [
+    "Modules/SaveTransfer/"
+  ]
+}

@@ -4,6 +4,15 @@
 [한국어](README.md) | [English](README.en.md)
 <!-- language-nav:end -->
 
+## Quick Play — PWA · Mac
+
+**[웹에서 플레이 · PWA 설치](https://gelb2.github.io/HeavyMach/)** · [Tauri Mac 앱](#tauri-mac)
+
+Xcode나 Android Studio로 직접 빌드하기 어렵다면 웹/PWA 버전을 권장한다. 위 링크에서 **Install game**을 눌러 홈 화면에 설치하거나, **Play in browser**로 바로 플레이할 수 있다. Mac에서 별도 앱으로 플레이할 수 있는 Tauri 버전도 만들었으며, 공개 설치본을 준비 중이다. iOS·iPadOS·Android·macOS 네이티브 앱의 설치·빌드 방법은 아래 [빌드하기](#빌드하기)를 참고한다.
+
+HeavyMach를 웹브라우저에서 실행할 수 있도록 기여해 준 [fastutlego](https://github.com/fastutlego)에게 감사드린다. [첫 웹판 PR #24](https://github.com/gelb2/HeavyMach/pull/24)의 WebAssembly 실행부, WebGL2 렌더링, 입력·음향·저장이 PWA와 Tauri Mac 버전의 기반이 됐다.
+
+
 [![Git tag v0.17](docs/public/media/badges/version.svg)](https://github.com/gelb2/HeavyMach/tree/v0.17)
 [![Platforms iOS iPadOS macOS Android](docs/public/media/badges/platforms.svg)](docs/public/validation.md)
 [![Architecture arm64](docs/public/media/badges/arch.svg)](docs/public/build-and-install.md)
@@ -163,6 +172,22 @@ Galaxy의 일반 앱에서 직접 플레이한 미션 3-4와 3-5다. 기기를 �
 ## 첫 PR과 Tauri
 
 [첫 PR을 받다. 그 다음 이어진 스케일업, 그리고 타우리](docs/public/first-pr-and-tauri-20261031.md): 웹판 기여를 받아들인 과정, 승인 리뷰 누락, Tauri 검토를 기록했다.
+
+<a id="web-pwa"></a>
+
+## 웹브라우저·PWA
+
+[게임 페이지](https://gelb2.github.io/HeavyMach/)에서 브라우저로 플레이하거나 홈 화면에 설치할 수 있다. PWA는 처음 실행할 때 게임 파일을 내려받으며, 다운로드가 끝나면 인터넷 연결 없이도 플레이하고 진행을 저장한다. iPhone·iPad에서는 Safari의 공유 메뉴에서 **홈 화면에 추가**를 선택한다. Android에서는 시작 페이지의 **Install game**으로 설치한다.
+
+터치·틸트와 키보드·마우스를 지원한다. 진행은 사용하는 브라우저 또는 설치한 PWA에 저장한다. [조작 방법](docs/public/gameplay-guide.md) · [웹 구현과 빌드](docs/web-port-20261028.md)
+
+<a id="tauri-mac"></a>
+
+## Tauri Mac 앱
+
+기존 웹판을 Mac 앱으로 실행하고, 진행과 설정을 웹뷰 저장소 밖의 앱 데이터 폴더에도 백업한다. 앱을 다시 열 때 웹뷰 저장이 사라졌으면 이 백업으로 복구한다. 기존 AppKit 기반 네이티브 Mac 앱도 유지한다.
+
+Apple Silicon Mac에서 빌드·실행한 버전이며 공개 설치본을 준비 중이다. [Tauri 빌드 방법](Desktop/Tauri/README.md) · [구조와 개발 내역](docs/desktop-web-plan-20261031.md)
 
 ## 플랫폼과 개발 상태
 

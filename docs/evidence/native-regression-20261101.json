@@ -1,0 +1,89 @@
+{
+  "date": "2026-11-01",
+  "branch": "feat/tauri-mac",
+  "base": "888292283ed1dc6c72381010b5ce311eea9f9383",
+  "testedHead": "63e13107e6fb6c677d9b3fa9d5162b3baa618373",
+  "workingTreeFix": "Sources/iOS/HMGameView.mm native-controls source image release",
+  "ios": {
+    "model": "iPhone Air",
+    "os": "27.0.1",
+    "transport": "localNetwork",
+    "edition": "validation",
+    "initial": {
+      "tests": 13,
+      "passed": 12,
+      "failed": 1
+    },
+    "final": {
+      "tests": 14,
+      "passed": 14,
+      "failed": 0
+    },
+    "checks": [
+      "keyboard movement/jump/fire",
+      "all weapon selection/fire",
+      "touch fire with keyboard movement",
+      "manual/automatic aim",
+      "HUD drag/apply/touch positions",
+      "menu transitions and resources",
+      "result illustrations",
+      "no firing save writes",
+      "transfer export without writes",
+      "restore exact file and in-memory progress",
+      "invalid code preserves save",
+      "startup recovery",
+      "corrupt pending journal preserves save"
+    ]
+  },
+  "android": {
+    "model": "Galaxy SM-S731N",
+    "os": "16",
+    "transport": "USB",
+    "edition": "cheat",
+    "builds": [
+      "normalDebug",
+      "cheatDebug"
+    ],
+    "runtimePassed": 31,
+    "hudPassed": 9,
+    "failed": 0,
+    "checks": [
+      "movement/jump/touch fire",
+      "automatic aim",
+      "20 weapons",
+      "no firing save writes",
+      "background pause/resume and audio",
+      "HUD drag freezes world/no write",
+      "apply once/new touch positions",
+      "cancel/restart/reset",
+      "EGL recreation retains paused world"
+    ]
+  },
+  "preservation": {
+    "coreAssetsUnchanged": true,
+    "protectedChecker": "PASS; 21 declared adapter/build/test/document exceptions",
+    "normalSaveBytesPreserved": [
+      "iPhone",
+      "Galaxy"
+    ],
+    "cheatOriginalSaveAndHUDRestored": [
+      "iPhone",
+      "Galaxy"
+    ],
+    "iPhoneCheatPreferencesUnchanged": true
+  },
+  "remaining": [
+    "iPhone on-screen CREATE CODE button flow",
+    "Galaxy paste/confirm/restore dialog and combat after that dialog",
+    "storage-full recovery per native platform",
+    "long-duration performance/thermal measurement"
+  ],
+  "rawLogSha256": {
+    "iphone-regression.log": "a3c5cd27ea9edea0f76a08126fe11c08e0ac12ff551643cdda7f8e58e64c1bf6",
+    "iphone-regression-fixed.log": "e96f7759b07e0e025d2ee2b204af25d384d7716a3c5dbd171a6d0e7b77601a42",
+    "galaxy-runtime.log": "6d6706b40c1204f50f4e242b0579d99fc21b8d6f4cad2821ef3238e3587ccd56",
+    "galaxy-hud.log": "5fa8655ef07f583b9cded9c39fdb03b2c8f5867bd3145fa74e5354a7d4543ab2",
+    "android-build-jdk17.log": "3e5a5f383bb6bed873be0cdfd1aa7968578e2f75e5d851a148f371c2d0301d69"
+  },
+  "mergedToMain": false
+}

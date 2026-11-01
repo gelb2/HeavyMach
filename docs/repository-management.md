@@ -127,3 +127,8 @@ PR #24 이후 외부 기여를 통합할 때 원저자의 검토 대상 커밋 S
 머지 후 원본 SHA가 대상 브랜치 조상인지 확인하고 GitHub가 원저자 계정과 연결하는지도 검사한다. README·CREDITS·릴리스 노트에 작성자·PR·기여 범위를 적는다. 기본 브랜치 main에 들어간 뒤 Contributors 그래프와 API의 실제 표시를 확인한다. 표시 지연을 기여 완료로 처리하지 않으며 이를 해결하려고 원본 작성자 정보를 바꾸지 않는다. [PR #24 검사](evidence/pr24-merge-preservation-20261031.json) · [남은 확인](usability-todo.md#hm-pr24-integration).
 
 외부 PR의 코드를 검토하고 필요한 수정을 마치면, 검사 대상 커밋·발견한 문제·수정·검사 결과를 GitHub PR 리뷰에 기록하고 `Approve`한다. 그 뒤 merge commit으로 병합한다. 원저자의 기여 범위와 후속 수정은 분리해 남긴다. PR #24는 로컬 검토·수정·검사는 했으나 GitHub 승인 리뷰를 생략한 채 병합했다. 이후 절차에는 이 단계를 포함한다. 자기 계정이 작성한 릴리스 PR은 GitHub에서 자기 승인할 수 없으므로 외부 기여 PR과 구분한다.
+
+
+## Tauri·웹 폴더 — 2026-10-31
+
+Tauri Mac·Windows는 새 `Desktop/Tauri/`, 순수 웹 배포는 새 `Distribution/Web/`에서 관리한다. 기여자 웹 구현과 후속 버그 수정 3건을 담은 `Web/`·`Sources/Web/`는 수정 금지다. Apple·Android·공용 코어·자원·vendor·기존 빌드/검사 도구도 그대로 읽는다. 기준 main은 `cf3dca50`이며 구현 착수 때 최신 develop의 후속 변경을 확인하고 보호 파일 해시·경로 목록을 기록한다. 생성된 게임 파일 패치나 원본 함수 교체도 하지 않는다. 새 플랫폼 CI와 ignore 항목·문서만 기존 공통 경로에 추가한다. 보호 파일 변경이 필요하면 파일·이유를 먼저 보고한다. 폴더별 README에 소비자·입력·출력을 명시한다. [폴더와 개발 순서](desktop-web-plan-20261031.md).

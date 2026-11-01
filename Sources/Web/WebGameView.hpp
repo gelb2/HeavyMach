@@ -56,6 +56,7 @@ public:
     bool key(unsigned hidCode,bool pressed);
     void blurKeyboard(){cancelGameInput();}
     std::string debugState();
+    bool transferAvailable()const{return _transferScreen==3&&_showMenu&&!_session&&!_hudEditing&&!_keyboardSettingsOpen&&!_loading.visible()&&_loadError.empty();}
     // DOM HUD-editor controls (Web/shell.html): -1 opens the editor (SET GAME UI),
     // 0 RESET LAYOUT, 1 CANCEL, 2 APPLY, 3 PREVIEW, 4 SAMPLE/CURRENT SCENE, 5 TOOLS.
     void hudControl(int tag);
@@ -142,6 +143,7 @@ private:
     heavymach::GameData _data;
     heavymach::SaveData _save;
     std::shared_ptr<const heavymach::SaveSlot> _pendingSaveSnapshot;
+    int _transferScreen=0;
     bool _showMenu=false;
     std::string _screenResourceScope;
     unsigned long _screenResourceGeneration=0;

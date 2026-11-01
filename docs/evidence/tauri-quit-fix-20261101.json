@@ -1,0 +1,227 @@
+{
+  "date": "2026-11-01",
+  "cause": {
+    "component": "Desktop/Tauri native backup validation; same rule in Distribution/Web save export",
+    "game_enum": {
+      "off": 0,
+      "manual": 1,
+      "automatic": 2
+    },
+    "reproduced_error": "Invalid aim mode",
+    "game_storage": {
+      "loaded": true,
+      "loading": false,
+      "syncing": false,
+      "dirty": false,
+      "blocked": false
+    }
+  },
+  "before_tests": {
+    "rust_automatic_aim_roundtrip": "FAIL Invalid aim mode",
+    "web_automatic_aim_export": "FAIL Invalid aim setting"
+  },
+  "after_tests": {
+    "rust_tests": 12,
+    "javascript_tests": 18,
+    "web_integration": {
+      "url": "http://127.0.0.1:48726/",
+      "gpu": false,
+      "installed": false,
+      "steps": [
+        {
+          "name": "offline-cache-and-title",
+          "state": {
+            "screen": "title",
+            "time": 0,
+            "canvas": [
+              480,
+              320
+            ],
+            "loading": 0,
+            "mission": 0,
+            "stage": 0,
+            "playerX": 0,
+            "playerY": 0,
+            "hp": 0,
+            "enemies": 0,
+            "bullets": 0,
+            "paused": 0,
+            "gameState": 0,
+            "decodes": 29,
+            "loadError": 0,
+            "aimMode": 1,
+            "aimTarget": 0,
+            "inputBlocked": 1,
+            "keyboardFire": 0,
+            "gameMenu": 0,
+            "resumeRequired": 0,
+            "active": 1,
+            "keyboardAimX": 0,
+            "callbackInterval": 0.0012,
+            "ticksPerCallback": 1,
+            "motion": 0,
+            "tilt": [
+              0,
+              0,
+              -1
+            ],
+            "hudEditing": 0,
+            "hudCustomized": 0,
+            "hudFallback": 0,
+            "hudSelected": 2,
+            "hudDraftCustomized": 0,
+            "orientationHold": 0
+          }
+        },
+        {
+          "name": "mission-enter",
+          "state": {
+            "screen": "game",
+            "time": 17.7,
+            "canvas": [
+              480,
+              320
+            ],
+            "loading": 0,
+            "mission": 0,
+            "stage": 0,
+            "playerX": -1040,
+            "playerY": -40.5,
+            "hp": 256,
+            "enemies": 0,
+            "bullets": 0,
+            "paused": 0,
+            "gameState": 0,
+            "decodes": 150,
+            "loadError": 0,
+            "aimMode": 1,
+            "aimTarget": 0,
+            "inputBlocked": 0,
+            "keyboardFire": 0,
+            "gameMenu": 0,
+            "resumeRequired": 0,
+            "active": 1,
+            "keyboardAimX": 0,
+            "callbackInterval": 0.0167,
+            "ticksPerCallback": 1,
+            "motion": 0,
+            "tilt": [
+              0,
+              0,
+              -1
+            ],
+            "hudEditing": 0,
+            "hudCustomized": 0,
+            "hudFallback": 0,
+            "hudSelected": 2,
+            "hudDraftCustomized": 0,
+            "orientationHold": 0
+          }
+        },
+        {
+          "name": "fire",
+          "max": 3
+        },
+        {
+          "name": "move",
+          "from": -1040,
+          "to": -961.04
+        },
+        {
+          "name": "jump",
+          "from": -40.5,
+          "to": 8.07
+        },
+        {
+          "name": "automatic-aim-enabled"
+        },
+        {
+          "name": "pause"
+        },
+        {
+          "name": "second-window-blocked",
+          "message": "The game is open in another window. Close it and try again."
+        },
+        {
+          "name": "export-save",
+          "bytes": 7649
+        },
+        {
+          "name": "corrupt-import-rejected-data-unchanged"
+        },
+        {
+          "name": "import-roundtrip"
+        },
+        {
+          "name": "offline-reload-game",
+          "state": {
+            "screen": "title",
+            "time": 0,
+            "canvas": [
+              480,
+              320
+            ],
+            "loading": 0,
+            "mission": 0,
+            "stage": 0,
+            "playerX": 0,
+            "playerY": 0,
+            "hp": 0,
+            "enemies": 0,
+            "bullets": 0,
+            "paused": 0,
+            "gameState": 0,
+            "decodes": 29,
+            "loadError": 0,
+            "aimMode": 2,
+            "aimTarget": 0,
+            "inputBlocked": 1,
+            "keyboardFire": 0,
+            "gameMenu": 0,
+            "resumeRequired": 0,
+            "active": 1,
+            "keyboardAimX": 0,
+            "callbackInterval": 0.0005,
+            "ticksPerCallback": 1,
+            "motion": 0,
+            "tilt": [
+              0,
+              0,
+              -1
+            ],
+            "hudEditing": 0,
+            "hudCustomized": 0,
+            "hudFallback": 0,
+            "hudSelected": 2,
+            "hudDraftCustomized": 0,
+            "orientationHold": 0
+          }
+        },
+        {
+          "name": "offline-progress-restored",
+          "bytes": 3624
+        },
+        {
+          "name": "offline-save-content-matches"
+        },
+        {
+          "name": "automatic-aim-restored"
+        },
+        {
+          "name": "offline-mission-play",
+          "from": -1040,
+          "to": -961.24
+        }
+      ],
+      "errors": [],
+      "ok": true
+    },
+    "native_release": {
+      "cmd_q_process_exited": true,
+      "menu_quit_process_exited": true,
+      "backup_aim_value": "2",
+      "progress_validation": "Existing game slot loaded; successful new backup contains 3624-byte HvM.dat and automatic aim value 2. Prior completed OS backup predates later gameplay; no byte-identity claim against that older snapshot."
+    }
+  },
+  "protected_files_unchanged": 2190
+}

@@ -22,7 +22,7 @@ static bool contains(CGRect r,CGPoint p){return p.x>=r.origin.x&&p.x<CGRectGetMa
 Runtime::Runtime(AAssetManager* a,std::string files):assets_(a),files_(std::move(files)),mediaOwner_(std::make_unique<Media>(a)),_media(mediaOwner_.get()){
  random_=uint32_t(std::chrono::steady_clock::now().time_since_epoch().count())|1u;
  loadData();auto bytes=readLocal(files_+"/HvM.dat");if(!bytes.empty())_save=heavymach::SaveData::decode(bytes);
- loadSettings();hudOwner_=std::make_unique<HUD>(_media);_hud=hudOwner_.get();menuOwner_=std::make_unique<Menus>(_media,&_save,&_data);_menus=menuOwner_.get();
+ loadSettings();transferStore().recover();hudOwner_=std::make_unique<HUD>(_media);_hud=hudOwner_.get();menuOwner_=std::make_unique<Menus>(_media,&_save,&_data);_menus=menuOwner_.get();
  _hud->button=[this](int i,int s){gameButton(i,s);};_hud->upgradeClosed=[this]{if(_session){_session->finishUpgradeSlide();if(_resumeRequired)pauseForInterruption();consumeGameEvents();}};
  _menus->random31=[this]{return nextOriginalRandom();};_menus->changeScreen=[this](int s){requestScreen(s);};_menus->startGame=[this](int s,int m,int mi,int st){startSlot(s,m,mi,st);};_menus->saveChanged=[this]{persistSave();};
  _menus->slotSelected=[this](int s){_originalSelectedSlot=&_save.slots.at(s);};
@@ -44,7 +44,7 @@ void Runtime::persistSave(std::shared_ptr<const heavymach::SaveSlot> snapshot){a
 void Runtime::loadSettings(){
  std::ifstream f(files_+"/InputV1.txt");int mode=1;if(f>>mode){_preferredAimMode=mode==2?heavymach::AimMode::automatic:heavymach::AimMode::manual;auto keys=_keyboardControls.bindings;std::set<unsigned> seen;bool valid=true;for(auto& k:keys)if(!(f>>k)||k==0||k>=256||!seen.insert(k).second)valid=false;if(valid)_keyboardControls.bindings=keys;}
  std::ifstream h(files_+"/HUDLayoutV1.txt");int version=0;if(!(h>>version)||version!=1)return;auto candidate=_hudLayout;
- for(auto& p:candidate.positions){int has;double x,y;if(!(h>>has>>x>>y)||!std::isfinite(x)||!std::isfinite(y)||x<0||x>1||y<0||y>1)return;if(has)p=heavymach::hud::Placement{x,y};}_hudLayout=candidate;
+ for(auto& p:candidate.positions){int has;double x,y;if(!(h>>has>>x>>y)||!std::isfinite(x)||!std::isfinite(y)||x<0||x>1||y<0||y>1)return;if(has)p=heavymach::hud::Placement{x,y};else p.reset();}_hudLayout=candidate;
 }
 void Runtime::saveSettings(){std::ostringstream s;s<<int(_preferredAimMode)<<'\n';for(auto k:_keyboardControls.bindings)s<<k<<' ';s<<'\n';atomicText(files_+"/InputV1.txt",s.str());}
 void Runtime::saveHUD(){std::ostringstream s;s.precision(17);s<<"1\n";for(auto p:_hudDraft.positions)s<<(p?1:0)<<' '<<(p?p->x:0)<<' '<<(p?p->y:0)<<'\n';atomicText(files_+"/HUDLayoutV1.txt",s.str());++hudWrites_;_hudLayout=_hudDraft;}
@@ -95,6 +95,7 @@ void Runtime::preloadScreen(int screen){
  if(extension)_media->imageSize(std::string("Extensions/")+extension+".png",_screenResourceScope);
 }
 void Runtime::refreshScreen(int screen){
+ transferScreen_=screen;
  heavymach::StagePosition stage{};bool fromGame=bool(_session);
  if(_session){_originalWeaponSlot=&_save.slots.at(_slotIndex);_originalSelectedWeapon=_originalWeaponIndex=_session->selectedWeapon();stage=_session->stage();_retainedWorldTime=_session->world().gameTime;_retainedWorldCamera=_session->world().camera;_menus->setPreviewWorldTime(_retainedWorldTime,_session->world().paused);}
  _session.reset();if(screen!=6)_resumeRequired=false;_media->releaseScope("world");auto old=_screenResourceScope;_screenResourceScope="screen"+std::to_string(++screenGeneration_);
@@ -310,7 +311,7 @@ void Runtime::drawHUDEditor(){if(_hudExample)prepareHUDExample();auto* scene=_hu
 static std::string escape(const std::string& s){std::string out;for(unsigned char c:s){if(c=='"'||c=='\\'){out+='\\';out+=char(c);}else if(c=='\n')out+="\\n";else if(c>=32)out+=char(c);}return out;}
 std::string Runtime::ui(){
  static const char* groups[]={"MENU","LEVEL / EXP","JUMP","WEAPON / AMMO","GAUGES","AIM CONTROLS","PASSIVES","WEAPON PREVIEW","CHEAT CONTROLS","UPPER TRIM"};
- std::ostringstream s;s<<"{\"editor\":"<<(_hudEditing?"true":"false")<<",\"tools\":"<<(!_hudHideGuides?"true":"false")<<",\"sample\":"<<(_hudExample?"true":"false")<<",\"valid\":"<<(heavymach::hud::valid(currentHUDLayout(),HM_VALIDATION)?"true":"false")<<",\"selection\":\""<<groups[_hudSelected]<<"\",\"game\":"<<(_session?"true":"false")<<",\"keys\":"<<(_keyboardSettingsOpen?"true":"false")<<",\"capture\":"<<(_capturingKey?"true":"false")<<",\"keySelection\":"<<_settingsSelection<<",\"bindings\":[";
+ std::ostringstream s;s<<"{\"transferAvailable\":"<<(transferAvailable()?"true":"false")<<",\"editor\":"<<(_hudEditing?"true":"false")<<",\"tools\":"<<(!_hudHideGuides?"true":"false")<<",\"sample\":"<<(_hudExample?"true":"false")<<",\"valid\":"<<(heavymach::hud::valid(currentHUDLayout(),HM_VALIDATION)?"true":"false")<<",\"selection\":\""<<groups[_hudSelected]<<"\",\"game\":"<<(_session?"true":"false")<<",\"keys\":"<<(_keyboardSettingsOpen?"true":"false")<<",\"capture\":"<<(_capturingKey?"true":"false")<<",\"keySelection\":"<<_settingsSelection<<",\"bindings\":[";
  for(unsigned i=0;i<heavymach::KeyboardInput::count;++i){if(i)s<<',';s<<_keyboardControls.bindings[i];}s<<"],\"url\":\""<<escape(pendingURL)<<"\",\"error\":\""<<escape(error)<<"\",\"notice\":\""<<escape(notice)<<"\",\"fallback\":"<<(!_hudEditing&&!heavymach::hud::valid(_hudLayout,HM_VALIDATION)?"true":"false")<<",\"cheatRect\":[";
  auto r=currentHUDLayout().group(heavymach::hud::cheat).visualBounds;s<<r.x/_canvasWidth<<','<<1-(r.y+r.height)/_canvasHeight<<','<<r.width/_canvasWidth<<','<<r.height/_canvasHeight<<"]}";pendingURL.clear();notice.clear();return s.str();
 }
@@ -348,4 +349,6 @@ std::string Runtime::diagnostics(){std::ostringstream s;s<<"{\"frames\":"<<_medi
  s<<",\"shots\":"<<observedShots_;
 #endif
  }s<<'}';return s.str();}
+#include "Transfer.inc"
+
 }

@@ -64,4 +64,5 @@ internal object GameEngine {
  fun key(code:Int,down:Boolean){queue.post { if(handle!=0L)Native.key(handle,code,down);publish() }}
  fun afterCommands(action:()->Unit){queue.post{action()}}
  fun command(name:String,a:Int=0,b:Int=0,c:Int=0,d:Int=0){queue.post { if(handle!=0L)Native.command(handle,name,a,b,c,d);publish() }}
+ fun transfer(action:String,code:String="",source:Int=-1,target:Int=-1,done:(String)->Unit){queue.post {val result=Native.transfer(handle,action,code,source,target);publish();main.post{done(result)}}}
 }
