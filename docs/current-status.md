@@ -1,6 +1,6 @@
 # 2026-10-25 문서·코드·앱 일치 체계 점검 및 보완
 
-2026-11-01 복원 모듈 구현 중: `feat/save-transfer`에서 세 슬롯과 설정을 옮기는 공통 C++ 모듈을 구현했다. iPhone 백업을 iPad·Galaxy·네이티브 Mac·Tauri·로컬 설치형 PWA에 복원하고 저장값을 대조했다. iPad의 복원 후 전투·이동·점프·사격, 로컬 PWA의 오프라인 재실행을 확인했다. 전투 중 SET GAME UI 노출과 Android의 기본 HUD 위치 복원을 수정했다. Galaxy·Tauri·최신 Mac 빌드의 남은 화면 검사, iPhone 앱의 코드 생성, 복원 중단·용량 부족 검사와 공개 배포가 남았다. main 병합은 하지 않았다. [검사 결과](reviews/mac-web-pwa-comparison-20261101.md#unified-save-work-order).
+2026-11-01 복원 모듈 부모 브랜치 통합: 구현 커밋 `9aed4591`을 `feat/tauri-mac`에 merge commit `7e4d365c`으로 병합했다. 병합 트리는 검사한 구현 커밋과 같다. `feat/save-transfer`에서 세 슬롯과 설정을 옮기는 공통 C++ 모듈을 구현했다. iPhone 백업을 iPad·Galaxy·네이티브 Mac·Tauri·로컬 설치형 PWA에 복원하고 저장값을 대조했다. iPad의 복원 후 전투·이동·점프·사격, 로컬 PWA의 오프라인 재실행을 확인했다. 전투 중 SET GAME UI 노출과 Android의 기본 HUD 위치 복원을 수정했다. Galaxy·Tauri·최신 Mac 빌드의 남은 화면 검사, iPhone 앱의 코드 생성, 복원 중단·용량 부족 검사와 공개 배포가 남았다. main 병합은 하지 않았다. [검사 결과](reviews/mac-web-pwa-comparison-20261101.md#unified-save-work-order).
 
 2026-11-01 서버 없는 복원 코드 조사: 공용 SaveData와 Apple·Android·웹의 실제 소비 코드를 대조했다. 진행 3,624바이트와 플랫폼별 HUD·키·조준 설정을 코드에 담아 전달하는 설계를 [보고서](reviews/mac-web-pwa-comparison-20261101.md#portable-recovery-code)에 추가했다. 사용자 후속 지시에 따라 암호화·salt는 제외하고 버전·손상 검사·값 검증을 사용한다. 6번 백업과 7번 복원 코드 계획을 연결했다. 기능 구현·코드 길이 측정·플랫폼 간 복원 검사는 아직 하지 않았다.
 

@@ -27,13 +27,13 @@
 
 ## HM-DESKTOP-WEB — Tauri Mac → 순수 웹·PWA → Windows 빌드 · 2026-10-31
 
-최신 구현 계획: [공통 복원 모듈 작업 순서](reviews/mac-web-pwa-comparison-20261101.md#unified-save-work-order). 6번·7번을 공통 모듈로 개발하고 4번 검사 후 배포한다. 현재 `feat/save-transfer`에서 구현·교차 복원을 검사 중이다.
+최신 구현 계획: [공통 복원 모듈 작업 순서](reviews/mac-web-pwa-comparison-20261101.md#unified-save-work-order). 6번·7번을 공통 모듈로 개발하고 4번 검사 후 배포한다. 복원 기능을 `feat/tauri-mac`에 병합했다. 순수 웹 저장 보존과 남은 검사를 이 브랜치에서 이어간다.
 
 - [x] 현재 작업 보존 후 `feat/save-transfer` 분기, 허용 호스트 변경 파일과 코어·자원 보호 기준 확정.
 - [x] `Modules/SaveTransfer/`에 공통 형식·생성·해석·검증·복원 순서 구현. native/Wasm 공통 테스트 데이터와 코드 결과 대조.
 - [ ] Apple·Android·웹/PWA·Tauri 저장소·UI 연결과 교차 복원 검사를 완료한다. iPad·Galaxy·네이티브 Mac·Tauri·로컬 PWA의 복원값 대조를 통과했다. iPad 전투와 로컬 PWA 오프라인 재진입을 확인했다. Galaxy 복원 입력 UI·전투, Tauri 재시작·전투, 최신 Mac 전투, iPhone 코드 생성과 중단·용량 부족 검사는 남았다. [검사 기록](evidence/save-transfer-slots-20261101.json).
 - [ ] 수동 조준점 숨김, 플랫폼 간 양방향 복원·기존 플레이·4번 실패 검사.
-- [ ] `feat/save-transfer`를 부모 `feat/tauri-mac`에 병합해 후속 저장 작업을 이어간다. develop·main·태그·릴리스는 별도로 진행한다.
+- [x] `feat/save-transfer`의 `9aed4591`을 부모 `feat/tauri-mac`에 `7e4d365c`으로 병합했다. 충돌이 없고 구현 트리가 같다. develop·main·태그·릴리스는 별도로 진행한다.
 
 후속 작업 순서(2026-11-01):
 

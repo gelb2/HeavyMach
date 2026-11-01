@@ -102,5 +102,12 @@
     "Tauri: grant transfer_file command to the local app window",
     "Tauri: resolve imported recovery module against the tauri page URL"
   ],
-  "uiBlocker": "Mac locked during final UI checks; iPhone unavailable"
+  "uiBlocker": "Mac locked during final UI checks; iPhone unavailable",
+  "integration": {
+    "implementation": "9aed4591",
+    "parentBranch": "feat/tauri-mac",
+    "merge": "7e4d365c3de194880ca0342fff4b0e7bb32d4bc5",
+    "sameTree": true,
+    "conflicts": false
+  }
 }
