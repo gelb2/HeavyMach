@@ -25,6 +25,10 @@ add_executable(HeavyMachHMButtonStateTests Tests/HMButtonStateTests.cpp)
 target_compile_options(HeavyMachHMButtonStateTests PRIVATE -Wall -Wextra -Wpedantic -ffp-contract=off)
 add_test(NAME HeavyMachHMButtonStateTests COMMAND HeavyMachHMButtonStateTests)
 
+add_executable(HeavyMachGameButtonsTests Tests/GameButtonsTests.cpp)
+target_compile_options(HeavyMachGameButtonsTests PRIVATE -Wall -Wextra -Wpedantic -ffp-contract=off)
+add_test(NAME HeavyMachGameButtonsTests COMMAND HeavyMachGameButtonsTests)
+
 
 # Separate copy of the real core: validation entry points never enter HeavyMachCore.
 option(HM_BUILD_VALIDATION_TESTS "Build isolated validation scenario runner" ON)

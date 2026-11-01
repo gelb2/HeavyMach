@@ -11,6 +11,7 @@
 #include <set>
 #include "SaveTransfer.hpp"
 #include "FileStore.hpp"
+#include "HMGameButtons.hpp"
 namespace hm {
 class Runtime {
  AAssetManager* assets_;std::string files_;
@@ -28,11 +29,24 @@ class Runtime {
  std::unique_ptr<heavymach::GameSession> exampleSession_;uint32_t exampleRandom_=12345;
  int _slotIndex=0,_ammoPreview=-1;float _hpGauge=1,_expGauge=0,_reloadGauge=0;
  int transferScreen_=0;
+ heavymach::gameui::Buttons gameButtons_;
+ enum class Panel { none, transfer, confirmTransfer, cheats, stage };
+ Panel panel_=Panel::none;
+ std::string recoveryCode_,uiStatus_,clipboardValue_;
+ uint64_t textRevision_=0,clipboardRevision_=0;
+ int transferSource_=-1,transferTarget_=-1;
+ bool transferSettings_=true,gameToolsFocus_=false;
+ std::string gameNotice_;double gameNoticeUntil_=0;
+ std::array<int,9> stageFields_{{1,1,1,0,1,1,1,0,0}};
+ void drawGameButtons();bool routeGameButtons(CGPoint,int,int);void gameUIAction(int,int);
+ void closeGamePanel();void setRecoveryCode(std::string);
+ heavymach::gameui::Rect recoveryTextRect()const;
+
  bool _active=false,_showMenu=false,_gameMenu=false,_resumeRequired=false,_keyboardFire=false;
  bool _hudEditing=false,_hudExample=false,_hudHideGuides=false,_hasKeyboardAim=false,_keyboardAimVisible=false;
  bool _keyboardSettingsOpen=false,_capturingKey=false,settingsWasPaused_=false;unsigned _settingsSelection=0;
  bool wide_=true;int _hudSelected=heavymach::hud::jump,dragToken_=-1;CGPoint _hudGrab{},_keyboardAim{};
- std::map<int,int> aimTouches_,hudTouches_;std::set<int> worldTouches_,cancelledTouches_,heldTouches_;std::array<bool,256> blockedKeys_{};
+ std::map<int,int> aimTouches_,hudTouches_;std::set<int> worldTouches_,cancelledTouches_,heldTouches_,hudEditorTouches_;std::array<bool,256> blockedKeys_{};
  double _time=0,_retainedWorldTime=0,lastInteraction_=0,realTime_=0,_aimAcquiredTime=0;
  uint32_t random_=0x12345678;uintptr_t _drawnAimTarget=0;
  heavymach::Vector2 _retainedWorldCamera{};heavymach::AimMode _preferredAimMode=heavymach::AimMode::manual;
@@ -56,11 +70,12 @@ class Runtime {
  CGRect aimControlRect(int)const;bool routeAimPoint(CGPoint,int,int);
  void openHUDEditor();void closeHUDEditor();void hudEditorPoint(CGPoint,int,int);void prepareHUDExample();void drawHUDEditor();
  int32_t nextOriginalRandom();
-bool transferAvailable()const{return transferScreen_==3&&_showMenu&&!_session&&!_hudEditing&&!_keyboardSettingsOpen&&!_loading.visible()&&error.empty();}
+bool transferAvailable()const{return transferScreen_==3&&_showMenu&&!_session&&!_hudEditing&&!_keyboardSettingsOpen&&_loading.state()==6&&error.empty();}
  heavymach::transfer::Snapshot transferSnapshot();
  heavymach::transfer::FileStore transferStore();
 public:
  std::string transfer(const std::string&,const std::string&,int=-1,int=-1);
+ void inputText(const std::string&,const std::string&);
  Runtime(AAssetManager*,std::string);~Runtime();
  void surface(ANativeWindow*);void insets(int,int,int,int);void active(bool);
  void frame(double);void sensor(double,double,double);void touch(int,int,float,float);bool key(unsigned,bool);

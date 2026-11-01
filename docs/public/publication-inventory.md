@@ -180,3 +180,7 @@ PWA 설치·오프라인 플레이·진행 저장·업데이트와 GitHub Pages 
 ### Tauri Mac 첫 구현 — 2026-10-31
 
 [개발 계획의 실행 결과](../desktop-web-plan-20261031.md)와 [검사 기록](../evidence/tauri-mac-start-20261031.json)을 함께 읽는다. 별도 브랜치에서 첫 Mac 앱과 OS 백업 복구까지 확인했다. 기존 네이티브 Mac 비교·공개 배포·PWA·Windows는 아직 완료하지 않았다.
+
+## 추가 버튼 구현·교체 기록 — 2026-11-02
+
+Sass Apps·Mags에서 이번 UI 수정과 작업 방식에 관한 글을 쓸 때 [버튼 경위서](../reviews/game-button-incident-20261101.md), [사용자 원문과 집필 TODO](../usability-todo.md#hm-ui-incident-writing--추가-버튼-구현과-작업-방식에-관한-글감--2026-11-02), [현재 검사·배포 상태](../current-status.md)를 함께 읽는다. 원작 버튼은 보존하고 추가했던 네이티브·웹 버튼을 원작 절차로 바꾸는 작업이다.

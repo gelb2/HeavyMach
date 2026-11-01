@@ -29,6 +29,9 @@
 - (void)startSlot:(int)slot mode:(int)mode mission:(int)mission stage:(int)stage;
 - (void)advanceOriginalFrame;
 - (void)gameButton:(int)identifier state:(int)state;
+- (void)gameUIAction:(int)identifier state:(int)state;
+- (CGRect)gameButtonRect:(int)identifier;
+- (void)routePoint:(CGPoint)point state:(int)state token:(id)token;
 - (void)checkInactivity;
 - (void)setWideCanvasEnabled:(BOOL)enabled;
 - (void)updateCanvasGeometry;
@@ -599,21 +602,22 @@ void emit(NSDictionary* record){NSData* json=[NSJSONSerialization dataWithJSONOb
  HMValidationControls* controls=[view valueForKey:@"validationControls"];
  XCTAssertEqual(controls.numberOfSegments,NSInteger(4));XCTAssertEqual(controls.selectedSegmentIndex,NSInteger(3));
  const float start=session->player()->position.x;
- [(UIButton*)controls.subviews[2] sendActionsForControlEvents:UIControlEventTouchUpInside];
+ auto tap=[&](int identifier){CGRect r=[view gameButtonRect:identifier];XCTAssertFalse(CGRectIsEmpty(r));auto vp=perfStorage<heavymach::Viewport>(view,"_viewport");CGPoint p=CGPointMake(vp.x+CGRectGetMidX(r)*vp.scale,vp.y+(vp.logicalHeight-CGRectGetMidY(r))*vp.verticalScale());id token=[NSObject new];[view routePoint:p state:0 token:token];[view routePoint:p state:2 token:token];};
+ tap(3502);
  for(int i=0;i<120;++i){[view sampleOriginalAcceleration];[view advanceOriginalFrame];}
  const float right=session->player()->position.x;XCTAssertGreaterThan(right,start+10);
- [(UIButton*)controls.subviews[0] sendActionsForControlEvents:UIControlEventTouchUpInside];
+ tap(3500);
  for(int i=0;i<90;++i){[view sampleOriginalAcceleration];[view advanceOriginalFrame];}
  XCTAssertLessThan(session->player()->position.x,right-10);
- controls.selectedSegmentIndex=1;[controls sendActionsForControlEvents:UIControlEventValueChanged];
+ [view gameUIAction:3500+1 state:2];
  for(int i=0;i<100;++i)[view sampleOriginalAcceleration];
  XCTAssertEqualWithAccuracy(perfStorage<heavymach::TiltState>(view,"_tilt").y,0,.00001);
- controls.selectedSegmentIndex=2;[controls sendActionsForControlEvents:UIControlEventValueChanged];
+ [view gameUIAction:3500+2 state:2];
  [view gameButton:100 state:2];XCTAssertEqual(controls.selectedSegmentIndex,NSInteger(1));
  [view gameButton:101 state:2];XCTAssertEqual(controls.selectedSegmentIndex,NSInteger(1));
- controls.selectedSegmentIndex=2;[controls sendActionsForControlEvents:UIControlEventValueChanged];
+ [view gameUIAction:3500+2 state:2];
  [view setApplicationActive:NO];XCTAssertEqual(controls.selectedSegmentIndex,NSInteger(1));
- controls.selectedSegmentIndex=3;[controls sendActionsForControlEvents:UIControlEventValueChanged];
+ [view gameUIAction:3500+3 state:2];
  [view setApplicationActive:NO];XCTAssertEqual(controls.selectedSegmentIndex,NSInteger(3));
 }
 - (void)testValidationKeyboardReleaseAndCancellationClearDirection {

@@ -1,101 +1,36 @@
 #import "HMValidationPanel.h"
-#if defined(HM_VALIDATION) && HM_VALIDATION && !TARGET_OS_OSX
+#if defined(HM_VALIDATION) && HM_VALIDATION
 #include "GlobalInfo.hpp"
 #include <algorithm>
 @implementation HMValidationPanel {
-    const heavymach::GameData *_data;
-    std::vector<heavymach::ValidationStage> _stages;
-    UIStepper *_mission,*_stage,*_level,*_boss;
-    UILabel *_missionText,*_stageText,*_levelText,*_bossText;
-    UISwitch *_near,*_all;
-    UISegmentedControl *_grades[3];
-    UIButton *_weapon;
-    NSString *_weaponName;
-    UIStackView *_stack;
+ const heavymach::GameData* _data;
+ std::vector<heavymach::ValidationStage> _stages;
+ std::vector<std::string> _weapons;
 }
-- (instancetype)initWithData:(const heavymach::GameData *)data {
-    if((self=[super init])){_data=data;_stages=heavymach::validationStages(*data);self.modalPresentationStyle=UIModalPresentationFullScreen;}
-    return self;
+- (instancetype)initWithData:(const heavymach::GameData*)data {
+ if((self=[super init])){
+  _data=data;_stages=heavymach::validationStages(*data);_weapons=heavymach::validationWeapons(*data);
+  auto d=NSUserDefaults.standardUserDefaults;_mission=std::clamp(int([d integerForKey:@"fixture.mission"]),0,7);_stage=std::clamp(int([d integerForKey:@"fixture.stage"]),0,heavymach::GlobalInfo::stageCount(_mission)-1);_level=std::clamp(int([d integerForKey:@"fixture.level"]),0,99);
+  _bodyGrade=std::clamp(int([d integerForKey:@"fixture.grade0"]),0,6);_topGrade=std::clamp(int([d integerForKey:@"fixture.grade1"]),0,6);_weaponGrade=std::clamp(int([d integerForKey:@"fixture.grade2"]),0,6);
+  _nearLevel=[d boolForKey:@"fixture.near"];_allWeapons=[d boolForKey:@"fixture.all"];_boss=[d objectForKey:@"fixture.boss"]?int([d integerForKey:@"fixture.boss"]):-1;
+  NSString* weapon=[d stringForKey:@"fixture.weapon"]?:@"P_Wpn_Gun01";auto i=std::find(_weapons.begin(),_weapons.end(),weapon.UTF8String);_weaponIndex=i==_weapons.end()?0:int(i-_weapons.begin());[self clampStage];
+ }return self;
 }
-- (UILabel *)label:(NSString *)text {
-    UILabel *label=[UILabel new];label.text=text;label.numberOfLines=0;label.font=[UIFont systemFontOfSize:14];return label;
+- (const heavymach::ValidationStage*)selectedStage {for(const auto& s:_stages)if(s.mission==_mission&&s.stage==_stage)return &s;return nullptr;}
+- (void)clampStage {_stage=std::clamp(_stage,0,heavymach::GlobalInfo::stageCount(_mission)-1);auto s=[self selectedStage];if(!s||_boss>=int(s->bosses.size()))_boss=-1;}
+- (void)adjust:(int)field delta:(int)d {
+ auto wrap=[](int x,int n){return n?(x%n+n)%n:0;};
+ switch(field){case 0:_mission=std::clamp(_mission+d,0,7);[self clampStage];break;case 1:_stage=std::clamp(_stage+d,0,heavymach::GlobalInfo::stageCount(_mission)-1);[self clampStage];break;case 2:_level=std::clamp(_level+d,0,99);break;case 3:_bodyGrade=std::clamp(_bodyGrade+d,0,6);break;case 4:_topGrade=std::clamp(_topGrade+d,0,6);break;case 5:_weaponGrade=std::clamp(_weaponGrade+d,0,6);break;case 6:_nearLevel=!_nearLevel;break;case 7:_allWeapons=!_allWeapons;break;case 8:_weaponIndex=wrap(_weaponIndex+d,int(_weapons.size()));break;case 9:{auto s=[self selectedStage];_boss=std::clamp(_boss+d,-1,s?int(s->bosses.size())-1:-1);break;}case 10:_wideCanvas=!_wideCanvas;break;}
 }
-- (void)addRow:(NSString *)title control:(UIView *)control label:(UILabel *__strong *)value {
-    UILabel *label=[self label:title];if(value)*value=label;
-    UIStackView *row=[[UIStackView alloc] initWithArrangedSubviews:@[label,control]];row.axis=UILayoutConstraintAxisHorizontal;row.spacing=12;row.alignment=UIStackViewAlignmentCenter;
-    [label setContentHuggingPriority:UILayoutPriorityDefaultLow forAxis:UILayoutConstraintAxisHorizontal];[_stack addArrangedSubview:row];
+- (NSString*)fieldText:(int)field {
+ switch(field){case 0:return [NSString stringWithFormat:@"MISSION %d",_mission+1];case 1:return [NSString stringWithFormat:@"STAGE %d",_stage+1];case 2:return [NSString stringWithFormat:@"LEVEL %d",_level+1];case 3:return [NSString stringWithFormat:@"BODY %d",_bodyGrade];case 4:return [NSString stringWithFormat:@"TURRET %d",_topGrade];case 5:return [NSString stringWithFormat:@"WEAPON GRADE %d",_weaponGrade];case 6:return _nearLevel?@"NEXT LEVEL EXP 1: ON":@"NEXT LEVEL EXP 1: OFF";case 7:return _allWeapons?@"ALL WEAPONS: ON":@"ALL WEAPONS: OFF";case 8:return _weapons.empty()?@"NO WEAPON":[NSString stringWithUTF8String:_weapons[_weaponIndex].c_str()];case 9:{auto s=[self selectedStage];return _boss<0?@"BOSS: NORMAL START":[NSString stringWithFormat:@"BOSS %d: %s",_boss+1,s->bosses[_boss].name.c_str()];}case 10:return _wideCanvas?@"FULL WIDTH: ON":@"FULL WIDTH: OFF";default:return @"";}
 }
-- (UIStepper *)stepper:(double)minimum maximum:(double)maximum value:(double)value {
-    UIStepper *s=[UIStepper new];s.minimumValue=minimum;s.maximumValue=maximum;s.value=value;
-    [s addTarget:self action:@selector(updateFields) forControlEvents:UIControlEventValueChanged];return s;
+- (heavymach::ValidationScenario)scenario {
+ heavymach::ValidationScenario s;s.mission=_mission;s.stage=_stage;s.internalLevel=_level;s.grades={uint8_t(_bodyGrade),uint8_t(_topGrade),uint8_t(_weaponGrade)};s.nearLevelUp=_nearLevel;s.allWeapons=_allWeapons;if(_boss>=0)s.bossIndex=size_t(_boss);if(!_weapons.empty())s.weapons.emplace_back(_weapons[_weaponIndex]);
+ heavymach::SaveSlot probe;heavymach::prepareValidationSlot(probe,*_data,s);if(!s.weapons.empty())for(int i=0;i<probe.weaponCount();++i)if(probe.weaponName(i)==s.weapons.front()){s.selectedWeapon=i;break;}return s;
 }
-- (UIButton *)action:(NSString *)title selector:(SEL)selector {
-    UIButton *b=[UIButton buttonWithType:UIButtonTypeSystem];[b setTitle:title forState:UIControlStateNormal];b.accessibilityIdentifier=[@"HMValidation." stringByAppendingString:NSStringFromSelector(selector)];
-    [b addTarget:self action:selector forControlEvents:UIControlEventTouchUpInside];[_stack addArrangedSubview:b];return b;
+- (void)saveSettings {
+ auto d=NSUserDefaults.standardUserDefaults;[d setInteger:_mission forKey:@"fixture.mission"];[d setInteger:_stage forKey:@"fixture.stage"];[d setInteger:_level forKey:@"fixture.level"];[d setInteger:_bodyGrade forKey:@"fixture.grade0"];[d setInteger:_topGrade forKey:@"fixture.grade1"];[d setInteger:_weaponGrade forKey:@"fixture.grade2"];[d setBool:_nearLevel forKey:@"fixture.near"];[d setBool:_allWeapons forKey:@"fixture.all"];[d setInteger:_boss forKey:@"fixture.boss"];if(!_weapons.empty())[d setObject:[NSString stringWithUTF8String:_weapons[_weaponIndex].c_str()] forKey:@"fixture.weapon"];
 }
-- (void)viewDidLoad {
-    [super viewDidLoad];self.view.backgroundColor=UIColor.systemBackgroundColor;
-    UIScrollView *scroll=[UIScrollView new];scroll.translatesAutoresizingMaskIntoConstraints=NO;[self.view addSubview:scroll];
-    _stack=[UIStackView new];_stack.axis=UILayoutConstraintAxisVertical;_stack.spacing=10;_stack.translatesAutoresizingMaskIntoConstraints=NO;[scroll addSubview:_stack];
-    [NSLayoutConstraint activateConstraints:@[[scroll.leadingAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.leadingAnchor constant:20],[scroll.trailingAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.trailingAnchor constant:-20],[scroll.topAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.topAnchor],[scroll.bottomAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.bottomAnchor],[_stack.leadingAnchor constraintEqualToAnchor:scroll.contentLayoutGuide.leadingAnchor],[_stack.trailingAnchor constraintEqualToAnchor:scroll.contentLayoutGuide.trailingAnchor],[_stack.topAnchor constraintEqualToAnchor:scroll.contentLayoutGuide.topAnchor constant:12],[_stack.bottomAnchor constraintEqualToAnchor:scroll.contentLayoutGuide.bottomAnchor constant:-12],[_stack.widthAnchor constraintEqualToAnchor:scroll.frameLayoutGuide.widthAnchor]]];
-    [_stack addArrangedSubview:[self label:@"HM Validation · 별도 저장\n초기 조건 재설정은 검증 슬롯1을 교체합니다. 이어하기는 저장된 경험치·장비·탄약을 유지합니다."]];
-    UISwitch* canvas=[UISwitch new];canvas.on=self.wideCanvas;canvas.accessibilityIdentifier=@"HMValidation.WideCanvas";[canvas addTarget:self action:@selector(canvasSwitch:) forControlEvents:UIControlEventValueChanged];[self addRow:@"게임 시야 확장 (끄면 원본 480)" control:canvas label:nullptr];
-    NSUserDefaults *d=NSUserDefaults.standardUserDefaults;
-    _mission=[self stepper:1 maximum:8 value:[d integerForKey:@"fixture.mission"]+1];[self addRow:@"미션" control:_mission label:&_missionText];
-    _stage=[self stepper:1 maximum:6 value:[d integerForKey:@"fixture.stage"]+1];[self addRow:@"스테이지" control:_stage label:&_stageText];
-    _level=[self stepper:1 maximum:100 value:[d integerForKey:@"fixture.level"]+1];[self addRow:@"레벨" control:_level label:&_levelText];
-    NSArray *names=@[@"몸체 등급",@"상부 등급",@"무기 등급"];
-    for(int i=0;i<3;++i){_grades[i]=[[UISegmentedControl alloc] initWithItems:@[@"0",@"1",@"2",@"3",@"4",@"5",@"6"]];_grades[i].selectedSegmentIndex=std::clamp<NSInteger>([d integerForKey:[NSString stringWithFormat:@"fixture.grade%d",i]],0,6);[self addRow:names[i] control:_grades[i] label:nullptr];}
-    _near=[UISwitch new];_near.on=[d boolForKey:@"fixture.near"];[self addRow:@"다음 레벨까지 EXP 1 남기기" control:_near label:nullptr];
-    _all=[UISwitch new];_all.on=[d boolForKey:@"fixture.all"];[self addRow:@"모든 원본 플레이어 무기 지급" control:_all label:nullptr];
-    _weaponName=[d stringForKey:@"fixture.weapon"]?:@"P_Wpn_Gun01";_weapon=[self action:@"무기 선택" selector:@selector(chooseWeapon)];
-    _boss=[self stepper:-1 maximum:100 value:[d objectForKey:@"fixture.boss"]?[d integerForKey:@"fixture.boss"]:-1];[self addRow:@"보스" control:_boss label:&_bossText];
-    [self action:@"초기 조건 재설정 후 시작" selector:@selector(resetFixture)];
-    [self action:@"저장 이어하기 (초기 조건 적용 안 함)" selector:@selector(resume)];
-    [self action:@"현재 게임에 EXP 1 획득" selector:@selector(experience)];
-    [self action:@"현재 화면으로 돌아가기" selector:@selector(close)];[self updateFields];
-}
-- (const heavymach::ValidationStage *)selectedStage {
-    for(const auto& s:_stages)if(s.mission==int(_mission.value)-1&&s.stage==int(_stage.value)-1)return &s;return nullptr;
-}
-- (void)updateFields {
-    int mission=int(_mission.value)-1;_stage.maximumValue=heavymach::GlobalInfo::stageCount(mission);
-    _missionText.text=[NSString stringWithFormat:@"미션 %d%@",mission+1,mission==7?@" · 원본 데이터 직접 진입":@""];
-    const auto *stage=[self selectedStage];_stageText.text=[NSString stringWithFormat:@"스테이지 %d · %s",int(_stage.value),stage?stage->mapName.c_str():"missing"];
-    _levelText.text=[NSString stringWithFormat:@"레벨 %d (내부 %d)",int(_level.value),int(_level.value)-1];
-    _boss.maximumValue=stage?double(stage->bosses.size())-1:-1;
-    if(_boss.value>_boss.maximumValue)_boss.value=-1;
-    _bossText.text=_boss.value<0?@"보스: 일반 시작":[NSString stringWithFormat:@"보스 %d · %s",int(_boss.value)+1,stage->bosses.at(size_t(_boss.value)).name.c_str()];
-    [_weapon setTitle:[@"장착 무기: " stringByAppendingString:_weaponName] forState:UIControlStateNormal];
-}
-- (void)chooseWeapon {
-    UIAlertController *alert=[UIAlertController alertControllerWithTitle:@"원본 무기 선택" message:nil preferredStyle:UIAlertControllerStyleAlert];
-    for(const auto& name:heavymach::validationWeapons(*_data)){
-        NSString *value=[NSString stringWithUTF8String:name.c_str()];
-        [alert addAction:[UIAlertAction actionWithTitle:value style:UIAlertActionStyleDefault handler:^(UIAlertAction *){self->_weaponName=value;[self updateFields];}]];
-    }
-    [alert addAction:[UIAlertAction actionWithTitle:@"취소" style:UIAlertActionStyleCancel handler:nil]];[self presentViewController:alert animated:YES completion:nil];
-}
-- (void)finish:(void(^)(void))action {
-    auto closed=self.closed;[self dismissViewControllerAnimated:YES completion:^{if(closed)closed();if(action)action();}];
-}
-- (void)resetFixture {
-    heavymach::ValidationScenario s;s.mission=int(_mission.value)-1;s.stage=int(_stage.value)-1;s.internalLevel=int(_level.value)-1;
-    for(int i=0;i<3;++i)s.grades[i]=uint8_t(_grades[i].selectedSegmentIndex);
-    s.nearLevelUp=_near.on;s.allWeapons=_all.on;if(_boss.value>=0)s.bossIndex=size_t(_boss.value);
-    std::vector<std::string> inventory={"P_Wpn_Gun01","P_Wpn_RaderBomb","P_Wpn_RaderMsl","P_Wpn_RaderLsr"};
-    auto append=[&](const std::string& name){if(std::find(inventory.begin(),inventory.end(),name)==inventory.end())inventory.push_back(name);};
-    if(s.allWeapons)for(const auto& name:heavymach::validationWeapons(*_data))append(name);
-    s.weapons.emplace_back(_weaponName.UTF8String);append(s.weapons.front());
-    s.selectedWeapon=int(std::find(inventory.begin(),inventory.end(),s.weapons.front())-inventory.begin());
-    NSUserDefaults *d=NSUserDefaults.standardUserDefaults;[d setInteger:s.mission forKey:@"fixture.mission"];[d setInteger:s.stage forKey:@"fixture.stage"];[d setInteger:s.internalLevel forKey:@"fixture.level"];[d setBool:s.nearLevelUp forKey:@"fixture.near"];[d setBool:s.allWeapons forKey:@"fixture.all"];[d setObject:_weaponName forKey:@"fixture.weapon"];[d setInteger:s.bossIndex?NSInteger(*s.bossIndex):-1 forKey:@"fixture.boss"];
-    for(int i=0;i<3;++i)[d setInteger:s.grades[i] forKey:[NSString stringWithFormat:@"fixture.grade%d",i]];
-    NSLog(@"HM_VALIDATION fixture mission=%d stage=%d internalLevel=%d grades=%d/%d/%d near=%d allWeapons=%d selected=%s boss=%ld",s.mission,s.stage,s.internalLevel,s.grades[0],s.grades[1],s.grades[2],s.nearLevelUp,s.allWeapons,_weaponName.UTF8String,s.bossIndex?long(*s.bossIndex):-1L);
-    auto callback=self.applyFixture;[self finish:^{if(callback)callback(s);}];
-}
-- (void)resume {auto callback=self.resumeSave;[self finish:callback];}
-- (void)experience {auto callback=self.addExperience;[self finish:callback];}
-- (void)canvasSwitch:(UISwitch*)sender {self.wideCanvas=sender.on;if(self.canvasChanged)self.canvasChanged(sender.on);}
-- (void)close {[self finish:nil];}
 @end
 #endif

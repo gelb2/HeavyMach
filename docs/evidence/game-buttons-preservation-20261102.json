@@ -1,0 +1,14 @@
+{
+  "date": "2026-11-02",
+  "base": "aa2af710b8480aa4b23f353e315bf21912f0ee9b",
+  "checked_files": 1453,
+  "changed_files": [],
+  "scope": [
+    "Sources/Core",
+    "Resources/OriginalImages",
+    "Resources/Images",
+    "original HUD and menu implementations",
+    "HMButtonState.hpp"
+  ],
+  "source_evidence": "build/button-incident-20261101/preserved-original-buttons.json"
+}

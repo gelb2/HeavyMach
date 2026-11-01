@@ -56,8 +56,8 @@ target_link_options(index PRIVATE ${HM_COMMON_FLAGS}
   -sMIN_WEBGL_VERSION=2 -sMAX_WEBGL_VERSION=2
   -sALLOW_MEMORY_GROWTH=1 -sINITIAL_MEMORY=134217728
   -sFORCE_FILESYSTEM=1 -lidbfs.js -lopenal
-  -sEXPORTED_FUNCTIONS=_main,_hm_transfer_available,_hm_resize,_hm_pointer,_hm_key,_hm_keyboard_blur,_hm_motion,_hm_active,_hm_hud_control,_hm_debug_state,_hm_context_lost,_hm_context_restored,_hm_hud_save_result
-  -sEXPORTED_RUNTIME_METHODS=FS,IDBFS,UTF8ToString,addRunDependency,removeRunDependency,FS_createPath,FS_createDataFile
+  -sEXPORTED_FUNCTIONS=_main,_hm_storage_ui,_hm_transfer_state,_hm_game_ui,_hm_transfer_available,_hm_resize,_hm_pointer,_hm_key,_hm_keyboard_blur,_hm_motion,_hm_active,_hm_hud_control,_hm_debug_state,_hm_context_lost,_hm_context_restored,_hm_hud_save_result
+  -sEXPORTED_RUNTIME_METHODS=ccall,FS,IDBFS,UTF8ToString,addRunDependency,removeRunDependency,FS_createPath,FS_createDataFile
   -sENVIRONMENT=web)
 set_property(TARGET index APPEND PROPERTY LINK_DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/shell.html")
-set_source_files_properties("${HM_ROOT}/Sources/Web/WebGameView.cpp" PROPERTIES OBJECT_DEPENDS "${HM_ROOT}/Sources/Web/WebHUDEditor.inc")
+set_source_files_properties("${HM_ROOT}/Sources/Web/WebGameView.cpp" PROPERTIES OBJECT_DEPENDS "${HM_ROOT}/Sources/Web/WebHUDEditor.inc;${HM_ROOT}/Sources/Web/WebGameButtons.inc")

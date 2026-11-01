@@ -1,0 +1,192 @@
+{
+  "date": "2026-11-02",
+  "status": "functional_checks_passed_final_deployment_in_progress",
+  "physical_tests": [
+    {
+      "device": "iPad Air 13 M2",
+      "tests": 33,
+      "failures": 0,
+      "evidence": "build/game-buttons-physical-ipad.xcresult"
+    },
+    {
+      "device": "iPhone Air",
+      "tests": 33,
+      "failures": 0,
+      "evidence": "build/game-buttons-physical-iphone.xcresult"
+    },
+    {
+      "device": "iPad Air 13 M2",
+      "tests": 5,
+      "failures": 0,
+      "evidence": "build/game-buttons-physical-ipad-final.xcresult"
+    },
+    {
+      "device": "iPhone Air",
+      "tests": 5,
+      "failures": 0,
+      "evidence": "build/game-buttons-physical-iphone-final.xcresult"
+    },
+    {
+      "device": "iPad Air 13 M2",
+      "tests": 2,
+      "failures": 0,
+      "evidence": "build/game-buttons-ipad-freeze.xcresult",
+      "includes": "bottom transfer entry, loading state 0 guard, final sans serif atlas and cancel capture fix"
+    },
+    {
+      "device": "iPhone Air",
+      "tests": 2,
+      "failures": 0,
+      "evidence": "build/game-buttons-iphone-final-cancel.xcresult",
+      "includes": "final sans serif atlas and cancel capture fix"
+    }
+  ],
+  "coverage": [
+    "Original pause MENU and SET GAME UI touch and keyboard",
+    "HUD drag, preview, sample, apply, reset and cancel",
+    "Transfer create, check, invalid restore, confirmation cancel, exact-byte restore",
+    "All 22 cheat settings +/- buttons; start/resume/add EXP",
+    "All 16 keyboard binding buttons, remap cancellation and reset",
+    "Cheat directional controls and background input release",
+    "Loading transition F2 freeze regression"
+  ],
+  "native_input": "UITextField / NSTextField only; action buttons rendered with game sprites",
+  "manual_iPad_regular": [
+    "Original title/slot/mode/mission OK",
+    "Transfer create/copy/check/confirm cancel/restore/close",
+    "Native text field invalid input rejected",
+    "Original MENU and SET GAME UI",
+    "Preview/tools/sample/cancel"
+  ],
+  "save_preservation": {
+    "iPad_normal_restore_before_after_identical": true,
+    "iPad_after_manual_gameplay": "Only 2 bytes changed within slot 2 last-access timestamp (offset 4). All gameplay fields remain byte-identical."
+  },
+  "mac_performance": {
+    "result": "failed",
+    "budget_ms": 16.666666666666668,
+    "evidence": "build/game-buttons-mac-perf-final.xcresult",
+    "observations": [
+      {
+        "scene": "title_animation",
+        "size": "1200x800",
+        "p95_frame_ms": 25.981165934354067,
+        "mean_frame_ms": 11.070747941266745,
+        "p95_callback_ms": 26.271957904100418,
+        "draw_calls": 10,
+        "save_calls": 0
+      },
+      {
+        "scene": "slot_preview",
+        "size": "1200x800",
+        "p95_frame_ms": 25.572209153324366,
+        "mean_frame_ms": 9.78949863023849,
+        "p95_callback_ms": 32.53924986347556,
+        "draw_calls": 177,
+        "save_calls": 0
+      },
+      {
+        "scene": "stage01_firing",
+        "size": "1200x800",
+        "p95_frame_ms": 26.247750036418438,
+        "mean_frame_ms": 11.936497441234273,
+        "p95_callback_ms": 29.238666873425245,
+        "draw_calls": 68,
+        "save_calls": 0
+      },
+      {
+        "scene": "hud_editor",
+        "size": "1200x800",
+        "p95_frame_ms": 24.874207796528935,
+        "mean_frame_ms": 10.413854811081869,
+        "p95_callback_ms": 34.01845786720514,
+        "draw_calls": 137,
+        "save_calls": 0
+      },
+      {
+        "scene": "transfer_panel",
+        "size": "1200x800",
+        "p95_frame_ms": 27.83458400517702,
+        "mean_frame_ms": 11.967550981272426,
+        "p95_callback_ms": 35.62595811672509,
+        "draw_calls": 270,
+        "save_calls": 0
+      },
+      {
+        "scene": "title_animation",
+        "size": "screen_size",
+        "p95_frame_ms": 26.01591683924198,
+        "mean_frame_ms": 10.422817615067792,
+        "p95_callback_ms": 30.908791813999414,
+        "draw_calls": 14,
+        "save_calls": 0
+      },
+      {
+        "scene": "slot_preview",
+        "size": "screen_size",
+        "p95_frame_ms": 51.01800011470914,
+        "mean_frame_ms": 20.549014830289202,
+        "p95_callback_ms": 61.0706249717623,
+        "draw_calls": 181,
+        "save_calls": 0
+      },
+      {
+        "scene": "stage01_firing",
+        "size": "screen_size",
+        "p95_frame_ms": 25.5174171179533,
+        "mean_frame_ms": 9.429191924735076,
+        "p95_callback_ms": 32.947208965197206,
+        "draw_calls": 74,
+        "save_calls": 0
+      },
+      {
+        "scene": "hud_editor",
+        "size": "screen_size",
+        "p95_frame_ms": 26.14612504839897,
+        "mean_frame_ms": 11.396927813378474,
+        "p95_callback_ms": 29.01849988847971,
+        "draw_calls": 133,
+        "save_calls": 0
+      },
+      {
+        "scene": "transfer_panel",
+        "size": "screen_size",
+        "p95_frame_ms": 29.47695809416473,
+        "mean_frame_ms": 13.910887273959816,
+        "p95_callback_ms": 31.296459026634693,
+        "draw_calls": 274,
+        "save_calls": 0
+      }
+    ],
+    "diagnostic": "enable_updates_common timed out waiting for updates to reenable",
+    "baseline_comparison": "Original title and slot screens exceeded the same budget. A separate previous-revision baseline was not run. Cause not isolated."
+  },
+  "post_main_retest": "pending",
+  "private_artifacts": "Device IDs, save files and recovery codes remain in ignored build/ evidence.",
+  "mac_functional": {
+    "tests": 2,
+    "failures": 0,
+    "evidence": "build/game-buttons-mac-freeze2.xcresult",
+    "includes": "all game setting buttons, transfer restore and loading state 0 guard",
+    "latest_evidence": "build/game-buttons-mac-final-input.xcresult",
+    "latest_tests": 2,
+    "latest_failures": 0
+  },
+  "mac_manual_text_input": [
+    "Cmd+A replaced full code with TEST",
+    "Cmd+C copied TEST",
+    "Cmd+X emptied the field",
+    "Cmd+V restored TEST",
+    "Return left field editor",
+    "CHECK CODE rejected invalid TEST",
+    "CLOSE returned to slots",
+    "Cmd+Q terminated the process"
+  ],
+  "button_language": "All added game button labels are English.",
+  "screenshots": [
+    "build/game-buttons-mac-slot-final.png",
+    "build/game-buttons-mac-transfer-final.png",
+    "build/game-buttons-mac-text-shortcuts-final.png",
+    "build/game-buttons-ipad-native-final.png"
+  ]
+}

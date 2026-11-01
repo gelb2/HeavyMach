@@ -14,7 +14,9 @@
 - Tauri는 OS 파일 백업·복구와 종료 시 저장 대기를 처리한다. 공개 서명·공증과 Windows 빌드는 후속 과제다.
 - 공통 C++ 복원 코드로 세 슬롯·HUD·키·조준 설정을 옮긴다. Apple·Android 연결부와 빌드 구성 변경을 포함하며 기존 전투 코어·에셋은 유지한다.
 - iPhone 14개·Galaxy 40개 기능 검사를 통과했다. iPhone 버튼 원본 캐시 19,344바이트 보관을 수정했다.
-- 별도 UI 구현 전수조사와 복원 입력창·용량 부족·장시간 성능의 남은 검사를 [TODO](docs/usability-todo.md)에 기록했다.
+- 추가했던 HUD 도구·복원·키 설정·치트 버튼을 원작 게임 버튼 절차로 교체했다. 텍스트 입력·클립보드·파일 선택은 플랫폼 기능을 사용한다. 원작 버튼과 전투 코드는 유지한다.
+- Android PWA 전체 화면에서도 게임 안의 복원 버튼을 표시한다. 추가 영어 문구는 원작 OK·미션 선택 버튼을 참고한 정적 글자 시트를 사용한다.
+- iPhone·iPad·Galaxy 실기기와 웹/PWA에서 편집·복원·키 입력·원작 전투를 검사했다. 네이티브 Mac 프레임 검사는 원작 타이틀·전투를 포함해 기준을 넘었다. [수정·화면·검사 결과](docs/reviews/game-button-incident-20261101.md#game-button-results).
 
 [플랫폼 설명·검사](docs/reviews/mac-web-pwa-comparison-20261101.md) · [복원 모듈](Modules/SaveTransfer/README.md). 새 버전 태그와 설치본 릴리스는 별도 기록한다.
 

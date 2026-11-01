@@ -100,16 +100,22 @@
         "Sources/iOS/HMGameView.*",
         "Sources/iOS/HMValidationControls.*",
         "Sources/iOS/Application.mm",
-        "Sources/Core/HUDLayout.hpp"
+        "Sources/Core/HUDLayout.hpp",
+        "Sources/iOS/HMGameButtons.hpp",
+        "Sources/iOS/HMGameButtons.inc",
+        "Sources/Web/WebGameButtons.inc",
+        "Android/app/src/main/cpp/GameButtons.inc"
       ],
       "tests": [
         "Tests/iOS/HMFramePerformanceTests.mm",
         "Tests/PlayerTests.cpp",
-        "Tests/HUDLayoutTests.cpp"
+        "Tests/HUDLayoutTests.cpp",
+        "Tests/GameButtonsTests.cpp"
       ],
       "evidence": [
         "docs/physical-edge-check-20261025.md",
-        "docs/physical-self-test-20261025.md"
+        "docs/physical-self-test-20261025.md",
+        "docs/reviews/game-button-incident-20261101.md"
       ]
     },
     "rendering": {
@@ -128,17 +134,23 @@
         "Sources/Core/Visuals.*",
         "Sources/Core/Trail.*",
         "Art/Extensions/*",
-        "Sources/Core/VTOL.*"
+        "Sources/Core/VTOL.*",
+        "Sources/iOS/HMGameButtons.hpp",
+        "Sources/iOS/HMGameButtons.inc",
+        "Sources/Web/WebGameButtons.inc",
+        "Android/app/src/main/cpp/GameButtons.inc"
       ],
       "tests": [
         "Tests/iOS/HMGLReferenceTests.mm",
         "Tests/iOS/HMResourceLifecycleTests.mm",
         "Tests/iOS/HMFramePerformanceTests.mm",
-        "Tests/VTOLTests.cpp"
+        "Tests/VTOLTests.cpp",
+        "Tests/GameButtonsTests.cpp"
       ],
       "evidence": [
         "docs/menu-joins-20261025.md",
-        "docs/weapon-result-fix-20261025.md"
+        "docs/weapon-result-fix-20261025.md",
+        "docs/reviews/game-button-incident-20261101.md"
       ]
     },
     "menus": {
@@ -153,16 +165,22 @@
         "Sources/iOS/HMMenus.*",
         "Sources/iOS/HMGameHUD.*",
         "Sources/iOS/HMGameView.*",
-        "Sources/Core/LoadingTransition.*"
+        "Sources/Core/LoadingTransition.*",
+        "Sources/iOS/HMGameButtons.hpp",
+        "Sources/iOS/HMGameButtons.inc",
+        "Sources/Web/WebGameButtons.inc",
+        "Android/app/src/main/cpp/GameButtons.inc"
       ],
       "tests": [
         "Tests/iOS/HMMenuParityTests.mm",
         "Tests/LoadingTransitionTests.cpp",
-        "Tests/iOS/HMFramePerformanceTests.mm"
+        "Tests/iOS/HMFramePerformanceTests.mm",
+        "Tests/GameButtonsTests.cpp"
       ],
       "evidence": [
         "docs/menu-joins-20261025.md",
-        "docs/core-loading-transition.md"
+        "docs/core-loading-transition.md",
+        "docs/reviews/game-button-incident-20261101.md"
       ]
     },
     "combat": {

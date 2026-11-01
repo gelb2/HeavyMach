@@ -40,7 +40,16 @@
 - (CGRect)aimControlRect:(int)control;
 - (void)drawAimControls;
 - (void)openHUDEditor:(id)sender;
-- (void)hudEditorAction:(id)sender;
+- (void)hudEditorAction:(NSInteger)tag;
+- (CGRect)gameButtonRect:(int)identifier;
+- (void)openTransfer:(id)sender;
+- (void)closeTransfer;
+- (void)setTransferInputText:(NSString*)text;
+- (NSString*)transferInputText;
+- (NSString*)createTransferCode;
+- (void)gameUIAction:(int)identifier state:(int)state;
+- (void)openValidation;
+- (void)toggleKeyboardSettings;
 - (void)closeHUDEditor;
 - (void)loadHUDLayout;
 - (void)layoutHUDControls;
@@ -146,10 +155,11 @@ NSDictionary* macFrameMetrics(const std::vector<double>& values) {
 @interface HMAppleInputTests:XCTestCase
 @property HMGameView* game;
 @property NSURL* temp;
+@property NSDictionary* preservedSettings;
 @end
 @implementation HMAppleInputTests
 - (void)setUp {
- [super setUp];self.game=[[HMInputTestView alloc]initWithFrame:CGRectMake(0,0,1024,768)];
+ [super setUp];NSMutableDictionary* preserved=[NSMutableDictionary new];for(NSString* key in @[@"KeyboardBindingsV1",@"AimModeV1",@"fixture.mission",@"fixture.stage",@"fixture.level",@"fixture.grade0",@"fixture.grade1",@"fixture.grade2",@"fixture.near",@"fixture.all",@"fixture.boss",@"fixture.weapon",@"validation.resume.slot",@"validation.resume.mission",@"validation.resume.stage",@"validation.resume.mode"]){preserved[key]=[NSUserDefaults.standardUserDefaults objectForKey:key]?:NSNull.null;}self.preservedSettings=preserved;self.game=[[HMInputTestView alloc]initWithFrame:CGRectMake(0,0,1024,768)];
  [[self.game valueForKey:@"frameTimer"]invalidate];[[self.game valueForKey:@"motionTimer"]invalidate];
  self.temp=[NSURL fileURLWithPath:[NSTemporaryDirectory() stringByAppendingPathComponent:NSUUID.UUID.UUIDString] isDirectory:YES];[NSFileManager.defaultManager createDirectoryAtURL:self.temp withIntermediateDirectories:YES attributes:nil error:nil];
  [self.game setValue:[self.temp URLByAppendingPathComponent:@"HvM.dat"] forKey:@"saveURL"];
@@ -157,7 +167,7 @@ NSDictionary* macFrameMetrics(const std::vector<double>& values) {
  storage<heavymach::AimMode>(self.game,"_preferredAimMode")=heavymach::AimMode::manual;
  [self.game setValue:@1 forKey:@"randomState"];[self.game updateCanvasGeometry];
 }
-- (void)tearDown {[self.game setApplicationActive:NO];self.game=nil;[NSFileManager.defaultManager removeItemAtURL:self.temp error:nil];[super tearDown];}
+- (void)tearDown {[self.game setApplicationActive:NO];self.game=nil;for(NSString* key in self.preservedSettings){id value=self.preservedSettings[key];if(value==NSNull.null)[NSUserDefaults.standardUserDefaults removeObjectForKey:key];else [NSUserDefaults.standardUserDefaults setObject:value forKey:key];}[NSFileManager.defaultManager removeItemAtURL:self.temp error:nil];[super tearDown];}
 - (void)testHUDUpperTrimPreservesOriginalPixels {
 #if !TARGET_OS_OSX
  HMGLRenderer* gl=[self.game valueForKey:@"glRenderer"];HMMedia* media=[self.game valueForKey:@"media"];HMGameHUD* hud=[[HMGameHUD alloc]initWithMedia:media];
@@ -172,42 +182,62 @@ NSDictionary* macFrameMetrics(const std::vector<double>& values) {
 - (void)testHUDEditorRightToolsTrimAndLegacySave {
  using namespace heavymach::hud;
  [self startFixture];[self.game gameButton:100 state:2];frames(self.game,40);[self.game openHUDEditor:nil];
- NSArray* buttons=[self.game valueForKey:@"hudEditorButtons"];id toggle=[self.game valueForKey:@"hudToolsToggle"];
- XCTAssertEqual(buttons.count,5u);XCTAssertFalse([[self.game valueForKey:@"hudShowHits"]boolValue]);
- // Phone and tablet geometry: the two commit controls always remain visible.
+ XCTAssertFalse([[self.game valueForKey:@"hudShowHits"]boolValue]);
  for(auto size:{CGSizeMake(852,393),CGSizeMake(1180,820),CGSizeMake(640,260)}){
   self.game.frame=CGRectMake(0,0,size.width,size.height);[self.game updateCanvasGeometry];[self.game layoutHUDControls];
-  CGRect safe=[self.game safeContentRect];auto toolbar=[self.game valueForKey:@"hudToolbar"];
-  XCTAssertLessThanOrEqual(CGRectGetMaxY([toolbar frame]),CGRectGetMaxY(safe));
-  XCTAssertEqualWithAccuracy(CGRectGetMaxX([toolbar frame]),CGRectGetMaxX(safe)-8,.01);
-  for(int i:{1,2}){CGRect f=[buttons[i]frame];XCTAssertGreaterThanOrEqual(f.size.height,44);XCTAssertGreaterThanOrEqual(f.origin.y,0);XCTAssertLessThanOrEqual(CGRectGetMaxY(f),[toolbar bounds].size.height);}
-#if !TARGET_OS_OSX
-  for(UIButton* b in @[buttons[1],buttons[2],toggle]){CGPoint q=[b convertPoint:CGPointMake(CGRectGetMidX(b.bounds),CGRectGetMidY(b.bounds)) toView:self.game];XCTAssertEqual([self.game hitTest:q withEvent:nil],b);}
-#endif
+  auto c=[self.game currentHUDLayout];
+  for(int id:{3000,3001,3002,3003,3004,3005}){CGRect f=[self.game gameButtonRect:id];XCTAssertFalse(CGRectIsEmpty(f));XCTAssertGreaterThanOrEqual(f.origin.y,c.safe.y);XCTAssertLessThanOrEqual(CGRectGetMaxY(f),c.safe.y+c.safe.height);XCTAssertLessThanOrEqual(CGRectGetMaxX(f),c.safe.x+c.safe.width);}
  }
  self.game.frame=CGRectMake(0,0,1180,820);[self.game updateCanvasGeometry];[self.game layoutHUDControls];
- auto c=[self.game currentHUDLayout];auto& draft=storage<Configuration>(self.game,"_hudDraft");
- // The newly restored trim can move without changing any combat input rectangle.
- auto before=draft;[self.game setValue:@(upperTrim) forKey:@"hudSelected"];
+ auto& draft=storage<Configuration>(self.game,"_hudDraft");auto before=draft;[self.game setValue:@(upperTrim) forKey:@"hudSelected"];
  [self.game handleKeyCode:0x51 pressed:YES];XCTAssertTrue(draft.positions[upperTrim].has_value());
  for(size_t i=0;i<hits.size();++i){auto a=before.group(hitGroups[i]).hitRect(hits[i]),b=draft.group(hitGroups[i]).hitRect(hits[i]);XCTAssertEqual(a.x,b.x);XCTAssertEqual(a.y,b.y);}
- [self.game hudEditorAction:buttons[3]];XCTAssertTrue([[self.game valueForKey:@"hudToolbar"]isHidden]);XCTAssertFalse([toggle isHidden]);
- // A release in the world no longer reopens tools or moves the selected part.
  auto& vp=storage<heavymach::Viewport>(self.game,"_viewport");
- CGPoint q=CGPointMake(vp.x+vp.logicalWidth/2*vp.scale,vp.y+vp.logicalHeight/2*vp.verticalScale());
- id token=[NSObject new];auto positions=draft;[self.game routePoint:q state:2 token:token];XCTAssertTrue([[self.game valueForKey:@"hudToolbar"]isHidden]);XCTAssertTrue(positions.samePositions(draft));
- [self.game hudEditorAction:toggle];XCTAssertFalse([[self.game valueForKey:@"hudToolbar"]isHidden]);
- [self.game hudEditorAction:buttons[2]];XCTAssertFalse([[self.game valueForKey:@"hudEditing"]boolValue]);
+ auto tap=[&](int identifier){CGRect r=[self.game gameButtonRect:identifier];CGPoint q=CGPointMake(vp.x+CGRectGetMidX(r)*vp.scale,vp.y+(vp.logicalHeight-CGRectGetMidY(r))*vp.verticalScale());id token=[NSObject new];[self.game routePoint:q state:0 token:token];[self.game routePoint:q state:2 token:token];};
+ tap(3003);XCTAssertTrue([[self.game valueForKey:@"hudHideGuides"]boolValue]);XCTAssertFalse(CGRectIsEmpty([self.game gameButtonRect:3005]));
+ CGPoint q=CGPointMake(vp.x+vp.logicalWidth/2*vp.scale,vp.y+vp.logicalHeight/2*vp.verticalScale());id token=[NSObject new];auto positions=draft;
+ [self.game routePoint:q state:2 token:token];XCTAssertTrue([[self.game valueForKey:@"hudHideGuides"]boolValue]);XCTAssertTrue(positions.samePositions(draft));
+ tap(3005);XCTAssertFalse([[self.game valueForKey:@"hudHideGuides"]boolValue]);
+ // A tool touch must not start a HUD drag, even if a HUD group lies underneath it.
+ tap(3002);XCTAssertFalse([[self.game valueForKey:@"hudEditing"]boolValue]);
  auto saved=storage<Configuration>(self.game,"_hudLayout");XCTAssertTrue(saved.positions[upperTrim].has_value());storage<Configuration>(self.game,"_hudLayout")={};[self.game loadHUDLayout];XCTAssertTrue(saved.samePositions(storage<Configuration>(self.game,"_hudLayout")));
- // A V1 file produced before upperTrim existed keeps its original placement IDs.
  NSMutableArray* old=[NSMutableArray new];for(int i=0;i<9;++i)[old addObject:NSNull.null];old[weapon]=@[@0,@0.5];
  [[NSJSONSerialization dataWithJSONObject:@{@"version":@1,@"positions":old} options:0 error:nil]writeToURL:[self.game hudLayoutURL] atomically:YES];
  [self.game loadHUDLayout];auto migrated=storage<Configuration>(self.game,"_hudLayout");XCTAssertTrue(migrated.positions[weapon].has_value());XCTAssertFalse(migrated.positions[upperTrim].has_value());
 #if !TARGET_OS_OSX
- auto attach=[&](UIImage* image,NSString* name){XCTAssertNotNil(image);auto a=[XCTAttachment attachmentWithImage:image];a.name=name;a.lifetime=XCTAttachmentLifetimeKeepAlways;[self addAttachment:a];};
- [self.game openHUDEditor:nil];render(self.game);attach([(HMGLRenderer*)[self.game valueForKey:@"glRenderer"]snapshot],@"HUD_restored_upper_trim");
- attach([buttons[2]backgroundImageForState:UIControlStateNormal],@"HUD_tool_apply_normal");attach([buttons[2]backgroundImageForState:UIControlStateHighlighted],@"HUD_tool_apply_pressed");
+ [self.game openHUDEditor:nil];render(self.game);auto a=[XCTAttachment attachmentWithImage:[(HMGLRenderer*)[self.game valueForKey:@"glRenderer"]snapshot]];a.name=@"HUD_game_buttons";a.lifetime=XCTAttachmentLifetimeKeepAlways;[self addAttachment:a];
+ for(UIView* view in self.game.subviews)XCTAssertFalse([view isKindOfClass:UIButton.class]);
+#else
+ for(NSView* view in self.game.subviews)XCTAssertFalse([view isKindOfClass:NSButton.class]);
 #endif
+}
+- (void)testGameTransferButtonsCreateCheckCancelAndRestore {
+ [self startFixture];auto expected=storage<heavymach::SaveData>(self.game,"_save");auto bytes=expected.encode();NSURL* save=[self.game valueForKey:@"saveURL"];
+ [[NSData dataWithBytes:bytes.data() length:bytes.size()]writeToURL:save atomically:YES];
+ [self.game refreshScreen:3];render(self.game);
+ auto tap=[&](int identifier){CGRect r=[self.game gameButtonRect:identifier];XCTAssertFalse(CGRectIsEmpty(r));auto vp=storage<heavymach::Viewport>(self.game,"_viewport");CGPoint q=CGPointMake(vp.x+CGRectGetMidX(r)*vp.scale,vp.y+(vp.logicalHeight-CGRectGetMidY(r))*vp.verticalScale());id token=[NSObject new];[self.game routePoint:q state:0 token:token];[self.game routePoint:q state:2 token:token];render(self.game);};
+ tap(3100);XCTAssertEqual([[self.game valueForKey:@"transferPage"]intValue],1);
+ {auto vp=storage<heavymach::Viewport>(self.game,"_viewport");CGPoint q=CGPointMake(vp.x+434*vp.scale,vp.y+(vp.logicalHeight-20)*vp.verticalScale());id held=[NSObject new];[self.game routePoint:q state:0 token:held];tap(3114);[self.game routePoint:q state:2 token:held];XCTAssertEqual(storage<heavymach::LoadingTransition>(self.game,"_loading").state(),6);XCTAssertEqual([[self.game valueForKey:@"transferPage"]intValue],0);tap(3100);}
+ tap(3110);NSString* code=[self.game transferInputText];XCTAssertTrue([code hasPrefix:@"HM1-"]);
+ {auto image=[(HMGLRenderer*)[self.game valueForKey:@"glRenderer"]snapshot];auto a=[XCTAttachment attachmentWithImage:image];a.name=@"Transfer_game_buttons";a.lifetime=XCTAttachmentLifetimeKeepAlways;[self addAttachment:a];}
+ auto before=[[NSData alloc]initWithContentsOfURL:save];tap(3112);XCTAssertEqualObjects(before,[NSData dataWithContentsOfURL:save]);
+ [self.game setTransferInputText:@"bad code"];tap(3113);XCTAssertEqual([[self.game valueForKey:@"transferPage"]intValue],1);XCTAssertEqualObjects(before,[NSData dataWithContentsOfURL:save]);
+ [self.game setTransferInputText:code];tap(3113);XCTAssertEqual([[self.game valueForKey:@"transferPage"]intValue],2);tap(3116);XCTAssertEqualObjects(before,[NSData dataWithContentsOfURL:save]);
+ auto changed=expected;changed.slots[0].setInt(0x20,expected.slots[0].experience()+77);auto changedBytes=changed.encode();[[NSData dataWithBytes:changedBytes.data() length:changedBytes.size()]writeToURL:save atomically:YES];
+ tap(3113);tap(3115);[self.game closeTransfer];[self.game openValidation];XCTAssertFalse([[self.game valueForKey:@"validationPanelOpen"]boolValue]);XCTAssertTrue(CGRectIsEmpty([self.game gameButtonRect:3100]));[self.game advanceOriginalFrame];[self.game handleKeyCode:0x3b pressed:YES];[self.game handleKeyCode:0x3b pressed:NO];XCTAssertFalse([[self.game valueForKey:@"keyboardSettingsOpen"]boolValue]);frames(self.game,100);XCTAssertFalse(storage<heavymach::LoadingTransition>(self.game,"_loading").visible());XCTAssertEqualObjects(before,[NSData dataWithContentsOfURL:save]);XCTAssertEqual(storage<heavymach::SaveData>(self.game,"_save").encode(),expected.encode());
+ [self.game closeTransfer];XCTAssertEqual([[self.game valueForKey:@"transferPage"]intValue],0);
+}
+- (void)testGameSettingsAndValidationButtons {
+ [self startFixture];render(self.game);auto before=storage<heavymach::SaveData>(self.game,"_save").encode();
+ auto tap=[&](int identifier){CGRect r=[self.game gameButtonRect:identifier];XCTAssertFalse(CGRectIsEmpty(r));auto vp=storage<heavymach::Viewport>(self.game,"_viewport");CGPoint q=CGPointMake(vp.x+CGRectGetMidX(r)*vp.scale,vp.y+(vp.logicalHeight-CGRectGetMidY(r))*vp.verticalScale());id token=[NSObject new];[self.game routePoint:q state:0 token:token];[self.game routePoint:q state:2 token:token];render(self.game);};
+ tap(3300);XCTAssertTrue([[self.game valueForKey:@"validationPanelOpen"]boolValue]);
+ HMValidationPanel* panel=[self.game valueForKey:@"validationPanel"];int level=panel.level;tap(3405);XCTAssertEqual(panel.level,std::min(level+1,99));XCTAssertEqual(before,storage<heavymach::SaveData>(self.game,"_save").encode());
+ auto attachment=[&](NSString* name){auto a=[XCTAttachment attachmentWithImage:[(HMGLRenderer*)[self.game valueForKey:@"glRenderer"]snapshot]];a.name=name;a.lifetime=XCTAttachmentLifetimeKeepAlways;[self addAttachment:a];};
+ attachment(@"Validation_game_buttons");for(int field=0;field<6;++field){tap(3400+field*2);tap(3401+field*2);}tap(3304);XCTAssertEqual(panel.page,1);for(int field=6;field<11;++field){tap(3400+field*2);tap(3401+field*2);}tap(3304);XCTAssertEqual(panel.page,0);tap(3305);XCTAssertFalse([[self.game valueForKey:@"validationPanelOpen"]boolValue]);
+ tap(3300);panel=[self.game valueForKey:@"validationPanel"];panel.mission=0;panel.stage=0;panel.level=0;panel.boss=-1;panel.nearLevel=NO;panel.allWeapons=NO;tap(3301);XCTAssertFalse([[self.game valueForKey:@"validationPanelOpen"]boolValue]);frames(self.game,40);tap(3300);auto exp=storage<heavymach::SaveData>(self.game,"_save").slots[0].experience();tap(3303);XCTAssertEqual(storage<heavymach::SaveData>(self.game,"_save").slots[0].experience(),exp+1);tap(3302);XCTAssertFalse([[self.game valueForKey:@"validationPanelOpen"]boolValue]);frames(self.game,40);
+ [self.game toggleKeyboardSettings];render(self.game);attachment(@"Keyboard_game_buttons");tap(3206);XCTAssertTrue([[self.game valueForKey:@"capturingKey"]boolValue]);key(self.game,0x14);XCTAssertEqual(storage<heavymach::KeyboardInput>(self.game,"_keyboardControls").bindings[6],0x14u);tap(3220);XCTAssertEqual(storage<heavymach::KeyboardInput>(self.game,"_keyboardControls").bindings,heavymach::KeyboardInput::defaults);for(int i=0;i<16;++i){tap(3200+i);XCTAssertTrue([[self.game valueForKey:@"capturingKey"]boolValue]);key(self.game,0x29);}tap(3221);XCTAssertFalse([[self.game valueForKey:@"keyboardSettingsOpen"]boolValue]);
+ [self.game gameButton:100 state:2];frames(self.game,40);[self.game openHUDEditor:nil];render(self.game);attachment(@"HUD_game_tools");
+ key(self.game,0x3f);XCTAssertTrue([[self.game valueForKey:@"gameToolsFocus"]boolValue]);key(self.game,0x2b);key(self.game,0x28);XCTAssertTrue([[self.game valueForKey:@"hudHideGuides"]boolValue]);key(self.game,0x3f);XCTAssertFalse([[self.game valueForKey:@"gameToolsFocus"]boolValue]);key(self.game,0x29);XCTAssertFalse([[self.game valueForKey:@"hudEditing"]boolValue]);
 }
 - (void)testPauseMenuHUDEntryUsesGameTouchAndKeyboard {
  [self startFixture];render(self.game);
@@ -215,7 +245,7 @@ NSDictionary* macFrameMetrics(const std::vector<double>& values) {
  [self.game gameButton:104 state:2];XCTAssertFalse([[self.game valueForKey:@"hudEditing"]boolValue]);
  [self.game gameButton:100 state:2];frames(self.game,100);render(self.game);
  HMGameHUD* hud=[self.game valueForKey:@"hud"];XCTAssertEqual([hud receiverAt:CGPointMake(240,190)],104);
- XCTAssertTrue([[self.game valueForKey:@"hudEntry"]isHidden]);
+ XCTAssertTrue(CGRectIsEmpty([self.game gameButtonRect:3005]));
  auto before=storage<heavymach::SaveData>(self.game,"_save").encode();auto rng=storage<uint32_t>(self.game,"_randomState");
  auto c=[self.game currentHUDLayout];auto logical=c.legacy.apply(heavymach::hud::Point{240,190});
  auto& vp=storage<heavymach::Viewport>(self.game,"_viewport");
@@ -232,10 +262,11 @@ NSDictionary* macFrameMetrics(const std::vector<double>& values) {
  [self.game routePoint:point state:2 token:token];
  XCTAssertTrue([[self.game valueForKey:@"hudEditing"]boolValue]);XCTAssertTrue(session->world().paused);
  frames(self.game,60);XCTAssertEqual(before,storage<heavymach::SaveData>(self.game,"_save").encode());XCTAssertEqual(rng,storage<uint32_t>(self.game,"_randomState"));
- [self.game closeHUDEditor];render(self.game);XCTAssertTrue(session->world().paused);
+ auto resumePoint=c.legacy.apply(heavymach::hud::Point{240,230});CGPoint blank=CGPointMake(vp.x+resumePoint.x*vp.scale,vp.y+(vp.logicalHeight-resumePoint.y)*vp.verticalScale());id resting=[NSObject new];[self.game routePoint:blank state:0 token:resting];
+ [self.game closeHUDEditor];render(self.game);[self.game routePoint:blank state:2 token:resting];XCTAssertTrue(session->world().paused);
  for(int i=0;i<12;++i){[hud moveKeyboardFocus:1];CGRect rect=[hud keyboardFocusRect];if([hud receiverAt:CGPointMake(CGRectGetMidX(rect),CGRectGetMidY(rect))]==104)break;}
  [hud activateKeyboardFocus];XCTAssertTrue([[self.game valueForKey:@"hudEditing"]boolValue]);
- NSArray* buttons=[self.game valueForKey:@"hudEditorButtons"];[self.game hudEditorAction:buttons[2]];
+ [self.game hudEditorAction:2];
  XCTAssertTrue(session->world().paused);XCTAssertEqual([[self.game valueForKey:@"hudLayoutWrites"]integerValue],0);
  [self.game gameButton:101 state:2];XCTAssertFalse(session->world().paused);
  XCTAssertEqual(((HMInputTestView*)self.game).gameSaveCalls,0u);
@@ -257,7 +288,7 @@ NSDictionary* macFrameMetrics(const std::vector<double>& values) {
 #if !TARGET_OS_OSX
  auto a=[XCTAttachment attachmentWithImage:[(HMGLRenderer*)[self.game valueForKey:@"glRenderer"]snapshot]];a.name=@"HUD_editor_moved";a.lifetime=XCTAttachmentLifetimeKeepAlways;[self addAttachment:a];
 #endif
- NSArray* buttons=[self.game valueForKey:@"hudEditorButtons"];[self.game hudEditorAction:buttons[2]];
+ [self.game hudEditorAction:2];
  XCTAssertFalse([[self.game valueForKey:@"hudEditing"]boolValue]);XCTAssertEqual([[self.game valueForKey:@"hudLayoutWrites"]integerValue],1);
  auto saved=storage<heavymach::hud::Configuration>(self.game,"_hudLayout");XCTAssertTrue(saved.positions[heavymach::hud::weapon].has_value());
  [self.game gameButton:101 state:2];frames(self.game,50);render(self.game);
@@ -265,12 +296,12 @@ NSDictionary* macFrameMetrics(const std::vector<double>& values) {
  int old=session->selectedWeapon();id click=[NSObject new];[self.game routePoint:point(moved.x,moved.y) state:0 token:click];[self.game routePoint:point(moved.x,moved.y) state:2 token:click];XCTAssertNotEqual(session->selectedWeapon(),old);
  old=session->selectedWeapon();auto original=c.legacy.apply(heavymach::hud::Point{103,31});[self.game routePoint:point(original.x,original.y) state:0 token:click];[self.game routePoint:point(original.x,original.y) state:2 token:click];XCTAssertEqual(session->selectedWeapon(),old);
  storage<heavymach::hud::Configuration>(self.game,"_hudLayout")={};[self.game loadHUDLayout];XCTAssertTrue(saved.samePositions(storage<heavymach::hud::Configuration>(self.game,"_hudLayout")));
- [self.game gameButton:100 state:2];frames(self.game,40);[self.game openHUDEditor:nil];[self.game hudEditorAction:buttons[0]];[self.game hudEditorAction:buttons[1]];XCTAssertTrue(saved.samePositions(storage<heavymach::hud::Configuration>(self.game,"_hudLayout")));XCTAssertEqual([[self.game valueForKey:@"hudLayoutWrites"]integerValue],1);
- [self.game openHUDEditor:nil];[self.game hudEditorAction:buttons[0]];[self.game hudEditorAction:buttons[2]];XCTAssertFalse(storage<heavymach::hud::Configuration>(self.game,"_hudLayout").customized());XCTAssertEqual([[self.game valueForKey:@"hudLayoutWrites"]integerValue],2);
+ [self.game gameButton:100 state:2];frames(self.game,40);[self.game openHUDEditor:nil];[self.game hudEditorAction:0];[self.game hudEditorAction:1];XCTAssertTrue(saved.samePositions(storage<heavymach::hud::Configuration>(self.game,"_hudLayout")));XCTAssertEqual([[self.game valueForKey:@"hudLayoutWrites"]integerValue],1);
+ [self.game openHUDEditor:nil];[self.game hudEditorAction:0];[self.game hudEditorAction:2];XCTAssertFalse(storage<heavymach::hud::Configuration>(self.game,"_hudLayout").customized());XCTAssertEqual([[self.game valueForKey:@"hudLayoutWrites"]integerValue],2);
 }
 - (void)testMissionSelectionHasNoHUDEntryAndPauseExamplePreservesSave {
  [self.game refreshScreen:4];render(self.game);
- XCTAssertTrue([[self.game valueForKey:@"hudEntry"]isHidden]);
+ XCTAssertTrue(CGRectIsEmpty([self.game gameButtonRect:3005]));
  auto menuSave=storage<heavymach::SaveData>(self.game,"_save").encode();
  [self.game openHUDEditor:nil];XCTAssertFalse([[self.game valueForKey:@"hudEditing"]boolValue]);
  XCTAssertEqual(menuSave,storage<heavymach::SaveData>(self.game,"_save").encode());
@@ -280,7 +311,7 @@ NSDictionary* macFrameMetrics(const std::vector<double>& values) {
  [self startFixture];[self.game gameButton:100 state:2];frames(self.game,40);
  auto before=storage<heavymach::SaveData>(self.game,"_save").encode();auto rng=storage<uint32_t>(self.game,"_randomState");
  [self.game openHUDEditor:nil];XCTAssertTrue([[self.game valueForKey:@"hudEditing"]boolValue]);
- NSArray* buttons=[self.game valueForKey:@"hudEditorButtons"];[self.game hudEditorAction:buttons[4]];render(self.game);
+ [self.game hudEditorAction:4];render(self.game);
  auto& example=storage<std::unique_ptr<heavymach::GameSession>>(self.game,"_hudExampleSession");XCTAssertTrue(bool(example));XCTAssertGreaterThan(example->enemyCount(),size_t(0));
  self.game.frame=CGRectMake(0,0,1400,700);[self.game updateCanvasGeometry];render(self.game);
  XCTAssertEqual(before,storage<heavymach::SaveData>(self.game,"_save").encode());XCTAssertEqual(rng,storage<uint32_t>(self.game,"_randomState"));
@@ -292,11 +323,11 @@ NSDictionary* macFrameMetrics(const std::vector<double>& values) {
  id token=[NSObject new];auto center=c.group(heavymach::hud::jump).transform.apply(heavymach::hud::Point{34,34});
  [self.game routePoint:point(center) state:0 token:token];[self.game routePoint:point(center) state:2 token:token];XCTAssertFalse(storage<heavymach::hud::Configuration>(self.game,"_hudDraft").customized());
  auto& draft=storage<heavymach::hud::Configuration>(self.game,"_hudDraft");draft.positions[heavymach::hud::weapon]=heavymach::hud::placementForOrigin(heavymach::hud::bounds[heavymach::hud::weapon],c.legacy,c.safe,{c.legacy.offset.x,c.legacy.offset.y});
- NSArray* buttons=[self.game valueForKey:@"hudEditorButtons"];[self.game hudEditorAction:buttons[2]];XCTAssertTrue([[self.game valueForKey:@"hudEditing"]boolValue]);XCTAssertEqual([[self.game valueForKey:@"hudLayoutWrites"]integerValue],0);
+ [self.game hudEditorAction:2];XCTAssertTrue([[self.game valueForKey:@"hudEditing"]boolValue]);XCTAssertEqual([[self.game valueForKey:@"hudLayoutWrites"]integerValue],0);
  draft.positions={};draft.positions[heavymach::hud::weapon]=heavymach::hud::Placement{0,.5};
  NSURL* original=[self.game valueForKey:@"saveURL"];[self.game setValue:[self.temp URLByAppendingPathComponent:@"missing/HvM.dat"] forKey:@"saveURL"];
- [self.game hudEditorAction:buttons[2]];XCTAssertTrue([[self.game valueForKey:@"hudEditing"]boolValue]);XCTAssertEqual([[self.game valueForKey:@"hudLayoutWrites"]integerValue],0);
- [self.game setValue:original forKey:@"saveURL"];[self.game hudEditorAction:buttons[2]];XCTAssertFalse([[self.game valueForKey:@"hudEditing"]boolValue]);
+ [self.game hudEditorAction:2];XCTAssertTrue([[self.game valueForKey:@"hudEditing"]boolValue]);XCTAssertEqual([[self.game valueForKey:@"hudLayoutWrites"]integerValue],0);
+ [self.game setValue:original forKey:@"saveURL"];[self.game hudEditorAction:2];XCTAssertFalse([[self.game valueForKey:@"hudEditing"]boolValue]);
  auto saved=storage<heavymach::hud::Configuration>(self.game,"_hudLayout");[@"invalid json" writeToURL:[self.game hudLayoutURL] atomically:YES encoding:NSUTF8StringEncoding error:nil];[self.game loadHUDLayout];XCTAssertTrue(saved.samePositions(storage<heavymach::hud::Configuration>(self.game,"_hudLayout")));
  self.game.frame=CGRectMake(0,0,1920,640);[self.game updateCanvasGeometry];auto& layout=storage<heavymach::hud::Configuration>(self.game,"_hudLayout");layout.positions={};layout.positions[heavymach::hud::jump]=heavymach::hud::Placement{.43,.5};layout.positions[heavymach::hud::weapon]=heavymach::hud::Placement{.56,.5};[self.game updateCanvasGeometry];XCTAssertTrue([self.game currentHUDLayout].customized());
  self.game.frame=CGRectMake(0,0,960,640);[self.game updateCanvasGeometry];XCTAssertFalse([self.game currentHUDLayout].customized());XCTAssertTrue(layout.customized());
@@ -311,13 +342,13 @@ NSDictionary* macFrameMetrics(const std::vector<double>& values) {
   [self.game routePoint:point({r.x+r.width/2,r.y+r.height/2}) state:0 token:token];[self.game routePoint:point({r.x+r.width/2,r.y+r.height/2}) state:2 token:token];
   XCTAssertFalse(storage<heavymach::hud::Configuration>(self.game,"_hudDraft").customized());
   CGRect controls=((HMValidationControls*)[self.game valueForKey:@"validationControls"]).frame;
-  XCTAssertFalse(CGRectIntersectsRect(controls,[[self.game valueForKey:@"hudToolbar"] frame]));
+  CGRect tool=[self.game gameButtonRect:3002];auto vp=storage<heavymach::Viewport>(self.game,"_viewport");CGRect nativeTool=CGRectMake(vp.x+tool.origin.x*vp.scale,vp.y+(vp.logicalHeight-CGRectGetMaxY(tool))*vp.verticalScale(),tool.size.width*vp.scale,tool.size.height*vp.verticalScale());XCTAssertFalse(CGRectIntersectsRect(controls,nativeTool));
   auto& draft=storage<heavymach::hud::Configuration>(self.game,"_hudDraft");
   [self.game setValue:@(heavymach::hud::cheat) forKey:@"hudSelected"];[self.game handleKeyCode:0x51 pressed:YES];
   XCTAssertFalse(CGRectEqualToRect(controls,((HMValidationControls*)[self.game valueForKey:@"validationControls"]).frame));
   draft.positions={};draft.positions[heavymach::hud::weapon]=heavymach::hud::placementForOrigin(c.localBounds(heavymach::hud::weapon),c.legacy,c.safe,{r.x,r.y});XCTAssertFalse(heavymach::hud::valid(draft,true));
   draft.positions={};draft.positions[heavymach::hud::cheat]=heavymach::hud::Placement{.5,.5};
-  NSArray* buttons=[self.game valueForKey:@"hudEditorButtons"];[self.game hudEditorAction:buttons[0]];
+  [self.game hudEditorAction:0];
   XCTAssertTrue(CGRectEqualToRect(controls,((HMValidationControls*)[self.game valueForKey:@"validationControls"]).frame));
   [self.game closeHUDEditor];XCTAssertFalse(bool(storage<std::unique_ptr<heavymach::GameSession>>(self.game,"_hudExampleSession")));
  }
@@ -358,7 +389,7 @@ NSDictionary* macFrameMetrics(const std::vector<double>& values) {
  [self.game routePoint:point(b.x+b.width/2,b.y+b.height/2) state:0 token:token];
  [self.game routePoint:point(b.x+b.width/2,b.y+b.height/2+100) state:1 token:token];
  [self.game routePoint:point(b.x+b.width/2,b.y+b.height/2+100) state:2 token:token];
- NSArray* buttons=[self.game valueForKey:@"hudEditorButtons"];[self.game hudEditorAction:buttons[2]];
+ [self.game hudEditorAction:2];
  XCTAssertFalse([[self.game valueForKey:@"hudEditing"]boolValue]);
  XCTAssertTrue(storage<heavymach::hud::Configuration>(self.game,"_hudLayout").positions[heavymach::hud::gauges].has_value());
  [self.game gameButton:101 state:2];frames(self.game,50);
@@ -377,7 +408,7 @@ NSDictionary* macFrameMetrics(const std::vector<double>& values) {
  [self.game gameButton:100 state:2];frames(self.game,40);[self.game openHUDEditor:nil];
  float hp=storage<float>(hud,"_hpRotation"),gear=storage<float>(hud,"_gear"),reload=storage<float>(self.game,"_reloadGauge");
  frames(self.game,120);XCTAssertEqual(hp,storage<float>(hud,"_hpRotation"));XCTAssertEqual(gear,storage<float>(hud,"_gear"));XCTAssertEqual(reload,storage<float>(self.game,"_reloadGauge"));
- [self.game hudEditorAction:buttons[1]];XCTAssertEqual([[self.game valueForKey:@"hudLayoutWrites"]integerValue],1);
+ [self.game hudEditorAction:1];XCTAssertEqual([[self.game valueForKey:@"hudLayoutWrites"]integerValue],1);
  NSLog(@"HM_HUD_GAUGES movedY=%.2f reloadRange=%.3f hpChanged=1 frozenFrames=120 layoutWrites=1",c.group(heavymach::hud::gauges).visualBounds.y,hi-lo);
 }
 - (void)testHUDAssetOwnershipAudit {
@@ -579,7 +610,7 @@ NSDictionary* macFrameMetrics(const std::vector<double>& values) {
  for(NSString* size in @[@"1200x800",@"screen_size"]){
   NSRect rectangle=[size isEqualToString:@"screen_size"]?NSScreen.mainScreen.frame:NSMakeRect(50,50,1200,800);
   [window setFrame:rectangle display:YES];
-  for(NSString* scene in @[@"title_animation",@"slot_preview",@"stage01_firing"]){
+  for(NSString* scene in @[@"title_animation",@"slot_preview",@"stage01_firing",@"hud_editor",@"transfer_panel"]){
   __weak HMGameView* releasedView;__weak HMMedia* releasedMedia;__weak HMGLRenderer* releasedRenderer;__weak HMOpenALAudio* releasedAudio;
   @autoreleasepool{
    HMMacTimedInputView* view=[[HMMacTimedInputView alloc]initWithFrame:window.contentView.bounds];
@@ -589,8 +620,10 @@ NSDictionary* macFrameMetrics(const std::vector<double>& values) {
    [view setValue:@11 forKey:@"randomState"];
    storage<heavymach::KeyboardInput>(view,"_keyboardControls")={};
    [view setValue:@NO forKey:@"resumeRequired"];storage<heavymach::LoadingTransition>(view,"_loading")={};
-   if([scene isEqualToString:@"slot_preview"])[view refreshScreen:3];
-   if([scene isEqualToString:@"stage01_firing"])[view startSlot:0 mode:0 mission:0 stage:0];
+   if([scene isEqualToString:@"slot_preview"]||[scene isEqualToString:@"transfer_panel"])[view refreshScreen:3];
+   if([scene isEqualToString:@"stage01_firing"]||[scene isEqualToString:@"hud_editor"])[view startSlot:0 mode:0 mission:0 stage:0];
+   if([scene isEqualToString:@"hud_editor"]){[view setValue:@YES forKey:@"gameMenu"];[view openHUDEditor:nil];XCTAssertTrue([[view valueForKey:@"hudEditing"]boolValue]);}
+   if([scene isEqualToString:@"transfer_panel"]){[view setValue:@YES forKey:@"active"];[view openTransfer:nil];[view setValue:@NO forKey:@"active"];}
    view.firing=[scene isEqualToString:@"stage01_firing"];
    view.finished=[self expectationWithDescription:[size stringByAppendingString:scene]];
    XCTestExpectation* done=view.finished;[view setApplicationActive:YES];
@@ -653,27 +686,13 @@ NSDictionary* macFrameMetrics(const std::vector<double>& values) {
  }
 }
 - (void)testValidationPanelStartsWithChosenWeaponAtEveryGrade {
- auto& data=storage<heavymach::GameData>(self.game,"_data");
- HMValidationPanel* panel=[[HMValidationPanel alloc]initWithData:&data];
- NSPopUpButton* weapon=[panel valueForKey:@"weapon"];
- NSButton* all=[panel valueForKey:@"all"];
- auto gradeIvar=class_getInstanceVariable(panel.class,"_grades");
- auto grades=reinterpret_cast<NSTextField* __strong *>(reinterpret_cast<uint8_t*>((__bridge void*)panel)+ivar_getOffset(gradeIvar));
- __block std::optional<heavymach::ValidationScenario> received;
- panel.applyFixture=^(const heavymach::ValidationScenario& scenario){received=scenario;};
+ auto& data=storage<heavymach::GameData>(self.game,"_data");HMValidationPanel* panel=[[HMValidationPanel alloc]initWithData:&data];auto weapons=heavymach::validationWeapons(data);
  for(int grade=0;grade<=6;++grade)for(bool allWeapons:{false,true}){
-  for(int part=0;part<3;++part)grades[part].integerValue=grade;
-  all.state=allWeapons?NSControlStateValueOn:NSControlStateValueOff;
-  for(NSString* name in weapon.itemTitles){
-   [weapon selectItemWithTitle:name];received.reset();[panel start:nil];
-   XCTAssertTrue(received.has_value());if(!received)continue;
-   heavymach::SaveSlot slot;heavymach::prepareValidationSlot(slot,data,*received);
-   XCTAssertGreaterThanOrEqual(received->selectedWeapon,0);
-   XCTAssertLessThan(received->selectedWeapon,slot.weaponCount());
-   XCTAssertEqualObjects([NSString stringWithUTF8String:slot.weaponName(received->selectedWeapon).c_str()],name);
-  }
+  panel.bodyGrade=panel.topGrade=panel.weaponGrade=grade;panel.allWeapons=allWeapons;
+  for(size_t i=0;i<weapons.size();++i){panel.weaponIndex=int(i);auto received=[panel scenario];heavymach::SaveSlot slot;heavymach::prepareValidationSlot(slot,data,received);XCTAssertGreaterThanOrEqual(received.selectedWeapon,0);XCTAssertLessThan(received.selectedWeapon,slot.weaponCount());XCTAssertEqual(slot.weaponName(received.selectedWeapon),weapons[i]);}
  }
 }
+
 #endif
 - (void)testFullscreenRatiosAndTouchInverse {
  for(CGSize size:{CGSizeMake(1024,768),CGSizeMake(1366,1024),CGSizeMake(1440,900),CGSizeMake(912,420),CGSizeMake(800,900)}){

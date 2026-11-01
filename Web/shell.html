@@ -20,34 +20,21 @@
   #safe-probe { position: fixed; inset: 0; pointer-events: none; visibility: hidden;
     padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left); }
   .overlay { position: fixed; display: none; color: #fff; background: rgba(0,0,0,.92); white-space: pre-wrap; z-index: 3; }
-  #hm-keyboard { inset: 24px; padding: 16px; font: 15px/1.5 ui-monospace, Menlo, monospace; overflow: auto; }
   #hm-error { left: 24px; right: 24px; top: 30%; padding: 16px; font-size: 14px; }
   #hm-boot { position: fixed; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; color: #c9ced6; z-index: 4; background: #000; font-size: 15px; }
   #hm-boot .bar { width: min(320px, 70vw); height: 4px; background: #1f2329; border-radius: 2px; overflow: hidden; }
   #hm-boot .bar > i { display: block; height: 100%; width: 0; background: #d8a238; transition: width .2s; }
   #hm-rotate { position: fixed; inset: 0; display: none; align-items: center; justify-content: center; text-align: center; padding: 24px; color: #fff; background: #000; z-index: 5; font-size: 16px; line-height: 1.6; }
   @media (orientation: portrait) and (pointer: coarse) { #hm-rotate.enabled { display: flex; } }
-  /* HUD layout editor controls (HMHUDEditor UIKit views): CSS px = UIKit points. */
-  #hm-hud-ui { position: fixed; inset: 0; pointer-events: none; z-index: 2; }
-  #hm-hud-ui .hud-btn { position: absolute; width: 168px; height: 44px; padding: 0; border: 0; margin: 0; pointer-events: auto;
-    background: #2a2a24 no-repeat center / 168px 44px; color: transparent; font-size: 0; touch-action: manipulation; -webkit-tap-highlight-color: transparent; }
-  #hm-hud-ui .hud-btn.text { color: #f9b838; font: bold 18px "DIN Condensed", "Arial Narrow", sans-serif; }
-  #hm-hud-ui .hud-bar { position: absolute; width: 168px; pointer-events: none; }
-  #hm-hud-ui .hud-scroll { position: absolute; left: 0; top: 0; width: 168px; overflow-y: auto; pointer-events: auto; }
-  #hm-hud-ui .hud-label { position: absolute; left: 0; top: 0; width: 168px; height: 48px; box-sizing: border-box; padding: 2px 4px;
-    display: flex; align-items: center; justify-content: center; text-align: center; white-space: pre-line; overflow: hidden;
-    color: rgb(242,196,102); background: rgba(15,15,15,.94); font: 12px/1.25 -apple-system, sans-serif; }
 </style>
 </head>
 <body>
 <canvas id="canvas" tabindex="0" aria-label="Heavy Mach 1"></canvas>
 <div id="safe-probe"></div>
-<div id="hm-keyboard" class="overlay"></div>
 <div id="hm-error" class="overlay"></div>
 <div id="hm-boot"><div id="hm-boot-text">게임 자원을 불러오는 중</div><div class="bar"><i id="hm-boot-bar"></i></div></div>
 <div id="hm-storage" class="overlay" style="inset:24px;bottom:auto;padding:20px;z-index:8" role="alert"><p id="hm-storage-text"></p><button id="hm-storage-retry" type="button">Retry</button></div>
 <div id="hm-context" class="overlay" style="inset:24px;bottom:auto;padding:20px;z-index:7" role="alert">Graphics interrupted. Waiting for recovery.</div>
-<div id="hm-hud-ui"></div>
 <div id="hm-rotate">기기를 가로로 돌려 주세요.<br>Heavy Mach 1은 가로 화면에서 플레이합니다.</div>
 <script>
 (function(){
@@ -118,12 +105,14 @@
   canvas.addEventListener('contextmenu', e => e.preventDefault());
 
   window.addEventListener('keydown', e => {
+    if (e.target instanceof HTMLTextAreaElement || e.target instanceof HTMLInputElement) return;
     if (!ready || e.metaKey || e.ctrlKey) { if (ready && (e.metaKey || e.ctrlKey)) Module._hm_keyboard_blur(); return; }
     const code = HID[e.code]; if (!code) return;
     if (e.repeat) { e.preventDefault(); return; }
     if (Module._hm_key(code, 1)) e.preventDefault();
   });
   window.addEventListener('keyup', e => {
+    if (e.target instanceof HTMLTextAreaElement || e.target instanceof HTMLInputElement) return;
     if (!ready) return; const code = HID[e.code]; if (!code) return;
     if (Module._hm_key(code, 0)) e.preventDefault();
   });
@@ -194,7 +183,7 @@
   // touch device: the game holds and continues by itself back in landscape.
   function setActive() {
     if (!ready) return;
-    const foreground = !contextLost && !storageBlocked && document.visibilityState === 'visible' && document.hasFocus();
+    const foreground = !contextLost && document.visibilityState === 'visible' && document.hasFocus();
     Module._hm_active(!foreground ? 0 : portrait.matches ? 2 : 1);
   }
   document.addEventListener('visibilitychange', setActive);
@@ -231,10 +220,14 @@
   function storageError(message, retry) {
     storageBlocked = true; retryStorage = retry;
     document.getElementById('hm-storage-text').textContent = message;
-    storagePanel.style.display = 'block'; setActive();
+    storagePanel.style.display = ready ? 'none' : 'block';
+    if(ready)Module.ccall('hm_storage_ui',null,['string'],[message]);
+    setActive();
   }
   function storageRecovered() {
-    storageBlocked = false; retryStorage = null; storagePanel.style.display = 'none'; setActive();
+    storageBlocked = false; retryStorage = null; storagePanel.style.display = 'none';
+    if(ready)Module.ccall('hm_storage_ui',null,['string'],['']);
+    setActive();
   }
   document.getElementById('hm-storage-retry').addEventListener('click', () => { if (retryStorage) retryStorage(); });
   function loadSave() {
@@ -275,88 +268,10 @@
     if (revision !== savedRevision) { e.preventDefault(); e.returnValue = ''; }
   });
 
-  // HUD layout editor controls. The game sends their state (HMHUDEditor
-  // layoutHUDControls) through Module.hmHudUI; taps call Module._hm_hud_control:
-  // -1 SET GAME UI, 0 RESET LAYOUT, 1 CANCEL, 2 APPLY, 3 PREVIEW, 4 SCENE, 5 TOOLS.
-  const hudUI = { root: document.getElementById('hm-hud-ui'), sheet: null, images: new Map(), buttons: {} };
-  const hudTitles = { '-1': 'SET GAME UI', 0: 'RESET LAYOUT', 1: 'CANCEL', 2: 'APPLY', 3: 'PREVIEW', 4: 'SAMPLE SCENE', 5: 'TOOLS' };
-  // iOS hudToolImage: 168x44 from Common_Btn_OK.png (top half normal, bottom half
-  // pressed): a 2px stretched middle and 8px end caps, DIN Condensed Bold 22 with
-  // a gold stroke, drawn at 2x. The sheet pixels come premultiplied from the game.
-  function hudButtonImages(title) {
-    if (!hudUI.sheet) return null;
-    if (hudUI.images.has(title)) return hudUI.images.get(title);
-    const sheet = hudUI.sheet, sw = sheet.width, sh = sheet.height / 2, w = 168, h = 44;
-    const urls = [false, true].map(pressed => {
-      const c = document.createElement('canvas'); c.width = w * 2; c.height = h * 2;
-      const g = c.getContext('2d'); g.scale(2, 2); g.imageSmoothingQuality = 'high';
-      const y = pressed ? sh : 0;
-      g.drawImage(sheet, 6, y, 2, sh, 8, 0, w - 16, h);
-      g.drawImage(sheet, 0, y, 8, sh, 0, 0, 8, h);
-      g.drawImage(sheet, sw - 8, y, 8, sh, w - 8, 0, 8, h);
-      g.font = 'bold 22px "DIN Condensed", "DINCondensed-Bold", "Arial Narrow", sans-serif';
-      const width = g.measureText(title).width, scale = Math.min(1, (w - 20) / Math.max(1, width));
-      g.translate(w / 2, h / 2 + (pressed ? 1 : 0)); g.scale(scale, scale);
-      g.textAlign = 'center'; g.textBaseline = 'middle';
-      g.fillStyle = 'rgb(20,18,10)'; g.fillText(title, 0, 1);
-      g.lineWidth = 1.32; g.strokeStyle = 'rgb(250,184,56)'; g.strokeText(title, 0, 1);
-      return c.toDataURL();
-    });
-    hudUI.images.set(title, urls); return urls;
-  }
-  function paintHudButton(b) {
-    const urls = hudButtonImages(b.dataset.title);
-    b.classList.toggle('text', !urls); b.textContent = urls ? '' : b.dataset.title;
-    b.setAttribute('aria-label', b.dataset.title);
-    if (urls) b.style.backgroundImage = 'url(' + urls[b.classList.contains('down') ? 1 : 0] + ')';
-  }
-  function hudButton(tag, parent) {
-    const b = document.createElement('button'); b.type = 'button'; b.className = 'hud-btn'; b.dataset.title = hudTitles[tag];
-    const up = () => { b.classList.remove('down'); paintHudButton(b); };
-    b.addEventListener('pointerdown', e => { e.stopPropagation(); b.classList.add('down'); paintHudButton(b); });
-    b.addEventListener('pointerup', up); b.addEventListener('pointerleave', up); b.addEventListener('pointercancel', up);
-    b.addEventListener('click', e => { e.preventDefault(); if (ready) Module._hm_hud_control(tag); canvas.focus({ preventScroll: true }); });
-    parent.appendChild(b); paintHudButton(b); hudUI.buttons[tag] = b; return b;
-  }
-  function placeRect(el, r) { el.hidden = !!r[0]; el.style.left = r[1] + 'px'; el.style.top = r[2] + 'px'; if (el.classList.contains('hud-bar')) { el.style.width = r[3] + 'px'; el.style.height = r[4] + 'px'; } }
-  function buildHudUI() {
-    if (hudUI.bar) return;
-    hudButton(-1, hudUI.root); hudButton(5, hudUI.root);
-    const bar = hudUI.bar = document.createElement('div'); bar.className = 'hud-bar'; hudUI.root.appendChild(bar);
-    const scroll = hudUI.scroll = document.createElement('div'); scroll.className = 'hud-scroll'; bar.appendChild(scroll);
-    const rows = hudUI.rows = document.createElement('div'); rows.style.position = 'relative'; scroll.appendChild(rows);
-    const label = hudUI.label = document.createElement('div'); label.className = 'hud-label'; rows.appendChild(label);
-    for (const tag of [3, 4, 0]) hudButton(tag, rows);
-    hudButton(1, bar); hudButton(2, bar);
-  }
-  function hmHudUI(state) {
-    buildHudUI(); hudUI.state = state;
-    const b = hudUI.buttons;
-    placeRect(b[-1], state.entry); placeRect(b[5], state.tools); placeRect(hudUI.bar, state.bar);
-    hudUI.scroll.style.height = state.scroll + 'px'; hudUI.rows.style.height = state.body + 'px';
-    for (const [tag, hidden, y] of state.rows) { b[tag].hidden = !!hidden; b[tag].style.left = '0px'; b[tag].style.top = y + 'px'; }
-    b[1].style.left = b[2].style.left = '0px'; b[1].style.top = state.cancel + 'px'; b[2].style.top = state.apply + 'px';
-    hudUI.label.textContent = state.label;
-    if (b[4].dataset.title !== state.scene) { b[4].dataset.title = state.scene; paintHudButton(b[4]); }
-  }
-  window.hmHudState = () => hudUI.state || null;
-  function hmSetUISheet(premultiplied, width, height) {
-    const pixels = new Uint8ClampedArray(premultiplied.length);
-    for (let i = 0; i < pixels.length; i += 4) {
-      const a = premultiplied[i + 3]; pixels[i + 3] = a;
-      for (let c = 0; c < 3; c++) pixels[i + c] = a ? Math.min(255, Math.round(premultiplied[i + c] * 255 / a)) : 0;
-    }
-    const c = document.createElement('canvas'); c.width = width; c.height = height;
-    c.getContext('2d').putImageData(new ImageData(pixels, width, height), 0, 0);
-    hudUI.sheet = c; hudUI.images.clear();
-    for (const button of Object.values(hudUI.buttons)) paintHudButton(button);
-  }
-
   window.Module = {
     canvas,
     hmSyncSave: syncSave,
-    hmHudUI,
-    hmSetUISheet,
+    hmRetryStorage(){if(retryStorage)retryStorage();},
     hmReady() {
       ready = true; document.getElementById('hm-boot').style.display = 'none';
       document.getElementById('hm-rotate').classList.add('enabled');

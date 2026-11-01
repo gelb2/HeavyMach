@@ -4,6 +4,15 @@
 [한국어](build-and-install.md) | [English](../en/public/build-and-install.md)
 <!-- language-nav:end -->
 
+## 웹·PWA·Tauri에서 플레이
+
+[HeavyMach 웹 페이지](https://gelb2.github.io/HeavyMach/)에서 **INSTALL GAME**을 선택하면 PWA 설치 안내를 볼 수 있다. iPhone·iPad Safari에서는 공유 메뉴의 홈 화면에 추가를 사용한다. Android에서는 Chrome의 앱 설치를 사용한다. 브라우저에서 바로 하려면 **PLAY IN BROWSER**를 선택한다. 첫 다운로드가 끝나면 설치한 PWA에서 오프라인으로 플레이할 수 있다.
+
+진행을 다른 기기로 옮길 때는 게임의 세이브 슬롯 화면에서 **TRANSFER PROGRESS**를 누른다. **CREATE CODE**로 코드를 만들고 다른 기기에서 입력한 뒤 **CHECK CODE → RESTORE**를 누른다. 복원 확인창에서 슬롯·경험치·레벨을 확인한다. **CANCEL**은 현재 저장을 유지한다.
+
+Tauri Mac 앱은 같은 웹 게임을 앱 창에서 실행하고 OS 파일에도 저장을 백업한다. Apple Silicon과 macOS 14 이상을 대상으로 한다. 현재 [Tauri 빌드 방법](../../Desktop/Tauri/README.md)으로 앱을 만들 수 있다. 공개 설치본의 서명·공증은 후속 과제다. [플랫폼별 저장과 검사](../reviews/mac-web-pwa-comparison-20261101.md).
+
+
 현재 main의 Apple·Android 일반 앱과 치트 검증 앱을 빌드하는 방법이다. 두 앱은 같은 게임 코어를 쓰며 별도 앱 ID와 저장 공간을 사용한다.
 
 [Apple 준비물](#준비물) · [Android 빌드와 설치](#android-빌드와-설치)

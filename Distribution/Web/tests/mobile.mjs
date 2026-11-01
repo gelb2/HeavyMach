@@ -26,7 +26,7 @@ try{
  await page.touchscreen.touchStart(x,y);
  for(let i=1;i<=10;i++){await page.touchscreen.touchMove(x+(x2-x)*i/10,y+(y2-y)*i/10);await sleep(30);}
  await page.touchscreen.touchEnd();assert.equal((await state()).hudDraftCustomized,1);
- async function control(label){const p=await game.evaluate(label=>{const b=[...document.querySelectorAll('#hm-hud-ui button')].find(b=>b.dataset.title===label),r=b.getBoundingClientRect();return [r.x+r.width/2,r.y+r.height/2];},label);await page.touchscreen.tap(...p);await sleep(300);}
+ async function control(label){const b=await game.evaluate(label=>JSON.parse(Module.UTF8ToString(Module._hm_game_ui())).buttons.find(b=>b.label===label&&b.enabled),label);if(!b)throw Error('Missing game button '+label);await tap(b.rect[0]+b.rect[2]/2,b.rect[1]+b.rect[3]/2);await sleep(300);}
  await control('TOOLS');await control('APPLY');assert.equal((await state()).hudCustomized,1);
  const saved=await game.evaluate(()=>new TextDecoder().decode(Module.FS.readFile('/persist/HUDLayoutV1-web.json')));
  step('touch-hud-drag-and-save',{layout:JSON.parse(saved)});await sleep(2000);

@@ -1,19 +1,16 @@
 #pragma once
 #if defined(HM_VALIDATION) && HM_VALIDATION
 #import "HMPlatform.h"
-#if TARGET_OS_OSX
-#define HMPanelBase NSWindowController
-#else
-#define HMPanelBase UIViewController
-#endif
 #include "ValidationScenario.hpp"
-@interface HMValidationPanel : HMPanelBase
+// Settings model only; HMGameView draws this panel with original game buttons.
+@interface HMValidationPanel : NSObject
 - (instancetype)initWithData:(const heavymach::GameData *)data;
-@property(nonatomic,copy) void(^applyFixture)(const heavymach::ValidationScenario&);
-@property(nonatomic,copy) void(^resumeSave)(void);
-@property(nonatomic,copy) void(^addExperience)(void);
-@property(nonatomic,copy) void(^closed)(void);
-@property(nonatomic) BOOL wideCanvas;
-@property(nonatomic,copy) void(^canvasChanged)(BOOL enabled);
+@property(nonatomic) int mission,stage,level,boss,weaponIndex,page;
+@property(nonatomic) BOOL nearLevel,allWeapons,wideCanvas;
+@property(nonatomic) int bodyGrade,topGrade,weaponGrade;
+- (void)adjust:(int)field delta:(int)delta;
+- (NSString*)fieldText:(int)field;
+- (heavymach::ValidationScenario)scenario;
+- (void)saveSettings;
 @end
 #endif

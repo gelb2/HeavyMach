@@ -39,6 +39,7 @@ EM_JS(void,hm_sync_save,(),{if(Module.hmSyncSave)Module.hmSyncSave();});
 EM_JS(void,hm_sync_hud_save,(),{Module.hmSyncSave(ok=>Module._hm_hud_save_result(ok?1:0));});
 EM_JS(int,hm_trace_enabled,(),{try{return new URLSearchParams(location.search).get('trace')==='1'?1:0;}catch(e){return 0;}});
 
+EM_JS(void,hm_transfer_action,(int action),{if(Module.hmTransferAction)Module.hmTransferAction(action);});
 namespace hmweb {
 using namespace heavymach;
 namespace {
@@ -246,6 +247,7 @@ void GameView::finishUpgrade(){
 double GameView::interactionTime() const{return emscripten_get_now()/1000.0;}
 void GameView::noteInteraction(){_lastInteraction=interactionTime();}
 void GameView::cancelGameInput(){
+    _gameButtons.cancel();
     _aimTouches.clear();
     _leftPressed=_rightPressed=_upPressed=_downPressed=_keyboardFire=false;_hasKeyboardAim=false;_keyboardAimVisible=false;
     _heldTouches.clear();_worldTouches.clear();_hudTouches.clear();_hudCapturedReceivers.clear();if(_hud)_hud->cancelInput();
@@ -349,20 +351,15 @@ void GameView::consumeGameEvents(){
 std::string GameView::keyName(unsigned code) const{
     if(code>=4&&code<=29)return std::string(1,char('A'+code-4));
     if(code>=30&&code<=38)return std::to_string(code-29);
-    switch(code){case 39:return "0";case 0x28:return "Enter";case 0x29:return "Esc";case 0x2b:return "Tab";case 0x2c:return "Space";case 0x4f:return "→";case 0x50:return "←";case 0x51:return "↓";case 0x52:return "↑";case 0xe1:return "Shift";case 0xe5:return "Right Shift";case 0x3b:return "F2";default:{char text[16];std::snprintf(text,sizeof(text),"HID %02X",code);return text;}}
+    switch(code){case 39:return "0";case 0x28:return "Enter";case 0x29:return "Esc";case 0x2b:return "Tab";case 0x2c:return "Space";case 0x4f:return "RIGHT";case 0x50:return "LEFT";case 0x51:return "DOWN";case 0x52:return "UP";case 0xe1:return "Shift";case 0xe5:return "Right Shift";case 0x3b:return "F2";default:{char text[16];std::snprintf(text,sizeof(text),"HID %02X",code);return text;}}
 }
-void GameView::refreshKeyboardHelp(){
-    static const char* names[]={"왼쪽 이동","오른쪽 이동","왼쪽 조준","오른쪽 조준","위로 조준","아래로 조준","사격","점프","이전 무기","다음 무기","천천히 이동·조준","선택","일시정지·뒤로","다음 버튼","키 설정","다음 표적"};
-    std::string text="키 설정\n↑↓ 선택 · Enter 키 변경 · Backspace 기본값 · Esc 닫기\n같은 키를 지정하면 두 동작의 키가 서로 바뀝니다.\n\n";
-    for(unsigned i=0;i<std::size(names);++i)text+=std::string(i==_settingsSelection?"▶":"  ")+" "+names[i]+"  —  "+keyName(_keyboardControls.bindings[i])+"\n";
-    if(_capturingKey)text+="\n사용할 키를 누르세요. Esc: 취소";
-    hm_set_overlay("hm-keyboard",text.c_str(),_keyboardSettingsOpen);
-}
+void GameView::refreshKeyboardHelp(){}
 void GameView::saveKeyboardBindings(){
     std::string values;for(auto key:_keyboardControls.bindings){if(!values.empty())values+=",";values+=std::to_string(key);}
     hm_pref_set_string("KeyboardBindingsV1",values.c_str());
 }
 void GameView::toggleKeyboardSettings(){
+    if(!_keyboardSettingsOpen&&_loading.state()<6)return;
     if(!_keyboardSettingsOpen){_settingsWasPaused=_session&&_session->world().paused;cancelGameInput();if(_session)_session->setPaused(true);}
     else{if(_session)_session->setPaused(_settingsWasPaused||_resumeRequired);cancelGameInput();}
     _keyboardSettingsOpen=!_keyboardSettingsOpen;_capturingKey=false;refreshKeyboardHelp();
@@ -375,7 +372,18 @@ void GameView::ensureKeyboardAim(){
 bool GameView::key(unsigned code,bool pressed){
     using A=KeyAction;
     if(!_active||!_rendererReady)return false;
-    if(_hudEditing)return hudEditorKey(code,pressed);
+    if(!_storageMessage.empty()){if(auto event=_gameButtons.key(code,pressed))gameUIAction(event->id,event->state);return true;}
+    if(_transferMode){
+        if(pressed&&code==0x29&&!_transferBusy){hm_transfer_action(_transferMode==2?912:910);return true;}
+        if(auto event=_gameButtons.key(code,pressed))gameUIAction(event->id,event->state);
+        return true;
+    }
+    if(_hudEditing){
+        if(pressed&&code==0x3f){_hudToolFocus=!_hudToolFocus;_hudHideGuides=false;return true;}
+        if(_hudToolFocus&&code!=0x29){if(auto event=_gameButtons.key(code,pressed))gameUIAction(event->id,event->state);return true;}
+        return hudEditorKey(code,pressed);
+    }
+    if(transferAvailable()&&pressed&&code==0x3c){gameUIAction(900,2);return true;}
     if(code<_aimBlockedKeys.size()&&_aimBlockedKeys[code]){if(!pressed)_aimBlockedKeys[code]=false;return true;}
     if(_keyboardSettingsOpen){
         if(!_keyboardControls.set(code,pressed)||!pressed)return true;
@@ -506,7 +514,7 @@ void GameView::setApplicationActive(bool active,bool orientationOnly){
         if(_glRenderer)_glRenderer->finish();_active=false;
     }else{
         _orientationHold=false;
-        _active=true;_tilt={};noteInteraction();_audio->setApplicationActive(true);
+        _active=true;_tilt={};noteInteraction();_audio->setApplicationActive(_storageMessage.empty());
         const double now=interactionTime();
         _nextTimerDue=now+originalInterval;_nextMotionDue=now+TiltState::interval;
         // Pause/menu state is intentionally retained until an explicit action.
@@ -560,7 +568,7 @@ Rect GameView::safeContentRect() const{
 // ticks and draws once. A wall-time accumulator can alternate zero/two ticks
 // on adjacent display callbacks and visibly stutter even at a steady 60 Hz.
 void GameView::advanceOriginalFrame(){
-    if(_hudEditing)return;
+    if(_hudEditing||!_storageMessage.empty())return;
     _time+=originalInterval;
     if(_session)_worldShake.tick(_time);
     else if(!_showMenu)_titleShake.tick(_time);
@@ -641,7 +649,7 @@ void GameView::renderOpenGLFrame(){
     if(!_glRenderer->setLogicalSize(_canvasWidth,_canvasHeight)){hm_set_overlay("hm-error","Game canvas allocation failed",1);return;}
     if(!_glRenderer->beginFrame()){hm_set_overlay("hm-error","WebGL context unavailable",1);return;}
     _media->setGlRenderer(_glRenderer.get());
-    drawLogicalFrame();drawKeyboardIndicators();
+    drawLogicalFrame();drawKeyboardIndicators();drawGameButtons();
     const int dw=int(std::lround(_surface.cssWidth*_surface.devicePixelRatio)),dh=int(std::lround(_surface.cssHeight*_surface.devicePixelRatio));
     if(!_glRenderer->present(_surface.cssWidth,_surface.cssHeight,dw,dh,makeRect(_viewport.x,_viewport.y,_canvasWidth*_viewport.scale,_canvasHeight*_viewport.verticalScale())))
         hm_set_overlay("hm-error","WebGL presentation failed",1);
@@ -810,8 +818,11 @@ void GameView::pointer(long token,double x,double y,int state){
     routePoint({x,y},state,token);
 }
 void GameView::routePoint(Point point,int state,long touch){
-    if(!_active||!_loadError.empty()||_keyboardSettingsOpen)return;
-    if(_hudEditing){auto q=_viewport.logical(point.x,point.y);hudEditorPoint(q?Point{q->first,q->second}:Point{-1000,-1000},state,touch);return;}
+    if(!_active||!_loadError.empty())return;
+    auto uiPoint=_viewport.logical(point.x,point.y);
+    if(auto event=_gameButtons.touch(touch,uiPoint?uiPoint->first:-10000,uiPoint?uiPoint->second:-10000,state)){gameUIAction(event->id,event->state);return;}
+    if(_transferMode||_keyboardSettingsOpen||!_storageMessage.empty()){_gameButtons.consumeTouch(touch,state);return;}
+    if(_hudEditing){if(state==0)_hudEditorTouches.insert(touch);else if(state>=2)_hudEditorTouches.erase(touch);auto q=_viewport.logical(point.x,point.y);hudEditorPoint(q?Point{q->first,q->second}:Point{-1000,-1000},state,touch);return;}
     _keyboardAimVisible=false;
     if(_aimCancelledTouches.contains(touch)){if(state>=2)_aimCancelledTouches.erase(touch);return;}
     auto logical=_viewport.logical(point.x,point.y);
@@ -869,3 +880,4 @@ std::string GameView::debugState(){
 }
 }
 #include "WebHUDEditor.inc"
+#include "WebGameButtons.inc"

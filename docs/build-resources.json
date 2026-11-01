@@ -7539,6 +7539,11 @@
       "path": "Resources/Assets.xcassets/AppIcon.appiconset/AppIcon64.png",
       "bytes": 8817,
       "sha256": "48cecd48eb115b799cea502cade26eb9b614a86f7b6be2948dc2b23d87738b0e"
+    },
+    {
+      "path": "Art/Extensions/GameMenuGlyphs.png",
+      "bytes": 28517,
+      "sha256": "447977393ad822a3508634f4b725368dfcb5a9b2affe0a4ed187e610142a487b"
     }
   ]
 }

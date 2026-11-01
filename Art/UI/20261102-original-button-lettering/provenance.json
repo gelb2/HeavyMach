@@ -1,0 +1,12 @@
+{
+  "date": "2026-11-02",
+  "generator": "imagegen",
+  "output": "glyphs-generated.png",
+  "references": [
+    "Resources/OriginalImages/Common_Btn_OK.png",
+    "Resources/OriginalImages/StageClearBtn.png"
+  ],
+  "runtime_asset": "Art/Extensions/GameMenuGlyphs.png",
+  "packing_tool": "tools/build_game_menu_glyphs.py",
+  "prompt": "Create a production bitmap alphabet sprite sheet for an existing 2009 military tank game. The two supplied images are STRICT TYPOGRAPHY references: original OK button and SELECT MISSION / NEXT STAGE buttons. Match their upright condensed industrial SANS SERIF gold outlined lettering, dark charcoal interior, thin pale highlight and dark outline. NO serifs, NO fantasy/medieval/Roman font, NO ornamental strokes, NO distressed pixel font, NO calligraphy. Keep the squared rounded corners and technological block letter construction of the original. Do not draw buttons, plates, backgrounds or decorations. Only 36 separate isolated glyphs on a genuinely transparent background. Exactly a 6 by 6 evenly spaced grid, each glyph centered within an equal cell with ample transparent padding. All 36 glyphs share exactly the same cap height, baseline, stroke weight and colour treatment. The rows in order, left to right, are: A B C D E F; G H I J K L; M N O P Q R; S T U V W X; Y Z 0 1 2 3; 4 5 6 7 8 9. Include each exactly once, no duplicates and no missing letters. Glyph I must have the plain straight sans-serif form, not serif caps. Q, Y, W must be complete and clear. Render sharp clean sprite-ready outlines without glow, shadow beyond the compact original outline, perspective, or lighting on a background. The intent is new menu words that look made by the SAME original game artist, not a reinterpretation. Square high-resolution image."
+}
