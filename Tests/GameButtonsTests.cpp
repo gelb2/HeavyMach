@@ -37,6 +37,10 @@ int main(){
  assert(b.touch(1,180,30,1)->id==-1);
  assert(b.touch(1,180,30,2)->id==-1);
  assert(!b.touch(1,180,30,2));
+ // Empty modal background also owns the sequence until the finger releases.
+ b.consumeTouch(3,0);b.cancel();b.beginFrame(4.15);
+ assert(b.touch(3,180,30,2)->id==-1);
+ assert(!b.touch(3,180,30,2));
  // OS pointer identifiers can be reused after an interrupted sequence.
  frame(4.2);b.touch(1,20,30,0);b.cancel();frame(4.3);
  assert(b.touch(1,20,30,0)->id==1);assert(b.touch(1,20,30,2)->state==2);

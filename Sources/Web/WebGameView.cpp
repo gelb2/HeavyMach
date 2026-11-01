@@ -821,8 +821,8 @@ void GameView::routePoint(Point point,int state,long touch){
     if(!_active||!_loadError.empty())return;
     auto uiPoint=_viewport.logical(point.x,point.y);
     if(auto event=_gameButtons.touch(touch,uiPoint?uiPoint->first:-10000,uiPoint?uiPoint->second:-10000,state)){gameUIAction(event->id,event->state);return;}
-    if(_transferMode||_keyboardSettingsOpen||!_storageMessage.empty())return;
-    if(_hudEditing){auto q=_viewport.logical(point.x,point.y);hudEditorPoint(q?Point{q->first,q->second}:Point{-1000,-1000},state,touch);return;}
+    if(_transferMode||_keyboardSettingsOpen||!_storageMessage.empty()){_gameButtons.consumeTouch(touch,state);return;}
+    if(_hudEditing){if(state==0)_hudEditorTouches.insert(touch);else if(state>=2)_hudEditorTouches.erase(touch);auto q=_viewport.logical(point.x,point.y);hudEditorPoint(q?Point{q->first,q->second}:Point{-1000,-1000},state,touch);return;}
     _keyboardAimVisible=false;
     if(_aimCancelledTouches.contains(touch)){if(state>=2)_aimCancelledTouches.erase(touch);return;}
     auto logical=_viewport.logical(point.x,point.y);

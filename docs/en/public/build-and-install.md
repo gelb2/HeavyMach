@@ -6,6 +6,17 @@
 [한국어](../../public/build-and-install.md) | [English](build-and-install.md)
 <!-- language-nav:end -->
 
+<a id="웹pwatauri에서-플레이"></a>
+
+## Play on the web, PWA or Tauri
+
+Open the [HeavyMach web page](https://gelb2.github.io/HeavyMach/) and choose **INSTALL GAME** for PWA installation instructions. In Safari on iPhone or iPad, use Add to Home Screen in the Share menu. On Android, use Chrome's app installation. Choose **PLAY IN BROWSER** to play in a tab. After the first download finishes, the installed PWA supports offline play.
+
+To move progress to another device, select **TRANSFER PROGRESS** on the game's save-slot screen. Use **CREATE CODE**, enter the code on the other device, then select **CHECK CODE → RESTORE**. Check the slots, experience and levels in the confirmation panel. **CANCEL** keeps the current save.
+
+The Tauri Mac app runs the same web game in an app window and also backs up saves to OS files. It targets Apple Silicon and macOS 14 or later. Build it with the [Tauri instructions](../../../Desktop/Tauri/README.md). Public installer signing and notarization remain pending. [Platform storage and checks (Korean)](../../reviews/mac-web-pwa-comparison-20261101.md).
+
+
 Build the regular and cheat validation apps for Apple and Android from current main. They share the game core and use separate app IDs and saves.
 
 [Apple requirements](#준비물) · [Android build and installation](#android-빌드와-설치)

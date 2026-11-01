@@ -47,15 +47,17 @@ try{
  await game.$eval('textarea',(e,c)=>e.value=c,ownCode);await button(909);await game.waitForFunction(()=>JSON.parse(Module.UTF8ToString(Module._hm_game_ui())).transfer===2);await button(912);assert.equal((await ui()).transfer,1);assert.equal(await save(),initial);steps.push('game confirmation CANCEL preserves save');
  await button(905);await button(906);await button(907);await button(907);for(let i=0;i<3;i++){await button(905);await button(906);}steps.push('slot and HUD-control options operate as game buttons');
  if(touch){
+  for(const held of ['button','blank']){
   const controls=await ui(),rect=id=>controls.buttons.find(b=>b.id===id).rect;
   const pos=r=>[r[0]+r[2]/2,r[1]+r[3]/2];
-  const points=await game.evaluate(([first,second])=>{const s=hmDebugState(),r=document.querySelector('#canvas').getBoundingClientRect(),[cw,ch]=s.canvas,k=Math.min(r.width/cw,r.height/ch);return [first,second,[cw-58,21+(ch-320)/2]].map(([x,y])=>({x:r.x+(r.width-cw*k)/2+x*k,y:r.y+(r.height-ch*k)/2+(ch-y)*k}));},[pos(rect(910)),pos(rect(901))]);
+  const points=await game.evaluate(([first,second])=>{const s=hmDebugState(),r=document.querySelector('#canvas').getBoundingClientRect(),[cw,ch]=s.canvas,k=Math.min(r.width/cw,r.height/ch);return [first,second,[cw-58,21+(ch-320)/2]].map(([x,y])=>({x:r.x+(r.width-cw*k)/2+x*k,y:r.y+(r.height-ch*k)/2+(ch-y)*k}));},[pos(rect(910)),held==='button'?pos(rect(901)):[18,272]]);
   const frame=await(await page.$('#game')).boundingBox();points.forEach(p=>{p.x+=frame.x;p.y+=frame.y;});
   const cdp=await page.createCDPSession(),p0={...points[0],id:0},p1={...points[1],id:1};
   await cdp.send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[p0,p1]});await sleep(70);
-  await cdp.send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[p1]});await sleep(120);assert.equal((await ui()).transfer,0);
+  await cdp.send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[p0]});await sleep(120);assert.equal((await ui()).transfer,0);
   await cdp.send('Input.dispatchTouchEvent',{type:'touchMove',touchPoints:[{...points[2],id:1}]});await cdp.send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});await sleep(300);
-  assert(await game.evaluate(()=>Module._hm_transfer_available()));await button(900);steps.push('second finger released after CLOSE cannot activate underlying OK');
+  assert(await game.evaluate(()=>Module._hm_transfer_available()));await button(900);steps.push(held+' finger released after CLOSE cannot activate underlying OK');
+  }
  }
 
  await button(910);assert.equal((await ui()).transfer,0);assert(await game.$eval('textarea',e=>e.hidden));

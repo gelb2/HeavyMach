@@ -179,6 +179,7 @@ private:
     bool _hudLayoutFallback=false,_hudEditing=false,_hudFromMenu=false,_hudExample=false,_hudHideGuides=false;
     int _hudSelected=heavymach::hud::jump;
     std::optional<long> _hudDragToken;
+    std::set<long> _hudEditorTouches;
     Point _hudGrab;
     unsigned _hudLayoutWrites=0;
     std::map<long,int> _hudCapturedReceivers;

@@ -46,7 +46,7 @@ class Runtime {
  bool _hudEditing=false,_hudExample=false,_hudHideGuides=false,_hasKeyboardAim=false,_keyboardAimVisible=false;
  bool _keyboardSettingsOpen=false,_capturingKey=false,settingsWasPaused_=false;unsigned _settingsSelection=0;
  bool wide_=true;int _hudSelected=heavymach::hud::jump,dragToken_=-1;CGPoint _hudGrab{},_keyboardAim{};
- std::map<int,int> aimTouches_,hudTouches_;std::set<int> worldTouches_,cancelledTouches_,heldTouches_;std::array<bool,256> blockedKeys_{};
+ std::map<int,int> aimTouches_,hudTouches_;std::set<int> worldTouches_,cancelledTouches_,heldTouches_,hudEditorTouches_;std::array<bool,256> blockedKeys_{};
  double _time=0,_retainedWorldTime=0,lastInteraction_=0,realTime_=0,_aimAcquiredTime=0;
  uint32_t random_=0x12345678;uintptr_t _drawnAimTarget=0;
  heavymach::Vector2 _retainedWorldCamera{};heavymach::AimMode _preferredAimMode=heavymach::AimMode::manual;

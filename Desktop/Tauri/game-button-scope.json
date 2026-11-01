@@ -29,7 +29,8 @@
     "Tests/Apple/HMAppleInputTests.mm": "Check game button rectangles/actions instead of native control objects.",
     "Tests/iOS/HMFramePerformanceTests.mm": "Measure added game controls without removed native objects.",
     "CMakeLists.txt": "Register original game-button capture and rendering tests.",
-    "Android/README.md": "Document game-rendered buttons and actual device test commands."
+    "Android/README.md": "Document game-rendered buttons and actual device test commands.",
+    "Sources/Mac/Application.mm": "Add standard AppKit Edit menu commands for the recovery-code text field; game buttons remain game-rendered."
   },
   "new_files": [
     "Sources/iOS/HMGameButtons.hpp",
@@ -45,6 +46,7 @@
     "Web/tests/game-ui-performance.mjs",
     "Art/UI/20261102-original-button-lettering/glyphs-generated.png",
     "Art/UI/20261102-original-button-lettering/provenance.json",
-    "Android/tools/validate_modal_keys.py"
+    "Android/tools/validate_modal_keys.py",
+    "Android/tools/validate_modal_touches.py"
   ]
 }

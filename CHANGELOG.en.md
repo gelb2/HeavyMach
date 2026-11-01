@@ -18,7 +18,9 @@ Built on [fastutlego](https://github.com/fastutlego)'s [PR #24](https://github.c
 - Tauri OS-file backups, recovery and save completion before quitting. Public signing/notarization and Windows builds remain pending.
 - Shared C++ recovery codes for three slots, HUD, keys and aim settings. Apple/Android adapters and build files change; the existing combat core and assets do not.
 - 14 iPhone and 40 Galaxy functional checks passed. A retained 19,344-byte iPhone button source-image cache was released.
-- A platform UI audit and remaining recovery-dialog, storage-capacity and long-duration performance checks are tracked in the [TODO (Korean)](docs/usability-todo.md).
+- Added HUD tools, recovery controls, key settings and cheat controls now use the original game-button procedure. Text entry, clipboard and file selection use platform services. Original buttons and combat code remain unchanged.
+- In-game recovery controls stay visible in Android PWA fullscreen. New English labels use a static sprite sheet based on the original OK and mission-selection buttons.
+- Physical iPhone/iPad/Galaxy and browser/PWA checks cover editing, recovery, keyboard input and original gameplay. Native Mac frame-time checks exceeded the budget, including original title and combat scenes. [Changes, screenshots and test results (Korean)](docs/reviews/game-button-incident-20261101.md#game-button-results).
 
 [Platform checks (Korean)](docs/reviews/mac-web-pwa-comparison-20261101.md) · [Recovery module (Korean)](Modules/SaveTransfer/README.md). Version tags and installer releases are recorded separately.
 

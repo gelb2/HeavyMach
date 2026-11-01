@@ -86,6 +86,8 @@ void GameView::openHUDEditor(){
     layoutHUDControls();
 }
 void GameView::closeHUDEditor(){
+    for(long token:_hudEditorTouches)_gameButtons.consumeTouch(token,0);
+    _hudEditorTouches.clear();
     _hudEditing=false;_hudDragToken.reset();_hudExampleSession.reset();_hudExampleData={};_media->releaseScope("hud-example");
     cancelGameInput();noteInteraction();
     layoutHUDControls();

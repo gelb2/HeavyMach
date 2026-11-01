@@ -44,6 +44,7 @@
     BOOL _hudLayoutFallback,_hudEditing,_hudFromMenu,_hudExample,_hudHideGuides,_hudShowHits;
     int _hudSelected;
     id _hudDragToken;
+    NSMutableSet* _hudEditorTouches;
     CGPoint _hudGrab;
     heavymach::gameui::Buttons _gameButtons;
     NSString *_hudStatus,*_gameUIMessage;
@@ -1131,11 +1132,11 @@
     if(!_active||_loadError)return;
     auto gp=_viewport.logical(point.x,point.y);[self prepareGameButtons];
     if(auto e=_gameButtons.touch((int64_t)(__bridge void*)touch,gp?gp->first:-1000,gp?gp->second:-1000,state)){[self gameUIAction:e->id state:e->state];return;}
-    if(_transferPage||_keyboardSettingsOpen)return;
+    if(_transferPage||_keyboardSettingsOpen){_gameButtons.consumeTouch((int64_t)(__bridge void*)touch,state);return;}
 #if HM_VALIDATION
-    if(_validationPanelOpen)return;
+    if(_validationPanelOpen){_gameButtons.consumeTouch((int64_t)(__bridge void*)touch,state);return;}
 #endif
-    if(_hudEditing){auto q=_viewport.logical(point.x,point.y);[self hudEditorPoint:q?CGPointMake(q->first,q->second):CGPointMake(-1000,-1000) state:state token:touch];return;}
+    if(_hudEditing){if(!_hudEditorTouches)_hudEditorTouches=[NSMutableSet set];if(state==0)[_hudEditorTouches addObject:touch];if(state>=2)[_hudEditorTouches removeObject:touch];auto q=_viewport.logical(point.x,point.y);[self hudEditorPoint:q?CGPointMake(q->first,q->second):CGPointMake(-1000,-1000) state:state token:touch];return;}
     _keyboardAimVisible=NO;
     if([_aimCancelledTouches containsObject:touch]){if(state>=2)[_aimCancelledTouches removeObject:touch];return;}
         auto logical=_viewport.logical(point.x,point.y);

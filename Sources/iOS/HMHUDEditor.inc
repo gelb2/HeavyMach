@@ -74,6 +74,8 @@
 #endif
 }
 - (void)closeHUDEditor {
+    for(id token in _hudEditorTouches)_gameButtons.consumeTouch((int64_t)(__bridge void*)token,0);
+    [_hudEditorTouches removeAllObjects];
     _hudEditing=NO;_hudDragToken=nil;_hudExampleSession.reset();_hudExampleData={};[_media releaseScope:@"hud-example"];
     [self cancelGameInput];[self noteInteraction];
 #if TARGET_OS_OSX

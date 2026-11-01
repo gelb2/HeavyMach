@@ -96,7 +96,8 @@ bool Runtime::routeGameButtons(CGPoint p,int state,int token){
  if(event->id>=cheatDirection&&event->id<cheatDirection+4&&event->state==1){auto bounds=gameButtons_.rect(event->id);gameUIAction(event->id,bounds&&heavymach::gameui::contains(*bounds,p.x,p.y)?0:3);return true;}
 #endif
  gameUIAction(event->id,event->state);return true;}
- return panel_!=Panel::none||_keyboardSettingsOpen;
+ if(panel_!=Panel::none||_keyboardSettingsOpen){gameButtons_.consumeTouch(token,state);return true;}
+ return false;
 }
 void Runtime::gameUIAction(int id,int state){
 #if HM_VALIDATION

@@ -25,6 +25,20 @@
       "tests": 5,
       "failures": 0,
       "evidence": "build/game-buttons-physical-iphone-final.xcresult"
+    },
+    {
+      "device": "iPad Air 13 M2",
+      "tests": 2,
+      "failures": 0,
+      "evidence": "build/game-buttons-ipad-freeze.xcresult",
+      "includes": "bottom transfer entry, loading state 0 guard, final sans serif atlas and cancel capture fix"
+    },
+    {
+      "device": "iPhone Air",
+      "tests": 2,
+      "failures": 0,
+      "evidence": "build/game-buttons-iphone-final-cancel.xcresult",
+      "includes": "final sans serif atlas and cancel capture fix"
     }
   ],
   "coverage": [
@@ -45,7 +59,8 @@
     "Preview/tools/sample/cancel"
   ],
   "save_preservation": {
-    "iPad_normal_restore_before_after_identical": true
+    "iPad_normal_restore_before_after_identical": true,
+    "iPad_after_manual_gameplay": "Only 2 bytes changed within slot 2 last-access timestamp (offset 4). All gameplay fields remain byte-identical."
   },
   "mac_performance": {
     "result": "failed",
@@ -147,5 +162,31 @@
     "baseline_comparison": "Original title and slot screens exceeded the same budget. A separate previous-revision baseline was not run. Cause not isolated."
   },
   "post_main_retest": "pending",
-  "private_artifacts": "Device IDs, save files and recovery codes remain in ignored build/ evidence."
+  "private_artifacts": "Device IDs, save files and recovery codes remain in ignored build/ evidence.",
+  "mac_functional": {
+    "tests": 2,
+    "failures": 0,
+    "evidence": "build/game-buttons-mac-freeze2.xcresult",
+    "includes": "all game setting buttons, transfer restore and loading state 0 guard",
+    "latest_evidence": "build/game-buttons-mac-final-input.xcresult",
+    "latest_tests": 2,
+    "latest_failures": 0
+  },
+  "mac_manual_text_input": [
+    "Cmd+A replaced full code with TEST",
+    "Cmd+C copied TEST",
+    "Cmd+X emptied the field",
+    "Cmd+V restored TEST",
+    "Return left field editor",
+    "CHECK CODE rejected invalid TEST",
+    "CLOSE returned to slots",
+    "Cmd+Q terminated the process"
+  ],
+  "button_language": "All added game button labels are English.",
+  "screenshots": [
+    "build/game-buttons-mac-slot-final.png",
+    "build/game-buttons-mac-transfer-final.png",
+    "build/game-buttons-mac-text-shortcuts-final.png",
+    "build/game-buttons-ipad-native-final.png"
+  ]
 }

@@ -217,6 +217,7 @@ NSDictionary* macFrameMetrics(const std::vector<double>& values) {
  [self.game refreshScreen:3];render(self.game);
  auto tap=[&](int identifier){CGRect r=[self.game gameButtonRect:identifier];XCTAssertFalse(CGRectIsEmpty(r));auto vp=storage<heavymach::Viewport>(self.game,"_viewport");CGPoint q=CGPointMake(vp.x+CGRectGetMidX(r)*vp.scale,vp.y+(vp.logicalHeight-CGRectGetMidY(r))*vp.verticalScale());id token=[NSObject new];[self.game routePoint:q state:0 token:token];[self.game routePoint:q state:2 token:token];render(self.game);};
  tap(3100);XCTAssertEqual([[self.game valueForKey:@"transferPage"]intValue],1);
+ {auto vp=storage<heavymach::Viewport>(self.game,"_viewport");CGPoint q=CGPointMake(vp.x+434*vp.scale,vp.y+(vp.logicalHeight-20)*vp.verticalScale());id held=[NSObject new];[self.game routePoint:q state:0 token:held];tap(3114);[self.game routePoint:q state:2 token:held];XCTAssertEqual(storage<heavymach::LoadingTransition>(self.game,"_loading").state(),6);XCTAssertEqual([[self.game valueForKey:@"transferPage"]intValue],0);tap(3100);}
  tap(3110);NSString* code=[self.game transferInputText];XCTAssertTrue([code hasPrefix:@"HM1-"]);
  {auto image=[(HMGLRenderer*)[self.game valueForKey:@"glRenderer"]snapshot];auto a=[XCTAttachment attachmentWithImage:image];a.name=@"Transfer_game_buttons";a.lifetime=XCTAttachmentLifetimeKeepAlways;[self addAttachment:a];}
  auto before=[[NSData alloc]initWithContentsOfURL:save];tap(3112);XCTAssertEqualObjects(before,[NSData dataWithContentsOfURL:save]);
@@ -261,7 +262,8 @@ NSDictionary* macFrameMetrics(const std::vector<double>& values) {
  [self.game routePoint:point state:2 token:token];
  XCTAssertTrue([[self.game valueForKey:@"hudEditing"]boolValue]);XCTAssertTrue(session->world().paused);
  frames(self.game,60);XCTAssertEqual(before,storage<heavymach::SaveData>(self.game,"_save").encode());XCTAssertEqual(rng,storage<uint32_t>(self.game,"_randomState"));
- [self.game closeHUDEditor];render(self.game);XCTAssertTrue(session->world().paused);
+ auto resumePoint=c.legacy.apply(heavymach::hud::Point{240,230});CGPoint blank=CGPointMake(vp.x+resumePoint.x*vp.scale,vp.y+(vp.logicalHeight-resumePoint.y)*vp.verticalScale());id resting=[NSObject new];[self.game routePoint:blank state:0 token:resting];
+ [self.game closeHUDEditor];render(self.game);[self.game routePoint:blank state:2 token:resting];XCTAssertTrue(session->world().paused);
  for(int i=0;i<12;++i){[hud moveKeyboardFocus:1];CGRect rect=[hud keyboardFocusRect];if([hud receiverAt:CGPointMake(CGRectGetMidX(rect),CGRectGetMidY(rect))]==104)break;}
  [hud activateKeyboardFocus];XCTAssertTrue([[self.game valueForKey:@"hudEditing"]boolValue]);
  [self.game hudEditorAction:2];

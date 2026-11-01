@@ -77,6 +77,12 @@ public:
     bool contains(double x,double y)const{for(auto&b:items_)if(b.enabled&&gameui::contains(b.bounds,x,y))return true;return false;}
     int focusedId()const{return focus_;}
     void cancel(){for(auto&[id,s]:states_)s.touch(false,3,time_);for(const auto& [token,id]:captured_)ignored_.insert(token);captured_.clear();keyDown_=-1;focusVisible_=false;}
+    // A modal consumes its empty background too. Keep ownership until release,
+    // even if another finger closes the panel in the meantime.
+    void consumeTouch(std::int64_t token,int phase){
+        if(phase==0)ignored_.insert(token);
+        else if(phase>=2)ignored_.erase(token);
+    }
     std::optional<Event> touch(std::int64_t token,double x,double y,int phase){
         focusVisible_=false;
         if(phase==0){

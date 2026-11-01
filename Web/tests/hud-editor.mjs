@@ -129,6 +129,20 @@ try {
   if((await state()).hudEditing||await layoutFile()!==beforeCancel)throw Error('CANCEL changed saved layout');
   step('preview-current-scene-and-cancel-draft');
   await tap(hudX + 240, hudY + 190);await sleep(500);
+  // Keep a finger on the editor while another finger closes its tools.
+  for(const heldKind of ['blank','drag']){
+    const client=await page.createCDPSession();
+    const at=async(x,y,id)=>{const p=await css(x,y);return {x:p[0],y:p[1],id};};
+    const held=await at(hudX+(heldKind==='drag'?111:60),hudY+(heldKind==='drag'?236:150),21);
+    await client.send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[held]});await sleep(100);
+    async function secondTap(label){const b=await gameButton(label),p=await at(b.rect[0]+b.rect[2]/2,b.rect[1]+b.rect[3]/2,22);await client.send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[held,p]});await sleep(70);await client.send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[p]});await sleep(120);}
+    if(!await gameButton('CANCEL'))await secondTap('TOOLS');
+    await secondTap('CANCEL');
+    const release=await at(hudX+220,hudY+235,21);await client.send('Input.dispatchTouchEvent',{type:'touchMove',touchPoints:[release]});await client.send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[release]});await sleep(200);
+    if((await state()).hudEditing||(await state()).gameMenu!==1)throw Error(heldKind+' editor finger leaked into RESUME');
+    step(heldKind+'-finger-after-editor-close-is-consumed');
+    await tap(hudX+240,hudY+190);await sleep(200);
+  }
   await clickGame('SAMPLE SCENE'); await sleep(500); await shot('05-sample-scene');
   step('sample-scene', { buttons: (await gameUI()).buttons.map(b=>b.label) });
   await clickGame('RESET LAYOUT'); await clickGame('APPLY');

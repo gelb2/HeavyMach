@@ -69,6 +69,7 @@ python3 tools/measure_combat.py --serial SERIAL
 python3 tools/verify_apks.py
 python3 tools/validate_game_buttons.py --serial SERIAL
 python3 tools/validate_modal_keys.py --serial SERIAL --out build/evidence/modal-keys
+python3 tools/validate_modal_touches.py --serial SERIAL --out build/evidence/modal-touches
 python3 tools/validate_normal_transfer_ui.py --serial SERIAL --out build/evidence/normal-transfer
 ```
 
