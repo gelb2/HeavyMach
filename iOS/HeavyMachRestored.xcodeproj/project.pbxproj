@@ -17,6 +17,7 @@
 		180826C99754D5EB0CF0B9EA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC604AAB654EE3345C901005 /* CoreGraphics.framework */; };
 		183771D849D3154C3EA3831A /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78337F678A716FD48171D145 /* CoreMotion.framework */; };
 		1F641C68A0B7E296DAAE6581 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC604AAB654EE3345C901005 /* CoreGraphics.framework */; };
+		20A633914C2FE2A222DA28D1 /* HeavyMachSaveTransfer_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17B98E4614B6C2988B9EAB14 /* HeavyMachSaveTransfer_iOS.framework */; };
 		2451B5AB7D4E9F2BA9F63E38 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E74F76EA57F3C2606331405 /* AVFoundation.framework */; };
 		2E7965A163C71819E687BA5B /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAE8D17E6D0A18CF938C5D06 /* CoreText.framework */; };
 		314132D3771FC74332CE87BC /* HMAudioTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = 40B5BBD1408F95F15D983471 /* HMAudioTests.mm */; };
@@ -33,6 +34,7 @@
 		4F47C7B1F58738C1B2E95643 /* Validation in Resources */ = {isa = PBXBuildFile; fileRef = 0B38F0C1AF257040BF415F40 /* Validation */; };
 		5008DB618AD93C65F45C42CA /* HMMenuParityTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = B8E2E810D01EBB107EBFCDD4 /* HMMenuParityTests.mm */; };
 		548B305C0AD032F92AB803F0 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E74F76EA57F3C2606331405 /* AVFoundation.framework */; };
+		6943E068175B2DA300A968DC /* HeavyMachSaveTransfer_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17B98E4614B6C2988B9EAB14 /* HeavyMachSaveTransfer_iOS.framework */; };
 		6BFCA1A726483BC76C3E8F15 /* Application.mm in Sources */ = {isa = PBXBuildFile; fileRef = 28395D016CD926BE352FCB23 /* Application.mm */; };
 		6C322A03F64A36E6358AEE3E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7FD2C0696FF7BD1B4CD0B0D /* QuartzCore.framework */; };
 		711F8A053B4F4247ABFCA7BF /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36C91BD13C30DCFCC76905D3 /* OpenGLES.framework */; };
@@ -105,6 +107,20 @@
 			remoteGlobalIDString = 19FD03BF9DC9F0E9BC1409C1;
 			remoteInfo = HeavyMachValidationRuntime_iOS;
 		};
+		5F8EB83B45B4D09971158AA5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 83166561B50C8B33F2950105 /* Modules */;
+			proxyType = 2;
+			remoteGlobalIDString = EAB87A66CEDE959F936B84C7;
+			remoteInfo = HeavyMachSaveTransfer_iOS;
+		};
+		6D329D0659BDED1009E712FF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 83166561B50C8B33F2950105 /* Modules */;
+			proxyType = 1;
+			remoteGlobalIDString = 3F9A2FFA0F47CB8DD00105F4;
+			remoteInfo = HeavyMachSaveTransfer_iOS;
+		};
 		711F14A8AB5ED5A9C0DD7E3F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 83166561B50C8B33F2950105 /* Modules */;
@@ -118,6 +134,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = F784634061D421C2FE4C4258;
 			remoteInfo = HeavyMachAssets_iOS;
+		};
+		7C5AB01CF62F656FDB82967B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 83166561B50C8B33F2950105 /* Modules */;
+			proxyType = 1;
+			remoteGlobalIDString = 3F9A2FFA0F47CB8DD00105F4;
+			remoteInfo = HeavyMachSaveTransfer_iOS;
 		};
 		8F31CBCF31C55273513A37FD /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -173,224 +196,604 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0028B80C994D93FD2A273C96 /* launcher-save-20261101.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "launcher-save-20261101.json"; sourceTree = "<group>"; };
+		0053FE3E2BF47ECDA376BD9B /* shilka.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shilka.png; sourceTree = "<group>"; };
+		016ACFFBF5809FCE1557C5B8 /* shilka-gun-v2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shilka-gun-v2.png"; sourceTree = "<group>"; };
+		02004B8140727D35E0CD5DBC /* iphone-entry-060.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iphone-entry-060.png"; sourceTree = "<group>"; };
+		021DE2380D63B955573F4FE9 /* formation-20261029.svg */ = {isa = PBXFileReference; path = "formation-20261029.svg"; sourceTree = "<group>"; };
 		0228069A84AFF043754BF923 /* blend-reachability.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "blend-reachability.md"; sourceTree = "<group>"; };
+		0251427470C715EC411A0B4D /* arch.svg */ = {isa = PBXFileReference; path = arch.svg; sourceTree = "<group>"; };
 		02C082E687D3B99D11B31AE3 /* hud-event-order.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "hud-event-order.md"; sourceTree = "<group>"; };
 		035EA9FA2B4620448BB28C7E /* unity-planning-origin.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "unity-planning-origin.md"; sourceTree = "<group>"; };
 		03DFCB1F4CEDEAC7FA6AA896 /* wide-mode-912-0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wide-mode-912-0.png"; sourceTree = "<group>"; };
 		0402785238868DABF547CBBF /* wide-title-912-0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wide-title-912-0.png"; sourceTree = "<group>"; };
+		04978CC08DEB0AB2444847DE /* ground-units-research-20261028.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "ground-units-research-20261028.md"; sourceTree = "<group>"; };
+		05121A7AB41E53AA01381E86 /* shilka-turret-20261028.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "shilka-turret-20261028.json"; sourceTree = "<group>"; };
+		054E07C2D27F01753F6D18D6 /* hud-editor-release-20261029.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "hud-editor-release-20261029.json"; sourceTree = "<group>"; };
 		06C86ECE0343169617A53F62 /* assault-procedures.csv */ = {isa = PBXFileReference; path = "assault-procedures.csv"; sourceTree = "<group>"; };
 		070ABAFE741ADFB19429418D /* harrier-concept.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "harrier-concept.png"; sourceTree = "<group>"; };
+		0796ECB98CE77ABCEE2E505A /* ipad-size.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ipad-size.png"; sourceTree = "<group>"; };
 		07ED27B18EBB601EB97D7DF6 /* f35b-concept.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "f35b-concept.png"; sourceTree = "<group>"; };
+		088F315358F8F38C20CCEB81 /* lux-lunae-inventory-20261027.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "lux-lunae-inventory-20261027.txt"; sourceTree = "<group>"; };
+		0892BC776C1972AB76358F00 /* heli006.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heli006.png; sourceTree = "<group>"; };
+		09609E4F448BC78F7DB01BF7 /* physical-ipad-ordinary-gauges.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "physical-ipad-ordinary-gauges.png"; sourceTree = "<group>"; };
+		096AB50EFDF023F24AC4D16E /* heli001.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heli001.png; sourceTree = "<group>"; };
 		09FCC02D24921FDED7F64EB4 /* E_Heli_Body_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = E_Heli_Body_01.png; sourceTree = "<group>"; };
 		0AC9E233379817B782191A15 /* nil-parts-observation.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "nil-parts-observation.md"; sourceTree = "<group>"; };
 		0B38F0C1AF257040BF415F40 /* Validation */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Validation; path = ../Resources/Validation; sourceTree = SOURCE_ROOT; };
+		0B7EAB6DE48EF5F5C304E9EB /* HUD_asset_GameUI_Top.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HUD_asset_GameUI_Top.png; sourceTree = "<group>"; };
+		0BDB01A6BBF32601DD1B8C78 /* ipad-vtol_yak141.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ipad-vtol_yak141.png"; sourceTree = "<group>"; };
+		0DDD737A3F2708F573D1A5CA /* auto-aim-visibility-plan-20261028.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "auto-aim-visibility-plan-20261028.md"; sourceTree = "<group>"; };
+		0E32210C945E7113387B3023 /* v0.13-hud-plan-20261028.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "v0.13-hud-plan-20261028.json"; sourceTree = "<group>"; };
+		0E5D4CF5D70B74BF2BEF548B /* fullscreen-transitions-20261027.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "fullscreen-transitions-20261027.md"; sourceTree = "<group>"; };
+		0EAF0E2BCF83B3B816EDCCAC /* android-release-readiness-20261030.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "android-release-readiness-20261030.md"; sourceTree = "<group>"; };
+		0EF31E7EC9844B22708670EE /* 01-auto-aim.mp4 */ = {isa = PBXFileReference; path = "01-auto-aim.mp4"; sourceTree = "<group>"; };
+		0F39FDB5F699A49A2D45AF61 /* lux-lunae-intent-20261028.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "lux-lunae-intent-20261028.md"; sourceTree = "<group>"; };
+		0F6B8FF94F2A19E1164F2268 /* validation.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = validation.md; sourceTree = "<group>"; };
+		0FCDEA3BB13AE8EF872BB95D /* lux-lunae-inventory-20261027.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "lux-lunae-inventory-20261027.cpp"; sourceTree = "<group>"; };
+		103F51F511C89532DBCAB79D /* ipad-entry-060.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ipad-entry-060.png"; sourceTree = "<group>"; };
 		108A90E6EAF7981E0C0E1ED7 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		112E82495ECC56A1C08AF82B /* approved-readme-opening-20261029.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "approved-readme-opening-20261029.md"; sourceTree = "<group>"; };
 		115724F810549F8FC9A0C877 /* family-audit-snapshot.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "family-audit-snapshot.json"; sourceTree = "<group>"; };
 		11CAC23D0F83E60D8A096A31 /* HeavyMachValidation.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = HeavyMachValidation.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		125881C5F5ADD7D3036B501F /* pr24-web-review-20261031.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "pr24-web-review-20261031.md"; sourceTree = "<group>"; };
 		13D7B840917FAA0970F2B294 /* build-and-install.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "build-and-install.md"; sourceTree = "<group>"; };
 		13FB6F527491D4BEAA21498D /* manifest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = manifest.json; sourceTree = "<group>"; };
 		1444DF3A88378EF608F49C96 /* HMFramePerformanceTests.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = HMFramePerformanceTests.mm; sourceTree = "<group>"; };
 		14800518615380B465CBCA73 /* ios-completeness-evidence-20261026.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "ios-completeness-evidence-20261026.json"; sourceTree = "<group>"; };
+		1708ED26B4D879A3E4D678B1 /* github-presentation-20261028.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "github-presentation-20261028.json"; sourceTree = "<group>"; };
+		174D8909651CABCCD075A07A /* lux-formation-plan-20261029.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "lux-formation-plan-20261029.md"; sourceTree = "<group>"; };
 		186FA87DDD9F0E116037450B /* sprite-raster.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "sprite-raster.md"; sourceTree = "<group>"; };
+		18A8843FBAA15B1EC856C1AA /* formation-ipad-entry-20261029.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "formation-ipad-entry-20261029.png"; sourceTree = "<group>"; };
+		1900F206317FCB9AD92CDB80 /* ipad-preview.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ipad-preview.png"; sourceTree = "<group>"; };
+		194283D21C34E4B028EB9FD1 /* 01-auto-aim.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "01-auto-aim.gif"; sourceTree = "<group>"; };
 		1986FF0AA05DA140FC2F5D8E /* release-review-20261025.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "release-review-20261025.md"; sourceTree = "<group>"; };
+		19BDC403349FBE9221C9D111 /* title-og-card-20261028.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "title-og-card-20261028.json"; sourceTree = "<group>"; };
 		1A1632886032D437AC0FF0B7 /* apple-final-build-20261026.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "apple-final-build-20261026.json"; sourceTree = "<group>"; };
 		1A9C5DF87DAF87021A4F2F1A /* after-wide-title-912-0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "after-wide-title-912-0.png"; sourceTree = "<group>"; };
 		1AC5F0B9DF714D79DF45FA88 /* HMMediaTests.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = HMMediaTests.mm; sourceTree = "<group>"; };
+		1AD71C4EC699581E7B7A5393 /* manifest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = manifest.json; sourceTree = "<group>"; };
 		1B394C55A1EB4BF61DA2C808 /* keyboard-input-policy.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "keyboard-input-policy.md"; sourceTree = "<group>"; };
+		1B9C55EA324B1C703EDE6A68 /* iphone-comparison.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iphone-comparison.png"; sourceTree = "<group>"; };
+		1BE463C2598FB1FA016F7A66 /* gameplay-media-20261027.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "gameplay-media-20261027.md"; sourceTree = "<group>"; };
+		1C59F1478A772310CC2338EF /* ipad-combat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ipad-combat.png"; sourceTree = "<group>"; };
+		1C800B19C266D9993A3C23D7 /* screen4-480x360.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "screen4-480x360.png"; sourceTree = "<group>"; };
+		1DA7837623F62807ADE31D12 /* 05-upgrade.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "05-upgrade.png"; sourceTree = "<group>"; };
 		1E155672CFC9DAA270003894 /* HMMediaParityTests.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = HMMediaParityTests.mm; sourceTree = "<group>"; };
 		1E690824D09AA5F5A9A72384 /* user-background-20261026.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "user-background-20261026.md"; sourceTree = "<group>"; };
+		1EE4E021B4DE0A2E8D39DDA2 /* lux-lunae-intent-20261028.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "lux-lunae-intent-20261028.md"; sourceTree = "<group>"; };
+		1F87E878CEF285BC9DB4F7B5 /* tunguska.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tunguska.png; sourceTree = "<group>"; };
+		1F978BA8764A5AEE2E117C0D /* iphone-entry-120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iphone-entry-120.png"; sourceTree = "<group>"; };
 		1FD05AF93076309459C68938 /* vtol-art-and-loadout-20261027.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "vtol-art-and-loadout-20261027.md"; sourceTree = "<group>"; };
+		1FEBCFEB85E2AA122E7D48D2 /* ground-unit-inventory-20261028.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "ground-unit-inventory-20261028.txt"; sourceTree = "<group>"; };
 		208157197CDE999B8C845E9F /* GameController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameController.framework; path = System/Library/Frameworks/GameController.framework; sourceTree = SDKROOT; };
+		20883B029291826E4E170097 /* tauri-mac-start-20261031.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "tauri-mac-start-20261031.json"; sourceTree = "<group>"; };
 		218E8A524F0CF706D63BCE7F /* ipa-port-and-native-app-20261026.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "ipa-port-and-native-app-20261026.md"; sourceTree = "<group>"; };
+		21B52B77FA752872DCA30301 /* door-world-state5-480x360.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "door-world-state5-480x360.png"; sourceTree = "<group>"; };
 		22777839507DB25AB4AF3506 /* cheat-stage-check.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "cheat-stage-check.md"; sourceTree = "<group>"; };
+		227CCC94958114BF35B07656 /* github-social-preview.svg */ = {isa = PBXFileReference; path = "github-social-preview.svg"; sourceTree = "<group>"; };
+		232781DE0E3D0FA49807AD20 /* manifest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = manifest.json; sourceTree = "<group>"; };
 		236B5E6E05A88062350A9AA4 /* core-trail-raster.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "core-trail-raster.md"; sourceTree = "<group>"; };
 		246630478B515E6581CC3F6F /* boss-battles-v6.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "boss-battles-v6.md"; sourceTree = "<group>"; };
+		249AE0B276A2A488FD578A9C /* VTOL_Harrier.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VTOL_Harrier.png; sourceTree = "<group>"; };
+		24F70D787C0685F97BBBC866 /* architecture.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = architecture.md; sourceTree = "<group>"; };
+		24F8463900BF4BECBD69F8DC /* HUD_asset_GameUI_BlueLight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HUD_asset_GameUI_BlueLight.png; sourceTree = "<group>"; };
+		2513B42B5F409B21C32F4C4D /* F22-gold.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "F22-gold.png"; sourceTree = "<group>"; };
+		2552315E51A1BECFEE72D388 /* HUD_extras.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HUD_extras.png; sourceTree = "<group>"; };
 		2584106093F1DF4FEF43B5C9 /* current-status.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "current-status.md"; sourceTree = "<group>"; };
+		26EE97DD635D878904C8BC9C /* ipad-entry-120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ipad-entry-120.png"; sourceTree = "<group>"; };
 		2778754E10DB20CBC8809174 /* mac-fullscreen-capture-20261027.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "mac-fullscreen-capture-20261027.json"; sourceTree = "<group>"; };
+		27790FCB47A0FCFB9EC14AD6 /* 08-next-mission.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "08-next-mission.png"; sourceTree = "<group>"; };
 		28395D016CD926BE352FCB23 /* Application.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = Application.mm; sourceTree = "<group>"; };
 		28753B5A5C5D07136C518D1F /* validation-mode.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "validation-mode.md"; sourceTree = "<group>"; };
+		2891053E2D2F10FD7133A5BC /* keyboard-aim.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "keyboard-aim.png"; sourceTree = "<group>"; };
+		292020AB9BD36276B4219C56 /* pause-menu-pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pause-menu-pressed.png"; sourceTree = "<group>"; };
+		2976ECAB4CC2EAFA65C03D22 /* scenes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = scenes.json; sourceTree = "<group>"; };
+		29E664D89CDB6C5DA1225238 /* iphone-size.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iphone-size.png"; sourceTree = "<group>"; };
+		29F8EFB32D0D824ABF72B9E6 /* screen1-480x360.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "screen1-480x360.png"; sourceTree = "<group>"; };
+		2AB28D95A9D16C3858C015FA /* shilka-parts.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shilka-parts.png"; sourceTree = "<group>"; };
+		2B1E4FBFA412BDFB4ADE5B44 /* hud-integrated-ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hud-integrated-ipad.png"; sourceTree = "<group>"; };
 		2C056C70D6CAEDEBA403C2C5 /* implementation-status.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "implementation-status.md"; sourceTree = "<group>"; };
+		2C22CC693AD920DACDA02177 /* iphone-vtol_harrier.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iphone-vtol_harrier.png"; sourceTree = "<group>"; };
 		2C3BDB2E129A9E44548E2A49 /* stage-transition-contract.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "stage-transition-contract.md"; sourceTree = "<group>"; };
 		2CD3A716AECFC03CC799EE70 /* rea-availability-20261026.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "rea-availability-20261026.md"; sourceTree = "<group>"; };
+		2CF21642DDCBA37239C41E69 /* 03-weapons.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "03-weapons.png"; sourceTree = "<group>"; };
+		2D182C40219776E3386CF56F /* iphone-shilka-motion.mp4 */ = {isa = PBXFileReference; path = "iphone-shilka-motion.mp4"; sourceTree = "<group>"; };
+		2D31B99E35E85111D12A19C6 /* development-history.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "development-history.md"; sourceTree = "<group>"; };
 		2D45BB164B71C7D6B4A1A4DD /* weapon-validation-procedure.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "weapon-validation-procedure.md"; sourceTree = "<group>"; };
 		2E643F9C22E5FA4672DE3280 /* core-player.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "core-player.md"; sourceTree = "<group>"; };
+		2EA1A1371EA5B2FBE4F05F0F /* github-publication-plan-20261027.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "github-publication-plan-20261027.json"; sourceTree = "<group>"; };
+		2EE3251E01DB65E2D720D14B /* shilka-radar-v2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shilka-radar-v2.png"; sourceTree = "<group>"; };
 		3037AF25AD1605C96BD16E15 /* yak141-concept.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "yak141-concept.png"; sourceTree = "<group>"; };
+		3058068A308B8D8032BB4852 /* tunguska.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tunguska.png; sourceTree = "<group>"; };
 		326ADA81CEF8AD70460634EF /* verification.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = verification.md; sourceTree = "<group>"; };
 		32C17D64DAC4FC4E65AE60F6 /* coordinate-policy.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "coordinate-policy.md"; sourceTree = "<group>"; };
 		336B28E4FD9D946A8A413417 /* boss-battles-v1.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "boss-battles-v1.md"; sourceTree = "<group>"; };
 		3370A35BF1B15BAE7F834631 /* usability-todo.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "usability-todo.md"; sourceTree = "<group>"; };
+		33C6633A544421B6F4F2B3A5 /* 06-stage-clear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "06-stage-clear.png"; sourceTree = "<group>"; };
+		33FD50DA43E8069099B3DCE9 /* shilka-height-20261028.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "shilka-height-20261028.json"; sourceTree = "<group>"; };
 		348FB844DFE09A2B2FBF1D73 /* physical-edge-check-20261025.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "physical-edge-check-20261025.md"; sourceTree = "<group>"; };
 		3522F0209DDEC113BE30C1BE /* camera-integration.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "camera-integration.md"; sourceTree = "<group>"; };
+		35918C0AE0461B36B5546618 /* publication-source-audit-20261028.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "publication-source-audit-20261028.json"; sourceTree = "<group>"; };
+		35B29A8BC813914F25964E04 /* lux-lunae-implementation-20261027.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "lux-lunae-implementation-20261027.json"; sourceTree = "<group>"; };
+		35C6DA1BD8435784E937E9DD /* HUD_group_jump.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HUD_group_jump.png; sourceTree = "<group>"; };
 		36C91BD13C30DCFCC76905D3 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		36DBF919817FECD37C5CABC6 /* lux-vertical-20261029.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "lux-vertical-20261029.json"; sourceTree = "<group>"; };
+		383AC062C0A4A44164D9FB75 /* HUD_old_six_parts.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HUD_old_six_parts.png; sourceTree = "<group>"; };
+		3857506615ABE8C5890844BC /* door-world-state6-480x360.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "door-world-state6-480x360.png"; sourceTree = "<group>"; };
 		390607579E2C3B74E55BE0D4 /* opengl-migration-20261024.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "opengl-migration-20261024.md"; sourceTree = "<group>"; };
+		392D6854CF05F0952CAB1493 /* android-publication-audit-20261030.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "android-publication-audit-20261030.json"; sourceTree = "<group>"; };
+		3A05BDE39BD248425CF56119 /* shilka-concept-v1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shilka-concept-v1.png"; sourceTree = "<group>"; };
+		3A32AD1DB3B6B5DB3FC09A74 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		3A7D9FBAFC5889ABE42697D7 /* iphone-shilka.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iphone-shilka.png"; sourceTree = "<group>"; };
+		3A87C833377F534954E3CB07 /* ground-aa-expansion.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "ground-aa-expansion.md"; sourceTree = "<group>"; };
+		3AACDA7FD1B3B495B4C72184 /* release-tool-normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "release-tool-normal.png"; sourceTree = "<group>"; };
+		3ABE6C1139906A300C6DC026 /* shilka-game-120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shilka-game-120.png"; sourceTree = "<group>"; };
 		3ADB54D9B5A9A03B6B9A51DB /* presentation-ab-20261024.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "presentation-ab-20261024.md"; sourceTree = "<group>"; };
 		3B0720A01397B7955CC08076 /* manifest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = manifest.json; sourceTree = "<group>"; };
+		3B182DA723E1581FFF386A78 /* HUD_asset_Btn_Booster.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HUD_asset_Btn_Booster.png; sourceTree = "<group>"; };
+		3B5B21C6A625B1A16C9922E7 /* 08-jump-clip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "08-jump-clip.png"; sourceTree = "<group>"; };
+		3BFD79CA101FDFF2C4F4E01E /* tauri-quit-fix-20261101.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "tauri-quit-fix-20261101.json"; sourceTree = "<group>"; };
+		3D761B175DEB6743F05E794C /* VTOL_F35B.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VTOL_F35B.png; sourceTree = "<group>"; };
+		3D8CE4D7551F9BACF0AB90C6 /* medium-comparison.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "medium-comparison.png"; sourceTree = "<group>"; };
+		3DA387689BE8C6D3D2336B9C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		3DB19E4A0D6282EF80468101 /* gauge-registration.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "gauge-registration.md"; sourceTree = "<group>"; };
+		3E20F32A69AAB76C979E724C /* lux-formation-20261029.csv */ = {isa = PBXFileReference; path = "lux-formation-20261029.csv"; sourceTree = "<group>"; };
+		3E2C32E6BCA2DC3963A283F8 /* github-social-preview-gameplay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "github-social-preview-gameplay.png"; sourceTree = "<group>"; };
+		3F5DD6729B8AF05214F98C6E /* HUD_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HUD_normal.png; sourceTree = "<group>"; };
+		3F692A11C7C9C9351C9E5D90 /* motion.mp4 */ = {isa = PBXFileReference; path = motion.mp4; sourceTree = "<group>"; };
 		3F81E2D1CF48A6BDCECF1B4C /* render-performance.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "render-performance.md"; sourceTree = "<group>"; };
 		3FC6793FC71C9B845F861E05 /* core-visuals.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "core-visuals.md"; sourceTree = "<group>"; };
 		403B299BC86718E4BD532711 /* E_Boss05.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = E_Boss05.png; sourceTree = "<group>"; };
+		4046F2E0BC3F5AA7BDA4B969 /* approved-readme-opening-main-20261029.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "approved-readme-opening-main-20261029.md"; sourceTree = "<group>"; };
+		407D9A2C3A613A163F7BC311 /* iphone-shilka.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iphone-shilka.png"; sourceTree = "<group>"; };
+		409BA5571A69DE8213AC2C01 /* vtol-implementation-20261027.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "vtol-implementation-20261027.json"; sourceTree = "<group>"; };
 		40B31279B3FDF352F97FF9CF /* before-wide-mission-912-0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "before-wide-mission-912-0.png"; sourceTree = "<group>"; };
 		40B5BBD1408F95F15D983471 /* HMAudioTests.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = HMAudioTests.mm; sourceTree = "<group>"; };
+		40FEB8757977F212275B4DCC /* iphone-vtol_yak141.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iphone-vtol_yak141.png"; sourceTree = "<group>"; };
 		410ADE42E28C6C78D1BF8E06 /* HeavyMachRestored.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = HeavyMachRestored.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4175F25694C612B77B0BF495 /* nil-parts-boundary.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "nil-parts-boundary.md"; sourceTree = "<group>"; };
+		41788915964CF0C518900EF4 /* upgrade-fixed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "upgrade-fixed.png"; sourceTree = "<group>"; };
+		419AAA6C18D0709460565CAD /* android-isolation-20261030.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "android-isolation-20261030.json"; sourceTree = "<group>"; };
+		41DA21494E031DE161EC8A5C /* physical-iphone-ordinary-gauges.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "physical-iphone-ordinary-gauges.png"; sourceTree = "<group>"; };
 		41F9D1278B5C5F0CAF8B9047 /* rendering-policy.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "rendering-policy.md"; sourceTree = "<group>"; };
+		42643303311B549C36ED5039 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		43178537449F22819B45A7CA /* screen3-480x360.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "screen3-480x360.png"; sourceTree = "<group>"; };
+		435B4A53741CAF33A65DCE2D /* ground-unit-research-20261028.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "ground-unit-research-20261028.json"; sourceTree = "<group>"; };
+		43E2F4565DDD41EDC6FDBD9F /* tunguska-medium-slope.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tunguska-medium-slope.png"; sourceTree = "<group>"; };
 		43E46AA007E9C8043A1BD3E2 /* failed-results.csv */ = {isa = PBXFileReference; path = "failed-results.csv"; sourceTree = "<group>"; };
+		450252315905A79369BEAB5F /* user-wemade-discovery-20261028.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "user-wemade-discovery-20261028.md"; sourceTree = "<group>"; };
+		459AE8023D0BDBE4843B92A3 /* iphone-vtol_f35b.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iphone-vtol_f35b.png"; sourceTree = "<group>"; };
+		46451F987557B3BC2AFBDA8C /* mac-web-pwa-comparison-20261101.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "mac-web-pwa-comparison-20261101.md"; sourceTree = "<group>"; };
 		468052086D7E83CA9082C781 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		472B2203DC0386CC28DBB3DE /* document-governance.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "document-governance.md"; sourceTree = "<group>"; };
 		4760654A7E153625E9303713 /* inventory-summary.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "inventory-summary.json"; sourceTree = "<group>"; };
 		47623F1F51E3686EF32548DB /* menu-art-extension-20261025.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "menu-art-extension-20261025.md"; sourceTree = "<group>"; };
 		477670E2EB9D0943464767BB /* physical-self-test-20261025.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "physical-self-test-20261025.md"; sourceTree = "<group>"; };
 		47837CFC3ABB851C22376D6C /* after-wide-mission-912-0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "after-wide-mission-912-0.png"; sourceTree = "<group>"; };
+		490266EF6918867D8E1940A2 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		49FC6B63DFB2DCB8B4D304CF /* launcher-install-first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "launcher-install-first.png"; sourceTree = "<group>"; };
+		4AE152B0E44B5D43A3E03D8C /* HUD_asset_NumSet02b.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HUD_asset_NumSet02b.png; sourceTree = "<group>"; };
+		4B041DAF98C54B54118382D7 /* HUD_asset_GameUI_Exp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HUD_asset_GameUI_Exp.png; sourceTree = "<group>"; };
 		4B96C5E574626EE4EECE8BCE /* wide-canvas-plan.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "wide-canvas-plan.md"; sourceTree = "<group>"; };
 		4BA1701AF56F5AABF1C13DF8 /* core-loading-transition.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "core-loading-transition.md"; sourceTree = "<group>"; };
 		4BA21BFDEDBC34071BCAA5E2 /* bundle-audit.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "bundle-audit.json"; sourceTree = "<group>"; };
+		4C13E6BF50EF5206B5E2C441 /* lock-label-ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lock-label-ipad.png"; sourceTree = "<group>"; };
 		4C186A1CD1CF2568FBFBCCEE /* wide-mission-912-0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wide-mission-912-0.png"; sourceTree = "<group>"; };
 		4C7A2F37229D2C8F2F7D631B /* bundle-audit.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "bundle-audit.json"; sourceTree = "<group>"; };
+		4C9589259C1A39336B975FDF /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		4CB7C15D2AB8E782AE87F578 /* architecture.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = architecture.md; sourceTree = "<group>"; };
+		4D4D932F86D1BEAA6B4F6607 /* atlas.svg */ = {isa = PBXFileReference; path = atlas.svg; sourceTree = "<group>"; };
+		4DCF1118CDDDE75F64ED0131 /* iphone-vtol_yak141.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iphone-vtol_yak141.png"; sourceTree = "<group>"; };
+		4E26C64C888B34A22475E708 /* android-development-timeline-20261030.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "android-development-timeline-20261030.json"; sourceTree = "<group>"; };
+		4E5C15EFBCC402179E74255B /* lux-xy-20261029.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "lux-xy-20261029.cpp"; sourceTree = "<group>"; };
 		4EEDD35DAAFA7072269A86A8 /* manifest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = manifest.json; sourceTree = "<group>"; };
 		4F37507E6DFEC50B21BA3F45 /* scene-render-comparison.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "scene-render-comparison.md"; sourceTree = "<group>"; };
 		4FA65D317F89D98A91A7DB58 /* README.md.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md.txt; sourceTree = "<group>"; };
+		4FBC70919A355C055C73A06E /* pause-menu-normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pause-menu-normal.png"; sourceTree = "<group>"; };
+		5086454063ADE94CD3591553 /* tunguska-parts.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tunguska-parts.png"; sourceTree = "<group>"; };
 		50CF85F15EA4BB85FAAFA5E9 /* physical-apple-20261027.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "physical-apple-20261027.json"; sourceTree = "<group>"; };
+		518AE285810721A6D21803B5 /* user-first-pr-20261031.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "user-first-pr-20261031.md"; sourceTree = "<group>"; };
+		51AA9882C51F6220EDFD5DC9 /* galaxy-title.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "galaxy-title.png"; sourceTree = "<group>"; };
 		52184CD1B5AF9BA5B7CD751B /* status-history-20261024.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "status-history-20261024.md"; sourceTree = "<group>"; };
 		52422C68C625D5938C90F218 /* wireless-apple-20261027.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "wireless-apple-20261027.json"; sourceTree = "<group>"; };
+		529DF6F5E1FF23BA0C941BC3 /* ipad-shilka.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ipad-shilka.png"; sourceTree = "<group>"; };
 		532EDB73F624575B2E2A4C59 /* menu-joins-20261025.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "menu-joins-20261025.md"; sourceTree = "<group>"; };
 		535B238683FCED4B5C4EEC79 /* heavy-mach-113-assault-analysis-20261024.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "heavy-mach-113-assault-analysis-20261024.md"; sourceTree = "<group>"; };
 		537551CAC826EA2B0742D775 /* apple-platform-progress-20261026.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "apple-platform-progress-20261026.md"; sourceTree = "<group>"; };
+		5397E0EB24805F91F0EB0091 /* su57-concept.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "su57-concept.png"; sourceTree = "<group>"; };
 		54E375898FC422FFEB25FE93 /* HeavyMachRenderTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = HeavyMachRenderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		54F0067B31BC69E65DBB93A2 /* lux-lunae-intent-update-20261028.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "lux-lunae-intent-update-20261028.json"; sourceTree = "<group>"; };
+		5506B80D6D454A3D6C749CA0 /* shilka-game-240.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shilka-game-240.png"; sourceTree = "<group>"; };
+		5517D5C90FCDDF39500CE975 /* document-localization-plan.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "document-localization-plan.md"; sourceTree = "<group>"; };
+		553D9F6BC1B473806A244E0F /* door-world-state3-695x320.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "door-world-state3-695x320.png"; sourceTree = "<group>"; };
+		55440F1102BD6CC39E0C66BE /* user-cydia-purchase-20261028.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "user-cydia-purchase-20261028.md"; sourceTree = "<group>"; };
+		559DA2949D4B9545802D97F0 /* HUD_group_gauges.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HUD_group_gauges.png; sourceTree = "<group>"; };
+		55A21E1A0BEA0FBFB9AB1EA6 /* rights-manifest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "rights-manifest.json"; sourceTree = "<group>"; };
+		561BD3CB8BA6A868FF1EE8F3 /* main-edits-20261029.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "main-edits-20261029.json"; sourceTree = "<group>"; };
+		5715818F5D8FE5B725B16756 /* 03-weapon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "03-weapon.png"; sourceTree = "<group>"; };
+		57A3FB09D54DC69E59724244 /* features.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = features.md; sourceTree = "<group>"; };
 		57AC2B9EC0FD2A52BC1DD562 /* RESTORATION.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = RESTORATION.md; sourceTree = "<group>"; };
+		58214AD9E5EC0EB02CE67A1A /* ios-gameplay-gallery-20261030.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "ios-gameplay-gallery-20261030.md"; sourceTree = "<group>"; };
+		586EA6C0FACB8C7C6CEFDB6F /* ipad-vtol_harrier.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ipad-vtol_harrier.png"; sourceTree = "<group>"; };
 		58988EB22F82530CBB4CA5FD /* heavymach-recovery-20261024.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "heavymach-recovery-20261024.md"; sourceTree = "<group>"; };
 		58A684CE07FDE7E0FFE2E04F /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		59763ED3351A6D183A5DA279 /* death-stranding-community-story-20261028.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "death-stranding-community-story-20261028.md"; sourceTree = "<group>"; };
+		59AE2B7386D9157FA473EEE2 /* roadmap.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = roadmap.md; sourceTree = "<group>"; };
 		5A2C56D93AEE15B804838961 /* instruments-validation-20261024.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "instruments-validation-20261024.md"; sourceTree = "<group>"; };
+		5A64DC34CE6E2DCFDADD7294 /* roadmap.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = roadmap.md; sourceTree = "<group>"; };
 		5A8423B0BCC0B6480D8B16C0 /* core-items.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "core-items.md"; sourceTree = "<group>"; };
 		5AD7E667DDFC38AA9F8F5E3C /* user-restoration-reason-20261026.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "user-restoration-reason-20261026.md"; sourceTree = "<group>"; };
+		5C12F5B96D5B18AF0358FF9C /* original-tank-body.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "original-tank-body.png"; sourceTree = "<group>"; };
+		5D1BC2BBE1A4B965ABFB4855 /* tunguska-radar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tunguska-radar.png"; sourceTree = "<group>"; };
+		5D32EB976D306AD1F6C52F18 /* ipad-vtol_f35b.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ipad-vtol_f35b.png"; sourceTree = "<group>"; };
+		5D49E9A9BB889167C345F757 /* jump.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = jump.gif; sourceTree = "<group>"; };
+		5D5AF3E71D0C9282B93809B3 /* release-iphone-trim.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "release-iphone-trim.png"; sourceTree = "<group>"; };
+		5E1DE1FDA95CC4B6A0254AF1 /* formation-ipad-full-20261029.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "formation-ipad-full-20261029.png"; sourceTree = "<group>"; };
+		5E4ED6595CE32A624B7F95CD /* cuts.svg */ = {isa = PBXFileReference; path = cuts.svg; sourceTree = "<group>"; };
 		5F004D6E34EDF564EF4BB5AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5F0D15BEC654C8C6BE89F538 /* release-v0.17-20261030.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "release-v0.17-20261030.json"; sourceTree = "<group>"; };
+		5F48285348737B7097C5B1C4 /* ipad-vtol_f35b.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ipad-vtol_f35b.png"; sourceTree = "<group>"; };
 		5F83153A48BD54E32E8F6499 /* prompts.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = prompts.json; sourceTree = "<group>"; };
+		6038FC1633B299A7D030D13C /* shilka-medium-slope.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shilka-medium-slope.png"; sourceTree = "<group>"; };
 		6064E3C7D6863524A46593E9 /* repository-management.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "repository-management.md"; sourceTree = "<group>"; };
+		606A1B14383D7323317520A4 /* AutoAim_P_Wpn_Canon01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AutoAim_P_Wpn_Canon01.png; sourceTree = "<group>"; };
 		6082A90FC44E17D31BC6877E /* survival-audit.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "survival-audit.md"; sourceTree = "<group>"; };
 		613BDC321CE5B1F1405DE68C /* named-machine-bounds.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "named-machine-bounds.md"; sourceTree = "<group>"; };
+		621738929B2B2FD6E1237A43 /* hud-improvement-plan-20261028.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "hud-improvement-plan-20261028.md"; sourceTree = "<group>"; };
+		6217697B1DE66E5D94D1AA70 /* sass-handoff-audit-20261028.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "sass-handoff-audit-20261028.json"; sourceTree = "<group>"; };
+		6275FB0317FA44E741D7B06F /* secret-audit-20261028.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "secret-audit-20261028.json"; sourceTree = "<group>"; };
+		63D1C2C37667ACCF1F697530 /* 05-stage-clear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "05-stage-clear.png"; sourceTree = "<group>"; };
+		63EE8F5A1F8FE23C28CE51B3 /* document-localization-inventory-20261029.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "document-localization-inventory-20261029.json"; sourceTree = "<group>"; };
+		6412BB5E3D7FC25E15C398BF /* turret-v3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "turret-v3.png"; sourceTree = "<group>"; };
+		646621D49619943C7D6C8D5E /* screen3-695x320.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "screen3-695x320.png"; sourceTree = "<group>"; };
+		64F09202BDC13ACB228F0BC6 /* door-closed-480x360-game1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "door-closed-480x360-game1.png"; sourceTree = "<group>"; };
+		652E7C114C9DA28696E59465 /* audit.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = audit.json; sourceTree = "<group>"; };
 		66C79E83E3B01B0E181C594F /* report-overview-20261025.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "report-overview-20261025.md"; sourceTree = "<group>"; };
+		66DFFAB39C2D609553900E49 /* HUD_asset_GameUI_Gauge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HUD_asset_GameUI_Gauge.png; sourceTree = "<group>"; };
 		68B80B12913961B1D3E0D52E /* apple-platform-performance-20261026.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "apple-platform-performance-20261026.json"; sourceTree = "<group>"; };
+		6A5E2AF935B45EDC857E3A10 /* tunguska-game-120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tunguska-game-120.png"; sourceTree = "<group>"; };
+		6C490D5D4509FCBD1CD15397 /* screen2-695x320.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "screen2-695x320.png"; sourceTree = "<group>"; };
 		6C72DC3A90889B17040F9817 /* HeavyMachRestored-title.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "HeavyMachRestored-title.png"; sourceTree = "<group>"; };
+		6CE9E7A340AF585E485A5CE4 /* first-pr-and-tauri-20261031.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "first-pr-and-tauri-20261031.md"; sourceTree = "<group>"; };
+		6E3B05C30EB358D61520CC29 /* HUD_next_pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HUD_next_pressed.png; sourceTree = "<group>"; };
+		6E4E8E00509551F8FF5EC229 /* Su57-gold.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Su57-gold.png"; sourceTree = "<group>"; };
 		6EB9EABE72CF2DFD14B6DE71 /* player-gauge.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "player-gauge.md"; sourceTree = "<group>"; };
 		6EDD756A4457CA734779347C /* render-fidelity-audit.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "render-fidelity-audit.md"; sourceTree = "<group>"; };
+		6EE7448EBD44D5C649E25C11 /* HeavyMachRestored-fresh-clone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "HeavyMachRestored-fresh-clone.png"; sourceTree = "<group>"; };
+		6FC18D026724F41D76C30A1A /* release-tool-pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "release-tool-pressed.png"; sourceTree = "<group>"; };
+		7017B46057F0688CB02E72CA /* physical-ipad-cheat-selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "physical-ipad-cheat-selected.png"; sourceTree = "<group>"; };
 		702071702E196F492D99DF82 /* HMAppleInputTests.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = HMAppleInputTests.mm; sourceTree = "<group>"; };
 		705A43010B55F019A60264E9 /* summary.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = summary.json; sourceTree = "<group>"; };
+		714FF11BD149266F238FB184 /* HUD_group_passives.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HUD_group_passives.png; sourceTree = "<group>"; };
 		72C1B5E41727ECC6F9E816D9 /* normal-fidelity-ui-check.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "normal-fidelity-ui-check.md"; sourceTree = "<group>"; };
+		72CCA3F08FEC936FDF889A84 /* ipad-entry-030.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ipad-entry-030.png"; sourceTree = "<group>"; };
+		7415E108A13DFB68E30CDA06 /* gold-prompt.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "gold-prompt.txt"; sourceTree = "<group>"; };
+		7437A10F51C638CE952DB8F8 /* tunguska.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tunguska.png; sourceTree = "<group>"; };
 		74CBD1A90F134DB49486AC54 /* HMSaveParityTests.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = HMSaveParityTests.mm; sourceTree = "<group>"; };
+		74F7D6D1ABAAAD7B7E7D26E9 /* iphone-vtol_f35b.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iphone-vtol_f35b.png"; sourceTree = "<group>"; };
 		75032E57AA7E62DD553BE009 /* core-session.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "core-session.md"; sourceTree = "<group>"; };
+		7518D86A805E203DD4DF3239 /* platforms.svg */ = {isa = PBXFileReference; path = platforms.svg; sourceTree = "<group>"; };
+		751D09664D0C314E124D584C /* tunguska-gun-v2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tunguska-gun-v2.png"; sourceTree = "<group>"; };
 		7535311013F36401BA36D74B /* title-a.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "title-a.png"; sourceTree = "<group>"; };
 		75D4A147C89FD559D4F2FAFE /* HMPresentationComparisonTests.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = HMPresentationComparisonTests.mm; sourceTree = "<group>"; };
 		7637A54CE17ECE74B7B615B9 /* core-camera.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "core-camera.md"; sourceTree = "<group>"; };
+		763C2626793FE46844BC6E4D /* lux-xy-20261029.csv */ = {isa = PBXFileReference; path = "lux-xy-20261029.csv"; sourceTree = "<group>"; };
 		7743C4100840C7E0D3D5A02C /* source-coverage.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "source-coverage.md"; sourceTree = "<group>"; };
 		77847EF65DD7629DBD23D5D0 /* core-trail.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "core-trail.md"; sourceTree = "<group>"; };
 		78337F678A716FD48171D145 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		796327D9D931F748E213DA36 /* vtol-refinement-20261027.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "vtol-refinement-20261027.json"; sourceTree = "<group>"; };
+		79783C1381B4FD2E65888EFC /* HUD_group_aim.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HUD_group_aim.png; sourceTree = "<group>"; };
 		797C960A51D9D63C910A96BB /* runtime-policy.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "runtime-policy.md"; sourceTree = "<group>"; };
+		79E4E7891F6473FEBEBC2F43 /* lux-formation-20261029.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "lux-formation-20261029.json"; sourceTree = "<group>"; };
 		7A1E843D8C31F29FF2FEE252 /* wireless-device-workflow.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "wireless-device-workflow.md"; sourceTree = "<group>"; };
+		7AE5EA7D5BA45D673809DF60 /* AutoAim_P_Wpn_Canon03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AutoAim_P_Wpn_Canon03.png; sourceTree = "<group>"; };
 		7B03793EB8A9E595790A8010 /* original-procedures.csv */ = {isa = PBXFileReference; path = "original-procedures.csv"; sourceTree = "<group>"; };
+		7B170021EB634B3514BBD345 /* boss.mp4 */ = {isa = PBXFileReference; path = boss.mp4; sourceTree = "<group>"; };
+		7B869AB03F5C82DF8E0D6155 /* user-project-origin-20261028.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "user-project-origin-20261028.md"; sourceTree = "<group>"; };
+		7B8ED68B75EF91BDB3CAD17F /* index.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = index.md; sourceTree = "<group>"; };
+		7C5C43B0208E184B0A0A136A /* shilka-museum.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "shilka-museum.jpg"; sourceTree = "<group>"; };
 		7C96EEAE67C5C2D61771E0DA /* hm-defense-origin.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "hm-defense-origin.md"; sourceTree = "<group>"; };
+		7CB6C85ED2D0B5FF31605A17 /* HUD_group_weapon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HUD_group_weapon.png; sourceTree = "<group>"; };
 		7CD899817C62F8E38FEE5AE1 /* core-title.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "core-title.md"; sourceTree = "<group>"; };
 		7D0DB01D3E25BDB027FD1FB5 /* boss-motion-fix-20261025.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "boss-motion-fix-20261025.md"; sourceTree = "<group>"; };
+		7D584B9497C0087A85183945 /* HUD_partitioned.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HUD_partitioned.png; sourceTree = "<group>"; };
+		7E1F92FE4646FF96A1B112CE /* lux-lunae-intent-report-20261028.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "lux-lunae-intent-report-20261028.json"; sourceTree = "<group>"; };
 		7E66B8BE948E766D7FBB36F9 /* title-b.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "title-b.png"; sourceTree = "<group>"; };
+		7F804A43F48432FA88B837DC /* 02-jump.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "02-jump.png"; sourceTree = "<group>"; };
+		80A0F17FB0B52B7F227B38AF /* code.svg */ = {isa = PBXFileReference; path = code.svg; sourceTree = "<group>"; };
+		810AE3533ADA2311461D4962 /* gold-manifest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "gold-manifest.json"; sourceTree = "<group>"; };
+		81CC4B980E2E64ADB4C8DA96 /* fighters.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = fighters.gif; sourceTree = "<group>"; };
+		820BBB0DFA06DC9C1FDF1CB0 /* lux-xy-20261029.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "lux-xy-20261029.json"; sourceTree = "<group>"; };
+		82CE78906B28A32F24D94D15 /* HUD_menu_pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HUD_menu_pressed.png; sourceTree = "<group>"; };
+		83071164D5A34392F929D182 /* prompts.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = prompts.json; sourceTree = "<group>"; };
 		83166561B50C8B33F2950105 /* Modules */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Modules; path = ../Modules/HeavyMachModules.xcodeproj; sourceTree = "<group>"; };
 		8403DD328CBBED0400784D3E /* vtol-helicopter-density-20261027.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "vtol-helicopter-density-20261027.json"; sourceTree = "<group>"; };
+		842FF7FB7FDBABAE1A63D04A /* door-world-state3-480x360.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "door-world-state3-480x360.png"; sourceTree = "<group>"; };
+		8440E6BA744D82C0687C48F6 /* mac-web-pwa-comparison-20261101.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "mac-web-pwa-comparison-20261101.json"; sourceTree = "<group>"; };
+		849FEE35F81B6F4ED4244017 /* validation.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = validation.md; sourceTree = "<group>"; };
 		853B139AC90D420064E47A20 /* developer-background.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "developer-background.md"; sourceTree = "<group>"; };
+		85B06D5C2A41318DCAFAD573 /* shilka.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shilka.png; sourceTree = "<group>"; };
+		85D850B539AAE0860B192A57 /* HUD_asset_GameUI_Btm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HUD_asset_GameUI_Btm.png; sourceTree = "<group>"; };
 		85F6D98D330E6DB6AC9F4BEC /* OriginalTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OriginalTypes.h; sourceTree = "<group>"; };
+		869E6343D5512F6718C2BF36 /* original-air-spawns-20261029.csv */ = {isa = PBXFileReference; path = "original-air-spawns-20261029.csv"; sourceTree = "<group>"; };
 		873AF8B5832718C3BD3A1C28 /* report-site.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "report-site.md"; sourceTree = "<group>"; };
 		883EA33703F130F86BFAAB0F /* media-scenes.example.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "media-scenes.example.json"; sourceTree = "<group>"; };
+		891E147FD901297764420EB4 /* HUD_normal_repeat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HUD_normal_repeat.png; sourceTree = "<group>"; };
+		896C1AFECAAC803E6F080C93 /* hud-layout-diagnosis-20261028.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "hud-layout-diagnosis-20261028.json"; sourceTree = "<group>"; };
+		89948F0AFB2E251940FAFB3A /* version.svg */ = {isa = PBXFileReference; path = version.svg; sourceTree = "<group>"; };
 		89B16328BFC2E9FFEA2C48DB /* HMResourceLifecycleTests.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = HMResourceLifecycleTests.mm; sourceTree = "<group>"; };
+		89CF3C228D6D10532001B343 /* jump.mp4 */ = {isa = PBXFileReference; path = jump.mp4; sourceTree = "<group>"; };
+		8A345BDC62AFD914457C2DB7 /* android-ai-experience-20261030.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "android-ai-experience-20261030.md"; sourceTree = "<group>"; };
+		8A34FAAB3F2173B46D78BCF4 /* HUD_asset_Btn_Weapon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HUD_asset_Btn_Weapon.png; sourceTree = "<group>"; };
+		8A79570B10F28CA727B75703 /* vtol-expansion.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "vtol-expansion.md"; sourceTree = "<group>"; };
 		8AADFC1117F5DC5B0122FD9D /* audio-preload.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "audio-preload.md"; sourceTree = "<group>"; };
+		8CD3BDDCFF3F010863D8BAAC /* screen2-480x360.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "screen2-480x360.png"; sourceTree = "<group>"; };
 		8DBB13F902EC5D515094E6D1 /* yak141-concept.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "yak141-concept.png"; sourceTree = "<group>"; };
+		8DDD62571A26C36F56606192 /* original-heli-06.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "original-heli-06.png"; sourceTree = "<group>"; };
 		8E74F76EA57F3C2606331405 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		8EA808C81E92A2F07A718B77 /* media-scenes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "media-scenes.json"; sourceTree = "<group>"; };
 		8EBAF40B3CCCC68939FE1058 /* HeavyMachValidation-title.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "HeavyMachValidation-title.png"; sourceTree = "<group>"; };
+		8F7AE4ABE624FCE2A202999A /* ipad-shilka.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ipad-shilka.png"; sourceTree = "<group>"; };
 		90A36F72BFE0B02643FA865D /* evidence-index.csv */ = {isa = PBXFileReference; path = "evidence-index.csv"; sourceTree = "<group>"; };
+		90F01B2762FA6D59DF71E2E5 /* example-passives.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "example-passives.png"; sourceTree = "<group>"; };
+		90F69EA9A2EABB47E33531C4 /* HUD_manual.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HUD_manual.png; sourceTree = "<group>"; };
 		9121E88C559982D938156650 /* resource-formats.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "resource-formats.md"; sourceTree = "<group>"; };
+		9138313F5CE85229B947F05D /* medium-ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "medium-ipad.png"; sourceTree = "<group>"; };
+		91E362575330B127561C606C /* lock-label-iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lock-label-iphone.png"; sourceTree = "<group>"; };
+		92E53DF344FEE08C78425647 /* design-intent.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "design-intent.md"; sourceTree = "<group>"; };
+		941C28A502A1DCBE5686345D /* media-scenes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "media-scenes.json"; sourceTree = "<group>"; };
 		949ED7D17E22A154F44251D4 /* HMPassiveLifecycleTests.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = HMPassiveLifecycleTests.mm; sourceTree = "<group>"; };
+		94B94BFD2F40CD391C170F33 /* source-release-v0.12-20261028.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "source-release-v0.12-20261028.json"; sourceTree = "<group>"; };
 		94B9B0CC2CD8415CE10F3C52 /* same-save-comparison.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "same-save-comparison.md"; sourceTree = "<group>"; };
+		9514A809AFF59839A272758D /* design-and-modules-writing-20261027.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "design-and-modules-writing-20261027.json"; sourceTree = "<group>"; };
+		95A6952ECDEFE6F89EF0D1CF /* manifest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = manifest.json; sourceTree = "<group>"; };
+		95EF0163A09120CB48489C4C /* index.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = index.md; sourceTree = "<group>"; };
+		95F14CD8B395D736D21500D9 /* document-translation-scope.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "document-translation-scope.json"; sourceTree = "<group>"; };
+		9674D16F13ADA5249B08D90E /* desktop-web-plan-20261031.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "desktop-web-plan-20261031.md"; sourceTree = "<group>"; };
+		9699BAB6C6D31C0B5B1BF85F /* lux-lunae-plan-20261027.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "lux-lunae-plan-20261027.md"; sourceTree = "<group>"; };
+		98CBC3476CD86F08D58F5678 /* door-closed-695x320-game1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "door-closed-695x320-game1.png"; sourceTree = "<group>"; };
 		98F439444AA54CC19AA4B9D0 /* boss-battles-v5.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "boss-battles-v5.md"; sourceTree = "<group>"; };
 		993B84B8EDBAC35750140196 /* media-publication.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "media-publication.md"; sourceTree = "<group>"; };
+		9964A1ED7E90CB6A8417AE86 /* tunguska-game-240.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tunguska-game-240.png"; sourceTree = "<group>"; };
 		9AC080A75FE4676E7C571853 /* source-manifest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "source-manifest.json"; sourceTree = "<group>"; };
+		9CC122C8331C433D6600DE8C /* HUD_jump_pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HUD_jump_pressed.png; sourceTree = "<group>"; };
+		9D88604393BB604654854B5B /* groups.svg */ = {isa = PBXFileReference; path = groups.svg; sourceTree = "<group>"; };
 		9D8DF3657E31249D9890236E /* frame-drop-investigation-20261024.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "frame-drop-investigation-20261024.md"; sourceTree = "<group>"; };
+		9DF355193A5B3512AADCAA68 /* series-acquisition-20261030.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "series-acquisition-20261030.json"; sourceTree = "<group>"; };
+		9EC27F2A3975E17C357389EF /* android-boundaries-20261030.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "android-boundaries-20261030.json"; sourceTree = "<group>"; };
+		9EC8D2BD403CEF5F7BC74567 /* android-implementation-20261030.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "android-implementation-20261030.md"; sourceTree = "<group>"; };
 		9F111CD59009324CDE18B622 /* native-menus.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "native-menus.md"; sourceTree = "<group>"; };
 		9FBBFEDE339D8551A7455D59 /* auto-aim-plan-20261026.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "auto-aim-plan-20261026.md"; sourceTree = "<group>"; };
 		A00E4CAC3EA41FD587F8CA92 /* restoration-contract.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "restoration-contract.md"; sourceTree = "<group>"; };
+		A01E7F73F0C6A93961B4A3E6 /* HUD_draw_inventory.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = HUD_draw_inventory.json; sourceTree = "<group>"; };
+		A030E1B6CD95619A88B878B4 /* android-app-20261030.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "android-app-20261030.json"; sourceTree = "<group>"; };
+		A07FC130741AEDEFCC8E4001 /* approved-readme-opening-20261028.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "approved-readme-opening-20261028.md"; sourceTree = "<group>"; };
 		A1451F6051CFB5BDCAEEE48C /* completeness-audit-20261026.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "completeness-audit-20261026.md"; sourceTree = "<group>"; };
+		A2092F2D10DA017B1B3D23D6 /* app-icon-and-media-20261029.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "app-icon-and-media-20261029.md"; sourceTree = "<group>"; };
 		A2299D1DA0E938863932D743 /* clone-build-20261026.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "clone-build-20261026.md"; sourceTree = "<group>"; };
+		A2E50708A5DFB0ED55AB4449 /* hud-editor-20261029.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "hud-editor-20261029.json"; sourceTree = "<group>"; };
 		A2E598C85C26B839AE180293 /* method-address-map.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "method-address-map.json"; sourceTree = "<group>"; };
+		A304CBE81E28BA3FE07F9DFA /* ipad-vtol_yak141.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ipad-vtol_yak141.png"; sourceTree = "<group>"; };
+		A3AC8B5AA5E26B3ADF760F71 /* fighters.mp4 */ = {isa = PBXFileReference; path = fighters.mp4; sourceTree = "<group>"; };
 		A4071DBEE8535C94812B0DB8 /* E_0604_Body.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = E_0604_Body.png; sourceTree = "<group>"; };
+		A4728D953970815D9F6A4515 /* comparison.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = comparison.png; sourceTree = "<group>"; };
+		A48B2180E203B8B9D5A535BE /* 07-fighters.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "07-fighters.png"; sourceTree = "<group>"; };
+		A4B6A567D547B02627C7D0BD /* formation-iphone-entry-20261029.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "formation-iphone-entry-20261029.png"; sourceTree = "<group>"; };
+		A4F1D1EF0D2BDAC60F4A49D3 /* ipad-vtol_harrier.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ipad-vtol_harrier.png"; sourceTree = "<group>"; };
+		A55C9F5504175A2CEA90192E /* 04-fighters.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "04-fighters.png"; sourceTree = "<group>"; };
+		A5EE177733D851856D799E2A /* HUD_asset_AutoAimControls.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HUD_asset_AutoAimControls.png; sourceTree = "<group>"; };
+		A627B366BF6B3A45AC8582A5 /* lux-formation-20261029.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "lux-formation-20261029.cpp"; sourceTree = "<group>"; };
 		A6816EFD45254FFD7BD889AE /* ios-completeness-audit-20261026.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "ios-completeness-audit-20261026.md"; sourceTree = "<group>"; };
+		A69CD6E2FA89AA4BEE5E238A /* release-notes-plan.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "release-notes-plan.md"; sourceTree = "<group>"; };
 		A6CB4A553495F4B6F8EE8DAF /* device-validation-ready.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "device-validation-ready.md"; sourceTree = "<group>"; };
 		A6FA707E7CC17138EEBFB6D4 /* related-titles-20261026.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "related-titles-20261026.md"; sourceTree = "<group>"; };
+		A755D9240A96C2DD4E930A19 /* physical-iphone-cheat-weapon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "physical-iphone-cheat-weapon.png"; sourceTree = "<group>"; };
+		A807D11B6D2EBF6FB6EB51C7 /* pr24-web-fixes-20261031.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "pr24-web-fixes-20261031.json"; sourceTree = "<group>"; };
+		A8133A17385166AF21328FC7 /* scenes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = scenes.json; sourceTree = "<group>"; };
+		A91E8D338F427EEBFBC6DD85 /* iphone-vtol_harrier.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iphone-vtol_harrier.png"; sourceTree = "<group>"; };
+		A941B43D9A609C5FD11ECBE9 /* editorial-copyedit-20261027.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "editorial-copyedit-20261027.json"; sourceTree = "<group>"; };
 		A9CA1558485D3C2302CA7538 /* HMGLReferenceTests.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = HMGLReferenceTests.mm; sourceTree = "<group>"; };
 		A9F9AF709BDE548A75804212 /* rea-provenance.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "rea-provenance.json"; sourceTree = "<group>"; };
 		AAB65F292ABEA6F5E874EC65 /* f35b-concept.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "f35b-concept.png"; sourceTree = "<group>"; };
+		AAC34BE352093E751DC8891D /* implementation-status.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "implementation-status.md"; sourceTree = "<group>"; };
 		AACB612D08366230690E6ACE /* core-world.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "core-world.md"; sourceTree = "<group>"; };
 		AB2B83C0AFA0601BE600779D /* core-bullet-visual.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "core-bullet-visual.md"; sourceTree = "<group>"; };
 		AB993236FCD324F28BCBFA0C /* android-port-plan-20261026.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "android-port-plan-20261026.md"; sourceTree = "<group>"; };
 		AC604AAB654EE3345C901005 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		ADD028C4B240F2D7BE11BAB6 /* wide-slots-480-0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wide-slots-480-0.png"; sourceTree = "<group>"; };
+		ADDDA045D23CC814F8B2DD14 /* .gitattributes */ = {isa = PBXFileReference; path = .gitattributes; sourceTree = "<group>"; };
 		ADF6F29FF2087EC17C84AE43 /* core-motion.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "core-motion.md"; sourceTree = "<group>"; };
+		AE60765BA1359531F40ED6A1 /* release-iphone-menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "release-iphone-menu.png"; sourceTree = "<group>"; };
+		AE9B9C82618EBDBA29BA4CD0 /* HUD_group_progress.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HUD_group_progress.png; sourceTree = "<group>"; };
+		AF87711C737800024B85F966 /* android-development-20261030.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "android-development-20261030.md"; sourceTree = "<group>"; };
 		AFB645DEA2C242150E725C08 /* document-map.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "document-map.json"; sourceTree = "<group>"; };
 		AFE9BE64A0BB58C475BABE95 /* release-v0.9.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "release-v0.9.md"; sourceTree = "<group>"; };
+		B005A4202566197F26BE65D9 /* icon-and-media-20261029.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "icon-and-media-20261029.json"; sourceTree = "<group>"; };
 		B0AC275894023B5D8BA2EA7F /* sprite-native-integration.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "sprite-native-integration.md"; sourceTree = "<group>"; };
+		B0C286E7F0971935E25BD534 /* ipad-tunguska.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ipad-tunguska.png"; sourceTree = "<group>"; };
+		B0DCD76D3866FF194845B05B /* github-followup-20261028.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "github-followup-20261028.json"; sourceTree = "<group>"; };
+		B0E4C8E420FA2547FB1D511D /* tunguska-concept-v1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tunguska-concept-v1.png"; sourceTree = "<group>"; };
+		B1C849EDE22FB5A29EEB5A57 /* github-documentation-plan-20261027.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "github-documentation-plan-20261027.md"; sourceTree = "<group>"; };
 		B27E15C873174A7694EB996C /* publication-inventory.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "publication-inventory.md"; sourceTree = "<group>"; };
+		B2FF34856470872FE9F5A323 /* shilka.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shilka.png; sourceTree = "<group>"; };
+		B3363C4BD5F491938765EDF9 /* 01-mission-select.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "01-mission-select.png"; sourceTree = "<group>"; };
+		B411B2261C461D70AEB68E92 /* galaxy-boss.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "galaxy-boss.png"; sourceTree = "<group>"; };
+		B41472B62644B31FBE2FA23F /* desktop-web-readiness-20261031.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "desktop-web-readiness-20261031.json"; sourceTree = "<group>"; };
 		B41F02A0FA9BB07479B2F3AB /* documentation-audit-20261025.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "documentation-audit-20261025.md"; sourceTree = "<group>"; };
+		B52E13D341117955ABDDE247 /* narrative-voice-audit-20261028.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "narrative-voice-audit-20261028.json"; sourceTree = "<group>"; };
+		B5333D24DCD1F0ABE30992F0 /* release-history-20261029.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "release-history-20261029.json"; sourceTree = "<group>"; };
 		B5866A9FFEABA7138AD89FDF /* session-lifecycle.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "session-lifecycle.md"; sourceTree = "<group>"; };
 		B6ED30725AF5BF71C0780F82 /* apple-platforms.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "apple-platforms.md"; sourceTree = "<group>"; };
+		B71AF17D33B18E83DACD97F4 /* physical-ipad-cheat-weapon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "physical-ipad-cheat-weapon.png"; sourceTree = "<group>"; };
 		B74DBB4B2398ED0B516366B6 /* related-title-archive-20261026.csv */ = {isa = PBXFileReference; path = "related-title-archive-20261026.csv"; sourceTree = "<group>"; };
+		B76D572D35EF851ECD4C19D2 /* 06-boss.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "06-boss.png"; sourceTree = "<group>"; };
 		B77C7F2D948DD25491DF55B6 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		B78262B4CECE0335CEE87350 /* ipad-comparison.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ipad-comparison.png"; sourceTree = "<group>"; };
 		B7D57194E97D56947DA09374 /* commit-map.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "commit-map.txt"; sourceTree = "<group>"; };
+		B7DA32BFD43004BE3DF5BC87 /* HUD_asset_NumSet01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HUD_asset_NumSet01.png; sourceTree = "<group>"; };
 		B7FD2C0696FF7BD1B4CD0B0D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		B80678BCA28E7FB638C14A13 /* runtime-summary.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "runtime-summary.json"; sourceTree = "<group>"; };
 		B836A2E7B597EAA2EA022CEB /* OriginalClasses.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OriginalClasses.h; sourceTree = "<group>"; };
+		B8A275491AF4ED32E463F51C /* editorial-review-20261028.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "editorial-review-20261028.json"; sourceTree = "<group>"; };
+		B8C3288A8F4468AB6B12187B /* iphone-tunguska.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iphone-tunguska.png"; sourceTree = "<group>"; };
 		B8E2E810D01EBB107EBFCDD4 /* HMMenuParityTests.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = HMMenuParityTests.mm; sourceTree = "<group>"; };
+		B8EDC049B3E500413C3877C3 /* android-main-readiness-20261030.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "android-main-readiness-20261030.json"; sourceTree = "<group>"; };
+		B8F4381D13612A6F7A95DC73 /* HUD_group_preview.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HUD_group_preview.png; sourceTree = "<group>"; };
+		B9371927AEF5D3861FF2D248 /* HUD_fire_pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HUD_fire_pressed.png; sourceTree = "<group>"; };
+		B97DAF33F68BD924DA1F03F8 /* prompts.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = prompts.json; sourceTree = "<group>"; };
+		B9A0D1AADC687CECE4132838 /* short-guns-attached.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "short-guns-attached.png"; sourceTree = "<group>"; };
+		BA318EEAB075F71273D71336 /* 07-fighters.mp4 */ = {isa = PBXFileReference; path = "07-fighters.mp4"; sourceTree = "<group>"; };
+		BA3F112F308940A904C0258D /* ground-original-assembly-20261028.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "ground-original-assembly-20261028.json"; sourceTree = "<group>"; };
+		BACE9C2AC21F7BD52726C722 /* 04-special.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "04-special.png"; sourceTree = "<group>"; };
+		BB28F311A66AAD7F4FF807AC /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		BC1E09CFCBB560DCCFEAC832 /* objc-reconstruction.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "objc-reconstruction.md"; sourceTree = "<group>"; };
+		BDA120053E76DBD50045710D /* editorial-guide.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "editorial-guide.md"; sourceTree = "<group>"; };
+		BE0C4B5407C8AB7D7E2BEC10 /* mission-without-hud-entry.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mission-without-hud-entry.png"; sourceTree = "<group>"; };
+		BE4A5E9618686D0C0BF316B0 /* HUD_asset_GameUI_Gear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HUD_asset_GameUI_Gear.png; sourceTree = "<group>"; };
 		BE4AEA9958654D8BBA408E5A /* wide-slots-912-0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wide-slots-912-0.png"; sourceTree = "<group>"; };
+		BE5C527B4923A8D009F594CE /* web-port-20261028.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "web-port-20261028.json"; sourceTree = "<group>"; };
+		BE5CE61E5CE5585BDEA076C3 /* ground-aa-integrated-20261028.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "ground-aa-integrated-20261028.json"; sourceTree = "<group>"; };
+		BEADE40F08C5AF07D5BBB879 /* ipad-default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ipad-default.png"; sourceTree = "<group>"; };
+		BECEBC9D843DDFDBA550B159 /* f22-concept.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "f22-concept.png"; sourceTree = "<group>"; };
 		BF8F16A81E42EC978948748E /* handoff-20261024-rea-install.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "handoff-20261024-rea-install.md"; sourceTree = "<group>"; };
 		BFA9C0EA840375E3AA9D6457 /* HMOpenALAudioTests.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = HMOpenALAudioTests.mm; sourceTree = "<group>"; };
+		C01737E189649C82058CE876 /* pr24-web-review-20261031.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "pr24-web-review-20261031.json"; sourceTree = "<group>"; };
+		C0FC98733A2C59D0F634B387 /* tunguska-motion.mp4 */ = {isa = PBXFileReference; path = "tunguska-motion.mp4"; sourceTree = "<group>"; };
+		C136C1C3D2B70D1C61B03A77 /* android-ai-experience-20261030.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "android-ai-experience-20261030.md"; sourceTree = "<group>"; };
 		C168E2A441F62141C90CF71A /* ios-source-map.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "ios-source-map.md"; sourceTree = "<group>"; };
+		C18D24AC82CCB4F2A3A16D42 /* door-world-state6-695x320.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "door-world-state6-695x320.png"; sourceTree = "<group>"; };
+		C2189CD755161BFD0A5E778B /* github-manuscripts-20261027.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "github-manuscripts-20261027.json"; sourceTree = "<group>"; };
+		C29CF2B2A21311A80B9215DA /* ipad-vtol_size_edges.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ipad-vtol_size_edges.png"; sourceTree = "<group>"; };
+		C2C59B5CA5EAED53F3850DA2 /* android-upgrade-fix-20261030.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "android-upgrade-fix-20261030.json"; sourceTree = "<group>"; };
 		C324093C9B14CF95A40C9D6B /* build-resources.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "build-resources.json"; sourceTree = "<group>"; };
 		C455E36A45957F68622307B7 /* AGENTS.md.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = AGENTS.md.txt; sourceTree = "<group>"; };
 		C494426FBB8D5336C00815DC /* core-enemy.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "core-enemy.md"; sourceTree = "<group>"; };
 		C4A2CCA35D509BE1307F605E /* nil-parts-runtime-analysis.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "nil-parts-runtime-analysis.md"; sourceTree = "<group>"; };
+		C4EE9AFD34815FB6EDAAC5FB /* troubleshooting.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = troubleshooting.md; sourceTree = "<group>"; };
+		C60A1FFBB5381EC638B24A1D /* lux-vertical-20261029.csv */ = {isa = PBXFileReference; path = "lux-vertical-20261029.csv"; sourceTree = "<group>"; };
 		C63D82DEF048E11F9598C173 /* design.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = design.md; sourceTree = "<group>"; };
+		C6500810C640022D6A74CC48 /* design-intent.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "design-intent.md"; sourceTree = "<group>"; };
+		C6B99CE18B752825C671674F /* HUD_weapon_pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HUD_weapon_pressed.png; sourceTree = "<group>"; };
+		C819615009C516656521FD04 /* branch-cleanup-20261028.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "branch-cleanup-20261028.json"; sourceTree = "<group>"; };
+		C82DF3803C054D1E95512623 /* shilka-motion.mp4 */ = {isa = PBXFileReference; path = "shilka-motion.mp4"; sourceTree = "<group>"; };
 		C86E0AAEEA9202BA9D785456 /* rea-implementation-audit-20261026.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "rea-implementation-audit-20261026.md"; sourceTree = "<group>"; };
+		C8BAD73DE62489192BC05540 /* 01-auto-aim.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "01-auto-aim.png"; sourceTree = "<group>"; };
+		C9BFF0E89EECBEE977FBA901 /* independence-main-20261028.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "independence-main-20261028.json"; sourceTree = "<group>"; };
+		C9D6038D8AA38211B48E37A9 /* github-social-preview-gameplay.svg */ = {isa = PBXFileReference; path = "github-social-preview-gameplay.svg"; sourceTree = "<group>"; };
+		CA6F6E153017F5AC1DADB844 /* hud-parts-audit-20261028.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "hud-parts-audit-20261028.json"; sourceTree = "<group>"; };
 		CBA5D6DFB4E6F36DD46C9562 /* compat-source-comparison-20261024.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "compat-source-comparison-20261024.md"; sourceTree = "<group>"; };
 		CCA5FD8D09F25990519BD1C2 /* HeavyMachValidation-title.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "HeavyMachValidation-title.png"; sourceTree = "<group>"; };
+		CD01D894AFD40BE2D9B72C38 /* auto-aim-ipad-20261027.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "auto-aim-ipad-20261027.md"; sourceTree = "<group>"; };
+		CD24051B4B7F9156584CBDFF /* lux-vertical-20261029.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "lux-vertical-20261029.cpp"; sourceTree = "<group>"; };
+		CDD764FBA71FC185072D961D /* development-history.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "development-history.md"; sourceTree = "<group>"; };
 		CE0895004A718D9473CE2A69 /* canonical.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = canonical.md; sourceTree = "<group>"; };
+		CE5A4B09032550BC708A6071 /* physical-ipad-gauges-firing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "physical-ipad-gauges-firing.png"; sourceTree = "<group>"; };
+		CE995540A78C65449FBE2A0A /* original-heli-03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "original-heli-03.png"; sourceTree = "<group>"; };
 		D15B81C3B25B465ED286F6D9 /* rea-restoration-method-20261025.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "rea-restoration-method-20261025.md"; sourceTree = "<group>"; };
+		D1B51F8608D19982518DEE7C /* 07-upgrade.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "07-upgrade.png"; sourceTree = "<group>"; };
+		D219CBD401EC7BF07029DEB7 /* HeavyMachValidation-fresh-clone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "HeavyMachValidation-fresh-clone.png"; sourceTree = "<group>"; };
+		D22F22BAF6D0DD8B263BA246 /* door-world-state5-695x320.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "door-world-state5-695x320.png"; sourceTree = "<group>"; };
+		D23615E6995F90820FD5CAEB /* github-repository-plan-20261028.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "github-repository-plan-20261028.md"; sourceTree = "<group>"; };
+		D38A9F78E426012EC68F1902 /* 08-jump-clip.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "08-jump-clip.gif"; sourceTree = "<group>"; };
 		D3F38B01890F9BB6ACC69585 /* product-tree-proof.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "product-tree-proof.json"; sourceTree = "<group>"; };
+		D4483DEC5E060187F914FF8E /* github-social-preview.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "github-social-preview.png"; sourceTree = "<group>"; };
 		D45051A62D87B7340D35DAE9 /* HeavyMachAssets.bundle */ = {isa = PBXFileReference; lastKnownFileType = wrapper.cfbundle; path = HeavyMachAssets.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4683A32592DA503C431F8BA /* HUD_actual_game.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HUD_actual_game.png; sourceTree = "<group>"; };
 		D48A4BA4A93E4BA6EB9CF07A /* after-wide-mode-912-0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "after-wide-mode-912-0.png"; sourceTree = "<group>"; };
 		D4DB0812856CF552EC502E0D /* HMCompatibilityPixelsTests.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = HMCompatibilityPixelsTests.mm; sourceTree = "<group>"; };
 		D5697CC9FB87B8D1AA150B2D /* repository-split-20261026.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "repository-split-20261026.md"; sourceTree = "<group>"; };
 		D5C84524B4CA6737D6FA809A /* stage-journeys.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "stage-journeys.md"; sourceTree = "<group>"; };
+		D5EE0ABBFE4463A7E74B9C73 /* ground-unit-inventory-20261028.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "ground-unit-inventory-20261028.cpp"; sourceTree = "<group>"; };
+		D681B24050C0B05DF06CDA98 /* physical-iphone-cheat-selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "physical-iphone-cheat-selected.png"; sourceTree = "<group>"; };
+		D6C2FC3036C8A5C8E87A1AA6 /* lux-lunae-design-20261027.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "lux-lunae-design-20261027.md"; sourceTree = "<group>"; };
+		D73038B5DEB6B0AE9F8ED955 /* HUD_group_menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HUD_group_menu.png; sourceTree = "<group>"; };
 		D735C213C78FA6E56456FD24 /* clear-illustration-fix-20261025.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "clear-illustration-fix-20261025.md"; sourceTree = "<group>"; };
+		D7553CF99A304A55378D34E0 /* HUD_asset_WeaponTile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HUD_asset_WeaponTile.png; sourceTree = "<group>"; };
 		D765AD59A90B268507044264 /* android-and-titles-evidence-20261026.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "android-and-titles-evidence-20261026.json"; sourceTree = "<group>"; };
+		D78B712A1B622B10F5498183 /* github-licenses-and-badges-20261028.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "github-licenses-and-badges-20261028.md"; sourceTree = "<group>"; };
+		D7B0132C21CF71CC9BDAC128 /* user-lux-lunae-intent-20261028.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "user-lux-lunae-intent-20261028.md"; sourceTree = "<group>"; };
+		D7D8D3FFCA92F30172C8AE41 /* tunguska-ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tunguska-ipad.png"; sourceTree = "<group>"; };
+		D85AC59D15D6CC8279FF70BD /* HUD_asset_ItemTile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HUD_asset_ItemTile.png; sourceTree = "<group>"; };
+		D86E375B3FC825C8B08FA856 /* iphone-vtol_size_edges.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iphone-vtol_size_edges.png"; sourceTree = "<group>"; };
+		D8CAB53E1FF5FABAE68E677E /* shilka-radar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shilka-radar.png"; sourceTree = "<group>"; };
+		D8DF1ACFDFEF2876D5D46B2C /* 08-jump-clip.mp4 */ = {isa = PBXFileReference; path = "08-jump-clip.mp4"; sourceTree = "<group>"; };
 		D93438B37AEB2640138DAD65 /* engineering-retrospective-20261025.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "engineering-retrospective-20261025.md"; sourceTree = "<group>"; };
+		DAAE75348FCBE2E8D1EBEFBA /* original-air-spawns-20261029.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "original-air-spawns-20261029.cpp"; sourceTree = "<group>"; };
+		DB2EF03D88055D3DA72479EC /* release-tool-20261029.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "release-tool-20261029.json"; sourceTree = "<group>"; };
+		DB51D93761EF62BE4245E2B7 /* iphone-entry-030.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iphone-entry-030.png"; sourceTree = "<group>"; };
 		DC0E3F23BC796185FFA68D58 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		DC348EBCCD47A06D7ED8DE10 /* build-and-install.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "build-and-install.md"; sourceTree = "<group>"; };
+		DE0ED214130753AEF7A6D28D /* xcode-ignore-audit-20261028.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "xcode-ignore-audit-20261028.json"; sourceTree = "<group>"; };
+		DEE76FF676A70575B028CBAC /* 02-jump.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "02-jump.png"; sourceTree = "<group>"; };
 		DEF3A9AFC6A532C841FB1313 /* weapon-result-fix-20261025.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "weapon-result-fix-20261025.md"; sourceTree = "<group>"; };
+		DF428779F84C7CBFA738E32A /* shilka.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shilka.png; sourceTree = "<group>"; };
+		DF43C632C982DFAB452AAA5E /* iphone-comparison.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iphone-comparison.png"; sourceTree = "<group>"; };
 		DF5B74B06F0F05701EB3027A /* survival-native-check.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "survival-native-check.md"; sourceTree = "<group>"; };
 		DFEC29D6DA7CE11F4F7B1592 /* core-geometry.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "core-geometry.md"; sourceTree = "<group>"; };
+		E02DBF3C013DA04E71D06F31 /* gameplay-guide.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "gameplay-guide.md"; sourceTree = "<group>"; };
+		E08BB8DF99341F92108EE76E /* VTOL_Yak141.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VTOL_Yak141.png; sourceTree = "<group>"; };
 		E096572CACA711908D69EABA /* document-index.csv */ = {isa = PBXFileReference; path = "document-index.csv"; sourceTree = "<group>"; };
+		E0A97A9B5D8230EC503DCCC2 /* upgrade-before.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "upgrade-before.png"; sourceTree = "<group>"; };
+		E178F19337B96DB477064DD8 /* ground-aa-20261028.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "ground-aa-20261028.json"; sourceTree = "<group>"; };
+		E1AF58BC58D56145B14AA68A /* auto-aim-ipad-20261027.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "auto-aim-ipad-20261027.json"; sourceTree = "<group>"; };
+		E2DCDA6D35818E609319DB16 /* screen4-695x320.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "screen4-695x320.png"; sourceTree = "<group>"; };
+		E2E887871EC8F74898B8246B /* troubleshooting.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = troubleshooting.md; sourceTree = "<group>"; };
 		E30EBDF1118EE457533D871C /* source-provenance.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "source-provenance.md"; sourceTree = "<group>"; };
 		E3192366700F0B2781C047F7 /* HeavyMachRestored-title.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "HeavyMachRestored-title.png"; sourceTree = "<group>"; };
+		E3860F657F881BC978A6AA1A /* vertical-formation-20261029.svg */ = {isa = PBXFileReference; path = "vertical-formation-20261029.svg"; sourceTree = "<group>"; };
+		E45F69282805657004943F0B /* formation-iphone-full-20261029.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "formation-iphone-full-20261029.png"; sourceTree = "<group>"; };
+		E48F4AFAAC1D55EC113E5EB4 /* license.svg */ = {isa = PBXFileReference; path = license.svg; sourceTree = "<group>"; };
+		E4E7E40ACC41B4C8F7BC88DC /* launcher-phone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "launcher-phone.png"; sourceTree = "<group>"; };
 		E503810738CE02287EBA5EC2 /* ipa-independent-build-20261026.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "ipa-independent-build-20261026.md"; sourceTree = "<group>"; };
+		E548A48B3C27862C72924499 /* release-ipad-trim.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "release-ipad-trim.png"; sourceTree = "<group>"; };
+		E751CFA61CF07FF246A668F3 /* AutoAim_P_Wpn_RaderLsr.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AutoAim_P_Wpn_RaderLsr.png; sourceTree = "<group>"; };
+		E760C7A2927627632854A8FC /* mig31-concept.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mig31-concept.png"; sourceTree = "<group>"; };
 		E78A123DED194A1CD126DC33 /* canvas-ai-and-rotation-research-20261025.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "canvas-ai-and-rotation-research-20261025.md"; sourceTree = "<group>"; };
+		E7FD246284754122DD72B012 /* pr24-merge-preservation-20261031.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "pr24-merge-preservation-20261031.json"; sourceTree = "<group>"; };
 		E8432EED144FFE452F8B6904 /* handover-20261024.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "handover-20261024.md"; sourceTree = "<group>"; };
+		E975A57A53F33B40BECBAEE4 /* github-followup-20261028.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "github-followup-20261028.md"; sourceTree = "<group>"; };
 		E98970B311A0BFCE501D0899 /* game-calculation-policy.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "game-calculation-policy.md"; sourceTree = "<group>"; };
+		E9DAEB27D615407EE4F66B75 /* HUD_asset_GameUI_RedLight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HUD_asset_GameUI_RedLight.png; sourceTree = "<group>"; };
 		E9F5C780F43FDA4DE574BF1D /* harrier-concept.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "harrier-concept.png"; sourceTree = "<group>"; };
+		EA2537849D3958EFA8BF8DFF /* android-gameplay-20261030.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "android-gameplay-20261030.md"; sourceTree = "<group>"; };
 		EAE8D17E6D0A18CF938C5D06 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		EB654642196D3E4D27A52B48 /* github-documentation-plan-20261027.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "github-documentation-plan-20261027.json"; sourceTree = "<group>"; };
+		EB944697699B9B0FEC39B8E0 /* gameplay-media-20261027.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "gameplay-media-20261027.json"; sourceTree = "<group>"; };
 		EC5A4726B46F9E01D381071A /* audio-fidelity.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "audio-fidelity.md"; sourceTree = "<group>"; };
 		EC8E6C601E9AA56A6321BEA5 /* before-wide-mode-912-0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "before-wide-mode-912-0.png"; sourceTree = "<group>"; };
+		ECB988636039557E5A7A7FAC /* RESTORATION.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = RESTORATION.md; sourceTree = "<group>"; };
+		ED64B1F80FCBD3F34DAAF249 /* fullscreen-transitions-20261027.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "fullscreen-transitions-20261027.json"; sourceTree = "<group>"; };
+		EE83D53683C6AD23F6E8AF5E /* HUD_asset_SelWeapon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HUD_asset_SelWeapon.png; sourceTree = "<group>"; };
+		EEAAD39575E1E97226791B42 /* openal-relink-20261028.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "openal-relink-20261028.json"; sourceTree = "<group>"; };
+		EEAB2FA93BE61D03457CF0DA /* installed-offline.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "installed-offline.png"; sourceTree = "<group>"; };
 		EEF173AB49983E4525BCF020 /* sprite-gl-reference.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "sprite-gl-reference.md"; sourceTree = "<group>"; };
-		EF023FE8F1206DB6CDC7CC31 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		EFBFB020659FB930FF53E090 /* public-repository-20261028.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "public-repository-20261028.json"; sourceTree = "<group>"; };
+		F009BEDB5B5C618529711190 /* web-port-20261028.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "web-port-20261028.md"; sourceTree = "<group>"; };
 		F058EFA336087FE4FDC0F2F2 /* artifact-index.csv */ = {isa = PBXFileReference; path = "artifact-index.csv"; sourceTree = "<group>"; };
+		F0D80CB79960F73EE61FD98E /* HUD_asset_GameMenu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HUD_asset_GameMenu.png; sourceTree = "<group>"; };
 		F1417F39BD48BA1520898419 /* summary.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = summary.json; sourceTree = "<group>"; };
 		F18D28C287BDF73BFC8B65EE /* before-wide-title-912-0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "before-wide-title-912-0.png"; sourceTree = "<group>"; };
+		F19C9FF5D3E2C030AA299A24 /* MiG31-gold.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MiG31-gold.png"; sourceTree = "<group>"; };
+		F2AFF4B39B843EF9E426E116 /* ground-aa-art-20261028.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "ground-aa-art-20261028.md"; sourceTree = "<group>"; };
+		F438F382049A7D577518B7BC /* boss.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = boss.gif; sourceTree = "<group>"; };
+		F4A415F4187FB8C513829597 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		F4E2133BD9675B9D3431A44B /* user-foreword-20261029.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "user-foreword-20261029.md"; sourceTree = "<group>"; };
+		F526AB48C7694341AA45FED1 /* ipad-moved.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ipad-moved.png"; sourceTree = "<group>"; };
+		F542EA4DA94D42276C9AE57C /* before.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = before.png; sourceTree = "<group>"; };
+		F5B56DA5E0EC0670DE29972F /* iphone-combat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iphone-combat.png"; sourceTree = "<group>"; };
+		F5BADF0D8485C4658EA6C4F5 /* tunguska-radar-v2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tunguska-radar-v2.png"; sourceTree = "<group>"; };
 		F658AEF8688BBF27685160FC /* vtol-feasibility-20261027.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "vtol-feasibility-20261027.json"; sourceTree = "<group>"; };
+		F71DB16EB032F402AD4403D3 /* gameplay-guide.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "gameplay-guide.md"; sourceTree = "<group>"; };
+		F772D7199CC5D342ADE3E916 /* screen1-695x320.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "screen1-695x320.png"; sourceTree = "<group>"; };
+		F8CFE729582C3556E6C072B3 /* shilka-iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shilka-iphone.png"; sourceTree = "<group>"; };
 		F8FD8EB152194A92019D3388 /* native-hud.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "native-hud.md"; sourceTree = "<group>"; };
+		F91FF885D48035AE39149355 /* upgrade-confirmed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "upgrade-confirmed.png"; sourceTree = "<group>"; };
+		F92620FB87ECD87914E1923B /* features.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = features.md; sourceTree = "<group>"; };
 		F9CDC07191214F735D78E929 /* Arm32DiskLayouts.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Arm32DiskLayouts.h; sourceTree = "<group>"; };
 		FB56E42D202B2D41B745291F /* vtol-art-plan-20261027.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "vtol-art-plan-20261027.json"; sourceTree = "<group>"; };
 		FB6D4AA4355C569ED0C5533D /* game-design.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "game-design.md"; sourceTree = "<group>"; };
+		FD48D29D15BB7D3102AEE964 /* visitor-english-20261030.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "visitor-english-20261030.json"; sourceTree = "<group>"; };
 		FF08AC79BBEC4688A18F9F99 /* texture-sampling-diagnosis.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "texture-sampling-diagnosis.md"; sourceTree = "<group>"; };
 		FF97514A81378C660F041128 /* E_Heli_Body_06.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = E_Heli_Body_06.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -400,6 +803,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6943E068175B2DA300A968DC /* HeavyMachSaveTransfer_iOS.framework in Frameworks */,
 				A7DFA04F9BA10C33CB1CF24B /* UIKit.framework in Frameworks */,
 				FD1D4051A0FE485A3F08B668 /* QuartzCore.framework in Frameworks */,
 				2451B5AB7D4E9F2BA9F63E38 /* AVFoundation.framework in Frameworks */,
@@ -419,6 +823,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20A633914C2FE2A222DA28D1 /* HeavyMachSaveTransfer_iOS.framework in Frameworks */,
 				444E4E5BF79DE57BC479CC1B /* UIKit.framework in Frameworks */,
 				6C322A03F64A36E6358AEE3E /* QuartzCore.framework in Frameworks */,
 				548B305C0AD032F92AB803F0 /* AVFoundation.framework in Frameworks */,
@@ -453,16 +858,89 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		03F50F32306944F3594E3A53 /* aircraft-style */ = {
+			isa = PBXGroup;
+			children = (
+				DF428779F84C7CBFA738E32A /* shilka.png */,
+				7437A10F51C638CE952DB8F8 /* tunguska.png */,
+			);
+			path = "aircraft-style";
+			sourceTree = "<group>";
+		};
 		05A245CE42062BA33C9FE8B4 /* media */ = {
 			isa = PBXGroup;
 			children = (
+				3E2C32E6BCA2DC3963A283F8 /* github-social-preview-gameplay.png */,
+				C9D6038D8AA38211B48E37A9 /* github-social-preview-gameplay.svg */,
+				D4483DEC5E060187F914FF8E /* github-social-preview.png */,
+				227CCC94958114BF35B07656 /* github-social-preview.svg */,
 				13FB6F527491D4BEAA21498D /* manifest.json */,
 				B77C7F2D948DD25491DF55B6 /* README.md */,
+				B6866286AAB46497EC3A119E /* android-20261030 */,
+				34B879D7CCA92983E1663157 /* android-gameplay-20261030 */,
+				DCA9F3D7A47406666DEA7C8B /* app-icon-20261029 */,
+				951BDA91FB3D635CC81469CC /* auto-aim */,
+				A5F41A9AC2C4C899B797BCB3 /* badges */,
+				FABFA99CE6AB72EFFEFDC362 /* fullscreen */,
+				C14F7D515B528BF77D6B88F7 /* gameplay-20261027 */,
+				85A3C3B91769B35AE11D54CD /* ground-aa */,
+				0F7E6AD5BE41C7B941E6B832 /* hud-audit */,
+				52BEFF98B67AD0180DAE65F6 /* hud-editor */,
+				C09FFF576A1D126DE59B8FEE /* lux-lunae */,
 				47172EAD2B5F0CE4EAE37ED2 /* menu-art */,
 				D992126F8DC812C4E470B596 /* menu-joins */,
+				A61582647CD615C4C0A00193 /* updates-20261029 */,
 				AE26FFEB181855B9D3096607 /* vtol */,
 			);
 			path = media;
+			sourceTree = "<group>";
+		};
+		0F7E6AD5BE41C7B941E6B832 /* hud-audit */ = {
+			isa = PBXGroup;
+			children = (
+				4D4D932F86D1BEAA6B4F6607 /* atlas.svg */,
+				652E7C114C9DA28696E59465 /* audit.json */,
+				5E4ED6595CE32A624B7F95CD /* cuts.svg */,
+				9D88604393BB604654854B5B /* groups.svg */,
+				D4683A32592DA503C431F8BA /* HUD_actual_game.png */,
+				A5EE177733D851856D799E2A /* HUD_asset_AutoAimControls.png */,
+				3B182DA723E1581FFF386A78 /* HUD_asset_Btn_Booster.png */,
+				8A34FAAB3F2173B46D78BCF4 /* HUD_asset_Btn_Weapon.png */,
+				F0D80CB79960F73EE61FD98E /* HUD_asset_GameMenu.png */,
+				24F8463900BF4BECBD69F8DC /* HUD_asset_GameUI_BlueLight.png */,
+				85D850B539AAE0860B192A57 /* HUD_asset_GameUI_Btm.png */,
+				4B041DAF98C54B54118382D7 /* HUD_asset_GameUI_Exp.png */,
+				66DFFAB39C2D609553900E49 /* HUD_asset_GameUI_Gauge.png */,
+				BE4A5E9618686D0C0BF316B0 /* HUD_asset_GameUI_Gear.png */,
+				E9DAEB27D615407EE4F66B75 /* HUD_asset_GameUI_RedLight.png */,
+				0B7EAB6DE48EF5F5C304E9EB /* HUD_asset_GameUI_Top.png */,
+				D85AC59D15D6CC8279FF70BD /* HUD_asset_ItemTile.png */,
+				B7DA32BFD43004BE3DF5BC87 /* HUD_asset_NumSet01.png */,
+				4AE152B0E44B5D43A3E03D8C /* HUD_asset_NumSet02b.png */,
+				EE83D53683C6AD23F6E8AF5E /* HUD_asset_SelWeapon.png */,
+				D7553CF99A304A55378D34E0 /* HUD_asset_WeaponTile.png */,
+				A01E7F73F0C6A93961B4A3E6 /* HUD_draw_inventory.json */,
+				2552315E51A1BECFEE72D388 /* HUD_extras.png */,
+				B9371927AEF5D3861FF2D248 /* HUD_fire_pressed.png */,
+				79783C1381B4FD2E65888EFC /* HUD_group_aim.png */,
+				559DA2949D4B9545802D97F0 /* HUD_group_gauges.png */,
+				35C6DA1BD8435784E937E9DD /* HUD_group_jump.png */,
+				D73038B5DEB6B0AE9F8ED955 /* HUD_group_menu.png */,
+				714FF11BD149266F238FB184 /* HUD_group_passives.png */,
+				B8F4381D13612A6F7A95DC73 /* HUD_group_preview.png */,
+				AE9B9C82618EBDBA29BA4CD0 /* HUD_group_progress.png */,
+				7CB6C85ED2D0B5FF31605A17 /* HUD_group_weapon.png */,
+				9CC122C8331C433D6600DE8C /* HUD_jump_pressed.png */,
+				90F69EA9A2EABB47E33531C4 /* HUD_manual.png */,
+				82CE78906B28A32F24D94D15 /* HUD_menu_pressed.png */,
+				6E3B05C30EB358D61520CC29 /* HUD_next_pressed.png */,
+				891E147FD901297764420EB4 /* HUD_normal_repeat.png */,
+				3F5DD6729B8AF05214F98C6E /* HUD_normal.png */,
+				383AC062C0A4A44164D9FB75 /* HUD_old_six_parts.png */,
+				7D584B9497C0087A85183945 /* HUD_partitioned.png */,
+				C6B99CE18B752825C671674F /* HUD_weapon_pressed.png */,
+			);
+			path = "hud-audit";
 			sourceTree = "<group>";
 		};
 		1056B3581E305FB7549B1F0B /* legacy-ios */ = {
@@ -477,11 +955,22 @@
 		128EDDBDD22ACA48EF3680CF /* developer-background */ = {
 			isa = PBXGroup;
 			children = (
+				A07FC130741AEDEFCC8E4001 /* approved-readme-opening-20261028.md */,
+				112E82495ECC56A1C08AF82B /* approved-readme-opening-20261029.md */,
+				4046F2E0BC3F5AA7BDA4B969 /* approved-readme-opening-main-20261029.md */,
+				59763ED3351A6D183A5DA279 /* death-stranding-community-story-20261028.md */,
 				7C96EEAE67C5C2D61771E0DA /* hm-defense-origin.md */,
+				561BD3CB8BA6A868FF1EE8F3 /* main-edits-20261029.json */,
 				9AC080A75FE4676E7C571853 /* source-manifest.json */,
 				035EA9FA2B4620448BB28C7E /* unity-planning-origin.md */,
 				1E690824D09AA5F5A9A72384 /* user-background-20261026.md */,
+				55440F1102BD6CC39E0C66BE /* user-cydia-purchase-20261028.md */,
+				518AE285810721A6D21803B5 /* user-first-pr-20261031.md */,
+				F4E2133BD9675B9D3431A44B /* user-foreword-20261029.md */,
+				D7B0132C21CF71CC9BDAC128 /* user-lux-lunae-intent-20261028.md */,
+				7B869AB03F5C82DF8E0D6155 /* user-project-origin-20261028.md */,
 				5AD7E667DDFC38AA9F8F5E3C /* user-restoration-reason-20261026.md */,
+				450252315905A79369BEAB5F /* user-wemade-discovery-20261028.md */,
 			);
 			path = "developer-background";
 			sourceTree = "<group>";
@@ -492,16 +981,29 @@
 				0B38F0C1AF257040BF415F40 /* Validation */,
 				E1930B25B1B6ECD4B9B5B4B5 /* Apple */,
 				755B8620714DB80178562940 /* docs */,
-				3AF4177B3B4F9981ED899350 /* HeavyMach */,
 				1B6685DFE53605711BC8C90F /* iOS */,
 				C6AED65652BE6DA680C20038 /* iOS */,
 				A718F982CD575E5185220D4D /* OriginalInterfaces */,
+				B6F507BBA353431509EDC557 /* pr24-review */,
 				C0BDA3DDFFAF86BFDC30427A /* Resources */,
 				4B9D30D554F9AD84E4CE361E /* Bundles */,
 				491E02585E3091634C004BDD /* Frameworks */,
 				1F4660A60A83B3CAAC601F15 /* Products */,
 				AFE87A144E808EBE8685D395 /* Projects */,
 			);
+			sourceTree = "<group>";
+		};
+		16EF35A043DE4D1C8E6CB44A /* shilka-turret */ = {
+			isa = PBXGroup;
+			children = (
+				529DF6F5E1FF23BA0C941BC3 /* ipad-shilka.png */,
+				DF43C632C982DFAB452AAA5E /* iphone-comparison.png */,
+				2D182C40219776E3386CF56F /* iphone-shilka-motion.mp4 */,
+				407D9A2C3A613A163F7BC311 /* iphone-shilka.png */,
+				7C5C43B0208E184B0A0A136A /* shilka-museum.jpg */,
+				6412BB5E3D7FC25E15C398BF /* turret-v3.png */,
+			);
+			path = "shilka-turret";
 			sourceTree = "<group>";
 		};
 		1B6685DFE53605711BC8C90F /* iOS */ = {
@@ -523,13 +1025,57 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		3AF4177B3B4F9981ED899350 /* HeavyMach */ = {
+		34B879D7CCA92983E1663157 /* android-gameplay-20261030 */ = {
 			isa = PBXGroup;
 			children = (
-				EF023FE8F1206DB6CDC7CC31 /* README.md */,
+				ADDDA045D23CC814F8B2DD14 /* .gitattributes */,
+				B3363C4BD5F491938765EDF9 /* 01-mission-select.png */,
+				DEE76FF676A70575B028CBAC /* 02-jump.png */,
+				2CF21642DDCBA37239C41E69 /* 03-weapons.png */,
+				A55C9F5504175A2CEA90192E /* 04-fighters.png */,
+				63D1C2C37667ACCF1F697530 /* 05-stage-clear.png */,
+				B76D572D35EF851ECD4C19D2 /* 06-boss.png */,
+				D1B51F8608D19982518DEE7C /* 07-upgrade.png */,
+				27790FCB47A0FCFB9EC14AD6 /* 08-next-mission.png */,
+				F438F382049A7D577518B7BC /* boss.gif */,
+				7B170021EB634B3514BBD345 /* boss.mp4 */,
+				81CC4B980E2E64ADB4C8DA96 /* fighters.gif */,
+				A3AC8B5AA5E26B3ADF760F71 /* fighters.mp4 */,
+				5D49E9A9BB889167C345F757 /* jump.gif */,
+				89CF3C228D6D10532001B343 /* jump.mp4 */,
+				490266EF6918867D8E1940A2 /* README.md */,
+				2976ECAB4CC2EAFA65C03D22 /* scenes.json */,
 			);
-			name = HeavyMach;
-			path = ..;
+			path = "android-gameplay-20261030";
+			sourceTree = "<group>";
+		};
+		371CEBD00D52A168F8A78306 /* translations */ = {
+			isa = PBXGroup;
+			children = (
+				BDA120053E76DBD50045710D /* editorial-guide.md */,
+				95A6952ECDEFE6F89EF0D1CF /* manifest.json */,
+			);
+			path = translations;
+			sourceTree = "<group>";
+		};
+		3CD21DF285705BFAE9245E29 /* refined */ = {
+			isa = PBXGroup;
+			children = (
+				5D32EB976D306AD1F6C52F18 /* ipad-vtol_f35b.png */,
+				A4F1D1EF0D2BDAC60F4A49D3 /* ipad-vtol_harrier.png */,
+				C29CF2B2A21311A80B9215DA /* ipad-vtol_size_edges.png */,
+				A304CBE81E28BA3FE07F9DFA /* ipad-vtol_yak141.png */,
+				459AE8023D0BDBE4843B92A3 /* iphone-vtol_f35b.png */,
+				2C22CC693AD920DACDA02177 /* iphone-vtol_harrier.png */,
+				D86E375B3FC825C8B08FA856 /* iphone-vtol_size_edges.png */,
+				40FEB8757977F212275B4DCC /* iphone-vtol_yak141.png */,
+				1AD71C4EC699581E7B7A5393 /* manifest.json */,
+				B97DAF33F68BD924DA1F03F8 /* prompts.json */,
+				3D761B175DEB6743F05E794C /* VTOL_F35B.png */,
+				249AE0B276A2A488FD578A9C /* VTOL_Harrier.png */,
+				E08BB8DF99341F92108EE76E /* VTOL_Yak141.png */,
+			);
+			path = refined;
 			sourceTree = "<group>";
 		};
 		47172EAD2B5F0CE4EAE37ED2 /* menu-art */ = {
@@ -572,6 +1118,59 @@
 			name = Bundles;
 			sourceTree = "<group>";
 		};
+		52BEFF98B67AD0180DAE65F6 /* hud-editor */ = {
+			isa = PBXGroup;
+			children = (
+				90F01B2762FA6D59DF71E2E5 /* example-passives.png */,
+				BEADE40F08C5AF07D5BBB879 /* ipad-default.png */,
+				F526AB48C7694341AA45FED1 /* ipad-moved.png */,
+				1900F206317FCB9AD92CDB80 /* ipad-preview.png */,
+				4FBC70919A355C055C73A06E /* pause-menu-normal.png */,
+				292020AB9BD36276B4219C56 /* pause-menu-pressed.png */,
+				7017B46057F0688CB02E72CA /* physical-ipad-cheat-selected.png */,
+				B71AF17D33B18E83DACD97F4 /* physical-ipad-cheat-weapon.png */,
+				CE5A4B09032550BC708A6071 /* physical-ipad-gauges-firing.png */,
+				09609E4F448BC78F7DB01BF7 /* physical-ipad-ordinary-gauges.png */,
+				D681B24050C0B05DF06CDA98 /* physical-iphone-cheat-selected.png */,
+				A755D9240A96C2DD4E930A19 /* physical-iphone-cheat-weapon.png */,
+				41DA21494E031DE161EC8A5C /* physical-iphone-ordinary-gauges.png */,
+				E548A48B3C27862C72924499 /* release-ipad-trim.png */,
+				AE60765BA1359531F40ED6A1 /* release-iphone-menu.png */,
+				5D5AF3E71D0C9282B93809B3 /* release-iphone-trim.png */,
+				3AACDA7FD1B3B495B4C72184 /* release-tool-normal.png */,
+				6FC18D026724F41D76C30A1A /* release-tool-pressed.png */,
+			);
+			path = "hud-editor";
+			sourceTree = "<group>";
+		};
+		670FFFDA3B0209D4C6D18ADD /* reviews */ = {
+			isa = PBXGroup;
+			children = (
+				46451F987557B3BC2AFBDA8C /* mac-web-pwa-comparison-20261101.md */,
+				125881C5F5ADD7D3036B501F /* pr24-web-review-20261031.md */,
+			);
+			path = reviews;
+			sourceTree = "<group>";
+		};
+		6B666D477FE2B7AA5E47395A /* integrated */ = {
+			isa = PBXGroup;
+			children = (
+				B78262B4CECE0335CEE87350 /* ipad-comparison.png */,
+				8F7AE4ABE624FCE2A202999A /* ipad-shilka.png */,
+				B0C286E7F0971935E25BD534 /* ipad-tunguska.png */,
+				1B9C55EA324B1C703EDE6A68 /* iphone-comparison.png */,
+				3A7D9FBAFC5889ABE42697D7 /* iphone-shilka.png */,
+				B8C3288A8F4468AB6B12187B /* iphone-tunguska.png */,
+				C82DF3803C054D1E95512623 /* shilka-motion.mp4 */,
+				2AB28D95A9D16C3858C015FA /* shilka-parts.png */,
+				D8CAB53E1FF5FABAE68E677E /* shilka-radar.png */,
+				C0FC98733A2C59D0F634B387 /* tunguska-motion.mp4 */,
+				5086454063ADE94CD3591553 /* tunguska-parts.png */,
+				5D1BC2BBE1A4B965ABFB4855 /* tunguska-radar.png */,
+			);
+			path = integrated;
+			sourceTree = "<group>";
+		};
 		6EAC6AD428E423297D9428C1 /* v2 */ = {
 			isa = PBXGroup;
 			children = (
@@ -587,7 +1186,9 @@
 		755B8620714DB80178562940 /* docs */ = {
 			isa = PBXGroup;
 			children = (
+				9EC8D2BD403CEF5F7BC74567 /* android-implementation-20261030.md */,
 				AB993236FCD324F28BCBFA0C /* android-port-plan-20261026.md */,
+				0EAF0E2BCF83B3B816EDCCAC /* android-release-readiness-20261030.md */,
 				B6ED30725AF5BF71C0780F82 /* apple-platforms.md */,
 				EC5A4726B46F9E01D381071A /* audio-fidelity.md */,
 				8AADFC1117F5DC5B0122FD9D /* audio-preload.md */,
@@ -621,15 +1222,18 @@
 				AACB612D08366230690E6ACE /* core-world.md */,
 				2584106093F1DF4FEF43B5C9 /* current-status.md */,
 				C63D82DEF048E11F9598C173 /* design.md */,
+				9674D16F13ADA5249B08D90E /* desktop-web-plan-20261031.md */,
 				853B139AC90D420064E47A20 /* developer-background.md */,
 				A6CB4A553495F4B6F8EE8DAF /* device-validation-ready.md */,
 				472B2203DC0386CC28DBB3DE /* document-governance.md */,
+				5517D5C90FCDDF39500CE975 /* document-localization-plan.md */,
 				AFB645DEA2C242150E725C08 /* document-map.json */,
 				B41F02A0FA9BB07479B2F3AB /* documentation-audit-20261025.md */,
 				9D8DF3657E31249D9890236E /* frame-drop-investigation-20261024.md */,
 				E98970B311A0BFCE501D0899 /* game-calculation-policy.md */,
 				FB6D4AA4355C569ED0C5533D /* game-design.md */,
 				3DB19E4A0D6282EF80468101 /* gauge-registration.md */,
+				3A87C833377F534954E3CB07 /* ground-aa-expansion.md */,
 				BF8F16A81E42EC978948748E /* handoff-20261024-rea-install.md */,
 				E8432EED144FFE452F8B6904 /* handover-20261024.md */,
 				535B238683FCED4B5C4EEC79 /* heavy-mach-113-assault-analysis-20261024.md */,
@@ -639,6 +1243,7 @@
 				A6816EFD45254FFD7BD889AE /* ios-completeness-audit-20261026.md */,
 				C168E2A441F62141C90CF71A /* ios-source-map.md */,
 				1B394C55A1EB4BF61DA2C808 /* keyboard-input-policy.md */,
+				9699BAB6C6D31C0B5B1BF85F /* lux-lunae-plan-20261027.md */,
 				993B84B8EDBAC35750140196 /* media-publication.md */,
 				883EA33703F130F86BFAAB0F /* media-scenes.example.json */,
 				47623F1F51E3686EF32548DB /* menu-art-extension-20261025.md */,
@@ -657,7 +1262,9 @@
 				6EB9EABE72CF2DFD14B6DE71 /* player-gauge.md */,
 				3ADB54D9B5A9A03B6B9A51DB /* presentation-ab-20261024.md */,
 				2CD3A716AECFC03CC799EE70 /* rea-availability-20261026.md */,
+				42643303311B549C36ED5039 /* README.md */,
 				A6FA707E7CC17138EEBFB6D4 /* related-titles-20261026.md */,
+				A69CD6E2FA89AA4BEE5E238A /* release-notes-plan.md */,
 				1986FF0AA05DA140FC2F5D8E /* release-review-20261025.md */,
 				AFE9BE64A0BB58C475BABE95 /* release-v0.9.md */,
 				6EDD756A4457CA734779347C /* render-fidelity-audit.md */,
@@ -669,6 +1276,7 @@
 				9121E88C559982D938156650 /* resource-formats.md */,
 				A00E4CAC3EA41FD587F8CA92 /* restoration-contract.md */,
 				57AC2B9EC0FD2A52BC1DD562 /* RESTORATION.md */,
+				55A21E1A0BEA0FBFB9AB1EA6 /* rights-manifest.json */,
 				797C960A51D9D63C910A96BB /* runtime-policy.md */,
 				94B9B0CC2CD8415CE10F3C52 /* same-save-comparison.md */,
 				4F37507E6DFEC50B21BA3F45 /* scene-render-comparison.md */,
@@ -687,18 +1295,36 @@
 				3370A35BF1B15BAE7F834631 /* usability-todo.md */,
 				28753B5A5C5D07136C518D1F /* validation-mode.md */,
 				326ADA81CEF8AD70460634EF /* verification.md */,
+				8A79570B10F28CA727B75703 /* vtol-expansion.md */,
 				DEF3A9AFC6A532C841FB1313 /* weapon-result-fix-20261025.md */,
 				2D45BB164B71C7D6B4A1A4DD /* weapon-validation-procedure.md */,
+				F009BEDB5B5C618529711190 /* web-port-20261028.md */,
 				4B96C5E574626EE4EECE8BCE /* wide-canvas-plan.md */,
 				7A1E843D8C31F29FF2FEE252 /* wireless-device-workflow.md */,
+				D1E833466F876861E4BFCA4F /* assets */,
+				BED7B6FAAAB1CA74CBCD481A /* en */,
 				E3FA8E0ECE1DC2F422C452BB /* evidence */,
 				A41DCABD86D8179C5E65CB05 /* migration */,
 				FA7204690605F88E083DC9DF /* public */,
 				FAA6B54001E44C9D18B9C8AB /* references */,
 				DF938EC961CA2248F17C2A44 /* research */,
+				670FFFDA3B0209D4C6D18ADD /* reviews */,
+				371CEBD00D52A168F8A78306 /* translations */,
 			);
 			name = docs;
 			path = ../docs;
+			sourceTree = "<group>";
+		};
+		7E5BC9D5D4F23C12BC93388B /* texture-proposal */ = {
+			isa = PBXGroup;
+			children = (
+				CE995540A78C65449FBE2A0A /* original-heli-03.png */,
+				8DDD62571A26C36F56606192 /* original-heli-06.png */,
+				5C12F5B96D5B18AF0358FF9C /* original-tank-body.png */,
+				85B06D5C2A41318DCAFAD573 /* shilka.png */,
+				1F87E878CEF285BC9DB4F7B5 /* tunguska.png */,
+			);
+			path = "texture-proposal";
 			sourceTree = "<group>";
 		};
 		8271D9D72739783E2CEFFDBE /* clone */ = {
@@ -711,6 +1337,36 @@
 				705A43010B55F019A60264E9 /* summary.json */,
 			);
 			path = clone;
+			sourceTree = "<group>";
+		};
+		85A3C3B91769B35AE11D54CD /* ground-aa */ = {
+			isa = PBXGroup;
+			children = (
+				3D8CE4D7551F9BACF0AB90C6 /* medium-comparison.png */,
+				9138313F5CE85229B947F05D /* medium-ipad.png */,
+				3A05BDE39BD248425CF56119 /* shilka-concept-v1.png */,
+				3ABE6C1139906A300C6DC026 /* shilka-game-120.png */,
+				5506B80D6D454A3D6C749CA0 /* shilka-game-240.png */,
+				016ACFFBF5809FCE1557C5B8 /* shilka-gun-v2.png */,
+				F8CFE729582C3556E6C072B3 /* shilka-iphone.png */,
+				6038FC1633B299A7D030D13C /* shilka-medium-slope.png */,
+				2EE3251E01DB65E2D720D14B /* shilka-radar-v2.png */,
+				B9A0D1AADC687CECE4132838 /* short-guns-attached.png */,
+				B0E4C8E420FA2547FB1D511D /* tunguska-concept-v1.png */,
+				6A5E2AF935B45EDC857E3A10 /* tunguska-game-120.png */,
+				9964A1ED7E90CB6A8417AE86 /* tunguska-game-240.png */,
+				751D09664D0C314E124D584C /* tunguska-gun-v2.png */,
+				D7D8D3FFCA92F30172C8AE41 /* tunguska-ipad.png */,
+				43E2F4565DDD41EDC6FDBD9F /* tunguska-medium-slope.png */,
+				F5BADF0D8485C4658EA6C4F5 /* tunguska-radar-v2.png */,
+				03F50F32306944F3594E3A53 /* aircraft-style */,
+				6B666D477FE2B7AA5E47395A /* integrated */,
+				D729D731AC9F7B2E33C0CBF8 /* runtime-style */,
+				CF3682049DDCC93B41ABB362 /* shilka-height */,
+				16EF35A043DE4D1C8E6CB44A /* shilka-turret */,
+				7E5BC9D5D4F23C12BC93388B /* texture-proposal */,
+			);
+			path = "ground-aa";
 			sourceTree = "<group>";
 		};
 		8C417E6C7CF35466AC8A51CC /* rea */ = {
@@ -728,6 +1384,32 @@
 			path = rea;
 			sourceTree = "<group>";
 		};
+		951BDA91FB3D635CC81469CC /* auto-aim */ = {
+			isa = PBXGroup;
+			children = (
+				606A1B14383D7323317520A4 /* AutoAim_P_Wpn_Canon01.png */,
+				7AE5EA7D5BA45D673809DF60 /* AutoAim_P_Wpn_Canon03.png */,
+				E751CFA61CF07FF246A668F3 /* AutoAim_P_Wpn_RaderLsr.png */,
+				2B1E4FBFA412BDFB4ADE5B44 /* hud-integrated-ipad.png */,
+				4C13E6BF50EF5206B5E2C441 /* lock-label-ipad.png */,
+				91E362575330B127561C606C /* lock-label-iphone.png */,
+			);
+			path = "auto-aim";
+			sourceTree = "<group>";
+		};
+		9A6EB964FF9C856302F961C7 /* runtime */ = {
+			isa = PBXGroup;
+			children = (
+				5F48285348737B7097C5B1C4 /* ipad-vtol_f35b.png */,
+				586EA6C0FACB8C7C6CEFDB6F /* ipad-vtol_harrier.png */,
+				0BDB01A6BBF32601DD1B8C78 /* ipad-vtol_yak141.png */,
+				74F7D6D1ABAAAD7B7E7D26E9 /* iphone-vtol_f35b.png */,
+				A91E8D338F427EEBFBC6DD85 /* iphone-vtol_harrier.png */,
+				4DCF1118CDDDE75F64ED0131 /* iphone-vtol_yak141.png */,
+			);
+			path = runtime;
+			sourceTree = "<group>";
+		};
 		A41DCABD86D8179C5E65CB05 /* migration */ = {
 			isa = PBXGroup;
 			children = (
@@ -737,6 +1419,28 @@
 				1056B3581E305FB7549B1F0B /* legacy-ios */,
 			);
 			path = migration;
+			sourceTree = "<group>";
+		};
+		A5F41A9AC2C4C899B797BCB3 /* badges */ = {
+			isa = PBXGroup;
+			children = (
+				0251427470C715EC411A0B4D /* arch.svg */,
+				80A0F17FB0B52B7F227B38AF /* code.svg */,
+				E48F4AFAAC1D55EC113E5EB4 /* license.svg */,
+				7518D86A805E203DD4DF3239 /* platforms.svg */,
+				89948F0AFB2E251940FAFB3A /* version.svg */,
+			);
+			path = badges;
+			sourceTree = "<group>";
+		};
+		A61582647CD615C4C0A00193 /* updates-20261029 */ = {
+			isa = PBXGroup;
+			children = (
+				8EA808C81E92A2F07A718B77 /* media-scenes.json */,
+				BE0C4B5407C8AB7D7E2BEC10 /* mission-without-hud-entry.png */,
+				F4A415F4187FB8C513829597 /* README.md */,
+			);
+			path = "updates-20261029";
 			sourceTree = "<group>";
 		};
 		A718F982CD575E5185220D4D /* OriginalInterfaces */ = {
@@ -762,6 +1466,8 @@
 				E9F5C780F43FDA4DE574BF1D /* harrier-concept.png */,
 				4EEDD35DAAFA7072269A86A8 /* manifest.json */,
 				8DBB13F902EC5D515094E6D1 /* yak141-concept.png */,
+				3CD21DF285705BFAE9245E29 /* refined */,
+				9A6EB964FF9C856302F961C7 /* runtime */,
 				6EAC6AD428E423297D9428C1 /* v2 */,
 			);
 			path = vtol;
@@ -773,6 +1479,28 @@
 				83166561B50C8B33F2950105 /* Modules */,
 			);
 			name = Projects;
+			sourceTree = "<group>";
+		};
+		B6866286AAB46497EC3A119E /* android-20261030 */ = {
+			isa = PBXGroup;
+			children = (
+				B411B2261C461D70AEB68E92 /* galaxy-boss.png */,
+				51AA9882C51F6220EDFD5DC9 /* galaxy-title.png */,
+				A8133A17385166AF21328FC7 /* scenes.json */,
+				E0A97A9B5D8230EC503DCCC2 /* upgrade-before.png */,
+				F91FF885D48035AE39149355 /* upgrade-confirmed.png */,
+				41788915964CF0C518900EF4 /* upgrade-fixed.png */,
+			);
+			path = "android-20261030";
+			sourceTree = "<group>";
+		};
+		B6F507BBA353431509EDC557 /* pr24-review */ = {
+			isa = PBXGroup;
+			children = (
+				3A32AD1DB3B6B5DB3FC09A74 /* README.md */,
+			);
+			name = "pr24-review";
+			path = ..;
 			sourceTree = "<group>";
 		};
 		BE25DD106A6CABC8D5DAB40E /* independence */ = {
@@ -787,6 +1515,50 @@
 			path = independence;
 			sourceTree = "<group>";
 		};
+		BED7B6FAAAB1CA74CBCD481A /* en */ = {
+			isa = PBXGroup;
+			children = (
+				ECB988636039557E5A7A7FAC /* RESTORATION.md */,
+				CE034D14939D1B58694565AA /* public */,
+			);
+			path = en;
+			sourceTree = "<group>";
+		};
+		C09FFF576A1D126DE59B8FEE /* lux-lunae */ = {
+			isa = PBXGroup;
+			children = (
+				BECEBC9D843DDFDBA550B159 /* f22-concept.png */,
+				2513B42B5F409B21C32F4C4D /* F22-gold.png */,
+				021DE2380D63B955573F4FE9 /* formation-20261029.svg */,
+				18A8843FBAA15B1EC856C1AA /* formation-ipad-entry-20261029.png */,
+				5E1DE1FDA95CC4B6A0254AF1 /* formation-ipad-full-20261029.png */,
+				A4B6A567D547B02627C7D0BD /* formation-iphone-entry-20261029.png */,
+				E45F69282805657004943F0B /* formation-iphone-full-20261029.png */,
+				810AE3533ADA2311461D4962 /* gold-manifest.json */,
+				7415E108A13DFB68E30CDA06 /* gold-prompt.txt */,
+				096AB50EFDF023F24AC4D16E /* heli001.png */,
+				0892BC776C1972AB76358F00 /* heli006.png */,
+				1C59F1478A772310CC2338EF /* ipad-combat.png */,
+				72CCA3F08FEC936FDF889A84 /* ipad-entry-030.png */,
+				103F51F511C89532DBCAB79D /* ipad-entry-060.png */,
+				26EE97DD635D878904C8BC9C /* ipad-entry-120.png */,
+				0796ECB98CE77ABCEE2E505A /* ipad-size.png */,
+				F5B56DA5E0EC0670DE29972F /* iphone-combat.png */,
+				DB51D93761EF62BE4245E2B7 /* iphone-entry-030.png */,
+				02004B8140727D35E0CD5DBC /* iphone-entry-060.png */,
+				1F978BA8764A5AEE2E117C0D /* iphone-entry-120.png */,
+				29E664D89CDB6C5DA1225238 /* iphone-size.png */,
+				232781DE0E3D0FA49807AD20 /* manifest.json */,
+				E760C7A2927627632854A8FC /* mig31-concept.png */,
+				F19C9FF5D3E2C030AA299A24 /* MiG31-gold.png */,
+				83071164D5A34392F929D182 /* prompts.json */,
+				5397E0EB24805F91F0EB0091 /* su57-concept.png */,
+				6E4E8E00509551F8FF5EC229 /* Su57-gold.png */,
+				E3860F657F881BC978A6AA1A /* vertical-formation-20261029.svg */,
+			);
+			path = "lux-lunae";
+			sourceTree = "<group>";
+		};
 		C0BDA3DDFFAF86BFDC30427A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -794,6 +1566,28 @@
 			);
 			name = Resources;
 			path = ../Resources;
+			sourceTree = "<group>";
+		};
+		C14F7D515B528BF77D6B88F7 /* gameplay-20261027 */ = {
+			isa = PBXGroup;
+			children = (
+				194283D21C34E4B028EB9FD1 /* 01-auto-aim.gif */,
+				0EF31E7EC9844B22708670EE /* 01-auto-aim.mp4 */,
+				C8BAD73DE62489192BC05540 /* 01-auto-aim.png */,
+				7F804A43F48432FA88B837DC /* 02-jump.png */,
+				5715818F5D8FE5B725B16756 /* 03-weapon.png */,
+				BACE9C2AC21F7BD52726C722 /* 04-special.png */,
+				1DA7837623F62807ADE31D12 /* 05-upgrade.png */,
+				33C6633A544421B6F4F2B3A5 /* 06-stage-clear.png */,
+				BA318EEAB075F71273D71336 /* 07-fighters.mp4 */,
+				A48B2180E203B8B9D5A535BE /* 07-fighters.png */,
+				D38A9F78E426012EC68F1902 /* 08-jump-clip.gif */,
+				D8DF1ACFDFEF2876D5D46B2C /* 08-jump-clip.mp4 */,
+				3B5B21C6A625B1A16C9922E7 /* 08-jump-clip.png */,
+				941C28A502A1DCBE5686345D /* media-scenes.json */,
+				3DA387689BE8C6D3D2336B9C /* README.md */,
+			);
+			path = "gameplay-20261027";
 			sourceTree = "<group>";
 		};
 		C6AED65652BE6DA680C20038 /* iOS */ = {
@@ -816,6 +1610,55 @@
 			path = ../Tests/iOS;
 			sourceTree = "<group>";
 		};
+		CE034D14939D1B58694565AA /* public */ = {
+			isa = PBXGroup;
+			children = (
+				8A345BDC62AFD914457C2DB7 /* android-ai-experience-20261030.md */,
+				24F70D787C0685F97BBBC866 /* architecture.md */,
+				DC348EBCCD47A06D7ED8DE10 /* build-and-install.md */,
+				C6500810C640022D6A74CC48 /* design-intent.md */,
+				2D31B99E35E85111D12A19C6 /* development-history.md */,
+				57A3FB09D54DC69E59724244 /* features.md */,
+				F71DB16EB032F402AD4403D3 /* gameplay-guide.md */,
+				AAC34BE352093E751DC8891D /* implementation-status.md */,
+				95EF0163A09120CB48489C4C /* index.md */,
+				0F39FDB5F699A49A2D45AF61 /* lux-lunae-intent-20261028.md */,
+				59AE2B7386D9157FA473EEE2 /* roadmap.md */,
+				C4EE9AFD34815FB6EDAAC5FB /* troubleshooting.md */,
+				0F6B8FF94F2A19E1164F2268 /* validation.md */,
+			);
+			path = public;
+			sourceTree = "<group>";
+		};
+		CF3682049DDCC93B41ABB362 /* shilka-height */ = {
+			isa = PBXGroup;
+			children = (
+				A4728D953970815D9F6A4515 /* comparison.png */,
+				3F692A11C7C9C9351C9E5D90 /* motion.mp4 */,
+				B2FF34856470872FE9F5A323 /* shilka.png */,
+			);
+			path = "shilka-height";
+			sourceTree = "<group>";
+		};
+		D1E833466F876861E4BFCA4F /* assets */ = {
+			isa = PBXGroup;
+			children = (
+				E5B6FE1E66FE1EB482434FE0 /* mac-web-pwa-20261101 */,
+			);
+			path = assets;
+			sourceTree = "<group>";
+		};
+		D729D731AC9F7B2E33C0CBF8 /* runtime-style */ = {
+			isa = PBXGroup;
+			children = (
+				6EE7448EBD44D5C649E25C11 /* HeavyMachRestored-fresh-clone.png */,
+				D219CBD401EC7BF07029DEB7 /* HeavyMachValidation-fresh-clone.png */,
+				0053FE3E2BF47ECDA376BD9B /* shilka.png */,
+				3058068A308B8D8032BB4852 /* tunguska.png */,
+			);
+			path = "runtime-style";
+			sourceTree = "<group>";
+		};
 		D992126F8DC812C4E470B596 /* menu-joins */ = {
 			isa = PBXGroup;
 			children = (
@@ -829,12 +1672,22 @@
 			path = "menu-joins";
 			sourceTree = "<group>";
 		};
+		DCA9F3D7A47406666DEA7C8B /* app-icon-20261029 */ = {
+			isa = PBXGroup;
+			children = (
+				F542EA4DA94D42276C9AE57C /* before.png */,
+				BB28F311A66AAD7F4FF807AC /* icon.png */,
+			);
+			path = "app-icon-20261029";
+			sourceTree = "<group>";
+		};
 		DF938EC961CA2248F17C2A44 /* research */ = {
 			isa = PBXGroup;
 			children = (
 				D765AD59A90B268507044264 /* android-and-titles-evidence-20261026.json */,
 				14800518615380B465CBCA73 /* ios-completeness-evidence-20261026.json */,
 				B74DBB4B2398ED0B516366B6 /* related-title-archive-20261026.csv */,
+				9DF355193A5B3512AADCAA68 /* series-acquisition-20261030.json */,
 			);
 			path = research;
 			sourceTree = "<group>";
@@ -851,21 +1704,108 @@
 		E3FA8E0ECE1DC2F422C452BB /* evidence */ = {
 			isa = PBXGroup;
 			children = (
+				A030E1B6CD95619A88B878B4 /* android-app-20261030.json */,
+				9EC27F2A3975E17C357389EF /* android-boundaries-20261030.json */,
+				4E26C64C888B34A22475E708 /* android-development-timeline-20261030.json */,
+				419AAA6C18D0709460565CAD /* android-isolation-20261030.json */,
+				B8EDC049B3E500413C3877C3 /* android-main-readiness-20261030.json */,
+				392D6854CF05F0952CAB1493 /* android-publication-audit-20261030.json */,
+				C2C59B5CA5EAED53F3850DA2 /* android-upgrade-fix-20261030.json */,
 				1A1632886032D437AC0FF0B7 /* apple-final-build-20261026.json */,
 				68B80B12913961B1D3E0D52E /* apple-platform-performance-20261026.json */,
+				E1AF58BC58D56145B14AA68A /* auto-aim-ipad-20261027.json */,
+				C819615009C516656521FD04 /* branch-cleanup-20261028.json */,
+				9514A809AFF59839A272758D /* design-and-modules-writing-20261027.json */,
+				B41472B62644B31FBE2FA23F /* desktop-web-readiness-20261031.json */,
+				63EE8F5A1F8FE23C28CE51B3 /* document-localization-inventory-20261029.json */,
+				A941B43D9A609C5FD11ECBE9 /* editorial-copyedit-20261027.json */,
+				B8A275491AF4ED32E463F51C /* editorial-review-20261028.json */,
+				ED64B1F80FCBD3F34DAAF249 /* fullscreen-transitions-20261027.json */,
+				EB944697699B9B0FEC39B8E0 /* gameplay-media-20261027.json */,
+				EB654642196D3E4D27A52B48 /* github-documentation-plan-20261027.json */,
+				B0DCD76D3866FF194845B05B /* github-followup-20261028.json */,
+				C2189CD755161BFD0A5E778B /* github-manuscripts-20261027.json */,
+				1708ED26B4D879A3E4D678B1 /* github-presentation-20261028.json */,
+				2EA1A1371EA5B2FBE4F05F0F /* github-publication-plan-20261027.json */,
+				E178F19337B96DB477064DD8 /* ground-aa-20261028.json */,
+				BE5CE61E5CE5585BDEA076C3 /* ground-aa-integrated-20261028.json */,
+				BA3F112F308940A904C0258D /* ground-original-assembly-20261028.json */,
+				D5EE0ABBFE4463A7E74B9C73 /* ground-unit-inventory-20261028.cpp */,
+				1FEBCFEB85E2AA122E7D48D2 /* ground-unit-inventory-20261028.txt */,
+				435B4A53741CAF33A65DCE2D /* ground-unit-research-20261028.json */,
+				A2E50708A5DFB0ED55AB4449 /* hud-editor-20261029.json */,
+				054E07C2D27F01753F6D18D6 /* hud-editor-release-20261029.json */,
+				896C1AFECAAC803E6F080C93 /* hud-layout-diagnosis-20261028.json */,
+				CA6F6E153017F5AC1DADB844 /* hud-parts-audit-20261028.json */,
+				B005A4202566197F26BE65D9 /* icon-and-media-20261029.json */,
+				C9BFF0E89EECBEE977FBA901 /* independence-main-20261028.json */,
+				0028B80C994D93FD2A273C96 /* launcher-save-20261101.json */,
+				A627B366BF6B3A45AC8582A5 /* lux-formation-20261029.cpp */,
+				3E20F32A69AAB76C979E724C /* lux-formation-20261029.csv */,
+				79E4E7891F6473FEBEBC2F43 /* lux-formation-20261029.json */,
+				35B29A8BC813914F25964E04 /* lux-lunae-implementation-20261027.json */,
+				7E1F92FE4646FF96A1B112CE /* lux-lunae-intent-report-20261028.json */,
+				54F0067B31BC69E65DBB93A2 /* lux-lunae-intent-update-20261028.json */,
+				0FCDEA3BB13AE8EF872BB95D /* lux-lunae-inventory-20261027.cpp */,
+				088F315358F8F38C20CCEB81 /* lux-lunae-inventory-20261027.txt */,
+				CD24051B4B7F9156584CBDFF /* lux-vertical-20261029.cpp */,
+				C60A1FFBB5381EC638B24A1D /* lux-vertical-20261029.csv */,
+				36DBF919817FECD37C5CABC6 /* lux-vertical-20261029.json */,
+				4E5C15EFBCC402179E74255B /* lux-xy-20261029.cpp */,
+				763C2626793FE46844BC6E4D /* lux-xy-20261029.csv */,
+				820BBB0DFA06DC9C1FDF1CB0 /* lux-xy-20261029.json */,
 				2778754E10DB20CBC8809174 /* mac-fullscreen-capture-20261027.json */,
+				8440E6BA744D82C0687C48F6 /* mac-web-pwa-comparison-20261101.json */,
+				B52E13D341117955ABDDE247 /* narrative-voice-audit-20261028.json */,
+				EEAAD39575E1E97226791B42 /* openal-relink-20261028.json */,
+				DAAE75348FCBE2E8D1EBEFBA /* original-air-spawns-20261029.cpp */,
+				869E6343D5512F6718C2BF36 /* original-air-spawns-20261029.csv */,
 				50CF85F15EA4BB85FAAFA5E9 /* physical-apple-20261027.json */,
+				E7FD246284754122DD72B012 /* pr24-merge-preservation-20261031.json */,
+				A807D11B6D2EBF6FB6EB51C7 /* pr24-web-fixes-20261031.json */,
+				C01737E189649C82058CE876 /* pr24-web-review-20261031.json */,
+				EFBFB020659FB930FF53E090 /* public-repository-20261028.json */,
+				35918C0AE0461B36B5546618 /* publication-source-audit-20261028.json */,
+				B5333D24DCD1F0ABE30992F0 /* release-history-20261029.json */,
+				DB2EF03D88055D3DA72479EC /* release-tool-20261029.json */,
+				5F0D15BEC654C8C6BE89F538 /* release-v0.17-20261030.json */,
+				6217697B1DE66E5D94D1AA70 /* sass-handoff-audit-20261028.json */,
+				6275FB0317FA44E741D7B06F /* secret-audit-20261028.json */,
+				33FD50DA43E8069099B3DCE9 /* shilka-height-20261028.json */,
+				05121A7AB41E53AA01381E86 /* shilka-turret-20261028.json */,
+				94B94BFD2F40CD391C170F33 /* source-release-v0.12-20261028.json */,
+				20883B029291826E4E170097 /* tauri-mac-start-20261031.json */,
+				3BFD79CA101FDFF2C4F4E01E /* tauri-quit-fix-20261101.json */,
+				19BDC403349FBE9221C9D111 /* title-og-card-20261028.json */,
+				0E32210C945E7113387B3023 /* v0.13-hud-plan-20261028.json */,
+				FD48D29D15BB7D3102AEE964 /* visitor-english-20261030.json */,
 				FB56E42D202B2D41B745291F /* vtol-art-plan-20261027.json */,
 				F658AEF8688BBF27685160FC /* vtol-feasibility-20261027.json */,
 				8403DD328CBBED0400784D3E /* vtol-helicopter-density-20261027.json */,
+				409BA5571A69DE8213AC2C01 /* vtol-implementation-20261027.json */,
+				796327D9D931F748E213DA36 /* vtol-refinement-20261027.json */,
+				BE5C527B4923A8D009F594CE /* web-port-20261028.json */,
 				52422C68C625D5938C90F218 /* wireless-apple-20261027.json */,
+				DE0ED214130753AEF7A6D28D /* xcode-ignore-audit-20261028.json */,
 			);
 			path = evidence;
+			sourceTree = "<group>";
+		};
+		E5B6FE1E66FE1EB482434FE0 /* mac-web-pwa-20261101 */ = {
+			isa = PBXGroup;
+			children = (
+				EEAB2FA93BE61D03457CF0DA /* installed-offline.png */,
+				2891053E2D2F10FD7133A5BC /* keyboard-aim.png */,
+				49FC6B63DFB2DCB8B4D304CF /* launcher-install-first.png */,
+				E4E7E40ACC41B4C8F7BC88DC /* launcher-phone.png */,
+			);
+			path = "mac-web-pwa-20261101";
 			sourceTree = "<group>";
 		};
 		EB6233A9B3452554B6E10736 /* Products */ = {
 			isa = PBXGroup;
 			children = (
+				17B98E4614B6C2988B9EAB14 /* HeavyMachSaveTransfer_iOS.framework */,
 				473DE99724406F620C89919B /* HeavyMachCore_iOS.framework */,
 				67167177D930F95E2B0EDF9D /* HeavyMachAssets_iOS.bundle */,
 				35598650F36148AE7CD9D763 /* HeavyMachAppleRuntime_iOS.framework */,
@@ -878,17 +1818,47 @@
 		FA7204690605F88E083DC9DF /* public */ = {
 			isa = PBXGroup;
 			children = (
+				C136C1C3D2B70D1C61B03A77 /* android-ai-experience-20261030.md */,
+				AF87711C737800024B85F966 /* android-development-20261030.md */,
+				EA2537849D3958EFA8BF8DFF /* android-gameplay-20261030.md */,
+				A2092F2D10DA017B1B3D23D6 /* app-icon-and-media-20261029.md */,
 				537551CAC826EA2B0742D775 /* apple-platform-progress-20261026.md */,
+				4CB7C15D2AB8E782AE87F578 /* architecture.md */,
+				CD01D894AFD40BE2D9B72C38 /* auto-aim-ipad-20261027.md */,
+				0DDD737A3F2708F573D1A5CA /* auto-aim-visibility-plan-20261028.md */,
 				13D7B840917FAA0970F2B294 /* build-and-install.md */,
 				A2299D1DA0E938863932D743 /* clone-build-20261026.md */,
+				92E53DF344FEE08C78425647 /* design-intent.md */,
+				CDD764FBA71FC185072D961D /* development-history.md */,
+				95F14CD8B395D736D21500D9 /* document-translation-scope.json */,
 				D93438B37AEB2640138DAD65 /* engineering-retrospective-20261025.md */,
+				F92620FB87ECD87914E1923B /* features.md */,
+				6CE9E7A340AF585E485A5CE4 /* first-pr-and-tauri-20261031.md */,
+				0E5D4CF5D70B74BF2BEF548B /* fullscreen-transitions-20261027.md */,
+				E02DBF3C013DA04E71D06F31 /* gameplay-guide.md */,
+				1BE463C2598FB1FA016F7A66 /* gameplay-media-20261027.md */,
+				B1C849EDE22FB5A29EEB5A57 /* github-documentation-plan-20261027.md */,
+				E975A57A53F33B40BECBAEE4 /* github-followup-20261028.md */,
+				D78B712A1B622B10F5498183 /* github-licenses-and-badges-20261028.md */,
+				D23615E6995F90820FD5CAEB /* github-repository-plan-20261028.md */,
+				F2AFF4B39B843EF9E426E116 /* ground-aa-art-20261028.md */,
+				04978CC08DEB0AB2444847DE /* ground-units-research-20261028.md */,
+				621738929B2B2FD6E1237A43 /* hud-improvement-plan-20261028.md */,
 				2C056C70D6CAEDEBA403C2C5 /* implementation-status.md */,
+				7B8ED68B75EF91BDB3CAD17F /* index.md */,
+				58214AD9E5EC0EB02CE67A1A /* ios-gameplay-gallery-20261030.md */,
 				E503810738CE02287EBA5EC2 /* ipa-independent-build-20261026.md */,
 				218E8A524F0CF706D63BCE7F /* ipa-port-and-native-app-20261026.md */,
+				174D8909651CABCCD075A07A /* lux-formation-plan-20261029.md */,
+				D6C2FC3036C8A5C8E87A1AA6 /* lux-lunae-design-20261027.md */,
+				1EE4E021B4DE0A2E8D39DDA2 /* lux-lunae-intent-20261028.md */,
 				B27E15C873174A7694EB996C /* publication-inventory.md */,
 				C86E0AAEEA9202BA9D785456 /* rea-implementation-audit-20261026.md */,
 				D15B81C3B25B465ED286F6D9 /* rea-restoration-method-20261025.md */,
 				66C79E83E3B01B0E181C594F /* report-overview-20261025.md */,
+				5A64DC34CE6E2DCFDADD7294 /* roadmap.md */,
+				E2E887871EC8F74898B8246B /* troubleshooting.md */,
+				849FEE35F81B6F4ED4244017 /* validation.md */,
 				1FD05AF93076309459C68938 /* vtol-art-and-loadout-20261027.md */,
 				8271D9D72739783E2CEFFDBE /* clone */,
 				BE25DD106A6CABC8D5DAB40E /* independence */,
@@ -901,9 +1871,33 @@
 		FAA6B54001E44C9D18B9C8AB /* references */ = {
 			isa = PBXGroup;
 			children = (
+				4C9589259C1A39336B975FDF /* README.md */,
 				128EDDBDD22ACA48EF3680CF /* developer-background */,
 			);
 			path = references;
+			sourceTree = "<group>";
+		};
+		FABFA99CE6AB72EFFEFDC362 /* fullscreen */ = {
+			isa = PBXGroup;
+			children = (
+				64F09202BDC13ACB228F0BC6 /* door-closed-480x360-game1.png */,
+				98CBC3476CD86F08D58F5678 /* door-closed-695x320-game1.png */,
+				842FF7FB7FDBABAE1A63D04A /* door-world-state3-480x360.png */,
+				553D9F6BC1B473806A244E0F /* door-world-state3-695x320.png */,
+				21B52B77FA752872DCA30301 /* door-world-state5-480x360.png */,
+				D22F22BAF6D0DD8B263BA246 /* door-world-state5-695x320.png */,
+				3857506615ABE8C5890844BC /* door-world-state6-480x360.png */,
+				C18D24AC82CCB4F2A3A16D42 /* door-world-state6-695x320.png */,
+				29F8EFB32D0D824ABF72B9E6 /* screen1-480x360.png */,
+				F772D7199CC5D342ADE3E916 /* screen1-695x320.png */,
+				8CD3BDDCFF3F010863D8BAAC /* screen2-480x360.png */,
+				6C490D5D4509FCBD1CD15397 /* screen2-695x320.png */,
+				43178537449F22819B45A7CA /* screen3-480x360.png */,
+				646621D49619943C7D6C8D5E /* screen3-695x320.png */,
+				1C800B19C266D9993A3C23D7 /* screen4-480x360.png */,
+				E2DCDA6D35818E609319DB16 /* screen4-695x320.png */,
+			);
+			path = fullscreen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -922,6 +1916,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				9BEEB3088B20D1464B1C41EB /* PBXTargetDependency */,
 				3CE64D153038E0043D0C3DA6 /* PBXTargetDependency */,
 				D1BDF010621636FD37966323 /* PBXTargetDependency */,
 				D3AF51D6382772F1361233EC /* PBXTargetDependency */,
@@ -965,6 +1960,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				5FFF0EAA11EFB445540B7189 /* PBXTargetDependency */,
 				815BF2587BB4EFDE9F7ABCF5 /* PBXTargetDependency */,
 				C7123AAAE51E046148D0F560 /* PBXTargetDependency */,
 				BE3473631CF91BD569DF6B86 /* PBXTargetDependency */,
@@ -1027,6 +2023,13 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		17B98E4614B6C2988B9EAB14 /* HeavyMachSaveTransfer_iOS.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = HeavyMachSaveTransfer_iOS.framework;
+			remoteRef = 5F8EB83B45B4D09971158AA5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		35598650F36148AE7CD9D763 /* HeavyMachAppleRuntime_iOS.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -1172,10 +2175,20 @@
 			name = HeavyMachCore_iOS;
 			targetProxy = FC68E101211D90353521F63D /* PBXContainerItemProxy */;
 		};
+		5FFF0EAA11EFB445540B7189 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = HeavyMachSaveTransfer_iOS;
+			targetProxy = 6D329D0659BDED1009E712FF /* PBXContainerItemProxy */;
+		};
 		815BF2587BB4EFDE9F7ABCF5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = HeavyMachValidationCore_iOS;
 			targetProxy = 3F5D4BC846F12A4392E59E56 /* PBXContainerItemProxy */;
+		};
+		9BEEB3088B20D1464B1C41EB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = HeavyMachSaveTransfer_iOS;
+			targetProxy = 7C5AB01CF62F656FDB82967B /* PBXContainerItemProxy */;
 		};
 		BE3473631CF91BD569DF6B86 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;

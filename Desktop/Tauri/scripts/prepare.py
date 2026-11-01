@@ -17,6 +17,9 @@ if not (web/'dist/index.wasm').is_file():raise SystemExit('Missing Web build out
 # Only our generated host directory is replaced, never source or user saves.
 if out.exists():shutil.rmtree(out)
 shutil.copytree(HERE/'frontend',out)
+codec=ROOT/'build/save-transfer/web'
+if not (codec/'codec.wasm').exists():raise SystemExit('Build Modules/SaveTransfer/build_web.py first')
+shutil.copytree(codec,out/'transfer')
 subprocess.run([sys.executable,str(ROOT/'Distribution/Web/launcher/prepare.py'),str(out/'skin')],check=True)
 shutil.copytree(web/'dist',out/'game')
 hashes={f.name:hashlib.sha256(f.read_bytes()).hexdigest() for f in files if f.is_file()}

@@ -27,6 +27,7 @@
       return {format:1,records,settings:after};
     }finally{db.close();}
   }
+  const missing=(current,previous)=>previous.records.some(r=>r.path!=='/persist'&&!current.records.some(c=>c.path===r.path))||KEYS.some(k=>previous.settings[k]!==null&&current.settings[k]===null);
   const empty=s=>s.records.every(r=>r.path==='/persist')&&Object.values(s.settings).every(v=>v===null);
   const JOURNAL='HeavyMach.DesktopRestoreV1';
   const pendingRestore=()=>localStorage.getItem(JOURNAL);
@@ -76,5 +77,5 @@
     if(!idle(game.hmStorageState?.())||JSON.stringify(first)!==JSON.stringify(second))return null;
     return second;
   }
-  window.__hmDesktopStorage={read,empty,restoreMissing,restoreSelected,finishSelected,pendingRestore,committed};
+  window.__hmDesktopStorage={read,empty,missing,restoreMissing,restoreSelected,finishSelected,pendingRestore,committed};
 })();

@@ -31,6 +31,8 @@
 #include "CanvasGeometry.hpp"
 #include "GlobalInfo.hpp"
 #include <ctime>
+#include "SaveTransfer.hpp"
+#include "FileStore.hpp"
 
 #if TARGET_OS_OSX
 @interface HMHUDPanelView:NSView
@@ -59,7 +61,7 @@ typedef UILabel HMEditorLabel;
     HMHUDPanelView *_hudToolbar,*_hudToolRows;
     HMEditorScroll *_hudToolScroll;
     HMEditorLabel *_hudEditorLabel;
-    HMEditorButton *_hudEntry,*_hudToolsToggle;
+    HMEditorButton *_hudEntry,*_hudToolsToggle,*_transferEntry;
     NSArray<HMEditorButton*> *_hudEditorButtons;
     NSUInteger _hudLayoutWrites;
     std::unique_ptr<heavymach::GameSession> _hudExampleSession;
@@ -111,6 +113,7 @@ typedef UILabel HMEditorLabel;
     std::shared_ptr<const heavymach::SaveSlot> _pendingSaveSnapshot;
     NSURL *_saveURL;
     BOOL _showMenu;
+    int _transferScreen;
     NSString *_screenResourceScope;
     NSUInteger _screenResourceGeneration;
     NSString *_loadError;
@@ -249,7 +252,8 @@ typedef UILabel HMEditorLabel;
         _hud=[[HMGameHUD alloc] initWithMedia:_media];
         _hud.button=^(int identifier,int state) {[weakSelf gameButton:identifier state:state];};
         _hud.upgradeClosed=^{[weakSelf finishUpgrade];};
-        [self loadHUDLayout];[self prepareHUDEditor];
+        [self loadHUDLayout];[self resumeTransfer];[self prepareHUDEditor];
+        _transferEntry=[self editorButton:@"TRANSFER PROGRESS" action:@selector(openTransfer:) tag:0];[self addSubview:_transferEntry];
         [self prepareScreenResources:1];
 #if !TARGET_OS_OSX
         _motion=[CMMotionManager new];
@@ -431,6 +435,7 @@ typedef UILabel HMEditorLabel;
     if(screen==4)[_media imageSize:@"Extensions/MissionWide.png" scope:_screenResourceScope];
 }
 - (void)refreshScreen:(int)screen {
+    _transferScreen=screen;
 #if defined(HM_VALIDATION) && HM_VALIDATION
     [self stopValidationDirection];
 #endif
@@ -618,6 +623,11 @@ typedef UILabel HMEditorLabel;
 - (BOOL)handleKeyCode:(unsigned)code pressed:(BOOL)pressed {
     using A=heavymach::KeyAction;
     if(!_active)return NO;
+#if TARGET_OS_OSX
+    if(self.window.attachedSheet){[self cancelGameInput];return NO;}
+#else
+    if(self.window.rootViewController.presentedViewController){[self cancelGameInput];return NO;}
+#endif
     if(_hudEditing)return [self hudEditorKey:code pressed:pressed];
     if(code<_aimBlockedKeys.size()&&_aimBlockedKeys[code]){if(!pressed)_aimBlockedKeys[code]=false;return YES;}
     if(_keyboardSettingsOpen){
@@ -1229,4 +1239,5 @@ typedef UILabel HMEditorLabel;
 - (void)mouseUp:(NSEvent*)event {[self routePoint:[self convertPoint:event.locationInWindow fromView:nil] state:2 token:_mouseToken];}
 #endif
 #include "HMHUDEditor.inc"
+#include "HMTransfer.inc"
 @end

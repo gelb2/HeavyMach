@@ -209,6 +209,7 @@ void GameView::prepareScreenResources(int screen){
     if(screen==4)_media->imageSize("Extensions/MissionWide.png",_screenResourceScope);
 }
 void GameView::refreshScreen(int screen){
+    _transferScreen=screen;
     // Called synchronously at loading state3, before this frame's child ticks.
     StagePosition stage{};bool fromGame=bool(_session);
     if(_session){_originalWeaponSlot=&_save.slots.at(_slotIndex);_originalSelectedWeapon=_session->selectedWeapon();_originalWeaponIndex=_originalSelectedWeapon;stage=_session->stage();_retainedWorldTime=_session->world().gameTime;_retainedWorldCamera=_session->world().camera;_menus->setPreviewWorldTime(_retainedWorldTime,_session->world().paused);}
@@ -441,7 +442,7 @@ void GameView::drawKeyboardIndicators(){
     Rect rect{};
     if(_showMenu)rect=offset(_menus->keyboardFocusRect(),0,(_canvasHeight-320)/2);
     else if(_session&&worldInputBlocked()){rect=_hud->keyboardFocusRect();rect=makeRect(rect.origin.x*_hudScale+_hudOffset.x,rect.origin.y*_hudScale+_hudOffset.y,rect.size.width*_hudScale,rect.size.height*_hudScale);}
-    else if(_hasKeyboardAim&&_keyboardAimVisible&&_session&&_session->aimMode()==AimMode::manual)rect=makeRect(_keyboardAim.x-4,_keyboardAim.y-4,8,8);
+    // Manual aim coordinates remain active; no extra marker over the battlefield.
     _glRenderer->resetClip();_glRenderer->drawInputOutline(rect);
 }
 int32_t GameView::nextOriginalRandom(){

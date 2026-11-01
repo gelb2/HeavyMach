@@ -16,6 +16,7 @@ import org.json.JSONObject
 import kotlin.math.roundToInt
 
 class GameActivity : Activity(), SurfaceHolder.Callback, SensorEventListener {
+ private lateinit var transferButton:Button
  private lateinit var root:FrameLayout
  private lateinit var surface:SurfaceView
  private lateinit var tools:LinearLayout
@@ -71,6 +72,7 @@ class GameActivity : Activity(), SurfaceHolder.Callback, SensorEventListener {
   directions=LinearLayout(this).apply{orientation=LinearLayout.HORIZONTAL;visibility=View.GONE}
   for((label,code) in listOf("◀" to 0x04,"▶" to 0x07,"JUMP" to 0x2c,"FIRE" to 0x09)){val b=metalButton(label){};b.setSingleLine(true);b.setAutoSizeTextTypeUniformWithConfiguration(9,16,1,android.util.TypedValue.COMPLEX_UNIT_SP);b.setOnTouchListener{_,e->if(lastState.optBoolean("editor")){val loc=IntArray(2);root.getLocationOnScreen(loc);val state=when(e.actionMasked){MotionEvent.ACTION_DOWN->0;MotionEvent.ACTION_UP->2;MotionEvent.ACTION_CANCEL->3;else->1};GameEngine.touch(1000+code,state,(e.rawX-loc[0])/root.width,(e.rawY-loc[1])/root.height);true}else{when(e.actionMasked){MotionEvent.ACTION_DOWN->GameEngine.key(code,true);MotionEvent.ACTION_UP,MotionEvent.ACTION_CANCEL->GameEngine.key(code,false)};true}};directions.addView(b,LinearLayout.LayoutParams(0,-1,1f))};root.addView(directions,FrameLayout.LayoutParams(dp(210),dp(42),Gravity.BOTTOM or Gravity.LEFT))
   keys=LinearLayout(this).apply{orientation=LinearLayout.VERTICAL;setBackgroundColor(0xf0181b1e.toInt());visibility=View.GONE};val keyScroll=ScrollView(this).apply{addView(keys);visibility=View.GONE};root.addView(keyScroll,FrameLayout.LayoutParams(-1,-1))
+  transferButton=metalButton("TRANSFER PROGRESS"){showTransfer()};root.addView(transferButton,FrameLayout.LayoutParams(dp(168),dp(44),Gravity.TOP or Gravity.RIGHT).apply{rightMargin=dp(8);topMargin=dp(8)})
   sensors=getSystemService(SENSOR_SERVICE) as SensorManager;audio=getSystemService(AUDIO_SERVICE) as AudioManager
   focus=AudioFocusRequest.Builder(AudioManager.AUDIOFOCUS_GAIN).setAudioAttributes(AudioAttributes.Builder().setUsage(AudioAttributes.USAGE_GAME).setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION).build()).setWillPauseWhenDucked(true).setOnAudioFocusChangeListener { value->audioGranted=value==AudioManager.AUDIOFOCUS_GAIN;GameEngine.command("focus",if(audioGranted)1 else 0)}.build()
   if(Build.VERSION.SDK_INT>=33)registerReceiver(noisy,IntentFilter(AudioManager.ACTION_AUDIO_BECOMING_NOISY),RECEIVER_NOT_EXPORTED) else @Suppress("DEPRECATION") registerReceiver(noisy,IntentFilter(AudioManager.ACTION_AUDIO_BECOMING_NOISY))
@@ -111,10 +113,11 @@ class GameActivity : Activity(), SurfaceHolder.Callback, SensorEventListener {
  }
  internal fun showState(raw:String){
   if(isFinishing||isDestroyed)return;val s=JSONObject(raw);lastState=s
+  transferButton.visibility=if(s.optBoolean("transferAvailable"))View.VISIBLE else View.GONE
   val editing=s.optBoolean("editor");toggle.visibility=if(editing)View.VISIBLE else View.GONE;tools.visibility=if(editing&&s.optBoolean("tools"))View.VISIBLE else View.GONE;(tools.parent as View).visibility=tools.visibility
   tools.findViewById<TextView>(100).text="HUD LAYOUT · ${if(s.optBoolean("sample"))"SAMPLE" else "PAUSED"}\n${s.optString("selection")} · Drag to move."
   for(i in 0 until tools.childCount){val v=tools.getChildAt(i);if(v.tag=="sample"&&(v as Button).text!=(if(s.optBoolean("sample"))"CURRENT SCENE" else "SAMPLE SCENE"))v.text=if(s.optBoolean("sample"))"CURRENT SCENE" else "SAMPLE SCENE";if(v.tag=="apply")v.isEnabled=s.optBoolean("valid",true)}
-  fallback.visibility=if(s.optBoolean("fallback")&&!editing)View.VISIBLE else View.GONE
+  fallback.visibility=View.GONE // Edit transferred layouts from the pause menu.
   cheats.visibility=if(BuildConfig.CHEAT&&!editing)View.VISIBLE else View.GONE
   directions.visibility=if(BuildConfig.CHEAT&&(editing||s.optBoolean("game")))View.VISIBLE else View.GONE
   if(BuildConfig.CHEAT){s.optJSONArray("cheatRect")?.let{r->directions.layoutParams=FrameLayout.LayoutParams((r.getDouble(2)*root.width).toInt().coerceAtLeast(1),(r.getDouble(3)*root.height).toInt().coerceAtLeast(1)).apply{leftMargin=(r.getDouble(0)*root.width).toInt();topMargin=(r.getDouble(1)*root.height).toInt()}};directions.isEnabled=true}
@@ -134,5 +137,17 @@ class GameActivity : Activity(), SurfaceHolder.Callback, SensorEventListener {
  }
  private fun stageDialog(){val column=LinearLayout(this).apply{orientation=LinearLayout.VERTICAL;setPadding(dp(20),0,dp(20),0)};val fields=listOf("Mission (1–7)" to "1","Stage (1–5)" to "1","Level (1–100)" to "1","Weapon index (0+)" to "0","Body grade (1–7)" to "1","Turret grade (1–7)" to "1","Gun grade (1–7)" to "1","Before boss (0: off, 1+: boss number)" to "0","Near level up (0 / 1)" to "0").map{(label,value)->EditText(this).apply{hint=label;setText(value);inputType=android.text.InputType.TYPE_CLASS_NUMBER;column.addView(this)}}
   AlertDialog.Builder(this).setTitle("START STAGE · ALL WEAPONS").setView(ScrollView(this).apply{addView(column)}).setPositiveButton("START"){_,_->GameEngine.command("fixtureSettings",(fields[4].text.toString().toIntOrNull()?:1)-1,(fields[5].text.toString().toIntOrNull()?:1)-1,(fields[6].text.toString().toIntOrNull()?:1)-1,((fields[7].text.toString().toIntOrNull()?:0) shl 1) or ((fields[8].text.toString().toIntOrNull()?:0) and 1));GameEngine.command("stage",(fields[0].text.toString().toIntOrNull()?:1)-1,(fields[1].text.toString().toIntOrNull()?:1)-1,(fields[2].text.toString().toIntOrNull()?:1)-1,fields[3].text.toString().toIntOrNull()?:0)}.setNegativeButton("CANCEL",null).show()
+ }
+ private fun showTransfer(){
+  GameEngine.command("interrupt")
+  val box=LinearLayout(this).apply{orientation=LinearLayout.VERTICAL;setPadding(dp(16),dp(8),dp(16),dp(8))}
+  val code=EditText(this).apply{hint="Paste an HM1- code";setSingleLine(false);maxLines=5;inputType=android.text.InputType.TYPE_CLASS_TEXT or android.text.InputType.TYPE_TEXT_FLAG_MULTI_LINE;setSelectAllOnFocus(true)}
+  val info=TextView(this);box.addView(code);box.addView(info)
+  val source=Spinner(this);val target=Spinner(this);val labels=arrayOf("All three slots","Slot 1","Slot 2","Slot 3");for(v in arrayOf(source,target)){v.adapter=ArrayAdapter(this,android.R.layout.simple_spinner_dropdown_item,labels);box.addView(v)}
+  box.addView(metalButton("CREATE CODE"){GameEngine.transfer("export"){value->if(value.startsWith("ERROR:"))info.text=value else {code.setText(value);info.text="Copy this code to another device."}}})
+  box.addView(metalButton("COPY"){(getSystemService(CLIPBOARD_SERVICE) as ClipboardManager).setPrimaryClip(ClipData.newPlainText("HeavyMach recovery",code.text));info.text="Code copied."})
+  val dialog=AlertDialog.Builder(this).setTitle("TRANSFER PROGRESS").setView(ScrollView(this).apply{addView(box)}).setNegativeButton("CLOSE",null).create()
+  box.addView(metalButton("RESTORE"){val value=code.text.toString();GameEngine.transfer("check",value){summary->if(summary.startsWith("ERROR:")){info.text=summary}else AlertDialog.Builder(this).setTitle("RESTORE PROGRESS?").setMessage(summary).setNegativeButton("CANCEL",null).setPositiveButton("RESTORE"){_,_->GameEngine.transfer("import",value,source.selectedItemPosition-1,target.selectedItemPosition-1){info.text=it;if(!it.startsWith("ERROR:"))dialog.dismiss()}}.show()}})
+  dialog.show()
  }
 }

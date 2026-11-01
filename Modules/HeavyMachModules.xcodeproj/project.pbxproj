@@ -50,6 +50,7 @@
 		1B2742CF4393115B42DCCC30 /* VTOL.hpp in Headers */ = {isa = PBXBuildFile; fileRef = ED0B5E51E0537A8DB0296FE5 /* VTOL.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
 		1B52B51BF89218AE56CEB914 /* HMPlatform.h in Headers */ = {isa = PBXBuildFile; fileRef = 995C582EF39E9482190955DC /* HMPlatform.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1BBCC4079D3D7582DC2A488B /* Enemy.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 13CCB947ED29411188D28609 /* Enemy.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
+		1C8089EAE9CC6CCC19B28156 /* HUDConfiguration.hpp in Headers */ = {isa = PBXBuildFile; fileRef = FEFD155281E9B6138FEBC8A9 /* HUDConfiguration.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
 		1D96B0C4A2F77095A035E66A /* OriginalImages in Resources */ = {isa = PBXBuildFile; fileRef = 4B3CD366A55459E9C0E99A97 /* OriginalImages */; };
 		1E00891FA9E9A7D2583DC56B /* HMGameHUD.mm in Sources */ = {isa = PBXBuildFile; fileRef = E2AF7D132F67FED3A9126A53 /* HMGameHUD.mm */; };
 		1E62FF8DE80A68CA2ACC4293 /* HMOpenALAudio.mm in Sources */ = {isa = PBXBuildFile; fileRef = 111F6F6E702E81B273A01EBC /* HMOpenALAudio.mm */; };
@@ -72,21 +73,26 @@
 		275090D7A71516D7F8F0D1CF /* SaveData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B30CFBC04D186692D3F86B90 /* SaveData.cpp */; };
 		276B3958280395DEC9F35DA5 /* HMResources.h in Headers */ = {isa = PBXBuildFile; fileRef = 01DE0EA3CDA8FA4BA3B3E77C /* HMResources.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		277087B652E783D0C0EBE1FA /* CameraShake.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF792FE9F01C97A48E46F9F /* CameraShake.cpp */; };
+		294C568D9F23068F6698D456 /* HUDLayout.hpp in Headers */ = {isa = PBXBuildFile; fileRef = A65E9780053FA6F3F76F2B3E /* HUDLayout.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
 		29E9DEBF0C4AD50F9B236002 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6E8AA0384E913E91D56F4A9 /* CoreMotion.framework */; };
 		2A0398F34D957E9966A4BF64 /* World.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7FC9B2FCF28F7FBECA47F870 /* World.cpp */; };
 		2A5773F2155C11A6D3DDC2AC /* SpriteRaster.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 55E72B84FB53C7A82D2667D5 /* SpriteRaster.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
 		2B8A2B195F470EB6218F8F54 /* HMGLPlatform.mm in Sources */ = {isa = PBXBuildFile; fileRef = A3B9BC42028A86C0024CED8E /* HMGLPlatform.mm */; };
 		2E4A63CDE48BB547B2591964 /* HMMenus.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BB4EC2B008CD4E8E1416617 /* HMMenus.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2E8155F8BFC9191087AA073F /* SaveTransfer.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 0908512AE6DC826B931D65C0 /* SaveTransfer.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
 		302565B81FCEA77F73FEEE40 /* Fighters.hpp in Headers */ = {isa = PBXBuildFile; fileRef = DB0D7172D97EB036F244A3B4 /* Fighters.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
 		3186AE1785E5AAC405D6F52A /* HMValidationPanel.mm in Sources */ = {isa = PBXBuildFile; fileRef = B57F2891D89BB12C9473FC92 /* HMValidationPanel.mm */; };
 		31D65D96EC941125E1E44441 /* HMCompatibilityPixels.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 7EE606FC90628C5FEE98455F /* HMCompatibilityPixels.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
 		32A06E3A2EF3D6D339CB6DC3 /* Fighters.hpp in Headers */ = {isa = PBXBuildFile; fileRef = DB0D7172D97EB036F244A3B4 /* Fighters.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
+		3329730DDC62F081DAFB5FFA /* SaveTransfer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 88CB7F322F6189BBD055688D /* SaveTransfer.cpp */; };
+		334B976091E94618095F0E4E /* HMTransfer.inc in Resources */ = {isa = PBXBuildFile; fileRef = 6B9D7C17376E134A33C1FC4D /* HMTransfer.inc */; };
 		33A86F92C6D3ECEE47BEFF1B /* HMGameHUD.h in Headers */ = {isa = PBXBuildFile; fileRef = D81F0D518C790F8AE453655E /* HMGameHUD.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		340355DD52EF01FD7623D140 /* HMValidationControls.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1989FF3A2D2D9958D3EA009C /* HMValidationControls.mm */; };
 		3428CABCB93DF579BE9EDD4A /* HMPlatform.h in Headers */ = {isa = PBXBuildFile; fileRef = 995C582EF39E9482190955DC /* HMPlatform.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		35798FE1C86050DD39F116CD /* Motion.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 3137A524546CC270EAE239AA /* Motion.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
 		36710147BB55668FA4F27FF9 /* Enemy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DF6A5664FBC53E8CC90C20F7 /* Enemy.cpp */; };
 		36CE966B3F4FC744F3A97F58 /* LoadingTransition.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 8C9CAFE98FC03BD476E1EEE1 /* LoadingTransition.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
+		36EF3BAC5547EDBA37364719 /* HUDLayout.hpp in Headers */ = {isa = PBXBuildFile; fileRef = A65E9780053FA6F3F76F2B3E /* HUDLayout.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
 		378049BCB4150D1111EFDA27 /* World.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7FC9B2FCF28F7FBECA47F870 /* World.cpp */; };
 		384EB9843581809ED665A4CF /* HMMenus.mm in Sources */ = {isa = PBXBuildFile; fileRef = 237EE1BEF71CBA02C22776AC /* HMMenus.mm */; };
 		389AA45FA3FC53662D539ABB /* SaveData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B30CFBC04D186692D3F86B90 /* SaveData.cpp */; };
@@ -112,12 +118,15 @@
 		450DDDD8745463880E5563B5 /* HMButtonState.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 8029E4195468DED4E4F15A94 /* HMButtonState.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
 		45145EF6584ED39ECB4850BF /* HMAimOverlay.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 3FFFD471A962A7FB3188C283 /* HMAimOverlay.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
 		456ECFF05AE6872EA1D656A8 /* Geometry.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 94B81DD81BA67F9A332B856B /* Geometry.cpp */; };
+		46060F8DC421BC45634D6F09 /* SaveTransfer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 88CB7F322F6189BBD055688D /* SaveTransfer.cpp */; };
 		461199FF3E1448B18AAC0E45 /* ValidationScenario.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4287882B34A7D39C83B4DA35 /* ValidationScenario.cpp */; };
 		4752086699F783924176008A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2183F26EE878410C5E54F97 /* UIKit.framework */; };
 		48073EF8F71EB96D60BFC442 /* HMGLRenderer.mm in Sources */ = {isa = PBXBuildFile; fileRef = E6BC63BCB8F31D24B97F8BBB /* HMGLRenderer.mm */; };
 		48D623F90E163B0BBB461C4D /* HMGameHUD.h in Headers */ = {isa = PBXBuildFile; fileRef = D81F0D518C790F8AE453655E /* HMGameHUD.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		49BEEB88C0D290A3BD0054D4 /* HMMenus.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BB4EC2B008CD4E8E1416617 /* HMMenus.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		49D105D7ECF86C4A7EB33939 /* HeavyMachValidationCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 8F32A7D93C6E6ADAEADEB039 /* HeavyMachValidationCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		49E9759A68FBEDF47C0C7594 /* HUDConfiguration.hpp in Headers */ = {isa = PBXBuildFile; fileRef = FEFD155281E9B6138FEBC8A9 /* HUDConfiguration.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
+		4B00CF9EE58C1D00AA42FA8A /* HMHUDEditor.inc in Resources */ = {isa = PBXBuildFile; fileRef = 4CA8E2FDE2F58E60BEDB91BE /* HMHUDEditor.inc */; };
 		4BBAD4C1F579CD31EDCEAFDA /* GameSession.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 93B8E0419A77A8982B872794 /* GameSession.cpp */; };
 		4C5E203130BCA5F26E7C0ABA /* CameraShake.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 1C283CC7BBBD12F82ACD21E2 /* CameraShake.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
 		4E826D5BD20D89AA4EFA51A2 /* Geometry.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 94B81DD81BA67F9A332B856B /* Geometry.cpp */; };
@@ -148,12 +157,15 @@
 		5E41A9AF9E9954F2C9AEB926 /* HMOpenALAudio.mm in Sources */ = {isa = PBXBuildFile; fileRef = 111F6F6E702E81B273A01EBC /* HMOpenALAudio.mm */; };
 		5E55DF4A458416F2AA323584 /* Enemy.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 13CCB947ED29411188D28609 /* Enemy.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
 		5FFD8CB8F4081DF98E1644D7 /* HMValidationPanelMac.mm in Sources */ = {isa = PBXBuildFile; fileRef = 627850612055ED7A9F71A8D9 /* HMValidationPanelMac.mm */; };
+		61D835A3938E4774D3E0B624 /* FileStore.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 03C1E450A7CDB9A967F2C31A /* FileStore.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
 		6300BD4E5B923D6F8284ED46 /* Geometry.hpp in Headers */ = {isa = PBXBuildFile; fileRef = C7E282334EF98C9DED6A28BB /* Geometry.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
 		6352B115D81B99F57CA57F73 /* GameData.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 5BB07976D0BC0B8B744FCDBB /* GameData.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
 		66261210C8ED2A6E72513E34 /* HMMedia.h in Headers */ = {isa = PBXBuildFile; fileRef = A36DD7447CCFF87986E56B01 /* HMMedia.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		66786BB2E97BF37B9EA1470F /* Trail.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4006DFA7D9D0C3E5CE8ED16F /* Trail.cpp */; };
+		66B42949FC418EB57F0F9780 /* SaveTransfer.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 0908512AE6DC826B931D65C0 /* SaveTransfer.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
 		66D3FF6DA0227523EE7998F9 /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 849D05E2233B97E99C6E4026 /* Player.cpp */; };
 		67258DE315B7052705471178 /* ItemBox.hpp in Headers */ = {isa = PBXBuildFile; fileRef = F8B8740086AC1916AA8AC803 /* ItemBox.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
+		6830932FE425E9D0A95278BA /* FileStore.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 03C1E450A7CDB9A967F2C31A /* FileStore.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
 		6A3C48EE16F1E4DC0F395C06 /* Enemy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DF6A5664FBC53E8CC90C20F7 /* Enemy.cpp */; };
 		6B0E69C3B995513CF4568E66 /* SaveData.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 805541299601C8608D812B76 /* SaveData.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
 		6C6025242FD42D63A64B1A9B /* Images in Resources */ = {isa = PBXBuildFile; fileRef = 3FD81CDF5E4B2E92BFD056D2 /* Images */; };
@@ -216,6 +228,7 @@
 		928B9A490262520E58316B49 /* HMGLPlatform.mm in Sources */ = {isa = PBXBuildFile; fileRef = A3B9BC42028A86C0024CED8E /* HMGLPlatform.mm */; };
 		92CC5943B7A02E32150C8177 /* Trail.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4006DFA7D9D0C3E5CE8ED16F /* Trail.cpp */; };
 		92D13EDC608D66E821818399 /* Geometry.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 94B81DD81BA67F9A332B856B /* Geometry.cpp */; };
+		92F7A0D84979C17AC3277070 /* HMHUDEditor.inc in Resources */ = {isa = PBXBuildFile; fileRef = 4CA8E2FDE2F58E60BEDB91BE /* HMHUDEditor.inc */; };
 		940F474ED965DC8EA996F526 /* ValidationScenario.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 8C6285A314FBCA11BFA63B9B /* ValidationScenario.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
 		94A4DE29E002EA8BA96CDA0F /* GlobalInfo.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 910CFE3419FBBFA34357D5FD /* GlobalInfo.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
 		965A7D4B8302C56E86EFEF72 /* Fighters.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4804256311952900DB00C5D7 /* Fighters.cpp */; };
@@ -230,9 +243,11 @@
 		9B8C7582BE2D7AD8954719D1 /* HMValidationPanel.mm in Sources */ = {isa = PBXBuildFile; fileRef = B57F2891D89BB12C9473FC92 /* HMValidationPanel.mm */; };
 		9D525F6E4D26E5D5058D65D7 /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 849D05E2233B97E99C6E4026 /* Player.cpp */; };
 		9DF19759270A2E2F6DB7627E /* AutoAim.hpp in Headers */ = {isa = PBXBuildFile; fileRef = E214BF6EB3909E650831F5BC /* AutoAim.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
+		9EEB9FCBCC0172D475509235 /* HMHUDEditor.inc in Resources */ = {isa = PBXBuildFile; fileRef = 4CA8E2FDE2F58E60BEDB91BE /* HMHUDEditor.inc */; };
 		9F707F6FA7955D40D3FCF4A4 /* RawData in Resources */ = {isa = PBXBuildFile; fileRef = AD556407F8F4C33C20D89390 /* RawData */; };
 		9FB5A750682A8CC2F35321DE /* HMOpenALAudio.mm in Sources */ = {isa = PBXBuildFile; fileRef = 111F6F6E702E81B273A01EBC /* HMOpenALAudio.mm */; };
 		9FC9325948FD253ABBFB75D8 /* Player.hpp in Headers */ = {isa = PBXBuildFile; fileRef = D3B89488A5C1461E6381FA14 /* Player.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
+		9FD1675E604DDFA5F7D02448 /* HUDConfiguration.hpp in Headers */ = {isa = PBXBuildFile; fileRef = FEFD155281E9B6138FEBC8A9 /* HUDConfiguration.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
 		A064E585241D62387067F705 /* Audio in Resources */ = {isa = PBXBuildFile; fileRef = DE8B4B05E6A6786A83653E1D /* Audio */; };
 		A14D5065B8A2C9B2EDA881A8 /* AutoAim.hpp in Headers */ = {isa = PBXBuildFile; fileRef = E214BF6EB3909E650831F5BC /* AutoAim.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
 		A310617ED5FD6C7DAE4ECB01 /* HMGLRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = 271EEB91F21E2BAA6B1E779C /* HMGLRenderer.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -263,12 +278,15 @@
 		B2DCB4CC6940C7618E303130 /* CameraShake.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF792FE9F01C97A48E46F9F /* CameraShake.cpp */; };
 		B421611487D319744CF9722A /* ValidationScenario.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 8C6285A314FBCA11BFA63B9B /* ValidationScenario.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
 		B5C7A5C0A78583F5E9A846CE /* HMGLRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = 271EEB91F21E2BAA6B1E779C /* HMGLRenderer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B8168E8FB7EE76A0F846CF63 /* HUDConfiguration.hpp in Headers */ = {isa = PBXBuildFile; fileRef = FEFD155281E9B6138FEBC8A9 /* HUDConfiguration.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
 		B823DA831820317F0E25AD35 /* Geometry.hpp in Headers */ = {isa = PBXBuildFile; fileRef = C7E282334EF98C9DED6A28BB /* Geometry.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
 		B93F2A1CB973DD2B42E8BE0A /* TitleState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 895906159717AAAA102AA98F /* TitleState.cpp */; };
 		B9E04F0E50C15F2C0AE29DD1 /* HMGameView.mm in Sources */ = {isa = PBXBuildFile; fileRef = C8618C67F539934F9C2AC525 /* HMGameView.mm */; };
 		B9E2EAFD76BB312956CF6D1B /* TitleState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 895906159717AAAA102AA98F /* TitleState.cpp */; };
 		BB83944E6046EF269BCEF81D /* Enemy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DF6A5664FBC53E8CC90C20F7 /* Enemy.cpp */; };
+		BC9C484097753B69CDACA0D4 /* HUDLayout.hpp in Headers */ = {isa = PBXBuildFile; fileRef = A65E9780053FA6F3F76F2B3E /* HUDLayout.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
 		BCBB46B667916837A622AA4B /* Visuals.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1E795605A91AD691BD47A505 /* Visuals.cpp */; };
+		BD71A57B9085040AA99C9F51 /* HMTransfer.inc in Resources */ = {isa = PBXBuildFile; fileRef = 6B9D7C17376E134A33C1FC4D /* HMTransfer.inc */; };
 		BDE5823E1A782177A2C138F7 /* SpriteRaster.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 55E72B84FB53C7A82D2667D5 /* SpriteRaster.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
 		BE5E2F3155829491084CE747 /* ItemBox.hpp in Headers */ = {isa = PBXBuildFile; fileRef = F8B8740086AC1916AA8AC803 /* ItemBox.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
 		BF7884E88D9151E2A5D0C781 /* LoadingTransition.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A037BA296CDFAEBB69CCCCEA /* LoadingTransition.cpp */; };
@@ -341,16 +359,20 @@
 		E46F269CC9441037A8F61191 /* GroundAA.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E1515D93B5C971F1032C58E7 /* GroundAA.cpp */; };
 		E5F13885514B17003BB88AF5 /* AutoAim.hpp in Headers */ = {isa = PBXBuildFile; fileRef = E214BF6EB3909E650831F5BC /* AutoAim.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
 		E8692B656A04968E48C82916 /* HMValidationPanel.mm in Sources */ = {isa = PBXBuildFile; fileRef = B57F2891D89BB12C9473FC92 /* HMValidationPanel.mm */; };
+		E9700F20AA1FC2E8E3E175CD /* HMTransfer.inc in Resources */ = {isa = PBXBuildFile; fileRef = 6B9D7C17376E134A33C1FC4D /* HMTransfer.inc */; };
 		E99EE1632B1333198C9F71BD /* GlobalInfo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3F03E3B5D2219BA910BC9641 /* GlobalInfo.cpp */; };
 		EB1624A7DD0211B4152102F8 /* HMOpenALAudio.h in Headers */ = {isa = PBXBuildFile; fileRef = 389380EEF7305391318926E8 /* HMOpenALAudio.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EBF8AEFEB6E5B49878E1AC78 /* Player.hpp in Headers */ = {isa = PBXBuildFile; fileRef = D3B89488A5C1461E6381FA14 /* Player.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
 		EC15F08C3AD27C68A4D6EC24 /* HMPlatform.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0D6F3253791213637C274038 /* HMPlatform.mm */; };
 		EC47554EEAD3240FFA7B4F3E /* HMMenus.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BB4EC2B008CD4E8E1416617 /* HMMenus.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		ECBDA980A1DA6270F8125611 /* HMHUDEditor.inc in Resources */ = {isa = PBXBuildFile; fileRef = 4CA8E2FDE2F58E60BEDB91BE /* HMHUDEditor.inc */; };
 		ED6147A7F007D6E568C596AE /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 849D05E2233B97E99C6E4026 /* Player.cpp */; };
 		ED6D42D54F301F0D3E05262F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23DC5841DDBF6F08DFD5B214 /* QuartzCore.framework */; };
 		EE79421D6E692C5D02498131 /* TrailRaster.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F4153759A552F80DB27DEBD3 /* TrailRaster.cpp */; settings = {COMPILER_FLAGS = "-O2"; }; };
+		EECB903957EB18CCA285EB73 /* HUDLayout.hpp in Headers */ = {isa = PBXBuildFile; fileRef = A65E9780053FA6F3F76F2B3E /* HUDLayout.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
 		EF1F7B0BBBE3E0DACBA08BA1 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E31AA06D25A0B384C2B83D4E /* AppKit.framework */; };
 		EFFCED6FE980ED62A6799916 /* HMValidationControls.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1989FF3A2D2D9958D3EA009C /* HMValidationControls.mm */; };
+		F034772BC53A53E461593B42 /* HMTransfer.inc in Resources */ = {isa = PBXBuildFile; fileRef = 6B9D7C17376E134A33C1FC4D /* HMTransfer.inc */; };
 		F0FED54F4DAAD2D883C23A3B /* GroundAAArt.inc in Resources */ = {isa = PBXBuildFile; fileRef = 5693F56FCD3D35D52EAC19D1 /* GroundAAArt.inc */; };
 		F19A8915B141111B794BF40E /* HMButtonState.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 8029E4195468DED4E4F15A94 /* HMButtonState.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
 		F236D5AB48313267CBD95472 /* ValidationScenario.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 8C6285A314FBCA11BFA63B9B /* ValidationScenario.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -397,6 +419,34 @@
 			remoteGlobalIDString = FDD728F57B5189502916653B;
 			remoteInfo = HeavyMachCore_iOS;
 		};
+		3F3D5A9F5E9FED8A2903F9AD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E7CA99557924A9883A56572E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E11C81477709C2EEC86CAA69;
+			remoteInfo = HeavyMachSaveTransfer_macOS;
+		};
+		7CBEDFD85F998EDFC2097DE8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E7CA99557924A9883A56572E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3F9A2FFA0F47CB8DD00105F4;
+			remoteInfo = HeavyMachSaveTransfer_iOS;
+		};
+		A6E66575B385189D908FC187 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E7CA99557924A9883A56572E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3F9A2FFA0F47CB8DD00105F4;
+			remoteInfo = HeavyMachSaveTransfer_iOS;
+		};
+		C50111B24D689E18029866AE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E7CA99557924A9883A56572E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E11C81477709C2EEC86CAA69;
+			remoteInfo = HeavyMachSaveTransfer_macOS;
+		};
 		FB4305172C1A5569A7C75FE7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E7CA99557924A9883A56572E /* Project object */;
@@ -410,7 +460,9 @@
 		0172C006091CE6FE723564F8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		01DE0EA3CDA8FA4BA3B3E77C /* HMResources.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HMResources.h; sourceTree = "<group>"; };
 		030907F02268342BEA4DF19C /* HMValidationControlsMac.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = HMValidationControlsMac.mm; sourceTree = "<group>"; };
+		03C1E450A7CDB9A967F2C31A /* FileStore.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = FileStore.hpp; sourceTree = "<group>"; };
 		088F3B60CC16C6CD069C8800 /* GameData.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = GameData.cpp; sourceTree = "<group>"; };
+		0908512AE6DC826B931D65C0 /* SaveTransfer.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = SaveTransfer.hpp; sourceTree = "<group>"; };
 		0D6F3253791213637C274038 /* HMPlatform.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = HMPlatform.mm; sourceTree = "<group>"; };
 		111F6F6E702E81B273A01EBC /* HMOpenALAudio.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = HMOpenALAudio.mm; sourceTree = "<group>"; };
 		11971E9EFEB15E978F03EF43 /* AudioContract.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = AudioContract.hpp; sourceTree = "<group>"; };
@@ -443,6 +495,7 @@
 		4585948009A22F29F058D449 /* Viewport.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Viewport.hpp; sourceTree = "<group>"; };
 		4804256311952900DB00C5D7 /* Fighters.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Fighters.cpp; sourceTree = "<group>"; };
 		4B3CD366A55459E9C0E99A97 /* OriginalImages */ = {isa = PBXFileReference; lastKnownFileType = folder; name = OriginalImages; path = ../Resources/OriginalImages; sourceTree = SOURCE_ROOT; };
+		4CA8E2FDE2F58E60BEDB91BE /* HMHUDEditor.inc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.pascal; path = HMHUDEditor.inc; sourceTree = "<group>"; };
 		55E72B84FB53C7A82D2667D5 /* SpriteRaster.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = SpriteRaster.hpp; sourceTree = "<group>"; };
 		5693F56FCD3D35D52EAC19D1 /* GroundAAArt.inc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.pascal; path = GroundAAArt.inc; sourceTree = "<group>"; };
 		5A6A7A1BFE5DB13BF0417E9A /* Combat.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Combat.cpp; sourceTree = "<group>"; };
@@ -451,6 +504,7 @@
 		5DF279CAF40743F5079F08F9 /* ItemBox.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ItemBox.cpp; sourceTree = "<group>"; };
 		621203B4FD491AC4CC66C649 /* Trail.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Trail.hpp; sourceTree = "<group>"; };
 		627850612055ED7A9F71A8D9 /* HMValidationPanelMac.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = HMValidationPanelMac.mm; sourceTree = "<group>"; };
+		6B9D7C17376E134A33C1FC4D /* HMTransfer.inc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.pascal; path = HMTransfer.inc; sourceTree = "<group>"; };
 		6DCA53A9A90AC12EC81F1100 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		6EB2147F221CF22E071817C1 /* HMValidationPanel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HMValidationPanel.h; sourceTree = "<group>"; };
 		781AB6D12C115F5A1CD70D07 /* HeavyMachValidationCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HeavyMachValidationCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -466,8 +520,10 @@
 		849D05E2233B97E99C6E4026 /* Player.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Player.cpp; sourceTree = "<group>"; };
 		8538FF473EC181C0AFE02D5C /* HMValidationControls.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HMValidationControls.h; sourceTree = "<group>"; };
 		86456FA0664F04D594427D3D /* BulletVisual.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = BulletVisual.cpp; sourceTree = "<group>"; };
+		88CB7F322F6189BBD055688D /* SaveTransfer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SaveTransfer.cpp; sourceTree = "<group>"; };
 		895906159717AAAA102AA98F /* TitleState.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = TitleState.cpp; sourceTree = "<group>"; };
 		8AAF22FAC2BCBE035905A7BE /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		8B87D73C9C6F6755AA6753E2 /* HeavyMachSaveTransfer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HeavyMachSaveTransfer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C6285A314FBCA11BFA63B9B /* ValidationScenario.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ValidationScenario.hpp; sourceTree = "<group>"; };
 		8C9CAFE98FC03BD476E1EEE1 /* LoadingTransition.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = LoadingTransition.hpp; sourceTree = "<group>"; };
 		8F32A7D93C6E6ADAEADEB039 /* HeavyMachValidationCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HeavyMachValidationCore.h; sourceTree = "<group>"; };
@@ -480,6 +536,7 @@
 		A037BA296CDFAEBB69CCCCEA /* LoadingTransition.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = LoadingTransition.cpp; sourceTree = "<group>"; };
 		A36DD7447CCFF87986E56B01 /* HMMedia.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HMMedia.h; sourceTree = "<group>"; };
 		A3B9BC42028A86C0024CED8E /* HMGLPlatform.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = HMGLPlatform.mm; sourceTree = "<group>"; };
+		A65E9780053FA6F3F76F2B3E /* HUDLayout.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = HUDLayout.hpp; sourceTree = "<group>"; };
 		A9F8A4B45929CB90957FD084 /* HeavyMachValidationRuntime_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HeavyMachValidationRuntime_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD556407F8F4C33C20D89390 /* RawData */ = {isa = PBXFileReference; lastKnownFileType = folder; name = RawData; path = ../Resources/RawData; sourceTree = SOURCE_ROOT; };
 		B0FD1AB64DE97353B45FCA04 /* HeavyMachAppleRuntime_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HeavyMachAppleRuntime_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -510,12 +567,14 @@
 		E31AA06D25A0B384C2B83D4E /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		E6BC63BCB8F31D24B97F8BBB /* HMGLRenderer.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = HMGLRenderer.mm; sourceTree = "<group>"; };
 		EA1FD86EACA60FB533B78EB9 /* TextureFormat.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = TextureFormat.hpp; sourceTree = "<group>"; };
+		EAB87A66CEDE959F936B84C7 /* HeavyMachSaveTransfer.framework */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.framework; path = HeavyMachSaveTransfer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED0B5E51E0537A8DB0296FE5 /* VTOL.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = VTOL.hpp; sourceTree = "<group>"; };
 		F25FBEF6F698D41697F222C5 /* HeavyMachAppleRuntime_iOS.framework */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.framework; path = HeavyMachAppleRuntime_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4153759A552F80DB27DEBD3 /* TrailRaster.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = TrailRaster.cpp; sourceTree = "<group>"; };
 		F4B8F7A5390F58BA6322A5C2 /* Visuals.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Visuals.hpp; sourceTree = "<group>"; };
 		F63E48573B7B99BA9E16C6DD /* World.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = World.hpp; sourceTree = "<group>"; };
 		F8B8740086AC1916AA8AC803 /* ItemBox.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ItemBox.hpp; sourceTree = "<group>"; };
+		FEFD155281E9B6138FEBC8A9 /* HUDConfiguration.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = HUDConfiguration.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -609,6 +668,7 @@
 				FA8F87AE75DEC56CABEAD883 /* include */,
 				951476AF1CEF548AA1C712EC /* iOS */,
 				83DE744D33DD602418D9C87D /* Mac */,
+				B4827483B5E817CE30695B61 /* SaveTransfer */,
 				59E85E5C630A8ED20CFF5455 /* Frameworks */,
 				A53A15CAAAAC01E838654F33 /* Products */,
 			);
@@ -654,12 +714,14 @@
 				C8618C67F539934F9C2AC525 /* HMGameView.mm */,
 				271EEB91F21E2BAA6B1E779C /* HMGLRenderer.h */,
 				E6BC63BCB8F31D24B97F8BBB /* HMGLRenderer.mm */,
+				4CA8E2FDE2F58E60BEDB91BE /* HMHUDEditor.inc */,
 				A36DD7447CCFF87986E56B01 /* HMMedia.h */,
 				C967708D7B9EAE3194D1815A /* HMMedia.mm */,
 				2BB4EC2B008CD4E8E1416617 /* HMMenus.h */,
 				237EE1BEF71CBA02C22776AC /* HMMenus.mm */,
 				389380EEF7305391318926E8 /* HMOpenALAudio.h */,
 				111F6F6E702E81B273A01EBC /* HMOpenALAudio.mm */,
+				6B9D7C17376E134A33C1FC4D /* HMTransfer.inc */,
 				8538FF473EC181C0AFE02D5C /* HMValidationControls.h */,
 				1989FF3A2D2D9958D3EA009C /* HMValidationControls.mm */,
 				6EB2147F221CF22E071817C1 /* HMValidationPanel.h */,
@@ -678,6 +740,8 @@
 				79E04E8C2DD01535EF2904F1 /* HeavyMachAssets.bundle */,
 				189D7EDE46D73941B32A701E /* HeavyMachCore.framework */,
 				D079D7612882E8E6E0D84C43 /* HeavyMachCore.framework */,
+				EAB87A66CEDE959F936B84C7 /* HeavyMachSaveTransfer.framework */,
+				8B87D73C9C6F6755AA6753E2 /* HeavyMachSaveTransfer.framework */,
 				D6880BB5FEE3B1D13BBDAA8E /* HeavyMachValidationCore.framework */,
 				781AB6D12C115F5A1CD70D07 /* HeavyMachValidationCore.framework */,
 				19FD03BF9DC9F0E9BC1409C1 /* HeavyMachValidationRuntime_iOS.framework */,
@@ -713,6 +777,8 @@
 				E1515D93B5C971F1032C58E7 /* GroundAA.cpp */,
 				DD584CEAE49A5CAD2E59013B /* GroundAA.hpp */,
 				5693F56FCD3D35D52EAC19D1 /* GroundAAArt.inc */,
+				FEFD155281E9B6138FEBC8A9 /* HUDConfiguration.hpp */,
+				A65E9780053FA6F3F76F2B3E /* HUDLayout.hpp */,
 				5DF279CAF40743F5079F08F9 /* ItemBox.cpp */,
 				F8B8740086AC1916AA8AC803 /* ItemBox.hpp */,
 				12C0D572714BBFF8AF3A5349 /* KeyboardInput.hpp */,
@@ -748,6 +814,16 @@
 			path = ../Sources/Core;
 			sourceTree = "<group>";
 		};
+		B4827483B5E817CE30695B61 /* SaveTransfer */ = {
+			isa = PBXGroup;
+			children = (
+				03C1E450A7CDB9A967F2C31A /* FileStore.hpp */,
+				88CB7F322F6189BBD055688D /* SaveTransfer.cpp */,
+				0908512AE6DC826B931D65C0 /* SaveTransfer.hpp */,
+			);
+			path = SaveTransfer;
+			sourceTree = "<group>";
+		};
 		FA8F87AE75DEC56CABEAD883 /* include */ = {
 			isa = PBXGroup;
 			children = (
@@ -760,6 +836,15 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		0069BF3BC3E1BF9B81036652 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6830932FE425E9D0A95278BA /* FileStore.hpp in Headers */,
+				2E8155F8BFC9191087AA073F /* SaveTransfer.hpp in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0AF8C1B404F40E39AED886D0 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -777,6 +862,8 @@
 				7AC9B53105D0E16BFA6CAD43 /* Geometry.hpp in Headers */,
 				C997684F4831CC4DCAC0B550 /* GlobalInfo.hpp in Headers */,
 				8A544C9AFFC7C9D398D19DD0 /* GroundAA.hpp in Headers */,
+				B8168E8FB7EE76A0F846CF63 /* HUDConfiguration.hpp in Headers */,
+				36EF3BAC5547EDBA37364719 /* HUDLayout.hpp in Headers */,
 				7344AD4D5DC2568761DAB3DE /* HeavyMachCore.h in Headers */,
 				67258DE315B7052705471178 /* ItemBox.hpp in Headers */,
 				A82790B942F1ED13362B34D6 /* KeyboardInput.hpp in Headers */,
@@ -815,6 +902,8 @@
 				B823DA831820317F0E25AD35 /* Geometry.hpp in Headers */,
 				21FFC51D00A55D106EE0C0B1 /* GlobalInfo.hpp in Headers */,
 				01F3E1AAA326E12F33057C9A /* GroundAA.hpp in Headers */,
+				1C8089EAE9CC6CCC19B28156 /* HUDConfiguration.hpp in Headers */,
+				EECB903957EB18CCA285EB73 /* HUDLayout.hpp in Headers */,
 				5D916C86253F07EA032C75C4 /* HeavyMachValidationCore.h in Headers */,
 				BFF1D8DBA2D9C73321CEAF4D /* ItemBox.hpp in Headers */,
 				87AF675E550C44BC0FE3B588 /* KeyboardInput.hpp in Headers */,
@@ -857,6 +946,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4E103DBE3BCD817EDD8F8533 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				61D835A3938E4774D3E0B624 /* FileStore.hpp in Headers */,
+				66B42949FC418EB57F0F9780 /* SaveTransfer.hpp in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5AA5ECA447E16A2E8132F0D5 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -895,6 +993,8 @@
 				6300BD4E5B923D6F8284ED46 /* Geometry.hpp in Headers */,
 				94A4DE29E002EA8BA96CDA0F /* GlobalInfo.hpp in Headers */,
 				8FF00547DA9D5622EEC94351 /* GroundAA.hpp in Headers */,
+				9FD1675E604DDFA5F7D02448 /* HUDConfiguration.hpp in Headers */,
+				BC9C484097753B69CDACA0D4 /* HUDLayout.hpp in Headers */,
 				9665AEA0BA020E60FF507752 /* HeavyMachCore.h in Headers */,
 				39BFCFE04D8EA74D4583770B /* ItemBox.hpp in Headers */,
 				7183B3BDD9D0A5247EC32E1B /* KeyboardInput.hpp in Headers */,
@@ -975,6 +1075,8 @@
 				7A2108125D5AFE95794AC39A /* Geometry.hpp in Headers */,
 				C2F0AB82B9CB2425B0E188D8 /* GlobalInfo.hpp in Headers */,
 				CEA5EC46078A361347729319 /* GroundAA.hpp in Headers */,
+				49E9759A68FBEDF47C0C7594 /* HUDConfiguration.hpp in Headers */,
+				294C568D9F23068F6698D456 /* HUDLayout.hpp in Headers */,
 				49D105D7ECF86C4A7EB33939 /* HeavyMachValidationCore.h in Headers */,
 				BE5E2F3155829491084CE747 /* ItemBox.hpp in Headers */,
 				CC2F23FFB3A054580A7B2F8B /* KeyboardInput.hpp in Headers */,
@@ -1018,17 +1120,37 @@
 			productReference = D6880BB5FEE3B1D13BBDAA8E /* HeavyMachValidationCore.framework */;
 			productType = "com.apple.product-type.framework.static";
 		};
+		3F9A2FFA0F47CB8DD00105F4 /* HeavyMachSaveTransfer_iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 68EA73E243D0BDF007779E7B /* Build configuration list for PBXNativeTarget "HeavyMachSaveTransfer_iOS" */;
+			buildPhases = (
+				4E103DBE3BCD817EDD8F8533 /* Headers */,
+				42322403B41ECC7CECD0F27D /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HeavyMachSaveTransfer_iOS;
+			packageProductDependencies = (
+			);
+			productName = HeavyMachSaveTransfer_iOS;
+			productReference = EAB87A66CEDE959F936B84C7 /* HeavyMachSaveTransfer.framework */;
+			productType = "com.apple.product-type.framework.static";
+		};
 		641395257682CAA85D919E11 /* HeavyMachValidationRuntime_macOS */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 80AB210A276A67E53E92969E /* Build configuration list for PBXNativeTarget "HeavyMachValidationRuntime_macOS" */;
 			buildPhases = (
 				C7FBAC0A6046B3D4A0C5801F /* Headers */,
 				464A6996402F22FD006E7C1F /* Sources */,
+				538D500219519E11D4AAB97C /* Resources */,
 				4DD8AD12FD0DDC23F5A9CD9B /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				59B0FBF40A51609F2B28B087 /* PBXTargetDependency */,
 				5342967A5DFA94FF19D887BF /* PBXTargetDependency */,
 			);
 			name = HeavyMachValidationRuntime_macOS;
@@ -1063,11 +1185,13 @@
 			buildPhases = (
 				9E98C3A84D2B9FB912CD8035 /* Headers */,
 				C6619743BC761B1E5C21EF6B /* Sources */,
+				69472984E2C43F2F5C7FBC76 /* Resources */,
 				F3823333BE6D20BBA93D6C4F /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				1F9BB6E42C45D28B7F7F3F99 /* PBXTargetDependency */,
 				4EB8D0383B480525150D2352 /* PBXTargetDependency */,
 			);
 			name = HeavyMachValidationRuntime_iOS;
@@ -1119,11 +1243,13 @@
 			buildPhases = (
 				3ABE8284B62B6BF38BFA69BD /* Headers */,
 				D7FB6833C9523AA89DA5B8F7 /* Sources */,
+				FD9ABDFBF976309C741C53DF /* Resources */,
 				35A5D3B72813100180D0BDB6 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				243CABD4A03D4A33D042D7E1 /* PBXTargetDependency */,
 				E369BEB4142979A8054D10A5 /* PBXTargetDependency */,
 			);
 			name = HeavyMachAppleRuntime_macOS;
@@ -1131,6 +1257,24 @@
 			);
 			productName = HeavyMachAppleRuntime_macOS;
 			productReference = B0FD1AB64DE97353B45FCA04 /* HeavyMachAppleRuntime_macOS.framework */;
+			productType = "com.apple.product-type.framework.static";
+		};
+		E11C81477709C2EEC86CAA69 /* HeavyMachSaveTransfer_macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E6D8723FAC42FB9B80BA0B88 /* Build configuration list for PBXNativeTarget "HeavyMachSaveTransfer_macOS" */;
+			buildPhases = (
+				0069BF3BC3E1BF9B81036652 /* Headers */,
+				00FA75C428A17C4AC2DBAC9B /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HeavyMachSaveTransfer_macOS;
+			packageProductDependencies = (
+			);
+			productName = HeavyMachSaveTransfer_macOS;
+			productReference = 8B87D73C9C6F6755AA6753E2 /* HeavyMachSaveTransfer.framework */;
 			productType = "com.apple.product-type.framework.static";
 		};
 		F784634061D421C2FE4C4258 /* HeavyMachAssets_iOS */ = {
@@ -1156,11 +1300,13 @@
 			buildPhases = (
 				5AA5ECA447E16A2E8132F0D5 /* Headers */,
 				0B5535E34941E5E6EF5796EF /* Sources */,
+				214134A7E9D2378601A1F4B9 /* Resources */,
 				BC50A691106F8A61412F057A /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				13E4F30C5ADB731250D45235 /* PBXTargetDependency */,
 				5097127F2C8C439AAFC980A2 /* PBXTargetDependency */,
 			);
 			name = HeavyMachAppleRuntime_iOS;
@@ -1220,6 +1366,8 @@
 				A664E6E141098266A41BEE8A /* HeavyMachAssets_macOS */,
 				FDD728F57B5189502916653B /* HeavyMachCore_iOS */,
 				6DA73326E57A35A567E0E1C9 /* HeavyMachCore_macOS */,
+				3F9A2FFA0F47CB8DD00105F4 /* HeavyMachSaveTransfer_iOS */,
+				E11C81477709C2EEC86CAA69 /* HeavyMachSaveTransfer_macOS */,
 				13D103E921E142C10E573275 /* HeavyMachValidationCore_iOS */,
 				8C6349918E459387BA746710 /* HeavyMachValidationCore_macOS */,
 				77112C96356D2FDCB8F902C7 /* HeavyMachValidationRuntime_iOS */,
@@ -1237,6 +1385,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		214134A7E9D2378601A1F4B9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ECBDA980A1DA6270F8125611 /* HMHUDEditor.inc in Resources */,
+				F034772BC53A53E461593B42 /* HMTransfer.inc in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4419E259519D2B7B1E7D4B34 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1246,6 +1403,24 @@
 				9A3E649E92B322A139E94A31 /* Images in Resources */,
 				D497FD41FE99762EABD5BBDF /* OriginalImages in Resources */,
 				9F707F6FA7955D40D3FCF4A4 /* RawData in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		538D500219519E11D4AAB97C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9EEB9FCBCC0172D475509235 /* HMHUDEditor.inc in Resources */,
+				BD71A57B9085040AA99C9F51 /* HMTransfer.inc in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		69472984E2C43F2F5C7FBC76 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4B00CF9EE58C1D00AA42FA8A /* HMHUDEditor.inc in Resources */,
+				E9700F20AA1FC2E8E3E175CD /* HMTransfer.inc in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1285,9 +1460,26 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FD9ABDFBF976309C741C53DF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				92F7A0D84979C17AC3277070 /* HMHUDEditor.inc in Resources */,
+				334B976091E94618095F0E4E /* HMTransfer.inc in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		00FA75C428A17C4AC2DBAC9B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				46060F8DC421BC45634D6F09 /* SaveTransfer.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0B5535E34941E5E6EF5796EF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1333,6 +1525,14 @@
 				461199FF3E1448B18AAC0E45 /* ValidationScenario.cpp in Sources */,
 				BCBB46B667916837A622AA4B /* Visuals.cpp in Sources */,
 				576A2C33377B70796569128F /* World.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		42322403B41ECC7CECD0F27D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3329730DDC62F081DAFB5FFA /* SaveTransfer.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1487,6 +1687,21 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		13E4F30C5ADB731250D45235 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3F9A2FFA0F47CB8DD00105F4 /* HeavyMachSaveTransfer_iOS */;
+			targetProxy = 7CBEDFD85F998EDFC2097DE8 /* PBXContainerItemProxy */;
+		};
+		1F9BB6E42C45D28B7F7F3F99 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3F9A2FFA0F47CB8DD00105F4 /* HeavyMachSaveTransfer_iOS */;
+			targetProxy = A6E66575B385189D908FC187 /* PBXContainerItemProxy */;
+		};
+		243CABD4A03D4A33D042D7E1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E11C81477709C2EEC86CAA69 /* HeavyMachSaveTransfer_macOS */;
+			targetProxy = 3F3D5A9F5E9FED8A2903F9AD /* PBXContainerItemProxy */;
+		};
 		4EB8D0383B480525150D2352 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 13D103E921E142C10E573275 /* HeavyMachValidationCore_iOS */;
@@ -1502,6 +1717,11 @@
 			target = 8C6349918E459387BA746710 /* HeavyMachValidationCore_macOS */;
 			targetProxy = 1D6B9F295259FB79EE24EDD5 /* PBXContainerItemProxy */;
 		};
+		59B0FBF40A51609F2B28B087 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E11C81477709C2EEC86CAA69 /* HeavyMachSaveTransfer_macOS */;
+			targetProxy = C50111B24D689E18029866AE /* PBXContainerItemProxy */;
+		};
 		E369BEB4142979A8054D10A5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 6DA73326E57A35A567E0E1C9 /* HeavyMachCore_macOS */;
@@ -1510,6 +1730,52 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		06240B9EA2C16EA5234733E5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = NO;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.gelb2.HeavyMachSaveTransfer;
+				PRODUCT_NAME = HeavyMachSaveTransfer;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Release;
+		};
+		0A977D48A4BA15832AA610C1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = NO;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.gelb2.HeavyMachSaveTransfer;
+				PRODUCT_NAME = HeavyMachSaveTransfer;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Release;
+		};
 		1AE595622D27EB3E810026B1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1624,6 +1890,7 @@
 					"$(SRCROOT)/../Sources/Core",
 					"$(SRCROOT)/../Sources/iOS",
 					"$(SRCROOT)/../Sources/Apple",
+					"$(SRCROOT)/SaveTransfer",
 				);
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1660,6 +1927,7 @@
 					"$(SRCROOT)/../Sources/Core",
 					"$(SRCROOT)/../Sources/iOS",
 					"$(SRCROOT)/../Sources/Apple",
+					"$(SRCROOT)/SaveTransfer",
 				);
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1761,6 +2029,7 @@
 					"$(SRCROOT)/../Sources/Core",
 					"$(SRCROOT)/../Sources/iOS",
 					"$(SRCROOT)/../Sources/Apple",
+					"$(SRCROOT)/SaveTransfer",
 				);
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1904,6 +2173,7 @@
 					"$(SRCROOT)/../Sources/Core",
 					"$(SRCROOT)/../Sources/iOS",
 					"$(SRCROOT)/../Sources/Apple",
+					"$(SRCROOT)/SaveTransfer",
 				);
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1956,6 +2226,7 @@
 					"$(SRCROOT)/../Sources/Core",
 					"$(SRCROOT)/../Sources/iOS",
 					"$(SRCROOT)/../Sources/Apple",
+					"$(SRCROOT)/SaveTransfer",
 				);
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1991,6 +2262,7 @@
 					"$(SRCROOT)/../Sources/Core",
 					"$(SRCROOT)/../Sources/iOS",
 					"$(SRCROOT)/../Sources/Apple",
+					"$(SRCROOT)/SaveTransfer",
 				);
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2058,6 +2330,7 @@
 					"$(SRCROOT)/../Sources/Core",
 					"$(SRCROOT)/../Sources/iOS",
 					"$(SRCROOT)/../Sources/Apple",
+					"$(SRCROOT)/SaveTransfer",
 				);
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2071,6 +2344,29 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.gelb2.HeavyMachValidationRuntime_macOS;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Debug;
+		};
+		A764A4A3080F6425CF46731F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = NO;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.gelb2.HeavyMachSaveTransfer;
+				PRODUCT_NAME = HeavyMachSaveTransfer;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -2192,6 +2488,7 @@
 					"$(SRCROOT)/../Sources/Core",
 					"$(SRCROOT)/../Sources/iOS",
 					"$(SRCROOT)/../Sources/Apple",
+					"$(SRCROOT)/SaveTransfer",
 				);
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2208,6 +2505,29 @@
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
+		};
+		FB53D75C0DE33FD65DDF529A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = NO;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.gelb2.HeavyMachSaveTransfer;
+				PRODUCT_NAME = HeavyMachSaveTransfer;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Debug;
 		};
 /* End XCBuildConfiguration section */
 
@@ -2275,6 +2595,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
+		68EA73E243D0BDF007779E7B /* Build configuration list for PBXNativeTarget "HeavyMachSaveTransfer_iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A764A4A3080F6425CF46731F /* Debug */,
+				0A977D48A4BA15832AA610C1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
 		80AB210A276A67E53E92969E /* Build configuration list for PBXNativeTarget "HeavyMachValidationRuntime_macOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -2307,6 +2636,15 @@
 			buildConfigurations = (
 				86DCE0451008A2B7B71764B1 /* Debug */,
 				72AED20DA2BFFDFF60D528A5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		E6D8723FAC42FB9B80BA0B88 /* Build configuration list for PBXNativeTarget "HeavyMachSaveTransfer_macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FB53D75C0DE33FD65DDF529A /* Debug */,
+				06240B9EA2C16EA5234733E5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;

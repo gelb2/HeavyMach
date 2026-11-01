@@ -1,0 +1,106 @@
+{
+  "branch": "feat/save-transfer",
+  "base": "e433d8ba324788748d011c71f796a147f930b5ff",
+  "browser": {
+    "ok": true,
+    "steps": [
+      "launcher hidden",
+      "title hidden",
+      "slots visible",
+      "code creation writes no save",
+      "mode hidden",
+      "mission hidden",
+      "combat hidden",
+      "pause hidden",
+      "native code restored after game page closed"
+    ]
+  },
+  "builds": [
+    "Web",
+    "Android cheat debug",
+    "Mac validation debug",
+    "iOS arm64 simulator validation debug",
+    "iOS signed normal device",
+    "Android normal debug",
+    "Mac normal debug",
+    "Tauri Mac release"
+  ],
+  "commonTests": [
+    "native roundtrip/corruption/truncation/single-slot preservation/interrupted restore/500 states",
+    "native-Wasm identical codes",
+    "slot-only entry and queued restore"
+  ],
+  "existingTests": {
+    "javascriptPassed": 18,
+    "rustPassed": 14,
+    "rustIgnored": 2
+  },
+  "notYetVerified": [
+    "iPhone actual UI code generation (device disconnected after installation)",
+    "Galaxy paste/restore through UI and restored combat",
+    "Tauri restored combat and process restart",
+    "latest native Mac build combat",
+    "all restore interruption and storage-capacity cases",
+    "public PWA deployment of recovery feature"
+  ],
+  "coreChanged": false,
+  "released": false,
+  "deviceChecks": {
+    "iPad": {
+      "restoreViaUI": true,
+      "gameFileExact": true,
+      "settingsExact": true,
+      "restartSlot": true,
+      "combatMission": "7-5",
+      "movementJumpFire": true,
+      "activeHUDEntryHidden": true,
+      "pauseHUDEditorOpens": true
+    },
+    "AndroidGalaxy": {
+      "restoreViaStartupRecovery": true,
+      "gameFileExact": true,
+      "settingsExact": true,
+      "pendingCleared": true,
+      "oldCustomHUDToDefaultRegression": true,
+      "restoreViaUI": false
+    },
+    "nativeMac": {
+      "restoreViaUI": true,
+      "gameFileExact": true,
+      "hudFileExact": true,
+      "pendingCleared": true,
+      "latestBuildCombatCheck": false
+    },
+    "TauriMac": {
+      "restoreViaUI": true,
+      "osBackupFullCodeExact": true,
+      "pendingCleared": true,
+      "afterRestoreCombatCheck": false
+    },
+    "localInstalledPWA": {
+      "ok": true,
+      "steps": [
+        "installed standalone PWA",
+        "launcher hidden",
+        "title hidden",
+        "slots visible",
+        "code creation writes no save",
+        "mode hidden",
+        "mission hidden",
+        "combat hidden",
+        "pause hidden",
+        "native code restored after game page closed",
+        "offline reload retains identical code",
+        "offline game loads restored slots"
+      ]
+    }
+  },
+  "fixes": [
+    "Apple/Android: hide floating SET GAME UI during combat; keep pause menu editor",
+    "Android: clear old custom HUD placement when restored placement is default",
+    "Apple: block game keyboard events while recovery dialogs are open",
+    "Tauri: grant transfer_file command to the local app window",
+    "Tauri: resolve imported recovery module against the tauri page URL"
+  ],
+  "uiBlocker": "Mac locked during final UI checks; iPhone unavailable"
+}

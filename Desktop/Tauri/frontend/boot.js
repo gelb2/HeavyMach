@@ -1,3 +1,4 @@
+import {transfer} from './transfer-host.js';
 (() => {
  const $=id=>document.getElementById(id),storage=window.__hmDesktopStorage;
  const invoke=(name,args)=>window.__TAURI__.core.invoke(name,args);
@@ -12,11 +13,14 @@
   $('retry').hidden=true;$('start').hidden=true;$('error').hidden=true;setBusy(true);
   try{
    const pending=await invoke('restore_status');if(pending)await completeRestore(pending);
+   await transfer.recover();
    const backups=await invoke('backup_status');latest=backups.latest;
    $('recover').hidden=!latest;$('backup-info').textContent=backups.invalid.length?'Damaged backup: '+backups.invalid.join(', ')+'. Import a save or restore the last valid backup.':'Progress is backed up to this computer. Export a copy to keep elsewhere.';
    if(backups.invalid.length){$('recover').closest('details').open=true;throw Error('Choose a backup to recover your progress.');}
    if(storage.pendingRestore()&&!latest)throw Error('Restore needs its original backup.');
-   if((storage.pendingRestore()||storage.empty(await storage.read()))&&latest){await storage.restoreMissing(latest.snapshot);$('status').textContent='Saved progress restored.';}
+   const current=await storage.read();
+   if(latest&&!storage.empty(current)&&storage.missing(current,latest.snapshot)){ $('recover').closest('details').open=true;throw Error('Some saved progress or controls are missing. Restore the last backup before playing.');}
+   if((storage.pendingRestore()||storage.empty(current))&&latest){await storage.restoreMissing(latest.snapshot);$('status').textContent='Saved progress restored.';}
    else $('status').textContent='Ready to play.';
    $('start').hidden=false;
   }catch(e){failure(e);}finally{setBusy(false);}

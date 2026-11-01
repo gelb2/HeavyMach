@@ -18,3 +18,7 @@ extern "C" JNIEXPORT void JNICALL Java_com_gelb2_heavymach_Native_touch(JNIEnv*,
 extern "C" JNIEXPORT void JNICALL Java_com_gelb2_heavymach_Native_key(JNIEnv*,jobject,jlong p,jint key,jboolean down){run(p,[&](auto&r){r.key(unsigned(key),down);});}
 extern "C" JNIEXPORT void JNICALL Java_com_gelb2_heavymach_Native_command(JNIEnv*e,jobject,jlong p,jstring command,jint a,jint b,jint c,jint d){auto name=text(e,command);run(p,[&](auto&r){try{r.command(name,a,b,c,d);}catch(const std::invalid_argument& x){r.notice=x.what();}});}
 extern "C" JNIEXPORT jstring JNICALL Java_com_gelb2_heavymach_Native_ui(JNIEnv*e,jobject,jlong p){std::string value="{}";run(p,[&](auto&r){value=r.ui();});return e->NewStringUTF(value.c_str());}
+
+extern "C" JNIEXPORT jstring JNICALL Java_com_gelb2_heavymach_Native_transfer(JNIEnv*e,jobject,jlong p,jstring action,jstring code,jint source,jint target){
+ std::string result;try{if(!p)throw std::runtime_error("Game is not ready");result=runtime(p)->transfer(text(e,action),text(e,code),source,target);}catch(const std::exception&x){result=std::string("ERROR: ")+x.what();}return e->NewStringUTF(result.c_str());
+}
