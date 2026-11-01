@@ -10,7 +10,7 @@
 
 진행을 다른 기기로 옮길 때는 게임의 세이브 슬롯 화면에서 **TRANSFER PROGRESS**를 누른다. **CREATE CODE**로 코드를 만들고 다른 기기에서 입력한 뒤 **CHECK CODE → RESTORE**를 누른다. 복원 확인창에서 슬롯·경험치·레벨을 확인한다. **CANCEL**은 현재 저장을 유지한다.
 
-Tauri Mac 앱은 같은 웹 게임을 앱 창에서 실행하고 OS 파일에도 저장을 백업한다. Apple Silicon과 macOS 14 이상을 대상으로 한다. 현재 [Tauri 빌드 방법](../../Desktop/Tauri/README.md)으로 앱을 만들 수 있다. 공개 설치본의 서명·공증은 후속 과제다. [플랫폼별 저장과 검사](../reviews/mac-web-pwa-comparison-20261101.md).
+Tauri Mac 앱은 같은 웹 게임을 앱 창에서 실행하고 OS 파일에도 저장을 백업한다. Apple Silicon과 macOS 14 이상을 대상으로 한다. 현재 [Tauri 빌드 방법](../../Desktop/Tauri/README.md)으로 앱을 만들 수 있다. [Tauri Mac 다운로드](https://github.com/gelb2/HeavyMach/releases/tag/tauri-mac-20261102) ZIP을 풀어 앱을 Applications로 옮겨도 된다. ad-hoc 서명이며 공증은 아직 받지 않았다. 첫 실행이 차단되면 시스템 설정 → 개인정보 보호 및 보안에서 해당 앱의 **확인 없이 열기**를 선택한다. [Apple 안내](https://support.apple.com/102445). [플랫폼별 저장과 검사](../reviews/mac-web-pwa-comparison-20261101.md).
 
 
 현재 main의 Apple·Android 일반 앱과 치트 검증 앱을 빌드하는 방법이다. 두 앱은 같은 게임 코어를 쓰며 별도 앱 ID와 저장 공간을 사용한다.

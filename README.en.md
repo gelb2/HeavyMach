@@ -8,7 +8,7 @@
 
 **[Play on the web · Install the PWA](https://gelb2.github.io/HeavyMach/)** · [Tauri Mac app](#tauri-mac)
 
-If building with Xcode or Android Studio is difficult, use the web/PWA version. Follow the link and choose **Install game** to add it to your home screen, or **Play in browser** to play in a tab. A Tauri Mac app is also built; its public installer is being prepared. For native iOS, iPadOS, Android and macOS apps, see [Build](#빌드하기) below.
+If building with Xcode or Android Studio is difficult, use the web/PWA version. Follow the link and choose **Install game** to add it to your home screen, or **Play in browser** to play in a tab. [Download Tauri Mac](https://github.com/gelb2/HeavyMach/releases/tag/tauri-mac-20261102) and unzip it to run the Mac app. Requires Apple Silicon and macOS 14 or later; first-launch instructions are on the download page. For native iOS, iPadOS, Android and macOS apps, see [Build](#빌드하기) below.
 
 Thank you to [fastutlego](https://github.com/fastutlego) for bringing HeavyMach to web browsers. The WebAssembly host, WebGL2 renderer, input, audio and saves in [the first web port, PR #24](https://github.com/gelb2/HeavyMach/pull/24), became the foundation for the PWA and Tauri Mac versions.
 
@@ -48,9 +48,9 @@ Money is only needed in this life.
 
 **HeavyMach**, the 2009 side-scrolling tank game, has been rebuilt to run on current iPhone, iPad, Mac and Android devices, as well as web browsers and PWAs. Move and jump the tank, switch weapons and fight ground and air enemies. Wider screens, keyboard controls, auto-aim and new aircraft extend the original combat and progression.
 
-The latest release tag is [v0.17](https://github.com/gelb2/HeavyMach/tree/v0.17). It includes the regular and cheat Android apps. Regular and cheat validation apps can be installed separately. The cheat app tests the same game with specified missions, weapons and upgrades.
+The latest stable release tag is [v0.17](https://github.com/gelb2/HeavyMach/tree/v0.17). It includes the regular and cheat Android apps. Regular and cheat validation apps can be installed separately. The cheat app tests the same game with specified missions, weapons and upgrades.
 
-Current main also includes Web/PWA, Tauri Mac, recovery codes and the game-button changes. The latest release tag remains v0.17; these additions have not yet received a new release tag.
+Current main also includes Web/PWA, Tauri Mac, recovery codes and the game-button changes. Tauri Mac is available under a separate download tag. The next stable release across all platforms is still in preparation.
 
 [Latest release](https://github.com/gelb2/HeavyMach/releases/latest) · [Version history](CHANGELOG.en.md) · [Android changes](CHANGELOG.en.md#v017)
 
@@ -231,7 +231,7 @@ The code carries the original save slots, weapon order and ammunition, upgrades 
 
 The Tauri app runs the web version on Mac and also backs up progress and settings to the app’s data folder, outside WebView storage. If WebView saves are missing on the next launch, the app restores them from this backup. The existing AppKit-based native Mac app remains available.
 
-The app has been built and run on Apple Silicon Macs. Its public installer is being prepared. [Tauri build instructions](Desktop/Tauri/README.md) · [Architecture and development](docs/desktop-web-plan-20261031.md)
+[Download Tauri Mac](https://github.com/gelb2/HeavyMach/releases/tag/tauri-mac-20261102) · Apple Silicon, macOS 14 or later. Unzip and move the app to Applications. It is ad-hoc signed and not yet notarized. [Tauri build instructions](Desktop/Tauri/README.md) · [Architecture and development](docs/desktop-web-plan-20261031.md)
 
 <a id="플랫폼과-개발-상태"></a>
 
@@ -249,7 +249,7 @@ Wider screens, iPad and Mac support, and keyboard controls were also my requests
 | Android | Regular and cheat apps using the shared C++ core | Galaxy USB/wireless installation and gameplay checked. [Installation](Android/README.md) · [Development and screenshots](docs/public/android-development-20261030.md) |
 | Web | Public WebAssembly/WebGL2 game | Chrome and Safari input, recovery and offline tests. [Play](https://gelb2.github.io/HeavyMach/) |
 | PWA | Home-screen installation and offline play | iPhone, iPad and Galaxy play reports; installed Chrome PWA recovery and restart checks. [Results](docs/en/public/validation.md) |
-| Tauri Mac | Web game in a Mac app, with an OS-file save backup | Local app launch, recovery, restart and quit checked. Public installer and notarization pending. [Build](Desktop/Tauri/README.md) |
+| Tauri Mac | Web game in a Mac app, with an OS-file save backup | Local app launch, recovery, restart and quit checked. [ZIP available](https://github.com/gelb2/HeavyMach/releases/tag/tauri-mac-20261102). Notarization pending. [Build](Desktop/Tauri/README.md) |
 
 I saw no frame drops or malfunctions while playing the installed iPhone and iPad apps. Device automation still has display-timing threshold failures. [Measurement conditions and results](docs/en/public/validation.md)
 

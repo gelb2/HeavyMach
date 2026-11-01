@@ -28,7 +28,7 @@ npm run build
 
 `prepare.py`는 기존 `Web/CMakeLists.txt`로 게임을 빌드하고 `build/frontend/game/`에 같은 바이트로 복사한다. 별도 시작 화면은 그 상위 폴더에 둔다. `npm run build`도 포함 파일 복사와 보호 검사를 다시 실행해 실행기 수정이 번들에 반영되게 한다. 기존 앱 아이콘의 형식 변환도 이 폴더의 Git 제외 생성물에만 기록한다.
 
-Mac 앱은 `src-tauri/target/release/bundle/macos/Heavy Mach Desktop.app`에 만들어진다. 공개 배포용 서명·공증과 DMG는 후속 작업이다. 현재의 `0.17.0`은 기반 게임 버전이며 새 릴리스 태그를 발행한 것은 아니다.
+Mac 앱은 `src-tauri/target/release/bundle/macos/Heavy Mach Desktop.app`에 만들어진다. [다운로드 ZIP](https://github.com/gelb2/HeavyMach/releases/tag/tauri-mac-20261102)은 ad-hoc 번들 서명으로 제공한다. Developer ID 서명·공증과 DMG는 후속 작업이다. 현재의 `0.17.0`은 기반 게임 버전이며 새 릴리스 태그를 발행한 것은 아니다.
 
 ## 저장
 
