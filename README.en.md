@@ -8,7 +8,7 @@
 
 **[Play on the web · Install the PWA](https://gelb2.github.io/HeavyMach/)** · [Tauri Mac app](#tauri-mac)
 
-If building with Xcode or Android Studio is difficult, use the web/PWA version. Follow the link and choose **Install game** to add it to your home screen, or **Play in browser** to play in a tab. A Tauri Mac app is also built; its public installer is being prepared. For native iOS, iPadOS, Android and macOS apps, see [Build](#build) below.
+If building with Xcode or Android Studio is difficult, use the web/PWA version. Follow the link and choose **Install game** to add it to your home screen, or **Play in browser** to play in a tab. A Tauri Mac app is also built; its public installer is being prepared. For native iOS, iPadOS, Android and macOS apps, see [Build](#빌드하기) below.
 
 Thank you to [fastutlego](https://github.com/fastutlego) for bringing HeavyMach to web browsers. The WebAssembly host, WebGL2 renderer, input, audio and saves in [the first web port, PR #24](https://github.com/gelb2/HeavyMach/pull/24), became the foundation for the PWA and Tauri Mac versions.
 
