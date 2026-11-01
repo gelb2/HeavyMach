@@ -1,5 +1,11 @@
 # 2026-10-25 문서·코드·앱 일치 체계 점검 및 보완
 
+2026-11-01 복원 모듈 구현 중: `feat/save-transfer`에서 세 슬롯과 설정을 옮기는 공통 C++ 모듈을 구현했다. iPhone 백업을 iPad·Galaxy·네이티브 Mac·Tauri·로컬 설치형 PWA에 복원하고 저장값을 대조했다. iPad의 복원 후 전투·이동·점프·사격, 로컬 PWA의 오프라인 재실행을 확인했다. 전투 중 SET GAME UI 노출과 Android의 기본 HUD 위치 복원을 수정했다. Galaxy·Tauri·최신 Mac 빌드의 남은 화면 검사, iPhone 앱의 코드 생성, 복원 중단·용량 부족 검사와 공개 배포가 남았다. main 병합은 하지 않았다. [검사 결과](reviews/mac-web-pwa-comparison-20261101.md#unified-save-work-order).
+
+2026-11-01 서버 없는 복원 코드 조사: 공용 SaveData와 Apple·Android·웹의 실제 소비 코드를 대조했다. 진행 3,624바이트와 플랫폼별 HUD·키·조준 설정을 코드에 담아 전달하는 설계를 [보고서](reviews/mac-web-pwa-comparison-20261101.md#portable-recovery-code)에 추가했다. 사용자 후속 지시에 따라 암호화·salt는 제외하고 버전·손상 검사·값 검증을 사용한다. 6번 백업과 7번 복원 코드 계획을 연결했다. 기능 구현·코드 길이 측정·플랫폼 간 복원 검사는 아직 하지 않았다.
+
+2026-11-01 저장 보존 우선순위 변경: 6번 조사·계획과 보고서 검토 뒤 6번 구현·4번 저장 검사를 진행하고 배포를 판단한다. [조사·계획](reviews/mac-web-pwa-comparison-20261101.md#save-preservation-plan). 코드 조사에서 Tauri의 부분 삭제 시 자동 복구가 시작되지 않는 조건을 확인했다. 실제 재현·수정은 미실행이다. 수동 조준점 숨김 요구도 TODO에 추가했다. 이번 변경은 문서이며 main 병합·앱 변경은 하지 않았다.
+
 2026-11-01 사용자 실제 플레이 확인: 갤럭시 순수 웹판에서 틸트 조작과 자동조준·수동조준이 모두 정상 동작했다.
 
 추가 검사(2026-11-01): 공개 GitHub Pages 14단계, Chrome 터치·회전·HUD 저장/복원 7단계, OS 권한 거부·공간 부족·저장 프로세스 강제 종료 검사가 통과했다. Tauri 최종 Release 앱도 강제 종료 후 다시 열렸고 기존 백업 해시가 같았다. [결과](evidence/launcher-save-20261101.json).

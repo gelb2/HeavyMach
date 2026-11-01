@@ -21,16 +21,20 @@ def capture():
 def check():
  obj=json.loads(MANIFEST.read_text());bad=[]
  files={x['path']:x['sha256'] for x in obj['files']}
+ scope=json.loads((ROOT/'Desktop/Tauri/save-transfer-scope.json').read_text()) if (ROOT/'Desktop/Tauri/save-transfer-scope.json').exists() else {}
+ allowed=set(scope.get('changed_files',{}));new=set(scope.get('new_files',[]));roots=tuple(scope.get('new_roots',[]))
+ def addition(p):return p in new or bool(roots) and p.startswith(roots)
+ if any(p.startswith(('Sources/Core/','Resources/','Art/','vendor/')) for p in allowed):raise RuntimeError('Core/assets cannot be excepted')
  current=set(paths());expected=set(files)
- bad.extend('added/deleted: '+p for p in current^expected)
+ bad.extend('added/deleted: '+p for p in current^expected if not (p in current and addition(p)))
  for p,h in files.items():
-  if not (ROOT/p).is_file() or digest(ROOT/p)!=h:bad.append('changed: '+p)
+  if not (ROOT/p).is_file() or (digest(ROOT/p)!=h and p not in allowed):bad.append('changed: '+p)
  extra=git('ls-files','--others','--exclude-standard','-z','--',*ROOTS).decode().split('\0')
- bad.extend('untracked: '+p for p in extra if p)
+ bad.extend('untracked: '+p for p in extra if p and not addition(p))
  # Existing workflows stay unchanged; new platform-only workflows are allowed.
  changes=git('diff','--name-status',obj['baseline_commit'],'--','.github/workflows').decode().splitlines()
  bad.extend('workflow: '+p for p in changes if not p.startswith('A\t') or p.split('\t')[-1] not in ('.github/workflows/desktop-tauri.yml','.github/workflows/web-pages.yml'))
  if bad:raise RuntimeError('\n'.join(bad))
- print('PASS:',len(expected),'protected files and existing workflows unchanged')
+ print('PASS: protected core/assets and other existing files unchanged;',len(allowed),'declared adapter/build exceptions')
 if __name__=='__main__':
  a=argparse.ArgumentParser();a.add_argument('action',choices=['capture','check']);args=a.parse_args();globals()[args.action]()

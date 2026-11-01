@@ -111,6 +111,28 @@ async fn restore_finish(
     .map_err(|e| e.to_string())?
 }
 #[tauri::command]
+fn transfer_file(w: WebviewWindow, action: String, code: String) -> Result<Option<String>, String> {
+    use std::io::Write;
+    let root = launcher(&w)?.join("transfer");
+    std::fs::create_dir_all(&root).map_err(|e| e.to_string())?;
+    let pending = root.join("restore.hmcode");
+    if action == "read" {
+        return if pending.exists() { std::fs::read_to_string(pending).map(Some).map_err(|e| e.to_string()) } else { Ok(None) };
+    }
+    if action == "finish" {
+        if pending.exists() { std::fs::remove_file(pending).map_err(|e| e.to_string())?; }
+        backup::sync_directory(&root)?;
+        return Ok(None);
+    }
+    let name = match action.as_str() { "before" => "before.hmcode", "pending" => "restore.hmcode", _ => return Err("Unknown transfer operation".into()) };
+    if code.len() > 24000 || !code.starts_with("HM1-") { return Err("Invalid recovery code".into()); }
+    let mut temp = tempfile::NamedTempFile::new_in(&root).map_err(|e| e.to_string())?;
+    temp.write_all(code.as_bytes()).and_then(|_|temp.as_file().sync_all()).map_err(|e|e.to_string())?;
+    temp.persist(root.join(name)).map_err(|e| e.to_string())?;
+    backup::sync_directory(&root)?;
+    Ok(None)
+}
+#[tauri::command]
 fn backup_status(w: WebviewWindow) -> Result<backup::Status, String> {
     local(&w)?;
     backup::status(
@@ -202,6 +224,7 @@ fn main() {
             allow_exit: AtomicBool::new(false),
         })
         .invoke_handler(tauri::generate_handler![
+            transfer_file,
             backup_status,
             backup_write,
             finish_close,
@@ -269,7 +292,8 @@ fn main() {
                 "\n",
                 include_str!("../../frontend/observer.js"),
                 "\n",
-                include_str!("../../frontend/diagnostics.js")
+                include_str!("../../frontend/diagnostics.js"),
+                "\nwindow.addEventListener('DOMContentLoaded',()=>{if(location.pathname.startsWith('/game/'))import(new URL('/transfer-game.js',location.href).href).catch(e=>window.__TAURI__.core.invoke('diagnostics_write',{report:JSON.stringify({transferError:String(e),url:location.href})}));});"
             );
             let window =
                 tauri::WebviewWindowBuilder::new(app, "main", WebviewUrl::App("index.html".into()))

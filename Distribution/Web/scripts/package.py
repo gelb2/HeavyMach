@@ -13,6 +13,9 @@ game_version=hashlib.sha256(json.dumps(game,sort_keys=True).encode()).hexdigest(
 out=HERE/'build/site';out.mkdir(parents=True,exist_ok=True)
 # Only this generated output is replaced.
 shutil.rmtree(out);shutil.copytree(HERE/'pwa',out)
+codec=ROOT/'build/save-transfer/web'
+if not (codec/'codec.wasm').exists():raise SystemExit('Build Modules/SaveTransfer/build_web.py first')
+shutil.copytree(codec,out/'transfer')
 subprocess.run([sys.executable,str(HERE/'launcher/prepare.py'),str(out/'skin')],check=True)
 shutil.copytree(source,out/'game'/game_version)
 for name,digest in game.items():assert hashfile(out/'game'/game_version/name)==digest

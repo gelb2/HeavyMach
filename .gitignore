@@ -63,3 +63,6 @@ account.md
 
 # Web test dependencies.
 Web/tests/node_modules/
+
+# Local Android Studio project state.
+Android/.idea/

@@ -1,7 +1,16 @@
+import {atSlots,bindSlots,requestRestore,consumeRestoreRequest} from './transfer/slot-entry.js';
+import {attachTransfer} from './transfer/ui.js';
+import {portable,stored} from './transfer/store.js';
 import {GAME_URL} from './config.js';
 import * as saves from './saves.js';
 const $=id=>document.getElementById(id),status=$('status'),error=$('error');
 const standalone=()=>matchMedia('(display-mode: standalone)').matches||navigator.standalone===true;
+const transferStore={read:async()=>portable(await saves.read()),preserve:async code=>{localStorage.setItem('HeavyMach.TransferBefore',code);},pending:async code=>{localStorage.setItem('HeavyMach.TransferPending',code);},apply:async s=>saves.apply(stored(s)),finish:async()=>localStorage.removeItem('HeavyMach.TransferPending')};
+const gameWindow=()=> $('game').hidden?null:$('game').contentWindow;
+let transferBusy=false;
+const transfer=attachTransfer({parent:document.body,available:()=>atSlots(gameWindow()),exclusive:async fn=>{if(transferBusy)throw Error('Wait for the current operation.');transferBusy=true;try{return await fn();}finally{transferBusy=false;}},store:transferStore,resume:async()=>localStorage.getItem('HeavyMach.TransferPending'),restoreRequest:(code,options)=>requestRestore(code,options,()=>location.reload())});
+bindSlots(transfer,gameWindow);
+
 let registration,offlineReady=false,busy=false,installPrompt,activeVersion;
 const fail=e=>{error.textContent=e.message||String(e);error.hidden=false;$('retry').hidden=false;};
 async function exclusive(fn){
@@ -32,7 +41,7 @@ async function prepare(){
  }finally{busy=false;$('play').disabled=false;if(offlineReady)readyLabel();}
 }
 async function initialize(){
- await exclusive(()=>saves.recover());
+ await exclusive(async()=>{await saves.recover();await transfer.recover();await consumeRestoreRequest(transferStore);});
  registration=await navigator.serviceWorker.register('./sw.js',{scope:'./',updateViaCache:'none'});
  registration.addEventListener('updatefound',()=>{const worker=registration.installing;worker.addEventListener('statechange',()=>{
  if(worker.state==='installed'&&navigator.serviceWorker.controller)status.textContent='Update ready. Close all game windows to use it next time.';
@@ -45,7 +54,7 @@ async function initialize(){
  $('play').disabled=false;
 }
 $('play').onclick=()=>exclusive(async()=>{
- await saves.recover();await prepare();
+ await saves.recover();await transfer.recover();await consumeRestoreRequest(transferStore);await prepare();
  navigator.storage?.persist?.().catch(()=>{});
  const frame=$('game');frame.src=GAME_URL;frame.hidden=false;$('launcher').hidden=true;document.body.classList.add('playing');
  frame.onload=()=>{frame.contentWindow.focus();frame.contentDocument?.getElementById('canvas')?.focus();};
