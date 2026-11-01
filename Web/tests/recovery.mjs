@@ -40,7 +40,7 @@ try{
  await page.keyboard.press('Escape');check('pending HUD save cannot close editor',(await state()).hudEditing===1);
  await page.evaluate(()=>delayed.shift()(new Error('quota failure')));
  check('HUD write failure keeps draft', (await state()).hudEditing===1 && await page.evaluate(()=>hmStorageState().dirty&&hmStorageState().blocked));
- await page.evaluate(()=>FS.syncfs=realSync);await page.click('#hm-storage-retry');await page.waitForFunction(()=>!hmStorageState().dirty);await page.evaluate(()=>Module._hm_hud_control(2));await wait(s=>!s.hudEditing);check('HUD retry commits draft',(await state()).hudCustomized===1);
+ await page.evaluate(()=>FS.syncfs=realSync);await page.waitForFunction(()=>JSON.parse(Module.UTF8ToString(Module._hm_game_ui())).buttons.some(b=>b.id===1030));const retry=await page.evaluate(()=>JSON.parse(Module.UTF8ToString(Module._hm_game_ui())).buttons.find(b=>b.id===1030));await tap(retry.rect[0]+retry.rect[2]/2,retry.rect[1]+retry.rect[3]/2);await page.waitForFunction(()=>!hmStorageState().dirty);await page.evaluate(()=>Module._hm_hud_control(2));await wait(s=>!s.hudEditing);check('HUD retry commits draft',(await state()).hudCustomized===1);
  // A failed startup read must not launch or overwrite the existing saved game.
  await page.waitForFunction(()=>!hmStorageState().dirty);const expected=await saved();await page.close();page=await browser.newPage();
  await page.evaluateOnNewDocument(()=>{const open=indexedDB.open.bind(indexedDB);let first=true;indexedDB.open=(...a)=>{if(first){first=false;throw new Error('transient read failure');}return open(...a);};});

@@ -1,6 +1,7 @@
 #include "Fighters.hpp"
 #include "GroundAA.hpp"
 #include "HMAimOverlay.hpp"
+#include "HMGameButtons.hpp"
 #import "HMResources.h"
 #import "HMGameView.h"
 #import "HMValidationControls.h"
@@ -19,7 +20,6 @@
 #import <CoreMotion/CoreMotion.h>
 #endif
 #import <mach/mach_time.h>
-#import <CoreText/CoreText.h>
 #import <GameController/GameController.h>
 #import <TargetConditionals.h>
 #include "GameSession.hpp"
@@ -34,35 +34,26 @@
 #include "SaveTransfer.hpp"
 #include "FileStore.hpp"
 
-#if TARGET_OS_OSX
-@interface HMHUDPanelView:NSView
+#if !TARGET_OS_OSX
+@interface HMGameView () <UITextFieldDelegate>
 @end
-@implementation HMHUDPanelView
-- (BOOL)isFlipped {return YES;}
-- (void)mouseDown:(NSEvent*)event {}
-- (void)mouseDragged:(NSEvent*)event {}
-- (void)mouseUp:(NSEvent*)event {}
-@end
-typedef NSScrollView HMEditorScroll;
-typedef NSButton HMEditorButton;
-typedef NSTextField HMEditorLabel;
-#else
-typedef UIView HMHUDPanelView;
-typedef UIScrollView HMEditorScroll;
-typedef UIButton HMEditorButton;
-typedef UILabel HMEditorLabel;
 #endif
 @implementation HMGameView {
     heavymach::hud::Configuration _hudLayout,_hudDraft;
+    BOOL _gameToolsFocus;
     BOOL _hudLayoutFallback,_hudEditing,_hudFromMenu,_hudExample,_hudHideGuides,_hudShowHits;
     int _hudSelected;
     id _hudDragToken;
     CGPoint _hudGrab;
-    HMHUDPanelView *_hudToolbar,*_hudToolRows;
-    HMEditorScroll *_hudToolScroll;
-    HMEditorLabel *_hudEditorLabel;
-    HMEditorButton *_hudEntry,*_hudToolsToggle,*_transferEntry;
-    NSArray<HMEditorButton*> *_hudEditorButtons;
+    heavymach::gameui::Buttons _gameButtons;
+    NSString *_hudStatus,*_gameUIMessage;
+    int _transferPage;
+    NSString *_transferPendingCode;
+#if TARGET_OS_OSX
+    NSTextField *_transferInput;
+#else
+    UITextField *_transferInput;
+#endif
     NSUInteger _hudLayoutWrites;
     std::unique_ptr<heavymach::GameSession> _hudExampleSession;
     heavymach::GameData _hudExampleData;
@@ -77,19 +68,12 @@ typedef UILabel HMEditorLabel;
     #else
     NSTextField *_renderError;
     NSObject *_mouseToken;
-    #if HM_VALIDATION
-    HMValidationPanel *_nativeValidationPanel;
-    #endif
     #endif
     HMGLRenderer *_glRenderer;
     heavymach::KeyboardInput _keyboardControls;
     BOOL _keyboardSettingsOpen,_capturingKey,_settingsWasPaused;
     unsigned _settingsSelection;
-#if TARGET_OS_OSX
-    NSTextField *_keyboardHelp;
-#else
-    UILabel *_keyboardHelp;
-#endif
+
 
     HMMenus *_menus;
     HMGameHUD *_hud;
@@ -141,11 +125,8 @@ typedef UILabel HMEditorLabel;
     NSHashTable<id> *_heldTouches;
     int _traceSecond;
 #if defined(HM_VALIDATION) && HM_VALIDATION
-    #if TARGET_OS_OSX
-    NSButton *_validationButton;
-    #else
-    UIButton *_validationButton;
-    #endif
+    HMValidationPanel *_validationPanel;
+    BOOL _validationPanelOpen,_validationWasPaused;
     HMValidationControls *_validationControls;
     std::optional<heavymach::ValidationScenario> _validationFixture;
 #endif
@@ -178,15 +159,6 @@ typedef UILabel HMEditorLabel;
         _renderError.userInteractionEnabled=NO;_renderError.hidden=YES;
         [self addSubview:_renderError];
 #endif
-#if TARGET_OS_OSX
-        _keyboardHelp=[NSTextField wrappingLabelWithString:@""];
-        _keyboardHelp.drawsBackground=YES;_keyboardHelp.backgroundColor=NSColor.blackColor;
-        _keyboardHelp.textColor=NSColor.whiteColor;_keyboardHelp.font=[NSFont monospacedSystemFontOfSize:15 weight:NSFontWeightRegular];
-#else
-        _keyboardHelp=[UILabel new];_keyboardHelp.numberOfLines=0;_keyboardHelp.backgroundColor=UIColor.blackColor;
-        _keyboardHelp.textColor=UIColor.whiteColor;_keyboardHelp.font=[UIFont monospacedSystemFontOfSize:15 weight:UIFontWeightRegular];
-#endif
-        _keyboardHelp.hidden=YES;[self addSubview:_keyboardHelp];
         NSArray *mapping=[NSUserDefaults.standardUserDefaults arrayForKey:@"KeyboardBindingsV1"];
         if(mapping.count==heavymach::KeyboardInput::count||mapping.count+1==heavymach::KeyboardInput::count){
             auto candidate=_keyboardControls.bindings;bool valid=true;std::array<bool,256> seen{};
@@ -253,12 +225,7 @@ typedef UILabel HMEditorLabel;
         _hud.button=^(int identifier,int state) {[weakSelf gameButton:identifier state:state];};
         _hud.upgradeClosed=^{[weakSelf finishUpgrade];};
         [self loadHUDLayout];[self resumeTransfer];
-        NSString* previousControlScope=_media.resourceScope;_media.resourceScope=@"native-controls";
         [self prepareHUDEditor];
-        _transferEntry=[self editorButton:@"TRANSFER PROGRESS" action:@selector(openTransfer:) tag:0];[self addSubview:_transferEntry];
-        _media.resourceScope=previousControlScope;
-        // The buttons own their rendered images; their source sheet is no longer needed.
-        [_media releaseScope:@"native-controls"];
         [self prepareScreenResources:1];
 #if !TARGET_OS_OSX
         _motion=[CMMotionManager new];
@@ -271,22 +238,7 @@ typedef UILabel HMEditorLabel;
         self.accessibilityIdentifier=@"HeavyMach.Restored.GameView";
         self.accessibilityLabel=@"Heavy Mach";
 #if defined(HM_VALIDATION) && HM_VALIDATION
-#if TARGET_OS_OSX
-        _validationButton=[NSButton buttonWithTitle:@"검증" target:self action:@selector(openValidation)];
-        [self addSubview:_validationButton];
-        _validationControls=[HMValidationControls new];_validationControls.target=self;_validationControls.action=@selector(validationDirectionChanged:);
-        [self addSubview:_validationControls];
-#else
-        _validationButton=[UIButton buttonWithType:UIButtonTypeSystem];
-        [_validationButton setTitle:@"검증" forState:UIControlStateNormal];
-        _validationButton.backgroundColor=[UIColor.systemBackgroundColor colorWithAlphaComponent:.9];
-        _validationButton.layer.cornerRadius=8;_validationButton.accessibilityIdentifier=@"HMValidation.Open";
-        [_validationButton addTarget:self action:@selector(openValidation) forControlEvents:UIControlEventTouchUpInside];
-        [self addSubview:_validationButton];
         _validationControls=[HMValidationControls new];
-        [_validationControls addTarget:self action:@selector(validationDirectionChanged:) forControlEvents:UIControlEventValueChanged];
-        [self addSubview:_validationControls];
-#endif
 #endif
     }
     return self;
@@ -306,47 +258,22 @@ typedef UILabel HMEditorLabel;
     _validationControls.selectedSegmentIndex=1+int(_rightPressed)-int(_leftPressed);
 }
 - (void)openValidation {
-    if(_hudEditing)return;
-#if TARGET_OS_OSX
-    if(_nativeValidationPanel.window.visible)return;
-#else
-    UIViewController *presenter=self.window.rootViewController;if(!presenter||presenter.presentedViewController)return;
-#endif
-    [self cancelGameInput];
-    HMValidationPanel *panel=[[HMValidationPanel alloc] initWithData:&_data];
-    __weak HMGameView *weakSelf=self;
-    panel.wideCanvas=_wideCanvasEnabled;
-    panel.canvasChanged=^(BOOL enabled){HMGameView* view=weakSelf;if(view&&!view->_hudEditing)[view setWideCanvasEnabled:enabled];};
-    auto pausedSession=_session.get();bool wasPaused=_session&&_session->world().paused;
+    if(_hudEditing||_transferPage||_loading.state()!=6)return;
+    [self cancelGameInput];_validationWasPaused=_session&&_session->world().paused;
     if(_session)_session->setPaused(true);
-    panel.closed=^{HMGameView *view=weakSelf;if(view&&!view->_hudEditing&&view->_session.get()==pausedSession&&view->_session)view->_session->setPaused(wasPaused||view->_resumeRequired);};
-    panel.applyFixture=^(const heavymach::ValidationScenario& scenario){
-        HMGameView *view=weakSelf;if(!view||view->_hudEditing)return;
-        view->_resumeRequired=NO;view->_validationFixture=scenario;view->_loadError=nil;view->_loading=heavymach::LoadingTransition{};
-        [view startSlot:0 mode:0 mission:scenario.mission stage:scenario.stage];[view persistSave];
-    };
-    panel.resumeSave=^{HMGameView* view=weakSelf;if(!view||view->_hudEditing)return;view->_resumeRequired=NO;[view resumeValidationSave];};
-    panel.addExperience=^{HMGameView *view=weakSelf;if(view&&!view->_hudEditing&&view->_session){
-        view->_session->validationAddExperience(1);[view consumeGameEvents];
-        NSLog(@"HM_VALIDATION actual addExperience(1): exp=%d level=%d",view->_save.slots[view->_slotIndex].experience(),view->_save.slots[view->_slotIndex].level());
-    }};
-#if TARGET_OS_OSX
-    _nativeValidationPanel=panel;[panel showWindow:self];
-#else
-    [presenter presentViewController:panel animated:YES completion:nil];
-#endif
+    _validationPanel=[[HMValidationPanel alloc]initWithData:&_data];_validationPanel.wideCanvas=_wideCanvasEnabled;
+    _validationPanelOpen=YES;_gameUIMessage=nil;
+}
+- (void)closeValidation {
+    _validationPanelOpen=NO;_gameButtons.cancel();
+    if(_session)_session->setPaused(_validationWasPaused||_resumeRequired);
 }
 - (void)resumeValidationSave {
     // Never applies fixture defaults here. Resume the validation bundle's own save.
     NSUserDefaults *defaults=NSUserDefaults.standardUserDefaults;
     int slot=int([defaults integerForKey:@"validation.resume.slot"]);
     if(slot<0||slot>=3||!_save.slots[slot].occupied()){
-#if TARGET_OS_OSX
-        NSAlert *alert=[NSAlert new];alert.messageText=@"저장 없음";alert.informativeText=@"초기 조건 재설정 후 시작으로 검증 저장을 먼저 만드세요.";[alert runModal];
-#else
-        UIAlertController *alert=[UIAlertController alertControllerWithTitle:@"저장 없음" message:@"초기 조건 재설정 후 시작으로 검증 저장을 먼저 만드세요." preferredStyle:UIAlertControllerStyleAlert];
-        [alert addAction:[UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleDefault handler:nil]];[self.window.rootViewController presentViewController:alert animated:YES completion:nil];
-#endif
+        _gameUIMessage=@"NO SAVED GAME. START A TEST FIRST.";
         return;
     }
     _validationFixture.reset();_loading=heavymach::LoadingTransition{};
@@ -480,6 +407,7 @@ typedef UILabel HMEditorLabel;
 - (double)interactionTime {return CACurrentMediaTime();}
 - (void)noteInteraction {_lastInteraction=[self interactionTime];}
 - (void)cancelGameInput {
+    _gameButtons.cancel();
 #if defined(HM_VALIDATION) && HM_VALIDATION
     [self stopValidationDirection];
 #endif
@@ -597,25 +525,15 @@ typedef UILabel HMEditorLabel;
 - (NSString*)keyName:(unsigned)code {
     if(code>=4&&code<=29)return [NSString stringWithFormat:@"%c",'A'+code-4];
     if(code>=30&&code<=38)return [NSString stringWithFormat:@"%u",code-29];
-    switch(code){case 39:return @"0";case 0x28:return @"Enter";case 0x29:return @"Esc";case 0x2b:return @"Tab";case 0x2c:return @"Space";case 0x4f:return @"→";case 0x50:return @"←";case 0x51:return @"↓";case 0x52:return @"↑";case 0xe1:return @"Shift";case 0xe5:return @"Right Shift";case 0x3b:return @"F2";default:return [NSString stringWithFormat:@"HID %02X",code];}
+    switch(code){case 39:return @"0";case 0x28:return @"Enter";case 0x29:return @"Esc";case 0x2b:return @"Tab";case 0x2c:return @"Space";case 0x4f:return @"RIGHT";case 0x50:return @"LEFT";case 0x51:return @"DOWN";case 0x52:return @"UP";case 0xe1:return @"Shift";case 0xe5:return @"Right Shift";case 0x3b:return @"F2";default:return [NSString stringWithFormat:@"HID %02X",code];}
 }
-- (void)refreshKeyboardHelp {
-    NSArray *names=@[@"왼쪽 이동",@"오른쪽 이동",@"왼쪽 조준",@"오른쪽 조준",@"위로 조준",@"아래로 조준",@"사격",@"점프",@"이전 무기",@"다음 무기",@"천천히 이동·조준",@"선택",@"일시정지·뒤로",@"다음 버튼",@"키 설정",@"다음 표적"];
-    NSMutableString *text=[NSMutableString stringWithString:@"키 설정\n↑↓ 선택 · Enter 키 변경 · Backspace 기본값 · Esc 닫기\n같은 키를 지정하면 두 동작의 키가 서로 바뀝니다.\n\n"];
-    for(unsigned i=0;i<names.count;++i)[text appendFormat:@"%@ %@  —  %@\n",i==_settingsSelection?@"▶":@"  ",names[i],[self keyName:_keyboardControls.bindings[i]]];
-    if(_capturingKey)[text appendString:@"\n사용할 키를 누르세요. Esc: 취소"];
-#if TARGET_OS_OSX
-    _keyboardHelp.stringValue=text;
-#else
-    _keyboardHelp.text=text;
-#endif
-    _keyboardHelp.frame=CGRectInset(self.bounds,24,24);_keyboardHelp.hidden=!_keyboardSettingsOpen;
-}
+- (void)refreshKeyboardHelp {}
 - (void)saveKeyboardBindings {
     NSMutableArray *values=[NSMutableArray new];for(auto key:_keyboardControls.bindings)[values addObject:@(key)];
     [NSUserDefaults.standardUserDefaults setObject:values forKey:@"KeyboardBindingsV1"];
 }
 - (void)toggleKeyboardSettings {
+    if(_loading.state()<6)return;
     if(!_keyboardSettingsOpen){_settingsWasPaused=_session&&_session->world().paused;[self cancelGameInput];if(_session)_session->setPaused(true);}
     else {if(_session)_session->setPaused(_settingsWasPaused||_resumeRequired);[self cancelGameInput];}
     _keyboardSettingsOpen=!_keyboardSettingsOpen;_capturingKey=NO;[self refreshKeyboardHelp];
@@ -633,7 +551,26 @@ typedef UILabel HMEditorLabel;
 #else
     if(self.window.rootViewController.presentedViewController){[self cancelGameInput];return NO;}
 #endif
-    if(_hudEditing)return [self hudEditorKey:code pressed:pressed];
+    if(_transferPage){
+#if TARGET_OS_OSX
+        if(self.window&&self.window.firstResponder!=self)return NO;
+#else
+        if(_transferInput.isFirstResponder)return NO;
+#endif
+        if(code==0x29&&pressed){[self closeTransfer];return YES;}
+        [self prepareGameButtons];if(auto e=_gameButtons.key(code,pressed))[self gameUIAction:e->id state:e->state];return YES;
+    }
+#if HM_VALIDATION
+    if(_validationPanelOpen){if(code==0x29&&pressed){[self closeValidation];return YES;}[self prepareGameButtons];if(auto e=_gameButtons.key(code,pressed))[self gameUIAction:e->id state:e->state];return YES;}
+#endif
+    if(_hudEditing){
+        [self prepareGameButtons];
+        if(code==0x3f&&pressed){_gameToolsFocus=!_gameToolsFocus;_gameButtons.cancel();return YES;}
+        if(_gameToolsFocus){if(code==0x29&&pressed){_gameToolsFocus=NO;return YES;}if(auto e=_gameButtons.key(code,pressed))[self gameUIAction:e->id state:e->state];return YES;}
+        return [self hudEditorKey:code pressed:pressed];
+    }
+    if(code==0x3c&&pressed&&[self transferAvailable]){[self openTransfer:nil];return YES;} // F3 on the slot screen.
+
     if(code<_aimBlockedKeys.size()&&_aimBlockedKeys[code]){if(!pressed)_aimBlockedKeys[code]=false;return YES;}
     if(_keyboardSettingsOpen){
         if(!_keyboardControls.set(code,pressed)||!pressed)return YES;
@@ -696,7 +633,10 @@ typedef UILabel HMEditorLabel;
     }
 }
 - (void)drawKeyboardIndicators {
-    if(_loading.visible())return;
+    if(_loading.visible()||_hudEditing||_keyboardSettingsOpen||_transferPage)return;
+#if HM_VALIDATION
+    if(_validationPanelOpen)return;
+#endif
     CGRect rect=CGRectZero;
     if(_showMenu)rect=CGRectOffset([_menus keyboardFocusRect],0,(_canvasHeight-320)/2);
     else if(_session&&[self worldInputBlocked]){rect=[_hud keyboardFocusRect];rect=CGRectMake(rect.origin.x*_hudScale+_hudOffset.x,rect.origin.y*_hudScale+_hudOffset.y,rect.size.width*_hudScale,rect.size.height*_hudScale);}
@@ -876,6 +816,7 @@ typedef UILabel HMEditorLabel;
         _hudOffset=CGPointMake((left+right-480*_hudScale)/2,(bottom+top-320*_hudScale)/2);
     }
     [self updateHUDEditorGeometry];
+    [self layoutHUDControls];
     [_menus setCanvasWidth:_canvasWidth safeRect:CGRectOffset(_menuSafeRect,0,-(_canvasHeight-320)/2)];
 #if defined(HM_VALIDATION) && HM_VALIDATION
     _validationControls.hidden=!_hudEditing&&(!_session||_showMenu);
@@ -905,7 +846,6 @@ typedef UILabel HMEditorLabel;
     if(_keyboardSettingsOpen)[self refreshKeyboardHelp];
 #if defined(HM_VALIDATION) && HM_VALIDATION
     CGRect safe=[self safeContentRect];
-    _validationButton.frame=CGRectMake(CGRectGetMaxX(safe)-72,CGRectGetMinY(safe)+8,64,36);
     if(_viewport.x-CGRectGetMinX(safe)>=68)
         _validationControls.frame=CGRectMake(_viewport.x-68,CGRectGetMidY(safe)-94,60,188);
     else _validationControls.frame=CGRectMake(CGRectGetMidX(safe)-104,CGRectGetMinY(safe)+8,208,44);
@@ -918,7 +858,10 @@ typedef UILabel HMEditorLabel;
 // ticks and draws once. A wall-time accumulator can alternate zero/two ticks
 // on adjacent display callbacks and visibly stutter even at a steady 60 Hz.
 - (void)advanceOriginalFrame {
-    if(_hudEditing)return;
+    if(_hudEditing||(_transferPage&&_loading.state()==6))return;
+#if HM_VALIDATION
+    if(_validationPanelOpen)return;
+#endif
     _time+=0.01666666753590107; // Original constant 0x3f91111120000000.
     if(_session)_worldShake.tick(_time);
     else if(!_showMenu)_titleShake.tick(_time);
@@ -1017,6 +960,9 @@ typedef UILabel HMEditorLabel;
 }
 #endif
 - (void)drawLogicalFrame {
+    [self drawLogicalScene];[self drawGameButtons];
+}
+- (void)drawLogicalScene {
     _media.presentationOffset=CGPointZero;
     CGContextRef ctx=_media.glRenderer?nullptr:HMCurrentGraphicsContext();
     if(ctx){CGContextSetFillColorWithColor(ctx,HMBlackColor().CGColor);CGContextFillRect(ctx,CGRectMake(0,0,480,320));}
@@ -1182,7 +1128,13 @@ typedef UILabel HMEditorLabel;
     }
 }
 - (void)routePoint:(CGPoint)point state:(int)state token:(id)touch {
-    if(!_active||_loadError||_keyboardSettingsOpen)return;
+    if(!_active||_loadError)return;
+    auto gp=_viewport.logical(point.x,point.y);[self prepareGameButtons];
+    if(auto e=_gameButtons.touch((int64_t)(__bridge void*)touch,gp?gp->first:-1000,gp?gp->second:-1000,state)){[self gameUIAction:e->id state:e->state];return;}
+    if(_transferPage||_keyboardSettingsOpen)return;
+#if HM_VALIDATION
+    if(_validationPanelOpen)return;
+#endif
     if(_hudEditing){auto q=_viewport.logical(point.x,point.y);[self hudEditorPoint:q?CGPointMake(q->first,q->second):CGPointMake(-1000,-1000) state:state token:touch];return;}
     _keyboardAimVisible=NO;
     if([_aimCancelledTouches containsObject:touch]){if(state>=2)[_aimCancelledTouches removeObject:touch];return;}
@@ -1245,4 +1197,5 @@ typedef UILabel HMEditorLabel;
 #endif
 #include "HMHUDEditor.inc"
 #include "HMTransfer.inc"
+#include "HMGameButtons.inc"
 @end

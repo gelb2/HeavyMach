@@ -1,5 +1,5 @@
 - (BOOL)transferAvailable {
- return _transferScreen==3&&_showMenu&&!_session&&!_hudEditing&&!_keyboardSettingsOpen&&!_loading.visible()&&!_loadError;
+ return _transferScreen==3&&_showMenu&&!_session&&!_hudEditing&&!_keyboardSettingsOpen&&_loading.state()==6&&!_loadError;
 }
 - (heavymach::transfer::Snapshot)transferSnapshot {
  heavymach::transfer::Snapshot s;s.game=_save;s.positions=_hudLayout.positions;s.keys=_keyboardControls.bindings;s.aim=int(_preferredAimMode);return s;
@@ -33,29 +33,71 @@
   auto store=[self transferStore];store.recover();restore(store,target);[self resumeTransfer];[self requestScreen:3];[self transferNotice:@"Progress restored."];
  }catch(const std::exception&e){[self transferNotice:[NSString stringWithUTF8String:e.what()]];}
 }
-- (void)transferNotice:(NSString*)message {
+- (void)transferNotice:(NSString*)message {_gameUIMessage=message;_transferPage=1;[self layoutTransferInput];}
+- (NSString*)transferInputText {
 #if TARGET_OS_OSX
- NSAlert* a=[NSAlert new];a.messageText=message;[a addButtonWithTitle:@"OK"];[a beginSheetModalForWindow:self.window completionHandler:nil];
+ return _transferInput.stringValue?:@"";
 #else
- UIViewController* vc=self.window.rootViewController;while(vc.presentedViewController)vc=vc.presentedViewController;UIAlertController* a=[UIAlertController alertControllerWithTitle:@"TRANSFER PROGRESS" message:message preferredStyle:UIAlertControllerStyleAlert];[a addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];[vc presentViewController:a animated:YES completion:nil];
+ return _transferInput.text?:@"";
 #endif
 }
+- (void)setTransferInputText:(NSString*)text {
+#if TARGET_OS_OSX
+ _transferInput.stringValue=text?:@"";
+#else
+ _transferInput.text=text?:@"";
+#endif
+}
+- (void)layoutTransferInput {
+ if(!_transferInput)return;
+ _transferInput.hidden=_transferPage!=1||_loading.visible()||!_active;
+ double x=CGRectGetMinX(_menuSafeRect)+20,y=CGRectGetMaxY(_menuSafeRect)-82,w=_menuSafeRect.size.width-40;
+ _transferInput.frame=CGRectMake(_viewport.x+x*_viewport.scale,_viewport.y+(_canvasHeight-y-34)*_viewport.verticalScale(),w*_viewport.scale,34*_viewport.verticalScale());
+}
+- (void)finishTransferTyping {
+#if TARGET_OS_OSX
+ [self.window makeFirstResponder:self];
+#else
+ [_transferInput resignFirstResponder];[self becomeFirstResponder];
+#endif
+}
+#if !TARGET_OS_OSX
+- (BOOL)textFieldShouldReturn:(UITextField*)textField {[self finishTransferTyping];return YES;}
+#endif
 - (void)openTransfer:(id)sender {
  if(![self transferAvailable])return;
+ [self cancelGameInput];_transferPage=1;_transferPendingCode=nil;_gameUIMessage=@"CREATE A CODE OR PASTE ONE TO RESTORE YOUR SAVE SLOTS.";
+ if(!_transferInput){
 #if TARGET_OS_OSX
- NSAlert* a=[NSAlert new];a.messageText=@"TRANSFER PROGRESS";a.informativeText=@"Create a code or paste one to restore all three save slots.";NSTextField* input=[[NSTextField alloc]initWithFrame:NSMakeRect(0,0,440,70)];input.placeholderString=@"HM1-…";input.stringValue=[NSPasteboard.generalPasteboard stringForType:NSPasteboardTypeString]?:@"";a.accessoryView=input;[a addButtonWithTitle:@"CREATE CODE"];[a addButtonWithTitle:@"RESTORE"];[a addButtonWithTitle:@"CANCEL"];
- [a beginSheetModalForWindow:self.window completionHandler:^(NSModalResponse response){if(response==NSAlertFirstButtonReturn){NSString* code=[self createTransferCode];if(![code hasPrefix:@"ERROR:"]){[NSPasteboard.generalPasteboard clearContents];[NSPasteboard.generalPasteboard setString:code forType:NSPasteboardTypeString];[self transferNotice:@"Code copied."];}else [self transferNotice:code];}else if(response==NSAlertSecondButtonReturn)[self confirmTransfer:input.stringValue];}];
+  _transferInput=[[NSTextField alloc]initWithFrame:CGRectZero];_transferInput.placeholderString=@"HM1-...";_transferInput.target=self;_transferInput.action=@selector(finishTransferTyping);_transferInput.font=[NSFont monospacedSystemFontOfSize:16 weight:NSFontWeightRegular];_transferInput.textColor=NSColor.whiteColor;_transferInput.backgroundColor=[NSColor colorWithWhite:.08 alpha:1];_transferInput.bezeled=NO;_transferInput.bordered=YES;_transferInput.drawsBackground=YES;_transferInput.placeholderAttributedString=[[NSAttributedString alloc]initWithString:@"HM1-..." attributes:@{NSForegroundColorAttributeName:[NSColor colorWithWhite:.7 alpha:1]}];
 #else
- UIAlertController* a=[UIAlertController alertControllerWithTitle:@"TRANSFER PROGRESS" message:@"Create a code or paste one to restore all three save slots." preferredStyle:UIAlertControllerStyleAlert];[a addTextFieldWithConfigurationHandler:^(UITextField*f){f.placeholder=@"HM1-…";f.autocorrectionType=UITextAutocorrectionTypeNo;f.smartDashesType=UITextSmartDashesTypeNo;f.smartQuotesType=UITextSmartQuotesTypeNo;f.spellCheckingType=UITextSpellCheckingTypeNo;f.autocapitalizationType=UITextAutocapitalizationTypeNone;}];
- [a addAction:[UIAlertAction actionWithTitle:@"CREATE CODE" style:UIAlertActionStyleDefault handler:^(UIAlertAction*x){NSString* code=[self createTransferCode];if([code hasPrefix:@"ERROR:"])[self transferNotice:code];else{UIPasteboard.generalPasteboard.string=code;[self transferNotice:@"Code copied."];}}]];
- [a addAction:[UIAlertAction actionWithTitle:@"RESTORE" style:UIAlertActionStyleDefault handler:^(UIAlertAction*x){[self confirmTransfer:a.textFields.firstObject.text];}]];[a addAction:[UIAlertAction actionWithTitle:@"CANCEL" style:UIAlertActionStyleCancel handler:nil]];[self.window.rootViewController presentViewController:a animated:YES completion:nil];
+  _transferInput=[[UITextField alloc]initWithFrame:CGRectZero];_transferInput.delegate=self;_transferInput.placeholder=@"HM1-...";_transferInput.returnKeyType=UIReturnKeyDone;_transferInput.autocorrectionType=UITextAutocorrectionTypeNo;_transferInput.smartDashesType=UITextSmartDashesTypeNo;_transferInput.smartQuotesType=UITextSmartQuotesTypeNo;_transferInput.spellCheckingType=UITextSpellCheckingTypeNo;_transferInput.autocapitalizationType=UITextAutocapitalizationTypeNone;_transferInput.font=[UIFont monospacedSystemFontOfSize:16 weight:UIFontWeightRegular];_transferInput.textColor=UIColor.whiteColor;_transferInput.backgroundColor=[UIColor colorWithWhite:.08 alpha:1];_transferInput.attributedPlaceholder=[[NSAttributedString alloc]initWithString:@"HM1-..." attributes:@{NSForegroundColorAttributeName:[UIColor colorWithWhite:.7 alpha:1]}];
 #endif
+  _transferInput.accessibilityLabel=@"Recovery code";[self addSubview:_transferInput];
+ }
+ [self layoutTransferInput];
+}
+- (void)closeTransfer {
+ [self finishTransferTyping];_transferPage=0;_transferPendingCode=nil;_gameUIMessage=nil;_gameButtons.cancel();[self layoutTransferInput];
 }
 - (void)confirmTransfer:(NSString*)code {
- NSString* message;try{message=[NSString stringWithUTF8String:heavymach::transfer::summary(heavymach::transfer::decode(code.UTF8String)).c_str()];}catch(const std::exception&e){[self transferNotice:[NSString stringWithUTF8String:e.what()]];return;}
+ try{_gameUIMessage=[NSString stringWithUTF8String:heavymach::transfer::summary(heavymach::transfer::decode(code.UTF8String)).c_str()];_transferPendingCode=[code copy];_transferPage=2;[self finishTransferTyping];[self layoutTransferInput];}
+ catch(const std::exception&e){[self transferNotice:[NSString stringWithUTF8String:e.what()]];}
+}
+- (void)transferAction:(int)action {
+ if(![self transferAvailable])return;
+ [self finishTransferTyping];
+ if(action==3110){NSString* code=[self createTransferCode];if([code hasPrefix:@"ERROR:"])[self transferNotice:code];else{[self setTransferInputText:code];_gameUIMessage=@"CODE CREATED. COPY IT TO ANOTHER DEVICE.";}}
+ else if(action==3111){NSString* code=[self transferInputText];
 #if TARGET_OS_OSX
- NSAlert*a=[NSAlert new];a.messageText=@"RESTORE PROGRESS?";a.informativeText=message;[a addButtonWithTitle:@"RESTORE"];[a addButtonWithTitle:@"CANCEL"];[a beginSheetModalForWindow:self.window completionHandler:^(NSModalResponse r){if(r==NSAlertFirstButtonReturn)[self importTransferCode:code];}];
+  [NSPasteboard.generalPasteboard clearContents];[NSPasteboard.generalPasteboard setString:code forType:NSPasteboardTypeString];
 #else
- UIAlertController*a=[UIAlertController alertControllerWithTitle:@"RESTORE PROGRESS?" message:message preferredStyle:UIAlertControllerStyleAlert];[a addAction:[UIAlertAction actionWithTitle:@"RESTORE" style:UIAlertActionStyleDefault handler:^(UIAlertAction*x){[self importTransferCode:code];}]];[a addAction:[UIAlertAction actionWithTitle:@"CANCEL" style:UIAlertActionStyleCancel handler:nil]];[self.window.rootViewController presentViewController:a animated:YES completion:nil];
+  UIPasteboard.generalPasteboard.string=code;
 #endif
+  _gameUIMessage=@"CODE COPIED.";
+ }else if(action==3112){try{_gameUIMessage=[NSString stringWithUTF8String:heavymach::transfer::summary(heavymach::transfer::decode([self transferInputText].UTF8String)).c_str()];}catch(const std::exception&e){_gameUIMessage=[NSString stringWithUTF8String:e.what()];}}
+ else if(action==3113)[self confirmTransfer:[self transferInputText]];
+ else if(action==3114)[self closeTransfer];
+ else if(action==3115){NSString* code=_transferPendingCode;_transferPendingCode=nil;_transferPage=1;[self importTransferCode:code];}
+ else if(action==3116){_transferPendingCode=nil;_transferPage=1;[self layoutTransferInput];}
 }

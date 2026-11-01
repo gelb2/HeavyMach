@@ -22,11 +22,6 @@ for src,prefix in [('Resources/OriginalImages','OriginalImages'),('Resources/Raw
         target.parent.mkdir(parents=True,exist_ok=True)
         if not target.exists() or hashlib.sha256(target.read_bytes()).hexdigest()!=digest:shutil.copy2(p,target)
         rows.append({'asset':target.relative_to(DEST).as_posix(),'source':relative,'bytes':len(data),'sha256':digest})
-# Android's BitmapFactory cannot decode Apple's CgBI PNG; use the existing decoded copy for native editor controls.
-p=ROOT/'Resources/Images/Common_Btn_OK.png';data=p.read_bytes();digest=hashlib.sha256(data).hexdigest();entry=known[p.relative_to(ROOT).as_posix()]
-if entry['sha256']!=digest:raise SystemExit('Editor button resource changed')
-target=DEST/'UI/Common_Btn_OK.png';target.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(p,target)
-rows.append({'asset':'UI/Common_Btn_OK.png','source':p.relative_to(ROOT).as_posix(),'bytes':len(data),'sha256':digest})
 expected={r['asset'] for r in rows}|{'assets-manifest.json'}
 if DEST.exists():
     for p in DEST.rglob('*'):

@@ -82,3 +82,7 @@ Tauri·순수 웹 개발은 기여자 웹 구현과 후속 수정 3건까지 고
 후속 사용자 지시로 `Modules/SaveTransfer`를 추가하고 Apple·Android·웹 연결부와 빌드 구성에 연결했다. 기존 `Sources/Core`·에셋은 유지한다. 이전 Tauri 착수 당시의 전체 파일 동결 설명 이후 승인된 범위이며 `Desktop/Tauri/save-transfer-scope.json`에 파일을 기록한다. 슬롯 화면에서만 코드를 생성·복원한다. [모듈](../Modules/SaveTransfer/README.md).
 
 현재 동작하는 작업을 먼저 main에 통합하고 별도 UI 구현의 전수조사를 준비한다. [조사 대상과 기준](ui-implementation-audit.md). HUD 편집 도구, 복원 진입 버튼, 코드 입력창은 구분한다.
+
+## 게임 버튼 통일 — 2026-11-02
+
+사용자는 게임 실행 후 모든 버튼에 원작 버튼 절차를 사용하도록 지시했다. 원작 버튼과 SET GAME UI는 보존하고, 추가했던 UIKit·AppKit·Android·DOM 버튼을 교체한다. 복원창의 생성·복사·확인·취소도 포함한다. 텍스트 입력 등 원작에서 제공하지 않은 기능에만 플랫폼 연결을 남긴다. [렌더링 규칙](rendering-policy.md#게임-실행-후-버튼-절차--2026-11-02-사용자-지시).

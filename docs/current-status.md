@@ -1,5 +1,17 @@
 # 2026-10-25 문서·코드·앱 일치 체계 점검 및 보완
 
+## 게임 버튼 교체·검사 — 2026-11-02
+
+추가했던 HUD 도구·복원·키 설정·치트 버튼을 원작 버튼 상태·게임 렌더러·동일 좌표의 입력 영역에 연결했다. 원작 버튼과 SET GAME UI를 포함한 보호 파일 1,453개는 작업 전과 같다. 추가 버튼은 영어이며 원작 금색 테두리 글자를 참고한 정적 시트를 사용한다. [수정·화면·검사 결과](reviews/game-button-incident-20261101.md#game-button-results).
+
+실제 iPhone·iPad·Galaxy와 웹/설치형 PWA 검사를 수행했다. 최종 입력 경계 수정과 Tauri 실제 창 검사 뒤 develop→main 병합·공개 Pages 배포·배포 후 재검사를 진행한다. 네이티브 Mac 프레임 기준 실패는 남아 있다. 아래 절은 각 시점의 기록이다.
+
+
+## 별도 버튼 조사 — 2026-11-01
+
+게임 실행 후 UIKit/AppKit·Android View·HTML로 생성하는 버튼과 숨긴 보조 버튼을 조사했다. [경위서](reviews/game-button-incident-20261101.md)에 원작 방식의 SET GAME UI와 후속 별도 UI를 대조했다. Android 웹 전체 화면 복원 버튼 수정은 로컬 클릭 검사에서 실패했고 미배포다. 이번 조사에서는 제품 코드를 추가로 변경하지 않았다.
+
+
 ## main 병합과 실행 확인 — 2026-11-01
 
 웹·PWA·Tauri Mac·복원 코드 구현을 develop을 거쳐 main `777cfc8b`에 병합했다. 병합 후 iPhone 검사 4건, Galaxy 검사 31건, 웹 시작 화면 9건·복원 11건이 통과했다. GitHub Apple 빌드·코어 검사도 통과했다. Tauri Release 앱에서 저장 슬롯을 열고 전투·점프·사격과 Cmd-Q 종료를 확인했다. 전투 중 SET GAME UI가 노출되는 문제는 남아 있어 TODO에 추가했다. [검사 기록](evidence/main-integration-20261101.json).

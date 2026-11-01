@@ -26,6 +26,9 @@ void motionTick(void*){
 }
 
 extern "C" {
+EMSCRIPTEN_KEEPALIVE void hm_storage_ui(const char* status){if(view)view->storageUIState(status);}
+EMSCRIPTEN_KEEPALIVE void hm_transfer_state(int ready,int mode,int busy,int source,int target,int settings,const char* status){if(view)view->transferUIState(ready,mode,busy,source,target,settings,status);}
+EMSCRIPTEN_KEEPALIVE const char* hm_game_ui(){debugText=view?view->gameUIDebug():"{}";return debugText.c_str();}
 EMSCRIPTEN_KEEPALIVE int hm_transfer_available(){return view&&view->transferAvailable()?1:0;}
 EMSCRIPTEN_KEEPALIVE void hm_resize(double cssWidth,double cssHeight,double ratio,double left,double top,double right,double bottom,int angle){
     if(!view)return;

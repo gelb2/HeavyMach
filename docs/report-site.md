@@ -910,3 +910,12 @@ VTOL 첫 생성 프롬프트와 스킬 수정 커밋을 대조했다. 요청에 
 - 검사: 문서 구조·공개 문서·번역 연결, 원고/다운로드 일치, 보고서 3개 링크·기존 앵커, Safari 로컬 미리보기의 PWA 본문 배치.
 - 게시 후 Safari 창 조회는 `cgWindowNotFound`로 실패했다. 게시 성공은 Sites 배포 응답으로 확인했다. 기존 소유자 전용 공개 범위를 유지했다.
 - 게임 코드 변경 없음. PWA 구현·게임 오프라인 검사는 개발 단계에서 수행한다.
+
+## 2026-11-01 게임 버튼 조사·경위서
+
+[게임 버튼 별도 구현 조사와 경위서](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/game-button-incident.html)를 기존 전체 목차·문서 감사·플랫폼 비교 보고서에서 연결했다. 원고는 `docs/reviews/game-button-incident-20261101.md`다. 플랫폼별 일반·치트·숨김 보조·복원 입력 버튼, SET GAME UI의 원작 영역 조합·입력, 코드 변경 이력, Android 전체 화면 오류와 검사 누락을 담았다. 원본 캡처 3개와 Markdown 다운로드를 제공한다.
+
+- Site source: `a266ac1b22b6b9a3b2cf72a509e8d935a5c127d1`.
+- deployment: `appgdep_6ae74e853b8c8191830a5b3f27cae074`, succeeded.
+- 기존 소유자 전용 접근 유지. 9개 절·원고/다운로드 바이트 일치·원본 이미지·내부 링크 검사 통과. Safari에서 목차·SET GAME UI 캡처·조사표 표시 확인.
+- 이번 조사에서는 제품 코드를 추가 수정하지 않았다. 기존 로컬 Android 웹 복원 버튼 수정은 클릭 검사 실패 상태로 보존했고 게임 배포는 하지 않았다.

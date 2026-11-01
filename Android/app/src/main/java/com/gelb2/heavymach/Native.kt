@@ -12,6 +12,7 @@ internal object Native {
  external fun touch(handle: Long, id: Int, state: Int, x: Float, y: Float)
  external fun key(handle: Long, code: Int, down: Boolean)
  external fun command(handle: Long, name: String, a: Int, b: Int, c: Int, d: Int)
+ external fun text(handle:Long,name:String,value:String)
  external fun ui(handle: Long): String
  external fun transfer(handle:Long,action:String,code:String,source:Int,target:Int):String
 }

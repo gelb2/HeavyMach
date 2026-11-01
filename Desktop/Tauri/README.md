@@ -1,6 +1,6 @@
 # HeavyMach Tauri 실행기
 
-기존 웹 게임을 포함하는 Apple Silicon Mac 앱의 첫 구현이다. 게임 C++·웹 호스트·자원은 기존 파일을 그대로 빌드한다. 이 폴더는 창, 앱 저장소, OS 파일 백업과 복구만 담당한다.
+웹 게임을 포함하는 Apple Silicon Mac 앱이다. 게임 C++·웹 호스트·자원을 빌드해 포함한다. 이 폴더는 창, 앱 저장소, OS 파일 백업과 복구만 담당한다.
 
 ## 파일 배치
 
@@ -13,7 +13,7 @@
 | `protected-files.json` | 개발 시작 전 기존 파일의 경로·SHA-256 |
 | `build/`, `src-tauri/target/` | Git에서 제외한 생성물 |
 
-최초 실행기는 기존 게임 파일을 수정하지 않고 추가했다. 후속 공통 복원 코드 작업은 `Modules/SaveTransfer`와 선언된 플랫폼 연결부·빌드 구성 변경을 포함한다. 기존 게임 코어와 에셋은 유지한다. 웹·PWA 실행기는 `Distribution/Web/`에 있다. Tauri 앱은 Service Worker를 사용하지 않는다.
+최초 실행기는 기존 게임 파일을 수정하지 않고 추가했다. 후속 공통 복원 코드 작업은 `Modules/SaveTransfer`와 선언된 플랫폼 연결부·빌드 구성 변경을 포함한다. 11월 2일 승인된 게임 버튼 교체는 Sources/Web·Web의 UI 변경도 포함한다. 파일별 범위는 game-button-scope.json에 기록했다. 기존 게임 코어와 원작 에셋은 유지한다. 웹·PWA 실행기는 `Distribution/Web/`에 있다. Tauri 앱은 Service Worker를 사용하지 않는다.
 
 ## 준비와 빌드
 

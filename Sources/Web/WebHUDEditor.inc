@@ -1,9 +1,3 @@
-// Translation of Sources/iOS/HMHUDEditor.inc (v0.14 HUD layout editor).
-// Included by WebGameView.cpp after its namespace. The editor scene and HUD are
-// drawn with the game's renderer; the native UIKit tool panel becomes DOM
-// buttons in Web/shell.html (Module.hmHudUI), positioned in CSS pixels exactly
-// where layoutHUDControls placed the UIKit views in points.
-
 // {"version":1,"positions":[null|[x,y],...]} -> out[2*i],out[2*i+1]; null -> NaN.
 EM_JS(int,hm_parse_hud_layout,(const char* text,double* out,int capacity),{
     try{
@@ -19,13 +13,6 @@ EM_JS(int,hm_parse_hud_layout,(const char* text,double* out,int capacity),{
         return o.positions.length;
     }catch(e){return -1;}
 });
-EM_JS(void,hm_hud_ui,(const char* json),{if(Module.hmHudUI)Module.hmHudUI(JSON.parse(UTF8ToString(json)));});
-// Common_Btn_OK.png is an iPhone (CgBI) PNG that browsers cannot decode; the
-// shell builds the tool-button images from the pixels the game already decoded.
-EM_JS(void,hm_set_ui_sheet,(const unsigned char* rgba,int width,int height),{
-    if(Module.hmSetUISheet)Module.hmSetUISheet(new Uint8ClampedArray(HEAPU8.subarray(rgba,rgba+width*height*4)),width,height);
-});
-
 namespace hmweb {
 namespace {
 std::string jsonString(const std::string& text){
@@ -38,9 +25,7 @@ std::string jsonString(const std::string& text){
     }
     return out+"\"";
 }
-std::string jsonRect(bool hidden,Rect r){
-    char text[128];std::snprintf(text,sizeof(text),"[%d,%.3f,%.3f,%.3f,%.3f]",int(hidden),r.origin.x,r.origin.y,r.size.width,r.size.height);return text;
-}
+
 }
 heavymach::hud::Configuration GameView::currentHUDLayout() const{
     auto c=_hudEditing?_hudDraft:_hudLayout;c.legacy={{_hudOffset.x,_hudOffset.y},_hudScale};
@@ -66,18 +51,8 @@ void GameView::loadHUDLayout(){
     }
     _hudLayout=candidate;
 }
-// iOS prepareHUDEditor builds the native buttons from this sheet; the shell does
-// the same in DOM once it has the pixels.
-void GameView::prepareHUDEditor(){
-    _hudSelected=heavymach::hud::jump;
-    const std::string scope=_media->resourceScope;_media->resourceScope="hud-ui";
-    if(const auto* sheet=_media->decodedImage("Common_Btn_OK.png");sheet&&!sheet->rgba.empty())hm_set_ui_sheet(sheet->rgba.data(),sheet->width,sheet->height);
-    _media->resourceScope=scope;_media->releaseScope("hud-ui");
-}
-void GameView::updateHUDEntry(){
-    _hudEntryHidden=_hudEditing||_loading.visible()||_keyboardSettingsOpen||!(!_showMenu&&_hudLayoutFallback&&!_gameMenu&&_session&&_session->world().gameState==0);
-    publishHUDControls();
-}
+void GameView::prepareHUDEditor(){_hudSelected=heavymach::hud::jump;}
+void GameView::updateHUDEntry(){_hudEntryHidden=true;}
 void GameView::updateHUDEditorGeometry(){
     bool changed=_hudDraft.safe.x!=_menuSafeRect.origin.x||_hudDraft.safe.y!=_menuSafeRect.origin.y||_hudDraft.safe.width!=_menuSafeRect.size.width||_hudDraft.safe.height!=_menuSafeRect.size.height||_hudDraft.legacy.scale!=_hudScale;
     // Editing must not change the live session's render cache on resize.
@@ -93,28 +68,11 @@ void GameView::layoutHUDControls(){
     updateHUDEntry();if(_hudEditing)refreshHUDEditorLabel(nullptr);
     publishHUDControls();
 }
-// layoutHUDControls geometry (UIKit points == CSS pixels), sent only on change.
-void GameView::publishHUDControls(){
-    Rect safe=safeContentRect();const double w=168,h=44;
-    Rect entry=makeRect(maxX(safe)-w-8,midY(safe)-22,w,h);
-    Rect tools=makeRect(maxX(safe)-w-8,minY(safe)+4,w,h);
-    double bodyHeight=48+(_hudFromMenu?2:3)*44,height=std::min(bodyHeight+88,safe.size.height-52);
-    Rect toolbar=makeRect(maxX(safe)-w-8,minY(safe)+48,w,height);
-    std::string rows="[";double y=48;bool first=true;
-    for(int i:{3,4,0}){bool hidden=i==4&&_hudFromMenu;if(!first)rows+=",";first=false;
-        char row[64];std::snprintf(row,sizeof(row),"[%d,%d,%.3f]",i,int(hidden),hidden?0.0:y);rows+=row;if(!hidden)y+=44;}
-    rows+="]";
-    char sizes[160];std::snprintf(sizes,sizeof(sizes),"\"scroll\":%.3f,\"body\":%.3f,\"cancel\":%.3f,\"apply\":%.3f",std::max(0.0,height-88),bodyHeight,height-88,height-44);
-    std::string json="{\"editing\":"+std::to_string(int(_hudEditing))+",\"entry\":"+jsonRect(_hudEntryHidden,entry)+",\"tools\":"+jsonRect(!_hudEditing,tools)+
-        ",\"bar\":"+jsonRect(!_hudEditing||_hudHideGuides,toolbar)+","+sizes+",\"rows\":"+rows+
-        ",\"label\":"+jsonString(_hudEditorText)+",\"scene\":"+jsonString(_hudExample?"CURRENT SCENE":"SAMPLE SCENE")+"}";
-    if(json==_hudPublished)return;
-    _hudPublished=json;hm_hud_ui(json.c_str());
-}
+void GameView::publishHUDControls(){}
 void GameView::refreshHUDEditorLabel(const char* error){
     static const char* names[]={"MENU","LEVEL / EXP","JUMP","WEAPON / AMMO","GAUGES","AIM CONTROLS","PASSIVES","WEAPON PREVIEW","CHEAT CONTROLS","UPPER TRIM"};
     if(error){_hudEditorText=error;return;}
-    _hudEditorText=std::string("HUD LAYOUT · ")+(_hudExample?"SAMPLE":"PAUSED")+"\n"+names[_hudSelected]+" · Drag to move.";
+    _hudEditorText=std::string(_hudExample?"SAMPLE":"PAUSED")+"\n"+names[_hudSelected]+"\nDRAG TO MOVE";
 }
 void GameView::hudControl(int tag){
     if(!_active||!_rendererReady)return;

@@ -25,65 +25,8 @@
     }
     _hudLayout=candidate;
 }
-// Cache each small native editor control at creation; the game remains on GL.
-- (HMImage*)hudToolImage:(NSString*)title pressed:(BOOL)pressed {
-    CGImageRef sheet=[_media image:@"Common_Btn_OK.png"].CGImage;
-    if(!sheet)return nil;
-    const CGFloat w=168,h=44;size_t sw=CGImageGetWidth(sheet),sh=CGImageGetHeight(sheet)/2;
-    CGColorSpaceRef space=CGColorSpaceCreateDeviceRGB();
-    CGContextRef ctx=CGBitmapContextCreate(NULL,w*2,h*2,8,w*8,space,kCGImageAlphaPremultipliedLast);
-    CGColorSpaceRelease(space);if(!ctx)return nil;CGContextScaleCTM(ctx,2,2);
-    auto part=[&](CGRect source,CGRect dest){CGImageRef crop=CGImageCreateWithImageInRect(sheet,source);if(crop){CGContextDrawImage(ctx,dest,crop);CGImageRelease(crop);}};
-    CGFloat y=pressed?sh:0;
-    part(CGRectMake(6,y,2,sh),CGRectMake(8,0,w-16,h));
-    part(CGRectMake(0,y,8,sh),CGRectMake(0,0,8,h));
-    part(CGRectMake(sw-8,y,8,sh),CGRectMake(w-8,0,8,h));
-    CTFontRef font=CTFontCreateWithName(CFSTR("DINCondensed-Bold"),22,NULL);
-    CGColorRef gold=CGColorCreateGenericRGB(.98,.72,.22,1),ink=CGColorCreateGenericRGB(.08,.07,.04,1);
-    NSDictionary* attrs=@{(__bridge NSString*)kCTFontAttributeName:(__bridge id)font,(__bridge NSString*)kCTForegroundColorAttributeName:(__bridge id)ink,(__bridge NSString*)kCTStrokeColorAttributeName:(__bridge id)gold,(__bridge NSString*)kCTStrokeWidthAttributeName:@(-3)};
-    NSAttributedString* text=[[NSAttributedString alloc]initWithString:title attributes:attrs];
-    CTLineRef line=CTLineCreateWithAttributedString((__bridge CFAttributedStringRef)text);CGFloat asc,desc;
-    double width=CTLineGetTypographicBounds(line,&asc,&desc,NULL);CGFloat scale=std::min(1.,(w-20)/std::max(1.,width));
-    CGContextSetTextMatrix(ctx,CGAffineTransformIdentity);CGContextTranslateCTM(ctx,(w-width*scale)/2,(h-(asc+desc)*scale)/2+desc*scale-(pressed?1:0));CGContextScaleCTM(ctx,scale,scale);CTLineDraw(line,ctx);
-    CFRelease(line);CFRelease(font);CGColorRelease(gold);CGColorRelease(ink);
-    CGImageRef image=CGBitmapContextCreateImage(ctx);HMImage* result=image?[HMImage imageWithCGImage:image]:nil;if(image)CGImageRelease(image);CGContextRelease(ctx);return result;
-}
-- (HMEditorButton*)editorButton:(NSString*)title action:(SEL)action tag:(NSInteger)tag {
-    HMImage* normal=[self hudToolImage:title pressed:NO];HMImage* pressed=[self hudToolImage:title pressed:YES];
-#if TARGET_OS_OSX
-    HMEditorButton* b=[NSButton buttonWithTitle:title target:self action:action];b.bordered=NO;b.imagePosition=NSImageOnly;b.imageScaling=NSImageScaleAxesIndependently;b.image=normal;b.alternateImage=pressed;[b setButtonType:NSButtonTypeMomentaryChange];b.accessibilityLabel=title;
-#else
-    HMEditorButton* b=[UIButton buttonWithType:UIButtonTypeCustom];[b setBackgroundImage:normal forState:UIControlStateNormal];[b setBackgroundImage:pressed forState:UIControlStateHighlighted];[b addTarget:self action:action forControlEvents:UIControlEventTouchUpInside];b.accessibilityLabel=title;
-#endif
-    b.tag=tag;return b;
-}
-- (void)prepareHUDEditor {
-    _hudSelected=heavymach::hud::jump;_hudShowHits=NO;
-    _hudEntry=[self editorButton:@"SET GAME UI" action:@selector(openHUDEditor:) tag:0];_hudEntry.hidden=YES;[self addSubview:_hudEntry];
-    _hudToolbar=[[HMHUDPanelView alloc]initWithFrame:CGRectZero];_hudToolbar.hidden=YES;[self addSubview:_hudToolbar];
-    _hudToolsToggle=[self editorButton:@"TOOLS" action:@selector(hudEditorAction:) tag:5];_hudToolsToggle.hidden=YES;[self addSubview:_hudToolsToggle];
-#if TARGET_OS_OSX
-    _hudEditorLabel=[NSTextField labelWithString:@""];_hudEditorLabel.textColor=[NSColor colorWithRed:.95 green:.77 blue:.4 alpha:1];_hudEditorLabel.drawsBackground=YES;_hudEditorLabel.backgroundColor=[NSColor colorWithWhite:.06 alpha:.94];_hudEditorLabel.maximumNumberOfLines=3;_hudEditorLabel.font=[NSFont systemFontOfSize:12];
-#else
-    _hudEditorLabel=[UILabel new];_hudEditorLabel.textColor=[UIColor colorWithRed:.95 green:.77 blue:.4 alpha:1];_hudEditorLabel.backgroundColor=[UIColor colorWithWhite:.06 alpha:.94];_hudEditorLabel.font=[UIFont systemFontOfSize:12];_hudEditorLabel.numberOfLines=3;_hudEditorLabel.textAlignment=NSTextAlignmentCenter;_hudEditorLabel.adjustsFontSizeToFitWidth=YES;
-#endif
-    _hudToolRows=[[HMHUDPanelView alloc]initWithFrame:CGRectZero];_hudToolScroll=[[HMEditorScroll alloc]initWithFrame:CGRectZero];
-#if TARGET_OS_OSX
-    _hudToolScroll.drawsBackground=NO;_hudToolScroll.hasVerticalScroller=YES;_hudToolScroll.autohidesScrollers=YES;_hudToolScroll.documentView=_hudToolRows;
-#else
-    _hudToolScroll.alwaysBounceVertical=NO;[_hudToolScroll addSubview:_hudToolRows];
-#endif
-    [_hudToolbar addSubview:_hudToolScroll];[_hudToolRows addSubview:_hudEditorLabel];NSMutableArray* buttons=[NSMutableArray new];
-    NSArray* titles=@[@"RESET LAYOUT",@"CANCEL",@"APPLY",@"PREVIEW",@"SAMPLE SCENE"];
-    for(int i=0;i<titles.count;++i){auto b=[self editorButton:titles[i] action:@selector(hudEditorAction:) tag:i];[(i==1||i==2)?_hudToolbar:_hudToolRows addSubview:b];[buttons addObject:b];}_hudEditorButtons=buttons;
-}
-- (void)updateHUDEntry {
-    _transferEntry.hidden=![self transferAvailable];
-    CGRect transferSafe=[self safeContentRect];_transferEntry.frame=CGRectMake(CGRectGetMaxX(transferSafe)-176,CGRectGetMinY(transferSafe)+8,168,44);
-    // HUD editing remains in the pause menu, including layouts from another device.
-    BOOL hidden=YES;
-    if(_hudEntry.hidden!=hidden)_hudEntry.hidden=hidden;
-}
+- (void)prepareHUDEditor {_hudSelected=heavymach::hud::jump;_hudShowHits=NO;}
+- (void)updateHUDEntry {}
 - (void)updateHUDEditorGeometry {
     BOOL changed=_hudDraft.safe.x!=_menuSafeRect.origin.x||_hudDraft.safe.y!=_menuSafeRect.origin.y||_hudDraft.safe.width!=_menuSafeRect.size.width||_hudDraft.safe.height!=_menuSafeRect.size.height||_hudDraft.legacy.scale!=_hudScale;
     // Editing must not change the live session's render cache on resize.
@@ -104,65 +47,21 @@
     return CGRectMake(_viewport.x+r.x*_viewport.scale,_viewport.y+(_canvasHeight-r.y-r.height)*_viewport.verticalScale(),r.width*_viewport.scale,r.height*_viewport.verticalScale());
 }
 - (void)layoutHUDControls {
-    CGRect safe=[self safeContentRect];CGFloat w=168,h=44;
-    _hudEntry.frame=CGRectMake(CGRectGetMaxX(safe)-w-8,CGRectGetMidY(safe)-22,w,h);
-    _hudToolsToggle.frame=CGRectMake(CGRectGetMaxX(safe)-w-8,CGRectGetMinY(safe)+4,w,h);
-    CGFloat bodyHeight=48+(_hudFromMenu?2:3)*44,height=std::min(bodyHeight+88,safe.size.height-52);
-    _hudToolbar.frame=CGRectMake(CGRectGetMaxX(safe)-w-8,CGRectGetMinY(safe)+48,w,height);
-    _hudToolScroll.frame=CGRectMake(0,0,w,std::max(CGFloat(0),height-88));
-    _hudToolRows.frame=CGRectMake(0,0,w,bodyHeight);
-#if !TARGET_OS_OSX
-    _hudToolScroll.contentSize=CGSizeMake(w,bodyHeight);
-#endif
-    _hudEditorLabel.frame=CGRectMake(0,0,w,48);
-    int order[]={3,4,0};CGFloat y=48;
-    for(int i:order){auto b=_hudEditorButtons[i];b.hidden=i==4&&_hudFromMenu;if(!b.hidden){b.frame=CGRectMake(0,y,w,44);y+=44;}}
-    _hudEditorButtons[1].frame=CGRectMake(0,height-88,w,44);_hudEditorButtons[2].frame=CGRectMake(0,height-44,w,44);
-    _hudToolbar.hidden=!_hudEditing||_hudHideGuides;_hudToolsToggle.hidden=!_hudEditing;
-    if(_hudEditing){
-#if TARGET_OS_OSX
-        [self addSubview:_hudToolbar positioned:NSWindowAbove relativeTo:nil];[self addSubview:_hudToolsToggle positioned:NSWindowAbove relativeTo:nil];
-#else
-        [self bringSubviewToFront:_hudToolbar];[self bringSubviewToFront:_hudToolsToggle];
-#endif
-    }
-#if defined(HM_VALIDATION) && HM_VALIDATION
-    auto c=[self currentHUDLayout];
+#if HM_VALIDATION
+    CGRect safe=[self safeContentRect];auto c=[self currentHUDLayout];
     if(!c.positions[heavymach::hud::cheat]){
         if(_viewport.x-CGRectGetMinX(safe)>=68)_validationControls.frame=CGRectMake(_viewport.x-68,CGRectGetMidY(safe)-94,60,188);
         else _validationControls.frame=CGRectMake(CGRectGetMidX(safe)-104,CGRectGetMinY(safe)+8,208,44);
-    }
-    else _validationControls.frame=[self hudNativeRect:c.group(heavymach::hud::cheat).visualBounds];
-    _validationButton.hidden=_hudEditing;
-    _validationControls.hudEditing=_hudEditing;
-    _validationControls.hidden=_hudEditing?NO:(!_session||_showMenu);
+    }else _validationControls.frame=[self hudNativeRect:c.group(heavymach::hud::cheat).visualBounds];
+    _validationControls.hudEditing=_hudEditing;_validationControls.hidden=!_hudEditing&&(!_session||_showMenu);
 #endif
-    [self updateHUDEntry];if(_hudEditing)[self refreshHUDEditorLabel:nil];
+    [self layoutTransferInput];
 }
-- (void)refreshHUDEditorLabel:(NSString*)error {
-    NSArray* names=@[@"MENU",@"LEVEL / EXP",@"JUMP",@"WEAPON / AMMO",@"GAUGES",@"AIM CONTROLS",@"PASSIVES",@"WEAPON PREVIEW",@"CHEAT CONTROLS",@"UPPER TRIM"];
-    NSString* sceneTitle=_hudExample?@"CURRENT SCENE":@"SAMPLE SCENE";
-    HMEditorButton* sceneButton=_hudEditorButtons[4];
-    if(![sceneButton.accessibilityLabel isEqualToString:sceneTitle]){
-        sceneButton.accessibilityLabel=sceneTitle;
-#if TARGET_OS_OSX
-        sceneButton.title=sceneTitle;sceneButton.image=[self hudToolImage:sceneTitle pressed:NO];sceneButton.alternateImage=[self hudToolImage:sceneTitle pressed:YES];
-#else
-        [sceneButton setBackgroundImage:[self hudToolImage:sceneTitle pressed:NO] forState:UIControlStateNormal];[sceneButton setBackgroundImage:[self hudToolImage:sceneTitle pressed:YES] forState:UIControlStateHighlighted];
-#endif
-    }
-    NSString* label=error?:[NSString stringWithFormat:@"HUD LAYOUT · %@\n%@ · Drag to move.",_hudExample?@"SAMPLE":@"PAUSED",names[_hudSelected]];
-#if TARGET_OS_OSX
-    _hudEditorLabel.stringValue=label;
-#else
-    _hudEditorLabel.text=label;
-#endif
-}
+- (void)refreshHUDEditorLabel:(NSString*)error {_hudStatus=error;}
 - (void)openHUDEditor:(id)sender {
     if(_loading.visible()||_hudEditing||_showMenu||!(_session&&(_gameMenu||_hudLayoutFallback)&&_session->world().gameState==0))return;
     if(_session&&!_gameMenu){_gameMenu=YES;[_hud setMenuVisible:YES];}
-    [self cancelGameInput];_hudFromMenu=_showMenu;_hudExample=_hudFromMenu;_hudDraft=_hudLayout;_hudEditing=YES;_hudHideGuides=NO;_hudDragToken=nil;
-    _hudToolbar.hidden=NO;
+    [self cancelGameInput];_hudFromMenu=_showMenu;_hudExample=_hudFromMenu;_hudDraft=_hudLayout;_hudEditing=YES;_gameToolsFocus=NO;_hudStatus=nil;_hudHideGuides=NO;_hudDragToken=nil;
 #if HM_VALIDATION
     [self stopValidationDirection];
 #endif
@@ -175,7 +74,7 @@
 #endif
 }
 - (void)closeHUDEditor {
-    _hudEditing=NO;_hudToolbar.hidden=YES;_hudToolsToggle.hidden=YES;_hudDragToken=nil;_hudExampleSession.reset();_hudExampleData={};[_media releaseScope:@"hud-example"];
+    _hudEditing=NO;_hudDragToken=nil;_hudExampleSession.reset();_hudExampleData={};[_media releaseScope:@"hud-example"];
     [self cancelGameInput];[self noteInteraction];
 #if TARGET_OS_OSX
     [self layoutGameSurface];
@@ -184,9 +83,9 @@
 #endif
     // Return to the pause menu after editing.
 }
-- (void)hudEditorAction:(HMEditorButton*)sender {
+- (void)hudEditorAction:(NSInteger)tag {
     if(!_hudEditing)return;
-    switch(sender.tag){
+    switch(tag){
       case 0:_hudDraft.positions={};_hudDragToken=nil;break;
       case 1:[self closeHUDEditor];return;
       case 2:{auto c=[self currentHUDLayout];

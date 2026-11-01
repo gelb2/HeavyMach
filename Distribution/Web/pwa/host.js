@@ -8,7 +8,7 @@ const standalone=()=>matchMedia('(display-mode: standalone)').matches||navigator
 const transferStore={read:async()=>portable(await saves.read()),preserve:async code=>{localStorage.setItem('HeavyMach.TransferBefore',code);},pending:async code=>{localStorage.setItem('HeavyMach.TransferPending',code);},apply:async s=>saves.apply(stored(s)),finish:async()=>localStorage.removeItem('HeavyMach.TransferPending')};
 const gameWindow=()=> $('game').hidden?null:$('game').contentWindow;
 let transferBusy=false;
-const transfer=attachTransfer({parent:document.body,available:()=>atSlots(gameWindow()),exclusive:async fn=>{if(transferBusy)throw Error('Wait for the current operation.');transferBusy=true;try{return await fn();}finally{transferBusy=false;}},store:transferStore,resume:async()=>localStorage.getItem('HeavyMach.TransferPending'),restoreRequest:(code,options)=>requestRestore(code,options,()=>location.reload())});
+const transfer=attachTransfer({available:()=>atSlots(gameWindow()),exclusive:async fn=>{if(transferBusy)throw Error('Wait for the current operation.');transferBusy=true;try{return await fn();}finally{transferBusy=false;}},store:transferStore,resume:async()=>localStorage.getItem('HeavyMach.TransferPending'),restoreRequest:(code,options)=>requestRestore(code,options,()=>location.reload())});
 bindSlots(transfer,gameWindow);
 
 let registration,offlineReady=false,busy=false,installPrompt,activeVersion;

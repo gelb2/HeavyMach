@@ -5,10 +5,12 @@ export function atSlots(game){
  return !!(game?.Module?._hm_transfer_available?.()&&s?.loaded&&!s.loading&&!s.syncing&&!s.dirty&&!s.blocked);
 }
 export function bindSlots(ui,game){
- const update=()=>{ui.button.hidden=!atSlots(game());};
+ const update=()=>{
+  const current=game();
+  if(current?.Module?._hm_transfer_state){ui.mount(current);ui.setAvailable(atSlots(current));}
+ };
  update();const timer=setInterval(update,150);
  window.addEventListener('pagehide',()=>clearInterval(timer),{once:true});
- ui.button.style.cssText='position:fixed;right:max(12px,env(safe-area-inset-right));top:max(12px,env(safe-area-inset-top));z-index:30';
 }
 export async function requestRestore(code,options,leave){
  const c=await codec();c.decode(code);
