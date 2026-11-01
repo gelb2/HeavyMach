@@ -8,7 +8,7 @@
 
 **[웹에서 플레이 · PWA 설치](https://gelb2.github.io/HeavyMach/)** · [Tauri Mac 앱](#tauri-mac)
 
-Xcode나 Android Studio로 직접 빌드하기 어렵다면 웹/PWA 버전을 권장한다. 위 링크에서 **Install game**을 눌러 홈 화면에 설치하거나, **Play in browser**로 바로 플레이할 수 있다. Mac에서 별도 앱으로 플레이할 수 있는 Tauri 버전도 만들었으며, 공개 설치본을 준비 중이다. iOS·iPadOS·Android·macOS 네이티브 앱의 설치·빌드 방법은 아래 [빌드하기](#빌드하기)를 참고한다.
+Xcode나 Android Studio로 직접 빌드하기 어렵다면 웹/PWA 버전을 권장한다. 위 링크에서 **Install game**을 눌러 홈 화면에 설치하거나, **Play in browser**로 바로 플레이할 수 있다. [Tauri Mac 다운로드](https://github.com/gelb2/HeavyMach/releases/tag/tauri-mac-20261102)를 받아 압축을 풀면 Mac 앱으로 실행할 수 있다. Apple Silicon·macOS 14 이상용이며 첫 실행 허용 방법은 다운로드 페이지에 있다. iOS·iPadOS·Android·macOS 네이티브 앱의 설치·빌드 방법은 아래 [빌드하기](#빌드하기)를 참고한다.
 
 HeavyMach를 웹브라우저에서 실행할 수 있도록 기여해 준 [fastutlego](https://github.com/fastutlego)에게 감사드린다. [첫 웹판 PR #24](https://github.com/gelb2/HeavyMach/pull/24)의 WebAssembly 실행부, WebGL2 렌더링, 입력·음향·저장이 PWA와 Tauri Mac 버전의 기반이 됐다.
 
@@ -44,9 +44,9 @@ HeavyMach도 2015년, 2016년 생활을 청산하고 다른 직업을 택하게 
 
 2009년의 횡스크롤 전차 게임 **HeavyMach**를 현재의 iPhone·iPad·Mac·Android와 웹브라우저·PWA에서 실행하도록 다시 만들었다. 전차를 움직이고 뛰어오르며, 무기를 바꿔 지상·공중의 적과 싸운다. 원작의 전투와 성장 구조에 넓은 화면, 키보드 조작, 자동조준과 새로운 항공기를 추가했다.
 
-최신 릴리스 태그는 [v0.17](https://github.com/gelb2/HeavyMach/tree/v0.17)이다. Android 일반·치트 앱을 포함한다. 일반 앱과 치트 검증 앱을 각각 설치할 수 있다. 치트 앱에서는 미션·무기·강화 조건을 지정해 같은 게임을 검사한다.
+최신 정식 릴리스 태그는 [v0.17](https://github.com/gelb2/HeavyMach/tree/v0.17)이다. Android 일반·치트 앱을 포함한다. 일반 앱과 치트 검증 앱을 각각 설치할 수 있다. 치트 앱에서는 미션·무기·강화 조건을 지정해 같은 게임을 검사한다.
 
-현재 main에는 웹/PWA·Tauri Mac·복원 코드·게임 버튼 수정도 포함돼 있다. 최신 릴리스 태그는 v0.17이며, 이 추가분의 새 릴리스 태그는 아직 만들지 않았다.
+현재 main에는 웹/PWA·Tauri Mac·복원 코드·게임 버튼 수정도 포함돼 있다. 최신 정식 릴리스 태그는 v0.17이며, 이 추가분의 새 릴리스 태그는 아직 만들지 않았다.
 
 [최신 릴리스](https://github.com/gelb2/HeavyMach/releases/latest) · [전체 버전 이력](CHANGELOG.md) · [Android 추가 내역](CHANGELOG.md#v017)
 
@@ -205,7 +205,7 @@ Galaxy의 일반 앱에서 직접 플레이한 미션 3-4와 3-5다. 기기를 �
 
 기존 웹판을 Mac 앱으로 실행하고, 진행과 설정을 웹뷰 저장소 밖의 앱 데이터 폴더에도 백업한다. 앱을 다시 열 때 웹뷰 저장이 사라졌으면 이 백업으로 복구한다. 기존 AppKit 기반 네이티브 Mac 앱도 유지한다.
 
-Apple Silicon Mac에서 빌드·실행한 버전이며 공개 설치본을 준비 중이다. [Tauri 빌드 방법](Desktop/Tauri/README.md) · [구조와 개발 내역](docs/desktop-web-plan-20261031.md)
+[Tauri Mac 다운로드](https://github.com/gelb2/HeavyMach/releases/tag/tauri-mac-20261102) · Apple Silicon·macOS 14 이상. ZIP을 풀고 앱을 Applications로 옮겨 실행한다. ad-hoc 서명으로 제공하며 공증은 아직 받지 않았다. [Tauri 빌드 방법](Desktop/Tauri/README.md) · [구조와 개발 내역](docs/desktop-web-plan-20261031.md)
 
 ![Tauri Mac 앱 전투 화면](docs/public/media/desktop-web-recovery-20261102/tauri-gameplay.png)
 
@@ -221,7 +221,7 @@ Apple Silicon Mac에서 빌드·실행한 버전이며 공개 설치본을 준�
 | Android | 공용 C++ 코어를 사용하는 일반·치트 앱 | Galaxy 유선·무선 설치·플레이 확인. [설치](Android/README.md) · [개발 과정과 화면](docs/public/android-development-20261030.md) |
 | 웹 | WebAssembly·WebGL2 게임 공개 | Chrome·Safari 입력·복원·오프라인 검사. [플레이](https://gelb2.github.io/HeavyMach/) |
 | PWA | 홈 화면 설치와 오프라인 플레이 | iPhone·iPad·Galaxy 플레이 보고, 설치형 Chrome PWA 복원·재시작 검사. [결과](docs/public/validation.md) |
-| Tauri Mac | 웹 게임을 Mac 앱으로 실행, OS 파일 백업 | 로컬 앱 실행·복원·재시작·종료 확인. 공개 설치본·공증은 남아 있다. [빌드](Desktop/Tauri/README.md) |
+| Tauri Mac | 웹 게임을 Mac 앱으로 실행, OS 파일 백업 | 로컬 앱 실행·복원·재시작·종료 확인. [ZIP 공개](https://github.com/gelb2/HeavyMach/releases/tag/tauri-mac-20261102). 공증은 남아 있다. [빌드](Desktop/Tauri/README.md) |
 
 설치한 iPhone·iPad 앱을 직접 플레이했을 때 프레임 드랍이나 오작동은 보이지 않았다. 기기별 자동 검사에는 표시시간 기준 실패가 남아 있다. [측정 조건과 결과](docs/public/validation.md)
 

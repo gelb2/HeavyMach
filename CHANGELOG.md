@@ -6,6 +6,10 @@
 
 [최신 릴리스](https://github.com/gelb2/HeavyMach/releases/latest) · [GitHub 전체 릴리스](https://github.com/gelb2/HeavyMach/releases)
 
+## Tauri Mac 다운로드 — 2026-11-02
+
+[다운로드](https://github.com/gelb2/HeavyMach/releases/tag/tauri-mac-20261102) · Apple Silicon·macOS 14 이상. 앱과 라이선스 고지, 소스 링크를 ZIP으로 제공한다. 앱 버전은 0.17.0이며 게임 묶음은 `3665a237a9dccd69`다. ad-hoc 서명을 적용하고 ZIP 압축해제 후 실행·슬롯·복원 입력·종료를 확인했다. Developer ID 공증과 다른 Mac의 첫 실행 검사는 남아 있다. 기존 v0.17 정식 릴리스는 유지한다.
+
 ## main 통합 — 웹·PWA·Tauri 및 복원 코드
 
 [fastutlego](https://github.com/fastutlego)의 [PR #24](https://github.com/gelb2/HeavyMach/pull/24) 웹 이식을 기반으로 순수 웹 배포, 오프라인 PWA, Tauri Apple Silicon Mac 실행기를 추가했다. 기여자의 커밋·작성자 기록을 보존한다.

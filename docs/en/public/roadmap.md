@@ -38,7 +38,7 @@ This describes main on November 2, 2026. v0.17 includes Apple and Android apps; 
 
 ## Builds and platforms
 
-- Tauri Mac public installer: distribution signing, notarization, installation, update and removal tests. Local builds, launch, saving and exit have been checked.
+- Tauri Mac: [Download Tauri Mac](https://github.com/gelb2/HeavyMach/releases/tag/tauri-mac-20261102) ZIP and first-launch instructions are available. Developer ID signing, notarization, first launch on another Mac, update and removal checks remain.
 - Tauri Windows: build and verify WebView2 execution, input, audio, saves, exit and installation.
 - Tauri/native Mac comparison: short combat and save tests are complete. Extended performance, memory and audio tests, and investigation of long menu-transition display intervals, remain.
 - Web/PWA retention: check saves after actual inactivity of 7, 14, 30 and 40 days. Date-shift regressions and offline restarts passed. Changing the date does not advance the browser's storage-eviction clock.

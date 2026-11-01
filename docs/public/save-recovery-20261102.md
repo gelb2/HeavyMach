@@ -159,6 +159,6 @@ Tauri 복원 후 재실행한 레벨 19 슬롯.
 
 ## 현재 배포와 남은 일
 
-웹/PWA는 [GitHub Pages](https://gelb2.github.io/HeavyMach/)에서 실행한다. Tauri Mac은 로컬 앱 실행과 복원을 확인했으며, 공개 설치본과 공증은 남아 있다. Windows 빌드도 후속 과제다.
+웹/PWA는 [GitHub Pages](https://gelb2.github.io/HeavyMach/)에서 실행한다. [Tauri Mac 다운로드](https://github.com/gelb2/HeavyMach/releases/tag/tauri-mac-20261102) ZIP을 공개했다. 압축해제 앱의 실행·복원 입력·종료를 확인했으며 공증은 남아 있다. Windows 빌드도 후속 과제다.
 
-최신 릴리스 태그는 v0.17이다. 현재 main에는 이후의 웹/PWA·Tauri·복원 코드와 버튼 수정이 들어 있다. 다음 릴리스에서는 앱에 표시되는 버전도 맞춰야 한다. 현재 iPhone은 1.13, Android는 0.16-android-dev를 표시한다. 480 논리 너비 복원 안내의 단어 줄바꿈과 네이티브 Mac 프레임 비교도 남아 있다. [구현 상태](implementation-status.md) · [남은 과제](roadmap.md)
+최신 정식 릴리스 태그는 v0.17이다. 현재 main에는 이후의 웹/PWA·Tauri·복원 코드와 버튼 수정이 들어 있다. 다음 릴리스에서는 앱에 표시되는 버전도 맞춰야 한다. 현재 iPhone은 1.13, Android는 0.16-android-dev를 표시한다. 480 논리 너비 복원 안내의 단어 줄바꿈과 네이티브 Mac 프레임 비교도 남아 있다. [구현 상태](implementation-status.md) · [남은 과제](roadmap.md)

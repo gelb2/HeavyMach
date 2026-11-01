@@ -10,6 +10,10 @@
 
 <a id="다음-릴리스-웹판"></a>
 
+## Tauri Mac download — 2026-11-02
+
+[Download](https://github.com/gelb2/HeavyMach/releases/tag/tauri-mac-20261102) · Apple Silicon, macOS 14 or later. The ZIP includes the app, license notices and source link. App version is 0.17.0; game bundle is `3665a237a9dccd69`. The ad-hoc signed app passed launch, slot, recovery-input and quit checks after extracting the ZIP. Developer ID notarization and first launch on another Mac remain untested. The stable v0.17 release is unchanged.
+
 ## Main integration — Web, PWA, Tauri and recovery codes
 
 Built on [fastutlego](https://github.com/fastutlego)'s [PR #24](https://github.com/gelb2/HeavyMach/pull/24), this adds browser deployment, an offline PWA and a Tauri Apple Silicon Mac host. The contributor's commits and authorship remain intact.

@@ -6,6 +6,13 @@
 
 <a id="hm-pr24-integration"></a>
 
+## HM-TAURI-DOWNLOAD — Mac 다운로드 — 2026-11-02
+
+- [x] arm64/macOS 14 이상 ZIP, ad-hoc 서명, 라이선스·소스 고지, 압축해제·실행·종료 검사를 완료했다.
+- [x] [Tauri Mac 다운로드](https://github.com/gelb2/HeavyMach/releases/tag/tauri-mac-20261102)와 최초 실행 방법을 제공한다.
+- [ ] Developer ID 서명·공증, 별도 Mac의 다운로드 후 첫 실행과 업데이트·제거 검사.
+
+
 ## HM-RELEASE-VERSION — 다음 릴리스 버전 표기 정리 — 2026-11-02
 
 - 현재 최신 릴리스 태그는 v0.17이며 main에는 이후 웹/PWA·Tauri·복원 코드·게임 버튼 수정이 들어 있다.
