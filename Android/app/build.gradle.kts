@@ -2,7 +2,7 @@ plugins { id("com.android.application"); id("org.jetbrains.kotlin.android") }
 val prepareAssets by tasks.registering(Exec::class) {
     workingDir(rootProject.projectDir)
     commandLine("python3", "tools/prepare_assets.py", layout.buildDirectory.dir("generated/gameAssets").get().asFile.absolutePath)
-    inputs.files(fileTree("../../Resources/OriginalImages"),fileTree("../../Resources/RawData"),fileTree("../../Resources/Audio"),fileTree("../../Art/Extensions"),file("../../Resources/Images/Common_Btn_OK.png"))
+    inputs.files(fileTree("../../Resources/OriginalImages"),fileTree("../../Resources/RawData"),fileTree("../../Resources/Audio"),fileTree("../../Art/Extensions"))
     outputs.dir(layout.buildDirectory.dir("generated/gameAssets"))
 }
 android {

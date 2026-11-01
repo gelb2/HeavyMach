@@ -101,3 +101,10 @@ MAP/MCH 관찰 구조는 LE u32 `declared_size,type,data_size`, payload, LE u32 
 후속 사용자 지시로 `Modules/SaveTransfer`를 추가하고 Apple·Android·웹 연결부와 빌드 구성에 연결했다. 기존 `Sources/Core`·에셋은 유지한다. 이전 Tauri 착수 당시의 전체 파일 동결 설명 이후 승인된 범위이며 `Desktop/Tauri/save-transfer-scope.json`에 파일을 기록한다. 슬롯 화면에서만 코드를 생성·복원한다. [모듈](../Modules/SaveTransfer/README.md).
 
 현재 동작하는 작업을 먼저 main에 통합하고 별도 UI 구현의 전수조사를 준비한다. [조사 대상과 기준](ui-implementation-audit.md). HUD 편집 도구, 복원 진입 버튼, 코드 입력창은 구분한다.
+
+
+## 추가 게임 버튼 — 2026-11-02
+
+`Sources/iOS/HMGameButtons.hpp`는 Apple·Android·웹에서 함께 읽는 추가 버튼 코드다. `HMButtonState.hpp`의 원작 눌림 상태, 원작 금속판과 정적 영문 글자 시트를 사용한다. 각 플랫폼의 `HMGameButtons.inc`, `GameButtons.inc`, `WebGameButtons.inc`가 화면별 배치와 기존 동작을 연결한다. 원작 메뉴·HUD 버튼 구현은 보존한다.
+
+버튼 그리기와 입력은 같은 게임 좌표를 쓴다. 모달 전환 때 진행 중인 터치를 취소하고 손가락을 뗄 때까지 소비한다. 복원 텍스트 필드와 클립보드·파일 선택은 플랫폼 서비스로 연결한다. 저장은 기존 편집 APPLY·복원 확인 동작에서 실행한다. [구현 범위와 검사](reviews/game-button-incident-20261101.md#game-button-results).

@@ -16,7 +16,7 @@ Mac 게임 뷰는 고해상도 OpenGL 표면을 요청하고 `convertRectToBacki
 
 ## 고정할 경로
 
-- iPhone/iPad는 OpenGL ES1.1, Mac은 desktop OpenGL compatibility로 게임을 그린다. UIKit/AppKit은 창·생명주기·설정·검증 조작부를 담당한다.
+- iPhone/iPad는 OpenGL ES1.1, Mac은 desktop OpenGL compatibility로 게임을 그린다. UIKit/AppKit은 창·생명주기와 텍스트 입력·클립보드 같은 OS 연결을 담당한다. 게임 실행 후 버튼은 아래 원작 버튼 절차를 따른다.
 - 논리W×H, 할당ceil(W)×ceil(H) RGBA8 renderbuffer에 원본 순서로 그린다. 원본 비교 모드는480×320이다. 확장 모드의 W/H는 좌표 정책을 따른다. 크기가 바뀔 때만 재할당하고 투영·복사·readback이 같은 치수를 사용한다. 장면을 재사용 화면 텍스처로 복사하고 drawable에 최종 확대한다.
 - 원본 자원의 제품 소비자는 `OriginalImages`의 원본 파일명과 확장자를 사용한다. 미션/스테이지 클리어의 `GameLoading_XX[E].jpg`, 게임오버의 `StageClear.jpg`에 파생본 접미사 `.png`를 붙이지 않는다. `Images/*.jpg.png`는 변환·비교용 자원이며 현재 제품 로더의 이름 계약이 아니다.
 - 원본 이미지695개를 보존된 stb 코드로 해석한다. POT 패딩, premultiplied 픽셀, RGB565 변환, UV와 타일 순서를 임의 보정하지 않는다.
@@ -91,7 +91,7 @@ M·C 버튼은 표시와 터치 판정에서 제거한다. A 하나로 자동/�
 
 ## HUD 편집 렌더링 — 2026-10-29
 
-기본 배치는 기존 전체 HUD 그림을 사용한다. 사용자 배치는 같은 원본 텍스처의 영역을 그리며, 원본 금속판 끝부분으로 레일을 마감한다. 계기판 바늘·기어·빛·숫자는 해당 묶음과 함께 이동한다. 편집 중 현재 전투의 renderItems를 다시 사용하고 collect·tick을 호출하지 않는다. 편집 도구의 SAMPLE SCENE에서는 별도 세션으로 만든 탱크·지형·지상 적·헬기 장면을 그린다. 편집 도구 모음만 UIKit/AppKit을 사용하며 월드와 HUD는 기존 GL 렌더러를 사용한다.
+기본 배치는 기존 전체 HUD 그림을 사용한다. 사용자 배치는 같은 원본 텍스처의 영역을 그리며, 원본 금속판 끝부분으로 레일을 마감한다. 계기판 바늘·기어·빛·숫자는 해당 묶음과 함께 이동한다. 편집 중 현재 전투의 renderItems를 다시 사용하고 collect·tick을 호출하지 않는다. 편집 도구의 SAMPLE SCENE에서는 별도 세션으로 만든 탱크·지형·지상 적·헬기 장면을 그린다. 편집 도구 버튼도 기존 게임 렌더러와 원작 버튼 절차를 사용한다. 추가 도구는 HMGameButtons의 정적 글자 시트와 원작 금속판을 사용한다.
 
 ### HUD 편집 진입 버튼 · 2026-10-29
 
@@ -99,7 +99,7 @@ M·C 버튼은 표시와 터치 판정에서 제거한다. A 하나로 자동/�
 
 ### 편집 도구와 상단 장식 · 2026-10-29
 
-사용자 배치에서도 GameUI_Top의 남은 금속판·레일을 upperTrim으로 그린다. 실제 옮긴 묶음에만 끝마감을 추가하며 기본 위치 재조립은 원본 픽셀과 일치한다. 편집의 선택선·터치 경계선은 표시하지 않는다. 오른쪽 영문 도구는 Common_Btn_OK의 일반/눌림 금속판과 CoreText 글자를 최초 생성 때 합성한다. 드래그·전투 중 버튼 이미지를 다시 만들지 않는다.
+사용자 배치에서도 GameUI_Top의 남은 금속판·레일을 upperTrim으로 그린다. 실제 옮긴 묶음에만 끝마감을 추가하며 기본 위치 재조립은 원본 픽셀과 일치한다. 편집의 선택선·터치 경계선은 표시하지 않는다. 오른쪽 영문 도구는 원작 Common_Btn_OK의 일반/눌림 금속판과 정적 글자 에셋을 게임 렌더러로 그린다. 런타임 CoreText·Canvas·시스템 글꼴 합성을 제거한다.
 
 ## 앱 아이콘 · 2026-10-29
 
@@ -109,4 +109,16 @@ M·C 버튼은 표시와 터치 판정에서 제거한다. A 하나로 자동/�
 
 웹은 고정 파이프라인이 없어 `Sources/Web/WebGLRenderer.cpp`의 셰이더로 GLES 1.1 상태를 재현한다. 텍스처 환경 REPLACE/MODULATE를 RGBA·RGB565별로 구분하고, sprite blend 표·Trail의 setBlend 값·가위 영역·DITHER·POT LINEAR/REPEAT·touchHLE 감마 왕복·RGB565 패킹을 iOS와 같게 쓴다. 장면은 ceil(W)×ceil(H) RGBA8 renderbuffer에 그리고 glCopyTexSubImage2D로 LINEAR/CLAMP 텍스처에 복사해 최종 사각형으로 표시한다. WebGL은 선 폭을 1로 제한하므로 2픽셀 선은 사각형으로 그린다. 신규 기체·자동조준 버튼 시트의 1회 축소는 CoreGraphics 대신 면적 평균을 쓴다. [이식 문서](web-port-20261028.md).
 
-HUD 편집 배치는 iOS `drawRegion`과 같은 영역 그리기(`GLRenderer::drawRegion`, GL_REPLACE, SRC_ALPHA/ONE_MINUS_SRC_ALPHA)로 원본 HUD 텍스처의 부분을 그린다. 편집기 도구 버튼은 GL이 아닌 DOM이며, CgBI 원본을 stb로 디코딩한 픽셀로 만든다.
+HUD 편집 배치는 iOS `drawRegion`과 같은 영역 그리기(`GLRenderer::drawRegion`, GL_REPLACE, SRC_ALPHA/ONE_MINUS_SRC_ALPHA)로 원본 HUD 텍스처의 부분을 그린다. 편집기 도구 버튼도 원작 버튼 상태·게임 좌표·WebGL 영역 그리기로 처리한다. 게임 실행 후 DOM 버튼을 만들지 않는다.
+
+## 게임 실행 후 버튼 절차 — 2026-11-02 사용자 지시
+
+게임 실행 후 필요한 버튼은 모두 원작에서 복원한 QobButton 절차를 사용한다. 원작 스프라이트의 일반·눌림 상태를 기존 렌더러에 제출하고, 같은 좌표의 입력 영역과 기존 버튼 상태에 기능을 연결한다. HUD 도구·복원 진입과 확인창·키 설정·치트 패널·실행 중 오류 재시도도 이 규칙을 따른다.
+
+원작 버튼 이미지·배치·기능과 멈춤 메뉴 SET GAME UI는 보존한다. 이번 교체 대상은 추가했던 네이티브·웹 버튼이다. 원작 에셋을 수정하지 않고, 새 문구에 필요한 정적 글자만 Art/Extensions에 추가한다.
+
+텍스트 입력·IME·클립보드·파일 선택처럼 원작에 없는 기능에는 플랫폼 연결을 둔다. 이 기능을 호출하는 게임 버튼까지 UIKit·AppKit·Android View·DOM으로 만들지 않는다. 게임을 그릴 수 없는 초기화 실패와 게임 로드 전 설치·다운로드 화면은 실행기가 표시한다.
+
+교체 구현과 검사 진행은 [현재 상태](current-status.md), 원작 보존과 파일별 변경 범위는 [버튼 조사](reviews/game-button-incident-20261101.md#game-button-replacement)를 따른다.
+
+추가 버튼의 문구는 모든 플랫폼에서 영어로 표시한다. OS 언어에 따라 게임 버튼을 번역하지 않는다. 글자는 원작 Common_Btn_OK와 StageClearBtn의 금색 테두리·산세리프 형태를 참고한 정적 시트이며, 실행 중 시스템 글꼴로 합성하지 않는다.

@@ -27,8 +27,8 @@
     },
     "CHANGELOG.md": {
       "english": "CHANGELOG.en.md",
-      "source_sha256": "8efb420e740d2e38f262c757aceea14496c588e572f044a6385c3c86e6c482a2",
-      "english_sha256": "b9c75c91222af2a147248b2c715342c991d56932b824fe2d7dc3a44479e3d5ec",
+      "source_sha256": "89eba22de2a8fb9e2ae9673e8db349f8ac0045b898a11bbb1f6264a144c4c26b",
+      "english_sha256": "eb5ce8d13659ca53e940696c20b889eb0ff38967ab5df8edbb11fb7bfef67da2",
       "reviewed_numeric_difference": {
         "source_only": {
           "10": 2,
@@ -156,8 +156,8 @@
     },
     "docs/public/build-and-install.md": {
       "english": "docs/en/public/build-and-install.md",
-      "source_sha256": "ef94346def313b1c88b702e17ae01261dfc02c9396bdc5e872a8b2368fb9f061",
-      "english_sha256": "2dfefdf98e23aeaf06fae78c7dbdd766ae77c9319a89c2d5cf7281ebda84d0a9",
+      "source_sha256": "1c0f99e51ac8af3bfb55010fb5a9a079842ef0df57662cf75e2f79851112b9fa",
+      "english_sha256": "695dd62ad5a1b3a585469215c698865f7164251e23d461d5f3318707ea4b3bcf",
       "reviewed_numeric_difference": {
         "source_only": {
           "10": 1,
@@ -204,8 +204,8 @@
     },
     "docs/public/troubleshooting.md": {
       "english": "docs/en/public/troubleshooting.md",
-      "source_sha256": "2f6796b860738cf55cd2a2b6041fc830c2b2c773dc438b48efc3f3ecd53e7f77",
-      "english_sha256": "bbd392c951228f0d9439904af6182fb53c11df2eb6c8cc8a4d76898e059d4581",
+      "source_sha256": "6b8dbd1b4adff32b3b6f7b440afbcae35157974e52c006dde58b481e79727bb1",
+      "english_sha256": "b04ce99c225aa23c48fa5482d4afc4d140c874c19ec96cd540b7e57fbdf8447f",
       "reviewed_numeric_difference": {
         "source_only": {
           "1": 1,

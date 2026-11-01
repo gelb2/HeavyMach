@@ -2,7 +2,7 @@
 
 [Play in a browser or install the PWA](https://gelb2.github.io/HeavyMach/).
 
-This folder packages the existing Web game without changing its HTML, JavaScript, WebAssembly or resources. `Desktop/Tauri/` packages the same game for desktop. Apple, Android and original Web sources remain in their existing folders.
+This folder packages the Web game and its resources. The approved November 2 game-button update changes the game UI in Sources/Web and Web; this host copies the resulting build without patching generated HTML or JavaScript. `Desktop/Tauri/` packages the same game for desktop. Apple, Android and original Web sources remain in their existing folders.
 
 ## Build and run
 
@@ -46,4 +46,4 @@ Generated files and browser test evidence stay in ignored `build/`. Publish only
 
 Run `node Distribution/Web/tests/date-retention.mjs` after packaging. It uses disposable persistent Chrome profiles and an installed standalone PWA. It shifts page JavaScript dates by 7, 14, 30 and 40 days, restarts the browser offline, compares progress/settings, saves again, and returns to the original date. The OS clock and browser eviction clock stay unchanged. This verifies date-change handling; actual inactivity eviction is a separate test. Results are written to `build/date-retention/result.json`.
 
-The launcher no longer offers JSON Export save / Import save buttons. Back up and transfer progress through the recovery code options on the game’s save slot screen. Publish this launcher together with the recovery-code build; the older public build still needs its existing backup controls until then.
+The launcher no longer offers JSON Export save / Import save buttons. Back up and transfer progress through the recovery code options on the game’s save slot screen. The launcher and recovery-code game build are packaged together. In-game transfer and HUD buttons are rendered by the game; the browser supplies only code text entry, clipboard access and file selection.

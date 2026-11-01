@@ -194,6 +194,17 @@ The pause menu's `SET GAME UI` button assembles letters and a background from `G
 
 Using platform text input to paste and copy a recovery code does not require a separate implementation for the button that opens it. The existing game-button implementation was available but was not reused. Saying that the original artwork was reused did not explain this difference.
 
-The 19,344-byte source-image cache has been released. Replacing the entry controls with game-rendered buttons remains unfinished. The iPhone's 14 functional tests and Galaxy's 40 checks passed; the new button's frame cost has not been measured. [Functional test results](../../evidence/native-regression-20261101.json).
+At that point, Codex had released the 19,344-byte source-image cache but had not replaced the controls. The iPhone's 14 functional tests and Galaxy's 40 checks passed; mobile browser fullscreen coverage was missing. [Functional test results](../../evidence/native-regression-20261101.json).
 
 Sharing a factory does not make the HUD editor tools and recovery entry follow the same display and input flow. I requested a full audit of unnecessary platform UI after merging and checking the working version. [Audit plan (Korean)](../../ui-implementation-audit.md).
+
+
+### Replacing the controls with game buttons
+
+In the Galaxy PWA, the recovery button stayed outside the game document when that document entered fullscreen. The button existed in the page but was invisible. I asked Codex to inspect and replace the HUD tools, recovery controls and confirmation actions, key settings and cheat controls.
+
+Codex reused the original metal button artwork, press states and hit testing. The original menus and SET GAME UI remain unchanged. New English labels use a static texture sheet. I rejected the first sheet's fantasy-style lettering and asked for lettering based on the original OK and mission-selection buttons. Text entry, clipboard access and file selection still use platform services.
+
+This strengthened my suspicion that AI tends to choose whichever implementation looks shortest and easiest. Working C++ buttons and artwork already existed, yet Codex had added separate controls for each platform. That did not fit the cross-platform game I had asked for. My [full account and notes on skills and harnesses (Korean)](../../usability-todo.md#hm-ui-incident-writing--추가-버튼-구현과-작업-방식에-관한-글감--2026-11-02) are retained for a later essay.
+
+The [incident report (Korean)](../../reviews/game-button-incident-20261101.md#game-button-results) includes SET GAME UI's implementation, replacement screenshots, changed files and device checks.

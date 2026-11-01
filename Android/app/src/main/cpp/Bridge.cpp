@@ -22,3 +22,5 @@ extern "C" JNIEXPORT jstring JNICALL Java_com_gelb2_heavymach_Native_ui(JNIEnv*e
 extern "C" JNIEXPORT jstring JNICALL Java_com_gelb2_heavymach_Native_transfer(JNIEnv*e,jobject,jlong p,jstring action,jstring code,jint source,jint target){
  std::string result;try{if(!p)throw std::runtime_error("Game is not ready");result=runtime(p)->transfer(text(e,action),text(e,code),source,target);}catch(const std::exception&x){result=std::string("ERROR: ")+x.what();}return e->NewStringUTF(result.c_str());
 }
+
+extern "C" JNIEXPORT void JNICALL Java_com_gelb2_heavymach_Native_text(JNIEnv*e,jobject,jlong p,jstring name,jstring value){auto n=text(e,name),v=text(e,value);run(p,[&](auto&r){r.inputText(n,v);});}

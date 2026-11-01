@@ -23,6 +23,10 @@ def check():
  files={x['path']:x['sha256'] for x in obj['files']}
  scope=json.loads((ROOT/'Desktop/Tauri/save-transfer-scope.json').read_text()) if (ROOT/'Desktop/Tauri/save-transfer-scope.json').exists() else {}
  allowed=set(scope.get('changed_files',{}));new=set(scope.get('new_files',[]));roots=tuple(scope.get('new_roots',[]))
+ button_scope=ROOT/'Desktop/Tauri/game-button-scope.json'
+ if button_scope.exists():
+  buttons=json.loads(button_scope.read_text())
+  allowed.update(buttons.get('changed_files',{}));new.update(buttons.get('new_files',[]))
  def addition(p):return p in new or bool(roots) and p.startswith(roots)
  if any(p.startswith(('Sources/Core/','Resources/','Art/','vendor/')) for p in allowed):raise RuntimeError('Core/assets cannot be excepted')
  current=set(paths());expected=set(files)

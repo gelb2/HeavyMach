@@ -3,6 +3,7 @@
 // Scope: the normal application (HM_VALIDATION=0). The validation/cheat panel,
 // the CPU comparison drawRect path and Mac/AppKit branches are not ported.
 #include "WebTypes.hpp"
+#include "HMGameButtons.hpp"
 #include "WebAudio.hpp"
 #include "WebGLRenderer.hpp"
 #include "WebGameHUD.hpp"
@@ -56,12 +57,21 @@ public:
     bool key(unsigned hidCode,bool pressed);
     void blurKeyboard(){cancelGameInput();}
     std::string debugState();
-    bool transferAvailable()const{return _transferScreen==3&&_showMenu&&!_session&&!_hudEditing&&!_keyboardSettingsOpen&&!_loading.visible()&&_loadError.empty();}
-    // DOM HUD-editor controls (Web/shell.html): -1 opens the editor (SET GAME UI),
+    void storageUIState(const char* status);
+    void transferUIState(bool ready,int mode,bool busy,int source,int target,bool settings,const char* status);
+    std::string gameUIDebug() const;
+    bool transferAvailable()const{return _transferScreen==3&&_showMenu&&!_session&&!_hudEditing&&!_keyboardSettingsOpen&&_loading.state()==6&&_loadError.empty();}
+    // Existing HUD-editor action bridge: -1 opens the editor (SET GAME UI),
     // 0 RESET LAYOUT, 1 CANCEL, 2 APPLY, 3 PREVIEW, 4 SAMPLE/CURRENT SCENE, 5 TOOLS.
     void hudControl(int tag);
     std::string loadError() const {return _loadError;}
 private:
+    heavymach::gameui::Buttons _gameButtons;
+    bool _transferReady=false,_transferBusy=false,_transferSettings=true,_hudToolFocus=false;
+    int _transferMode=0,_transferSource=-1,_transferTarget=-1;
+    std::string _transferStatus,_storageMessage;
+    void drawGameButtons();
+    void gameUIAction(int id,int state);
     void persistSave();
     void startSlot(int slot,int mode,int mission,int stage);
     void requestScreen(int screen);
@@ -169,6 +179,7 @@ private:
     bool _hudLayoutFallback=false,_hudEditing=false,_hudFromMenu=false,_hudExample=false,_hudHideGuides=false;
     int _hudSelected=heavymach::hud::jump;
     std::optional<long> _hudDragToken;
+    std::set<long> _hudEditorTouches;
     Point _hudGrab;
     unsigned _hudLayoutWrites=0;
     std::map<long,int> _hudCapturedReceivers;

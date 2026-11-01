@@ -45,11 +45,12 @@ async function drag(lx, ly, dx, dy) {
   for (let i = 1; i <= 10; i++) { await page.mouse.move(x + (x2 - x) * i / 10, y + (y2 - y) * i / 10); await sleep(30); }
   await page.mouse.up();
 }
-const domButton = label => page.$(`#hm-hud-ui button[aria-label="${label}"]:not([hidden])`);
-async function clickDom(label) {
-  const r = await page.evaluate(l => { const b = [...document.querySelectorAll('#hm-hud-ui button')].find(e => e.dataset.title === l); if (!b) return null; const q = b.getBoundingClientRect(); return { w: q.width, x: q.left + q.width / 2, y: q.top + q.height / 2 }; }, label);
-  if (!r || !r.w) throw new Error('no visible DOM button ' + label);
-  await page.mouse.click(r.x, r.y, { delay: 60 }); await sleep(300);
+const gameUI = () => page.evaluate(() => JSON.parse(Module.UTF8ToString(Module._hm_game_ui())));
+const gameButton = async label => (await gameUI()).buttons.find(b => b.label === label);
+async function clickGame(label) {
+  const b = (await gameUI()).buttons.find(b => b.label === label && b.enabled);
+  if (!b) throw new Error('no enabled game button ' + label);
+  await tap(b.rect[0]+b.rect[2]/2,b.rect[1]+b.rect[3]/2);await sleep(300);
 }
 const layoutFile = () => page.evaluate(() => { try { return new TextDecoder().decode(Module.FS.readFile('/persist/HUDLayoutV1-web.json')); } catch (e) { return null; } });
 const shot = name => page.screenshot({ path: path.join(out, name + '.png') });
@@ -57,7 +58,8 @@ const shot = name => page.screenshot({ path: path.join(out, name + '.png') });
 async function enterGame() {
   await page.goto(url, { waitUntil: 'load' }); await page.focus('#canvas');
   await waitFor(s => s.screen === 'title', 60000, 'title'); await sleep(7500);
-  await tap(347, 160);
+  await tap(347, 160);await page.keyboard.press('F2');await sleep(100);
+  if((await gameUI()).keys)throw Error('F2 opened hidden key settings during door loading');
   let s = await waitFor(s => s.screen === 'menu' && !s.loading, 15000, 'slots'); await sleep(500);
   const cw = s.canvas[0], my = (s.canvas[1] - 320) / 2, center = cw / 2;
   await tap(cw - 58, 21 + my); await waitFor(s => s.screen === 'menu' && !s.loading && s.time > 0, 15000, 'mode'); await sleep(1500);
@@ -68,7 +70,7 @@ async function enterGame() {
 try {
   let g = await enterGame();
   // Mission selection has no editor entry (HMHUDEditor updateHUDEntry, v0.15).
-  const entryOnMission = !!(await domButton('SET GAME UI'));
+  const entryOnMission = !!(await gameButton('SET GAME UI'));
   step('mission-no-entry', { visible: entryOnMission });
   if (entryOnMission) throw new Error('SET GAME UI entry is shown on mission selection');
   await page.evaluate(() => Module._hm_hud_control(-1)); await sleep(300);
@@ -90,8 +92,8 @@ try {
   s = await state(); step('drag', { selected: s.hudSelected, draftCustomized: s.hudDraftCustomized, timeFrozen: s.time === timeBefore });
   if (s.hudSelected !== 1 || s.hudDraftCustomized !== 1) throw new Error('drag did not move LEVEL / EXP');
   await shot('03-dragged');
-  await clickDom('TOOLS');                                          // dragging hides the tool panel (iOS _hudHideGuides)
-  await clickDom('APPLY');
+  await clickGame('TOOLS');                                          // dragging hides the tool panel (iOS _hudHideGuides)
+  await clickGame('APPLY');
   s = await state(); const saved = await layoutFile();
   step('apply', { hudEditing: s.hudEditing, customized: s.hudCustomized, file: saved });
   if (s.hudEditing !== 0 || s.hudCustomized !== 1 || !saved) throw new Error('APPLY did not save the layout');
@@ -119,16 +121,50 @@ try {
   await tap(hudX + 240, hudY + 190); await sleep(500);
   s = await state(); step('reopen-from-pause', { hudEditing: s.hudEditing });
   if (s.hudEditing !== 1) throw new Error('pause-menu SET GAME UI did not reopen the editor');
-  await clickDom('SAMPLE SCENE'); await sleep(500); await shot('05-sample-scene');
-  step('sample-scene', { label: await page.evaluate(() => hmHudState().label) });
-  await clickDom('RESET LAYOUT'); await clickDom('APPLY');
+  const beforeCancel=await layoutFile();
+  await clickGame('PREVIEW');
+  if((await gameUI()).buttons.length!==1)throw Error('PREVIEW did not hide tools');
+  await clickGame('TOOLS');await clickGame('SAMPLE SCENE');await clickGame('CURRENT SCENE');
+  await drag(hudX + 111, hudY + 236, 8, -8);await clickGame('TOOLS');await clickGame('CANCEL');
+  if((await state()).hudEditing||await layoutFile()!==beforeCancel)throw Error('CANCEL changed saved layout');
+  step('preview-current-scene-and-cancel-draft');
+  await tap(hudX + 240, hudY + 190);await sleep(500);
+  // Keep a finger on the editor while another finger closes its tools.
+  for(const heldKind of ['blank','drag']){
+    const client=await page.createCDPSession();
+    const at=async(x,y,id)=>{const p=await css(x,y);return {x:p[0],y:p[1],id};};
+    const held=await at(hudX+(heldKind==='drag'?111:60),hudY+(heldKind==='drag'?236:150),21);
+    await client.send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[held]});await sleep(100);
+    async function secondTap(label){const b=await gameButton(label),p=await at(b.rect[0]+b.rect[2]/2,b.rect[1]+b.rect[3]/2,22);await client.send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[held,p]});await sleep(70);await client.send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[p]});await sleep(120);}
+    if(!await gameButton('CANCEL'))await secondTap('TOOLS');
+    await secondTap('CANCEL');
+    const release=await at(hudX+220,hudY+235,21);await client.send('Input.dispatchTouchEvent',{type:'touchMove',touchPoints:[release]});await client.send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[release]});await sleep(200);
+    if((await state()).hudEditing||(await state()).gameMenu!==1)throw Error(heldKind+' editor finger leaked into RESUME');
+    step(heldKind+'-finger-after-editor-close-is-consumed');
+    await tap(hudX+240,hudY+190);await sleep(200);
+  }
+  await clickGame('SAMPLE SCENE'); await sleep(500); await shot('05-sample-scene');
+  step('sample-scene', { buttons: (await gameUI()).buttons.map(b=>b.label) });
+  await clickGame('RESET LAYOUT'); await clickGame('APPLY');
   s = await state(); const reset = await layoutFile();
   step('reset', { hudEditing: s.hudEditing, customized: s.hudCustomized, file: reset });
   if (s.hudCustomized !== 0 || JSON.parse(reset).positions.some(p => p !== null)) throw new Error('RESET LAYOUT + APPLY did not restore the default');
+  await page.focus('#canvas');await page.keyboard.press('F2');await sleep(300);
+  if((await gameUI()).keys!==1)throw Error('key bindings did not open');
+  for(let i=0;i<16;i++){
+    const row=(await gameUI()).buttons.find(b=>b.id===1000+i);await tap(row.rect[0]+row.rect[2]/2,row.rect[1]+row.rect[3]/2);await sleep(30);
+    const selected=await gameUI();if(selected.keySelection!==i||!selected.capturing)throw Error('key action selection '+i);
+    await page.keyboard.press('Escape');
+  }
+  step('all-sixteen-key-actions-select-and-cancel');
+  let row=(await gameUI()).buttons.find(b=>b.id===1000);await tap(row.rect[0]+row.rect[2]/2,row.rect[1]+row.rect[3]/2);await page.keyboard.press('KeyB');await sleep(100);
+  if(!(await gameUI()).buttons.find(b=>b.id===1000).label.endsWith(': B'))throw Error('key remap not applied');
+  await clickGame('RESET KEYS');if(!(await gameUI()).buttons.find(b=>b.id===1000).label.endsWith(': A'))throw Error('key reset not applied');
+  await clickGame('CLOSE');if((await gameUI()).keys)throw Error('key settings not closed');step('key-remap-reset-and-close');
   report.ok = report.errors.length === 0;
 } catch (e) {
   report.errors.push(String(e && e.stack || e));
-  try { report.hudUi = await page.evaluate(() => ({ state: window.hmHudState && hmHudState(), buttons: [...document.querySelectorAll('#hm-hud-ui button')].map(b => [b.dataset.title, b.hidden, b.getBoundingClientRect().toJSON()]), bar: document.querySelector('#hm-hud-ui .hud-bar') && document.querySelector('#hm-hud-ui .hud-bar').hidden })); } catch (_) {}
+  try { report.hudUi = await gameUI(); } catch (_) {}
   try { await shot('failure'); } catch (_) {}
 }
 await browser.close();

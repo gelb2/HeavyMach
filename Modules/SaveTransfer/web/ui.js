@@ -1,22 +1,64 @@
 import {codec} from './transfer.js';
-// One UI/transaction driver shared by browser/PWA and Tauri. No game functions replaced.
-export function attachTransfer({parent,store,exclusive,onDone=()=>{},resume,available=()=>true,restoreRequest}){
- const button=document.createElement('button');button.className='hm-transfer-button';button.textContent='Transfer progress';parent.append(button);
- const dialog=document.createElement('dialog');dialog.className='hm-transfer-dialog';dialog.innerHTML=`<h2>Transfer progress</h2><textarea rows="5" aria-label="Recovery code" spellcheck="false" placeholder="Paste an HM1- code"></textarea><pre role="status"></pre><div class="actions"><button data-action="create">Create code</button><button data-action="copy">Copy</button><button data-action="file">Save code file</button><label class="button">Open code file<input type="file" accept=".hmcode,text/plain"></label></div><p><label>From slot <select data-source><option value="-1">All three</option><option value="0">1</option><option value="1">2</option><option value="2">3</option></select></label> <label>To slot <select data-target><option value="-1">All three</option><option value="0">1</option><option value="1">2</option><option value="2">3</option></select></label></p><label><input type="checkbox" data-settings checked> Include HUD and controls</label><div class="actions"><button data-action="inspect">Check code</button><button data-action="restore">Restore</button><button data-action="close">Close</button></div>`;
- dialog.style.maxWidth='min(700px,95vw)';dialog.querySelector('textarea').style.cssText='width:100%;box-sizing:border-box;resize:vertical';document.body.append(dialog);
- const style=document.createElement('style');const metal=new URL('../skin/button.png',import.meta.url).href;
- style.textContent=`.hm-transfer-button,.hm-transfer-dialog button,.hm-transfer-dialog .button{box-sizing:border-box;display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:6px 12px;border:10px solid transparent;border-image:url('${metal}') 12 fill stretch;background:#20251e;color:#edc251;font:bold 15px Arial,sans-serif;text-transform:uppercase;cursor:pointer}.hm-transfer-button[hidden]{display:none!important}.hm-transfer-dialog{box-sizing:border-box;width:min(700px,95vw);max-height:90vh;overflow:auto;border:12px solid transparent;border-image:url('${metal}') 12 fill stretch;background:#1b211c;color:#e1ddca;padding:16px;font:16px Arial,sans-serif}.hm-transfer-dialog::backdrop{background:#000b}.hm-transfer-dialog h2{color:#e4b948;font-size:20px}.hm-transfer-dialog .actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}.hm-transfer-dialog textarea,.hm-transfer-dialog select{background:#101710;color:#e1ddca;padding:8px}.hm-transfer-dialog .button{position:relative}.hm-transfer-dialog input[type=file]{position:absolute;inset:0;opacity:0;width:100%;height:100%}.hm-transfer-dialog button:disabled{opacity:.5}`;document.head.append(style);
- const code=dialog.querySelector('textarea'),status=dialog.querySelector('pre');status.style.whiteSpace='pre-wrap';let busy=false;
- button.onclick=()=>{if(!available())return;status.textContent='Create a code here, or paste a code from another device.';dialog.showModal();};
- dialog.addEventListener('cancel',e=>{if(busy)e.preventDefault();});
- async function run(fn){if(busy)return;busy=true;for(const b of dialog.querySelectorAll('button,input,select'))b.disabled=true;try{if(!available())throw Error('Open save slot selection first.');await exclusive(async()=>fn(await codec()));}catch(e){status.textContent=e.message||String(e);}finally{busy=false;for(const b of dialog.querySelectorAll('button,input,select'))b.disabled=false;}}
- dialog.querySelector('input[type=file]').onchange=e=>run(async c=>{const f=e.target.files[0];e.target.value='';if(!f)return;if(f.size>24000)throw Error('Recovery code too long');code.value=await f.text();status.textContent=c.decode(code.value).summary;});
- dialog.addEventListener('click',e=>{const action=e.target.dataset.action;if(!action)return;if(action==='close'){dialog.close();return;}if(action==='copy'){navigator.clipboard.writeText(code.value).then(()=>status.textContent='Code copied.').catch(()=>{code.focus();code.select();status.textContent='Select and copy the code.';});return;}
- run(async c=>{
- if(action==='create'){code.value=c.encode(await store.read());status.textContent=c.decode(code.value).summary;}
- if(action==='inspect')status.textContent=c.decode(code.value).summary;
- if(action==='file'){c.decode(code.value);const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([code.value],{type:'text/plain'}));a.download='HeavyMach.hmcode';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000);}
- if(action==='restore'){const s=c.decode(code.value);status.textContent=s.summary;if(!confirm(s.summary+'\nRestore this progress? Your current save will be backed up.'))return;const options={source:Number(dialog.querySelector('[data-source]').value),target:Number(dialog.querySelector('[data-target]').value),settings:dialog.querySelector('[data-settings]').checked};if(restoreRequest){await restoreRequest(code.value,options);return;}await c.restore(store,code.value,options);status.textContent='Progress restored.';await onDone();}
- });});
- return {button,dialog,async recover(){const pending=await resume();if(pending){const c=await codec();await c.resume(store,pending);}},show(){button.click();}};
+// Game buttons are drawn and hit-tested by the original C++ button path.
+// This bridge owns only text entry, clipboard/files, and the existing transactions.
+export function attachTransfer({store,exclusive,onDone=()=>{},resume,available=()=>true,restoreRequest}){
+ let game=null,code=null,file=null,mode=0,busy=false,source=-1,target=-1,settings=true,confirmedCode='',revision=0;
+ let status='Create a code or paste one from another device.',ready=false,lastState='';
+ const inputStyle='position:fixed;z-index:20;box-sizing:border-box;resize:none;background:#161b17;color:#f0d18a;border:1px solid #827b5c;padding:6px;font:12px monospace;';
+ function publish(){
+  if(!game?.Module?.ccall)return;
+  const state=JSON.stringify([ready,mode,busy,source,target,settings,status]);if(state===lastState)return;lastState=state;
+  game.Module.ccall('hm_transfer_state',null,['number','number','number','number','number','number','string'],[+ready,mode,+busy,source,target,+settings,status]);
+  if(code){code.hidden=mode!==1;code.readOnly=busy;}
+ }
+ function mount(current){
+  if(game===current)return;
+  code?.remove();file?.remove();game=current;lastState='';++revision;
+  code=game.document.createElement('textarea');code.className='hm-transfer-code';code.setAttribute('aria-label','Recovery code');code.spellcheck=false;code.autocapitalize='off';code.autocomplete='off';code.maxLength=24000;code.placeholder='Paste an HM1- code';code.style.cssText=inputStyle;code.hidden=true;
+  file=game.document.createElement('input');file.type='file';file.accept='.hmcode,text/plain';file.hidden=true;
+  for(const event of ['keydown','keyup','pointerdown','pointerup','pointermove','touchstart','touchend'])code.addEventListener(event,e=>e.stopPropagation());
+  code.addEventListener('focus',()=>game.Module?._hm_keyboard_blur?.());
+  code.addEventListener('keydown',e=>{if(e.key==='Escape'){e.preventDefault();code.blur();game.document.querySelector('#canvas')?.focus();}});
+  game.document.body.append(code,file);
+  game.Module.hmTransferAction=action;
+  game.Module.hmTransferField=(x,y,w,h,visible)=>{if(!code)return;code.hidden=!visible||mode!==1;Object.assign(code.style,{left:x+'px',top:y+'px',width:w+'px',height:h+'px'});};
+  file.onchange=()=>run(async c=>{const selected=file.files[0];file.value='';if(!selected)return;if(selected.size>24000)throw Error('Recovery code too long.');code.value=await selected.text();status=c.decode(code.value).summary;});
+  publish();
+ }
+ async function run(fn){
+  if(busy)return;busy=true;publish();
+  try{if(!available())throw Error('Open save slot selection first.');await exclusive(async()=>fn(await codec()));}
+  catch(e){status=e.message||String(e);mode=1;}
+  finally{busy=false;publish();}
+ }
+ function action(id){
+  if(busy)return;
+  const operation=++revision;
+  if(id===900){if(!ready||!available())return;mode=1;status='Create a code or paste one from another device.';publish();return;}
+  if(!mode)return;
+  if(id===910){mode=0;code.blur();game.document.querySelector('#canvas')?.focus();publish();return;}
+  if(id===912){mode=1;publish();return;}
+  if(id===905){source=source===2?-1:source+1;publish();return;}
+  if(id===906){target=target===2?-1:target+1;publish();return;}
+  if(id===907){settings=!settings;publish();return;}
+  if(id===902){
+   const value=code.value,copyMode=mode;
+   const current=()=>revision===operation&&mode===copyMode&&code.value===value;
+   const fallback=()=>{if(!current())return;code.focus();code.select();status='Select and copy the code.';publish();};
+   if(game.navigator.clipboard?.writeText)game.navigator.clipboard.writeText(value).then(()=>{if(!current())return;status='Code copied.';publish();}).catch(fallback);else fallback();return;
+  }
+  if(id===904){file.click();return;}
+  run(async c=>{
+   if(id===901){code.value=c.encode(await store.read());status=c.decode(code.value).summary;}
+   if(id===908)status=c.decode(code.value).summary;
+   if(id===903){c.decode(code.value);const a=game.document.createElement('a');a.href=URL.createObjectURL(new Blob([code.value],{type:'text/plain'}));a.download='HeavyMach.hmcode';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000);status='Code file saved.';}
+   if(id===909){status=c.decode(code.value).summary;confirmedCode=code.value;mode=2;code.blur();game.document.querySelector('#canvas')?.focus();}
+   if(id===911){
+    c.decode(confirmedCode);const options={source,target,settings};
+    if(restoreRequest){await restoreRequest(confirmedCode,options);return;}
+    await c.restore(store,confirmedCode,options);status='Progress restored.';mode=1;await onDone();
+   }
+  });
+ }
+ return {mount,setAvailable(value){ready=!!value;publish();},async recover(){const pending=await resume?.();if(pending){const c=await codec();await c.resume(store,pending);}},show(){action(900);}};
 }
