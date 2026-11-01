@@ -8,6 +8,25 @@
 
 The latest release tag is v0.17 and includes the regular and cheat Android apps. [Galaxy tests and fixes](../../public/android-development-20261030.md). The tables record tests and measurements from their respective versions. Codex ran automated tests and measurements; I played all missions myself.
 
+<a id="게임-버튼과-복원--2026-11-02"></a>
+
+## Game buttons and recovery · 2026-11-02
+
+Added buttons on current main use the original game renderer and input procedure. Code creation, validation, restoration and restart were checked again after public Web/PWA deployment.
+
+| Target | Checks and results |
+|---|---|
+| iPhone, iPad and native Mac | Three functional checks passed on each after merging. Code entry, restoration, cancellation and original menus checked |
+| Galaxy | Regular/cheat buttons and restoration checked. Nine restoration/restart checks also passed in the previously installed PWA |
+| Public Web | 20 touch, full-screen and restoration checks passed. Closing a modal with two fingers did not pass input to the menu behind it |
+| Installed PWA | 18 checks passed. Actual save restoration and offline restart preserved progress and settings |
+| Actual Tauri Mac app | Created, copied and checked its own code; cancelled confirmation; applied restoration; quit and launched a new process. Progress (3,624 bytes), HUD (173 bytes), key and aim settings matched |
+| Preserved files | Comparison found no changes in 1,453 protected core, original resource and menu/HUD files |
+
+The tested public site version was `7c03b1eb844c409c`; its game bundle was `3665a237a9dccd69`. [Apple evidence](../../evidence/game-buttons-apple-20261102.json) · [Android evidence](../../evidence/game-buttons-android-20261102.json) · [Web/PWA and Tauri evidence](../../evidence/game-buttons-web-tauri-20261102.json).
+
+Native Mac functional tests passed, but frame processing p95 measured **24.87–51.02ms**, exceeding the **16.67ms threshold**, on the same day. Earlier Mac measurements below describe their own builds and conditions. Current Mac performance remains an open task.
+
 <a id="플레이와-기능-검사"></a>
 
 ## Play and functional tests
@@ -26,7 +45,7 @@ The latest release tag is v0.17 and includes the regular and cheat Android apps.
 | v0.16 entry placement | 140 conditions, 23 core tests, three functional tests each on iPhone and iPad | Passed. iPad entry p95 of 21.39ms exceeded the 20ms threshold |
 | Personal play of the installed apps | Regular iPhone and iPad apps | No observed frame drops or malfunctions |
 
-The 84 passing device tests include selecting and firing 20 weapons by keyboard input, combined touch input, resources, lifecycle, audio and zero save calls during combat. Codex used Device Hub OS key input to check movement, jumping, aiming, firing and weapon switching. Tests with actual Bluetooth and USB keyboards remain.
+The 84 passing device tests include selecting and firing 20 weapons by keyboard input, combined touch input, resources, lifecycle, audio and zero save calls during combat. Codex used Device Hub OS key input to check movement, jumping, aiming, firing and weapon switching. I later checked movement, Space to jump and trackpad firing with an iPad Magic Keyboard in the Web version. Connection and reconnection tests across Bluetooth/USB keyboard models remain.
 
 [Fresh clone](../../public/clone-build-20261026.md) · [Apple tests](../../public/apple-platform-progress-20261026.md) · [Auto-aim](../../public/auto-aim-ipad-20261027.md) · [VTOLs](../../public/vtol-art-and-loadout-20261027.md) · [Fighters](../../public/lux-lunae-design-20261027.md)
 
@@ -59,13 +78,15 @@ Codex installed regular and cheat apps on iPhone and iPad. Device connection, in
 
 ## Documents and media
 
-The current resource check matched SHA-256 hashes for 1,504 build and test inputs. Codex extracted eight images and three MP4s from my play recordings. Two GIFs use short sections of those same scenes. The [scene manifest](../../public/media/gameplay-20261027/media-scenes.json) records source hashes, times and output hashes. The recording device, app type and build number were not supplied.
+The November 2 resource check matched SHA-256 hashes for 1,505 build and test inputs. For the October 27 iOS media set, Codex extracted eight images and three MP4s from my play recordings. Two GIFs use short sections of those same scenes. The [scene manifest](../../public/media/gameplay-20261027/media-scenes.json) records source hashes, times and output hashes. The recording device, app type and build number for that video were not supplied. Later material is grouped into [iOS](../../public/ios-gameplay-gallery-20261030.md) and [Android](../../public/android-gameplay-20261030.md) galleries.
 
 <a id="남은-검사"></a>
 
 ## Remaining tests
 
-- Display timing: reproduce and isolate the iPhone menu threshold failure and the corresponding iPhone/iPad suite failures.
+- Web/PWA: actual save retention after 7, 14, 30 and 40 days of inactivity. Date-shift regression tests do not advance the browser’s storage-eviction clock.
+- Tauri: extended play, memory/audio comparisons and public-installer tests.
+- Display timing: investigate the November 2 native Mac threshold failures; reproduce and isolate the iPhone menu threshold failure and the corresponding iPhone/iPad suite failures.
 - Long sessions: heat, power and memory during movement, jumping, combat and mission transitions.
 - Input: physical Bluetooth/USB keyboard connection, disconnection, reconnection, held keys and combined touch input.
 - Difficulty: ammunition, damage and completion difficulty across all missions with added aircraft.

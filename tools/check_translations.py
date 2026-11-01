@@ -14,7 +14,7 @@ ROOT_DOCS = ('README', 'CHANGELOG', 'CREDITS', 'CONTRIBUTING', 'LICENSE-SCOPE',
 PUBLIC_DOCS = ('features', 'implementation-status', 'build-and-install', 'gameplay-guide',
                'architecture', 'development-history', 'troubleshooting', 'validation',
                'lux-lunae-intent-20261028', 'index', 'design-intent', 'roadmap',
-               'android-ai-experience-20261030')
+               'android-ai-experience-20261030', 'save-recovery-20261102')
 EXPECTED = {**{f'{n}.md': f'{n}.en.md' for n in ROOT_DOCS},
             'docs/RESTORATION.md': 'docs/en/RESTORATION.md',
             **{f'docs/public/{n}.md': f'docs/en/public/{n}.md' for n in PUBLIC_DOCS}}

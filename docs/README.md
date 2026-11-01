@@ -1,6 +1,6 @@
 # HeavyMach 문서
 
-최신 릴리스 태그는 v0.17이며 Android 일반·치트 앱을 포함한다. [프로젝트 소개와 플레이 화면](../README.md)에서 시작하거나 아래 주제로 바로 이동할 수 있다.
+최신 릴리스 태그는 v0.17이며 Android 일반·치트 앱을 포함한다. 현재 main에는 이후의 웹/PWA·Tauri Mac·복원 코드·게임 버튼 수정도 들어 있다. [프로젝트 소개와 플레이 화면](../README.md)에서 시작하거나 아래 주제로 바로 이동할 수 있다.
 
 ## 게임과 개발 과정
 
@@ -12,7 +12,8 @@
 | [조작](public/gameplay-guide.md) | 터치·틸트·키보드·자동조준·무기·강화 |
 | [빌드·설치](public/build-and-install.md) | clone·LFS·workspace·scheme·서명·실행 |
 | [구조](public/architecture.md) | 코어·Apple 런타임·자원·플랫폼 경계와 모듈화 이유 |
-| [트러블슈팅](public/troubleshooting.md) | 17개 문제의 증상·내 지적·원인·수정·결과 |
+| [트러블슈팅](public/troubleshooting.md) | 문제의 증상·내 지적·원인·수정·결과 |
+| [복원 코드·웹·PWA·Tauri](public/save-recovery-20261102.md) | 서버 없는 진행 이전, 공용 모듈, 버튼 수정, 실제 플레이·복원 화면 |
 | [Android판 개발 과정](public/android-development-20261030.md) | 개발 기간·공유 코어·전용 구현·Galaxy 검사·업그레이드 오류 수정 |
 | [Android 설치](public/build-and-install.md#android-빌드와-설치) | SDK·NDK 설정, 일반·치트 APK, USB·무선 설치 |
 | [Android 플레이 캡처와 영상](public/android-gameplay-20261030.md) | Galaxy 일반 앱의 이미지 8장·GIF 3개·영상 3개 |

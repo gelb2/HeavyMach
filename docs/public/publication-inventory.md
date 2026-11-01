@@ -2,7 +2,7 @@
 
 HeavyMach에 관해 내가 쓴 원문과 기술 설명·수정 과정·이미지를 이 저장소에 모았다. Apps는 기술 설명, Mags는 매거진 인터뷰 형식이다. 두 곳 모두 현재 기능과 시정 과정을 다룬다. SaaS 담당 세션이 이 자료로 원고를 작성하고 서비스에 반영한다.
 
-집필은 이 저장소 **main의 최신 문서**에서 시작한다. Apple·Android 게임 릴리스는 **v0.17**이다. Android 추가 자료는 [개발 원고](android-development-20261030.md)에 있다. 이후 추가한 글과 이미지 설명은 main에 있다.
+집필은 이 저장소 **main의 최신 문서**에서 시작한다. Apple·Android 게임 릴리스는 **v0.17**이다. Android 추가 자료는 [개발 원고](android-development-20261030.md)에 있다. 현재 main에는 웹/PWA·Tauri Mac·복원 코드·게임 버튼 수정도 들어 있다. 새 릴리스 태그는 아직 없다.
 
 ```sh
 python3 tools/document_contract.py plan --task developer_story
@@ -11,10 +11,20 @@ python3 tools/document_contract.py check
 
 첫 명령은 원문·기술 문서·그림·글쓰기 스킬의 읽기 목록을 출력한다. 아래 순서로 읽고, 기능의 세부 조건은 연결된 정책과 코드에서 확인한다.
 
+## 웹·PWA·Tauri와 복원 코드 집필
+
+[서버 없이 진행도를 옮기는 복원 코드](save-recovery-20261102.md)를 먼저 읽는다. 이 한 문서에 내가 코드를 제안한 이유, 원작 슬롯 보존, 공용 C++ 모듈, 저장소별 연결, 버튼을 잘못 구현한 경위와 수정, 플랫폼별 검사, 실제 캡처를 모았다.
+
+- **Apps:** 원작 슬롯→직렬화·압축·손상 검사→플랫폼 저장 연결→복원 재개 순서를 설명한다. 게임 코어와 복원 모듈을 구분한다.
+- **Mags:** 아이폰 진행을 다른 기기로 옮기고 싶었던 이유, 서버를 추가하지 않겠다는 판단, 게임 버튼을 원작 방식으로 다시 만들도록 지시한 과정을 다룬다. 화자는 나다.
+- **이미지:** 원고의 플레이·코드 생성·확인·복원 후 슬롯 화면을 사용한다. [촬영 정보](media/desktop-web-recovery-20261102/README.md)에서 플랫폼과 검사 저장을 확인한다.
+- **실제 상태:** [구현 상태](implementation-status.md), [검증](validation.md), [남은 과제](roadmap.md)를 함께 읽는다. Tauri 공개 설치본·Windows·Mac 성능 비교와 앱 버전 표기 정리는 남아 있다.
+- **원문:** 버튼 구현에 대한 내 글감 전체는 [TODO](../usability-todo.md#hm-ui-incident-writing--추가-버튼-구현과-작업-방식에-관한-글감--2026-11-02), 조사·수정 내역은 [경위서](../reviews/game-button-incident-20261101.md)에 있다.
+
 ## 읽는 순서
 
 1. [개발자의 변](../RESTORATION.md)과 [개발 동기 자료](../developer-background.md): 내가 제공한 원문, 연도 정정, 잡지사·필리핀 근무와 개발자 전업, HeavyMach를 선택한 이유.
-2. [README](../../README.md), [기능](features.md), [구현 상태](implementation-status.md): v0.17 게임과 추가 기능, 완료·남은 과제.
+2. [README](../../README.md), [기능](features.md), [구현 상태](implementation-status.md): 최신 main의 플랫폼·추가 기능, v0.17 태그와 이후 변경, 완료·남은 과제.
 3. [개발 과정](development-history.md), [트러블슈팅](troubleshooting.md): 분석·비교 순서, 내 질문과 시정 지시, 기술 원인과 결과.
 4. [구조](architecture.md), [설치](build-and-install.md), [검증](validation.md): 기술 구성, 실제 사용 절차, 날짜·기기·조건별 수치.
 5. [미디어 명세](media/gameplay-20261027/media-scenes.json), [문장 스킬](../../.agents/skills/write-project-text/SKILL.md): 장면·캡션·원본 시간과 집필 규칙.

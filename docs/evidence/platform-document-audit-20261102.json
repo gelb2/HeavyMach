@@ -1,0 +1,34 @@
+{
+  "date": "2026-11-02",
+  "baseMain": "79c3ac75e5ea821046261f88307e7c96f1ba2ebc",
+  "branch": "docs/platforms-save-recovery-story",
+  "productCodeChanged": false,
+  "personalReadmeOpeningPreserved": true,
+  "latestReleaseTag": "v0.17",
+  "newReleaseCreated": false,
+  "checks": {
+    "documentRoutes": 16,
+    "referencedFiles": 151,
+    "linkedDocuments": 49,
+    "editorialDocuments": 182,
+    "localLinks": 1115,
+    "translationPairs": 22,
+    "reportSections": 8,
+    "images": 13
+  },
+  "changes": [
+    "README platforms/code/architecture badges and platform status",
+    "canonical/design/runtime and visitor documentation aligned with implementation",
+    "serverless recovery-code article in Korean and English",
+    "README, document index, troubleshooting, architecture and Sass handoff links",
+    "completed TODO entries reconciled; release version labels and remaining tests retained"
+  ],
+  "media": "../public/media/desktop-web-recovery-20261102/provenance.json",
+  "visualCheck": "Safari local report title, contents and gameplay/recovery gallery",
+  "remaining": [
+    "native Mac frame comparison",
+    "Tauri public signed/notarized installer and Windows build",
+    "actual long-inactivity browser retention",
+    "app version labels before next release"
+  ]
+}
