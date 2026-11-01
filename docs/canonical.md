@@ -11,7 +11,7 @@ Android 개발 때문에 기존 iOS·macOS 프로젝트·소스·공용 코어·
 
 Apple 플랫폼 공용 모듈·native Mac·키보드 요구는 2026-10-26 사용자 지시를 따른다. [구조](apple-platforms.md)와 [키보드 정책](keyboard-input-policy.md)을 적용한다. Catalyst는 사용하지 않는다. iPad는 터치·기울기·키보드를 함께 지원한다.
 
-현행 기준: 2026-10-25. 적용 범위는 이 독립 저장소다. Unity는 별도 저장소이며 IPA 호환 실행기는 `Compatibility/`에 보존한다.
+원작 복원 기준은 2026-10-25에 정했으며 이후 승인된 플랫폼·기능 확장을 아래에 연결한다. 적용 범위는 이 독립 저장소다. Unity는 별도 저장소이며 IPA 호환 실행기는 `Compatibility/`에 보존한다.
 
 ## 읽는 순서와 우선순위
 
@@ -75,14 +75,18 @@ fastutlego가 `porting/wasm`에서 웹 빌드를 작성해 PR #24로 기여했�
 
 ## Tauri·웹 확장 계획 — 2026-10-31
 
-Tauri·순수 웹 개발은 기여자 웹 구현과 후속 수정 3건까지 고정한다. `Web/`·`Sources/Web/`·기존 Apple·Android·공용 코어·자원·도구는 수정하지 않는다. 새 코드는 `Desktop/Tauri/`·`Distribution/Web/`에 둔다. 저장 데이터 보존과 Mac·Windows 지원을 목적으로, 기존 웹 저장을 유지하고 별도 실행기에 OS 파일 백업·복구를 추가한다. Mac 비교 → 순수 웹·PWA 배포 → Windows 설치본 빌드 순서로 진행한다. [개발 계획](desktop-web-plan-20261031.md). `feat/tauri-mac`의 첫 Mac 실행기·OS 백업·시작 전 복구를 구현했다. 실제 슬롯 복구와 JS/Rust 20개 검사를 통과했다. 네이티브 Mac 비교·배포와 PWA·Windows는 남아 있다. [실행 기록](evidence/tauri-mac-start-20261031.json).
+Tauri Mac 실행기와 OS 파일 백업은 `Desktop/Tauri/`, 웹·PWA 시작 화면과 오프라인 배포는 `Distribution/Web/`가 담당한다. 웹·PWA는 [GitHub Pages](https://gelb2.github.io/HeavyMach/)에서 제공한다. Tauri Mac·웹·PWA·복원 코드는 develop을 거쳐 main에 병합했다. Windows 설치본은 남은 과제다. [현재 상태](current-status.md), [개발 계획과 검사](desktop-web-plan-20261031.md).
+
+착수 당시 기여자 웹 구현과 후속 수정 3건을 동결했다. 이후 사용자가 복원 코드 연결과 게임 안의 버튼 교체를 승인해 해당 연결부·빌드 구성을 수정했다. 기존 게임 코어와 원작 자원은 보존한다. 과거 동결 범위와 승인된 추가 범위는 `Desktop/Tauri/save-transfer-scope.json` 및 [버튼 교체 기록](reviews/game-button-incident-20261101.md)에서 대조한다.
 
 ## 복원 코드 공통 모듈과 UI 후속 조사 — 2026-11-01
 
-후속 사용자 지시로 `Modules/SaveTransfer`를 추가하고 Apple·Android·웹 연결부와 빌드 구성에 연결했다. 기존 `Sources/Core`·에셋은 유지한다. 이전 Tauri 착수 당시의 전체 파일 동결 설명 이후 승인된 범위이며 `Desktop/Tauri/save-transfer-scope.json`에 파일을 기록한다. 슬롯 화면에서만 코드를 생성·복원한다. [모듈](../Modules/SaveTransfer/README.md).
+`Modules/SaveTransfer`는 원작 세 슬롯과 HUD·키·조준 설정을 코드로 옮긴다. Apple·Android는 C++, 웹·PWA·Tauri는 같은 모듈의 WebAssembly 빌드를 쓴다. 사용자 입력·생성·복원 확정은 슬롯 선택 화면에서만 제공한다. 웹 계열은 복원 확정 뒤 게임을 닫고 시작 화면에서 저장을 적용한다.
 
-현재 동작하는 작업을 먼저 main에 통합하고 별도 UI 구현의 전수조사를 준비한다. [조사 대상과 기준](ui-implementation-audit.md). HUD 편집 도구, 복원 진입 버튼, 코드 입력창은 구분한다.
+서버 없는 수동 이전이며 다른 기기의 이후 플레이를 자동 병합하지 않는다. Apple UI는 전체 슬롯과 설정을 복원한다. Android·웹·PWA·Tauri UI는 단일 슬롯과 설정 포함 여부도 선택한다. 원작 `HvM.dat`의 3,624바이트를 유지하며 전투 중 상태를 별도 저장 형식으로 재해석하지 않는다. [공통 모듈과 플랫폼 차이](../Modules/SaveTransfer/README.md), [저장 정책](runtime-policy.md#복원-코드와-플랫폼별-저장--2026-11-02).
+
+복원 기능과 버튼 교체는 main에 반영했다. 별도 UI [조사 결과](ui-implementation-audit.md)와 [최신 검사](current-status.md)를 함께 읽는다. 텍스트 입력과 게임 버튼의 역할을 구분한다.
 
 ## 게임 버튼 통일 — 2026-11-02
 
-사용자는 게임 실행 후 모든 버튼에 원작 버튼 절차를 사용하도록 지시했다. 원작 버튼과 SET GAME UI는 보존하고, 추가했던 UIKit·AppKit·Android·DOM 버튼을 교체한다. 복원창의 생성·복사·확인·취소도 포함한다. 텍스트 입력 등 원작에서 제공하지 않은 기능에만 플랫폼 연결을 남긴다. [렌더링 규칙](rendering-policy.md#게임-실행-후-버튼-절차--2026-11-02-사용자-지시).
+사용자는 게임 실행 후 모든 버튼에 원작 버튼 절차를 사용하도록 지시했다. 원작 버튼과 SET GAME UI는 보존하고, 추가했던 UIKit·AppKit·Android·DOM 버튼을 게임 버튼으로 교체했다. 복원창의 생성·복사·확인·취소도 포함한다. 텍스트 입력 등 원작에서 제공하지 않은 기능에만 플랫폼 연결을 남긴다. [렌더링 규칙](rendering-policy.md#게임-실행-후-버튼-절차--2026-11-02-사용자-지시).

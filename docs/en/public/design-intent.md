@@ -51,3 +51,7 @@ I requested movable buttons, gauges and decorations to suit the device and the p
 The editor opens from the combat pause menu. Arrange the HUD over paused combat or a sample with a tank, terrain and enemies. Right-hand tools collapse while dragging. Apply, cancel and reset are available. [Controls](gameplay-guide.md#hud-위치-편집)
 
 [Current features](features.md) · [Validation](validation.md) · [Roadmap](roadmap.md)
+
+## Moving progress without a server
+
+I wanted to move the progress and weapons earned on my iPhone to other platforms. I chose a code containing the original save slots and settings, without accounts or server infrastructure. I directed Codex to share the codec in C++ and offer it from the slot-selection screen. [Design, implementation and recovery screens](save-recovery-20261102.md)

@@ -84,7 +84,7 @@ Current APKs use optimized game code and debug signing. Distribution signing, ex
 python3 tools/verify_build_resources.py
 ```
 
-This checks the size and SHA-256 of 1,504 build and test resources. Missing, damaged or undownloaded LFS files cause exit code 1. If LFS pointers remain, run `git lfs pull`, then check again.
+This checks the size and SHA-256 of 1,505 build and test resources. Missing, damaged or undownloaded LFS files cause exit code 1. If LFS pointers remain, run `git lfs pull`, then check again.
 
 <a id="시뮬레이터-빌드"></a>
 
@@ -192,3 +192,5 @@ xcodegen generate --spec macOS/project.yml
 ```
 
 For everyday builds, use the projects included in the repository. [Workspace structure](architecture.md)
+
+[Recovery-code format, supported restore choices and screenshots](save-recovery-20261102.md)

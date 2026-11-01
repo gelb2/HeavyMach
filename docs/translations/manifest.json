@@ -1,12 +1,12 @@
 {
   "schema_version": 1,
-  "review_date": "2026-10-30",
+  "review_date": "2026-11-02",
   "scope_file": "docs/public/document-translation-scope.json",
   "documents": {
     "README.md": {
       "english": "README.en.md",
-      "source_sha256": "92ef209a1b930484da8b5198a49b3a0f768e35487de6b49262380ab647dcaccf",
-      "english_sha256": "2b9e7095031ed7d2d40cedd8206f46096c20d7c4bf60696218dacf6396a77902",
+      "source_sha256": "60e6cf4fdec7e5338054e1a9a26ee77212c10e14010572d4742924898b96631a",
+      "english_sha256": "9876fce17a07598d05f4a659636c1cebeeae5468081c1b5398921609084c289e",
       "reviewed_numeric_difference": {
         "source_only": {
           "7": 1,
@@ -17,13 +17,13 @@
           "4": 2,
           "2": 3,
           "5": 1,
-          "0": 1
+          "11": 1
         },
         "english_only": {
           "13": 2
         }
       },
-      "review_note": "July, nine years/three months, aircraft and clip quantities use English words; source punctuation attaches Korean suffixes to digits. Shared personal paragraphs match the English statement. User-approved correction: 이승에서나 → in this life. Updated Android availability; personal paragraphs unchanged. Added iOS gallery and four physical-device cheat captures in both languages. Reviewed Android overview, regular Galaxy gameplay images/GIF, OS table, Gradle installation, shared-core paragraph and current-main versus v0.16 distinction; author opening unchanged. Reviewed 2026-10-30 Android coverage/link audit; current main and released v0.16 remain distinct. Lux sentence follows author commit 39b05834 where applicable. Reviewed v0.17 Android release, download links and current-version wording; historical v0.16 test results retained. Reviewed the Android experience essay, firsthand accounts, qualified hypotheses, public sources, author voice and README link. Private evidence stays outside Git. Reviewed Lysenko history expansion: vernalization versus heritable claims, Vavilov persecution, arrest and prison death, 1948 Party endorsement and institutional purge. Citations and dates match in both languages. Korean hypothesis name follows the author: 신 리셴코주의. Final title follows the latest author instruction: 신(新) 리센코주의와 정렬세. Reviewed web PR #24 attribution, web build instructions and follow-up fixes; personal paragraphs preserved. Added matching links to the Korean first-PR article. Separated the first-PR/Tauri link into its own level-two section in both READMEs; retained the Android essay and platform anchors. Reviewed 2026-11-01 Quick Play, contributor attribution, web/PWA/Tauri integration and recovery-button audit. Dates use English month names; all new test counts and cache bytes match. Personal passages unchanged."
+      "review_note": "July, nine years/three months, aircraft and clip quantities use English words; source punctuation attaches Korean suffixes to digits. Shared personal paragraphs match the English statement. User-approved correction: 이승에서나 → in this life. Updated Android availability; personal paragraphs unchanged. Added iOS gallery and four physical-device cheat captures in both languages. Reviewed Android overview, regular Galaxy gameplay images/GIF, OS table, Gradle installation, shared-core paragraph and current-main versus v0.16 distinction; author opening unchanged. Reviewed 2026-10-30 Android coverage/link audit; current main and released v0.16 remain distinct. Lux sentence follows author commit 39b05834 where applicable. Reviewed v0.17 Android release, download links and current-version wording; historical v0.16 test results retained. Reviewed the Android experience essay, firsthand accounts, qualified hypotheses, public sources, author voice and README link. Private evidence stays outside Git. Reviewed Lysenko history expansion: vernalization versus heritable claims, Vavilov persecution, arrest and prison death, 1948 Party endorsement and institutional purge. Citations and dates match in both languages. Korean hypothesis name follows the author: 신 리셴코주의. Final title follows the latest author instruction: 신(新) 리센코주의와 정렬세. Reviewed web PR #24 attribution, web build instructions and follow-up fixes; personal paragraphs preserved. Added matching links to the Korean first-PR article. Separated the first-PR/Tauri link into its own level-two section in both READMEs; retained the Android essay and platform anchors. Reviewed 2026-11-01 Quick Play, contributor attribution, web/PWA/Tauri integration and recovery-button audit. Dates use English month names; all new test counts and cache bytes match. Personal passages unchanged. Reviewed 2026-11-02 platform status and recovery article: shared slots/codec, platform-specific restore choices, button fixes and measured versus pending checks. English number words/month names preserve source values. Personal opening unchanged."
     },
     "CHANGELOG.md": {
       "english": "CHANGELOG.en.md",
@@ -119,45 +119,44 @@
     },
     "docs/public/features.md": {
       "english": "docs/en/public/features.md",
-      "source_sha256": "e17900e5e22a1e2c8d5b206ad210bb7860277ca5b44b962c7490d921bfd50f1b",
-      "english_sha256": "d83d34a771cd51c848b4ba4c20ace1b6e5f2d05737d9178dca6a29a7e32e58a1",
+      "source_sha256": "753d4ff9accd78d2752c9be5e9ce9fb7aca66809ccf41c3ca7adfdc6ade68af1",
+      "english_sha256": "5efb7e3f4d079d655c148783c08b844c0f31fce45593ba556d2f063b126c90be",
       "reviewed_numeric_difference": {
         "source_only": {
-          "6": 1,
+          "6": 2,
+          "2": 7,
+          "4": 2,
           "3": 7,
-          "2": 4,
-          "1": 1,
-          "4": 1
+          "1": 1
         },
         "english_only": {
           "7": 1
         }
       },
-      "review_note": "Counts and durations sometimes use words. Ace Combat 7 and 8 expands 에이스 컴뱃7·8; only the digit preceded by Korean text is omitted by the numeric extractor. All weapon and placement tables compared. Updated Android availability; personal paragraphs unchanged. Reviewed 2026-10-30 Android coverage/link audit; current main and released v0.16 remain distinct. Lux sentence follows author commit 39b05834 where applicable."
+      "review_note": "Counts and durations sometimes use words. Ace Combat 7 and 8 expands 에이스 컴뱃7·8; only the digit preceded by Korean text is omitted by the numeric extractor. All weapon and placement tables compared. Updated Android availability; personal paragraphs unchanged. Reviewed 2026-10-30 Android coverage/link audit; current main and released v0.16 remain distinct. Lux sentence follows author commit 39b05834 where applicable. Reviewed 2026-11-02 platform status and recovery article: shared slots/codec, platform-specific restore choices, button fixes and measured versus pending checks. English number words/month names preserve source values. Personal opening unchanged."
     },
     "docs/public/implementation-status.md": {
       "english": "docs/en/public/implementation-status.md",
-      "source_sha256": "f867dc5e7ebfa74f79932bf8824027ee9b420882d331fd416217175f54132a98",
-      "english_sha256": "f315fd08473a60a7673b8f99ed58458e9889ecd9b12ab25efcbefced29d3eb77",
+      "source_sha256": "9320b4c6697db6be5d99b32608515f1b1413e27b61adeeb2fd7af7cf3273c0ad",
+      "english_sha256": "d117771699ec678b76c1dffb6d531a4a41557cb306f5de8fb3156ee9d18429ab",
       "reviewed_numeric_difference": {
         "source_only": {
-          "10": 2,
-          "3": 7,
-          "2": 3,
-          "1": 1,
-          "4": 2,
-          "8": 1
+          "11": 2,
+          "2": 1,
+          "3": 4,
+          "10": 1,
+          "4": 2
         },
         "english_only": {
           "13": 1
         }
       },
-      "review_note": "English month/date syntax, word counts and iPad 13-inch spacing differ. Current v0.16 and historical v0.15 tests distinguished. Android implementation and linked evidence updated on 2026-10-30; existing paragraphs retained. Numeric wording reviewed. Updated Android availability; personal paragraphs unchanged. Reviewed Android develop-to-main merge and v0.16 exclusion, matching installation and gallery links. Reviewed v0.17 Android release, download links and current-version wording; historical v0.16 test results retained."
+      "review_note": "English month/date syntax, word counts and iPad 13-inch spacing differ. Current v0.16 and historical v0.15 tests distinguished. Android implementation and linked evidence updated on 2026-10-30; existing paragraphs retained. Numeric wording reviewed. Updated Android availability; personal paragraphs unchanged. Reviewed Android develop-to-main merge and v0.16 exclusion, matching installation and gallery links. Reviewed v0.17 Android release, download links and current-version wording; historical v0.16 test results retained. Reviewed 2026-11-02 platform status and recovery article: shared slots/codec, platform-specific restore choices, button fixes and measured versus pending checks. English number words/month names preserve source values. Personal opening unchanged."
     },
     "docs/public/build-and-install.md": {
       "english": "docs/en/public/build-and-install.md",
-      "source_sha256": "1c0f99e51ac8af3bfb55010fb5a9a079842ef0df57662cf75e2f79851112b9fa",
-      "english_sha256": "695dd62ad5a1b3a585469215c698865f7164251e23d461d5f3318707ea4b3bcf",
+      "source_sha256": "41c71470e3f69062112b342f743132c9c13eee6e7942482660c2ec4c6fbe5de3",
+      "english_sha256": "8347c2f1732c7468b96970dfd111d4d73b207f21ed7922f3d1d71909e6780eec",
       "reviewed_numeric_difference": {
         "source_only": {
           "10": 1,
@@ -165,27 +164,29 @@
         },
         "english_only": {}
       },
-      "review_note": "October and four builds use English words. All fenced commands copied unchanged; current resource count is 1504. Reviewed Android SDK/NDK/CMake/JDK requirements against Gradle config, identical commands and APK paths, debug signing and current-main scope in both languages. Reviewed v0.17 Android release, download links and current-version wording; historical v0.16 test results retained."
+      "review_note": "October and four builds use English words. All fenced commands copied unchanged; current resource count is 1504. Reviewed Android SDK/NDK/CMake/JDK requirements against Gradle config, identical commands and APK paths, debug signing and current-main scope in both languages. Reviewed v0.17 Android release, download links and current-version wording; historical v0.16 test results retained. Reviewed 2026-11-02 platform status and recovery article: shared slots/codec, platform-specific restore choices, button fixes and measured versus pending checks. English number words/month names preserve source values. Personal opening unchanged."
     },
     "docs/public/gameplay-guide.md": {
       "english": "docs/en/public/gameplay-guide.md",
-      "source_sha256": "ab80726966263e562a22b7c366e63533b4d5ee567ed9440a1663ac69321d22ea",
-      "english_sha256": "efe39d7e5591582aed57ce997eed66486202eb8dd5384a19b40c6be58dfab88a",
+      "source_sha256": "ce649714b57681d41a24e2a73b9666f10f7efac70b171c7da1b2c4e06e2c2594",
+      "english_sha256": "7e2dae286088e2217e7466efec890a72b168e162d468e5479e5c9c646b4ff513",
       "reviewed_numeric_difference": {
         "source_only": {},
         "english_only": {}
       },
-      "review_note": "Compared source and English meaning, tables, commands, attribution and current/planned status. Numeric tokens match. Reviewed 2026-10-30 Android coverage/link audit; current main and released v0.16 remain distinct. Lux sentence follows author commit 39b05834 where applicable. Reviewed F3 recovery-code steps and F6 HUD tool focus in both languages."
+      "review_note": "Compared source and English meaning, tables, commands, attribution and current/planned status. Numeric tokens match. Reviewed 2026-10-30 Android coverage/link audit; current main and released v0.16 remain distinct. Lux sentence follows author commit 39b05834 where applicable. Reviewed F3 recovery-code steps and F6 HUD tool focus in both languages. Reviewed 2026-11-02 platform status and recovery article: shared slots/codec, platform-specific restore choices, button fixes and measured versus pending checks. English number words/month names preserve source values. Personal opening unchanged."
     },
     "docs/public/architecture.md": {
       "english": "docs/en/public/architecture.md",
-      "source_sha256": "c00d932b501f9c74cf7488fd66bf545b218ba7556001a2fceb9ed82ba6b57aa2",
-      "english_sha256": "9e86c68dc4894911fcb65e941592cd476dab6eb7611f1a7ebdb7618f27096833",
+      "source_sha256": "01d16b427598a873a04c04fa9c3b0449bd11419af782fb116a0ee88418d78e6c",
+      "english_sha256": "274202ae3ecc7132193593a8b036c91e416b8456d6a32ef10ca840d2857152a0",
       "reviewed_numeric_difference": {
-        "source_only": {},
+        "source_only": {
+          "10": 1
+        },
         "english_only": {}
       },
-      "review_note": "Compared source and English meaning, tables, commands, attribution and current/planned status. Numeric tokens match. Android implementation and linked evidence updated on 2026-10-30; existing paragraphs retained. Numeric wording reviewed. Reviewed Android Gradle/NDK shared core and Kotlin/JNI/platform-host responsibilities. Reviewed 2026-10-30 Android coverage/link audit; current main and released v0.16 remain distinct. Lux sentence follows author commit 39b05834 where applicable."
+      "review_note": "Compared source and English meaning, tables, commands, attribution and current/planned status. Numeric tokens match. Android implementation and linked evidence updated on 2026-10-30; existing paragraphs retained. Numeric wording reviewed. Reviewed Android Gradle/NDK shared core and Kotlin/JNI/platform-host responsibilities. Reviewed 2026-10-30 Android coverage/link audit; current main and released v0.16 remain distinct. Lux sentence follows author commit 39b05834 where applicable. Reviewed 2026-11-02 platform status and recovery article: shared slots/codec, platform-specific restore choices, button fixes and measured versus pending checks. English number words/month names preserve source values. Personal opening unchanged."
     },
     "docs/public/development-history.md": {
       "english": "docs/en/public/development-history.md",
@@ -204,8 +205,8 @@
     },
     "docs/public/troubleshooting.md": {
       "english": "docs/en/public/troubleshooting.md",
-      "source_sha256": "6b8dbd1b4adff32b3b6f7b440afbcae35157974e52c006dde58b481e79727bb1",
-      "english_sha256": "b04ce99c225aa23c48fa5482d4afc4d140c874c19ec96cd540b7e57fbdf8447f",
+      "source_sha256": "ab2f9116c2433d4a1834e5b72f027b77c0d18792287eaaeffb59085c659015a4",
+      "english_sha256": "a461a7967ca1c028347705426932bba60481536f9e18819d0b7378034c3773ae",
       "reviewed_numeric_difference": {
         "source_only": {
           "1": 1,
@@ -218,19 +219,21 @@
         },
         "english_only": {}
       },
-      "review_note": "English words replace counts and months. Historical 1482-resource result retained. Subject attribution, failures and author criticism preserved. Android implementation and linked evidence updated on 2026-10-30; existing paragraphs retained. Numeric wording reviewed. Reviewed 2026-11-01 Quick Play, contributor attribution, web/PWA/Tauri integration and recovery-button audit. Dates use English month names; all new test counts and cache bytes match. Personal passages unchanged."
+      "review_note": "English words replace counts and months. Historical 1482-resource result retained. Subject attribution, failures and author criticism preserved. Android implementation and linked evidence updated on 2026-10-30; existing paragraphs retained. Numeric wording reviewed. Reviewed 2026-11-01 Quick Play, contributor attribution, web/PWA/Tauri integration and recovery-button audit. Dates use English month names; all new test counts and cache bytes match. Personal passages unchanged. Reviewed 2026-11-02 platform status and recovery article: shared slots/codec, platform-specific restore choices, button fixes and measured versus pending checks. English number words/month names preserve source values. Personal opening unchanged."
     },
     "docs/public/validation.md": {
       "english": "docs/en/public/validation.md",
-      "source_sha256": "98ce0b6d0057b30ee2ba1231aff73f89180c671f448b91b06502d35372d4bd34",
-      "english_sha256": "416b9ccd2f06a145f38e9293ecf59ac116dba770b991170f30f25ff655b0d04e",
+      "source_sha256": "0998a2b041af9ceb1a64afa15c782e196a16595091108fcdfbb6348c6879cb76",
+      "english_sha256": "b7df7671a0554873186e9b7fbbfc2c20e2067935944235eac9c2de53e965ad14",
       "reviewed_numeric_difference": {
         "source_only": {
-          "10": 4,
+          "11": 2,
+          "3": 3,
+          "9": 1,
+          "10": 5,
           "4": 3,
           "1": 2,
           "8": 2,
-          "3": 2,
           "0": 3,
           "2": 1
         },
@@ -238,7 +241,7 @@
           "20": 1
         }
       },
-      "review_note": "Dates and counts use English words. The two 20ms references are preserved; source 기준20ms attaches digits to Korean text. Historical failures and current v0.16 check separated. Android implementation and linked evidence updated on 2026-10-30; existing paragraphs retained. Numeric wording reviewed. Reviewed latest tag versus main Android status and device-results link. Reviewed 2026-10-30 Android coverage/link audit; current main and released v0.16 remain distinct. Lux sentence follows author commit 39b05834 where applicable. Reviewed v0.17 Android release, download links and current-version wording; historical v0.16 test results retained."
+      "review_note": "Dates and counts use English words. The two 20ms references are preserved; source 기준20ms attaches digits to Korean text. Historical failures and current v0.16 check separated. Android implementation and linked evidence updated on 2026-10-30; existing paragraphs retained. Numeric wording reviewed. Reviewed latest tag versus main Android status and device-results link. Reviewed 2026-10-30 Android coverage/link audit; current main and released v0.16 remain distinct. Lux sentence follows author commit 39b05834 where applicable. Reviewed v0.17 Android release, download links and current-version wording; historical v0.16 test results retained. Reviewed 2026-11-02 platform status and recovery article: shared slots/codec, platform-specific restore choices, button fixes and measured versus pending checks. English number words/month names preserve source values. Personal opening unchanged."
     },
     "docs/public/lux-lunae-intent-20261028.md": {
       "english": "docs/en/public/lux-lunae-intent-20261028.md",
@@ -263,18 +266,18 @@
     },
     "docs/public/index.md": {
       "english": "docs/en/public/index.md",
-      "source_sha256": "9c2508164ce3d4bab1843745fe62f9b4e304894b2aa592ac52f8e8b0c9b9e209",
-      "english_sha256": "62b47d220208c40a53c1ce8128c7c042d8f3a66369e00690f75a425284e6e89a",
+      "source_sha256": "36f42039ec15d48a64b6c05a337bc4b925b738cbbdca7e301d2045f50d4376e5",
+      "english_sha256": "88fa34be6a415bbf10eb01c0a238c62acf1373fa180aaa9cfd535798dd429e20",
       "reviewed_numeric_difference": {
         "source_only": {},
         "english_only": {}
       },
-      "review_note": "Compared source and English meaning, tables, commands, attribution and current/planned status. Numeric tokens match. Reviewed Android availability and installation/development/gallery links; English captions identify Korean-only linked articles. Reviewed 2026-10-30 Android coverage/link audit; current main and released v0.16 remain distinct. Lux sentence follows author commit 39b05834 where applicable. Reviewed v0.17 Android release, download links and current-version wording; historical v0.16 test results retained. Reviewed the Android experience essay, firsthand accounts, qualified hypotheses, public sources, author voice and README link. Private evidence stays outside Git."
+      "review_note": "Compared source and English meaning, tables, commands, attribution and current/planned status. Numeric tokens match. Reviewed Android availability and installation/development/gallery links; English captions identify Korean-only linked articles. Reviewed 2026-10-30 Android coverage/link audit; current main and released v0.16 remain distinct. Lux sentence follows author commit 39b05834 where applicable. Reviewed v0.17 Android release, download links and current-version wording; historical v0.16 test results retained. Reviewed the Android experience essay, firsthand accounts, qualified hypotheses, public sources, author voice and README link. Private evidence stays outside Git. Reviewed 2026-11-02 platform status and recovery article: shared slots/codec, platform-specific restore choices, button fixes and measured versus pending checks. English number words/month names preserve source values. Personal opening unchanged."
     },
     "docs/public/design-intent.md": {
       "english": "docs/en/public/design-intent.md",
-      "source_sha256": "f765f35a37d0437df537ac5559d0cc8c46c31653bb3ec1121e9bcd49d9ab7317",
-      "english_sha256": "949087c65a6d7669742291b297257563569adbbb19f9f99fe76d86623f0211e1",
+      "source_sha256": "d578c3547f2e6c0b474c1aec4eedd300548cbb8f5ee02377d85792a94b8e4e42",
+      "english_sha256": "a0ceee6b94dd6e484cd4cc9024b9ce2afe802fb86f969b8d3ac6637e86206349",
       "reviewed_numeric_difference": {
         "source_only": {
           "2": 1,
@@ -283,17 +286,19 @@
         },
         "english_only": {}
       },
-      "review_note": "Two/four/six unit counts are written as words in English. Weapon and placement values, deliberate turret-height exception and C removal preserved."
+      "review_note": "Two/four/six unit counts are written as words in English. Weapon and placement values, deliberate turret-height exception and C removal preserved. Reviewed 2026-11-02 platform status and recovery article: shared slots/codec, platform-specific restore choices, button fixes and measured versus pending checks. English number words/month names preserve source values. Personal opening unchanged."
     },
     "docs/public/roadmap.md": {
       "english": "docs/en/public/roadmap.md",
-      "source_sha256": "fd97f5b8088af88a36582b0570f86d9dba26d61a97620d58b298c1b14a168d2c",
-      "english_sha256": "da629dedfca5eef1330dae945f12984ba235e8a486bd03ce44c866591a8c0eae",
+      "source_sha256": "346c75b0f5a40e6a0c14a2ba6dedc89304278cfdb73b5f84b4a5b283437e3930",
+      "english_sha256": "6d291c4dd8bfda8eff39d73ba6c474a2585fb08de5334c3f7800c1e3b116f9f9",
       "reviewed_numeric_difference": {
-        "source_only": {},
+        "source_only": {
+          "11": 2
+        },
         "english_only": {}
       },
-      "review_note": "Compared source and English meaning, tables, commands, attribution and current/planned status. Numeric tokens match. Android implementation and linked evidence updated on 2026-10-30; existing paragraphs retained. Numeric wording reviewed. Reviewed 2026-10-30 Android coverage/link audit; current main and released v0.16 remain distinct. Lux sentence follows author commit 39b05834 where applicable. Reviewed v0.17 Android release, download links and current-version wording; historical v0.16 test results retained. Recorded v0.17 publication and the remaining draft-discovery recovery task."
+      "review_note": "Compared source and English meaning, tables, commands, attribution and current/planned status. Numeric tokens match. Android implementation and linked evidence updated on 2026-10-30; existing paragraphs retained. Numeric wording reviewed. Reviewed 2026-10-30 Android coverage/link audit; current main and released v0.16 remain distinct. Lux sentence follows author commit 39b05834 where applicable. Reviewed v0.17 Android release, download links and current-version wording; historical v0.16 test results retained. Recorded v0.17 publication and the remaining draft-discovery recovery task. Reviewed 2026-11-02 platform status and recovery article: shared slots/codec, platform-specific restore choices, button fixes and measured versus pending checks. English number words/month names preserve source values. Personal opening unchanged."
     },
     "docs/public/android-ai-experience-20261030.md": {
       "english": "docs/en/public/android-ai-experience-20261030.md",
@@ -309,6 +314,28 @@
         }
       },
       "review_note": " Reviewed the Android experience essay, firsthand accounts, qualified hypotheses, public sources, author voice and README link. Private evidence stays outside Git. Reviewed Lysenko history expansion: vernalization versus heritable claims, Vavilov persecution, arrest and prison death, 1948 Party endorsement and institutional purge. Citations and dates match in both languages. Korean hypothesis name follows the author: 신 리셴코주의. Reviewed quotation/paraphrase/research labels and bold emphasis. Author-supplied Korean explanation preserved verbatim apart from Markdown emphasis; the quotation identifies the published English translation. Added Vavilov methodology and the author-provided interpretation of power and knowledge; paired sources and meaning reviewed. Final title follows the latest author instruction: 신(新) 리센코주의와 정렬세."
+    },
+    "docs/public/save-recovery-20261102.md": {
+      "english": "docs/en/public/save-recovery-20261102.md",
+      "source_sha256": "e70398d2dcc96b3da22f138f6ba36bd1cd15edd2f2dc778f084c761bee9e1590",
+      "english_sha256": "6da7607c735e17220ed06a7cd5cdb73b5e2a343a1487cb73ba83222a92fa5a38",
+      "reviewed_numeric_difference": {
+        "source_only": {
+          "3": 3,
+          "10": 1,
+          "16": 1,
+          "7": 1,
+          "11": 1,
+          "20": 1,
+          "18": 1,
+          "9": 1,
+          "51ms": 1
+        },
+        "english_only": {
+          "51": 1
+        }
+      },
+      "review_note": " Reviewed 2026-11-02 platform status and recovery article: shared slots/codec, platform-specific restore choices, button fixes and measured versus pending checks. English number words/month names preserve source values. Personal opening unchanged."
     }
   }
 }

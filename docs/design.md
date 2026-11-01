@@ -4,7 +4,7 @@
 
 Apple 구성은 [공용 모듈](apple-platforms.md)을 따른다. 세 프로젝트를 workspace에서 연결하고 Core·AppleRuntime·Assets를 공유한다. [키보드 입력](keyboard-input-policy.md)은 GameSession 앞의 입력 계층이며 게임 수식은 유지한다.
 
-확인한 원작 경로를 중심으로 소스를 연결한다. 현행 구조는 2026-10-25 기준이다. 각 모듈의 전체 원본 동등성은 current-status와 source-coverage의 확인 범위로 제한한다. 주소는 HeavyMach 1.13 실행 파일 기준이다.
+2026-10-25에 대조한 원작 경로와 이후 플랫폼·기능 확장의 소스를 연결한다. 각 모듈의 전체 원본 동등성은 current-status와 source-coverage의 확인 범위로 제한한다. 주소는 HeavyMach 1.13 실행 파일 기준이다.
 
 ## 문서 역할
 
@@ -89,18 +89,24 @@ MAP/MCH 관찰 구조는 LE u32 `declared_size,type,data_size`, payload, LE u32 
 
 ## 웹 빌드
 
-`Sources/Web`은 HMGameView·HMMenus·HMGameHUD·HMMedia·HMOpenALAudio를 C++로 옮긴 브라우저 호스트다. 호출 흐름은 WebGameView → GameSession/World → RenderCommand → Media → GLRenderer로 iOS와 같다. `WebGLRenderer`는 WebGL2 셰이더로 GL_REPLACE/MODULATE, 원본 블렌드 표, 가위 영역, float 행렬, RGBA8 장면 버퍼→복사 텍스처→최종 사각형을 재현한다. 메뉴·HUD·프레임 조립은 플랫폼별 호스트에 있다. 웹 호스트의 업그레이드 정지·저장 복구·GPU 복구 수정까지 반영했다. 이후 Tauri·순수 웹 개발에서는 이 웹 호스트도 고정한다. [이식 문서](web-port-20261028.md).
+`Sources/Web`은 HMGameView·HMMenus·HMGameHUD·HMMedia·HMOpenALAudio를 C++로 옮긴 브라우저 호스트다. 호출 흐름은 WebGameView → GameSession/World → RenderCommand → Media → GLRenderer로 iOS와 같다. `WebGLRenderer`는 WebGL2 셰이더로 GL_REPLACE/MODULATE, 원본 블렌드 표, 가위 영역, float 행렬, RGBA8 장면 버퍼→복사 텍스처→최종 사각형을 재현한다. 메뉴·HUD·프레임 조립은 플랫폼별 호스트에 있다. 웹 호스트의 업그레이드 정지·저장 복구·GPU 복구 수정까지 반영했다. Tauri 착수 때 이 웹 호스트를 고정했고, 이후 승인된 복원 코드·게임 버튼 연결을 추가했다. [이식 문서](web-port-20261028.md).
 
 
 ## Tauri·웹 확장 계획 — 2026-10-31
 
-새 실행기·시작 전 복구·OS 파일 백업은 `Desktop/Tauri/`, 새 순수 웹 배포와 PWA 시작 화면·manifest·아이콘·Service Worker는 `Distribution/Web/`가 담당한다. 게임 파일은 원본 그대로 포함하고 오프라인 캐시와 진행 저장을 분리한다. 기존 `Web/`·`Sources/Web/`는 수정하지 않고 빌드 입력으로만 쓴다. IDBFS·localStorage를 교체하지 않는다. 별도 실행기가 이미 저장된 내용을 백업하고 게임 시작 전에 복구한다. 세 공용 C++ 헤더의 기존 iOS 경로 읽기는 명시적으로 유지한다. [개발 계획](desktop-web-plan-20261031.md). `feat/tauri-mac`의 첫 Mac 실행기·OS 백업·시작 전 복구를 구현했다. 실제 슬롯 복구와 JS/Rust 20개 검사를 통과했다. 네이티브 Mac 비교·배포와 PWA·Windows는 남아 있다. [실행 기록](evidence/tauri-mac-start-20261031.json).
+Tauri Mac의 실행기·시작 전 복구·OS 파일 백업은 `Desktop/Tauri/`, 웹·PWA 시작 화면·manifest·아이콘·Service Worker는 `Distribution/Web/`가 담당한다. 게임의 IDBFS·localStorage를 유지하며, Tauri는 저장이 끝난 내용을 별도 OS 파일에도 백업한다. PWA의 게임 파일 캐시와 사용자 진행 저장은 분리한다.
+
+Tauri Mac·웹·PWA와 복원 코드는 main에 병합했고 웹·PWA는 GitHub Pages에 배포했다. 네이티브 Mac·Tauri·웹·PWA의 비교 기록과 남은 Windows 작업은 [개발 계획](desktop-web-plan-20261031.md), [현재 상태](current-status.md)를 따른다. 착수 당시의 파일 동결 이후 사용자 승인으로 추가한 복원·버튼 연결은 [범위 기록](../Desktop/Tauri/save-transfer-scope.json)과 [버튼 교체 기록](reviews/game-button-incident-20261101.md)에 있다.
 
 ## 복원 코드 공통 모듈과 UI 후속 조사 — 2026-11-01
 
-후속 사용자 지시로 `Modules/SaveTransfer`를 추가하고 Apple·Android·웹 연결부와 빌드 구성에 연결했다. 기존 `Sources/Core`·에셋은 유지한다. 이전 Tauri 착수 당시의 전체 파일 동결 설명 이후 승인된 범위이며 `Desktop/Tauri/save-transfer-scope.json`에 파일을 기록한다. 슬롯 화면에서만 코드를 생성·복원한다. [모듈](../Modules/SaveTransfer/README.md).
+`Modules/SaveTransfer`는 게임 코어 밖에서 `SaveData`의 세 슬롯을 읽고 쓴다. 플랫폼별 어댑터가 저장 파일·HUD·키·조준 설정을 `Snapshot`으로 바꾸고, 공통 C++가 검증·압축·코드 해석·슬롯 선택·복원 순서를 맡는다. Apple·Android는 이 C++를 직접 링크하고 웹·PWA·Tauri는 별도 `codec.wasm`을 호출한다. 탄도·이동·전투 계산은 이 모듈에 의존하지 않는다.
 
-현재 동작하는 작업을 먼저 main에 통합하고 별도 UI 구현의 전수조사를 준비한다. [조사 대상과 기준](ui-implementation-audit.md). HUD 편집 도구, 복원 진입 버튼, 코드 입력창은 구분한다.
+`HM1-`에는 원작 저장 3,624바이트와 설정 값이 들어간다. PackBits형 압축·Base64url·CRC32를 사용하며 암호화와 salt는 없다. 코드만으로 데이터를 읽을 수 있어 서버 조회가 필요 없다. 현재 실행 중인 전투를 직렬화하지 않고 마지막 저장을 옮긴다. 같은 코드를 여러 기기에서 복원할 수 있지만 이후의 변경은 새 코드를 만들어 다시 전달한다.
+
+Apple 복원 UI는 세 슬롯과 설정을 모두 교체한다. Android·웹·PWA·Tauri는 전체 또는 단일 슬롯을 선택하고 설정 포함 여부를 고른다. 단일 슬롯 복원은 다른 두 슬롯을 유지한다. 설정은 앱 전체에 적용한다. [형식·포함 값·플랫폼 차이](../Modules/SaveTransfer/README.md).
+
+복원은 기존 값 보관 → 목표값 대기 기록 → 적용 → 다시 읽어 대조 → 대기 기록 삭제 순서다. 도중에 종료되면 다음 시작에서 목표값 적용을 재개한다. 웹 계열은 슬롯 화면에서 요청한 뒤 게임 페이지를 종료하고 적용해, 실행 중인 메모리가 복원 파일을 덮어쓰지 않게 한다. 플랫폼별 파일과 중단 처리는 [저장 정책](runtime-policy.md#복원-코드와-플랫폼별-저장--2026-11-02)을 따른다.
 
 
 ## 추가 게임 버튼 — 2026-11-02

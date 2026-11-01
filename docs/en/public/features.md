@@ -6,7 +6,7 @@
 [한국어](../../public/features.md) | [English](features.md)
 <!-- language-nav:end -->
 
-Current main includes tank movement, jumping, firing, weapons, parts, upgrades, missions, bosses, result screens and saves. Wider screens, Apple platform support, auto-aim and six aircraft are additions I planned and asked Codex to implement.
+Current main includes tank movement, jumping, firing, weapons, parts, upgrades, missions, bosses, result screens and saves. Wider screens, Apple/Android support, auto-aim, six aircraft, two ground enemies, HUD editing and cross-device recovery codes are additions I planned and asked Codex to implement. The web port came from [fastutlego’s PR #24](https://github.com/gelb2/HeavyMach/pull/24); I then requested PWA and Tauri distribution based on that work.
 
 <a id="넓은-화면과-메뉴"></a>
 
@@ -29,6 +29,38 @@ The cheat app has its own app ID and saves. Starting conditions include mission,
 [Controls](gameplay-guide.md) · [Architecture](architecture.md) · [Cheat validation](../../validation-mode.md)
 
 The regular and cheat Android apps use the same C++ game rules and resources. They support touch, tilt, keyboard, auto-aim, added enemies and HUD editing. Android screen, input, audio and save connections were implemented separately while preserving existing Apple files. [Android development](../../public/android-development-20261030.md), [installation](build-and-install.md#android-빌드와-설치), [Galaxy gameplay](../../public/android-gameplay-20261030.md).
+
+<a id="웹pwatauri-mac"></a>
+
+## Web, PWA and Tauri Mac
+
+The [Web version](https://gelb2.github.io/HeavyMach/) runs in a browser or as an installed Home Screen PWA. The launcher recommends installation and also offers browser play. Once resources finish downloading and pass validation, the game can start offline. It compiles the same C++ game rules to WebAssembly and supports touch, tilt, keyboards and trackpads.
+
+Tauri Mac includes this Web game and adds OS file backups. If Web storage is empty, it restores the last valid file. Local app builds, play, restoration and exit have been checked. A public installer, notarization and the Windows version remain. [Web/PWA installation](../../../Distribution/Web/README.md) · [Tauri builds and saves](../../../Desktop/Tauri/README.md).
+
+<a id="복원-코드"></a>
+
+## Recovery codes
+
+I asked for progress transfer between platforms without a server or account. TRANSFER PROGRESS on the slot-selection screen creates an `HM1-` code to enter on another device. It carries missions, experience, weapon order, ammunition, part upgrades, HUD layout, key bindings and aim settings. The restored part upgrades reconstruct the tank's appearance.
+
+Apple restores all slots. Android, Web/PWA and Tauri can restore all slots or a selected slot, with options to include HUD and control settings. After code validation, a confirmation screen applies restoration. Existing data is backed up first, and the applied result is read back for comparison. Code creation and entry are available on the slot-selection screen.
+
+`Modules/SaveTransfer` provides the shared format, validation and restoration. Core movement, ballistics, enemies, damage calculations and the original slot structure remain unchanged. [Module](../../../Modules/SaveTransfer/README.md) · [Device and public Web tests](validation.md#게임-버튼과-복원--2026-11-02).
+
+<a id="hud-편집과-게임-버튼"></a>
+
+## HUD editing and game buttons
+
+Pause combat and select SET GAME UI to drag buttons, gauges and decorations over a preview containing the tank, terrain and enemies. Hit areas move with the artwork. Reset, cancel and apply are available. [Screens and tests](../../public/hud-improvement-plan-20261028.md).
+
+Added HUD editing, recovery and key-setting buttons use the original button artwork, pressed states and input procedure. Existing menus and SET GAME UI remain. OS and browser services handle code text entry, clipboard access and file selection.
+
+<a id="지상-적-2종"></a>
+
+## Two ground enemies
+
+Shilka fires six white gun rounds in a burst; Tunguska fires four white rounds and two missiles. They reuse existing ground-unit part assembly and movement, with radar rotating independently of the turret. There are 152 additions across 35 stages. Shilka's turret height follows the in-game proportions I requested. [Final artwork, placements and tests](../../public/ground-aa-art-20261028.md#두-포탑-높이-맞춤).
 
 <a id="자동조준"></a>
 
@@ -156,4 +188,6 @@ Codex ran 21 core tests and combat, input and off-screen entry tests on iPhone, 
 
 ## Further features
 
-HUD editing is available through SET GAME UI in the pause menu. Drag buttons, gauges and upper decorations; their hit areas move with them. Reset, cancel, apply and game preview are available. [Screens and tests](../../public/hud-improvement-plan-20261028.md). Further work includes clearer auto-aim status, tutorial missions 0-0 through 0-4 and separate controls on a folded screen. Android runs on Galaxy; extended sessions, tablet tests and distribution signing remain. [Detailed status](implementation-status.md)
+Further work includes clearer auto-aim status, tutorial missions 0-0 through 0-4 and separate controls on a folded screen. Extended Android sessions and tablet tests, Mac performance improvements, a public Tauri installer and Windows builds also remain. [Detailed status](implementation-status.md)
+
+[Recovery-code design, button fixes and screenshots](save-recovery-20261102.md)

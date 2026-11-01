@@ -14,9 +14,9 @@ Thank you to [fastutlego](https://github.com/fastutlego) for bringing HeavyMach 
 
 
 [![Git tag v0.17](docs/public/media/badges/version.svg)](https://github.com/gelb2/HeavyMach/tree/v0.17)
-[![Platforms iOS iPadOS macOS Android](docs/public/media/badges/platforms.svg)](docs/en/public/validation.md)
-[![Architecture arm64](docs/public/media/badges/arch.svg)](docs/en/public/build-and-install.md)
-[![C++20, Objective-C++ and Kotlin](docs/public/media/badges/code.svg)](docs/en/public/architecture.md)
+[![Platforms iOS iPadOS macOS Android Web PWA](docs/public/media/badges/platforms.svg)](docs/en/public/validation.md)
+[![Architecture arm64 and wasm32](docs/public/media/badges/arch.svg)](docs/en/public/build-and-install.md)
+[![C++20, Objective-C++, Kotlin, JavaScript and Rust](docs/public/media/badges/code.svg)](docs/en/public/architecture.md)
 [![Code license MIT](docs/public/media/badges/license.svg)](LICENSE-SCOPE.en.md)
 
 <a id="heavymach를-다시-만든-이유"></a>
@@ -46,9 +46,11 @@ Money is only needed in this life.
 
 ## Overview and installation
 
-**HeavyMach**, the 2009 side-scrolling tank game, has been rebuilt to run on current iPhone, iPad, Mac and Android devices. Move and jump the tank, switch weapons and fight ground and air enemies. Wider screens, keyboard controls, auto-aim and new aircraft extend the original combat and progression.
+**HeavyMach**, the 2009 side-scrolling tank game, has been rebuilt to run on current iPhone, iPad, Mac and Android devices, as well as web browsers and PWAs. Move and jump the tank, switch weapons and fight ground and air enemies. Wider screens, keyboard controls, auto-aim and new aircraft extend the original combat and progression.
 
 The latest release tag is [v0.17](https://github.com/gelb2/HeavyMach/tree/v0.17). It includes the regular and cheat Android apps. Regular and cheat validation apps can be installed separately. The cheat app tests the same game with specified missions, weapons and upgrades.
+
+Current main also includes Web/PWA, Tauri Mac, recovery codes and the game-button changes. The latest release tag remains v0.17; these additions have not yet received a new release tag.
 
 [Latest release](https://github.com/gelb2/HeavyMach/releases/latest) · [Version history](CHANGELOG.en.md) · [Android changes](CHANGELOG.en.md#v017)
 
@@ -203,7 +205,25 @@ I recorded the unease I felt while building the Android version: refusals and fa
 
 Open the [game page](https://gelb2.github.io/HeavyMach/) to play in a browser or install it on your home screen. The PWA downloads the game files on first launch. Once the download finishes, you can play and save progress offline. On iPhone and iPad, choose **Add to Home Screen** from Safari’s Share menu. On Android, use **Install game** on the launcher.
 
+![Web game running in Chrome](docs/public/media/desktop-web-recovery-20261102/web-gameplay.png)
+
+![Combat in an installed Chrome PWA](docs/public/media/desktop-web-recovery-20261102/pwa-gameplay.png)
+
 Touch, tilt, keyboard and mouse controls are supported. Progress is stored in the browser or installed PWA you use. [Controls](docs/en/public/gameplay-guide.md) · [Web implementation and build](docs/web-port-20261028.md)
+
+<a id="복원-코드로-진행도-옮기기"></a>
+
+## Move progress with a recovery code
+
+Open **TRANSFER PROGRESS** on the save-slot screen, then choose **CREATE CODE** and **COPY**. On another device, paste the code, select **CHECK CODE**, review the slots and choose **RESTORE**. Keep a copy outside the app to recover after reinstalling it.
+
+The code carries the original save slots, weapon order and ammunition, upgrades and mission progress, together with HUD, key and auto-aim settings. Apple apps restore all slots and settings together. Android, Web/PWA and Tauri also offer a selected-slot restore. This is a manual snapshot transfer; devices do not synchronize automatically.
+
+![A recovery code generated from a separate test save](docs/public/media/desktop-web-recovery-20261102/web-create.png)
+
+![Save slot after restoring and reopening the installed PWA](docs/public/media/desktop-web-recovery-20261102/pwa-restored.png)
+
+[Why I chose codes, the shared module, button fixes and recovery screenshots](docs/en/public/save-recovery-20261102.md)
 
 <a id="tauri-mac"></a>
 
@@ -215,6 +235,8 @@ The app has been built and run on Apple Silicon Macs. Its public installer is be
 
 <a id="플랫폼과-개발-상태"></a>
 
+![Tauri Mac gameplay](docs/public/media/desktop-web-recovery-20261102/tauri-gameplay.png)
+
 ## Platforms and development status
 
 Wider screens, iPad and Mac support, and keyboard controls were also my requests. Wider displays show more world. The keyboard covers movement, jumping, aiming, firing, weapon switching and menus. iPad supports touch, tilt and keyboard together.
@@ -223,9 +245,11 @@ Wider screens, iPad and Mac support, and keyboard controls were also my requests
 |---|---|---|
 | iPhone | Landscape rotation, touch, tilt, keyboard, regular and cheat apps | iPhone Air installation, input and combat tests; my play |
 | iPad | Aspect-ratio canvas, combined touch, tilt and keyboard | iPad Air 13-inch M2 installation, input and combat tests; my play |
-| Mac | AppKit app, window/full-screen modes, keyboard | Mac mini execution, 33 tests, zero leaks in development-signed apps |
+| Mac | AppKit app, window/full-screen modes, keyboard | Mac mini functional/recovery checks; November 2 frame-time threshold failed. [Measurements](docs/en/public/validation.md) |
 | Android | Regular and cheat apps using the shared C++ core | Galaxy USB/wireless installation and gameplay checked. [Installation](Android/README.md) · [Development and screenshots](docs/public/android-development-20261030.md) |
-| Web | WebAssembly·WebGL2, mouse, keyboard, touch and tilt (`porting/wasm`) | Contributor-tested Chrome·Safari·ego lite, iPad mini Safari and Android tablet Chrome. [Web port](docs/web-port-20261028.md) |
+| Web | Public WebAssembly/WebGL2 game | Chrome and Safari input, recovery and offline tests. [Play](https://gelb2.github.io/HeavyMach/) |
+| PWA | Home-screen installation and offline play | iPhone, iPad and Galaxy play reports; installed Chrome PWA recovery and restart checks. [Results](docs/en/public/validation.md) |
+| Tauri Mac | Web game in a Mac app, with an OS-file save backup | Local app launch, recovery, restart and quit checked. Public installer and notarization pending. [Build](Desktop/Tauri/README.md) |
 
 I saw no frame drops or malfunctions while playing the installed iPhone and iPad apps. Device automation still has display-timing threshold failures. [Measurement conditions and results](docs/en/public/validation.md)
 

@@ -4,7 +4,7 @@
 [한국어](index.md) | [English](../en/public/index.md)
 <!-- language-nav:end -->
 
-HeavyMach는 iPhone·iPad·Mac·Android에서 빌드하고 플레이할 수 있다. 최신 릴리스 태그는 v0.17이며 Android 일반·치트 앱을 포함한다.
+HeavyMach는 iPhone·iPad·네이티브 Mac·Android·웹/PWA·Tauri Mac에서 실행한다. 최신 릴리스 태그는 v0.17이며, 현재 main에는 웹 배포·복원 코드·게임 버튼 수정도 들어 있다.
 
 ## 시작하기
 
@@ -12,6 +12,13 @@ HeavyMach는 iPhone·iPad·Mac·Android에서 빌드하고 플레이할 수 있�
 - [빌드와 설치](build-and-install.md): Apple·Android 준비물, 소스·자원 다운로드, Xcode·Gradle 빌드와 기기 설치.
 - [조작](gameplay-guide.md): 터치·틸트·키보드, 자동조준, HUD 편집.
 - [구현 상태](implementation-status.md): 제공하는 기능과 기기별 확인 범위.
+
+
+## 웹·PWA·Tauri와 복원 코드
+
+- [플레이와 설치](https://gelb2.github.io/HeavyMach/): 브라우저 실행과 오프라인 PWA.
+- [복원 코드와 화면](save-recovery-20261102.md): 원작 슬롯, 공용 모듈, 서버 없는 이전, 버튼 수정과 플랫폼별 검사.
+- [Tauri 빌드](../../Desktop/Tauri/README.md): 로컬 Mac 앱. 공개 설치본·공증은 남아 있다.
 
 ## Android
 

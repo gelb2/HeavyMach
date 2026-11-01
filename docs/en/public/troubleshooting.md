@@ -208,3 +208,7 @@ Codex reused the original metal button artwork, press states and hit testing. Th
 This strengthened my suspicion that AI tends to choose whichever implementation looks shortest and easiest. Working C++ buttons and artwork already existed, yet Codex had added separate controls for each platform. That did not fit the cross-platform game I had asked for. My [full account and notes on skills and harnesses (Korean)](../../usability-todo.md#hm-ui-incident-writing--추가-버튼-구현과-작업-방식에-관한-글감--2026-11-02) are retained for a later essay.
 
 The [incident report (Korean)](../../reviews/game-button-incident-20261101.md#game-button-results) includes SET GAME UI's implementation, replacement screenshots, changed files and device checks.
+
+## Recovery codes across platforms
+
+The save-transfer feature keeps the original three slots and uses a shared C++ module. Restoring a default HUD over an old custom layout, reopening after interrupted restoration, and copying/pasting codes exposed different problems in platform adapters. The [recovery-code article](save-recovery-20261102.md) brings together the design decisions, fixes, platform checks and actual screens.
