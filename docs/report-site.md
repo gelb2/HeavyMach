@@ -919,3 +919,13 @@ VTOL 첫 생성 프롬프트와 스킬 수정 커밋을 대조했다. 요청에 
 - deployment: `appgdep_6ae74e853b8c8191830a5b3f27cae074`, succeeded.
 - 기존 소유자 전용 접근 유지. 9개 절·원고/다운로드 바이트 일치·원본 이미지·내부 링크 검사 통과. Safari에서 목차·SET GAME UI 캡처·조사표 표시 확인.
 - 이번 조사에서는 제품 코드를 추가 수정하지 않았다. 기존 로컬 Android 웹 복원 버튼 수정은 클릭 검사 실패 상태로 보존했고 게임 배포는 하지 않았다.
+
+## 2026-11-02 게임 버튼 교체·배포 후 검사
+
+[교체 화면과 검사 결과](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/game-button-incident.html#game-button-results)를 같은 경위서 11절에 추가했다. 기존 SET GAME UI와 원작 버튼을 보존하고 추가 버튼을 게임 렌더러로 옮긴 방법, 영문 글자 수정, 각 플랫폼 복원·HUD·키 검사, main·GitHub Pages 배포 결과를 담았다. Mac 프레임 기준 실패도 기록했다.
+
+- 문서 원본: `d845f1a9`, `docs/reviews/game-button-incident-20261101.md`.
+- Site source: `38f0ee4abc9ca4ddd403c6056f797c2e9baca88e`.
+- deployment: `appgdep_6ae784b2c9c88191b993e5454af6c618`, succeeded, 2026-11-01T18:28:18Z.
+- 기존 소유자 전용 접근 유지. 11절·이미지 8개·다운로드 원고 일치·목차·기존 보고서 링크를 검사했다. Safari에서 새 본문과 실제 게임 버튼 이미지를 확인했다.
+- 게임 main: `caa44df0`, Pages: `7c03b1eb844c409c`, 게임 산출물: `3665a237a9dccd69`. 실제 기기와 공개 주소의 배포 후 결과는 원고에서 플랫폼별 JSON으로 연결했다.

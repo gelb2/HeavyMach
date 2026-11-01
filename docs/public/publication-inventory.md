@@ -165,7 +165,7 @@ Apps의 Android 구현·검사 설명은 [개발 과정](android-development-202
 - Mags 글감: [사용자 원문](../references/developer-background/user-first-pr-20261031.md), [집필 TODO](../usability-todo.md#hm-first-pr-story). 첫 PR을 받은 경험과 기여 보존, 네이티브 앱 유지에 대한 고민, Windows·Mac·웹 지원 가능성을 발견한 순서를 다룬다.
 - Apps 기술 근거: [PR 검토·수정·Tauri/Electron 비교](../reviews/pr24-web-review-20261031.md), [플랫폼 검사](../evidence/pr24-web-fixes-20261031.json), [기여 보존 검사](../evidence/pr24-merge-preservation-20261031.json).
 - 웹 구현은 fastutlego가 기여했다. Codex는 검토·후속 수정·검사를 담당했다. 원본 19개 커밋과 후속 2개 커밋을 구분한다.
-- 데스크톱은 검토 단계다. main 반영 후 GitHub Contributors 통계에서 fastutlego 19개 기여를 확인했다.
+- 당시 데스크톱은 검토 단계였다. main 반영 후 GitHub Contributors 통계에서 fastutlego 19개 기여를 확인했다. 후속 구현은 아래 기록과 현재 상태를 따른다.
 
 ### 첫 PR 원고 작성
 
@@ -173,9 +173,9 @@ Apps의 Android 구현·검사 설명은 [개발 과정](android-development-202
 
 후속 [개발 계획](../desktop-web-plan-20261031.md)은 Tauri Mac·기존 Mac 비교 → 순수 웹·PWA 배포 → Windows 설치본 빌드 순서다. Windows 실행 검사는 별도 후속 과제다. 구현·검사 결과는 current-status에 기록한다. 첫 Tauri Mac 앱과 실제 복구 결과는 아래 최신 기록을 따른다.
 
-최신 개발 조건은 기여자 웹 구현과 후속 수정 3건을 고정하고 새 실행기·배포 코드만 추가하는 것이다. Tauri를 검토한 목적은 저장 데이터 보존과 Mac·Windows 지원이다. 기존 IDBFS·localStorage 유지, OS 파일 백업·게임 시작 전 복구 계획은 위 개발 계획 4절을 읽는다. 첫 실행·복구 기록은 아래에 연결했다.
+10월 31일 개발 조건은 기여자 웹 구현과 후속 수정 3건을 고정하고 새 실행기·배포 코드만 추가하는 것이었다. 11월 2일에는 사용자가 게임 안 버튼의 일괄 교체를 지시했다. 이 변경 범위와 보존 검사는 아래 버튼 기록에 있다. Tauri를 검토한 목적은 저장 데이터 보존과 Mac·Windows 지원이다. 기존 IDBFS·localStorage 유지, OS 파일 백업·게임 시작 전 복구 계획은 위 개발 계획 4절을 읽는다. 첫 실행·복구 기록은 아래에 연결했다.
 
-PWA 설치·오프라인 플레이·진행 저장·업데이트와 GitHub Pages 배포 계획은 개발 계획 5절에 있다. 현재 구현 전이며 Apps·Mags에서 완료된 기능으로 소개하지 않는다.
+PWA 설치·오프라인 플레이·진행 저장·업데이트와 GitHub Pages 배포 계획은 개발 계획 5절에 있다. 10월 31일 계획 시점에는 구현 전이었다. 이후 구현·배포 결과는 [현재 상태](../current-status.md)와 [플랫폼 비교 보고](../reviews/mac-web-pwa-comparison-20261101.md)에 기록했다.
 
 ### Tauri Mac 첫 구현 — 2026-10-31
 

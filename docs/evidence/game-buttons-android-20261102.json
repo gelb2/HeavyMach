@@ -1,0 +1,266 @@
+{
+  "platform": "Galaxy Android",
+  "buildCommit": "3d1e12ca",
+  "nativeEditionsInstalled": [
+    "normal",
+    "cheat"
+  ],
+  "suites": [
+    {
+      "suite": "game-buttons-galaxy-cancel-f6-final",
+      "passed": 58,
+      "total": 58
+    },
+    {
+      "suite": "game-buttons-modal-keys-release",
+      "passed": 4,
+      "total": 4
+    },
+    {
+      "suite": "game-buttons-normal-release",
+      "passed": 7,
+      "total": 7
+    },
+    {
+      "suite": "game-buttons-visual-release",
+      "passed": 6,
+      "total": 6
+    },
+    {
+      "suite": "game-buttons-modal-touch-release-final",
+      "passed": 5,
+      "total": 5
+    }
+  ],
+  "finalArtifactChecks": [
+    {
+      "edition": "normal",
+      "package": "com.gelb2.heavymach.restored",
+      "sha256": "12f639336df19b0aedffc2775d0e71677a5a3ae999e5a4ba43ce99874ed60397",
+      "bytes": 78854791,
+      "asset_files": 801,
+      "elf_load_alignment": [
+        16384,
+        16384,
+        16384
+      ],
+      "signature_verified": true,
+      "apk_16kb_alignment": true,
+      "cheat_receiver": false,
+      "signing": "Android debug certificate"
+    },
+    {
+      "edition": "cheat",
+      "package": "com.gelb2.heavymach.validation",
+      "sha256": "4b71fc8714cead4baed6fb504bb46cc99f96cb496f31c9bf897281b2cbb06866",
+      "bytes": 78896719,
+      "asset_files": 801,
+      "elf_load_alignment": [
+        16384,
+        16384,
+        16384
+      ],
+      "signature_verified": true,
+      "apk_16kb_alignment": true,
+      "cheat_receiver": true,
+      "signing": "Android debug certificate"
+    }
+  ],
+  "originalUserFilesPreserved": true,
+  "postDeploymentVerification": {
+    "mainCommit": "caa44df0",
+    "pagesCommit": "b77d33e",
+    "gameBuild": "3665a237a9dccd69",
+    "serviceWorkerVersion": "7c03b1eb844c409c",
+    "productFilesMatchMain": true,
+    "native": {
+      "normal": {
+        "passed": 7,
+        "total": 7,
+        "checks": [
+          {
+            "check": "Normal F3 opens game transfer with text entry",
+            "passed": true
+          },
+          {
+            "check": "Normal CREATE CODE produces HM1 code",
+            "passed": true
+          },
+          {
+            "check": "Confirmation hides native text entry",
+            "passed": true
+          },
+          {
+            "check": "Actual normal restore keeps all saved values",
+            "passed": true
+          },
+          {
+            "check": "Normal transfer reopens after restore",
+            "passed": true
+          },
+          {
+            "check": "Normal CLOSE removes text field",
+            "passed": true
+          },
+          {
+            "check": "Original normal data preserved",
+            "passed": true
+          }
+        ]
+      },
+      "cheat": {
+        "passed": 7,
+        "total": 7,
+        "checks": [
+          {
+            "check": "Cheat F3 opens game transfer with text entry",
+            "passed": true
+          },
+          {
+            "check": "Cheat CREATE CODE produces HM1 code",
+            "passed": true
+          },
+          {
+            "check": "Confirmation hides native text entry",
+            "passed": true
+          },
+          {
+            "check": "Actual cheat restore keeps all saved values",
+            "passed": true
+          },
+          {
+            "check": "Cheat transfer reopens after restore",
+            "passed": true
+          },
+          {
+            "check": "Cheat CLOSE removes text field",
+            "passed": true
+          },
+          {
+            "check": "Original cheat data preserved",
+            "passed": true
+          }
+        ]
+      }
+    },
+    "publicWeb": {
+      "installedPWA": {
+        "passed": 9,
+        "total": 9,
+        "checks": [
+          {
+            "check": "Original title opens slots with game transfer button",
+            "passed": true
+          },
+          {
+            "check": "Game runs fullscreen",
+            "passed": true
+          },
+          {
+            "check": "CREATE preserves existing progress",
+            "passed": true
+          },
+          {
+            "check": "CHECK remains in transfer panel",
+            "passed": true
+          },
+          {
+            "check": "Confirmation CANCEL preserves progress",
+            "passed": true
+          },
+          {
+            "check": "RESTORE own code preserves game bytes, HUD, bindings and aim",
+            "passed": true
+          },
+          {
+            "check": "Restore returns to launcher for reload",
+            "passed": true
+          },
+          {
+            "check": "Game reopens slots after restore",
+            "passed": true
+          },
+          {
+            "check": "Added controls contain no DOM buttons",
+            "passed": true
+          }
+        ]
+      },
+      "chromeBrowserTab": {
+        "passed": 9,
+        "total": 9,
+        "checks": [
+          {
+            "check": "Original title opens slots with game transfer button",
+            "passed": true
+          },
+          {
+            "check": "Game runs fullscreen",
+            "passed": true
+          },
+          {
+            "check": "CREATE preserves existing progress",
+            "passed": true
+          },
+          {
+            "check": "CHECK remains in transfer panel",
+            "passed": true
+          },
+          {
+            "check": "Confirmation CANCEL preserves progress",
+            "passed": true
+          },
+          {
+            "check": "RESTORE own code preserves game bytes, HUD, bindings and aim",
+            "passed": true
+          },
+          {
+            "check": "Restore returns to launcher for reload",
+            "passed": true
+          },
+          {
+            "check": "Game reopens slots after restore",
+            "passed": true
+          },
+          {
+            "check": "Added controls contain no DOM buttons",
+            "passed": true
+          }
+        ]
+      },
+      "preDeploymentSavePreservation": [
+        {
+          "check": "Game save bytes match pre-deployment backup",
+          "passed": true
+        },
+        {
+          "check": "HUD positions match pre-deployment backup",
+          "passed": true
+        },
+        {
+          "check": "HeavyMach.KeyboardBindingsV1 preserved",
+          "passed": true
+        },
+        {
+          "check": "HeavyMach.AimModeV1 preserved",
+          "passed": true
+        }
+      ],
+      "concurrentGameProtectionObserved": true
+    },
+    "originalNativeFilesPreserved": true,
+    "nativeAppsClosedAndHomeVisible": true,
+    "installedArtifacts": [
+      {
+        "edition": "normal",
+        "installedApkSha256": "12f639336df19b0aedffc2775d0e71677a5a3ae999e5a4ba43ce99874ed60397",
+        "matchesTestedApk": true
+      },
+      {
+        "edition": "cheat",
+        "installedApkSha256": "4b71fc8714cead4baed6fb504bb46cc99f96cb496f31c9bf897281b2cbb06866",
+        "matchesTestedApk": true
+      }
+    ]
+  }
+}

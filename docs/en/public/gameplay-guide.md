@@ -24,6 +24,8 @@ During play, press MENU, then **SET GAME UI** in the pause menu. Drag buttons, g
 
 **APPLY** saves the layout, **CANCEL** discards changes and **RESET LAYOUT** restores the default. **PREVIEW** hides the tools to show the game screen. If you entered from combat, **SAMPLE SCENE** shows a sample with a tank, terrain and enemies. Combat stays paused while editing. After applying, press **RESUME GAME**.
 
+When editing with a keyboard, press F6 to switch between moving HUD elements and selecting tool buttons. Use Tab or Shift+Tab to select a tool and Enter to press it.
+
 [Screen examples](../../public/hud-improvement-plan-20261028.md).
 
 <a id="자동조준"></a>
@@ -64,6 +66,12 @@ The keyboard **A key moves the tank**. The on-screen **A button controls auto-ai
 In key settings, select an action with up/down, press Enter, then press the new key. Assigning a key already in use swaps the two bindings. Backspace restores defaults; Esc cancels changes. Settings save when confirmed.
 
 iPad supports touch and keyboard together. Releasing movement keys clears the keyboard's simulated tilt and returns control to the sensor. Losing window focus or pausing clears held keys. See the [input policy](../../keyboard-input-policy.md) and [validation results](validation.md) for implementation and physical-keyboard test status.
+
+<a id="복원-코드"></a>
+
+## Recovery codes
+
+On the save slot screen, press **TRANSFER PROGRESS**, or F3 on a keyboard. Use **CREATE CODE** to generate a code from the current save and **COPY** to copy it. On another device, paste the code into the same screen and use **CHECK CODE** to inspect it. Press **RESTORE**, review what will be restored, then press **RESTORE** again to apply it. **CANCEL** cancels the restore; **CLOSE** returns to the save slots.
 
 <a id="무기강화미션"></a>
 
