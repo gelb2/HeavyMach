@@ -1,0 +1,51 @@
+{
+  "date": "2026-11-01",
+  "integration_main": "777cfc8bfc42ec5f53b3a8413bd3aae1bb10b07b",
+  "iphone": {
+    "passed": 4,
+    "failed": 0,
+    "scope": "save parity, native recovery adapter, move/jump/fire, auto/manual aim"
+  },
+  "android": {
+    "passed": 31,
+    "failed": 0,
+    "scope": "movement, jump, lifecycle/audio focus, no shot save, all player weapons",
+    "normal_save_files_unchanged": 3,
+    "cheat_save_files_restored": 3,
+    "initial_attempt": "Diagnostics read failed because test started without launching the app; launched app and reran."
+  },
+  "web": {
+    "launcher_passed": 9,
+    "recovery_browser_passed": 11,
+    "save_unit_passed": 3,
+    "published_version": "1655aa24dce8356d"
+  },
+  "tauri": {
+    "release_build": "passed",
+    "js_passed": 15,
+    "rust_passed": 14,
+    "rust_ignored": 2,
+    "manual": "title, restored slot, mission entry, keyboard jump and click fire, Cmd-Q process exit",
+    "issue": "SET GAME UI visible during combat; follow-up UI audit TODO"
+  },
+  "ci": {
+    "apple": "passed",
+    "core": "passed",
+    "documentation": "Quick Play anchor checker corrected to existing bilingual anchor"
+  },
+  "remaining": [
+    "Native transfer dialog direct copy/paste flow",
+    "New mobile PWA installation smoke test",
+    "UI implementation audit and button replacement",
+    "Tauri signing/notarization and Windows build"
+  ],
+  "log_sha256": {
+    "iphone.log": "d745ae851e941ad4f405ee6c6563f0a80496711d5b4a96b81db478d032125b2a",
+    "galaxy.log": "38c9531d9351fd81ba7fbc66bf1a436437b6ef504fb4e985b015b4e94699d09f",
+    "galaxy-retry.log": "d841bcf281fbfb83866c28db6896d9016b30baed39f631a767e2f3b7cf1f60c7",
+    "tauri-build.log": "5deedf2e9b46fe86402317d6013f8b4fc6b06bfe931c05f2d1443e646360381c",
+    "tauri-rust.log": "a5ad4744035808bd83b53839da9758d90c443c1a429c70c1ccd0ad8453048954",
+    "browser-slots.log": "9590ca62add7db57150226771bca354817f128673f992147f3ec4889c936a24d",
+    "launcher.log": "6d753482412ae3b54c206ee22d582a23e6788f3917abc39aa59daf9c856dd77f"
+  }
+}
