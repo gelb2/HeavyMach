@@ -6,7 +6,7 @@
 [한국어](../../public/index.md) | [English](index.md)
 <!-- language-nav:end -->
 
-HeavyMach can be built and played on iPhone, iPad, Mac and Android. The latest release tag is v0.17 and includes the regular and cheat Android apps.
+HeavyMach runs on iPhone, iPad, native Mac, Android, Web/PWA and Tauri Mac. The latest release tag is v0.17; current main also includes the web distribution, recovery codes and game-button changes.
 
 <a id="시작하기"></a>
 
@@ -16,6 +16,15 @@ HeavyMach can be built and played on iPhone, iPad, Mac and Android. The latest r
 - [Build and install](build-and-install.md): Apple and Android requirements, source/resources, Xcode and Gradle builds, and device installation.
 - [Controls](gameplay-guide.md): touch, tilt, keyboard, auto-aim and HUD editing.
 - [Implementation status](implementation-status.md): available features and device checks.
+
+
+<a id="웹pwa타우리와-복원-코드"></a>
+
+## Web, PWA, Tauri and recovery codes
+
+- [Play or install](https://gelb2.github.io/HeavyMach/): browser play and offline PWA.
+- [Recovery codes and screenshots](save-recovery-20261102.md): the original slots, shared module, serverless transfer, button fixes and platform checks.
+- [Tauri build](../../../Desktop/Tauri/README.md): local Mac app; public installer and notarization remain.
 
 ## Android
 

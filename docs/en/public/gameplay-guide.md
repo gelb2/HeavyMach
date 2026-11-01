@@ -82,3 +82,5 @@ The selection outline in the upper weapon list shows the current weapon. Cannons
 Finishing a stage shows the result illustration and buttons for the next stage or mission selection. Progress saves when selecting a slot, advancing to the next stage, reaching game over or returning to the menu. Firing and taking damage update game state in memory.
 
 [Gameplay images](../../../README.en.md) · [Features](features.md) · [Installation](build-and-install.md)
+
+[Recovery-code format, supported restore choices and screenshots](save-recovery-20261102.md)

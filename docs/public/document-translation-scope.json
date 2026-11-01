@@ -5,7 +5,7 @@
     "ko",
     "en"
   ],
-  "existing_documents": 18,
+  "existing_documents": 19,
   "planned_public_documents": 3,
   "documents": [
     {
@@ -111,6 +111,11 @@
     {
       "korean": "docs/public/android-ai-experience-20261030.md",
       "english": "docs/en/public/android-ai-experience-20261030.md",
+      "status": "translated"
+    },
+    {
+      "korean": "docs/public/save-recovery-20261102.md",
+      "english": "docs/en/public/save-recovery-20261102.md",
       "status": "translated"
     }
   ],

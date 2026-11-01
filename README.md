@@ -14,9 +14,9 @@ HeavyMach를 웹브라우저에서 실행할 수 있도록 기여해 준 [fastut
 
 
 [![Git tag v0.17](docs/public/media/badges/version.svg)](https://github.com/gelb2/HeavyMach/tree/v0.17)
-[![Platforms iOS iPadOS macOS Android](docs/public/media/badges/platforms.svg)](docs/public/validation.md)
-[![Architecture arm64](docs/public/media/badges/arch.svg)](docs/public/build-and-install.md)
-[![C++20, Objective-C++ and Kotlin](docs/public/media/badges/code.svg)](docs/public/architecture.md)
+[![Platforms iOS iPadOS macOS Android Web PWA](docs/public/media/badges/platforms.svg)](docs/public/validation.md)
+[![Architecture arm64 and wasm32](docs/public/media/badges/arch.svg)](docs/public/build-and-install.md)
+[![C++20, Objective-C++, Kotlin, JavaScript and Rust](docs/public/media/badges/code.svg)](docs/public/architecture.md)
 [![Code license MIT](docs/public/media/badges/license.svg)](LICENSE-SCOPE.md)
 
 ## HeavyMach를 다시 만든 이유
@@ -42,9 +42,11 @@ HeavyMach도 2015년, 2016년 생활을 청산하고 다른 직업을 택하게 
 
 ## 간단한 설명과 설치
 
-2009년의 횡스크롤 전차 게임 **HeavyMach**를 현재의 iPhone·iPad·Mac·Android에서 실행하도록 다시 만들었다. 전차를 움직이고 뛰어오르며, 무기를 바꿔 지상·공중의 적과 싸운다. 원작의 전투와 성장 구조에 넓은 화면, 키보드 조작, 자동조준과 새로운 항공기를 추가했다.
+2009년의 횡스크롤 전차 게임 **HeavyMach**를 현재의 iPhone·iPad·Mac·Android와 웹브라우저·PWA에서 실행하도록 다시 만들었다. 전차를 움직이고 뛰어오르며, 무기를 바꿔 지상·공중의 적과 싸운다. 원작의 전투와 성장 구조에 넓은 화면, 키보드 조작, 자동조준과 새로운 항공기를 추가했다.
 
 최신 릴리스 태그는 [v0.17](https://github.com/gelb2/HeavyMach/tree/v0.17)이다. Android 일반·치트 앱을 포함한다. 일반 앱과 치트 검증 앱을 각각 설치할 수 있다. 치트 앱에서는 미션·무기·강화 조건을 지정해 같은 게임을 검사한다.
+
+현재 main에는 웹/PWA·Tauri Mac·복원 코드·게임 버튼 수정도 포함돼 있다. 최신 릴리스 태그는 v0.17이며, 이 추가분의 새 릴리스 태그는 아직 만들지 않았다.
 
 [최신 릴리스](https://github.com/gelb2/HeavyMach/releases/latest) · [전체 버전 이력](CHANGELOG.md) · [Android 추가 내역](CHANGELOG.md#v017)
 
@@ -179,7 +181,23 @@ Galaxy의 일반 앱에서 직접 플레이한 미션 3-4와 3-5다. 기기를 �
 
 [게임 페이지](https://gelb2.github.io/HeavyMach/)에서 브라우저로 플레이하거나 홈 화면에 설치할 수 있다. PWA는 처음 실행할 때 게임 파일을 내려받으며, 다운로드가 끝나면 인터넷 연결 없이도 플레이하고 진행을 저장한다. iPhone·iPad에서는 Safari의 공유 메뉴에서 **홈 화면에 추가**를 선택한다. Android에서는 시작 페이지의 **Install game**으로 설치한다.
 
+![Chrome 웹브라우저에서 실행한 전투 화면](docs/public/media/desktop-web-recovery-20261102/web-gameplay.png)
+
+![설치형 Chrome PWA에서 실행한 전투 화면](docs/public/media/desktop-web-recovery-20261102/pwa-gameplay.png)
+
 터치·틸트와 키보드·마우스를 지원한다. 진행은 사용하는 브라우저 또는 설치한 PWA에 저장한다. [조작 방법](docs/public/gameplay-guide.md) · [웹 구현과 빌드](docs/web-port-20261028.md)
+
+## 복원 코드로 진행도 옮기기
+
+세이브 슬롯 화면의 **TRANSFER PROGRESS**에서 **CREATE CODE**, **COPY**를 누른다. 다른 기기에서는 코드를 붙여넣고 **CHECK CODE**로 슬롯을 확인한 뒤 **RESTORE**를 누른다. 앱 밖에 코드를 보관하면 재설치한 뒤에도 그 시점의 진행을 복원할 수 있다.
+
+코드에는 원작 세이브 슬롯의 무기 순서·탄약·강화·미션 진행과 HUD·키·자동조준 설정이 담긴다. Apple 앱은 슬롯과 설정 전체를 복원한다. Android·웹/PWA·Tauri는 개별 슬롯 복원도 제공한다. 기기 간 자동 동기화 없이, 코드를 만든 시점의 저장을 직접 옮기는 방식이다.
+
+![별도 검사 저장으로 생성한 복원 코드](docs/public/media/desktop-web-recovery-20261102/web-create.png)
+
+![설치 PWA에서 복원하고 다시 연 슬롯 화면](docs/public/media/desktop-web-recovery-20261102/pwa-restored.png)
+
+[코드를 택한 이유·공용 모듈·버튼 수정과 복원 화면](docs/public/save-recovery-20261102.md)
 
 <a id="tauri-mac"></a>
 
@@ -189,6 +207,8 @@ Galaxy의 일반 앱에서 직접 플레이한 미션 3-4와 3-5다. 기기를 �
 
 Apple Silicon Mac에서 빌드·실행한 버전이며 공개 설치본을 준비 중이다. [Tauri 빌드 방법](Desktop/Tauri/README.md) · [구조와 개발 내역](docs/desktop-web-plan-20261031.md)
 
+![Tauri Mac 앱 전투 화면](docs/public/media/desktop-web-recovery-20261102/tauri-gameplay.png)
+
 ## 플랫폼과 개발 상태
 
 화면 확장, iPad·Mac 지원과 키보드 조작도 내가 추가로 요구한 기능이다. 넓은 화면에는 더 많은 월드를 표시하고, 키보드로 이동·점프·조준·발사·무기 전환과 메뉴를 모두 조작할 수 있게 했다. iPad에서는 터치·틸트와 키보드를 함께 지원한다.
@@ -197,9 +217,11 @@ Apple Silicon Mac에서 빌드·실행한 버전이며 공개 설치본을 준�
 |---|---|---|
 | iPhone | 가로 회전, 터치·틸트, 키보드, 일반·치트 앱 | iPhone Air 설치·입력·전투 검사, 내 플레이 |
 | iPad | 화면 비율에 맞춘 캔버스, 터치·틸트·키보드 병용 | iPad Air 13형 M2 설치·입력·전투 검사, 내 플레이 |
-| Mac | AppKit 앱, 창·전체 화면, 키보드 조작 | Mac mini 실행·33개 검사, 개발 서명 앱 누수 0건 |
+| Mac | AppKit 앱, 창·전체 화면, 키보드 조작 | Mac mini 기능·복원 검사. 11월 2일 프레임 기준 실패. [측정](docs/public/validation.md) |
 | Android | 공용 C++ 코어를 사용하는 일반·치트 앱 | Galaxy 유선·무선 설치·플레이 확인. [설치](Android/README.md) · [개발 과정과 화면](docs/public/android-development-20261030.md) |
-| 웹 | WebAssembly·WebGL2, 마우스·키보드·터치·기울기 (`porting/wasm`) | Chrome·Safari·ego lite, iPad mini Safari·Android 패드 Chrome 확인. [웹 이식 문서](docs/web-port-20261028.md) |
+| 웹 | WebAssembly·WebGL2 게임 공개 | Chrome·Safari 입력·복원·오프라인 검사. [플레이](https://gelb2.github.io/HeavyMach/) |
+| PWA | 홈 화면 설치와 오프라인 플레이 | iPhone·iPad·Galaxy 플레이 보고, 설치형 Chrome PWA 복원·재시작 검사. [결과](docs/public/validation.md) |
+| Tauri Mac | 웹 게임을 Mac 앱으로 실행, OS 파일 백업 | 로컬 앱 실행·복원·재시작·종료 확인. 공개 설치본·공증은 남아 있다. [빌드](Desktop/Tauri/README.md) |
 
 설치한 iPhone·iPad 앱을 직접 플레이했을 때 프레임 드랍이나 오작동은 보이지 않았다. 기기별 자동 검사에는 표시시간 기준 실패가 남아 있다. [측정 조건과 결과](docs/public/validation.md)
 

@@ -48,7 +48,8 @@
     "docs/public/auto-aim-visibility-plan-20261028.md",
     "docs/release-notes-plan.md",
     "docs/web-port-20261028.md",
-    "docs/desktop-web-plan-20261031.md"
+    "docs/desktop-web-plan-20261031.md",
+    "docs/public/save-recovery-20261102.md"
   ],
   "base_read": [
     "AGENTS.md",
@@ -418,7 +419,8 @@
         "docs/usability-todo.md",
         "docs/public/github-followup-20261028.md",
         "docs/references/developer-background/user-wemade-discovery-20261028.md",
-        "docs/references/developer-background/approved-readme-opening-20261029.md"
+        "docs/references/developer-background/approved-readme-opening-20261029.md",
+        "docs/public/save-recovery-20261102.md"
       ],
       "sources": [
         "docs/RESTORATION.md",

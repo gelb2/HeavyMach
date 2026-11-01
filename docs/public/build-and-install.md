@@ -72,7 +72,7 @@ adb -s SERIAL install -r app/build/outputs/apk/cheat/debug/app-cheat-debug.apk
 python3 tools/verify_build_resources.py
 ```
 
-빌드·검사 자원 1,504개의 크기와 SHA-256을 확인한다. 누락·손상·다운로드되지 않은 LFS 파일이 있으면 종료 코드 1을 반환한다. LFS 포인터가 남았다면 `git lfs pull`을 실행하고 다시 검사한다.
+빌드·검사 자원 1,505개의 크기와 SHA-256을 확인한다. 누락·손상·다운로드되지 않은 LFS 파일이 있으면 종료 코드 1을 반환한다. LFS 포인터가 남았다면 `git lfs pull`을 실행하고 다시 검사한다.
 
 ## 시뮬레이터 빌드
 
@@ -168,3 +168,5 @@ xcodegen generate --spec macOS/project.yml
 ```
 
 일상적인 빌드에서는 저장소에 포함된 프로젝트를 그대로 사용한다. [workspace 구조](architecture.md)
+
+[복원 코드 형식·플랫폼별 복원 범위와 화면](save-recovery-20261102.md)
