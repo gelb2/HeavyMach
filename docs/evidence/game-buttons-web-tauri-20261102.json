@@ -1,0 +1,187 @@
+{
+  "ok": true,
+  "product": "Web/PWA/Tauri original game buttons",
+  "webVersion": "7c03b1eb844c409c",
+  "gameVersion": "3665a237a9dccd69",
+  "touch": {
+    "ok": true,
+    "touch": true,
+    "installed": false,
+    "steps": [
+      "title hidden; original title button enters slots; game transfer visible",
+      "touch game fullscreen active",
+      "no DOM game buttons or transfer dialog",
+      "canvas CREATE CODE preserves saved data",
+      "canvas COPY writes recovery code to clipboard",
+      "late COPY completion preserves restore confirmation summary",
+      "canvas SAVE CODE FILE downloads exact code",
+      "canvas OPEN CODE FILE loads exact code",
+      "text input keys do not select a slot",
+      "invalid code rejected without save change",
+      "game confirmation CANCEL preserves save",
+      "slot and HUD-control options operate as game buttons",
+      "button finger released after CLOSE cannot activate underlying OK",
+      "blank finger released after CLOSE cannot activate underlying OK",
+      "original menus enter combat; transfer entry hidden",
+      "original pause command works",
+      "F3 opens game transfer screen",
+      "canvas RESTORE matches native fixture exactly",
+      "offline reload preserves every recovered value",
+      "offline game opens restored slots and game transfer button"
+    ]
+  },
+  "installedPWA": {
+    "ok": true,
+    "touch": false,
+    "installed": true,
+    "steps": [
+      "installed standalone PWA",
+      "title hidden; original title button enters slots; game transfer visible",
+      "no DOM game buttons or transfer dialog",
+      "canvas CREATE CODE preserves saved data",
+      "canvas COPY writes recovery code to clipboard",
+      "late COPY completion preserves restore confirmation summary",
+      "canvas SAVE CODE FILE downloads exact code",
+      "canvas OPEN CODE FILE loads exact code",
+      "text input keys do not select a slot",
+      "invalid code rejected without save change",
+      "game confirmation CANCEL preserves save",
+      "slot and HUD-control options operate as game buttons",
+      "original menus enter combat; transfer entry hidden",
+      "original pause command works",
+      "F3 opens game transfer screen",
+      "canvas RESTORE matches native fixture exactly",
+      "offline reload preserves every recovered value",
+      "offline game opens restored slots and game transfer button"
+    ]
+  },
+  "hudLog": "build/web-button-hud-final.log",
+  "performance": "build/game-buttons/web-ui-performance.json",
+  "nativeTauri": {
+    "verified": [
+      "original title and slot menus",
+      "transfer entry does not cover SELECT SLOT or DEL/OK",
+      "CREATE CODE",
+      "COPY",
+      "CHECK CODE",
+      "RESTORE confirmation",
+      "CANCEL",
+      "CLOSE",
+      "original mode and mission entry",
+      "mission 7-6 renders",
+      "Escape pause",
+      "original SET GAME UI",
+      "three-line HUD status visible",
+      "editor CANCEL",
+      "Cmd-Q quit"
+    ],
+    "screenshots": [
+      "tauri-slots-final.png",
+      "tauri-transfer-final.png",
+      "tauri-confirm-final.png",
+      "tauri-hud-final.png"
+    ],
+    "app": "Desktop/Tauri/src-tauri/target/release/bundle/macos/Heavy Mach Desktop.app",
+    "restoreCommittedInRealUserSave": true,
+    "saveDataComparison": {
+      "/persist/HUDLayoutV1-web.json": {
+        "lengthBefore": 173,
+        "lengthAfter": 173,
+        "changedOffsets": []
+      },
+      "/persist/HvM.dat": {
+        "lengthBefore": 3624,
+        "lengthAfter": 3624,
+        "changedOffsets": [
+          1212,
+          1213
+        ]
+      }
+    },
+    "settingsUnchanged": true,
+    "selfRestore": {
+      "sourceSlot": 2,
+      "targetSlot": 2,
+      "snapshotBefore": 9,
+      "snapshotAfter": 10,
+      "gameBytesIdentical": true,
+      "hudBytesIdentical": true,
+      "settingsIdentical": true,
+      "automaticBackup": "transfer/before.hmcode",
+      "manualBackup": "build/game-buttons/tauri-self-restore-before",
+      "recordMetadataChanges": [
+        "file timestamps",
+        "HvM.dat mode 0644 to 0666"
+      ],
+      "reopenedApp": true,
+      "reopenedSlotVisible": true,
+      "postRestartPayloadsIdentical": true
+    }
+  },
+  "postdeployment": {
+    "ok": true,
+    "url": "https://gelb2.github.io/HeavyMach/",
+    "observedAt": "2026-11-02T03:17:03+09:00",
+    "finishedAt": "2026-11-01T18:18:30.207718+00:00",
+    "webVersion": "7c03b1eb844c409c",
+    "gameVersion": "3665a237a9dccd69",
+    "touch": {
+      "ok": true,
+      "url": "https://gelb2.github.io/HeavyMach/",
+      "gameURL": "https://gelb2.github.io/HeavyMach/game/3665a237a9dccd69/index.html",
+      "touch": true,
+      "installed": false,
+      "steps": [
+        "title hidden; original title button enters slots; game transfer visible",
+        "touch game fullscreen active",
+        "no DOM game buttons or transfer dialog",
+        "canvas CREATE CODE preserves saved data",
+        "canvas COPY writes recovery code to clipboard",
+        "late COPY completion preserves restore confirmation summary",
+        "canvas SAVE CODE FILE downloads exact code",
+        "canvas OPEN CODE FILE loads exact code",
+        "text input keys do not select a slot",
+        "invalid code rejected without save change",
+        "game confirmation CANCEL preserves save",
+        "slot and HUD-control options operate as game buttons",
+        "button finger released after CLOSE cannot activate underlying OK",
+        "blank finger released after CLOSE cannot activate underlying OK",
+        "original menus enter combat; transfer entry hidden",
+        "original pause command works",
+        "F3 opens game transfer screen",
+        "canvas RESTORE matches native fixture exactly",
+        "offline reload preserves every recovered value",
+        "offline game opens restored slots and game transfer button"
+      ]
+    },
+    "installedPWA": {
+      "ok": true,
+      "url": "https://gelb2.github.io/HeavyMach/",
+      "gameURL": "https://gelb2.github.io/HeavyMach/game/3665a237a9dccd69/index.html",
+      "touch": false,
+      "installed": true,
+      "steps": [
+        "installed standalone PWA",
+        "title hidden; original title button enters slots; game transfer visible",
+        "no DOM game buttons or transfer dialog",
+        "canvas CREATE CODE preserves saved data",
+        "canvas COPY writes recovery code to clipboard",
+        "late COPY completion preserves restore confirmation summary",
+        "canvas SAVE CODE FILE downloads exact code",
+        "canvas OPEN CODE FILE loads exact code",
+        "text input keys do not select a slot",
+        "invalid code rejected without save change",
+        "game confirmation CANCEL preserves save",
+        "slot and HUD-control options operate as game buttons",
+        "original menus enter combat; transfer entry hidden",
+        "original pause command works",
+        "F3 opens game transfer screen",
+        "canvas RESTORE matches native fixture exactly",
+        "offline reload preserves every recovered value",
+        "offline game opens restored slots and game transfer button"
+      ]
+    },
+    "testProfiles": "Fresh isolated Chrome profiles; existing user saves were not opened."
+  },
+  "sourceRevision": "3d1e12cabf5ecec962c53c5f0b99bc8f11b4076e"
+}
