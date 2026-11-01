@@ -1,5 +1,9 @@
 # 2026-10-25 문서·코드·앱 일치 체계 점검 및 보완
 
+## 문서·코드·GitHub 감사 — 2026-11-01
+
+main `5025b23f`와 develop `aa2af710`의 파일 내용은 같다. Markdown 247개·로컬 링크 2,381회와 주요 제품 파일 140개의 업무 연결을 조사했다. 정본의 오래된 플랫폼 상태, SaveTransfer·PWA 경로 누락, 국영문 공개 문서 누락, 전투 중 HUD 편집 진입 등 14개 보완 항목을 기록했다. 기존 문서 검사 3종은 통과했지만 내용 불일치를 발견하지 못했다. [감사 결과·근거·수정 순서](reviews/document-code-audit-20261101.md). 게임 코드 변경과 발견 항목 수정은 아직 하지 않았다.
+
 ## main 병합과 실행 확인 — 2026-11-01
 
 웹·PWA·Tauri Mac·복원 코드 구현을 develop을 거쳐 main `777cfc8b`에 병합했다. 병합 후 iPhone 검사 4건, Galaxy 검사 31건, 웹 시작 화면 9건·복원 11건이 통과했다. GitHub Apple 빌드·코어 검사도 통과했다. Tauri Release 앱에서 저장 슬롯을 열고 전투·점프·사격과 Cmd-Q 종료를 확인했다. 전투 중 SET GAME UI가 노출되는 문제는 남아 있어 TODO에 추가했다. [검사 기록](evidence/main-integration-20261101.json).

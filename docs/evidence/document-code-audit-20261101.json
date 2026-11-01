@@ -1,0 +1,79 @@
+{
+  "basis": "aa2af710b8480aa4b23f353e315bf21912f0ee9b",
+  "markdown_files": 247,
+  "local_link_occurrences": 2381,
+  "production_files": 140,
+  "unmapped_sources": [
+    "Android/app/src/main/cpp/Transfer.inc",
+    "Distribution/Web/pwa/host.js",
+    "Distribution/Web/pwa/saves.js",
+    "Distribution/Web/pwa/sw.js",
+    "Sources/OriginalInterfaces/Arm32DiskLayouts.h",
+    "Sources/OriginalInterfaces/OriginalClasses.h",
+    "Sources/OriginalInterfaces/OriginalTypes.h"
+  ],
+  "main": "5025b23fdfc2166ef3d46d4c1767fc1909cfa2ba",
+  "develop": "aa2af710b8480aa4b23f353e315bf21912f0ee9b",
+  "main_develop_tree_equal": true,
+  "missing_path_occurrences": 110,
+  "missing_path_classes": {
+    "site_only_html_links": 91,
+    "copied_upstream_skill_references": 16,
+    "historical_readme_snapshot": 1,
+    "missing_analysis_artifact": 1,
+    "wrong_android_index": 1
+  },
+  "heading_fragment_candidates": [
+    {
+      "source": "docs/current-status.md",
+      "target": "public/lux-formation-plan-20261029.md#implementation",
+      "scope": "other-doc"
+    },
+    {
+      "source": "docs/current-status.md",
+      "target": "public/ground-aa-art-20261028.md#matched-height",
+      "scope": "other-doc"
+    },
+    {
+      "source": "docs/current-status.md",
+      "target": "public/ground-aa-art-20261028.md#shilka-turret",
+      "scope": "other-doc"
+    },
+    {
+      "source": "docs/ground-aa-expansion.md",
+      "target": "public/ground-aa-art-20261028.md#shilka-turret",
+      "scope": "current"
+    },
+    {
+      "source": "docs/ground-aa-expansion.md",
+      "target": "public/ground-aa-art-20261028.md#matched-height",
+      "scope": "current"
+    },
+    {
+      "source": "docs/lux-lunae-plan-20261027.md",
+      "target": "public/lux-formation-plan-20261029.md#implementation",
+      "scope": "current"
+    },
+    {
+      "source": "docs/public/report-overview-20261025.md",
+      "target": "apple-platform-progress-20261026.md#section-13",
+      "scope": "public"
+    },
+    {
+      "source": "docs/usability-todo.md",
+      "target": "public/lux-formation-plan-20261029.md#implementation",
+      "scope": "other-doc"
+    }
+  ],
+  "existing_checks": {
+    "document_contract": "pass; 16 routes, 148 referenced files",
+    "publication": "pass; 47 linked docs, 180 editorial docs, 960 local links",
+    "translations": "pass; 21 pairs"
+  },
+  "runtime_evidence_reused": [
+    "docs/evidence/main-integration-20261101.json",
+    "docs/evidence/save-transfer-slots-20261101.json"
+  ],
+  "new_device_tests": false,
+  "product_code_changed": false
+}
