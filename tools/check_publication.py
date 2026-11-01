@@ -98,7 +98,7 @@ def check(root):
         intro = text[quick:badges]
         for target in ('https://gelb2.github.io/HeavyMach/', '#tauri-mac',
                        'https://github.com/fastutlego', 'https://github.com/gelb2/HeavyMach/pull/24',
-                       '#빌드하기' if name == 'README.md' else '#build'):
+                       '#빌드하기'):
             if f']({target})' not in intro:
                 errors.append(f'{name}: Quick Play missing {target}')
     approved = (root / 'docs/references/developer-background/approved-readme-opening-main-20261029.md').read_text().strip()
