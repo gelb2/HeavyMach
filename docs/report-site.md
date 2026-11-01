@@ -910,3 +910,13 @@ VTOL 첫 생성 프롬프트와 스킬 수정 커밋을 대조했다. 요청에 
 - 검사: 문서 구조·공개 문서·번역 연결, 원고/다운로드 일치, 보고서 3개 링크·기존 앵커, Safari 로컬 미리보기의 PWA 본문 배치.
 - 게시 후 Safari 창 조회는 `cgWindowNotFound`로 실패했다. 게시 성공은 Sites 배포 응답으로 확인했다. 기존 소유자 전용 공개 범위를 유지했다.
 - 게임 코드 변경 없음. PWA 구현·게임 오프라인 검사는 개발 단계에서 수행한다.
+
+## 2026-11-01 문서·코드·GitHub 감사
+
+[감사 보고서](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/document-code-audit.html)에 GitHub 문서별 상태, 14개 보완 항목, 코드·정책 근거와 수정 순서를 게시했다. 전체 목차와 기존 Mac·웹·PWA 비교 보고서에서 연결한다.
+
+- 원고: `docs/reviews/document-code-audit-20261101.md`, 집계: `docs/evidence/document-code-audit-20261101.json`.
+- Site source: `0be85d6e534faecd4dcfbe3affe47b6ef08551d1`.
+- deployment: `appgdep_6ae7485f6a58819187c4a37d7a451482`, `succeeded`.
+- 기존 소유자 전용 접근 유지. 원고 다운로드 일치, 새 페이지의 파일·절 링크, 전체 보고서 60개 목차 연결을 검사했다. Safari 로컬 화면에서 목차 클릭과 GitHub 문서 상태표 배치를 확인했다.
+- 문서 검사 3종과 보호 파일 검사는 통과했다. 감사 브랜치의 게임 코드·에셋 변경은 없다. 발견 항목 수정과 main 병합은 아직 하지 않았다.
