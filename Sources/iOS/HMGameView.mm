@@ -252,8 +252,13 @@ typedef UILabel HMEditorLabel;
         _hud=[[HMGameHUD alloc] initWithMedia:_media];
         _hud.button=^(int identifier,int state) {[weakSelf gameButton:identifier state:state];};
         _hud.upgradeClosed=^{[weakSelf finishUpgrade];};
-        [self loadHUDLayout];[self resumeTransfer];[self prepareHUDEditor];
+        [self loadHUDLayout];[self resumeTransfer];
+        NSString* previousControlScope=_media.resourceScope;_media.resourceScope=@"native-controls";
+        [self prepareHUDEditor];
         _transferEntry=[self editorButton:@"TRANSFER PROGRESS" action:@selector(openTransfer:) tag:0];[self addSubview:_transferEntry];
+        _media.resourceScope=previousControlScope;
+        // The buttons own their rendered images; their source sheet is no longer needed.
+        [_media releaseScope:@"native-controls"];
         [self prepareScreenResources:1];
 #if !TARGET_OS_OSX
         _motion=[CMMotionManager new];

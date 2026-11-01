@@ -1,0 +1,196 @@
+{
+  "kind": "page-date-shift-persistent-profile",
+  "browserEvictionClockChanged": false,
+  "osClockChanged": false,
+  "realElapsedDays": 0,
+  "requestedDays": [
+    7,
+    14,
+    30,
+    40
+  ],
+  "cases": [
+    {
+      "mode": "browser",
+      "days": 7,
+      "future": {
+        "persisted": false,
+        "periodicSync": true,
+        "date": "2026-11-08T12:10:29.040Z",
+        "gameLoaded": true,
+        "bytes": 3624,
+        "gameDate": "2026-11-08T12:10:29.407Z"
+      },
+      "returned": {
+        "persisted": false,
+        "periodicSync": true,
+        "date": "2026-11-01T12:10:29.040Z",
+        "gameLoaded": true,
+        "bytes": 3624,
+        "gameDate": "2026-11-01T12:10:29.309Z"
+      },
+      "saveDigest": "cf141e9018ada19b89a5735be2f33f00cb3a79466aec09bbd4be53e9edaf69c1",
+      "ok": true
+    },
+    {
+      "mode": "browser",
+      "days": 14,
+      "future": {
+        "persisted": false,
+        "periodicSync": true,
+        "date": "2026-11-15T12:10:29.038Z",
+        "gameLoaded": true,
+        "bytes": 3624,
+        "gameDate": "2026-11-15T12:10:29.279Z"
+      },
+      "returned": {
+        "persisted": false,
+        "periodicSync": true,
+        "date": "2026-11-01T12:10:29.045Z",
+        "gameLoaded": true,
+        "bytes": 3624,
+        "gameDate": "2026-11-01T12:10:29.342Z"
+      },
+      "saveDigest": "162abf0ba2bf5b4e7070d9bf60bc687c7893881975f4b9fbb2c6862f1c2bdbcc",
+      "ok": true
+    },
+    {
+      "mode": "browser",
+      "days": 30,
+      "future": {
+        "persisted": false,
+        "periodicSync": true,
+        "date": "2026-12-01T12:10:29.062Z",
+        "gameLoaded": true,
+        "bytes": 3624,
+        "gameDate": "2026-12-01T12:10:29.301Z"
+      },
+      "returned": {
+        "persisted": false,
+        "periodicSync": true,
+        "date": "2026-11-01T12:10:29.033Z",
+        "gameLoaded": true,
+        "bytes": 3624,
+        "gameDate": "2026-11-01T12:10:29.305Z"
+      },
+      "saveDigest": "975b692a8c425367a44387509e0d73154819a60baf29e5f8df8576ede464ec81",
+      "ok": true
+    },
+    {
+      "mode": "browser",
+      "days": 40,
+      "future": {
+        "persisted": false,
+        "periodicSync": true,
+        "date": "2026-12-11T12:10:29.031Z",
+        "gameLoaded": true,
+        "bytes": 3624,
+        "gameDate": "2026-12-11T12:10:29.275Z"
+      },
+      "returned": {
+        "persisted": false,
+        "periodicSync": true,
+        "date": "2026-11-01T12:10:29.047Z",
+        "gameLoaded": true,
+        "bytes": 3624,
+        "gameDate": "2026-11-01T12:10:29.307Z"
+      },
+      "saveDigest": "f303d86162bce146fc31ff2ddb6759f2a9d4655fd380a5552e652825aaa410ef",
+      "ok": true
+    },
+    {
+      "mode": "pwa",
+      "days": 7,
+      "future": {
+        "persisted": true,
+        "periodicSync": true,
+        "date": "2026-11-08T12:10:29.079Z",
+        "gameLoaded": true,
+        "bytes": 3624,
+        "gameDate": "2026-11-08T12:10:29.305Z"
+      },
+      "returned": {
+        "persisted": true,
+        "periodicSync": true,
+        "date": "2026-11-01T12:10:29.062Z",
+        "gameLoaded": true,
+        "bytes": 3624,
+        "gameDate": "2026-11-01T12:10:29.322Z"
+      },
+      "saveDigest": "cf141e9018ada19b89a5735be2f33f00cb3a79466aec09bbd4be53e9edaf69c1",
+      "ok": true
+    },
+    {
+      "mode": "pwa",
+      "days": 14,
+      "future": {
+        "persisted": true,
+        "periodicSync": true,
+        "date": "2026-11-15T12:10:29.127Z",
+        "gameLoaded": true,
+        "bytes": 3624,
+        "gameDate": "2026-11-15T12:10:29.353Z"
+      },
+      "returned": {
+        "persisted": true,
+        "periodicSync": true,
+        "date": "2026-11-01T12:10:29.013Z",
+        "gameLoaded": true,
+        "bytes": 3624,
+        "gameDate": "2026-11-01T12:10:29.338Z"
+      },
+      "saveDigest": "162abf0ba2bf5b4e7070d9bf60bc687c7893881975f4b9fbb2c6862f1c2bdbcc",
+      "ok": true
+    },
+    {
+      "mode": "pwa",
+      "days": 30,
+      "future": {
+        "persisted": true,
+        "periodicSync": true,
+        "date": "2026-12-01T12:10:29.078Z",
+        "gameLoaded": true,
+        "bytes": 3624,
+        "gameDate": "2026-12-01T12:10:29.314Z"
+      },
+      "returned": {
+        "persisted": true,
+        "periodicSync": true,
+        "date": "2026-11-01T12:10:29.016Z",
+        "gameLoaded": true,
+        "bytes": 3624,
+        "gameDate": "2026-11-01T12:10:29.327Z"
+      },
+      "saveDigest": "975b692a8c425367a44387509e0d73154819a60baf29e5f8df8576ede464ec81",
+      "ok": true
+    },
+    {
+      "mode": "pwa",
+      "days": 40,
+      "future": {
+        "persisted": true,
+        "periodicSync": true,
+        "date": "2026-12-11T12:10:29.036Z",
+        "gameLoaded": true,
+        "bytes": 3624,
+        "gameDate": "2026-12-11T12:10:29.442Z"
+      },
+      "returned": {
+        "persisted": true,
+        "periodicSync": true,
+        "date": "2026-11-01T12:10:29.029Z",
+        "gameLoaded": true,
+        "bytes": 3624,
+        "gameDate": "2026-11-01T12:10:29.347Z"
+      },
+      "saveDigest": "f303d86162bce146fc31ff2ddb6759f2a9d4655fd380a5552e652825aaa410ef",
+      "ok": true
+    }
+  ],
+  "ok": true,
+  "origin": "http://127.0.0.1:55165/",
+  "browser": "Chrome/156.0.8078.74",
+  "testSource": "Distribution/Web/tests/date-retention.mjs",
+  "saveData": "synthetic fixture, not user progress",
+  "gameUrl": "export const GAME_URL=\"game/987c248e0bd9d674/index.html\";"
+}

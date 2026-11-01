@@ -49,7 +49,7 @@ async function initialize(){
  });});
  const worker=(await navigator.serviceWorker.ready).active;
  const result=await message(worker,'status');activeVersion=result.version;offlineReady=result.ready;
- $('export').disabled=false;$('import').disabled=false;readyLabel();
+ readyLabel();
  if(standalone())await exclusive(()=>prepare());
  $('play').disabled=false;
 }
@@ -61,14 +61,7 @@ $('play').onclick=()=>exclusive(async()=>{
  await new Promise(()=>{});
 }).catch(fail);
 $('retry').onclick=()=>registration?.active?exclusive(()=>prepare()).catch(fail):location.reload();
-$('export').onclick=()=>exclusive(async()=>{await saves.recover();saves.download(await saves.encode(await saves.read()));}).catch(fail);
-$('import').onchange=async event=>{const file=event.target.files[0];event.target.value='';if(!file)return;
- try{if(file.size>262144)throw Error('Save file is too large');const text=await file.text();await saves.decode(text);
- if(!confirm('Replace saved progress with this file? A copy of your current progress will be kept.'))return;
- await exclusive(async()=>{await saves.restore(text);const old=saves.previous();if(old)saves.download(old,'HeavyMach-before-import.json');});status.textContent='Save imported.';
- }catch(e){fail(e);}
-};
-function installState(){const installed=standalone();$('install').hidden=installed;$('play').classList.toggle('primary',installed);$('play').textContent=installed?'Play':'Play in browser';if(installed)$('intro').textContent='Download once, then play offline. Updates download when you are online.';}
+function installState(){const installed=standalone();$('install').hidden=installed;$('install-storage').hidden=installed;$('play').classList.toggle('primary',installed);$('play').textContent=installed?'Play':'Play in browser';if(installed)$('intro').textContent='Download once, then play offline. Updates download when you are online.';}
 $('install').onclick=async()=>{
  if(installPrompt){const prompt=installPrompt;installPrompt=null;await prompt.prompt();const choice=await prompt.userChoice;if(choice.outcome==='accepted')status.textContent='Open Heavy Mach from its new icon.';return;}
  const appleMobile=/iPhone|iPad|iPod/.test(navigator.userAgent)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1);

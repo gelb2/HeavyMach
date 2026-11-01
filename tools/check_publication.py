@@ -84,14 +84,25 @@ def check(root):
             dest = path.parent / unquote(url.path)
             if not dest.exists():
                 errors.append(f'{name}: missing local link {target}')
-    readme_blocks = strip_nav((root / 'README.md').read_text()).split('\n\n')
-    if len(readme_blocks) < 2 or not readme_blocks[1].startswith('[!['):
-        errors.append('README badges must follow the title')
     readme_text = strip_nav((root / 'README.md').read_text())
+    for name, motive in [('README.md', '## HeavyMach를 다시 만든 이유'),
+                         ('README.en.md', '## Why I rebuilt HeavyMach')]:
+        text = strip_nav((root / name).read_text())
+        quick = text.find('## Quick Play — PWA · Mac')
+        badges = text.find('[![')
+        heading = text.find(motive)
+        if not (0 < quick < badges < heading):
+            errors.append(f'{name}: expected Quick Play, badges, then the motive')
+        if text[:quick].strip() != '# HeavyMach':
+            errors.append(f'{name}: Quick Play must follow the title and language links')
+        intro = text[quick:badges]
+        for target in ('https://gelb2.github.io/HeavyMach/', '#tauri-mac',
+                       'https://github.com/fastutlego', 'https://github.com/gelb2/HeavyMach/pull/24',
+                       '#빌드하기' if name == 'README.md' else '#build'):
+            if f']({target})' not in intro:
+                errors.append(f'{name}: Quick Play missing {target}')
     approved = (root / 'docs/references/developer-background/approved-readme-opening-main-20261029.md').read_text().strip()
     expected = '#' + approved
-    if len(readme_blocks) < 3 or readme_blocks[2] != '## HeavyMach를 다시 만든 이유':
-        errors.append('README motive heading must follow the badges')
     if expected not in readme_text:
         errors.append('README opening differs from the approved manuscript')
     restoration_paragraphs = strip_nav((root / 'docs/RESTORATION.md').read_text()).split('\n\n')

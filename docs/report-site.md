@@ -1,5 +1,25 @@
 # HeavyMach 보고 사이트
 
+## 7·14·30·40일 시각 변경 검사 — 2026-11-01
+
+[결과와 하트비트 검토](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/mac-web-pwa-comparison.html#date-test-results)를 게시했다. Chrome 일반 창·설치 PWA의 페이지 시각 변경/원복 8조건, 영구 저장 승인 관측과 시험 JSON을 연결했다. OS 시각·브라우저 내부 정리 시계·실제 장기 미사용은 미검사로 명시했다.
+
+- source: `892cafbfed4c4f1d58c8e9ab43a8ef13559e5619`
+- deployment: `appgdep_6ae72d39a7cc8191a47eeddc2e2108f5` · succeeded
+- version: `appgprj_6addbf55aea081918d3d182d7e496e88~appgver_1f3965c380d08191a58084f188006c91`
+- 소유자 전용 접근 유지. 원고 다운로드·링크·앵커·문서 연결을 검사했다. 이번 갱신 화면 검사는 미실행이다. 게임 코드는 변경하지 않았다.
+
+
+## Mac mini 웹·PWA 저장 검사 계획 — 2026-11-01
+
+[검사 보고서](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/mac-web-pwa-comparison.html#storage-test-mac-plan)에 날짜 변경의 범위, WebKit 사용 날짜·시험용 API 조사, Mac 검사 S01~S12, 모바일 최종 확인과 장기 관측을 추가했다. 개발 계획·TODO·다운로드도 갱신했다.
+
+- source: `8ab253feb041af735a9be64babaee44fda9193c3`
+- deployment: `appgdep_6ae72b4511e08191a3106202f32d6ff3` · succeeded
+- version: `appgprj_6addbf55aea081918d3d182d7e496e88~appgver_fd5cf0890da881919f445052508707f2`
+- 소유자 전용 접근 유지. 원고/다운로드 일치, 페이지 링크·앵커와 문서 연결 검사 통과. Safari에서 로컬 보고서의 새 본문·목차를 확인했다. 최종 화면 캡처는 도구 시간 초과로 미완료다. 시스템 날짜 변경과 새 게임 저장 검사는 실행하지 않았다.
+
+
 ## Mac 두 버전과 웹·PWA 비교 — 2026-11-01
 
 [비교 보고서](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/mac-web-pwa-comparison.html)에 네이티브 Mac·Tauri·Chrome 웹·설치형 PWA의 실행 구조, 프레임 수치, 입력·오프라인·저장·업데이트 검사와 실제 화면을 올렸다. 기존 사이트 목차·개발 계획에서 연결하고 원고·검사 JSON 다운로드를 제공한다. [웹 게임](https://gelb2.github.io/HeavyMach/)도 배포했다.

@@ -13,7 +13,7 @@
 | `protected-files.json` | 개발 시작 전 기존 파일의 경로·SHA-256 |
 | `build/`, `src-tauri/target/` | Git에서 제외한 생성물 |
 
-기존 `Web/`, `Sources/`, Apple·Android 프로젝트를 수정하지 않는다. 웹·PWA 실행기는 `Distribution/Web/`에 있다. Tauri 앱은 Service Worker를 사용하지 않는다.
+최초 실행기는 기존 게임 파일을 수정하지 않고 추가했다. 후속 공통 복원 코드 작업은 `Modules/SaveTransfer`와 선언된 플랫폼 연결부·빌드 구성 변경을 포함한다. 기존 게임 코어와 에셋은 유지한다. 웹·PWA 실행기는 `Distribution/Web/`에 있다. Tauri 앱은 Service Worker를 사용하지 않는다.
 
 ## 준비와 빌드
 

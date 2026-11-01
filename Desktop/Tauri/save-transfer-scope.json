@@ -19,7 +19,9 @@
     "iOS/project.yml": "Link the shared save transfer static framework into each application.",
     "iOS/HeavyMachRestored.xcodeproj/project.pbxproj": "Link the shared save transfer static framework into each application.",
     "macOS/project.yml": "Link the shared save transfer static framework into each application.",
-    "macOS/HeavyMachMac.xcodeproj/project.pbxproj": "Link the shared save transfer static framework into each application."
+    "macOS/HeavyMachMac.xcodeproj/project.pbxproj": "Link the shared save transfer static framework into each application.",
+    "tools/check_publication.py": "2026-11-01 user-requested README Quick Play placement and contributor links: update document layout assertions; preserve approved author manuscript checks.",
+    "Tests/iOS/HMSaveParityTests.mm": "2026-11-01 requested native regression: add isolated native save-transfer roundtrip, startup recovery and malformed-code preservation checks; retain original no-shot-save test."
   },
   "new_files": [
     "Sources/iOS/HMTransfer.inc",

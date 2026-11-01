@@ -76,3 +76,9 @@ fastutlego가 `porting/wasm`에서 웹 빌드를 작성해 PR #24로 기여했�
 ## Tauri·웹 확장 계획 — 2026-10-31
 
 Tauri·순수 웹 개발은 기여자 웹 구현과 후속 수정 3건까지 고정한다. `Web/`·`Sources/Web/`·기존 Apple·Android·공용 코어·자원·도구는 수정하지 않는다. 새 코드는 `Desktop/Tauri/`·`Distribution/Web/`에 둔다. 저장 데이터 보존과 Mac·Windows 지원을 목적으로, 기존 웹 저장을 유지하고 별도 실행기에 OS 파일 백업·복구를 추가한다. Mac 비교 → 순수 웹·PWA 배포 → Windows 설치본 빌드 순서로 진행한다. [개발 계획](desktop-web-plan-20261031.md). `feat/tauri-mac`의 첫 Mac 실행기·OS 백업·시작 전 복구를 구현했다. 실제 슬롯 복구와 JS/Rust 20개 검사를 통과했다. 네이티브 Mac 비교·배포와 PWA·Windows는 남아 있다. [실행 기록](evidence/tauri-mac-start-20261031.json).
+
+## 복원 코드 공통 모듈과 UI 후속 조사 — 2026-11-01
+
+후속 사용자 지시로 `Modules/SaveTransfer`를 추가하고 Apple·Android·웹 연결부와 빌드 구성에 연결했다. 기존 `Sources/Core`·에셋은 유지한다. 이전 Tauri 착수 당시의 전체 파일 동결 설명 이후 승인된 범위이며 `Desktop/Tauri/save-transfer-scope.json`에 파일을 기록한다. 슬롯 화면에서만 코드를 생성·복원한다. [모듈](../Modules/SaveTransfer/README.md).
+
+현재 동작하는 작업을 먼저 main에 통합하고 별도 UI 구현의 전수조사를 준비한다. [조사 대상과 기준](ui-implementation-audit.md). HUD 편집 도구, 복원 진입 버튼, 코드 입력창은 구분한다.
