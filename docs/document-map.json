@@ -420,7 +420,10 @@
         "docs/public/github-followup-20261028.md",
         "docs/references/developer-background/user-wemade-discovery-20261028.md",
         "docs/references/developer-background/approved-readme-opening-20261029.md",
-        "docs/public/save-recovery-20261102.md"
+        "docs/public/save-recovery-20261102.md",
+        "docs/editorial/web-tauri-sass-handoff-20261102.md",
+        "docs/public/first-pr-and-tauri-20261031.md",
+        "docs/reviews/game-button-incident-20261101.md"
       ],
       "sources": [
         "docs/RESTORATION.md",
@@ -435,7 +438,8 @@
       "evidence": [
         "docs/references/developer-background/source-manifest.json",
         "docs/current-status.md",
-        "docs/evidence/sass-handoff-audit-20261028.json"
+        "docs/evidence/sass-handoff-audit-20261028.json",
+        "docs/evidence/sass-handoff-audit-20261102.json"
       ]
     },
     "media": {
