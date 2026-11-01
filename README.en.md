@@ -50,7 +50,7 @@ Money is only needed in this life.
 
 The latest stable release tag is [v0.17](https://github.com/gelb2/HeavyMach/tree/v0.17). It includes the regular and cheat Android apps. Regular and cheat validation apps can be installed separately. The cheat app tests the same game with specified missions, weapons and upgrades.
 
-Current main also includes Web/PWA, Tauri Mac, recovery codes and the game-button changes. The latest stable release tag remains v0.17; these additions have not yet received a new release tag.
+Current main also includes Web/PWA, Tauri Mac, recovery codes and the game-button changes. Tauri Mac is available under a separate download tag. The next stable release across all platforms is still in preparation.
 
 [Latest release](https://github.com/gelb2/HeavyMach/releases/latest) · [Version history](CHANGELOG.en.md) · [Android changes](CHANGELOG.en.md#v017)
 

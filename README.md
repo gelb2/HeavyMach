@@ -46,7 +46,7 @@ HeavyMach도 2015년, 2016년 생활을 청산하고 다른 직업을 택하게 
 
 최신 정식 릴리스 태그는 [v0.17](https://github.com/gelb2/HeavyMach/tree/v0.17)이다. Android 일반·치트 앱을 포함한다. 일반 앱과 치트 검증 앱을 각각 설치할 수 있다. 치트 앱에서는 미션·무기·강화 조건을 지정해 같은 게임을 검사한다.
 
-현재 main에는 웹/PWA·Tauri Mac·복원 코드·게임 버튼 수정도 포함돼 있다. 최신 정식 릴리스 태그는 v0.17이며, 이 추가분의 새 릴리스 태그는 아직 만들지 않았다.
+현재 main에는 웹/PWA·Tauri Mac·복원 코드·게임 버튼 수정도 포함돼 있다. Tauri Mac은 별도 다운로드 태그로 공개했다. 전체 플랫폼을 묶은 다음 정식 릴리스는 준비 중이다.
 
 [최신 릴리스](https://github.com/gelb2/HeavyMach/releases/latest) · [전체 버전 이력](CHANGELOG.md) · [Android 추가 내역](CHANGELOG.md#v017)
 
