@@ -4,6 +4,8 @@
 [한국어](gameplay-guide.md) | [English](../en/public/gameplay-guide.md)
 <!-- language-nav:end -->
 
+[Quick Play: 키보드·트랙패드 조작, Mac 첫 실행, 레벨 19 공유 복구코드](quick-play.md).
+
 기기를 가로로 놓고 슬롯과 미션을 선택한다. 일반 앱은 플레이 진행에 따라 무기와 부품을 얻는다. 치트 앱은 타이틀의 검증 패널에서 미션·무기·강화 조건을 지정할 수 있다. 두 앱은 저장 공간이 다르다.
 
 ## 터치와 틸트

@@ -6,6 +6,8 @@
 [한국어](../../public/build-and-install.md) | [English](build-and-install.md)
 <!-- language-nav:end -->
 
+[Quick Play: keyboard and trackpad, first launch on Mac, shared level 19 recovery code](quick-play.md).
+
 <a id="웹pwatauri에서-플레이"></a>
 
 ## Play on the web, PWA or Tauri

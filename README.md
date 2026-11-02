@@ -13,6 +13,13 @@ Xcode나 Android Studio로 직접 빌드하기 어렵다면 웹/PWA 버전을 �
 HeavyMach를 웹브라우저에서 실행할 수 있도록 기여해 준 [fastutlego](https://github.com/fastutlego)에게 감사드린다. [첫 웹판 PR #24](https://github.com/gelb2/HeavyMach/pull/24)의 WebAssembly 실행부, WebGL2 렌더링, 입력·음향·저장이 PWA와 Tauri Mac 버전의 기반이 됐다.
 
 
+키보드와 트랙패드로 이동·점프·조준·사격할 수 있다. **[기본 조작과 Mac 첫 실행 안내](docs/public/quick-play.md)**를 참고한다.
+
+### 레벨업이 힘든 사람을 위한 방법
+
+내 아이폰에서 플레이하며 만든 복구코드를 공유한다. 레벨업 과정을 상당 부분 건너뛰고 **레벨 19·무기 14종·이동·방어·공격 부품 6단계**인 탱크로 플레이할 수 있다. **[복구코드와 적용 방법](docs/public/quick-play.md#레벨업이-힘든-사람을-위한-방법)**.
+
+
 [![Git tag v0.17](docs/public/media/badges/version.svg)](https://github.com/gelb2/HeavyMach/tree/v0.17)
 [![Platforms iOS iPadOS macOS Android Web PWA](docs/public/media/badges/platforms.svg)](docs/public/validation.md)
 [![Architecture arm64 and wasm32](docs/public/media/badges/arch.svg)](docs/public/build-and-install.md)
