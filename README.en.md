@@ -4,24 +4,6 @@
 [한국어](README.md) | [English](README.en.md)
 <!-- language-nav:end -->
 
-## Quick Play — PWA · Mac
-
-**[Play on the web · Install the PWA](https://gelb2.github.io/HeavyMach/)** · [Tauri Mac app](#tauri-mac)
-
-If building with Xcode or Android Studio is difficult, use the web/PWA version. Follow the link and choose **Install game** to add it to your home screen, or **Play in browser** to play in a tab. [Download Tauri Mac](https://github.com/gelb2/HeavyMach/releases/tag/tauri-mac-20261102) and unzip it to run the Mac app. Requires Apple Silicon and macOS 14 or later; first-launch instructions are on the download page. For native iOS, iPadOS, Android and macOS apps, see [Build](#빌드하기) below.
-
-Thank you to [fastutlego](https://github.com/fastutlego) for bringing HeavyMach to web browsers. The WebAssembly host, WebGL2 renderer, input, audio and saves in [the first web port, PR #24](https://github.com/gelb2/HeavyMach/pull/24), became the foundation for the PWA and Tauri Mac versions.
-
-
-Play with a keyboard and trackpad to move, jump, aim and fire. See **[controls and Mac first-launch instructions](docs/en/public/quick-play.md)**.
-
-<a id="레벨업이-힘든-사람을-위한-방법"></a>
-
-### Skip much of the leveling with my save
-
-I am sharing a recovery code from my iPhone playthrough. Skip much of the leveling with a tank at **level 19, carrying 14 weapons and stage 6 movement, defense and attack parts**. **[Recovery code and instructions](docs/en/public/quick-play.md#레벨업이-힘든-사람을-위한-방법)**.
-
-
 [![Git tag v0.17](docs/public/media/badges/version.svg)](https://github.com/gelb2/HeavyMach/tree/v0.17)
 [![Platforms iOS iPadOS macOS Android Web PWA](docs/public/media/badges/platforms.svg)](docs/en/public/validation.md)
 [![Architecture arm64 and wasm32](docs/public/media/badges/arch.svg)](docs/en/public/build-and-install.md)
@@ -50,6 +32,23 @@ If a stakeholder contacts me, I will take this project down. The nine years and 
 Money is only needed in this life.
 
 [Full developer's statement](docs/en/RESTORATION.md)
+
+## Quick Play — PWA · Mac
+
+**[Play on the web · Install the PWA](https://gelb2.github.io/HeavyMach/)** · [Tauri Mac app](#tauri-mac)
+
+If building with Xcode or Android Studio is difficult, use the web/PWA version. Follow the link and choose **Install game** to add it to your home screen, or **Play in browser** to play in a tab. [Download Tauri Mac](https://github.com/gelb2/HeavyMach/releases/tag/tauri-mac-20261102) and unzip it to run the Mac app. Requires Apple Silicon and macOS 14 or later; first-launch instructions are on the download page. For native iOS, iPadOS, Android and macOS apps, see [Build](#빌드하기) below.
+
+Thank you to [fastutlego](https://github.com/fastutlego) for bringing HeavyMach to web browsers. The WebAssembly host, WebGL2 renderer, input, audio and saves in [the first web port, PR #24](https://github.com/gelb2/HeavyMach/pull/24), became the foundation for the PWA and Tauri Mac versions.
+
+
+Play with a keyboard and trackpad to move, jump, aim and fire. See **[controls and Mac first-launch instructions](docs/en/public/quick-play.md)**.
+
+<a id="레벨업이-힘든-사람을-위한-방법"></a>
+
+### Skip much of the leveling with my save
+
+I am sharing a recovery code from my iPhone playthrough. Skip much of the leveling with a tank at **level 19, carrying 14 weapons and stage 6 movement, defense and attack parts**. **[Recovery code and instructions](docs/en/public/quick-play.md#레벨업이-힘든-사람을-위한-방법)**.
 
 <a id="간단한-설명과-설치"></a>
 

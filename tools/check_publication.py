@@ -91,11 +91,11 @@ def check(root):
         quick = text.find('## Quick Play — PWA · Mac')
         badges = text.find('[![')
         heading = text.find(motive)
-        if not (0 < quick < badges < heading):
-            errors.append(f'{name}: expected Quick Play, badges, then the motive')
-        if text[:quick].strip() != '# HeavyMach':
-            errors.append(f'{name}: Quick Play must follow the title and language links')
-        intro = text[quick:badges]
+        if not (0 < badges < heading < quick):
+            errors.append(f'{name}: expected badges, motive, then Quick Play')
+        if text[:badges].strip() != '# HeavyMach':
+            errors.append(f'{name}: Badges must follow the title and language links')
+        intro = text[quick:text.find('\n## ', quick + 1)]
         for target in ('https://gelb2.github.io/HeavyMach/', '#tauri-mac',
                        'https://github.com/fastutlego', 'https://github.com/gelb2/HeavyMach/pull/24',
                        '#빌드하기'):

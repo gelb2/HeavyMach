@@ -4,22 +4,6 @@
 [한국어](README.md) | [English](README.en.md)
 <!-- language-nav:end -->
 
-## Quick Play — PWA · Mac
-
-**[웹에서 플레이 · PWA 설치](https://gelb2.github.io/HeavyMach/)** · [Tauri Mac 앱](#tauri-mac)
-
-Xcode나 Android Studio로 직접 빌드하기 어렵다면 웹/PWA 버전을 권장한다. 위 링크에서 **Install game**을 눌러 홈 화면에 설치하거나, **Play in browser**로 바로 플레이할 수 있다. [Tauri Mac 다운로드](https://github.com/gelb2/HeavyMach/releases/tag/tauri-mac-20261102)를 받아 압축을 풀면 Mac 앱으로 실행할 수 있다. Apple Silicon·macOS 14 이상용이며 첫 실행 허용 방법은 다운로드 페이지에 있다. iOS·iPadOS·Android·macOS 네이티브 앱의 설치·빌드 방법은 아래 [빌드하기](#빌드하기)를 참고한다.
-
-HeavyMach를 웹브라우저에서 실행할 수 있도록 기여해 준 [fastutlego](https://github.com/fastutlego)에게 감사드린다. [첫 웹판 PR #24](https://github.com/gelb2/HeavyMach/pull/24)의 WebAssembly 실행부, WebGL2 렌더링, 입력·음향·저장이 PWA와 Tauri Mac 버전의 기반이 됐다.
-
-
-키보드와 트랙패드로 이동·점프·조준·사격할 수 있다. **[기본 조작과 Mac 첫 실행 안내](docs/public/quick-play.md)**를 참고한다.
-
-### 레벨업이 힘든 사람을 위한 방법
-
-내 아이폰에서 플레이하며 만든 복구코드를 공유한다. 레벨업 과정을 상당 부분 건너뛰고 **레벨 19·무기 14종·이동·방어·공격 부품 6단계**인 탱크로 플레이할 수 있다. **[복구코드와 적용 방법](docs/public/quick-play.md#레벨업이-힘든-사람을-위한-방법)**.
-
-
 [![Git tag v0.17](docs/public/media/badges/version.svg)](https://github.com/gelb2/HeavyMach/tree/v0.17)
 [![Platforms iOS iPadOS macOS Android Web PWA](docs/public/media/badges/platforms.svg)](docs/public/validation.md)
 [![Architecture arm64 and wasm32](docs/public/media/badges/arch.svg)](docs/public/build-and-install.md)
@@ -46,6 +30,21 @@ HeavyMach도 2015년, 2016년 생활을 청산하고 다른 직업을 택하게 
 돈은 이승에서나 필요한 것이다.
 
 [개발자의 변 전문](docs/RESTORATION.md)
+
+## Quick Play — PWA · Mac
+
+**[웹에서 플레이 · PWA 설치](https://gelb2.github.io/HeavyMach/)** · [Tauri Mac 앱](#tauri-mac)
+
+Xcode나 Android Studio로 직접 빌드하기 어렵다면 웹/PWA 버전을 권장한다. 위 링크에서 **Install game**을 눌러 홈 화면에 설치하거나, **Play in browser**로 바로 플레이할 수 있다. [Tauri Mac 다운로드](https://github.com/gelb2/HeavyMach/releases/tag/tauri-mac-20261102)를 받아 압축을 풀면 Mac 앱으로 실행할 수 있다. Apple Silicon·macOS 14 이상용이며 첫 실행 허용 방법은 다운로드 페이지에 있다. iOS·iPadOS·Android·macOS 네이티브 앱의 설치·빌드 방법은 아래 [빌드하기](#빌드하기)를 참고한다.
+
+HeavyMach를 웹브라우저에서 실행할 수 있도록 기여해 준 [fastutlego](https://github.com/fastutlego)에게 감사드린다. [첫 웹판 PR #24](https://github.com/gelb2/HeavyMach/pull/24)의 WebAssembly 실행부, WebGL2 렌더링, 입력·음향·저장이 PWA와 Tauri Mac 버전의 기반이 됐다.
+
+
+키보드와 트랙패드로 이동·점프·조준·사격할 수 있다. **[기본 조작과 Mac 첫 실행 안내](docs/public/quick-play.md)**를 참고한다.
+
+### 레벨업이 힘든 사람을 위한 방법
+
+내 아이폰에서 플레이하며 만든 복구코드를 공유한다. 레벨업 과정을 상당 부분 건너뛰고 **레벨 19·무기 14종·이동·방어·공격 부품 6단계**인 탱크로 플레이할 수 있다. **[복구코드와 적용 방법](docs/public/quick-play.md#레벨업이-힘든-사람을-위한-방법)**.
 
 ## 간단한 설명과 설치
 
