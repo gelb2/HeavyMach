@@ -1,5 +1,8 @@
 # SaaS Apps·Mags 집필 자료
 
+- [Quick Play](quick-play.md): 키보드·트랙패드 조작, Mac 첫 실행, 사용자가 공개한 아이폰 레벨 19 복구코드와 적용 범위.
+
+
 HeavyMach에 관해 내가 쓴 원문과 기술 설명·수정 과정·이미지를 이 저장소에 모았다. Apps는 기술 설명, Mags는 매거진 인터뷰 형식이다. 두 곳 모두 현재 기능과 시정 과정을 다룬다. SaaS 담당 세션이 이 자료로 원고를 작성하고 서비스에 반영한다.
 
 집필은 이 저장소 **main의 최신 문서**에서 시작한다. Apple·Android 게임 릴리스는 **v0.17**이다. Android 추가 자료는 [개발 원고](android-development-20261030.md)에 있다. 현재 main에는 웹/PWA·Tauri Mac·복원 코드·게임 버튼 수정도 들어 있다. Tauri Mac 다운로드는 날짜 태그 tauri-mac-20261102로 별도 제공한다. 전체 플랫폼의 다음 정식 릴리스는 아직 없다.

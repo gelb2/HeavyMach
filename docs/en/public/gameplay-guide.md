@@ -6,6 +6,8 @@
 [한국어](../../public/gameplay-guide.md) | [English](gameplay-guide.md)
 <!-- language-nav:end -->
 
+[Quick Play: keyboard and trackpad, first launch on Mac, shared level 19 recovery code](quick-play.md).
+
 Hold the device in landscape and select a save slot and mission. The regular app unlocks weapons and parts through play. The cheat app's title-screen validation panel lets you choose a mission, weapons and upgrades. The two apps use separate saves.
 
 <a id="터치와-틸트"></a>

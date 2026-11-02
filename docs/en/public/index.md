@@ -6,6 +6,8 @@
 [한국어](../../public/index.md) | [English](index.md)
 <!-- language-nav:end -->
 
+[Quick Play: keyboard and trackpad, first launch on Mac, shared level 19 recovery code](quick-play.md).
+
 HeavyMach runs on iPhone, iPad, native Mac, Android, Web/PWA and Tauri Mac. The latest stable release tag is v0.17; current main also includes the web distribution, recovery codes and game-button changes.
 
 <a id="시작하기"></a>

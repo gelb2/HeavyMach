@@ -4,6 +4,8 @@
 [한국어](build-and-install.md) | [English](../en/public/build-and-install.md)
 <!-- language-nav:end -->
 
+[Quick Play: 키보드·트랙패드 조작, Mac 첫 실행, 레벨 19 공유 복구코드](quick-play.md).
+
 ## 웹·PWA·Tauri에서 플레이
 
 [HeavyMach 웹 페이지](https://gelb2.github.io/HeavyMach/)에서 **INSTALL GAME**을 선택하면 PWA 설치 안내를 볼 수 있다. iPhone·iPad Safari에서는 공유 메뉴의 홈 화면에 추가를 사용한다. Android에서는 Chrome의 앱 설치를 사용한다. 브라우저에서 바로 하려면 **PLAY IN BROWSER**를 선택한다. 첫 다운로드가 끝나면 설치한 PWA에서 오프라인으로 플레이할 수 있다.

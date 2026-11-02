@@ -117,6 +117,11 @@
       "korean": "docs/public/save-recovery-20261102.md",
       "english": "docs/en/public/save-recovery-20261102.md",
       "status": "translated"
+    },
+    {
+      "korean": "docs/public/quick-play.md",
+      "english": "docs/en/public/quick-play.md",
+      "status": "translated"
     }
   ],
   "excluded": [

@@ -4,6 +4,8 @@
 [한국어](index.md) | [English](../en/public/index.md)
 <!-- language-nav:end -->
 
+[Quick Play: 키보드·트랙패드 조작, Mac 첫 실행, 레벨 19 공유 복구코드](quick-play.md).
+
 HeavyMach는 iPhone·iPad·네이티브 Mac·Android·웹/PWA·Tauri Mac에서 실행한다. 최신 정식 릴리스 태그는 v0.17이며, 현재 main에는 웹 배포·복원 코드·게임 버튼 수정도 들어 있다.
 
 ## 시작하기
