@@ -1,5 +1,8 @@
 # HeavyMach Tauri 실행기
 
+[Player guide: keyboard and trackpad, Mac first launch, shared recovery code](../../docs/en/public/quick-play.md).
+
+
 웹 게임을 포함하는 Apple Silicon Mac 앱이다. 게임 C++·웹 호스트·자원을 빌드해 포함한다. 이 폴더는 창, 앱 저장소, OS 파일 백업과 복구만 담당한다.
 
 ## 파일 배치

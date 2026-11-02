@@ -49,7 +49,8 @@
     "docs/release-notes-plan.md",
     "docs/web-port-20261028.md",
     "docs/desktop-web-plan-20261031.md",
-    "docs/public/save-recovery-20261102.md"
+    "docs/public/save-recovery-20261102.md",
+    "docs/public/quick-play.md"
   ],
   "base_read": [
     "AGENTS.md",

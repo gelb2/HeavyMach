@@ -1,0 +1,70 @@
+{
+  "date": "2026-11-02",
+  "request": "Publish owner-authorized iPhone progress recovery code, keyboard/trackpad controls and Mac first-launch instructions",
+  "source": "iPhone regular-app Documents backup from 2026-11-02; unchanged by latest app install",
+  "sourceGameSHA256": "04e44eca2b94dddb797d7066bec8d6b793765baa9a43170545c633a02f4e7f66",
+  "publicCodeSHA256": "7974a8ac64ecc882efc8ca8162b495a9e13dba21afc68f2da76cfde1647d7ec3",
+  "slot": 2,
+  "otherSlots": "empty",
+  "level": 19,
+  "experience": 221706,
+  "mission": "7-6",
+  "weaponCount": 14,
+  "partStages": [
+    6,
+    6,
+    6
+  ],
+  "settings": "Existing iPhone HUD positions, aim=1, default keyboard mappings; missing upper-trim placement remains default as in the current Apple loader",
+  "generation": "Current shared WebAssembly codec; decoded by current C++ codec; game bytes identical to iPhone backup",
+  "gameCodeChanged": false,
+  "browserRestore": {
+    "ok": true,
+    "url": "http://127.0.0.1:56388/",
+    "gameURL": "http://127.0.0.1:56388/game/3665a237a9dccd69/index.html",
+    "touch": false,
+    "installed": false,
+    "steps": [
+      "title hidden; original title button enters slots; game transfer visible",
+      "no DOM game buttons or transfer dialog",
+      "canvas CREATE CODE preserves saved data",
+      "canvas COPY writes recovery code to clipboard",
+      "late COPY completion preserves restore confirmation summary",
+      "canvas SAVE CODE FILE downloads exact code",
+      "canvas OPEN CODE FILE loads exact code",
+      "text input keys do not select a slot",
+      "invalid code rejected without save change",
+      "game confirmation CANCEL preserves save",
+      "slot and HUD-control options operate as game buttons",
+      "original menus enter combat; transfer entry hidden",
+      "original pause command works",
+      "F3 opens game transfer screen",
+      "canvas RESTORE matches native fixture exactly",
+      "offline reload preserves every recovered value",
+      "offline game opens restored slots and game transfer button"
+    ]
+  },
+  "launcherChecks": {
+    "steps": [
+      "first-visit-downloads-launcher-only",
+      "install-is-primary-before-game-download",
+      "ipad-install-instructions",
+      "mobile-tablet-desktop-layouts",
+      "interrupted-download-does-not-start-game",
+      "retry-reuses-verified-files",
+      "byte-progress-and-verification",
+      "reopen-does-not-redownload-game",
+      "offline-start-after-retry"
+    ],
+    "ok": true
+  },
+  "webVersion": "8f752735308b304b",
+  "downloadRevision": {
+    "filename": "HeavyMach-Tauri-Mac-arm64-20261102-r2.zip",
+    "sha256": "3104a8cb0bd4589717613e215abf07a6b6418f29472682e47020b9368e3b7332",
+    "bytes": 73940359,
+    "appFilesIdenticalToPrevious": true,
+    "codesignDeepStrict": true,
+    "changes": "Sibling Korean/English Quick Play guides, authorized shared code, README links; application unchanged"
+  }
+}

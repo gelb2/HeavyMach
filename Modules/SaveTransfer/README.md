@@ -66,6 +66,6 @@ node Modules/SaveTransfer/tests/wasm.mjs "$(pwd)/build/save-transfer"
 node Modules/SaveTransfer/tests/slot-entry.mjs "$(pwd)/build/save-transfer"
 ```
 
-웹 화면 검사는 Web 테스트 의존성, Chrome, `Distribution/Web/build/site` 산출물을 준비한 뒤 `node Modules/SaveTransfer/tests/browser-slots.mjs`로 실행한다. `HM_INSTALLED=1`은 설치형 PWA를 검사한다. 별도 Chrome 프로필을 사용한다. 사용자 복원 코드는 Git에 추가하지 않는다.
+웹 화면 검사는 Web 테스트 의존성, Chrome, `Distribution/Web/build/site` 산출물을 준비한 뒤 `node Modules/SaveTransfer/tests/browser-slots.mjs`로 실행한다. `HM_INSTALLED=1`은 설치형 PWA를 검사한다. 별도 Chrome 프로필을 사용한다. 개인 복원 코드는 Git에 추가하지 않는다. 사용자가 공개를 요청한 [Quick Play 공유 코드](../../docs/public/quick-play.md)는 별도로 게시한다.
 
 초기 교차 플랫폼 검사는 [2026-11-01 기록](../../docs/evidence/save-transfer-slots-20261101.json)에 있다. 버튼 교체 후 [Apple 검사](../../docs/evidence/game-buttons-apple-20261102.json), [Galaxy 네이티브·Chrome·PWA 검사](../../docs/evidence/game-buttons-android-20261102.json), [웹·Tauri 검사](../../docs/evidence/game-buttons-web-tauri-20261102.json), [공개 웹 배포 후 검사](../../docs/evidence/game-buttons-web-postdeployment-20261102.json)를 추가했다. 최신 남은 과제는 [TODO](../../docs/usability-todo.md)를 따른다.

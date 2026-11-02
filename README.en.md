@@ -13,6 +13,15 @@ If building with Xcode or Android Studio is difficult, use the web/PWA version. 
 Thank you to [fastutlego](https://github.com/fastutlego) for bringing HeavyMach to web browsers. The WebAssembly host, WebGL2 renderer, input, audio and saves in [the first web port, PR #24](https://github.com/gelb2/HeavyMach/pull/24), became the foundation for the PWA and Tauri Mac versions.
 
 
+Play with a keyboard and trackpad to move, jump, aim and fire. See **[controls and Mac first-launch instructions](docs/en/public/quick-play.md)**.
+
+<a id="레벨업이-힘든-사람을-위한-방법"></a>
+
+### Skip much of the leveling with my save
+
+I am sharing a recovery code from my iPhone playthrough. Skip much of the leveling with a tank at **level 19, carrying 14 weapons and stage 6 movement, defense and attack parts**. **[Recovery code and instructions](docs/en/public/quick-play.md#레벨업이-힘든-사람을-위한-방법)**.
+
+
 [![Git tag v0.17](docs/public/media/badges/version.svg)](https://github.com/gelb2/HeavyMach/tree/v0.17)
 [![Platforms iOS iPadOS macOS Android Web PWA](docs/public/media/badges/platforms.svg)](docs/en/public/validation.md)
 [![Architecture arm64 and wasm32](docs/public/media/badges/arch.svg)](docs/en/public/build-and-install.md)
