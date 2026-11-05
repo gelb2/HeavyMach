@@ -99,6 +99,43 @@ def article(source,dest,download,template):
     deduplicate_styles(page)
     dest.write_text(str(page));shutil.copyfile(source,dest.parent/download)
 
+def closing_articles(dist, template):
+    """Render both closing essays from their repository manuscripts."""
+    variants = [
+        ('docs/public/after-heavymach1-20261105.md', 'after-heavymach1.html', 'after-heavymach1-20261105.md', 'ko'),
+        ('docs/en/public/after-heavymach1-20261105.md', 'after-heavymach1-en.html', 'after-heavymach1-20261105.en.md', 'en'),
+    ]
+    for source, page_name, download, language in variants:
+        article(ROOT/source, dist/page_name, download, template)
+        page = BeautifulSoup((dist/page_name).read_text(), 'html.parser')
+        page.html['lang'] = language
+        for link in page.select('main a[href]'):
+            if link.find_parent(class_='top'): continue
+            if link.get_text() == '한국어': link['href'] = 'after-heavymach1.html'
+            elif link.get_text() == 'English': link['href'] = 'after-heavymach1-en.html'
+        top = page.select_one('.top')
+        if language == 'en':
+            top.select('a')[0].string = '← All reports'
+            top.select('a')[1].string = 'Markdown manuscript'
+        links = page.new_tag('p')
+        github = page.new_tag('a', href='https://github.com/gelb2/HeavyMach/blob/main/'+source)
+        github.string = 'GitHub manuscript' if language == 'en' else 'GitHub 원고'
+        links.append(github)
+        for label, target in [
+            ('Sass source material' if language == 'en' else 'Sass 집필 자료', 'docs/public/publication-inventory.md'),
+            ('Image provenance' if language == 'en' else '이미지 출처', 'docs/public/media/machdefense-roadmap-20261105/README.md'),
+        ]:
+            links.append(' · ')
+            link = page.new_tag('a', href='https://github.com/gelb2/HeavyMach/blob/main/'+target)
+            link.string = label
+            links.append(link)
+        top.insert_after(links)
+        style = page.new_tag('style')
+        style.string = 'main img{display:block;width:min(100%,420px);max-width:100%;height:auto;margin:24px auto}'
+        page.head.append(style)
+        deduplicate_styles(page)
+        (dist/page_name).write_text(str(page))
+
 def main():
     check_runtime_art_references()
     ap=argparse.ArgumentParser(description=__doc__);ap.add_argument('--checkout',type=Path,required=True);args=ap.parse_args();dist=args.checkout/'dist'
@@ -350,6 +387,7 @@ def main():
         shutil.copyfile(ROOT/'docs/evidence'/name,dist/'evidence'/name)
     for name in ['game-design.md','document-governance.md','document-map.json','apple-platforms.md','keyboard-input-policy.md','current-status.md','wireless-device-workflow.md','usability-todo.md']:
         shutil.copyfile(ROOT/'docs'/name,dist/name)
+    closing_articles(dist, retro)
     report={'pages':['index.html','retrospective.html','documentation.html','rea.html','port-and-native.html','related-titles.html','android-plan.html','ios-audit.html','restoration.html'],'manuscripts':['report-overview-20261025.md','engineering-retrospective-20261025.md','rea-restoration-method-20261025.md','ipa-port-and-native-app-20261026.md','related-titles-20261026.md','android-port-plan-20261026.md','ios-completeness-audit-20261026.md','RESTORATION.md'],'image_count_before':len(BeautifulSoup(original,'html.parser').select('img')),'image_count_after':len(old.select('img'))}
     report['pages'] += [page for _, page in public_articles] + list(reader_sources.values()) + ['media-preparation.html']
     report['manuscripts'] += [source for source, _ in public_articles] + [page.replace('.html', '.md') for page in reader_sources.values()] + ['media-publication.md']

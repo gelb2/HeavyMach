@@ -1,12 +1,12 @@
 {
   "schema_version": 1,
-  "review_date": "2026-11-02",
+  "review_date": "2026-11-05",
   "scope_file": "docs/public/document-translation-scope.json",
   "documents": {
     "README.md": {
       "english": "README.en.md",
-      "source_sha256": "e4e73c444b4edd01af25727373af352baa7b46fdb8d9e36f59b64eb90a8c84a1",
-      "english_sha256": "ef312a3c9baf50dd67e78462c57753de3a6670d2b7323c60ace100abdffffb8e",
+      "source_sha256": "7e883f616c56ed2e95794627e043b8fff4cad472cf2ad567216ae125f8ce34f1",
+      "english_sha256": "e47ed250f0a43d6cb7851753d697f4d8f4997f04b20951913aa0947092ae85d5",
       "reviewed_numeric_difference": {
         "source_only": {
           "7": 1,
@@ -20,11 +20,11 @@
           "11": 1
         },
         "english_only": {
-          "1": 1,
-          "13": 2
+          "13": 2,
+          "1": 1
         }
       },
-      "review_note": "July, nine years/three months, aircraft and clip quantities use English words; source punctuation attaches Korean suffixes to digits. Shared personal paragraphs match the English statement. User-approved correction: 이승에서나 → in this life. Updated Android availability; personal paragraphs unchanged. Added iOS gallery and four physical-device cheat captures in both languages. Reviewed Android overview, regular Galaxy gameplay images/GIF, OS table, Gradle installation, shared-core paragraph and current-main versus v0.16 distinction; author opening unchanged. Reviewed 2026-10-30 Android coverage/link audit; current main and released v0.16 remain distinct. Lux sentence follows author commit 39b05834 where applicable. Reviewed v0.17 Android release, download links and current-version wording; historical v0.16 test results retained. Reviewed the Android experience essay, firsthand accounts, qualified hypotheses, public sources, author voice and README link. Private evidence stays outside Git. Reviewed Lysenko history expansion: vernalization versus heritable claims, Vavilov persecution, arrest and prison death, 1948 Party endorsement and institutional purge. Citations and dates match in both languages. Korean hypothesis name follows the author: 신 리셴코주의. Final title follows the latest author instruction: 신(新) 리센코주의와 정렬세. Reviewed web PR #24 attribution, web build instructions and follow-up fixes; personal paragraphs preserved. Added matching links to the Korean first-PR article. Separated the first-PR/Tauri link into its own level-two section in both READMEs; retained the Android essay and platform anchors. Reviewed 2026-11-01 Quick Play, contributor attribution, web/PWA/Tauri integration and recovery-button audit. Dates use English month names; all new test counts and cache bytes match. Personal passages unchanged. Reviewed 2026-11-02 platform status and recovery article: shared slots/codec, platform-specific restore choices, button fixes and measured versus pending checks. English number words/month names preserve source values. Personal opening unchanged. Reviewed dated Tauri Mac ZIP download, ad-hoc signing, first-launch steps, stable v0.17 distinction, and remaining notarization/other-Mac testing."
+      "review_note": "July, nine years/three months, aircraft and clip quantities use English words; source punctuation attaches Korean suffixes to digits. Shared personal paragraphs match the English statement. User-approved correction: 이승에서나 → in this life. Updated Android availability; personal paragraphs unchanged. Added iOS gallery and four physical-device cheat captures in both languages. Reviewed Android overview, regular Galaxy gameplay images/GIF, OS table, Gradle installation, shared-core paragraph and current-main versus v0.16 distinction; author opening unchanged. Reviewed 2026-10-30 Android coverage/link audit; current main and released v0.16 remain distinct. Lux sentence follows author commit 39b05834 where applicable. Reviewed v0.17 Android release, download links and current-version wording; historical v0.16 test results retained. Reviewed the Android experience essay, firsthand accounts, qualified hypotheses, public sources, author voice and README link. Private evidence stays outside Git. Reviewed Lysenko history expansion: vernalization versus heritable claims, Vavilov persecution, arrest and prison death, 1948 Party endorsement and institutional purge. Citations and dates match in both languages. Korean hypothesis name follows the author: 신 리셴코주의. Final title follows the latest author instruction: 신(新) 리센코주의와 정렬세. Reviewed web PR #24 attribution, web build instructions and follow-up fixes; personal paragraphs preserved. Added matching links to the Korean first-PR article. Separated the first-PR/Tauri link into its own level-two section in both READMEs; retained the Android essay and platform anchors. Reviewed 2026-11-01 Quick Play, contributor attribution, web/PWA/Tauri integration and recovery-button audit. Dates use English month names; all new test counts and cache bytes match. Personal passages unchanged. Reviewed 2026-11-02 platform status and recovery article: shared slots/codec, platform-specific restore choices, button fixes and measured versus pending checks. English number words/month names preserve source values. Personal opening unchanged. Reviewed dated Tauri Mac ZIP download, ad-hoc signing, first-launch steps, stable v0.17 distinction, and remaining notarization/other-Mac testing. Reviewed the closing essay: first-person voice, maintenance commitment, restoration status, Gemini quotation and personal estimate, moonlight experience, image and all links. README closing section is last in both languages."
     },
     "CHANGELOG.md": {
       "english": "CHANGELOG.en.md",
@@ -346,6 +346,20 @@
         "source_only": {},
         "english_only": {}
       }
+    },
+    "docs/public/after-heavymach1-20261105.md": {
+      "english": "docs/en/public/after-heavymach1-20261105.md",
+      "source_sha256": "3b763bb44c87d29c3c304ca38d54382134928202501988ec9331c3cbb597c687",
+      "english_sha256": "0a54fb75d3bcb910908c51ff9578c59e8e469b10412d096bb62f3317b8f016e5",
+      "reviewed_numeric_difference": {
+        "source_only": {
+          "11": 1
+        },
+        "english_only": {
+          "1": 1
+        }
+      },
+      "review_note": " Reviewed the closing essay: first-person voice, maintenance commitment, restoration status, Gemini quotation and personal estimate, moonlight experience, image and all links. README closing section is last in both languages."
     }
   }
 }
