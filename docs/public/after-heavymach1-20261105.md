@@ -1,5 +1,9 @@
 # 헤비멕1 복원을 마치고
 
+<!-- language-nav:start -->
+[한국어](after-heavymach1-20261105.md) | [English](../en/public/after-heavymach1-20261105.md)
+<!-- language-nav:end -->
+
 처음부터 내 로드맵은 개발자 변해준과 일러스트레이터 박재철이 만든 연작을 모두 복원하는 것이었다. 나에게 남은 시간이 얼마 없기에, 내게 가장 큰 영향을 준 HeavyMach 1을 먼저 복원했다.
 
 HeavyMach 1은 이제 주변 개발자들과 지인들이 직접 플레이할 수 있는 상태가 됐다. 그들에게서 잘 복원했다는 확인과 “잘해줬다”는 말을 들었다. 복원한 코드는 GitHub의 main까지 반영했다.

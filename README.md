@@ -31,8 +31,6 @@ HeavyMach도 2015년, 2016년 생활을 청산하고 다른 직업을 택하게 
 
 [개발자의 변 전문](docs/RESTORATION.md)
 
-[헤비멕1 복원을 마치고](docs/public/after-heavymach1-20261105.md) — HeavyMach 1은 유지보수 단계로 관리하고, 다음 복원 과제로 MachDefense를 진행한다.
-
 ## Quick Play — PWA · Mac
 
 **[웹에서 플레이 · PWA 설치](https://gelb2.github.io/HeavyMach/)** · [Tauri Mac 앱](#tauri-mac)
@@ -314,3 +312,9 @@ HeavyMach 원작은 변해준이 개발하고 박재철이 그림을 맡았다. 
 이 프로젝트에서 새로 작성한 코드에는 [MIT](LICENSE)를 적용한다. [적용 범위](LICENSE-SCOPE.md)에 원작 유래 자료·외부 코드·문서를 구분했다. 원작 그림·음원·게임 데이터와 추가 그림은 [자원 이용 조건](ASSET-LICENSES.md), OpenAL Soft·stb 등은 [외부 라이브러리 고지](THIRD_PARTY_NOTICES.md)를 따른다.
 
 나는 이 복원판으로 돈을 벌 생각이 없다. [개발자의 변](docs/RESTORATION.md)
+
+## 헤비멕1 복원을 마치고
+
+HeavyMach 1은 유지보수 단계로 관리하고, 다음 복원 과제로 MachDefense를 진행한다.
+
+[전문 읽기](docs/public/after-heavymach1-20261105.md)
