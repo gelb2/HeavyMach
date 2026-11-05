@@ -31,6 +31,8 @@ HeavyMach도 2015년, 2016년 생활을 청산하고 다른 직업을 택하게 
 
 [개발자의 변 전문](docs/RESTORATION.md)
 
+[헤비멕1 복원을 마치고](docs/public/after-heavymach1-20261105.md) — HeavyMach 1은 유지보수 단계로 관리하고, 다음 복원 과제로 MachDefense를 진행한다.
+
 ## Quick Play — PWA · Mac
 
 **[웹에서 플레이 · PWA 설치](https://gelb2.github.io/HeavyMach/)** · [Tauri Mac 앱](#tauri-mac)

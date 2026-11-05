@@ -33,6 +33,8 @@ Money is only needed in this life.
 
 [Full developer's statement](docs/en/RESTORATION.md)
 
+[After restoring HeavyMach 1 (Korean)](docs/public/after-heavymach1-20261105.md) — HeavyMach 1 moves into maintenance, while MachDefense becomes the next restoration project.
+
 ## Quick Play — PWA · Mac
 
 **[Play on the web · Install the PWA](https://gelb2.github.io/HeavyMach/)** · [Tauri Mac app](#tauri-mac)
