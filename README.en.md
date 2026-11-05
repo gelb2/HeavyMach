@@ -33,8 +33,6 @@ Money is only needed in this life.
 
 [Full developer's statement](docs/en/RESTORATION.md)
 
-[After restoring HeavyMach 1 (Korean)](docs/public/after-heavymach1-20261105.md) — HeavyMach 1 moves into maintenance, while MachDefense becomes the next restoration project.
-
 ## Quick Play — PWA · Mac
 
 **[Play on the web · Install the PWA](https://gelb2.github.io/HeavyMach/)** · [Tauri Mac app](#tauri-mac)
@@ -355,3 +353,9 @@ The original HeavyMach was developed by Byun Hae-jun, with artwork by Park Jae-c
 New code written for this project uses the [MIT license](LICENSE). [License scope](LICENSE-SCOPE.en.md) distinguishes original-derived material, external code and documents. Original images, audio, game data and additional artwork follow the [asset terms](ASSET-LICENSES.en.md); OpenAL Soft, stb and other libraries are covered by [third-party notices](THIRD_PARTY_NOTICES.en.md).
 
 I have no intention of making money from this restoration. [Developer's statement](docs/en/RESTORATION.md)
+
+## After restoring HeavyMach 1
+
+HeavyMach 1 moves into maintenance, while MachDefense becomes the next restoration project.
+
+[Read the full essay](docs/en/public/after-heavymach1-20261105.md)

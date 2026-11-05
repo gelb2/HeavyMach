@@ -122,6 +122,11 @@
       "korean": "docs/public/quick-play.md",
       "english": "docs/en/public/quick-play.md",
       "status": "translated"
+    },
+    {
+      "korean": "docs/public/after-heavymach1-20261105.md",
+      "english": "docs/en/public/after-heavymach1-20261105.md",
+      "status": "translated"
     }
   ],
   "excluded": [
