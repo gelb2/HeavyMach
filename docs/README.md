@@ -7,6 +7,7 @@
 | 문서 | 내용 |
 |---|---|
 | [개발자의 변](RESTORATION.md) | HeavyMach가 직업 전환에 준 영향과 다시 만든 이유 |
+| [헤비멕1 복원을 마치고](public/after-heavymach1-20261105.md) | 연작 복원 로드맵과 MachDefense 착수 |
 | [왜 럭스루나에인가](public/lux-lunae-intent-20261028.md) | 두 게임의 개인적인 의미, 기종·도색·전투 기획, 도안과 플레이 화면 |
 | [기능](public/features.md) | 기존 게임, 자동조준·항공기·화면·플랫폼 추가의 기획과 구현 |
 | [조작](public/gameplay-guide.md) | 터치·틸트·키보드·자동조준·무기·강화 |

@@ -1,5 +1,11 @@
 # SaaS Apps·Mags 집필 자료
 
+## 연작 복원 로드맵 — 2026-11-05
+
+[헤비멕1 복원을 마치고](after-heavymach1-20261105.md)는 별도 후속 원고다. 변해준·박재철의 연작 전체 복원 계획, HeavyMach 1을 먼저 복원한 이유와 지인들의 플레이 확인, PR·Sass를 통한 후속 연락, MachDefense 착수와 플랫폼 목표를 담았다. [사용자 원문](../references/developer-background/user-series-roadmap-20261105.md)과 [제공 이미지·출처](media/machdefense-roadmap-20261105/README.md)를 함께 읽는다.
+
+Mags에서는 사용자의 로드맵과 판단을, Apps에서는 MachDefense의 현재 iOS·iPadOS 동작 확인과 Android·PWA·Mac 지원 목표를 구분해 사용한다. 기존 개발자의 변와 다른 원고는 유지한다.
+
 - [Quick Play](quick-play.md): 키보드·트랙패드 조작, Mac 첫 실행, 사용자가 공개한 아이폰 레벨 19 복구코드와 적용 범위.
 
 

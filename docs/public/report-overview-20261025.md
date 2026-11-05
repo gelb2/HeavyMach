@@ -63,6 +63,7 @@ Codex가 일반 앱과 치트 앱을 아이폰·아이패드에 설치했다. �
 ### 개발 배경·복원 과정
 
 - [개발자의 변](restoration.html) — HeavyMach를 선택하고 복원한 이유.
+- [헤비멕1 복원을 마치고](after-heavymach1.html) — HeavyMach 1 유지보수와 다음 복원 과제 MachDefense.
 - [IPA 포팅과 네이티브 복원](port-and-native.html) — 두 판본의 구현·비교 순서.
 - [기술 회고](retrospective.html) — 문제, 수정과 검사 결과.
 - [REA 활용 내역](rea.html) — 분석 도구·함수·근거.

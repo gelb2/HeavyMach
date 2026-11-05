@@ -93,6 +93,11 @@
       "copy": "user-first-pr-20261031.md",
       "source": "2026-10-31 현재 대화의 첫 외부 PR 경험과 기여 보존·글감 TODO 지시 및 승인 리뷰 생략 경험·통합 원고 집필 후속 지시",
       "sha256": "23aa60d7d11ad1eaa94d891402c0f11d8c5fef73abbc13905c3798b76966213b"
+    },
+    {
+      "copy": "user-series-roadmap-20261105.md",
+      "source": "2026-11-05 현재 대화의 연작 복원 로드맵과 MachDefense 이미지 제공",
+      "sha256": "5791c373bb62d967ed2ea30e1b8b1fca28b75f2f14d78f0083fd99e6f472ece0"
     }
   ]
 }

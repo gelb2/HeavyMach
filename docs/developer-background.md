@@ -1,5 +1,7 @@
 # 개발 동기 자료와 작성 순서
 
+2026-11-05 후속 글감: [연작 복원 로드맵 원문](references/developer-background/user-series-roadmap-20261105.md)을 별도 원고 [헤비멕1 복원을 마치고](public/after-heavymach1-20261105.md)에 반영했다. 연작 전체 복원 계획과 HeavyMach 1 이후의 유지보수·MachDefense 착수를 담는다. 기존 개발자의 변는 유지한다.
+
 개발자의 변, README 소개, GitHub 회고, SaaS Apps·Mags에서 HeavyMach를 설명할 때 이 문서와 아래 원문을 먼저 읽는다. 기술 기획서의 학습·AI 실험 목적만으로 개인적인 시작 이유를 대신하지 않는다.
 
 ## 읽을 원문

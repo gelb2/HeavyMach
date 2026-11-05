@@ -17,6 +17,8 @@ FILES = ['docs/public/lux-lunae-intent-20261028.md', 'README.md', 'CONTRIBUTING.
          'docs/public/validation.md', 'docs/public/implementation-status.md',
          'docs/public/github-repository-plan-20261028.md', 'docs/public/github-followup-20261028.md']
 
+FILES += ['docs/public/after-heavymach1-20261105.md',
+          'docs/public/media/machdefense-roadmap-20261105/README.md']
 FILES += [p for p in EXPECTED if p not in FILES] + list(EXPECTED.values())
 
 # Known rejected copy, checked in every report manuscript as well as reader docs.

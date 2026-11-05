@@ -158,6 +158,7 @@ def main():
         ('ground-units-research-20261028.md', 'ground-units.html'),
         ('ground-aa-art-20261028.md', 'ground-aa-art.html'),
         ('publication-inventory.md', 'publication.html'),
+        ('after-heavymach1-20261105.md', 'after-heavymach1.html'),
         ('gameplay-media-20261027.md', 'gameplay-media.html'),
         ('github-documentation-plan-20261027.md', 'github-documentation.html'),
         ('github-licenses-and-badges-20261028.md', 'github-licenses-and-badges.html'),
@@ -168,6 +169,8 @@ def main():
         article(ROOT/'docs/public'/source_name, dist/page_name, source_name, retro)
         page = BeautifulSoup((dist/page_name).read_text(), 'html.parser')
         if page.footer: page.footer.decompose()
+        if page_name == 'after-heavymach1.html':
+            style=page.new_tag('style');style.string='main img{display:block;width:min(100%,420px);height:auto;margin:24px auto}';page.head.append(style)
         if page_name in ('lux-formation.html','icon-and-media.html','hud-improvement.html','fullscreen.html','auto-aim-progress.html','lux-lunae.html','lux-lunae-intent.html','gameplay-media.html','ground-aa-art.html'):
             style=page.new_tag('style');style.string='main img,main video{display:block;max-width:100%;height:auto;margin:16px 0}main video{width:100%}';page.head.append(style)
             for img in page.select('main img'):
