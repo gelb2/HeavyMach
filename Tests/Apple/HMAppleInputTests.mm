@@ -559,7 +559,7 @@ NSDictionary* macFrameMetrics(const std::vector<double>& values) {
 #endif
  auto& data=storage<heavymach::GameData>(self.game,"_data");XCTAssertNil([self.game valueForKey:@"loadError"]);
  HMMedia* media=[self.game valueForKey:@"media"];HMGLRenderer* gl=[self.game valueForKey:@"glRenderer"];
- int index=0;const int missions[]={1,2,5},stages[]={1,2,1};const char* maps[]={"Stage06","Stage12","Stage21"};
+ int index=0;const int missions[]={0,2,5},stages[]={0,4,1};const char* maps[]={"Stage01","Stage14","Stage21"};
  for(const auto& spec:heavymach::vtolSpecs()){
   auto& map=data.maps.at(maps[index]);auto enemy=std::find_if(map.enemies.begin(),map.enemies.end(),[&](const auto& e){return e.name==spec.name;});XCTAssertTrue(enemy!=map.enemies.end());if(enemy==map.enemies.end())return;
   heavymach::ValidationScenario fixture;fixture.mission=missions[index];fixture.stage=stages[index];fixture.allWeapons=true;fixture.internalLevel=50;fixture.grades={6,6,6};fixture.playerPosition=heavymach::Vector2{enemy->position.x-130,enemy->position.y-100};

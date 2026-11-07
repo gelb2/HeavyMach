@@ -1,5 +1,10 @@
 <a id="변경-이력"></a>
 
+## Aircraft distribution patch — 2026-11-07
+
+- Yak-141, Harrier GR3 and F-35B now total 152 spawns across all 35 scenario stages, up from 113 across 14 stages. Each stage matches its combined Shilka/Tunguska count; aircraft totals are 51, 51 and 50.
+- Original enemies, ground AA and Lux Lunae placements remain unchanged. [Platform checks and remaining verification (Korean)](docs/reviews/vtol-world-distribution-20261107.md).
+
 # Changelog
 
 <!-- language-nav:start -->

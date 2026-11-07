@@ -1,0 +1,444 @@
+{
+  "date": "2026-11-07",
+  "base_commit": "7a023ba7",
+  "scope": "Scenario: 7 missions, 35 stages; Survival and original entries unchanged",
+  "before": {
+    "shilka": 77,
+    "tunguska": 75,
+    "yak": 30,
+    "harrier": 41,
+    "f35": 42,
+    "vtol_stages": 14
+  },
+  "after": {
+    "shilka": 77,
+    "tunguska": 75,
+    "yak": 51,
+    "harrier": 51,
+    "f35": 50,
+    "vtol_stages": 35
+  },
+  "stages": [
+    {
+      "mission": 1,
+      "stage": 1,
+      "map": "Stage01",
+      "shilka": 1,
+      "tunguska": 0,
+      "yak": 1,
+      "harrier": 0,
+      "f35": 0
+    },
+    {
+      "mission": 1,
+      "stage": 2,
+      "map": "Stage02",
+      "shilka": 0,
+      "tunguska": 1,
+      "yak": 0,
+      "harrier": 1,
+      "f35": 0
+    },
+    {
+      "mission": 1,
+      "stage": 3,
+      "map": "Stage03",
+      "shilka": 1,
+      "tunguska": 1,
+      "yak": 1,
+      "harrier": 0,
+      "f35": 1
+    },
+    {
+      "mission": 1,
+      "stage": 4,
+      "map": "Stage04",
+      "shilka": 1,
+      "tunguska": 0,
+      "yak": 0,
+      "harrier": 1,
+      "f35": 0
+    },
+    {
+      "mission": 2,
+      "stage": 1,
+      "map": "Stage05",
+      "shilka": 7,
+      "tunguska": 7,
+      "yak": 5,
+      "harrier": 4,
+      "f35": 5
+    },
+    {
+      "mission": 2,
+      "stage": 2,
+      "map": "Stage06",
+      "shilka": 5,
+      "tunguska": 5,
+      "yak": 3,
+      "harrier": 4,
+      "f35": 3
+    },
+    {
+      "mission": 2,
+      "stage": 3,
+      "map": "Stage07",
+      "shilka": 7,
+      "tunguska": 7,
+      "yak": 5,
+      "harrier": 4,
+      "f35": 5
+    },
+    {
+      "mission": 2,
+      "stage": 4,
+      "map": "Stage08",
+      "shilka": 0,
+      "tunguska": 1,
+      "yak": 0,
+      "harrier": 1,
+      "f35": 0
+    },
+    {
+      "mission": 2,
+      "stage": 5,
+      "map": "Stage09",
+      "shilka": 1,
+      "tunguska": 0,
+      "yak": 0,
+      "harrier": 0,
+      "f35": 1
+    },
+    {
+      "mission": 3,
+      "stage": 1,
+      "map": "Stage10",
+      "shilka": 1,
+      "tunguska": 0,
+      "yak": 1,
+      "harrier": 0,
+      "f35": 0
+    },
+    {
+      "mission": 3,
+      "stage": 2,
+      "map": "Stage11",
+      "shilka": 0,
+      "tunguska": 1,
+      "yak": 0,
+      "harrier": 1,
+      "f35": 0
+    },
+    {
+      "mission": 3,
+      "stage": 3,
+      "map": "Stage12",
+      "shilka": 1,
+      "tunguska": 0,
+      "yak": 0,
+      "harrier": 0,
+      "f35": 1
+    },
+    {
+      "mission": 3,
+      "stage": 4,
+      "map": "Stage13",
+      "shilka": 0,
+      "tunguska": 1,
+      "yak": 1,
+      "harrier": 0,
+      "f35": 0
+    },
+    {
+      "mission": 3,
+      "stage": 5,
+      "map": "Stage14",
+      "shilka": 1,
+      "tunguska": 0,
+      "yak": 0,
+      "harrier": 1,
+      "f35": 0
+    },
+    {
+      "mission": 4,
+      "stage": 1,
+      "map": "Stage25",
+      "shilka": 2,
+      "tunguska": 3,
+      "yak": 2,
+      "harrier": 1,
+      "f35": 2
+    },
+    {
+      "mission": 4,
+      "stage": 2,
+      "map": "Stage26",
+      "shilka": 6,
+      "tunguska": 5,
+      "yak": 3,
+      "harrier": 4,
+      "f35": 4
+    },
+    {
+      "mission": 4,
+      "stage": 3,
+      "map": "Stage27",
+      "shilka": 2,
+      "tunguska": 3,
+      "yak": 2,
+      "harrier": 2,
+      "f35": 1
+    },
+    {
+      "mission": 4,
+      "stage": 4,
+      "map": "Stage28",
+      "shilka": 3,
+      "tunguska": 2,
+      "yak": 2,
+      "harrier": 1,
+      "f35": 2
+    },
+    {
+      "mission": 4,
+      "stage": 5,
+      "map": "Stage29",
+      "shilka": 0,
+      "tunguska": 1,
+      "yak": 0,
+      "harrier": 1,
+      "f35": 0
+    },
+    {
+      "mission": 5,
+      "stage": 1,
+      "map": "Stage15",
+      "shilka": 2,
+      "tunguska": 2,
+      "yak": 1,
+      "harrier": 1,
+      "f35": 2
+    },
+    {
+      "mission": 5,
+      "stage": 2,
+      "map": "Stage16",
+      "shilka": 5,
+      "tunguska": 5,
+      "yak": 4,
+      "harrier": 3,
+      "f35": 3
+    },
+    {
+      "mission": 5,
+      "stage": 3,
+      "map": "Stage17",
+      "shilka": 4,
+      "tunguska": 3,
+      "yak": 2,
+      "harrier": 3,
+      "f35": 2
+    },
+    {
+      "mission": 5,
+      "stage": 4,
+      "map": "Stage18",
+      "shilka": 5,
+      "tunguska": 5,
+      "yak": 3,
+      "harrier": 3,
+      "f35": 4
+    },
+    {
+      "mission": 5,
+      "stage": 5,
+      "map": "Stage19",
+      "shilka": 1,
+      "tunguska": 2,
+      "yak": 1,
+      "harrier": 1,
+      "f35": 1
+    },
+    {
+      "mission": 6,
+      "stage": 1,
+      "map": "Stage20",
+      "shilka": 2,
+      "tunguska": 3,
+      "yak": 2,
+      "harrier": 2,
+      "f35": 1
+    },
+    {
+      "mission": 6,
+      "stage": 2,
+      "map": "Stage21",
+      "shilka": 3,
+      "tunguska": 3,
+      "yak": 2,
+      "harrier": 2,
+      "f35": 2
+    },
+    {
+      "mission": 6,
+      "stage": 3,
+      "map": "Stage22",
+      "shilka": 1,
+      "tunguska": 0,
+      "yak": 0,
+      "harrier": 0,
+      "f35": 1
+    },
+    {
+      "mission": 6,
+      "stage": 4,
+      "map": "Stage23",
+      "shilka": 0,
+      "tunguska": 1,
+      "yak": 1,
+      "harrier": 0,
+      "f35": 0
+    },
+    {
+      "mission": 6,
+      "stage": 5,
+      "map": "Stage24",
+      "shilka": 1,
+      "tunguska": 0,
+      "yak": 0,
+      "harrier": 1,
+      "f35": 0
+    },
+    {
+      "mission": 7,
+      "stage": 1,
+      "map": "Stage30",
+      "shilka": 4,
+      "tunguska": 4,
+      "yak": 3,
+      "harrier": 2,
+      "f35": 3
+    },
+    {
+      "mission": 7,
+      "stage": 2,
+      "map": "Stage31",
+      "shilka": 2,
+      "tunguska": 1,
+      "yak": 1,
+      "harrier": 1,
+      "f35": 1
+    },
+    {
+      "mission": 7,
+      "stage": 3,
+      "map": "Stage32",
+      "shilka": 1,
+      "tunguska": 2,
+      "yak": 1,
+      "harrier": 1,
+      "f35": 1
+    },
+    {
+      "mission": 7,
+      "stage": 4,
+      "map": "Stage33",
+      "shilka": 1,
+      "tunguska": 1,
+      "yak": 0,
+      "harrier": 1,
+      "f35": 1
+    },
+    {
+      "mission": 7,
+      "stage": 5,
+      "map": "Stage34",
+      "shilka": 5,
+      "tunguska": 4,
+      "yak": 3,
+      "harrier": 3,
+      "f35": 3
+    },
+    {
+      "mission": 7,
+      "stage": 6,
+      "map": "Stage35",
+      "shilka": 1,
+      "tunguska": 1,
+      "yak": 1,
+      "harrier": 1,
+      "f35": 0
+    }
+  ],
+  "verification": {
+    "core": {
+      "passed": 25,
+      "failed": 0
+    },
+    "mac_xctest": {
+      "passed": 2,
+      "failed": 0
+    },
+    "ios_simulator_xctest": {
+      "passed": 2,
+      "failed": 0
+    },
+    "android_galaxy": {
+      "passed": 39,
+      "failed": 0
+    },
+    "physical_ios_xctest": {
+      "status": "blocked before tests",
+      "reason": "Free developer profile limit of 3 installed apps on both devices"
+    },
+    "normal_installs": {
+      "iphone": "installed; Documents hashes unchanged before first launch",
+      "ipad": "installed; Documents hashes unchanged before first launch",
+      "android": "installed; files/shared_prefs archive identical before first launch",
+      "native_mac": "installed",
+      "tauri_mac": "installed"
+    },
+    "web_installed_pwa": {
+      "passed": 21,
+      "failed": 0,
+      "mode": "Chrome GPU, disposable installed PWA, offline replay"
+    },
+    "web_mobile": {
+      "passed": 7,
+      "failed": 0
+    },
+    "tauri_mac": {
+      "result": "Release app installed; existing slot loaded; mission 7-6 rendered; Cmd-Q exited",
+      "initial_black_screen": "background window did not advance RAF; Finder Open activated app without code changes",
+      "frame_record": "failure-to-menu transition, not sustained combat benchmark",
+      "raf_samples": 847,
+      "mean_ms": 17.710743801652892,
+      "p95_ms": 18,
+      "max_ms": 75
+    },
+    "physical_ios_manual": {
+      "iphone": "title, existing level-19 slot, mission selection; battle not verified",
+      "ipad": "title; battle not verified"
+    },
+    "cleanup": {
+      "iphone": "app terminated, home observed",
+      "ipad": "app terminated, home observed",
+      "android": "normal and validation force-stopped, Home command completed",
+      "tauri": "Cmd-Q; process absent"
+    }
+  },
+  "web_build": {
+    "version": "50508a94c97be452",
+    "game_version": "4e4e9aa31dc42090"
+  },
+  "sha256": {
+    "Sources/Core/VTOL.cpp": "ffe82dfbd8170bf6e8b59241dce7b58b0f47f01aa623fac4e6c1c4700ff9fcb4",
+    "Tests/VTOLTests.cpp": "83f348d6cbb14d14233c5d2b071490b2b6d47e84c6d485a4b66bce539671d097",
+    "Tests/Apple/HMAppleInputTests.mm": "394ef434bb416f1d16cca05e6232e4bf8845924b28d0d43fc96d5efb91881f14",
+    "build/evidence/core-tests.log": "1149df91dcd54945c39b15b6c63baec345635d4d5841fc97408aad49a420a3fe",
+    "build/evidence/vtol-test.log": "8c97f7af86719e714713a965863128d9782827e74d2b2c70f72d5f4ed5dc8ecf",
+    "build/evidence/tauri-foreground-frames.json": "6e3d99bf590dbeef4a7cdfc8f44ba8ad45e6961580ccba924f22066b197a704c",
+    "build/evidence/pwa-installed-test.log": "2b50528b33b5e894af8c1bc4f19eb268bb34a208633ac0a89282ad542b7f9918",
+    "build/evidence/mobile-web-test.log": "2a7cee6478c3eed9c43e925c7e75f74dfceeb435a20f57303f8e55960acde313"
+  }
+}
