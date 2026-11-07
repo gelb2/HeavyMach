@@ -6,6 +6,10 @@
 
 [최신 릴리스](https://github.com/gelb2/HeavyMach/releases/latest) · [GitHub 전체 릴리스](https://github.com/gelb2/HeavyMach/releases)
 
+## 문서 갱신 — 2026-11-07
+
+Android·웹·Tauri의 코드 라이선스 적용 범위와 Gradle·Emscripten·Tauri 고지를 한·영 문서에 추가했다. 라이선스 원문 사본을 포함한다. 게임 코드·에셋·앱 버전은 변경하지 않았다.
+
 ## Tauri Mac 다운로드 — 2026-11-02
 
 [다운로드](https://github.com/gelb2/HeavyMach/releases/tag/tauri-mac-20261102) · Apple Silicon·macOS 14 이상. 앱과 라이선스 고지, 소스 링크를 ZIP으로 제공한다. 앱 버전은 0.17.0이며 게임 묶음은 `3665a237a9dccd69`다. ad-hoc 서명을 적용하고 ZIP 압축해제 후 실행·슬롯·복원 입력·종료를 확인했다. Developer ID 공증과 다른 Mac의 첫 실행 검사는 남아 있다. 기존 v0.17 정식 릴리스는 유지한다.

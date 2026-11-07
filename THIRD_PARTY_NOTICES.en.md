@@ -17,6 +17,18 @@
 
 The [build script](tools/build_openal.sh) builds OpenAL Soft as a static library. Provide the library source, modifications, and configuration matching the distributed app, together with app source or object files that allow relinking with a modified library. Do not add terms prohibiting modification of the library-using portions or reverse engineering to debug those modifications. The source and notices are in the repository. Relinking commands and results are in the [source release checks](docs/public/github-followup-20261028.md). See section 6 of the LGPL text and the [research](docs/public/github-licenses-and-badges-20261028.md) for details.
 
+<a id="android웹tauri의-외부-구성요소"></a>
+
+## External components for Android, web, and Tauri
+
+| Component | Use | License and notices |
+|---|---|---|
+| Gradle 8.13 and Wrapper | [Android build](Android/gradle/wrapper/gradle-wrapper.properties) | Apache-2.0. [License and bundled components](LICENSES/Gradle-8.13-LICENSE.txt), [NOTICE](LICENSES/Gradle-8.13-NOTICE.txt), [upstream text](https://github.com/gradle/gradle/blob/v8.13.0/LICENSE) |
+| Emscripten | [Web build](Web/CMakeLists.txt), WebAssembly and JavaScript runtime code | MIT or University of Illinois/NCSA. [Notice copy](LICENSES/Emscripten.txt), [upstream text](https://github.com/emscripten-core/emscripten/blob/main/LICENSE). Bundled musl and other components retain the notices in their sources. |
+| Tauri 2.12.5 | [Mac launcher](Desktop/Tauri/src-tauri/Cargo.toml) | MIT or Apache-2.0. [MIT text](LICENSES/Tauri-LICENSE-MIT.txt), [Apache-2.0 text](LICENSES/Tauri-LICENSE-APACHE-2.0.txt), [upstream repository](https://github.com/tauri-apps/tauri). |
+
+Tauri's Rust dependency versions are recorded in [Cargo.lock](Desktop/Tauri/src-tauri/Cargo.lock); CLI and web test tool versions are recorded in [package-lock.json](Desktop/Tauri/package-lock.json). Each dependency retains its own copyright and license notices. The table lists the main tools and runtimes used directly by this project.
+
 <a id="외부-구현을-참조하거나-보관한-자료"></a>
 
 ## Referenced or retained external implementations
