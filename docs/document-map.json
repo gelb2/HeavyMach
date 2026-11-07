@@ -50,7 +50,9 @@
     "docs/web-port-20261028.md",
     "docs/desktop-web-plan-20261031.md",
     "docs/public/save-recovery-20261102.md",
-    "docs/public/quick-play.md"
+    "docs/public/quick-play.md",
+    "docs/public/work-method.md",
+    "docs/public/testing-method.md"
   ],
   "base_read": [
     "AGENTS.md",
@@ -303,7 +305,9 @@
         "docs/public/development-history.md",
         "docs/public/validation.md",
         "docs/public/github-followup-20261028.md",
-        "docs/public/ios-gameplay-gallery-20261030.md"
+        "docs/public/ios-gameplay-gallery-20261030.md",
+        "docs/public/work-method.md",
+        "docs/public/testing-method.md"
       ],
       "sources": [
         "docs/*",
@@ -428,7 +432,9 @@
         "docs/public/after-heavymach1-20261105.md",
         "docs/en/public/after-heavymach1-20261105.md",
         "docs/references/developer-background/user-series-roadmap-20261105.md",
-        "docs/public/media/machdefense-roadmap-20261105/README.md"
+        "docs/public/media/machdefense-roadmap-20261105/README.md",
+        "docs/public/work-method.md",
+        "docs/public/testing-method.md"
       ],
       "sources": [
         "docs/RESTORATION.md",

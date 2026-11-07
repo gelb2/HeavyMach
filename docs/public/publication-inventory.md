@@ -207,3 +207,11 @@ PWA 설치·오프라인 플레이·진행 저장·업데이트와 GitHub Pages 
 ## 추가 버튼 구현·교체 기록 — 2026-11-02
 
 Sass Apps·Mags에서 이번 UI 수정과 작업 방식에 관한 글을 쓸 때 [버튼 경위서](../reviews/game-button-incident-20261101.md), [사용자 원문과 집필 TODO](../usability-todo.md#hm-ui-incident-writing--추가-버튼-구현과-작업-방식에-관한-글감--2026-11-02), [현재 검사·배포 상태](../current-status.md)를 함께 읽는다. 원작 버튼은 보존하고 추가했던 네이티브·웹 버튼을 원작 절차로 교체했다. 경위서 11절에 수정 후 검사와 배포 결과가 있다.
+
+## 작업 지시·치트 검사 원고 — 2026-11-07
+
+[나는 이렇게 일을 시켰다](work-method.md) · [English](../en/public/work-method.md) · [나는 이렇게 테스트했다](testing-method.md) · [English](../en/public/testing-method.md).
+
+두 원고는 HeavyMach1의 사격별 파일 저장, UIKit 렌더, 효과음 지연, 전체 무기 검사, Android 파일 보존, 첫 웹 PR과 게임 버튼 수정을 다룬다. [사용자 원문](../editorial/test-method-material-20261107.md)과 [집필 기록](../evidence/work-test-publication-20261107.md)을 연결했다. Apps는 각 절의 구현·측정 근거를, Mags는 저자의 판단과 지시를 사용한다. MachDefense의 p99 수치를 HeavyMach 성능으로 옮기지 않는다.
+
+[HeavyMach 통합 보고서](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/#work-test-20261107)에서 한·영 전문을 함께 볼 수 있다.

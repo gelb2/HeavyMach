@@ -127,6 +127,16 @@
       "korean": "docs/public/after-heavymach1-20261105.md",
       "english": "docs/en/public/after-heavymach1-20261105.md",
       "status": "translated"
+    },
+    {
+      "korean": "docs/public/work-method.md",
+      "english": "docs/en/public/work-method.md",
+      "status": "translated"
+    },
+    {
+      "korean": "docs/public/testing-method.md",
+      "english": "docs/en/public/testing-method.md",
+      "status": "translated"
     }
   ],
   "excluded": [

@@ -67,3 +67,8 @@ HeavyMach runs on iPhone, iPad, native Mac, Android, Web/PWA and Tauri Mac. The 
 - [Third-party notices](../../../THIRD_PARTY_NOTICES.en.md)
 
 Use the 한국어 / English links at the top of each document to switch between its language versions. Both languages share the same images and videos.
+
+## Directing and testing the work
+
+- [How I directed the work](work-method.md)
+- [How I tested the game](testing-method.md)

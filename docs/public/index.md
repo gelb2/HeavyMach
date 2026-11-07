@@ -55,3 +55,8 @@ HeavyMach는 iPhone·iPad·네이티브 Mac·Android·웹/PWA·Tauri Mac에서 �
 - [외부 라이브러리 고지](../../THIRD_PARTY_NOTICES.md)
 
 각 문서 상단의 한국어·English 링크로 같은 문서의 언어를 바꿀 수 있다. 이미지와 영상은 두 언어에서 같은 파일을 사용한다.
+
+## 작업 지시와 검증 경험
+
+- [나는 이렇게 일을 시켰다](work-method.md)
+- [나는 이렇게 테스트했다](testing-method.md)
