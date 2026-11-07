@@ -6,13 +6,13 @@
 
 I have never worked as a developer in the game industry. In restoring HeavyMach, implementation was the work I assigned to Codex. I decided which game to bring back, what to preserve, and what to add. I also played it myself and pointed out changes in movement, sound, and artwork.
 
-## I required a plan and a report first
+## Plans and reports
 
 I made Codex prepare a development plan and write a report. I read them for missing requirements and implementation choices I could not understand. When a task looked too large, I asked which files it would change and whether it would touch the shared code that contained the game's rules.
 
 These questions came from actual failures. Even with the original game and a working compatibility build available, Codex invented other approaches. To put it in my own terms, I beat Codex into line to stop its bizarre development choices, its attacks on the architecture, and its habit of fixating on one thing, ignoring my instructions, and burning tokens on whatever it wanted to do.
 
-## It was saving every time a shot was fired
+## File writes on every shot
 
 On my iPhone, the rebuilt game stuttered where the compatibility build had not. During the investigation, I asked, “You save the file every time a shot is fired?” The early implementation connected notifications of changes to ammunition, damage, and experience directly to file saving. Small changes during combat became repeated disk writes.
 
@@ -20,7 +20,7 @@ I challenged the decision to couple changes in game state to writes of the save 
 
 Rendering had a similar problem. In a path through UIKit, Codex repeatedly processed pixels on the CPU and created and composited images. I asked why it was drawing game graphics that way and made it compare the original and compatibility paths. Firing still lagged after the change to OpenGL ES and texture reuse, so audio calls had to be measured separately.
 
-## I kept a new platform from breaking the existing apps
+## Scope of the Android port
 
 When I assigned the Android port, I prohibited changes to the files used by the working iPhone, iPad, and Mac versions. The new host belonged in the Android folder and had to build against the existing C++ game code and resources. Connecting display, input, audio, and lifecycle events should not disturb the combat rules of the existing platforms.
 
@@ -28,7 +28,7 @@ The hashes of 2,166 Apple source, project, core, and resource files matched befo
 
 The web version began with [fastutlego's PR #24](https://github.com/gelb2/HeavyMach/pull/24). I required preservation of the contributor's commits and directed Codex to add the Tauri host and web distribution without changing the working web implementation and its 3 follow-up fixes. [The first PR and Tauri](../../public/first-pr-and-tauri-20261031.md)
 
-## I made it rebuild the game buttons too
+## Reimplementing the game buttons
 
 Codex made buttons used after the game had started with separate Apple, Android, and web UI controls. The original button assets and input procedure already existed, yet it added platform-specific implementations to maintain. I again directed it to use the original method for in-game buttons and reserve platform integration for functions such as entering a recovery code.
 
