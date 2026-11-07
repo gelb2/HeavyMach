@@ -6,6 +6,10 @@
 [한국어](CHANGELOG.md) | [English](CHANGELOG.en.md)
 <!-- language-nav:end -->
 
+## 2026-11-07 Work and testing essays
+
+Added Korean and English accounts of directing the work and testing with cheat builds. Linked them from the README, index, validation, and troubleshooting pages. Each game retains its own failures and measurement conditions. Updated the integrated report and Sass writing materials.
+
 [Latest release](https://github.com/gelb2/HeavyMach/releases/latest) · [All GitHub releases](https://github.com/gelb2/HeavyMach/releases)
 
 <a id="다음-릴리스-웹판"></a>

@@ -113,3 +113,5 @@ The [Android development account](../../public/android-development-20261030.md) 
 | Galaxy boss combat, 45 seconds | 2,763 display intervals | P99 in the 17ms bucket; 0 intervals above 33ms |
 
 Full campaign completion, extended thermal and memory tests, Android tablets and physical 16KB-page devices remain. [Implementation and tests](../../android-implementation-20261030.md), [upgrade regression results](../../evidence/android-upgrade-fix-20261030.json), [regular-app gameplay](../../public/android-gameplay-20261030.md).
+
+[How I directed the work](work-method.md) · [Testing with cheat builds and direct play](testing-method.md)

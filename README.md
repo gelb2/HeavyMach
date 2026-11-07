@@ -294,6 +294,12 @@ Codex는 파일 쓰기를 저장 시점에만 실행하도록 분리했다. 게�
 
 [트러블슈팅 19건](docs/public/troubleshooting.md) · [분석·구현·검증 과정](docs/public/development-history.md)
 
+## 나는 이렇게 일을 시키고 테스트했다
+
+계획과 보고서로 수정 범위를 확인하고, 포팅판과 치트앱으로 게임을 검증한 과정을 기록했다. 내가 플레이하며 발견한 오류와 Codex가 수정·재검사한 결과를 함께 담았다.
+
+[나는 이렇게 일을 시켰다](docs/public/work-method.md) · [나는 이렇게 테스트했다](docs/public/testing-method.md)
+
 ## 코드 구조와 버전
 
 하나의 workspace에서 공용 모듈·iOS/iPadOS 앱·native Mac 앱을 관리한다. C++ 게임 코어와 이미지·음원·맵은 공유하고, 플랫폼별 창·입력·그래픽 컨텍스트를 연결한다. Apple 공용 코드는 정적 framework, 자원은 `HeavyMachAssets.bundle`로 앱에 포함한다. Android 앱은 `Android/`의 Gradle 프로젝트에서 같은 C++ 코어를 NDK로 빌드한다. Kotlin·JNI·Android C++ 호스트가 입력·메뉴·렌더링·음향을 연결하며, 같은 게임 자원을 APK에 포함한다.

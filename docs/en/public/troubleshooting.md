@@ -212,3 +212,5 @@ The [incident report (Korean)](../../reviews/game-button-incident-20261101.md#ga
 ## Recovery codes across platforms
 
 The save-transfer feature keeps the original three slots and uses a shared C++ module. Restoring a default HUD over an old custom layout, reopening after interrupted restoration, and copying/pasting codes exposed different problems in platform adapters. The [recovery-code article](save-recovery-20261102.md) brings together the design decisions, fixes, platform checks and actual screens.
+
+[How I directed the work](work-method.md) · [Testing with cheat builds and direct play](testing-method.md)
