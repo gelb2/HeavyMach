@@ -1,0 +1,22 @@
+{
+  "request": "2026-11-07: redistribute Yak/Harrier/F35 across all worlds and build all existing platforms",
+  "files": {
+    "Sources/Core/VTOL.cpp": {
+      "before": "9bb01183f5d1c2850385c7fee344687e9cdb1d33fa1ff826f621ab20a0355c5d",
+      "after": "ffe82dfbd8170bf6e8b59241dce7b58b0f47f01aa623fac4e6c1c4700ff9fcb4"
+    },
+    "Tests/VTOLTests.cpp": {
+      "before": "2b103dd77b140b72ec7d61297b55d2256a7ea4af4855d15e1b010bfbe05d428d",
+      "after": "83f348d6cbb14d14233c5d2b071490b2b6d47e84c6d485a4b66bce539671d097"
+    },
+    "Tests/Apple/HMAppleInputTests.mm": {
+      "before": "586d19e3dc4eac66144a103790443e7ab64c74e438765f6c07e15c1bf3e5434f",
+      "after": "394ef434bb416f1d16cca05e6232e4bf8845924b28d0d43fc96d5efb91881f14"
+    },
+    "tools/build_report_site.py": {
+      "before": "f17a04c14a4eb2c6965cd841aa6bf8cb6c206e64b6d565a02b0a5833c467f4c5",
+      "after": "f27f1624ff728745f2d96437161a39bdc47256e6fc217d5687a07a0a5b2d1803",
+      "reason": "Existing main document publication helper update; unchanged by this patch (base 7a023ba7)"
+    }
+  }
+}
