@@ -4,6 +4,10 @@
 [한국어](CHANGELOG.md) | [English](CHANGELOG.en.md)
 <!-- language-nav:end -->
 
+## 2026-11-07 작업·검증 원고
+
+「나는 이렇게 일을 시켰다」「나는 이렇게 테스트했다」를 한·영으로 작성하고 README·목차·검증·트러블슈팅에 연결했다. 게임별 오류와 측정 조건을 구분하고 통합 보고서와 Sass 집필 자료를 갱신했다.
+
 [최신 릴리스](https://github.com/gelb2/HeavyMach/releases/latest) · [GitHub 전체 릴리스](https://github.com/gelb2/HeavyMach/releases)
 
 ## 문서 갱신 — 2026-11-07

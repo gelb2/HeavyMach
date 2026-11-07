@@ -5,8 +5,8 @@
   "documents": {
     "README.md": {
       "english": "README.en.md",
-      "source_sha256": "7e883f616c56ed2e95794627e043b8fff4cad472cf2ad567216ae125f8ce34f1",
-      "english_sha256": "e47ed250f0a43d6cb7851753d697f4d8f4997f04b20951913aa0947092ae85d5",
+      "source_sha256": "39de774d5ecd9d5c593e41d46fd1ceebf9b55d1c812692392d1a1fea68c95b38",
+      "english_sha256": "821480776c48bbaa68c1d73f348ce9d9473880af0dea51e8fdc235c423990cac",
       "reviewed_numeric_difference": {
         "source_only": {
           "7": 1,
@@ -24,12 +24,12 @@
           "1": 1
         }
       },
-      "review_note": "July, nine years/three months, aircraft and clip quantities use English words; source punctuation attaches Korean suffixes to digits. Shared personal paragraphs match the English statement. User-approved correction: 이승에서나 → in this life. Updated Android availability; personal paragraphs unchanged. Added iOS gallery and four physical-device cheat captures in both languages. Reviewed Android overview, regular Galaxy gameplay images/GIF, OS table, Gradle installation, shared-core paragraph and current-main versus v0.16 distinction; author opening unchanged. Reviewed 2026-10-30 Android coverage/link audit; current main and released v0.16 remain distinct. Lux sentence follows author commit 39b05834 where applicable. Reviewed v0.17 Android release, download links and current-version wording; historical v0.16 test results retained. Reviewed the Android experience essay, firsthand accounts, qualified hypotheses, public sources, author voice and README link. Private evidence stays outside Git. Reviewed Lysenko history expansion: vernalization versus heritable claims, Vavilov persecution, arrest and prison death, 1948 Party endorsement and institutional purge. Citations and dates match in both languages. Korean hypothesis name follows the author: 신 리셴코주의. Final title follows the latest author instruction: 신(新) 리센코주의와 정렬세. Reviewed web PR #24 attribution, web build instructions and follow-up fixes; personal paragraphs preserved. Added matching links to the Korean first-PR article. Separated the first-PR/Tauri link into its own level-two section in both READMEs; retained the Android essay and platform anchors. Reviewed 2026-11-01 Quick Play, contributor attribution, web/PWA/Tauri integration and recovery-button audit. Dates use English month names; all new test counts and cache bytes match. Personal passages unchanged. Reviewed 2026-11-02 platform status and recovery article: shared slots/codec, platform-specific restore choices, button fixes and measured versus pending checks. English number words/month names preserve source values. Personal opening unchanged. Reviewed dated Tauri Mac ZIP download, ad-hoc signing, first-launch steps, stable v0.17 distinction, and remaining notarization/other-Mac testing. Reviewed the closing essay: first-person voice, maintenance commitment, restoration status, Gemini quotation and personal estimate, moonlight experience, image and all links. README closing section is last in both languages."
+      "review_note": "2026-11-07: reviewed work/test essay text, first-person voice, dates, measured scope, figures, links and matching navigation. Existing author README passages preserved; only the new essay section was added."
     },
     "CHANGELOG.md": {
       "english": "CHANGELOG.en.md",
-      "source_sha256": "8d88633f8afa98e14ea8c5c712206bd711111372a2079a10b4835778f02e9085",
-      "english_sha256": "304708054df2bc907daa6991716219f0f4f800c23397c69381bd4fb9b076dc10",
+      "source_sha256": "dd8ea07e75a1c8d643563c5b89c97ef674bce10b1bf96478e5423a111b9f0367",
+      "english_sha256": "41b8aeabbd180d81c2eefa29b273d8f80cc8d56a0a9c49606e425305a425a877",
       "reviewed_numeric_difference": {
         "source_only": {
           "10": 2,
@@ -48,7 +48,7 @@
           "1,482": 1
         }
       },
-      "review_note": "Month/day headings and counts use English words; source 자원1,482개·코어21개 is rendered as 1,482 resources and 21 core tests. Every release URL and historical count retained. Reviewed 2026-10-30 Android coverage/link audit; current main and released v0.16 remain distinct. Lux sentence follows author commit 39b05834 where applicable. Reviewed v0.17 Android release, download links and current-version wording; historical v0.16 test results retained. Reviewed web PR #24 attribution, web build instructions and follow-up fixes; personal paragraphs preserved. Reviewed 2026-11-01 Quick Play, contributor attribution, web/PWA/Tauri integration and recovery-button audit. Dates use English month names; all new test counts and cache bytes match. Personal passages unchanged. Reviewed dated Tauri Mac ZIP download, ad-hoc signing, first-launch steps, stable v0.17 distinction, and remaining notarization/other-Mac testing. Reviewed 2026-11-07 Android, web and Tauri scope and upstream notices. License alternatives, versions and links match."
+      "review_note": "2026-11-07: reviewed work/test essay text, first-person voice, dates, measured scope, figures, links and matching navigation. Existing author README passages preserved; only the new essay section was added."
     },
     "CREDITS.md": {
       "english": "CREDITS.en.md",
@@ -206,8 +206,8 @@
     },
     "docs/public/troubleshooting.md": {
       "english": "docs/en/public/troubleshooting.md",
-      "source_sha256": "ab2f9116c2433d4a1834e5b72f027b77c0d18792287eaaeffb59085c659015a4",
-      "english_sha256": "a461a7967ca1c028347705426932bba60481536f9e18819d0b7378034c3773ae",
+      "source_sha256": "abe254eb1ea33e1abeadf6a36d956dba70d48c53b70c580e78c2bd28efe5178d",
+      "english_sha256": "36cfe1f7527652fffb33e05fec60dcc6b4f85caf18e28413dbcbb3bad743dee8",
       "reviewed_numeric_difference": {
         "source_only": {
           "1": 1,
@@ -220,12 +220,12 @@
         },
         "english_only": {}
       },
-      "review_note": "English words replace counts and months. Historical 1482-resource result retained. Subject attribution, failures and author criticism preserved. Android implementation and linked evidence updated on 2026-10-30; existing paragraphs retained. Numeric wording reviewed. Reviewed 2026-11-01 Quick Play, contributor attribution, web/PWA/Tauri integration and recovery-button audit. Dates use English month names; all new test counts and cache bytes match. Personal passages unchanged. Reviewed 2026-11-02 platform status and recovery article: shared slots/codec, platform-specific restore choices, button fixes and measured versus pending checks. English number words/month names preserve source values. Personal opening unchanged."
+      "review_note": "2026-11-07: reviewed work/test essay text, first-person voice, dates, measured scope, figures, links and matching navigation. Existing author README passages preserved; only the new essay section was added."
     },
     "docs/public/validation.md": {
       "english": "docs/en/public/validation.md",
-      "source_sha256": "0998a2b041af9ceb1a64afa15c782e196a16595091108fcdfbb6348c6879cb76",
-      "english_sha256": "b7df7671a0554873186e9b7fbbfc2c20e2067935944235eac9c2de53e965ad14",
+      "source_sha256": "d2f2f048aa37efeec35b32ec9c4cacd240f3b7034d683fd4280bb5a734e760e5",
+      "english_sha256": "c3656a63625709a493b05b52c69b9e9a4377970ca011985089ad3fedc58ca33e",
       "reviewed_numeric_difference": {
         "source_only": {
           "11": 2,
@@ -242,7 +242,7 @@
           "20": 1
         }
       },
-      "review_note": "Dates and counts use English words. The two 20ms references are preserved; source 기준20ms attaches digits to Korean text. Historical failures and current v0.16 check separated. Android implementation and linked evidence updated on 2026-10-30; existing paragraphs retained. Numeric wording reviewed. Reviewed latest tag versus main Android status and device-results link. Reviewed 2026-10-30 Android coverage/link audit; current main and released v0.16 remain distinct. Lux sentence follows author commit 39b05834 where applicable. Reviewed v0.17 Android release, download links and current-version wording; historical v0.16 test results retained. Reviewed 2026-11-02 platform status and recovery article: shared slots/codec, platform-specific restore choices, button fixes and measured versus pending checks. English number words/month names preserve source values. Personal opening unchanged."
+      "review_note": "2026-11-07: reviewed work/test essay text, first-person voice, dates, measured scope, figures, links and matching navigation. Existing author README passages preserved; only the new essay section was added."
     },
     "docs/public/lux-lunae-intent-20261028.md": {
       "english": "docs/en/public/lux-lunae-intent-20261028.md",
@@ -267,13 +267,13 @@
     },
     "docs/public/index.md": {
       "english": "docs/en/public/index.md",
-      "source_sha256": "c93e08cbde27968b5d0d62baa6f814040d644723d627d1ef3e606d509fd3947e",
-      "english_sha256": "f65bc05c35319321938498151b7388813e6b1200dd9533dbdbd518406500794d",
+      "source_sha256": "abfdd822dd83023d54d9a92ff4b7b5603d685db46271f72a56ea1c69b92ee416",
+      "english_sha256": "9c1811c2a764a20e50f4f224117ffd82ea709170790bd28da4275a41d0cfdda4",
       "reviewed_numeric_difference": {
         "source_only": {},
         "english_only": {}
       },
-      "review_note": "Compared source and English meaning, tables, commands, attribution and current/planned status. Numeric tokens match. Reviewed Android availability and installation/development/gallery links; English captions identify Korean-only linked articles. Reviewed 2026-10-30 Android coverage/link audit; current main and released v0.16 remain distinct. Lux sentence follows author commit 39b05834 where applicable. Reviewed v0.17 Android release, download links and current-version wording; historical v0.16 test results retained. Reviewed the Android experience essay, firsthand accounts, qualified hypotheses, public sources, author voice and README link. Private evidence stays outside Git. Reviewed 2026-11-02 platform status and recovery article: shared slots/codec, platform-specific restore choices, button fixes and measured versus pending checks. English number words/month names preserve source values. Personal opening unchanged. Reviewed dated Tauri Mac ZIP download, ad-hoc signing, first-launch steps, stable v0.17 distinction, and remaining notarization/other-Mac testing."
+      "review_note": "2026-11-07: reviewed work/test essay text, first-person voice, dates, measured scope, figures, links and matching navigation. Existing author README passages preserved; only the new essay section was added."
     },
     "docs/public/design-intent.md": {
       "english": "docs/en/public/design-intent.md",
@@ -360,6 +360,28 @@
         }
       },
       "review_note": " Reviewed the closing essay: first-person voice, maintenance commitment, restoration status, Gemini quotation and personal estimate, moonlight experience, image and all links. README closing section is last in both languages."
+    },
+    "docs/public/work-method.md": {
+      "english": "docs/en/public/work-method.md",
+      "source_sha256": "a309d67cdd6c0ad1355ce01b15ace29767263f92c21ab2a1b314dc2ef32d5204",
+      "english_sha256": "3d694cece35e9f3f0352926a23d0b0370f51ef34530c4dfce087f483f48d09d8",
+      "reviewed_numeric_difference": {
+        "source_only": {},
+        "english_only": {}
+      },
+      "review_note": "2026-11-07: reviewed work/test essay text, first-person voice, dates, measured scope, figures, links and matching navigation. Existing author README passages preserved; only the new essay section was added."
+    },
+    "docs/public/testing-method.md": {
+      "english": "docs/en/public/testing-method.md",
+      "source_sha256": "e161aefb464b0e49c100680ec57081ba311d9ae72d05bcada2006f0a509ce5e0",
+      "english_sha256": "6c5ddeab392bd6cf666be3b8714dd8f7d722fe12ec677d0aadba07b4d130788b",
+      "reviewed_numeric_difference": {
+        "source_only": {
+          "10": 1
+        },
+        "english_only": {}
+      },
+      "review_note": "2026-11-07: reviewed work/test essay text, first-person voice, dates, measured scope, figures, links and matching navigation. Existing author README passages preserved; only the new essay section was added."
     }
   }
 }

@@ -332,6 +332,12 @@ Codex limited file writes to save events. Game graphics changed to OpenGL textur
 
 [19 troubleshooting cases](docs/en/public/troubleshooting.md) · [Analysis, implementation and validation](docs/en/public/development-history.md)
 
+## How I directed and tested the work
+
+I recorded how I used plans and reports to check the scope of changes, and compatibility and cheat builds to test the game. The accounts include failures I found while playing and the fixes and repeat checks carried out by Codex.
+
+[How I directed the work](docs/en/public/work-method.md) · [How I tested the game](docs/en/public/testing-method.md)
+
 <a id="코드-구조와-버전"></a>
 
 ## Code structure and versions

@@ -95,3 +95,5 @@ Codex는 일반·치트 앱을 iPhone·iPad에 각각 설치했다. 케이블을
 | Galaxy 보스 전투 45초 | 화면 표시 간격 2,763개 | P99 17ms 구간, 33ms 초과 0개 |
 
 전체 캠페인 클리어, 장시간 발열·메모리, Android 태블릿과 16KB 페이지 실기기 검사는 남아 있다. [구현·검사 기록](../android-implementation-20261030.md), [업그레이드 회귀 검사](../evidence/android-upgrade-fix-20261030.json), [일반 앱 플레이 자료](android-gameplay-20261030.md).
+
+[작업을 지시한 과정](work-method.md) · [치트앱과 직접 플레이로 검사한 과정](testing-method.md)
