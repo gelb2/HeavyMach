@@ -424,12 +424,31 @@
       "iphone": "app terminated, home observed",
       "ipad": "app terminated, home observed",
       "android": "normal and validation force-stopped, Home command completed",
-      "tauri": "Cmd-Q; process absent"
+      "tauri": "Cmd-Q; process absent",
+      "native_mac": "Cmd-Q; process absent",
+      "android_validation_save": "pre-test files restored and byte-compared; diagnostic extras retained"
+    },
+    "tauri_js": {
+      "passed": 15,
+      "failed": 0
+    },
+    "tauri_rust": {
+      "passed": 26,
+      "failed": 0,
+      "ignored": 2,
+      "ignored_reason": "child-process helper and separately configured full-disk test"
+    },
+    "web_installed_pwa_public": {
+      "passed": 21,
+      "failed": 0,
+      "url": "https://gelb2.github.io/HeavyMach/",
+      "version": "fcc7d8b0b3315f74"
     }
   },
   "web_build": {
-    "version": "50508a94c97be452",
-    "game_version": "4e4e9aa31dc42090"
+    "version": "fcc7d8b0b3315f74",
+    "game_version": "4e4e9aa31dc42090",
+    "pre_download_link_update_version": "50508a94c97be452"
   },
   "sha256": {
     "Sources/Core/VTOL.cpp": "ffe82dfbd8170bf6e8b59241dce7b58b0f47f01aa623fac4e6c1c4700ff9fcb4",
@@ -439,6 +458,25 @@
     "build/evidence/vtol-test.log": "8c97f7af86719e714713a965863128d9782827e74d2b2c70f72d5f4ed5dc8ecf",
     "build/evidence/tauri-foreground-frames.json": "6e3d99bf590dbeef4a7cdfc8f44ba8ad45e6961580ccba924f22066b197a704c",
     "build/evidence/pwa-installed-test.log": "2b50528b33b5e894af8c1bc4f19eb268bb34a208633ac0a89282ad542b7f9918",
-    "build/evidence/mobile-web-test.log": "2a7cee6478c3eed9c43e925c7e75f74dfceeb435a20f57303f8e55960acde313"
+    "build/evidence/mobile-web-test.log": "2a7cee6478c3eed9c43e925c7e75f74dfceeb435a20f57303f8e55960acde313",
+    "build/evidence/tauri-js-test.log": "a81a3c6fa16a4e9fdef75283b1df0c92393501ac9c7a5e8e5eb67117f112264b",
+    "build/evidence/tauri-rust-tests.log": "d8a4433bb92b5e386333043e4b57cd1c0f9dfde6b5b1c5043e1af343de327f71",
+    "build/evidence/public-pwa-test.log": "28628b84164dd733c41b99266ff01278ef9d8e7a8eda9d61a48b1b088d6b85e0"
+  },
+  "release": {
+    "main_commit": "22f6b5d9dfe7fa0968a655cc4596d69370393173",
+    "develop_commit": "f94e0ce4bbd5ba89af538856184dbff131423652",
+    "pull_requests": [
+      102,
+      103
+    ],
+    "tag": "vtol-worlds-20261107",
+    "url": "https://github.com/gelb2/HeavyMach/releases/tag/vtol-worlds-20261107",
+    "web": "https://gelb2.github.io/HeavyMach/",
+    "artifacts": {
+      "HeavyMach-Android-cheat-20261107.apk": "91a88a0f1a8a748ad35901936eadfa2d311a06c59ab501bbc718c2b18d287d0f",
+      "HeavyMach-Android-normal-20261107.apk": "13014e7aeab9d3a63c96807af077caede42321dc92029ea37567e10a180d0ed7",
+      "HeavyMach-Tauri-Mac-arm64-20261107.zip": "16528f456161050cd30cafee88760aa05ef75faef0e8909f9bc43e68869ed840"
+    }
   }
 }
