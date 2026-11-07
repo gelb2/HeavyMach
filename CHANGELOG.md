@@ -1,8 +1,15 @@
 # 변경 이력
 
+
+
 <!-- language-nav:start -->
 [한국어](CHANGELOG.md) | [English](CHANGELOG.en.md)
 <!-- language-nav:end -->
+
+## 항공기 배치 패치 — 2026-11-07
+
+- Yak-141·Harrier GR3·F-35B를 14개 스테이지 113대에서 35개 스테이지 152대로 변경했다. 스테이지별 쉴카·퉁구스카 합계와 같으며 기종별로 51·51·50대다.
+- 원래 적과 지상 방공 유닛·럭스루나에 배치를 보존했다. [플랫폼 검사와 남은 확인](docs/reviews/vtol-world-distribution-20261107.md).
 
 ## 2026-11-07 작업·검증 원고
 

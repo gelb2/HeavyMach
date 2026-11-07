@@ -29,45 +29,45 @@ void addVTOLExpansion(GameData& data){
   MachDefinition unit;unit.name=s.name;unit.hpMax=source.hpMax;unit.giveExp=source.giveExp;unit.machType=1;
   unit.parts={{anchor.name,0,0,{{s.weapon,1,1,{}}}}};data.machines.emplace(unit.name,std::move(unit));
  }
- struct Plan {const char* map;int spec,count;};
- constexpr Plan plan[]={{"Stage06",0,5},{"Stage08",0,5},{"Stage11",0,7},{"Stage26",0,4},{"Stage16",0,9},
- {"Stage12",1,7},{"Stage27",1,4},{"Stage17",1,9},{"Stage22",1,10},{"Stage31",1,11},
- {"Stage21",2,10},{"Stage23",2,10},{"Stage32",2,11},{"Stage33",2,11}};
+ // Match the combined Shilka/Tunguska count in every released stage.
+ struct Plan {const char* map;int count;};
+ constexpr Plan plan[]={{"Stage01",1},{"Stage02",1},{"Stage03",2},{"Stage04",1},{"Stage05",14},{"Stage06",10},{"Stage07",14},{"Stage08",1},{"Stage09",1},{"Stage10",1},{"Stage11",1},{"Stage12",1},{"Stage13",1},{"Stage14",1},{"Stage25",5},{"Stage26",11},{"Stage27",5},{"Stage28",5},{"Stage29",1},{"Stage15",4},{"Stage16",10},{"Stage17",7},{"Stage18",10},{"Stage19",3},{"Stage20",5},{"Stage21",6},{"Stage22",1},{"Stage23",1},{"Stage24",1},{"Stage30",8},{"Stage31",3},{"Stage32",3},{"Stage33",2},{"Stage34",9},{"Stage35",2}};
+ size_t nextSpec=0;
  struct GroundHost:WorldHost {Vector2 tileSize(std::string_view)override{return {480,320};}void spawnMapObject(const MapObjectDefinition&,int)override{}void spawnEnemy(const EnemyDefinition&)override{}void spawnPlayer(Vector2)override{}void event(const WorldEvent&)override{}} host;
  for(const auto& p:plan){
   auto& map=data.maps.at(p.map);auto ordered=map.enemies;
   std::stable_sort(ordered.begin(),ordered.end(),[](auto& a,auto& b){return a.position.x<b.position.x;});
   WorldState terrain;terrain.openMap(map,0,host);
+  // Short boss arenas need the clear approach before their first authored enemy.
+  // Keep the 600-unit boss clearance; narrow only the map-edge exclusion.
+  const float edgeMargin=std::min(300.f,(map.right-map.left)*.15f);
+  EnemyDefinition leftEdge,rightEdge;
+  leftEdge.position.x=map.left;rightEdge.position.x=map.right;
+  ordered.insert(ordered.begin(),leftEdge);ordered.push_back(rightEdge);
+  std::stable_sort(ordered.begin(),ordered.end(),[](auto& a,auto& b){return a.position.x<b.position.x;});
   struct Candidate{float x,y,gap;};std::vector<Candidate> choices;
   for(size_t n=1;n<ordered.size();++n){
    float gap=ordered[n].position.x-ordered[n-1].position.x;
-   int divisions=std::max(1,int(gap/60));
+   int divisions=std::max(1,int(gap/20));
    for(int j=1;j<=divisions;++j){float x=ordered[n-1].position.x+gap*float(j)/float(divisions+1);
-   if(gap<35||x<map.left+300||x>map.right-300)continue;
+   if(gap<=0||x<=map.left+edgeMargin||x>=map.right-edgeMargin)continue;
    if(std::any_of(ordered.begin(),ordered.end(),[&](const auto& e){return e.isBoss&&std::abs(e.position.x-x)<600;}))continue;
    float ground=terrain.mapHeight(x);if(ground==10000||ground<map.bottom)continue;
    float y=ground+140;if(y>map.top-30)continue;
    choices.push_back({x,y,gap});
    }
   }
-  // Choose roomy gaps spread across the route. No RNG consumption at load time.
-  std::stable_sort(choices.begin(),choices.end(),[](auto& a,auto& b){return a.gap>b.gap;});
-  std::vector<Candidate> selected;
-  // Farthest-point placement spreads the requested count over the whole route,
-  // instead of filling several subdivisions of the same large gap first.
-  while(int(selected.size())<p.count&&!choices.empty()){
-   auto best=choices.begin();float bestDistance=-1;
-   for(auto c=choices.begin();c!=choices.end();++c){float distance=c->gap;
-    if(!selected.empty()){distance=1e9f;for(auto& a:selected)distance=std::min(distance,std::abs(a.x-c->x));}
-    if(distance>bestDistance){bestDistance=distance;best=c;}
-   }
-   if(!selected.empty()&&bestDistance<100)break;
-   selected.push_back(*best);choices.erase(best);
-  }
+  // Pack candidates from left to right with a real 100-unit separation.
+  // Sampling this maximal ordered set avoids greedy farthest-point dead ends.
+  std::sort(choices.begin(),choices.end(),[](auto& a,auto& b){return a.x<b.x;});
+  std::vector<Candidate> spaced,selected;
+  for(const auto& c:choices)if(spaced.empty()||c.x-spaced.back().x>=100)spaced.push_back(c);
+  if(spaced.size()>=size_t(p.count))for(int n=0;n<p.count;++n)
+   selected.push_back(spaced[size_t((n+.5)*spaced.size()/p.count)]);
   if(int(selected.size())!=p.count)throw std::runtime_error(std::string("Insufficient VTOL spawn gaps: ")+p.map+" "+std::to_string(selected.size()));
   std::sort(selected.begin(),selected.end(),[](auto& a,auto& b){return a.x<b.x;});
   // Append without reordering or replacing any authored entry (including bosses).
-  for(auto& c:selected)map.enemies.push_back({vtolSpecs()[p.spec].name,{c.x,c.y},false});
+  for(auto& c:selected)map.enemies.push_back({vtolSpecs()[nextSpec++%vtolSpecs().size()].name,{c.x,c.y},false});
  }
 }
 }

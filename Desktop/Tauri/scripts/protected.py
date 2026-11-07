@@ -29,6 +29,15 @@ def check():
   allowed.update(buttons.get('changed_files',{}));new.update(buttons.get('new_files',[]))
  def addition(p):return p in new or bool(roots) and p.startswith(roots)
  if any(p.startswith(('Sources/Core/','Resources/','Art/','vendor/')) for p in allowed):raise RuntimeError('Core/assets cannot be excepted')
+ # 2026-11-07 user-requested cross-platform gameplay patch, pinned byte-for-byte.
+ patch=json.loads((ROOT/'Desktop/Tauri/vtol-distribution-scope.json').read_text())
+ approved=patch['files']
+ if set(approved)!={'Sources/Core/VTOL.cpp','Tests/VTOLTests.cpp','Tests/Apple/HMAppleInputTests.mm','tools/build_report_site.py'}:
+  raise RuntimeError('Unexpected VTOL patch scope')
+ for p,hashes in approved.items():
+  if files.get(p)!=hashes['before'] or not (ROOT/p).is_file() or digest(ROOT/p)!=hashes['after']:
+   raise RuntimeError('VTOL patch hash mismatch: '+p)
+ allowed.update(approved)
  current=set(paths());expected=set(files)
  bad.extend('added/deleted: '+p for p in current^expected if not (p in current and addition(p)))
  for p,h in files.items():
@@ -39,6 +48,6 @@ def check():
  changes=git('diff','--name-status',obj['baseline_commit'],'--','.github/workflows').decode().splitlines()
  bad.extend('workflow: '+p for p in changes if not p.startswith('A\t') or p.split('\t')[-1] not in ('.github/workflows/desktop-tauri.yml','.github/workflows/web-pages.yml'))
  if bad:raise RuntimeError('\n'.join(bad))
- print('PASS: protected core/assets and other existing files unchanged;',len(allowed),'declared adapter/build exceptions')
+ print('PASS: protected files match original or explicitly approved patch hashes;',len(allowed),'declared adapter/build exceptions')
 if __name__=='__main__':
  a=argparse.ArgumentParser();a.add_argument('action',choices=['capture','check']);args=a.parse_args();globals()[args.action]()

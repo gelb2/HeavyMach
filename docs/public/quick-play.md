@@ -4,7 +4,7 @@
 [한국어](quick-play.md) | [English](../en/public/quick-play.md)
 <!-- language-nav:end -->
 
-[웹·PWA 실행](https://gelb2.github.io/HeavyMach/) · [Tauri Mac 다운로드](https://github.com/gelb2/HeavyMach/releases/tag/tauri-mac-20261102)
+[웹·PWA 실행](https://gelb2.github.io/HeavyMach/) · [Tauri Mac 다운로드](https://github.com/gelb2/HeavyMach/releases/tag/vtol-worlds-20261107)
 
 ## 키보드와 트랙패드로 플레이
 
