@@ -17,6 +17,7 @@ New code written for this project uses [MIT](LICENSE). Keep the copyright and li
 | Path | Scope |
 |---|---|
 | `Sources/Core`, `Sources/Apple`, `Sources/iOS`, `Sources/Mac` | Newly written implementation. Excludes third-party code and expression derived from the original game |
+| `Android`, `Sources/Web`, `Web`, `Distribution/Web`, `Desktop/Tauri` | Platform integration, launcher, distribution code, and configuration written for this project. Existing notices from external libraries, tools, and contributors, and the original asset terms, remain in effect |
 | `Tests`, `tools` | Newly written test, build, and documentation tool code |
 | `CMakeLists.txt`, `Modules`, `iOS`, `macOS`, `HeavyMach.xcworkspace` | Build and project settings written for this project. Included art and data follow the asset terms |
 | `docs/public/media/badges/*.svg` | SVG code written for this README |
