@@ -363,8 +363,8 @@
     },
     "docs/public/work-method.md": {
       "english": "docs/en/public/work-method.md",
-      "source_sha256": "a309d67cdd6c0ad1355ce01b15ace29767263f92c21ab2a1b314dc2ef32d5204",
-      "english_sha256": "3d694cece35e9f3f0352926a23d0b0370f51ef34530c4dfce087f483f48d09d8",
+      "source_sha256": "f5048e112faa414928024b6e8387d126c2805e634617c4d0f9be07995bd824ae",
+      "english_sha256": "dc1bad7fb63457fa77e010a9a470990260117a624870850a4eb837b38cfe3234",
       "reviewed_numeric_difference": {
         "source_only": {},
         "english_only": {}
@@ -373,8 +373,8 @@
     },
     "docs/public/testing-method.md": {
       "english": "docs/en/public/testing-method.md",
-      "source_sha256": "e161aefb464b0e49c100680ec57081ba311d9ae72d05bcada2006f0a509ce5e0",
-      "english_sha256": "6c5ddeab392bd6cf666be3b8714dd8f7d722fe12ec677d0aadba07b4d130788b",
+      "source_sha256": "7b4e82b72fa8d7ca0a23453a575b6ed0dfae105fa70b15aa89c24a9ee9998ca3",
+      "english_sha256": "768a47bdf8a0c1ce92b194875f6d24dd2866b6f477d1441fd736ce7b30a39135",
       "reviewed_numeric_difference": {
         "source_only": {
           "10": 1
