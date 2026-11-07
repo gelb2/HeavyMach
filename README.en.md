@@ -359,3 +359,22 @@ I have no intention of making money from this restoration. [Developer's statemen
 HeavyMach 1 moves into maintenance, while MachDefense becomes the next restoration project.
 
 [Read the full essay](docs/en/public/after-heavymach1-20261105.md)
+
+## An Additional Statement Clarifying the Purpose of This Project
+
+After briefly examining the public activity of a recent visitor to the MachDefense repository and tracing their activity in other repositories, I felt I needed to make the purpose of these repositories clear: HeavyMach, MachDefense, and—if I am still alive to restore it—HeavyMach2. That is why I am leaving this statement.
+
+I have screenshots and an analysis of that activity. An ordinary person, or someone who has only lived in societies where law and morality hold, might dismiss my thinking as circumstantial or speculative. 
+
+But I consider what has just happened to me to be, in CIA terminology, actionable intelligence. That is why I am leaving this statement.
+
+I have no intention of making money from this.
+
+But if you are reading this repository with the intention of doing more than porting it for your own enjoyment—if you intend to put it on the App Store or Steam, sell courses while pretending that you restored it, or hand it over to a third-party sales channel—then I have something to say to you.
+
+I am not good at predicting favorable turns in my own future or finances. But I am better at recognizing bad omens than you might think. Those events include two declarations of martial law in South Korea and the war between Ukraine and Russia in Europe.
+
+If you put this on an official marketplace or hand it over to a third-party sales channel, the consequences that follow will be difficult for one individual to bear.
+
+I do not have much time left to live. I do not know how much time you have left, but do not let greed hasten your own death. Even if it is not me, someone else might shorten your life.
+
