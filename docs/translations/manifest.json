@@ -28,8 +28,8 @@
     },
     "CHANGELOG.md": {
       "english": "CHANGELOG.en.md",
-      "source_sha256": "ae7231afb7ab0654c4574ff0e20bfc31adc29715ff3d44333c08204de21e6040",
-      "english_sha256": "87d34b968b0f6fbf2da1a521b9b93858d54dcf874c0da065b035d727e557a30e",
+      "source_sha256": "8d88633f8afa98e14ea8c5c712206bd711111372a2079a10b4835778f02e9085",
+      "english_sha256": "304708054df2bc907daa6991716219f0f4f800c23397c69381bd4fb9b076dc10",
       "reviewed_numeric_difference": {
         "source_only": {
           "10": 2,
@@ -48,7 +48,7 @@
           "1,482": 1
         }
       },
-      "review_note": "Month/day headings and counts use English words; source 자원1,482개·코어21개 is rendered as 1,482 resources and 21 core tests. Every release URL and historical count retained. Reviewed 2026-10-30 Android coverage/link audit; current main and released v0.16 remain distinct. Lux sentence follows author commit 39b05834 where applicable. Reviewed v0.17 Android release, download links and current-version wording; historical v0.16 test results retained. Reviewed web PR #24 attribution, web build instructions and follow-up fixes; personal paragraphs preserved. Reviewed 2026-11-01 Quick Play, contributor attribution, web/PWA/Tauri integration and recovery-button audit. Dates use English month names; all new test counts and cache bytes match. Personal passages unchanged. Reviewed dated Tauri Mac ZIP download, ad-hoc signing, first-launch steps, stable v0.17 distinction, and remaining notarization/other-Mac testing."
+      "review_note": "Month/day headings and counts use English words; source 자원1,482개·코어21개 is rendered as 1,482 resources and 21 core tests. Every release URL and historical count retained. Reviewed 2026-10-30 Android coverage/link audit; current main and released v0.16 remain distinct. Lux sentence follows author commit 39b05834 where applicable. Reviewed v0.17 Android release, download links and current-version wording; historical v0.16 test results retained. Reviewed web PR #24 attribution, web build instructions and follow-up fixes; personal paragraphs preserved. Reviewed 2026-11-01 Quick Play, contributor attribution, web/PWA/Tauri integration and recovery-button audit. Dates use English month names; all new test counts and cache bytes match. Personal passages unchanged. Reviewed dated Tauri Mac ZIP download, ad-hoc signing, first-launch steps, stable v0.17 distinction, and remaining notarization/other-Mac testing. Reviewed 2026-11-07 Android, web and Tauri scope and upstream notices. License alternatives, versions and links match."
     },
     "CREDITS.md": {
       "english": "CREDITS.en.md",
@@ -72,13 +72,13 @@
     },
     "LICENSE-SCOPE.md": {
       "english": "LICENSE-SCOPE.en.md",
-      "source_sha256": "30f264184cc2b72baf92bdb8005aa8d614883a69216811dc253b66658bac86f2",
-      "english_sha256": "76a540f607105c76cf0ba6bf5dfa96799e7a29a39143551433d078fc3ff24045",
+      "source_sha256": "2ecf626445034a877f79102e14d3b19fe131576aa7f270886e75be3cef69508c",
+      "english_sha256": "72b02b750257bf04ae5c01adc09352cd99667a9c64c2217f2354bbf72cb2e167",
       "reviewed_numeric_difference": {
         "source_only": {},
         "english_only": {}
       },
-      "review_note": "Compared source and English meaning, tables, commands, attribution and current/planned status. Numeric tokens match."
+      "review_note": "Compared source and English meaning, tables, commands, attribution and current/planned status. Numeric tokens match. Reviewed 2026-11-07 Android, web and Tauri scope and upstream notices. License alternatives, versions and links match."
     },
     "ASSET-LICENSES.md": {
       "english": "ASSET-LICENSES.en.md",
@@ -92,15 +92,15 @@
     },
     "THIRD_PARTY_NOTICES.md": {
       "english": "THIRD_PARTY_NOTICES.en.md",
-      "source_sha256": "2badd0b526fb58f560cabb99498fc39d6f43be70824f19b19aa3e5272bc5fcb8",
-      "english_sha256": "331d272e3d8745f2f3c96dbc314666db8c3281c1fffa76f5de484bd566cb9989",
+      "source_sha256": "feb92184995b7fbcd7626825b4352c675d955666980d9805ae8919fa1e3cb7ba",
+      "english_sha256": "85b4ae19bfc6f18ad34c692a32464cf8cd4574595d81b43545b377c0dfae78dc",
       "reviewed_numeric_difference": {
         "source_only": {},
         "english_only": {
           "6": 1
         }
       },
-      "review_note": "Korean 제6절 becomes section 6; all license IDs, source revisions and formulas preserved."
+      "review_note": "Korean 제6절 becomes section 6; all license IDs, source revisions and formulas preserved. Reviewed 2026-11-07 Android, web and Tauri scope and upstream notices. License alternatives, versions and links match."
     },
     "docs/RESTORATION.md": {
       "english": "docs/en/RESTORATION.md",
