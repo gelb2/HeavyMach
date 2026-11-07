@@ -5,8 +5,8 @@
   "documents": {
     "README.md": {
       "english": "README.en.md",
-      "source_sha256": "39de774d5ecd9d5c593e41d46fd1ceebf9b55d1c812692392d1a1fea68c95b38",
-      "english_sha256": "821480776c48bbaa68c1d73f348ce9d9473880af0dea51e8fdc235c423990cac",
+      "source_sha256": "07b5c7c4260f61fee73e4ebb0bdd615d7481d5dc0f7796238dfedadf0be6ea2d",
+      "english_sha256": "c34e10504fd12b91474660b5e57954878e95569f45e431bb73aaea494d52ca2b",
       "reviewed_numeric_difference": {
         "source_only": {
           "7": 1,
@@ -340,8 +340,8 @@
     },
     "docs/public/quick-play.md": {
       "english": "docs/en/public/quick-play.md",
-      "source_sha256": "61aef49b5e723b3644bde4aad3fe50db74e9284d99e7187fa957db2714632605",
-      "english_sha256": "afa01142949eb4b4538ebc41d5bf6233eb68c45f4ce26cf6c4ecf44408332b28",
+      "source_sha256": "61cef44e5a3e1c68ca79bce52fa013a8cabe962e39e6c6d6ecc859d6dd1b2a63",
+      "english_sha256": "08d96dff95833a758f93553b08dada80f5c2e2a5d2183e7771bbff96b9fef87f",
       "reviewed_numeric_difference": {
         "source_only": {},
         "english_only": {}

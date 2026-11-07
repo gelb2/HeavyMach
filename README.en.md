@@ -37,7 +37,7 @@ Money is only needed in this life.
 
 **[Play on the web · Install the PWA](https://gelb2.github.io/HeavyMach/)** · [Tauri Mac app](#tauri-mac)
 
-If building with Xcode or Android Studio is difficult, use the web/PWA version. Follow the link and choose **Install game** to add it to your home screen, or **Play in browser** to play in a tab. [Download Tauri Mac](https://github.com/gelb2/HeavyMach/releases/tag/tauri-mac-20261102) and unzip it to run the Mac app. Requires Apple Silicon and macOS 14 or later; first-launch instructions are on the download page. For native iOS, iPadOS, Android and macOS apps, see [Build](#빌드하기) below.
+If building with Xcode or Android Studio is difficult, use the web/PWA version. Follow the link and choose **Install game** to add it to your home screen, or **Play in browser** to play in a tab. [Download Tauri Mac](https://github.com/gelb2/HeavyMach/releases/tag/vtol-worlds-20261107) and unzip it to run the Mac app. Requires Apple Silicon and macOS 14 or later; first-launch instructions are on the download page. For native iOS, iPadOS, Android and macOS apps, see [Build](#빌드하기) below.
 
 Thank you to [fastutlego](https://github.com/fastutlego) for bringing HeavyMach to web browsers. The WebAssembly host, WebGL2 renderer, input, audio and saves in [the first web port, PR #24](https://github.com/gelb2/HeavyMach/pull/24), became the foundation for the PWA and Tauri Mac versions.
 
@@ -239,7 +239,7 @@ The code carries the original save slots, weapon order and ammunition, upgrades 
 
 The Tauri app runs the web version on Mac and also backs up progress and settings to the app’s data folder, outside WebView storage. If WebView saves are missing on the next launch, the app restores them from this backup. The existing AppKit-based native Mac app remains available.
 
-[Download Tauri Mac](https://github.com/gelb2/HeavyMach/releases/tag/tauri-mac-20261102) · Apple Silicon, macOS 14 or later. Unzip and move the app to Applications. It is ad-hoc signed and not yet notarized. [Tauri build instructions](Desktop/Tauri/README.md) · [Architecture and development](docs/desktop-web-plan-20261031.md)
+[Download Tauri Mac](https://github.com/gelb2/HeavyMach/releases/tag/vtol-worlds-20261107) · Apple Silicon, macOS 14 or later. Unzip and move the app to Applications. It is ad-hoc signed and not yet notarized. [Tauri build instructions](Desktop/Tauri/README.md) · [Architecture and development](docs/desktop-web-plan-20261031.md)
 
 <a id="플랫폼과-개발-상태"></a>
 
@@ -257,7 +257,7 @@ Wider screens, iPad and Mac support, and keyboard controls were also my requests
 | Android | Regular and cheat apps using the shared C++ core | Galaxy USB/wireless installation and gameplay checked. [Installation](Android/README.md) · [Development and screenshots](docs/public/android-development-20261030.md) |
 | Web | Public WebAssembly/WebGL2 game | Chrome and Safari input, recovery and offline tests. [Play](https://gelb2.github.io/HeavyMach/) |
 | PWA | Home-screen installation and offline play | iPhone, iPad and Galaxy play reports; installed Chrome PWA recovery and restart checks. [Results](docs/en/public/validation.md) |
-| Tauri Mac | Web game in a Mac app, with an OS-file save backup | Local app launch, recovery, restart and quit checked. [ZIP available](https://github.com/gelb2/HeavyMach/releases/tag/tauri-mac-20261102). Notarization pending. [Build](Desktop/Tauri/README.md) |
+| Tauri Mac | Web game in a Mac app, with an OS-file save backup | Local app launch, recovery, restart and quit checked. [ZIP available](https://github.com/gelb2/HeavyMach/releases/tag/vtol-worlds-20261107). Notarization pending. [Build](Desktop/Tauri/README.md) |
 
 I saw no frame drops or malfunctions while playing the installed iPhone and iPad apps. Device automation still has display-timing threshold failures. [Measurement conditions and results](docs/en/public/validation.md)
 
