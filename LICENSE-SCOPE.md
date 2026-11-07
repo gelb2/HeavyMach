@@ -13,6 +13,7 @@ The MIT license in `LICENSE` applies to original software contributions made by 
 | 경로 | 적용 범위 |
 |---|---|
 | `Sources/Core`, `Sources/Apple`, `Sources/iOS`, `Sources/Mac` | 새로 작성한 구현 부분. 외부 코드·원작에서 유래한 표현은 제외 |
+| `Android`, `Sources/Web`, `Web`, `Distribution/Web`, `Desktop/Tauri` | 직접 작성한 플랫폼 연결·실행기·배포 코드와 설정. 외부 라이브러리·도구·기여자의 기존 고지와 원작 자원 조건은 유지 |
 | `Tests`, `tools` | 새로 작성한 검사·빌드·문서 도구의 코드 |
 | `CMakeLists.txt`, `Modules`, `iOS`, `macOS`, `HeavyMach.xcworkspace` | 직접 작성한 빌드·프로젝트 설정. 포함된 그림·데이터는 자원 조건 적용 |
 | `docs/public/media/badges/*.svg` | 이번 README용으로 작성한 SVG 코드 |
