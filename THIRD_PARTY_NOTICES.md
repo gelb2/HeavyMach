@@ -13,6 +13,16 @@
 
 OpenAL Soft는 [빌드 스크립트](tools/build_openal.sh)에서 정적 라이브러리로 빌드한다. 배포할 앱과 같은 버전의 라이브러리 소스·수정분·설정을 제공하고, 수정한 라이브러리로 다시 링크할 수 있는 앱 소스 또는 오브젝트 등의 자료를 준비한다. 라이브러리 이용 부분의 수정과 디버깅을 위한 역분석을 금지하는 조건을 덧붙이지 않는다. 소스와 고지는 저장소에 있다. 재링크 명령과 실행 결과는 [소스 릴리스 검사](docs/public/github-followup-20261028.md)에 있다. 세부 조건은 LGPL 원문 제6절과 [조사](docs/public/github-licenses-and-badges-20261028.md)를 따른다.
 
+## Android·웹·Tauri의 외부 구성요소
+
+| 구성요소 | 사용 위치 | 라이선스·고지 |
+|---|---|---|
+| Gradle 8.13·Wrapper | [Android 빌드](Android/gradle/wrapper/gradle-wrapper.properties) | Apache-2.0. [라이선스와 포함 구성요소](LICENSES/Gradle-8.13-LICENSE.txt), [NOTICE](LICENSES/Gradle-8.13-NOTICE.txt), [공식 원문](https://github.com/gradle/gradle/blob/v8.13.0/LICENSE) |
+| Emscripten | [Web 빌드](Web/CMakeLists.txt), WebAssembly·JavaScript 실행 코드 | MIT 또는 University of Illinois/NCSA. [고지 사본](LICENSES/Emscripten.txt), [공식 원문](https://github.com/emscripten-core/emscripten/blob/main/LICENSE). 포함된 musl·외부 구성요소는 각 소스의 고지를 따른다. |
+| Tauri 2.12.5 | [Mac 실행기](Desktop/Tauri/src-tauri/Cargo.toml) | MIT 또는 Apache-2.0. [MIT 원문](LICENSES/Tauri-LICENSE-MIT.txt), [Apache-2.0 원문](LICENSES/Tauri-LICENSE-APACHE-2.0.txt), [공식 저장소](https://github.com/tauri-apps/tauri). |
+
+Tauri의 Rust 의존성 버전은 [Cargo.lock](Desktop/Tauri/src-tauri/Cargo.lock), CLI와 웹 검사 도구 버전은 [package-lock.json](Desktop/Tauri/package-lock.json)에 기록한다. 각 의존성의 저작권·라이선스는 해당 패키지의 고지를 따른다. 위 표는 직접 사용하는 주요 도구·런타임 목록이다.
+
 ## 외부 구현을 참조하거나 보관한 자료
 
 | 경로 | 출처 | 적용 상태 |
