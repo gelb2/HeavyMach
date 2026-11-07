@@ -28,8 +28,8 @@
     },
     "CHANGELOG.md": {
       "english": "CHANGELOG.en.md",
-      "source_sha256": "dd8ea07e75a1c8d643563c5b89c97ef674bce10b1bf96478e5423a111b9f0367",
-      "english_sha256": "41b8aeabbd180d81c2eefa29b273d8f80cc8d56a0a9c49606e425305a425a877",
+      "source_sha256": "1226ae938dfd93742b2ea5832e48fdff85ae5f406d056f3f78ee57a11973ab8c",
+      "english_sha256": "be8c7fbd0c1df79fe364d73acd2f67ba80f82c104f195dcc4ffb9051dcf5665a",
       "reviewed_numeric_difference": {
         "source_only": {
           "10": 2,
