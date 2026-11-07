@@ -4,7 +4,7 @@
 
 쉴카 77·퉁구스카 75의 합계와 맞춰 항공기를 Yak 51·Harrier 51·F-35B 50, 총 152대로 배치했다. 35개 스테이지별 지상 방공 유닛 합계와 항공기 합계가 같다. 기존 적·럭스루나에·지상 방공 유닛의 배치는 보존했다.
 
-코어 25개, Mac·iOS Simulator 각 2개, Galaxy 39개, 설치 PWA 21개·모바일 웹 7개가 통과했다. iPhone·iPad·Galaxy·native Mac·Tauri 일반 앱을 설치했다. iPhone·iPad의 별도 치트 앱은 무료 서명 설치 한도 때문에 자동 검사를 실행하지 못했다. Tauri 전투 화면·정상 종료를 확인했다. 공개 배포는 아직 진행 전이다. [변경·검사·한계](reviews/vtol-world-distribution-20261107.md).
+코어 25개, Mac·iOS Simulator 각 2개, Galaxy 39개, 설치 PWA 21개·모바일 웹 7개가 통과했다. iPhone·iPad·Galaxy·native Mac·Tauri 일반 앱을 설치했다. iPhone·iPad의 별도 치트 앱은 무료 서명 설치 한도 때문에 자동 검사를 실행하지 못했다. Tauri 전투 화면·정상 종료를 확인했다. PR #102·#103으로 main `22f6b5d9`에 병합했고 날짜 태그 `vtol-worlds-20261107`의 다운로드와 공개 웹 `fcc7d8b0b3315f74`를 배포했다. 공개 설치 PWA 21개 검사도 통과했다. [변경·검사·한계](reviews/vtol-world-distribution-20261107.md).
 
 ## 작업 지시·치트앱 검사 원고 — 2026-11-07
 
