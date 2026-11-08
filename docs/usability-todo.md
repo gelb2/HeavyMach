@@ -20,7 +20,8 @@
 - [x] 읽기용 보고 HTML의 로컬 프리뷰를 화면 폭 390·1440에서 검사했다. 이미지 10개·한글 제목·표와 HTML 저장본 일치를 확인했다. [구현 보고서](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/kamov-eurofighter-implementation-20261109.html) 게시와 게시 본문 대조도 완료했다.
 - [ ] 캠페인 등장 위치·횟수를 정하고 실제 배치로 검사한다. 현재 기존 43개 MAP와 14개 편대는 변경하지 않았다.
 - [ ] 신규 2종의 Android·설치 PWA·Tauri·Apple 앱 및 실기기 검사를 별도로 진행한다. 이번 결과는 로컬·공개 주소의 Chrome headless 웹 검사다.
-- [ ] 작업 브랜치→develop→main 절차로 병합하고 정식 게임 배포 결과를 기록한다. PR #112의 develop 병합을 진행하며 신규 2종의 main 배포는 아직 하지 않았다. 아이폰 정식 설치는 위 후속 기록에서 완료했다.
+- [x] 사용자 지시에 따라 PR #112를 develop `c0744f70`에 병합했다. Apple·코어·문서·보안 CI 통과, 아이폰 정식 설치와 저장 보존을 기록했다.
+- [ ] 신규 2종의 main 릴리스와 나머지 플랫폼 정식 배포는 후속 지시 범위로 남긴다.
 
 <a id="hm-new-unit-hotfix"></a>
 

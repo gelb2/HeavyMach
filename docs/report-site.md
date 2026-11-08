@@ -967,3 +967,13 @@ Site source `4608b63240afd8b9b25aa653ff206715db167152`, deployment `appgdep_6af0
 - version `appgprj_6addbf55aea081918d3d182d7e496e88~appgver_dc3a05787894819185a469f41605a1ef`.
 - 기존 소유자 전용 접근 유지. 동시에 갱신된 MachDefense 보고 변경을 병합하고 최신 Markdown 212개의 본문 보존을 대조했다.
 - Chrome 390px·1440px에서 이미지10개 로드, 본문·표 가로넘침0, HTML 저장 본문 일치를 확인했다. Native Safari/Chrome CUA는 시간 초과와 사용자 화면 변경 알림으로 완료하지 못했다. 실기기 Android 화면 검증과 구분한다.
+
+
+## 유로파이터 포드 제거·아이폰 정식 설치 — 2026-11-09
+
+같은 [구현 보고서](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/kamov-eurofighter-implementation-20261109.html) 첫 절을 최종 채택본으로 갱신했다. 외부 포드가 없는 게임 비교, 코어28개·웹 신규2종/20무기 재검사, 아이폰 정식 앱 설치·저장 보존·타이틀 실행·홈복귀 결과를 담았다. 이전 포드 시안과 v4 검사는 과거 기록으로 보존했다.
+
+- Site source `9c99a04a9438ae997bc1b1501c99abe1937bdd70`, deployment `appgdep_6af0cd5920f081918c5165d87932f1ea`, succeeded.
+- version `appgprj_6addbf55aea081918d3d182d7e496e88~appgver_dbb3ca8d9c1c81918a60426b23a69aa5`.
+- 390px·1440px에서 이미지12개·한글·표 가로넘침0·HTML 저장본 일치 확인. 게시 HTML은 호스팅이 삽입한 스크립트1개를 제외하고 소스와 일치했다. 기존 소유자 전용 접근 유지.
+- 제품 PR #112는 CI 통과 후 develop `c0744f7057c09da46d6fdb3f5041a0e5b888fdd4`에 병합했다. main `cc70daf9`는 유지했다.
