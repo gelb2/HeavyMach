@@ -950,3 +950,9 @@ VTOL 첫 생성 프롬프트와 스킬 수정 커밋을 대조했다. 요청에 
 - deployment: `appgdep_6ae7910b16808191bb0d006e836d4bd6`, succeeded, 2026-11-01T19:21:10Z.
 - 기존 소유자 전용 접근 유지. 8절·13개 원본 PNG·목차 앵커·기존 보고서 링크·원고 다운로드 일치를 검사했다. Safari 로컬에서 본문과 캡처 배치를 확인했다. 게시 후 같은 Safari 로그인 세션에서 공개 주소의 원고·갤러리·이미지 표시도 확인했다.
 - 보고서 용량 제한에 맞춰 과거 PNG 97개의 압축 데이터만 무손실로 다시 압축했다. 이미지 크기·픽셀·메타데이터는 유지하고 14,002,592바이트를 줄였다. 이번 캡처 13장은 원본 파일 그대로다.
+
+## 신규 유닛 핫픽스 결과·후속 2종 계획 — 2026-11-09
+
+기존 소유자 전용 사이트에 [핫픽스·트러블슈팅·검증·배포 결과](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/new-unit-resource-hotfix-20261109.html)와 [카모프 헬기·럭스루나에 유로파이터 계획](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/kamov-eurofighter-plan-20261109.html)을 게시했다. 홈페이지와 같은 원고의 Markdown 다운로드를 연결했다. 접근 범위는 유지했다.
+
+Site source `4608b63240afd8b9b25aa653ff206715db167152`, deployment `appgdep_6af0bd9fe05c8191a72badd2d0a34ffd`, 결과 `succeeded`다. 최초 묶음은 256MiB 확장 용량 한도를 넘어 거부됐다. HTML·JS·Markdown·JSON에서 참조하지 않는 보고용 Android 스토어 아이콘 복사본 1개를 제외했다. 원본 게임 자원·Git 이력·로컬 백업은 보존했다. 문서와 다운로드 바이트·로컬 링크·HTTP 응답을 검사했다. 이번 페이지의 CUA 화면 검수는 도구 시간 초과로 수행하지 못했다.
