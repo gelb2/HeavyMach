@@ -1,0 +1,535 @@
+[
+  {
+    "event_line": 25419,
+    "label": "VTOL v3 Yak141",
+    "completed": true,
+    "stored_prompt_exact_match": true,
+    "prompt_sha256": "0beed2e53183a33a5eb7228f3c407e29a7584f9b6278e849ef9301575fb96e5b",
+    "inputs": [
+      {
+        "path": "Art/Extensions/VTOL_Yak141.png",
+        "sha256": "dc89ede4289373fbb8cc4b8c12a4a662a6ca4c657e066b21ca294b4c8db2e527",
+        "manifest_matches": [
+          {
+            "manifest": "Art/VTOL/20261027-v2/manifest.json",
+            "recorded_path": "yak141-concept.png",
+            "sha256": "dc89ede4289373fbb8cc4b8c12a4a662a6ca4c657e066b21ca294b4c8db2e527"
+          }
+        ]
+      },
+      {
+        "path": "docs/public/media/vtol/E_Heli_Body_06.png",
+        "sha256": "35bb833f7768194ff6aff6503774351aeda0ff3d58c715f05d20b6ae38267537",
+        "manifest_matches": []
+      }
+    ]
+  },
+  {
+    "event_line": 25420,
+    "label": "VTOL v3 F35B",
+    "completed": true,
+    "stored_prompt_exact_match": true,
+    "prompt_sha256": "b3021d770adf772200331d468698cbe5156982cb5eb8549ee7bfd23928daefed",
+    "inputs": [
+      {
+        "path": "Art/Extensions/VTOL_F35B.png",
+        "sha256": "747b937be1dc5cd5049e5ccbd5736ecd19b9a9a421222df7e0a56bae92c8980e",
+        "manifest_matches": [
+          {
+            "manifest": "Art/VTOL/20261027-v2/manifest.json",
+            "recorded_path": "f35b-concept.png",
+            "sha256": "747b937be1dc5cd5049e5ccbd5736ecd19b9a9a421222df7e0a56bae92c8980e"
+          }
+        ]
+      },
+      {
+        "path": "docs/public/media/vtol/E_Heli_Body_06.png",
+        "sha256": "35bb833f7768194ff6aff6503774351aeda0ff3d58c715f05d20b6ae38267537",
+        "manifest_matches": []
+      }
+    ]
+  },
+  {
+    "event_line": 25421,
+    "label": "VTOL v3 Harrier",
+    "completed": true,
+    "stored_prompt_exact_match": true,
+    "prompt_sha256": "be3355c4f152207912d1c8f7b100683b18fb85f26a9910a0d74b476748e19cc0",
+    "inputs": [
+      {
+        "path": "Art/Extensions/VTOL_Harrier.png",
+        "sha256": "b40e1e5b9cae681472de34c9be748d50c0e8bf5a0b8fd3b1004ed401df983ecc",
+        "manifest_matches": [
+          {
+            "manifest": "Art/VTOL/20261027-v2/manifest.json",
+            "recorded_path": "harrier-concept.png",
+            "sha256": "b40e1e5b9cae681472de34c9be748d50c0e8bf5a0b8fd3b1004ed401df983ecc"
+          }
+        ]
+      },
+      {
+        "path": "docs/public/media/vtol/E_Heli_Body_06.png",
+        "sha256": "35bb833f7768194ff6aff6503774351aeda0ff3d58c715f05d20b6ae38267537",
+        "manifest_matches": []
+      }
+    ]
+  },
+  {
+    "event_line": 29560,
+    "label": "Lux gold MiG31",
+    "completed": true,
+    "stored_prompt_exact_match": true,
+    "prompt_sha256": "64cf09fdd5cf6340529e073ab8afcbc52856bbaa7a2ef20a94618cda3e1b3c24",
+    "inputs": [
+      {
+        "path": "Art/LuxLunae/20261027/mig31-concept.png",
+        "sha256": "6eff32d12ce1eeeb40e550e7cf218e7e6affe7c556f5fca5b97ff4f9a671eb55",
+        "manifest_matches": [
+          {
+            "manifest": "Art/LuxLunae/20261027/manifest.json",
+            "recorded_path": "Art/LuxLunae/20261027/mig31-concept.png",
+            "sha256": "6eff32d12ce1eeeb40e550e7cf218e7e6affe7c556f5fca5b97ff4f9a671eb55"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "event_line": 29561,
+    "label": "Lux gold F22",
+    "completed": true,
+    "stored_prompt_exact_match": true,
+    "prompt_sha256": "64cf09fdd5cf6340529e073ab8afcbc52856bbaa7a2ef20a94618cda3e1b3c24",
+    "inputs": [
+      {
+        "path": "Art/LuxLunae/20261027/f22-concept.png",
+        "sha256": "83814a571c2b59a469a6b27cc8191abc827e60425ad05c447b6c52ac3ad1185e",
+        "manifest_matches": [
+          {
+            "manifest": "Art/LuxLunae/20261027/manifest.json",
+            "recorded_path": "Art/LuxLunae/20261027/f22-concept.png",
+            "sha256": "83814a571c2b59a469a6b27cc8191abc827e60425ad05c447b6c52ac3ad1185e"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "event_line": 29562,
+    "label": "Lux gold Su57",
+    "completed": true,
+    "stored_prompt_exact_match": true,
+    "prompt_sha256": "64cf09fdd5cf6340529e073ab8afcbc52856bbaa7a2ef20a94618cda3e1b3c24",
+    "inputs": [
+      {
+        "path": "Art/LuxLunae/20261027/su57-concept.png",
+        "sha256": "50480ed2c390f012336dcf4884f68d7f5d1483f81f5c11d7c4a6a235ffef7b6e",
+        "manifest_matches": [
+          {
+            "manifest": "Art/LuxLunae/20261027/manifest.json",
+            "recorded_path": "Art/LuxLunae/20261027/su57-concept.png",
+            "sha256": "50480ed2c390f012336dcf4884f68d7f5d1483f81f5c11d7c4a6a235ffef7b6e"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "event_line": 39702,
+    "label": "GAA runtime-style Shilka",
+    "completed": true,
+    "stored_prompt_exact_match": true,
+    "prompt_sha256": "2eacccd2a3da2935b27e0f2a1aac85b6ebb74534645e7d8fc66cd2fa62573def",
+    "inputs": [
+      {
+        "path": "Art/Extensions/VTOL_Harrier.png",
+        "sha256": "9a523efede9a292a274671142430c7a028f49282235ab9248499a66f2c6d0dfb",
+        "manifest_matches": [
+          {
+            "manifest": "Art/VTOL/20261027-v3/manifest.json",
+            "recorded_path": "VTOL_Harrier.png",
+            "sha256": "9a523efede9a292a274671142430c7a028f49282235ab9248499a66f2c6d0dfb"
+          },
+          {
+            "manifest": "Art/GroundAA/20261028-runtime-style/manifest.json",
+            "recorded_path": "Art/Extensions/VTOL_Harrier.png",
+            "sha256": "9a523efede9a292a274671142430c7a028f49282235ab9248499a66f2c6d0dfb"
+          },
+          {
+            "manifest": "Art/GroundAA/20261028-integrated/manifest.json",
+            "recorded_path": "Art/Extensions/VTOL_Harrier.png",
+            "sha256": "9a523efede9a292a274671142430c7a028f49282235ab9248499a66f2c6d0dfb"
+          }
+        ]
+      },
+      {
+        "path": "Art/Extensions/Lux_F22.png",
+        "sha256": "8cf228dafd366849f50ce623901a1106dad35df4ccb451e1de6e346c79f6f082",
+        "manifest_matches": [
+          {
+            "manifest": "Art/LuxLunae/20261027-gold/manifest.json",
+            "recorded_path": "Art/LuxLunae/20261027-gold/F22.png",
+            "sha256": "8cf228dafd366849f50ce623901a1106dad35df4ccb451e1de6e346c79f6f082"
+          },
+          {
+            "manifest": "Art/GroundAA/20261028-runtime-style/manifest.json",
+            "recorded_path": "Art/Extensions/Lux_F22.png",
+            "sha256": "8cf228dafd366849f50ce623901a1106dad35df4ccb451e1de6e346c79f6f082"
+          }
+        ]
+      },
+      {
+        "path": "local-reference/Shilka_528.jpg",
+        "sha256": "ba3af9253862d5c46b006a03021fc05e7c6018f13aa0b4a18e6b10fed1c619c6",
+        "manifest_matches": [
+          {
+            "manifest": "Art/GroundAA/20261028-runtime-style/manifest.json",
+            "recorded_path": "build/ground-art-20261028/references/Shilka_528.jpg",
+            "sha256": "ba3af9253862d5c46b006a03021fc05e7c6018f13aa0b4a18e6b10fed1c619c6"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "event_line": 39714,
+    "label": "GAA runtime-style Tunguska initial",
+    "completed": true,
+    "stored_prompt_exact_match": true,
+    "prompt_sha256": "8e4a96bd8e8c5b13e32976789d29f79837f9c92a7153739f0ddb073676ad99a9",
+    "inputs": [
+      {
+        "path": "Art/Extensions/VTOL_Harrier.png",
+        "sha256": "9a523efede9a292a274671142430c7a028f49282235ab9248499a66f2c6d0dfb",
+        "manifest_matches": [
+          {
+            "manifest": "Art/VTOL/20261027-v3/manifest.json",
+            "recorded_path": "VTOL_Harrier.png",
+            "sha256": "9a523efede9a292a274671142430c7a028f49282235ab9248499a66f2c6d0dfb"
+          },
+          {
+            "manifest": "Art/GroundAA/20261028-runtime-style/manifest.json",
+            "recorded_path": "Art/Extensions/VTOL_Harrier.png",
+            "sha256": "9a523efede9a292a274671142430c7a028f49282235ab9248499a66f2c6d0dfb"
+          },
+          {
+            "manifest": "Art/GroundAA/20261028-integrated/manifest.json",
+            "recorded_path": "Art/Extensions/VTOL_Harrier.png",
+            "sha256": "9a523efede9a292a274671142430c7a028f49282235ab9248499a66f2c6d0dfb"
+          }
+        ]
+      },
+      {
+        "path": "Art/Extensions/Lux_F22.png",
+        "sha256": "8cf228dafd366849f50ce623901a1106dad35df4ccb451e1de6e346c79f6f082",
+        "manifest_matches": [
+          {
+            "manifest": "Art/LuxLunae/20261027-gold/manifest.json",
+            "recorded_path": "Art/LuxLunae/20261027-gold/F22.png",
+            "sha256": "8cf228dafd366849f50ce623901a1106dad35df4ccb451e1de6e346c79f6f082"
+          },
+          {
+            "manifest": "Art/GroundAA/20261028-runtime-style/manifest.json",
+            "recorded_path": "Art/Extensions/Lux_F22.png",
+            "sha256": "8cf228dafd366849f50ce623901a1106dad35df4ccb451e1de6e346c79f6f082"
+          }
+        ]
+      },
+      {
+        "path": "local-reference/528_2_tung.jpg",
+        "sha256": "e749fc60bb0705c8dffb0b01a540fc29dd53dfc9a87a1d27e70ad4cc00a0e59c",
+        "manifest_matches": [
+          {
+            "manifest": "Art/GroundAA/20261028-runtime-style/manifest.json",
+            "recorded_path": "build/ground-art-20261028/references/528_2_tung.jpg",
+            "sha256": "e749fc60bb0705c8dffb0b01a540fc29dd53dfc9a87a1d27e70ad4cc00a0e59c"
+          }
+        ]
+      },
+      {
+        "path": "docs/public/media/ground-aa/runtime-style/shilka.png",
+        "sha256": "57b0398591688e4ab8453babe7b6e080e240dd152e397f8320cae4853bfc6632",
+        "manifest_matches": [
+          {
+            "manifest": "Art/GroundAA/20261028-runtime-style/manifest.json",
+            "recorded_path": "docs/public/media/ground-aa/runtime-style/shilka.png",
+            "sha256": "57b0398591688e4ab8453babe7b6e080e240dd152e397f8320cae4853bfc6632"
+          },
+          {
+            "manifest": "Art/GroundAA/20261028-integrated/manifest.json",
+            "recorded_path": "docs/public/media/ground-aa/runtime-style/shilka.png",
+            "sha256": "57b0398591688e4ab8453babe7b6e080e240dd152e397f8320cae4853bfc6632"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "event_line": 39737,
+    "label": "GAA runtime-style Tunguska correction",
+    "completed": true,
+    "stored_prompt_exact_match": true,
+    "prompt_sha256": "d13fcd8cb9957a94b3e145e6103c7a33577e9cc08bd5d93b8c7019a63e0a1517",
+    "inputs": [
+      {
+        "path": "Art/GroundAA/20261028-runtime-style/tunguska-initial.png",
+        "sha256": "c933f7c664f9f9fac775ff0dbb9f8c4f0d75eb27ce0bf7ec0c2788ffe71be606",
+        "manifest_matches": []
+      },
+      {
+        "path": "local-reference/528_2_tung.jpg",
+        "sha256": "e749fc60bb0705c8dffb0b01a540fc29dd53dfc9a87a1d27e70ad4cc00a0e59c",
+        "manifest_matches": [
+          {
+            "manifest": "Art/GroundAA/20261028-runtime-style/manifest.json",
+            "recorded_path": "build/ground-art-20261028/references/528_2_tung.jpg",
+            "sha256": "e749fc60bb0705c8dffb0b01a540fc29dd53dfc9a87a1d27e70ad4cc00a0e59c"
+          }
+        ]
+      },
+      {
+        "path": "Art/Extensions/VTOL_Harrier.png",
+        "sha256": "9a523efede9a292a274671142430c7a028f49282235ab9248499a66f2c6d0dfb",
+        "manifest_matches": [
+          {
+            "manifest": "Art/VTOL/20261027-v3/manifest.json",
+            "recorded_path": "VTOL_Harrier.png",
+            "sha256": "9a523efede9a292a274671142430c7a028f49282235ab9248499a66f2c6d0dfb"
+          },
+          {
+            "manifest": "Art/GroundAA/20261028-runtime-style/manifest.json",
+            "recorded_path": "Art/Extensions/VTOL_Harrier.png",
+            "sha256": "9a523efede9a292a274671142430c7a028f49282235ab9248499a66f2c6d0dfb"
+          },
+          {
+            "manifest": "Art/GroundAA/20261028-integrated/manifest.json",
+            "recorded_path": "Art/Extensions/VTOL_Harrier.png",
+            "sha256": "9a523efede9a292a274671142430c7a028f49282235ab9248499a66f2c6d0dfb"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "event_line": 41588,
+    "label": "GAA integrated Shilka",
+    "completed": true,
+    "stored_prompt_exact_match": true,
+    "prompt_sha256": "e908448daaa2a5c0da84f7e6513638ce964ca3cd9d1e39f112d6976704bd8aac",
+    "inputs": [
+      {
+        "path": "docs/public/media/ground-aa/runtime-style/shilka.png",
+        "sha256": "57b0398591688e4ab8453babe7b6e080e240dd152e397f8320cae4853bfc6632",
+        "manifest_matches": [
+          {
+            "manifest": "Art/GroundAA/20261028-runtime-style/manifest.json",
+            "recorded_path": "docs/public/media/ground-aa/runtime-style/shilka.png",
+            "sha256": "57b0398591688e4ab8453babe7b6e080e240dd152e397f8320cae4853bfc6632"
+          },
+          {
+            "manifest": "Art/GroundAA/20261028-integrated/manifest.json",
+            "recorded_path": "docs/public/media/ground-aa/runtime-style/shilka.png",
+            "sha256": "57b0398591688e4ab8453babe7b6e080e240dd152e397f8320cae4853bfc6632"
+          }
+        ]
+      },
+      {
+        "path": "Art/Extensions/VTOL_Harrier.png",
+        "sha256": "9a523efede9a292a274671142430c7a028f49282235ab9248499a66f2c6d0dfb",
+        "manifest_matches": [
+          {
+            "manifest": "Art/VTOL/20261027-v3/manifest.json",
+            "recorded_path": "VTOL_Harrier.png",
+            "sha256": "9a523efede9a292a274671142430c7a028f49282235ab9248499a66f2c6d0dfb"
+          },
+          {
+            "manifest": "Art/GroundAA/20261028-runtime-style/manifest.json",
+            "recorded_path": "Art/Extensions/VTOL_Harrier.png",
+            "sha256": "9a523efede9a292a274671142430c7a028f49282235ab9248499a66f2c6d0dfb"
+          },
+          {
+            "manifest": "Art/GroundAA/20261028-integrated/manifest.json",
+            "recorded_path": "Art/Extensions/VTOL_Harrier.png",
+            "sha256": "9a523efede9a292a274671142430c7a028f49282235ab9248499a66f2c6d0dfb"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "event_line": 41600,
+    "label": "GAA integrated Tunguska",
+    "completed": true,
+    "stored_prompt_exact_match": true,
+    "prompt_sha256": "49bde334915460c83806fd2a51cd825067465c76b087812a51237abe75ffcf58",
+    "inputs": [
+      {
+        "path": "docs/public/media/ground-aa/runtime-style/tunguska.png",
+        "sha256": "4ca272620eb4110fe79fe8521207f3c602c11d97aae18ea173cb92315a1b0e84",
+        "manifest_matches": [
+          {
+            "manifest": "Art/GroundAA/20261028-runtime-style/manifest.json",
+            "recorded_path": "docs/public/media/ground-aa/runtime-style/tunguska.png",
+            "sha256": "4ca272620eb4110fe79fe8521207f3c602c11d97aae18ea173cb92315a1b0e84"
+          },
+          {
+            "manifest": "Art/GroundAA/20261028-integrated/manifest.json",
+            "recorded_path": "docs/public/media/ground-aa/runtime-style/tunguska.png",
+            "sha256": "4ca272620eb4110fe79fe8521207f3c602c11d97aae18ea173cb92315a1b0e84"
+          }
+        ]
+      },
+      {
+        "path": "Art/Extensions/VTOL_Harrier.png",
+        "sha256": "9a523efede9a292a274671142430c7a028f49282235ab9248499a66f2c6d0dfb",
+        "manifest_matches": [
+          {
+            "manifest": "Art/VTOL/20261027-v3/manifest.json",
+            "recorded_path": "VTOL_Harrier.png",
+            "sha256": "9a523efede9a292a274671142430c7a028f49282235ab9248499a66f2c6d0dfb"
+          },
+          {
+            "manifest": "Art/GroundAA/20261028-runtime-style/manifest.json",
+            "recorded_path": "Art/Extensions/VTOL_Harrier.png",
+            "sha256": "9a523efede9a292a274671142430c7a028f49282235ab9248499a66f2c6d0dfb"
+          },
+          {
+            "manifest": "Art/GroundAA/20261028-integrated/manifest.json",
+            "recorded_path": "Art/Extensions/VTOL_Harrier.png",
+            "sha256": "9a523efede9a292a274671142430c7a028f49282235ab9248499a66f2c6d0dfb"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "event_line": 41625,
+    "label": "GAA integrated Tunguska correction",
+    "completed": true,
+    "stored_prompt_exact_match": true,
+    "prompt_sha256": "82d1c0faa85996db2e652da902c1fe0f7e48e6c7af98740a3839037aae0e5b2b",
+    "inputs": [
+      {
+        "path": "local-reference/exec-ae306f14-1039-49ee-a06c-7e8afeb6870b.png",
+        "sha256": "654cab7572c6c906bf43357e4848d2fccefef45761c22c06d563d09bb9dd6bec",
+        "manifest_matches": []
+      }
+    ]
+  },
+  {
+    "event_line": 41632,
+    "label": "GAA integrated Shilka correction",
+    "completed": true,
+    "stored_prompt_exact_match": true,
+    "prompt_sha256": "dd16632f69d51b4863941835931b97a23894781b1c81e6ef034d7507db8fa734",
+    "inputs": [
+      {
+        "path": "local-reference/exec-b6073adc-04dd-4d1b-8c27-e03748307d7e.png",
+        "sha256": "0007a228cf7cf64cd336d76434dc821681236efacd349712c695e8ec02d0d6f2",
+        "manifest_matches": []
+      }
+    ]
+  },
+  {
+    "event_line": 41639,
+    "label": "GAA integrated Shilka radar",
+    "completed": true,
+    "stored_prompt_exact_match": true,
+    "prompt_sha256": "c08ba851dfe71b1fd6fea4973f00c96995a32f017bf2190f878265388b4a0afd",
+    "inputs": [
+      {
+        "path": "Art/Extensions/GAA_Shilka_Radar.png",
+        "sha256": "fd335b45f3f2b4aa497b5f2553c903eb237e1c13bc7a6392f9ade807b947411f",
+        "manifest_matches": [
+          {
+            "manifest": "Art/GroundAA/20261028-integrated/manifest.json",
+            "recorded_path": "Art/Extensions/GAA_Shilka_Radar.png",
+            "sha256": "fd335b45f3f2b4aa497b5f2553c903eb237e1c13bc7a6392f9ade807b947411f"
+          }
+        ]
+      },
+      {
+        "path": "docs/public/media/ground-aa/runtime-style/shilka.png",
+        "sha256": "57b0398591688e4ab8453babe7b6e080e240dd152e397f8320cae4853bfc6632",
+        "manifest_matches": [
+          {
+            "manifest": "Art/GroundAA/20261028-runtime-style/manifest.json",
+            "recorded_path": "docs/public/media/ground-aa/runtime-style/shilka.png",
+            "sha256": "57b0398591688e4ab8453babe7b6e080e240dd152e397f8320cae4853bfc6632"
+          },
+          {
+            "manifest": "Art/GroundAA/20261028-integrated/manifest.json",
+            "recorded_path": "docs/public/media/ground-aa/runtime-style/shilka.png",
+            "sha256": "57b0398591688e4ab8453babe7b6e080e240dd152e397f8320cae4853bfc6632"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "event_line": 41648,
+    "label": "GAA integrated Tunguska radar",
+    "completed": true,
+    "stored_prompt_exact_match": true,
+    "prompt_sha256": "1afa24ca81fc90ce2ccbf9dce20bda3d67742e9e5962921fb732b45434542baf",
+    "inputs": [
+      {
+        "path": "docs/public/media/ground-aa/runtime-style/tunguska.png",
+        "sha256": "4ca272620eb4110fe79fe8521207f3c602c11d97aae18ea173cb92315a1b0e84",
+        "manifest_matches": [
+          {
+            "manifest": "Art/GroundAA/20261028-runtime-style/manifest.json",
+            "recorded_path": "docs/public/media/ground-aa/runtime-style/tunguska.png",
+            "sha256": "4ca272620eb4110fe79fe8521207f3c602c11d97aae18ea173cb92315a1b0e84"
+          },
+          {
+            "manifest": "Art/GroundAA/20261028-integrated/manifest.json",
+            "recorded_path": "docs/public/media/ground-aa/runtime-style/tunguska.png",
+            "sha256": "4ca272620eb4110fe79fe8521207f3c602c11d97aae18ea173cb92315a1b0e84"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "event_line": 42375,
+    "label": "GAA Shilka turret",
+    "completed": true,
+    "stored_prompt_exact_match": true,
+    "prompt_sha256": "dbaafc4707489655c4966c4a4a9dd1d69518afa846167cdf73ab0cb3ad673481",
+    "inputs": [
+      {
+        "path": "Art/Extensions/GAA_Shilka_Parts_v2.png",
+        "sha256": "53bb7031b265ab3439d64c217259f75d2351359fdd446e2519fef174339c8e6a",
+        "manifest_matches": [
+          {
+            "manifest": "Art/GroundAA/20261028-integrated/manifest.json",
+            "recorded_path": "Art/Extensions/GAA_Shilka_Parts_v2.png",
+            "sha256": "53bb7031b265ab3439d64c217259f75d2351359fdd446e2519fef174339c8e6a"
+          },
+          {
+            "manifest": "Art/GroundAA/20261028-shilka-turret/manifest.json",
+            "recorded_path": "Art/Extensions/GAA_Shilka_Parts_v2.png",
+            "sha256": "53bb7031b265ab3439d64c217259f75d2351359fdd446e2519fef174339c8e6a"
+          },
+          {
+            "manifest": "Art/GroundAA/20261028-shilka-turret/manifest.json",
+            "recorded_path": "Art/Extensions/GAA_Shilka_Parts_v2.png",
+            "sha256": "53bb7031b265ab3439d64c217259f75d2351359fdd446e2519fef174339c8e6a"
+          }
+        ]
+      },
+      {
+        "path": "local-reference/shilka-museum.jpg",
+        "sha256": "3ec1313734960ad23526deb2728dc36409431ce3386b92e7adb9d2cfaed732f5",
+        "manifest_matches": [
+          {
+            "manifest": "Art/GroundAA/20261028-shilka-turret/manifest.json",
+            "recorded_path": "Art/GroundAA/20261028-shilka-turret/shilka-museum.jpg",
+            "sha256": "3ec1313734960ad23526deb2728dc36409431ce3386b92e7adb9d2cfaed732f5"
+          }
+        ]
+      }
+    ]
+  }
+]

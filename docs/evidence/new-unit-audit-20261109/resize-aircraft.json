@@ -1,0 +1,68 @@
+[
+  {
+    "source_width": 2172,
+    "source_height": 724,
+    "width": 112,
+    "height": 37,
+    "changed_pixels": 1273,
+    "total_pixels": 4144,
+    "mean_absolute_channel_delta": 2.36221,
+    "maximum_channel_delta": 130,
+    "name": "VTOL_Yak141"
+  },
+  {
+    "source_width": 2034,
+    "source_height": 773,
+    "width": 108,
+    "height": 41,
+    "changed_pixels": 1324,
+    "total_pixels": 4428,
+    "mean_absolute_channel_delta": 1.815718,
+    "maximum_channel_delta": 121,
+    "name": "VTOL_Harrier"
+  },
+  {
+    "source_width": 2033,
+    "source_height": 773,
+    "width": 116,
+    "height": 44,
+    "changed_pixels": 1642,
+    "total_pixels": 5104,
+    "mean_absolute_channel_delta": 1.867604,
+    "maximum_channel_delta": 96,
+    "name": "VTOL_F35B"
+  },
+  {
+    "source_width": 1902,
+    "source_height": 827,
+    "width": 112,
+    "height": 49,
+    "changed_pixels": 1579,
+    "total_pixels": 5488,
+    "mean_absolute_channel_delta": 1.576576,
+    "maximum_channel_delta": 125,
+    "name": "Lux_F22"
+  },
+  {
+    "source_width": 2079,
+    "source_height": 756,
+    "width": 116,
+    "height": 42,
+    "changed_pixels": 1491,
+    "total_pixels": 4872,
+    "mean_absolute_channel_delta": 1.547157,
+    "maximum_channel_delta": 100,
+    "name": "Lux_Su57"
+  },
+  {
+    "source_width": 2172,
+    "source_height": 724,
+    "width": 120,
+    "height": 40,
+    "changed_pixels": 1523,
+    "total_pixels": 4800,
+    "mean_absolute_channel_delta": 1.630937,
+    "maximum_channel_delta": 131,
+    "name": "Lux_MiG31"
+  }
+]
