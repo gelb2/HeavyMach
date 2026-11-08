@@ -4,6 +4,10 @@ version = "0.17.0"
 edition = "2021"
 publish = false
 
+[features]
+default = []
+validation = []
+
 [build-dependencies]
 tauri-build = { version = "=2.7.4", features = [] }
 

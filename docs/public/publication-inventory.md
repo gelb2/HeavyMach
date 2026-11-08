@@ -215,3 +215,7 @@ Sass Apps·Mags에서 이번 UI 수정과 작업 방식에 관한 글을 쓸 때
 두 원고는 HeavyMach1의 사격별 파일 저장, UIKit 렌더, 효과음 지연, 전체 무기 검사, Android 파일 보존, 첫 웹 PR과 게임 버튼 수정을 다룬다. [사용자 원문](../editorial/test-method-material-20261107.md)과 [집필 기록](../evidence/work-test-publication-20261107.md)을 연결했다. Apps는 각 절의 구현·측정 근거를, Mags는 저자의 판단과 지시를 사용한다. MachDefense의 p99 수치를 HeavyMach 성능으로 옮기지 않는다.
 
 [HeavyMach 통합 보고서](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/#work-test-20261107)에서 한·영 전문을 함께 볼 수 있다.
+
+## 2026-11-09 신규 유닛 제작·구현 절차 수정
+
+[트러블슈팅](troubleshooting.md#new-unit-resource-procedure)에 에셋 제작·연결 및 코드 구현 절차 미준수, 재사용 보고의 범위 오류, 현재 외형을 보존한 수정과 아이폰 미션2-4·2-5 직접 플레이 확인을 추가했다. [핫픽스 보고](../reviews/new-unit-resource-hotfix-20261109.md)와 [경위서](../reviews/new-unit-implementation-incident-20261109.md)를 함께 읽는다. SaaS 집필 시 일부 공통 함수 재사용을 전체 제작·패키징 절차 준수로 확대하지 않는다.

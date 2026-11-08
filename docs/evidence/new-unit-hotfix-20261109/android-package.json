@@ -1,0 +1,59 @@
+{
+  "apks": [
+    {
+      "edition": "normal",
+      "package": "com.gelb2.heavymach.restored",
+      "sha256": "95f912c56649ac72c34b759929807f235d9ec3ec991b1eacf67543766c545f95",
+      "bytes": 47013800,
+      "asset_files": 843,
+      "elf_load_alignment": [
+        16384,
+        16384,
+        16384
+      ],
+      "signature_verified": true,
+      "apk_16kb_alignment": true,
+      "cheat_receiver": false,
+      "signing": "Android debug certificate",
+      "validation_hook_strings": {
+        "auditUnit": false,
+        "enemyStates": false,
+        "unitDraws": false
+      },
+      "packaged_runtime_sources_byte_identical": true,
+      "checked_runtime_files": 110,
+      "arm64_only": true,
+      "versionName": "0.16-android-dev",
+      "versionCode": 1
+    },
+    {
+      "edition": "cheat",
+      "package": "com.gelb2.heavymach.validation",
+      "sha256": "59e21cc9261c824e0ae18fd21bf94d8be31094ae8ec2a8d474df7b38b569ccf6",
+      "bytes": 47075336,
+      "asset_files": 843,
+      "elf_load_alignment": [
+        16384,
+        16384,
+        16384
+      ],
+      "signature_verified": true,
+      "apk_16kb_alignment": true,
+      "cheat_receiver": true,
+      "signing": "Android debug certificate",
+      "validation_hook_strings": {
+        "auditUnit": true,
+        "enemyStates": true,
+        "unitDraws": true
+      },
+      "packaged_runtime_sources_byte_identical": true,
+      "checked_runtime_files": 110,
+      "arm64_only": true,
+      "versionName": "0.16-android-dev",
+      "versionCode": 1
+    }
+  ],
+  "all_843_assets_identical_between_editions": true,
+  "release_published": false,
+  "note": "Existing project debug signing preserved. General edition is not a production-key-signed release flavor."
+}

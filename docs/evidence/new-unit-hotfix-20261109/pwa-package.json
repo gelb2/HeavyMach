@@ -1,0 +1,72 @@
+{
+  "host_version": "5be015e11fcc5269",
+  "game_version": "584cf2b910eda1d2",
+  "site_bytes": 43526190,
+  "manifest_sha256": "cbd8cfa7b4f27d1ecdfec00474a80b1a6b1c420ea49338a54f019040e8659290",
+  "game_files": {
+    "hm-assets-1.data": "94e5e210e3f2bbc94862d3cf06a39ac661b401d923628f1b037599b5bd31e47a",
+    "hm-assets-2.data": "401d37b24b36e3891ec585fb1c05d75113bd1a42b47e1b43ffba35db3139de44",
+    "hm-assets.js": "46934ead8e3c8a7c6d15e30aa06a1549b685b8193b343645040929281b7b5faa",
+    "hm-assets.json": "f3e4d8f3ab08474bfd0df269cd30f7ed796d02e30cc4af171032857ed41848ba",
+    "index.html": "445b30a1ca3b0a63e72ee0fdc73e7cbdc7c995e73f7700c4e152b2ee81aabb1e",
+    "index.js": "c940b3e59ade26e45835e97f37c0457649473445679f8040233613f9d6762b3a",
+    "index.wasm": "8ee07c59d57dfd034a81ca12c5b9354c1a8b4eb1c46eea222622fa88035aa935",
+    "manifest.webmanifest": "65c37e452de3dabbaa9971a8136a51497c8abf1a5034012fd15f56f7eb724e52"
+  },
+  "source_copy": {
+    "source": "build/web-unit-normal/dist",
+    "destination": "build/web/dist",
+    "byte_identical": true,
+    "files": {
+      "hm-assets-1.data": "94e5e210e3f2bbc94862d3cf06a39ac661b401d923628f1b037599b5bd31e47a",
+      "hm-assets-2.data": "401d37b24b36e3891ec585fb1c05d75113bd1a42b47e1b43ffba35db3139de44",
+      "hm-assets.js": "46934ead8e3c8a7c6d15e30aa06a1549b685b8193b343645040929281b7b5faa",
+      "hm-assets.json": "f3e4d8f3ab08474bfd0df269cd30f7ed796d02e30cc4af171032857ed41848ba",
+      "index.html": "445b30a1ca3b0a63e72ee0fdc73e7cbdc7c995e73f7700c4e152b2ee81aabb1e",
+      "index.js": "c940b3e59ade26e45835e97f37c0457649473445679f8040233613f9d6762b3a",
+      "index.wasm": "8ee07c59d57dfd034a81ca12c5b9354c1a8b4eb1c46eea222622fa88035aa935",
+      "manifest.webmanifest": "65c37e452de3dabbaa9971a8136a51497c8abf1a5034012fd15f56f7eb724e52"
+    }
+  },
+  "save_transfer_codec": {
+    "reused_existing_valid_build": true,
+    "files": {
+      "codec.js": "99c68718c367d0ef74d50b8bfef7475c65224daf089e03db62aab89c3b70312c",
+      "codec.wasm": "3fea0c598393c599334d0307f27fcb981b4cb544da03394c16e623f52a136840",
+      "slot-entry.js": "b37752d129fde19092a572505a6d5589364c6620e17f5701d9387de6c7bd2c19",
+      "store.js": "3e254df73b625a5494efef7beeaf19335863997d7124456df7f334689efdd571",
+      "transfer.js": "f4c6c3ed1c666da229348b611b7d9dd29e79a3dd563fdf637cc252355837d563",
+      "ui.js": "d96c79a791809a3f323f9b363eca7af6ef9510fc2914b79ecc9ab1f63a1c7b69"
+    },
+    "package_byte_identical": true
+  },
+  "local_regression": {
+    "url": "http://127.0.0.1:48736/",
+    "ok": true,
+    "errors": [],
+    "steps": [
+      "offline-cache-and-title",
+      "mission-enter",
+      "fire",
+      "move",
+      "jump",
+      "automatic-aim-enabled",
+      "pause",
+      "second-window-blocked",
+      "export-save",
+      "corrupt-import-rejected-data-unchanged",
+      "import-roundtrip",
+      "offline-reload-game",
+      "offline-progress-restored",
+      "offline-save-content-matches",
+      "automatic-aim-restored",
+      "offline-mission-play"
+    ],
+    "report_sha256": "c03dbbdc629a9ccd8af3e35affd2f01280b4bed449f3eda45e7ef1da2e017bd4",
+    "raw_report": "Distribution/Web/build/test/result.json",
+    "hardware_gpu": false,
+    "installed_standalone": false
+  },
+  "ready_site": "Distribution/Web/build/site",
+  "published": false
+}

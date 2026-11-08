@@ -192,6 +192,11 @@ targets:
     sources:
     - path: ../Tests/iOS
     - path: ../Tests/Apple
+    postBuildScripts:
+    - name: Stage unit image preservation test fixtures
+      basedOnDependencyAnalysis: false
+      script: |
+        python3 "$SRCROOT/../tools/stage_unit_image_test_fixtures.py" --output "$TARGET_BUILD_DIR/$UNLOCALIZED_RESOURCES_FOLDER_PATH/UnitImagePreservationFixtures"
     dependencies:
     - target: HeavyMachValidation
     - sdk: UIKit.framework

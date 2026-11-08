@@ -120,8 +120,8 @@
     },
     "docs/public/features.md": {
       "english": "docs/en/public/features.md",
-      "source_sha256": "e32cb64f9b4789ff8cc85f4a0fa7a8b80faf9da716f2acfac6d4f30dcb246e9c",
-      "english_sha256": "6b1f63010d7edd8627b6dddd736e68173039ff93f51fdb4c2e2999ca8fc8bca4",
+      "source_sha256": "06ef7f79ea6d4864eb5c36802a669adf30229549904f4444ff5fc418674c861f",
+      "english_sha256": "01c317281837511ab76eeef174c7206d03d5193ae49e4ab500ab1d7170789f81",
       "reviewed_numeric_difference": {
         "source_only": {
           "6": 2,
@@ -134,7 +134,7 @@
           "7": 1
         }
       },
-      "review_note": "Counts and durations sometimes use words. Ace Combat 7 and 8 expands 에이스 컴뱃7·8; only the digit preceded by Korean text is omitted by the numeric extractor. All weapon and placement tables compared. Updated Android availability; personal paragraphs unchanged. Reviewed 2026-10-30 Android coverage/link audit; current main and released v0.16 remain distinct. Lux sentence follows author commit 39b05834 where applicable. Reviewed 2026-11-02 platform status and recovery article: shared slots/codec, platform-specific restore choices, button fixes and measured versus pending checks. English number words/month names preserve source values. Personal opening unchanged. Reviewed dated Tauri Mac ZIP download, ad-hoc signing, first-launch steps, stable v0.17 distinction, and remaining notarization/other-Mac testing."
+      "review_note": "Counts and durations sometimes use words. Ace Combat 7 and 8 expands 에이스 컴뱃7·8; only the digit preceded by Korean text is omitted by the numeric extractor. All weapon and placement tables compared. Updated Android availability; personal paragraphs unchanged. Reviewed 2026-10-30 Android coverage/link audit; current main and released v0.16 remain distinct. Lux sentence follows author commit 39b05834 where applicable. Reviewed 2026-11-02 platform status and recovery article: shared slots/codec, platform-specific restore choices, button fixes and measured versus pending checks. English number words/month names preserve source values. Personal opening unchanged. Reviewed dated Tauri Mac ZIP download, ad-hoc signing, first-launch steps, stable v0.17 distinction, and remaining notarization/other-Mac testing. Reviewed 2026-11-09 new-unit resource contract: original-format MCH/MAP and explicit common extensions, working-branch implementation versus pending release, original 113-placement history versus current 152 placements across 7 missions/35 stages, common PNG loading, and current code links. First-person history, unit specifications, and tables preserved; new numeric counts agree."
     },
     "docs/public/implementation-status.md": {
       "english": "docs/en/public/implementation-status.md",
@@ -206,21 +206,22 @@
     },
     "docs/public/troubleshooting.md": {
       "english": "docs/en/public/troubleshooting.md",
-      "source_sha256": "abe254eb1ea33e1abeadf6a36d956dba70d48c53b70c580e78c2bd28efe5178d",
-      "english_sha256": "36cfe1f7527652fffb33e05fec60dcc6b4f85caf18e28413dbcbb3bad743dee8",
+      "source_sha256": "2196a3f9dd3cde63d17bd84474f710e25f7ada65831dfaa8781a185c07719f5b",
+      "english_sha256": "ec77c3d18ad51ec94c5340e0c7a84fa7921fd76855c70bde35f00ed809a2f2c0",
       "reviewed_numeric_difference": {
         "source_only": {
-          "1": 1,
           "0": 4,
-          "2": 1,
+          "2": 2,
           "3": 1,
+          "6": 1,
+          "8": 1,
           "10": 1,
-          "11": 1,
+          "11": 2,
           "12": 1
         },
         "english_only": {}
       },
-      "review_note": "2026-11-07: reviewed work/test essay text, first-person voice, dates, measured scope, figures, links and matching navigation. Existing author README passages preserved; only the new essay section was added."
+      "review_note": "2026-11-09: reviewed added unit asset/code procedure violation, scope of reuse, hotfix and iPhone user play; existing author passages preserved."
     },
     "docs/public/validation.md": {
       "english": "docs/en/public/validation.md",

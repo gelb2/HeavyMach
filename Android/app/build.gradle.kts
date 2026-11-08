@@ -2,7 +2,7 @@ plugins { id("com.android.application"); id("org.jetbrains.kotlin.android") }
 val prepareAssets by tasks.registering(Exec::class) {
     workingDir(rootProject.projectDir)
     commandLine("python3", "tools/prepare_assets.py", layout.buildDirectory.dir("generated/gameAssets").get().asFile.absolutePath)
-    inputs.files(fileTree("../../Resources/OriginalImages"),fileTree("../../Resources/RawData"),fileTree("../../Resources/Audio"),fileTree("../../Art/Extensions"))
+    inputs.files(fileTree("../../Resources/OriginalImages"),fileTree("../../Resources/RuntimeData"),fileTree("../../Resources/RuntimeImages/android"),file("../../Resources/RuntimeImages/manifest.json"),file("../../tools/stage_runtime_assets.py"),file("../tools/prepare_assets.py"),fileTree("../../Resources/Audio"),fileTree("../../Art/Extensions"))
     outputs.dir(layout.buildDirectory.dir("generated/gameAssets"))
 }
 android {

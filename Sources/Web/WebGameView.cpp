@@ -1,7 +1,4 @@
 #include "WebGameView.hpp"
-#include "Fighters.hpp"
-#include "GroundAA.hpp"
-#include "VTOL.hpp"
 #include "HMAimOverlay.hpp"
 #include "CanvasGeometry.hpp"
 #include "GlobalInfo.hpp"
@@ -18,17 +15,17 @@
 // Browser seams. NSUserDefaults -> localStorage (keys prefixed per app),
 // UILabel overlays -> DOM elements, IDBFS flush after the atomic save.
 EM_JS(int,hm_pref_get_int,(const char* key,int fallback),{
-    try{const v=localStorage.getItem('HeavyMach.'+UTF8ToString(key));return v===null?fallback:(parseInt(v,10)|0);}catch(e){return fallback;}
+    try{const v=localStorage.getItem((Module.hmPreferencePrefix||'HeavyMach.')+UTF8ToString(key));return v===null?fallback:(parseInt(v,10)|0);}catch(e){return fallback;}
 });
 EM_JS(void,hm_pref_set_int,(const char* key,int value),{
-    try{localStorage.setItem('HeavyMach.'+UTF8ToString(key),String(value));}catch(e){}
+    try{localStorage.setItem((Module.hmPreferencePrefix||'HeavyMach.')+UTF8ToString(key),String(value));}catch(e){}
 });
 EM_JS(char*,hm_pref_get_string,(const char* key),{
-    let v=null;try{v=localStorage.getItem('HeavyMach.'+UTF8ToString(key));}catch(e){}
+    let v=null;try{v=localStorage.getItem((Module.hmPreferencePrefix||'HeavyMach.')+UTF8ToString(key));}catch(e){}
     if(v===null)return 0;return stringToNewUTF8(v);
 });
 EM_JS(void,hm_pref_set_string,(const char* key,const char* value),{
-    try{localStorage.setItem('HeavyMach.'+UTF8ToString(key),UTF8ToString(value));}catch(e){}
+    try{localStorage.setItem((Module.hmPreferencePrefix||'HeavyMach.')+UTF8ToString(key),UTF8ToString(value));}catch(e){}
 });
 EM_JS(void,hm_set_overlay,(const char* id,const char* text,int visible),{
     const el=document.getElementById(UTF8ToString(id));if(!el)return;
@@ -72,10 +69,7 @@ GameView::GameView(std::string assetRoot,std::string saveDirectory):_assetRoot(s
     _randomState=uint32_t(uint64_t(emscripten_get_now()*1e6));
     _trace=hm_trace_enabled();
     try{
-        _data=GameData::loadDirectory(_assetRoot+"/RawData");
-        addVTOLExpansion(_data);
-        addFighterExpansion(_data);
-        addGroundAAExpansion(_data);
+        _data=GameData::loadDirectory(_assetRoot+"/RuntimeData",true);
         if(std::filesystem::exists(_savePath)){
             std::ifstream file(_savePath,std::ios::binary);
             if(!file)throw std::runtime_error("Cannot read save file");
@@ -167,7 +161,7 @@ void GameView::startSlot(int slot,int mode,int mission,int stage){
         // Its HP needle, gear and closing animations continue while hidden.
         Media* media=_media.get();
         // Prepare every radar/body frame before combat; animation must not decode PNGs.
-        for(const auto& art:groundAAImages())media->imageSize(art.name,"shared");
+        for(const auto& image:_data.presentationImages())media->imageSize(image,"shared");
         _session=std::make_unique<GameSession>(_data,_save.slots.at(slot),
             [media](std::string_view name){Size size=media->imageSize(std::string(name),"shared");return Vector2{float(size.width),float(size.height)};},
             [this]{return nextOriginalRandom();},&_passives,
@@ -175,7 +169,12 @@ void GameView::startSlot(int slot,int mode,int mission,int stage){
         // openMap must know the target extent before preparing a new world.
         _showMenu=false;updateCanvasGeometry();
         _session->restoreWorldCamera(_retainedWorldCamera);
+#if defined(HM_VALIDATION) && HM_VALIDATION
+        if(_validationFixture){auto fixture=*_validationFixture;_validationFixture.reset();_session->startValidation(fixture);}
+        else _session->start(mode,mission,stage,_retainedWorldTime);
+#else
         _session->start(mode,mission,stage,_retainedWorldTime);
+#endif
         _session->setAimMode(_preferredAimMode);
         _showMenu=false;
         _hud->setGameStart(_time);consumeGameEvents();
@@ -868,6 +867,57 @@ void GameView::routePoint(Point point,int state,long touch){
     if(_showMenu){_menus->touch({logical->first,logical->second-(_canvasHeight-320)/2},state);return;}
     if(state==2&&_title.released(_time))requestScreen(3);
 }
+#if defined(HM_VALIDATION) && HM_VALIDATION
+namespace {
+std::string validationJSON(const std::string& value){std::string out="\"";for(unsigned char c:value){if(c=='"'||c=='\\'){out+='\\';out+=char(c);}else if(c<32){char escaped[7];std::snprintf(escaped,sizeof(escaped),"\\u%04x",unsigned(c));out+=escaped;}else out+=char(c);}return out+'"';}
+}
+std::string GameView::validationCatalog() const {
+    std::ostringstream out;out<<"{\"weapons\":[";bool first=true;
+    for(const auto& name:validationWeapons(_data)){if(!first)out<<',';first=false;out<<validationJSON(name);}
+    out<<"],\"stages\":[";first=true;
+    for(const auto& stage:validationStages(_data)){if(!first)out<<',';first=false;const auto& map=_data.maps.at(stage.mapName);out<<"{\"mission\":"<<stage.mission<<",\"stage\":"<<stage.stage<<",\"map\":"<<validationJSON(stage.mapName)<<",\"bounds\":["<<map.left<<','<<map.bottom<<','<<map.right<<','<<map.top<<"]}";}
+    std::vector<std::string> names;for(const auto& [name,m]:_data.machines)names.push_back(name);std::sort(names.begin(),names.end());out<<"],\"machines\":[";first=true;for(const auto& name:names){if(!first)out<<',';first=false;out<<validationJSON(name);}out<<"],\"savePath\":"<<validationJSON(_savePath)<<'}';return out.str();
+}
+bool GameView::validationStart(const char* weapon,int mission,int stage,int level,int grade,double x,double y,bool explicitPosition,uint32_t seed){
+    try{
+        if(!_rendererReady||!_loadError.empty())throw std::runtime_error("Game is not ready");
+        if(grade<0||grade>6)throw std::invalid_argument("grade outside 0..6");
+        ValidationScenario scenario;scenario.mission=mission;scenario.stage=stage;scenario.internalLevel=level;scenario.grades.fill(uint8_t(grade));scenario.allWeapons=true;
+        if(explicitPosition)scenario.playerPosition=Vector2{float(x),float(y)};
+        SaveSlot prepared;prepareValidationSlot(prepared,_data,scenario);int selected=-1;
+        for(int i=0;i<prepared.weaponCount();++i)if(prepared.weaponName(size_t(i))==(weapon?weapon:"")){selected=i;break;}
+        if(selected<0)throw std::invalid_argument("Unknown original player weapon");scenario.selectedWeapon=selected;
+        cancelGameInput();if(_hudEditing)closeHUDEditor();_resumeRequired=false;_keyboardSettingsOpen=false;_loading=LoadingTransition{};
+        _randomState=seed?seed:1;_retainedWorldTime=0;_retainedWorldCamera={};_validationShots=0;_validationLastShot.clear();_validationError.clear();_validationFixture=scenario;
+        startSlot(0,0,mission,stage);
+        if(!_loadError.empty()||!_session)throw std::runtime_error(_loadError.empty()?"Session did not start":_loadError);
+        _session->setAimMode(AimMode::manual);_session->validationSetCheats(false);
+        _session->validationObserveShots([this](const WeaponInfo& w,float,Vector2){++_validationShots;_validationLastShot=w.name;});
+        persistSave();noteInteraction();return true;
+    }catch(const std::exception& error){_validationFixture.reset();_validationError=error.what();return false;}
+}
+bool GameView::validationSpawn(const char* name,double x,double y){
+    try{
+        if(!_session)throw std::runtime_error("Start a validation scenario first");
+        if(!name||!_data.machines.contains(name)||!std::isfinite(x)||!std::isfinite(y))throw std::invalid_argument("Invalid enemy fixture");
+        auto stage=_session->stage();char key[32];std::snprintf(key,sizeof(key),"Stage%02d",GlobalInfo::mapNumber(stage));const auto& map=_data.maps.at(key);
+        if(x<map.left||x>map.right||y<map.bottom||y>map.top)throw std::invalid_argument("Enemy fixture outside map");
+        _session->validationSpawnEnemy({name,{float(x),float(y)},false});_validationError.clear();return true;
+    }catch(const std::exception& error){_validationError=error.what();return false;}
+}
+bool GameView::validationTouch(double x,double y,int state){
+    if(!_session||!std::isfinite(x)||!std::isfinite(y)||state<0||state>2)return false;
+    _session->touch({float(x),float(y)},state);noteInteraction();return true;
+}
+void GameView::validationCheats(bool enabled){if(_session)_session->validationSetCheats(enabled);}
+std::string GameView::validationState(){
+    std::ostringstream out;out.precision(9);out<<"{\"validation\":true,\"savePath\":"<<validationJSON(_savePath)<<",\"error\":"<<validationJSON(_validationError)<<",\"shots\":"<<_validationShots<<",\"lastShot\":"<<validationJSON(_validationLastShot)<<",\"game\":"<<debugState()<<",\"enemies\":[";
+    bool first=true;if(_session)for(const auto& e:_session->validationEnemies()){if(!first)out<<',';first=false;out<<"{\"id\":"<<e.id<<",\"name\":"<<validationJSON(e.name)<<",\"x\":"<<e.position.x<<",\"y\":"<<e.position.y<<",\"hp\":"<<e.hp<<",\"hpMax\":"<<e.hpMax<<",\"removed\":"<<(e.removed?"true":"false")<<'}';}
+    out<<"],\"sprites\":[";first=true;if(_session)for(const auto& d:_session->sprites()){if(!first)out<<',';first=false;out<<"{\"tile\":"<<validationJSON(d.tile)<<",\"x\":"<<d.position.x<<",\"y\":"<<d.position.y<<",\"rotation\":"<<d.rotation<<",\"scaleX\":"<<d.scale.x<<",\"scaleY\":"<<d.scale.y<<",\"frame\":"<<d.frame<<'}';}
+    out<<"],\"cheats\":{";if(_session){auto stats=_session->validationCheatStats();out<<"\"blockedHits\":"<<stats.blockedHits<<",\"refilledRounds\":"<<stats.refilledRounds<<",\"fallRescues\":"<<stats.fallRescues;}out<<"}}";return out.str();
+}
+#endif
+
 std::string GameView::debugState(){
     char text[768];
     const char* screen=!_rendererReady?"boot":_session?"game":_showMenu?"menu":"title";

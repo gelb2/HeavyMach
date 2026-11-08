@@ -137,6 +137,11 @@ targets:
     - ../Tests/iOS/HMMediaParityTests.mm
     - ../Tests/iOS/HMAudioTests.mm
     - ../Tests/iOS/HMOpenALAudioTests.mm
+    postBuildScripts:
+    - name: Stage unit image preservation test fixtures
+      basedOnDependencyAnalysis: false
+      script: |
+        python3 "$SRCROOT/../tools/stage_unit_image_test_fixtures.py" --output "$TARGET_BUILD_DIR/$UNLOCALIZED_RESOURCES_FOLDER_PATH/UnitImagePreservationFixtures"
     dependencies:
     - target: HeavyMachMacValidation
     - sdk: CoreGraphics.framework

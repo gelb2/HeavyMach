@@ -2,7 +2,11 @@
 
 ## 신규 유닛 구조 정리 요구 — 2026-11-09
 
-현재 C++ 기체/파츠/무기 등록과 별도 공중 동체·GAA 표시를 공통 데이터·파츠 경로로 이전하는 계획이다. 원작 MCH/MAP로 표현할 데이터는 별도 실행용 패키지로 내보내 기존 파서로 읽는다. 원작에 없는 현재 동작은 명시적 공통 확장 계약으로 구분한다. 아직 구현 전이다. [핫픽스 계획](reviews/new-unit-hotfix-plan-20261109.md), [경위서](reviews/new-unit-implementation-incident-20261109.md).
+작업 브랜치에서 신규8종의 C++ 런타임 등록과 공중 동체 별도 draw를 제거했다. `tools/prepare_unit_data.py`가 보존된 원작 레코드와 확정된 추가 정의·좌표를 `Resources/RuntimeData`에 합성한다. `GameData::loadDirectory`와 원작 MCH/MAP 파서는 이 실행용 패키지를 읽는다. 원작 보관 파일은 그대로이며, 새 레코드가 들어간 배포 MCH/MAP의 전체 해시는 원작과 다르다.
+
+원작 레코드로 표현되지 않는 표시·pitch·총구 기준·레이더·Lux 연사/증원·난수 정책은 버전이 있는 `UnitExtensions.hmx`로 읽는다. `PartPresentation`, `MachineBehavior`, `StageFormation`은 복원 엔진의 명시적 확장이다. 원작 형식에 새 필드가 원래 있었던 것처럼 설명하지 않는다. 모든 동체·분사·지상 부품은 공통 파츠 순회와 `drawParts/drawWeapon`·표시 속성 처리를 거친다. [자료 형식과 재생성](../tools/prepare_unit_data.md), [핫픽스 계획](reviews/new-unit-hotfix-plan-20261109.md), [경위서](reviews/new-unit-implementation-incident-20261109.md).
+
+Core26검사가 통과했고, 별도 기준판/후보판 비교는 44조건·39,644tick에서 상태·난수·탄환·draw 순서/사각형·이벤트·저장이 같았다. 이는 실제 플랫폼 화면·설치 완료를 대신하지 않는다. 플랫폼별 검증·배포 상태는 [현재 상태](current-status.md)를 따른다.
 
 ## Apple 플랫폼 확장 — 2026-10-26
 
@@ -71,7 +75,7 @@ MAP/MCH 관찰 구조는 LE u32 `declared_size,type,data_size`, payload, LE u32 
 
 ## 승인된 공중 적 확장 — 2026-10-27
 
-`VTOL.cpp`는 원본 데이터 로드 후 새 기체3종과 별도 캠페인 배치를 추가한다. 2026-11-07 배치는35개 스테이지의 쉴카·퉁구스카 합계와 같고 세 기종을 순환 배정한다. `GameSession`은 기존 비행·무기·피격 경로를 사용하며 새 기체의 회전·발사점·충돌 범위·배기만 분기한다. [구현과 검사](vtol-expansion.md).
+최초 구현은 `VTOL.cpp`가 메모리 정의를 추가하고 동체를 별도로 그렸다. 이 파일과 이름 기반 실행 분기는 2026-11-09 핫픽스에서 제거했다. 현재 세 기체는 MCH의 실제 Body/Weapon/Exhaust 파츠로 생성한다. 원작 무기 참조와 공통 비행·발사·피격 처리는 유지하고, 자세·총구 기준·피격 범위·분사 속성은 명시적 확장으로 적용한다. 2026-11-07에 확정한 35개 스테이지152개 배치는 MAP로 옮겼다. 모든 미션에 세 기종이 있고, 스테이지별 총수는 쉴카·퉁구스카 합계와 같다. [기존 요구·검사 기록](vtol-expansion.md).
 
 ## 전체 화면 도어
 
@@ -79,11 +83,11 @@ MAP/MCH 관찰 구조는 LE u32 `declared_size,type,data_size`, payload, LE u32 
 
 ## 럭스루나에 전투기
 
-`Fighters.cpp`는 신규 3종과 무기 복사본·14개 증원표를 제공한다. `GameSession`은 원본 맵을 수정하지 않고 대형보스 활성/마지막 구간 진입 때 증원한다. `aircraftSpec`은 신규 전투기와 기존 VTOL의 자세·발사점·피격·그리기를 연결한다. 신규 후방 배기만 가로 방향으로 그린다. 증원은 화면 오른쪽 밖에서 생성하고 `aircraftEntering` 동안 기존 비행 위치 갱신으로 진입한다. 목표점 도착 때 무기 AI 대기 시각을 시작한다. [수치·배치·검사](lux-lunae-plan-20261027.md).
+최초 `Fighters.cpp`와 `aircraftSpec` 등록/선택 코드는 제거했다. 기체3종과 수정 무기는 실행용 MCH로 읽고, 14개 증원표는 `StageFormation`으로 읽는다. 원작 MAP 정적 배치로 표현할 수 없는 보스 활성/마지막 구간 조건은 명시적 확장이다. 공통 증원 코드가 화면 밖 편대를 생성하고 `formationEntering` 동안 기존 위치 갱신을 사용한다. 목표점 도착 시 무기 AI 대기 시각을 시작한다. 후방 분사는 동체 트리의 공통 효과 파츠가 그린다. [기존 수치·배치·검사 기록](lux-lunae-plan-20261027.md).
 
 ## 추가 지상 적
 
-`GroundAA.cpp`가 별도 무기·파츠·차량 정의와 배치를 추가한다. `GameSession`의 기존 부모·자식 파츠, 지상 AI, 충돌·무기 갱신을 사용한다. 변경 분기는 `GAA_Shilka_M*`·`GAA_Tunguska_M*`에 한정한다. `GroundAAArt.inc`는 그림의 영역·표시 크기·레이더 축을 소유한다. [조립·무장·배치와 검사](ground-aa-expansion.md).
+미션별 차량14개와 무기·파츠는 실행용 MCH, 고정152개 좌표는 MAP에서 읽는다. `GroundAA.cpp`의 등록·배치 생성과 `GroundAAArt.inc` 기반 런타임 crop은 제거했다. 기존 소켓 조립·지상 AI·충돌·무기 갱신을 사용하며, 실제57개 부품 PNG와 레이더 프레임별 소수점 축·2초24프레임 시계는 공통 `PartPresentation`이 소비한다. [현재 조립·무장·배치와 과거 이력](ground-aa-expansion.md).
 
 ## Android 호스트 — 2026-10-30
 

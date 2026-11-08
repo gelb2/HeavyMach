@@ -21,6 +21,7 @@
 		5E6E83E8590E4F7CE20AAAF4 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 529E08B5127E6D63C9DBB880 /* CoreText.framework */; };
 		60247451B2D46E3C2D3A13E4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAE50A6D593570089B65CA5F /* CoreGraphics.framework */; };
 		66603CEE518D629B0C588245 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3BD5043DB2F1EBD82A09621 /* AudioToolbox.framework */; };
+		6F355AA1F056A8569E141AF1 /* HMUnitImagePreservationTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = A841AE0EC8EEB8D5BBB48371 /* HMUnitImagePreservationTests.mm */; };
 		714353AF60FE32D4C1D8B16A /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B15AC064D89D9A744587670A /* AppKit.framework */; };
 		7B48F9E09F3F51118778206F /* HMAudioTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = 75B9FB8B13B8B8DB1C3356DB /* HMAudioTests.mm */; };
 		8492C588B758D85318C03114 /* HeavyMachSaveTransfer_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10D09C2CB860E3D27461B7D7 /* HeavyMachSaveTransfer_macOS.framework */; };
@@ -199,6 +200,8 @@
 		7A8BDA4FBD551258CFC16555 /* HMOpenALAudioTests.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = HMOpenALAudioTests.mm; sourceTree = "<group>"; };
 		7B705E3C88A323CF88420F5F /* HMAppleInputTests.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = HMAppleInputTests.mm; sourceTree = "<group>"; };
 		7C975524DE506E9D2E096BD3 /* Modules */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Modules; path = ../Modules/HeavyMachModules.xcodeproj; sourceTree = "<group>"; };
+		A841AE0EC8EEB8D5BBB48371 /* HMUnitImagePreservationTests.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = HMUnitImagePreservationTests.mm; sourceTree = "<group>"; };
+		AAD71E49C38318E600D8B9DB /* UnitPresentationGolden.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = UnitPresentationGolden.hpp; sourceTree = "<group>"; };
 		B15AC064D89D9A744587670A /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		D3BD5043DB2F1EBD82A09621 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		EAE50A6D593570089B65CA5F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -366,6 +369,8 @@
 			isa = PBXGroup;
 			children = (
 				7B705E3C88A323CF88420F5F /* HMAppleInputTests.mm */,
+				A841AE0EC8EEB8D5BBB48371 /* HMUnitImagePreservationTests.mm */,
+				AAD71E49C38318E600D8B9DB /* UnitPresentationGolden.hpp */,
 			);
 			name = Apple;
 			path = ../Tests/Apple;
@@ -405,6 +410,7 @@
 			buildPhases = (
 				F8BDFAD5B7B3530039173FE3 /* Sources */,
 				84B3A79C0A897BDE4DA30ACD /* Frameworks */,
+				4EDCBE74554F355B15A94EB9 /* Stage unit image preservation test fixtures */,
 			);
 			buildRules = (
 			);
@@ -559,6 +565,25 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		4EDCBE74554F355B15A94EB9 /* Stage unit image preservation test fixtures */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Stage unit image preservation test fixtures";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "python3 \"$SRCROOT/../tools/stage_unit_image_test_fixtures.py\" --output \"$TARGET_BUILD_DIR/$UNLOCALIZED_RESOURCES_FOLDER_PATH/UnitImagePreservationFixtures\"\n";
+		};
 		7CF05BBFBDA232A6A866560C /* Build OpenAL Soft */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
@@ -627,6 +652,7 @@
 				8E6FA4682420ACAE9860EAE3 /* HMGLReferenceTests.mm in Sources */,
 				F6F3FA3FEE266E1FCB5296D6 /* HMMediaParityTests.mm in Sources */,
 				0A2C9DFBDAD067D2E84ABF32 /* HMOpenALAudioTests.mm in Sources */,
+				6F355AA1F056A8569E141AF1 /* HMUnitImagePreservationTests.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

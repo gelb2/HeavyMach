@@ -1,0 +1,15 @@
+{
+  "productName": "Heavy Mach Validation",
+  "identifier": "com.gelb2.heavymach.desktop.validation",
+  "build": {
+    "frontendDist": "../build/validation-frontend",
+    "beforeBuildCommand": "python3 scripts/prepare_validation.py --skip-build"
+  },
+  "app": {
+    "security": {
+      "capabilities": [
+        "validation"
+      ]
+    }
+  }
+}

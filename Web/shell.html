@@ -268,18 +268,42 @@
     if (revision !== savedRevision) { e.preventDefault(); e.returnValue = ''; }
   });
 
+
+  function prepareValidationControls() {
+    document.title = 'Heavy Mach 1 · Validation';
+    const invoke=(name,types,args,result='number')=>Module.ccall(name,result,types,args);
+    const data=()=>JSON.parse(invoke('hm_validation_catalog',[],[],'string'));
+    const state=()=>JSON.parse(invoke('hm_validation_state',[],[],'string'));
+    window.hmValidation={catalog:data,state,
+      start:({weapon,mission=0,stage=0,level=0,grade=0,x=0,y=0,position=false,seed=1})=>invoke('hm_validation_start',['string','number','number','number','number','number','number','number','number'],[weapon,mission,stage,level,grade,x,y,position?1:0,seed]),
+      spawn:(name,x,y)=>invoke('hm_validation_spawn',['string','number','number'],[name,x,y]),
+      touch:(x,y,phase)=>invoke('hm_validation_touch',['number','number','number'],[x,y,phase]),
+      cheats:enabled=>invoke('hm_validation_cheats',['number'],[enabled?1:0],null)};
+    const panel=document.createElement('details');panel.id='hm-validation';panel.style.cssText='position:fixed;right:8px;top:8px;z-index:9;background:#111e;color:white;padding:8px;max-width:330px;font-size:12px';
+    panel.innerHTML='<summary>검증 앱 · 별도 저장</summary><label>맵 <select id="hv-map"></select></label><br><label>무기 <select id="hv-weapon"></select></label><br><label>내부 레벨 <input id="hv-level" type="number" value="0" min="0" max="99" style="width:48px"></label> <label>파츠 <input id="hv-grade" type="number" value="0" min="0" max="6" style="width:40px"></label><br><label><input id="hv-position" type="checkbox">시작 좌표</label> X<input id="hv-x" type="number" value="300" style="width:64px"> Y<input id="hv-y" type="number" value="200" style="width:64px"><br><button id="hv-start">선택 조건으로 시작</button> <label><input id="hv-cheats" type="checkbox">무적·탄약 보충</label><p id="hv-status" style="white-space:pre-wrap"></p>';
+    document.body.appendChild(panel);const catalog=data();const map=panel.querySelector('#hv-map'),weapons=panel.querySelector('#hv-weapon');
+    for(const row of catalog.stages){const option=document.createElement('option');option.value=JSON.stringify(row);option.textContent=`${row.mission+1}-${row.stage+1} · ${row.map}`;map.appendChild(option);}
+    for(const name of catalog.weapons){const option=document.createElement('option');option.textContent=name;option.value=name;weapons.appendChild(option);}
+    panel.querySelector('#hv-start').onclick=()=>{const row=JSON.parse(map.value);window.hmValidation.start({weapon:weapons.value,mission:row.mission,stage:row.stage,level:Number(panel.querySelector('#hv-level').value),grade:Number(panel.querySelector('#hv-grade').value),position:panel.querySelector('#hv-position').checked,x:Number(panel.querySelector('#hv-x').value),y:Number(panel.querySelector('#hv-y').value)});panel.querySelector('#hv-cheats').checked=false;canvas.focus();};
+    panel.querySelector('#hv-cheats').onchange=e=>window.hmValidation.cheats(e.target.checked);
+    setInterval(()=>{const s=state();panel.querySelector('#hv-status').textContent=s.error||`발사 ${s.shots} · 탄환 ${s.game?.bullets||0}\n${s.savePath}`;},500);
+  }
+
   window.Module = {
     canvas,
+    hmPreferencePrefix: '@HM_WEB_PREF_PREFIX@',
+    hmValidation: @HM_WEB_VALIDATION_JS@,
     hmSyncSave: syncSave,
     hmRetryStorage(){if(retryStorage)retryStorage();},
     hmReady() {
       ready = true; document.getElementById('hm-boot').style.display = 'none';
       document.getElementById('hm-rotate').classList.add('enabled');
       resize(); setActive(); canvas.focus({ preventScroll: true }); resumeGrantedMotion();
+      if(Module.hmValidation)prepareValidationControls();
     },
     hmFatal(message) { bootText.textContent = message; },
     preRun: [function () {
-      FS.mkdir('/persist'); FS.mount(Module.IDBFS, {}, '/persist');
+      FS.mkdir('@HM_WEB_PERSIST_ROOT@'); FS.mount(Module.IDBFS, {}, '@HM_WEB_PERSIST_ROOT@');
       Module.addRunDependency('hm-persist');
       loadSave();
     }],

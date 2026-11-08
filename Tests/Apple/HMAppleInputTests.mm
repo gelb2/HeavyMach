@@ -9,8 +9,7 @@
 #import "HMValidationControls.h"
 #import "HMValidationPanel.h"
 #include "GameSession.hpp"
-#include "Fighters.hpp"
-#include "GroundAA.hpp"
+#include "UnitPresentationGolden.hpp"
 #include "HMAimOverlay.hpp"
 #include "KeyboardInput.hpp"
 #include "Viewport.hpp"
@@ -486,12 +485,12 @@ NSDictionary* macFrameMetrics(const std::vector<double>& values) {
  for(const char* unit:{"GAA_Shilka_M1","GAA_Tunguska_M1"}){
   [self startFixture];auto& session=storage<std::unique_ptr<heavymach::GameSession>>(self.game,"_session");session->validationSetCheats(true);
   NSUInteger preparedDecodes=[[media cacheDiagnostics][@"decodeCount"] unsignedIntegerValue];
- for(const auto& art:heavymach::groundAAImages()){NSString* name=[NSString stringWithUTF8String:art.name.c_str()];CGSize size=[media imageSize:name scope:@"shared"];XCTAssertEqual(size.width,art.size.x,@"%@",name);XCTAssertEqual(size.height,art.size.y,@"%@",name);}
+ for(const auto& art:unitGolden::images){NSString* name=[NSString stringWithUTF8String:art.name];CGSize size=[media imageSize:name scope:@"shared"];XCTAssertEqual(size.width,art.width,@"%@",name);XCTAssertEqual(size.height,art.height,@"%@",name);}
   XCTAssertEqual([[media cacheDiagnostics][@"decodeCount"] unsignedIntegerValue],preparedDecodes);
   auto pos=session->player()->position;session->validationSpawnEnemy({unit,{pos.x+180,session->world().mapHeight(pos.x+180)+30},false});session->validationSpawnEnemy({"Tank001",{pos.x+60,pos.y+30},false});
   std::set<std::string> radars,bodies;size_t maxBullets=0;NSUInteger writes=((HMInputTestView*)self.game).gameSaveCalls;std::vector<double> work;
   for(int tick=0;tick<420;++tick){auto start=std::chrono::steady_clock::now();frames(self.game,1);if(tick>=60)work.push_back(std::chrono::duration<double,std::milli>(std::chrono::steady_clock::now()-start).count());maxBullets=std::max(maxBullets,session->bulletCount());
-   for(const auto& d:session->sprites())if(d.tile.starts_with("Extensions/GAA_")){XCTAssertTrue(std::isfinite(d.rotation));if(d.tile.find("Radar")!=std::string::npos)radars.insert(d.tile);if(d.tile.find("Body")!=std::string::npos)bodies.insert(d.tile);}
+   for(const auto& d:session->sprites())if(d.tile.starts_with("GAA_")){XCTAssertTrue(std::isfinite(d.rotation));if(d.tile.find("Radar")!=std::string::npos)radars.insert(d.tile);if(d.tile.find("Body")!=std::string::npos)bodies.insert(d.tile);}
    if(tick==120||tick==240||(tick<120&&tick%5==0)){
 #if TARGET_OS_OSX
     NSImage* picture=[gl snapshot];NSData* png=[[NSBitmapImageRep imageRepWithData:picture.TIFFRepresentation]representationUsingType:NSBitmapImageFileTypePNG properties:@{}];
@@ -501,7 +500,7 @@ NSDictionary* macFrameMetrics(const std::vector<double>& values) {
     XCTAssertNotNil(png);if(png){XCTAttachment* a=[XCTAttachment attachmentWithData:png uniformTypeIdentifier:@"public.png"];a.name=[NSString stringWithFormat:@"GroundAA_%s_%d",unit,tick];a.lifetime=XCTAttachmentLifetimeKeepAlways;[self addAttachment:a];}
    }
   }
-  XCTAssertEqual(radars.size(),size_t(heavymach::groundAARadarFrames));XCTAssertGreaterThanOrEqual(bodies.size(),size_t(2));XCTAssertGreaterThan(maxBullets,size_t(2));XCTAssertEqual(((HMInputTestView*)self.game).gameSaveCalls,writes);
+  XCTAssertEqual(radars.size(),size_t(24));XCTAssertGreaterThanOrEqual(bodies.size(),size_t(2));XCTAssertGreaterThan(maxBullets,size_t(2));XCTAssertEqual(((HMInputTestView*)self.game).gameSaveCalls,writes);
   session->setPaused(true);double time=session->world().gameTime;frames(self.game,30);XCTAssertEqual(session->world().gameTime,time);session->setPaused(false);frames(self.game,30);XCTAssertGreaterThan(session->world().gameTime,time);
   std::sort(work.begin(),work.end());NSLog(@"HM_GROUND_AA %s radar_frames=%zu body_frames=%zu max_bullets=%zu work_p95_ms=%.3f shot_save_calls=%lu",unit,radars.size(),bodies.size(),maxBullets,work[work.size()*95/100],(unsigned long)(((HMInputTestView*)self.game).gameSaveCalls-writes));
  }
@@ -510,9 +509,9 @@ NSDictionary* macFrameMetrics(const std::vector<double>& values) {
 - (void)testLuxGoldCanopiesAndAircraftSize {
  HMMedia* media=[HMMedia new];HMGLRenderer* gl=[HMGLRenderer new];XCTAssertNotNil(gl);media.glRenderer=gl;XCTAssertTrue([gl beginFrame]);
  [media draw:@"BG_City01.png" x:240 y:160];
- NSArray<NSString*>* names=@[@"E_Heli_Body_01.png",@"E_Heli_Body_06.png",@"Extensions/Lux_F22.png",@"Extensions/Lux_Su57.png",@"Extensions/Lux_MiG31.png"];
+ NSArray<NSString*>* names=@[@"E_Heli_Body_01.png",@"E_Heli_Body_06.png",@"Lux_F22.png",@"Lux_Su57.png",@"Lux_MiG31.png"];
  for(NSUInteger row=0;row<names.count;++row){CGSize size=[media imageSize:names[row]];CGFloat height=size.height;
-  if(row>=2){const auto& spec=heavymach::fighterSpecs()[row-2];height=spec.width*spec.aspect;XCTAssertEqual(size.width,spec.width);XCTAssertGreaterThan(size.width,[media imageSize:names[0]].width);XCTAssertLessThan(size.width,[media imageSize:names[1]].width);}
+  if(row>=2){const auto& spec=unitGolden::fighters[row-2];height=spec.width*spec.aspect;XCTAssertEqual(size.width,spec.width);XCTAssertGreaterThan(size.width,[media imageSize:names[0]].width);XCTAssertLessThan(size.width,[media imageSize:names[1]].width);}
   for(int col=0;col<2;++col)[media draw:names[row] x:150+col*180 y:280-row*55 columns:1 rows:1 tile:0 scaleX:1 scaleY:height/size.height rotation:col*.14 alpha:1];
  }
  [gl finish];[gl endFrame];media.glRenderer=nil;XCTAssertEqualObjects([gl diagnostics][@"lastError"],@"");
@@ -528,10 +527,10 @@ NSDictionary* macFrameMetrics(const std::vector<double>& values) {
  storage<std::optional<heavymach::ValidationScenario>>(self.game,"_validationFixture")=fixture;[self.game startSlot:0 mode:0 mission:3 stage:4];
  auto& game=storage<std::unique_ptr<heavymach::GameSession>>(self.game,"_session");XCTAssertTrue(bool(game));if(!game)return;game->validationSetCheats(true);frames(self.game,5);
  auto count=[&](){int n=0;for(const auto& e:game->validationEnemies())if(e.name.starts_with("Lux_")){++n;XCTAssertEqual(e.hpMax,765);}return n;};XCTAssertEqual(count(),8);
- for(const auto& sprite:game->sprites())if(sprite.tile.starts_with("Extensions/Lux_"))XCTAssertGreaterThan(sprite.position.x-60,game->canvasWidth());
+ for(const auto& sprite:game->sprites())if(sprite.tile.starts_with("Lux_"))XCTAssertGreaterThan(sprite.position.x-60,game->canvasWidth());
  auto previousEntry=game->validationEnemies();
- auto checkFormation=[&]{auto enemies=game->validationEnemies();for(size_t a=0;a<enemies.size();++a){auto sa=heavymach::aircraftSpec(enemies[a].name);if(!enemies[a].name.starts_with("Lux_")||!sa)continue;
-  for(size_t b=0;b<a;++b){auto sb=heavymach::aircraftSpec(enemies[b].name);if(!enemies[b].name.starts_with("Lux_")||!sb)continue;
+ auto checkFormation=[&]{auto enemies=game->validationEnemies();for(size_t a=0;a<enemies.size();++a){auto sa=unitGolden::aircraft(enemies[a].name);if(!enemies[a].name.starts_with("Lux_")||!sa)continue;
+  for(size_t b=0;b<a;++b){auto sb=unitGolden::aircraft(enemies[b].name);if(!enemies[b].name.starts_with("Lux_")||!sb)continue;
    float dx=std::fabs(enemies[a].position.x-enemies[b].position.x),dy=std::fabs(enemies[a].position.y-enemies[b].position.y);
    XCTAssertTrue(dx>=(sa->width+sb->width)*.5f+10 || dy>=(sa->width*sa->aspect+sb->width*sb->aspect)*.5f+10);
   }
@@ -542,7 +541,7 @@ NSDictionary* macFrameMetrics(const std::vector<double>& values) {
 #if !TARGET_OS_OSX
   if(n==30||n==60||n==120||n==170||n==200){HMGLRenderer* entryGL=[self.game valueForKey:@"glRenderer"];XCTAttachment* entry=[XCTAttachment attachmentWithImage:[entryGL snapshot]];entry.name=[NSString stringWithFormat:@"Lux_Entry_%03d",n];entry.lifetime=XCTAttachmentLifetimeKeepAlways;[self addAttachment:entry];}
 #endif
-  for(const auto& sprite:game->sprites())if(sprite.tile.starts_with("Extensions/Lux_"))seen.insert(sprite.tile);}
+  for(const auto& sprite:game->sprites())if(sprite.tile.starts_with("Lux_"))seen.insert(sprite.tile);}
  XCTAssertEqual(seen.size(),size_t(3));XCTAssertGreaterThan(maxBullets,size_t(10));XCTAssertEqual(count(),8);XCTAssertEqual(((HMInputTestView*)self.game).gameSaveCalls,saved);
  auto before=game->validationEnemies();game->setPaused(true);frames(self.game,10);auto after=game->validationEnemies();XCTAssertEqual(before.size(),after.size());for(size_t n=0;n<std::min(before.size(),after.size());++n){XCTAssertEqual(before[n].position.x,after[n].position.x);XCTAssertEqual(before[n].position.y,after[n].position.y);}game->setPaused(false);frames(self.game,2);XCTAssertEqual(count(),8);
  HMGLRenderer* gl=[self.game valueForKey:@"glRenderer"];XCTAssertEqualObjects([gl diagnostics][@"lastError"],@"");
@@ -560,7 +559,7 @@ NSDictionary* macFrameMetrics(const std::vector<double>& values) {
  auto& data=storage<heavymach::GameData>(self.game,"_data");XCTAssertNil([self.game valueForKey:@"loadError"]);
  HMMedia* media=[self.game valueForKey:@"media"];HMGLRenderer* gl=[self.game valueForKey:@"glRenderer"];
  int index=0;const int missions[]={0,2,5},stages[]={0,4,1};const char* maps[]={"Stage01","Stage14","Stage21"};
- for(const auto& spec:heavymach::vtolSpecs()){
+ for(const auto& spec:unitGolden::vtol){
   auto& map=data.maps.at(maps[index]);auto enemy=std::find_if(map.enemies.begin(),map.enemies.end(),[&](const auto& e){return e.name==spec.name;});XCTAssertTrue(enemy!=map.enemies.end());if(enemy==map.enemies.end())return;
   heavymach::ValidationScenario fixture;fixture.mission=missions[index];fixture.stage=stages[index];fixture.allWeapons=true;fixture.internalLevel=50;fixture.grades={6,6,6};fixture.playerPosition=heavymach::Vector2{enemy->position.x-130,enemy->position.y-100};
   storage<std::optional<heavymach::ValidationScenario>>(self.game,"_validationFixture")=fixture;
@@ -583,10 +582,10 @@ NSDictionary* macFrameMetrics(const std::vector<double>& values) {
  HMMedia* media=[HMMedia new];HMGLRenderer* gl=[HMGLRenderer new];XCTAssertNotNil(gl);
  media.glRenderer=gl;XCTAssertTrue([gl beginFrame]);
  [media draw:@"BG_City01.png" x:240 y:160];
- NSArray<NSString*>* names=@[@"E_Heli_Body_01.png",@"E_Heli_Body_06.png",@"Extensions/VTOL_Yak141.png",@"Extensions/VTOL_Harrier.png",@"Extensions/VTOL_F35B.png"];
+ NSArray<NSString*>* names=@[@"E_Heli_Body_01.png",@"E_Heli_Body_06.png",@"VTOL_Yak141.png",@"VTOL_Harrier.png",@"VTOL_F35B.png"];
  for(NSUInteger row=0;row<names.count;++row){
   CGSize size=[media imageSize:names[row]];CGFloat height=size.height;
-  if(row>=2){const auto& spec=heavymach::vtolSpecs()[row-2];height=spec.width*spec.aspect;XCTAssertGreaterThan(size.width,[media imageSize:names[0]].width);XCTAssertLessThan(size.width,[media imageSize:names[1]].width);}
+  if(row>=2){const auto& spec=unitGolden::vtol[row-2];height=spec.width*spec.aspect;XCTAssertGreaterThan(size.width,[media imageSize:names[0]].width);XCTAssertLessThan(size.width,[media imageSize:names[1]].width);}
   for(int col=0;col<2;++col)[media draw:names[row] x:150+col*180 y:280-row*55 columns:1 rows:1 tile:0 scaleX:1 scaleY:height/size.height rotation:col*.14 alpha:1];
  }
  [gl finish];[gl endFrame];media.glRenderer=nil;XCTAssertEqualObjects([gl diagnostics][@"lastError"],@"");
