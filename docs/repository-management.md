@@ -50,7 +50,7 @@ open HeavyMach.xcworkspace
 
 `.githooks/pre-push`는 main의 두 번째 부모가 develop인지 검사하고 Git LFS 업로드를 실행한다. PR 검사도 main의 source branch가 develop인지 확인한다. 로컬 훅을 사용하려면 clone마다 `git config core.hooksPath .githooks`를 설정한다.
 
-현재 GitHub 계정의 비공개 저장소 branch protection API는 요금제 제한으로 403을 반환했다. 서버 branch protection은 설정되지 않았다. 로컬 훅과 PR 검사, 저장소 지침을 적용하며 관리자에 의한 우회까지 차단한 상태는 아니다.
+2026-10-26 당시 비공개 저장소의 branch protection API는 요금제 제한으로 403을 반환해 서버 보호를 설정하지 못했다. 이후 공개 저장소로 전환했고, 2026-11-09에 아래의 서버 보호를 적용했다. 본인 관리자 예외는 최신 사용자 지시에 따라 유지한다.
 
 ## v0.10 — 2026-10-27
 
@@ -132,3 +132,9 @@ PR #24 이후 외부 기여를 통합할 때 원저자의 검토 대상 커밋 S
 ## Tauri·웹 폴더 — 2026-10-31
 
 Tauri Mac·Windows는 새 `Desktop/Tauri/`, 순수 웹 배포는 새 `Distribution/Web/`에서 관리한다. 기여자 웹 구현과 후속 버그 수정 3건을 담은 `Web/`·`Sources/Web/`는 수정 금지다. Apple·Android·공용 코어·자원·vendor·기존 빌드/검사 도구도 그대로 읽는다. 기준 main은 `cf3dca50`이며 구현 착수 때 최신 develop의 후속 변경을 확인하고 보호 파일 해시·경로 목록을 기록한다. 생성된 게임 파일 패치나 원본 함수 교체도 하지 않는다. 새 플랫폼 CI와 ignore 항목·문서만 기존 공통 경로에 추가한다. 보호 파일 변경이 필요하면 파일·이유를 먼저 보고한다. 폴더별 README에 소비자·입력·출력을 명시한다. [폴더와 개발 순서](desktop-web-plan-20261031.md).
+
+## 다른 기여자의 직접 변경 차단 — 2026-11-09
+
+develop·main에 GitHub 브랜치 보호를 적용했다. 최신 사용자 지시대로 본인 `gelb2`는 관리자 예외를 유지한다. 다른 기여자의 변경은 PR·승인1건·CODEOWNERS(@gelb2) 승인·대화 해결을 거친다. 일반 권한자의 강제 푸시·브랜치 삭제는 금지한다. `documentation`은 두 브랜치, `develop-only`는 main의 필수 검사다. core/apple/translations는 경로 필터 때문에 전역 필수로 등록하지 않았으며 관련 변경의 실제 통과 여부를 병합 전에 확인한다.
+
+현재 관리자·쓰기 권한 계정은 gelb2 한 명이다. 다른 관리자를 추가하면 그 계정도 예외가 된다. 최신 base 동기화 강제는 껐다. 이 보호 설정은 위의 작업 브랜치→develop→main 및 merge commit 규칙을 폐기하지 않는다. [실제 설정과 배포 근거](reviews/kamov-armament-hotfix-20261109.md#developmain-보호).

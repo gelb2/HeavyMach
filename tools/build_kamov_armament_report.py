@@ -25,8 +25,13 @@ style = page.new_tag('style')
 style.string = 'main img{display:block;max-width:100%;height:auto;margin:24px auto}'
 page.head.append(style)
 (dist / (name + '.html')).write_text(str(page))
-for source_folder, dest_folder in [('docs/public/media', 'media'), ('docs/evidence', 'evidence')]:
-    shutil.copytree(ROOT / source_folder / name, dist / dest_folder / name, dirs_exist_ok=True)
+media = dist / 'media' / name
+media.mkdir(parents=True, exist_ok=True)
+for node in page.select('main img[src]'):
+    if node['src'].startswith('media/' + name + '/'):
+        filename = node['src'].rsplit('/', 1)[1]
+        shutil.copy2(ROOT / 'docs/public/media' / name / filename, media / filename)
+shutil.copytree(ROOT / 'docs/evidence' / name, dist / 'evidence' / name, dirs_exist_ok=True)
 index = BeautifulSoup((dist / 'index.html').read_text(), 'html.parser')
 if not index.select_one('a[href="' + name + '.html"]'):
     section = index.select_one('#reports') or index.main

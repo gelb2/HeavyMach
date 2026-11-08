@@ -1,0 +1,216 @@
+{
+  "base": "https://gelb2.github.io/HeavyMach/",
+  "ok": true,
+  "files": [
+    {
+      "path": "config.js",
+      "bytes": 58,
+      "expected": "42f0945b197432f54010f9b816087dd262a595ae37ffff6c2f71953cdaf0dd9e",
+      "actual": "42f0945b197432f54010f9b816087dd262a595ae37ffff6c2f71953cdaf0dd9e",
+      "ok": true
+    },
+    {
+      "path": "sw.js",
+      "bytes": 10109,
+      "expected": "cc218e725625439c42752270e2ab23a3a134edd3f1b1b995160113e272ab8753",
+      "actual": "cc218e725625439c42752270e2ab23a3a134edd3f1b1b995160113e272ab8753",
+      "ok": true
+    },
+    {
+      "path": "game/b9eb1975ed29b8f4/index.wasm",
+      "bytes": 693318,
+      "expected": "8ee07c59d57dfd034a81ca12c5b9354c1a8b4eb1c46eea222622fa88035aa935",
+      "actual": "8ee07c59d57dfd034a81ca12c5b9354c1a8b4eb1c46eea222622fa88035aa935",
+      "ok": true
+    },
+    {
+      "path": "game/b9eb1975ed29b8f4/index.html",
+      "bytes": 13738,
+      "expected": "975977ddd7821b163555f8dc28e5aa9b4c15fadcb0d2d98b4a563fcf409b737e",
+      "actual": "975977ddd7821b163555f8dc28e5aa9b4c15fadcb0d2d98b4a563fcf409b737e",
+      "ok": true
+    },
+    {
+      "path": "game/b9eb1975ed29b8f4/hm-assets.json",
+      "bytes": 388,
+      "expected": "66e36f931a0770cfe1f4a5601b9faf99b7581981506e9ad7501b3e120c86077e",
+      "actual": "66e36f931a0770cfe1f4a5601b9faf99b7581981506e9ad7501b3e120c86077e",
+      "ok": true
+    },
+    {
+      "path": "game/b9eb1975ed29b8f4/hm-assets-2.data",
+      "bytes": 20507559,
+      "expected": "29dcc579913308f222129bb7c2e08332666f6ab3c65f501bda8671d50c54e407",
+      "actual": "29dcc579913308f222129bb7c2e08332666f6ab3c65f501bda8671d50c54e407",
+      "ok": true
+    },
+    {
+      "path": "game/b9eb1975ed29b8f4/hm-assets.js",
+      "bytes": 89625,
+      "expected": "802f21144446a74e65fde619b15c3fbb224d7e45f110926ce64807c5ff4d7432",
+      "actual": "802f21144446a74e65fde619b15c3fbb224d7e45f110926ce64807c5ff4d7432",
+      "ok": true
+    },
+    {
+      "path": "game/b9eb1975ed29b8f4/index.js",
+      "bytes": 128514,
+      "expected": "c940b3e59ade26e45835e97f37c0457649473445679f8040233613f9d6762b3a",
+      "actual": "c940b3e59ade26e45835e97f37c0457649473445679f8040233613f9d6762b3a",
+      "ok": true
+    },
+    {
+      "path": "game/b9eb1975ed29b8f4/hm-assets-1.data",
+      "bytes": 20845937,
+      "expected": "8add830aab8bb37dfb80ec601df2b90c9b15796b419d88feec8aeaf4807bfce5",
+      "actual": "8add830aab8bb37dfb80ec601df2b90c9b15796b419d88feec8aeaf4807bfce5",
+      "ok": true
+    },
+    {
+      "path": "game/b9eb1975ed29b8f4/manifest.webmanifest",
+      "bytes": 215,
+      "expected": "65c37e452de3dabbaa9971a8136a51497c8abf1a5034012fd15f56f7eb724e52",
+      "actual": "65c37e452de3dabbaa9971a8136a51497c8abf1a5034012fd15f56f7eb724e52",
+      "ok": true
+    },
+    {
+      "path": "validation/kamov-armament-hotfix-20261109/validation-icon-512.png",
+      "bytes": 448517,
+      "expected": "c08b4cbc6d7c61fe2b1c1b458e99a41ca7fad8fcdb1a4dbb779dd348eead4b8e",
+      "actual": "c08b4cbc6d7c61fe2b1c1b458e99a41ca7fad8fcdb1a4dbb779dd348eead4b8e",
+      "ok": true
+    },
+    {
+      "path": "validation/kamov-armament-hotfix-20261109/index.wasm",
+      "bytes": 720760,
+      "expected": "67ded576fc471a2caf6dfbda5d501a0284bb4aa6d1cd4e10df9c58880774b8d1",
+      "actual": "67ded576fc471a2caf6dfbda5d501a0284bb4aa6d1cd4e10df9c58880774b8d1",
+      "ok": true
+    },
+    {
+      "path": "validation/kamov-armament-hotfix-20261109/index.html",
+      "bytes": 13771,
+      "expected": "b48d5be81e8a22f8c666c8eb715a8dc88433de37e6706de7e36bcd657eee1d86",
+      "actual": "b48d5be81e8a22f8c666c8eb715a8dc88433de37e6706de7e36bcd657eee1d86",
+      "ok": true
+    },
+    {
+      "path": "validation/kamov-armament-hotfix-20261109/hm-assets.json",
+      "bytes": 388,
+      "expected": "66e36f931a0770cfe1f4a5601b9faf99b7581981506e9ad7501b3e120c86077e",
+      "actual": "66e36f931a0770cfe1f4a5601b9faf99b7581981506e9ad7501b3e120c86077e",
+      "ok": true
+    },
+    {
+      "path": "validation/kamov-armament-hotfix-20261109/hm-assets-2.data",
+      "bytes": 20507559,
+      "expected": "29dcc579913308f222129bb7c2e08332666f6ab3c65f501bda8671d50c54e407",
+      "actual": "29dcc579913308f222129bb7c2e08332666f6ab3c65f501bda8671d50c54e407",
+      "ok": true
+    },
+    {
+      "path": "validation/kamov-armament-hotfix-20261109/hm-assets.js",
+      "bytes": 89691,
+      "expected": "13f3ee567e492cc9ccf1b68b1978caa4df3b958f0604635181fd316f6abe894b",
+      "actual": "13f3ee567e492cc9ccf1b68b1978caa4df3b958f0604635181fd316f6abe894b",
+      "ok": true
+    },
+    {
+      "path": "validation/kamov-armament-hotfix-20261109/index.js",
+      "bytes": 128811,
+      "expected": "98e76589a4ca750a96613b50b228779b334e600f0bd971e8dc995c1b059aed1b",
+      "actual": "98e76589a4ca750a96613b50b228779b334e600f0bd971e8dc995c1b059aed1b",
+      "ok": true
+    },
+    {
+      "path": "validation/kamov-armament-hotfix-20261109/hm-assets-1.data",
+      "bytes": 20845937,
+      "expected": "8add830aab8bb37dfb80ec601df2b90c9b15796b419d88feec8aeaf4807bfce5",
+      "actual": "8add830aab8bb37dfb80ec601df2b90c9b15796b419d88feec8aeaf4807bfce5",
+      "ok": true
+    },
+    {
+      "path": "validation/kamov-armament-hotfix-20261109/validation-icon-256.png",
+      "bytes": 120604,
+      "expected": "b94ffeea058a07aae9fb9b8c74d5ebd3a02fb56cce31d4627ccd44bb6091ff86",
+      "actual": "b94ffeea058a07aae9fb9b8c74d5ebd3a02fb56cce31d4627ccd44bb6091ff86",
+      "ok": true
+    },
+    {
+      "path": "validation/kamov-armament-hotfix-20261109/manifest.webmanifest",
+      "bytes": 434,
+      "expected": "61c27feac6a8c62e97e6add10bacffaf93444c725f5edee1cfbb0e0484195068",
+      "actual": "61c27feac6a8c62e97e6add10bacffaf93444c725f5edee1cfbb0e0484195068",
+      "ok": true
+    },
+    {
+      "path": "validation/kamov-eurofighter-20261109/validation-icon-512.png",
+      "bytes": 448517,
+      "expected": "c08b4cbc6d7c61fe2b1c1b458e99a41ca7fad8fcdb1a4dbb779dd348eead4b8e",
+      "actual": "c08b4cbc6d7c61fe2b1c1b458e99a41ca7fad8fcdb1a4dbb779dd348eead4b8e",
+      "ok": true
+    },
+    {
+      "path": "validation/kamov-eurofighter-20261109/index.wasm",
+      "bytes": 720760,
+      "expected": "67ded576fc471a2caf6dfbda5d501a0284bb4aa6d1cd4e10df9c58880774b8d1",
+      "actual": "67ded576fc471a2caf6dfbda5d501a0284bb4aa6d1cd4e10df9c58880774b8d1",
+      "ok": true
+    },
+    {
+      "path": "validation/kamov-eurofighter-20261109/index.html",
+      "bytes": 13771,
+      "expected": "b48d5be81e8a22f8c666c8eb715a8dc88433de37e6706de7e36bcd657eee1d86",
+      "actual": "b48d5be81e8a22f8c666c8eb715a8dc88433de37e6706de7e36bcd657eee1d86",
+      "ok": true
+    },
+    {
+      "path": "validation/kamov-eurofighter-20261109/hm-assets.json",
+      "bytes": 388,
+      "expected": "66e36f931a0770cfe1f4a5601b9faf99b7581981506e9ad7501b3e120c86077e",
+      "actual": "66e36f931a0770cfe1f4a5601b9faf99b7581981506e9ad7501b3e120c86077e",
+      "ok": true
+    },
+    {
+      "path": "validation/kamov-eurofighter-20261109/hm-assets-2.data",
+      "bytes": 20507559,
+      "expected": "29dcc579913308f222129bb7c2e08332666f6ab3c65f501bda8671d50c54e407",
+      "actual": "29dcc579913308f222129bb7c2e08332666f6ab3c65f501bda8671d50c54e407",
+      "ok": true
+    },
+    {
+      "path": "validation/kamov-eurofighter-20261109/hm-assets.js",
+      "bytes": 89691,
+      "expected": "13f3ee567e492cc9ccf1b68b1978caa4df3b958f0604635181fd316f6abe894b",
+      "actual": "13f3ee567e492cc9ccf1b68b1978caa4df3b958f0604635181fd316f6abe894b",
+      "ok": true
+    },
+    {
+      "path": "validation/kamov-eurofighter-20261109/index.js",
+      "bytes": 128811,
+      "expected": "98e76589a4ca750a96613b50b228779b334e600f0bd971e8dc995c1b059aed1b",
+      "actual": "98e76589a4ca750a96613b50b228779b334e600f0bd971e8dc995c1b059aed1b",
+      "ok": true
+    },
+    {
+      "path": "validation/kamov-eurofighter-20261109/hm-assets-1.data",
+      "bytes": 20845937,
+      "expected": "8add830aab8bb37dfb80ec601df2b90c9b15796b419d88feec8aeaf4807bfce5",
+      "actual": "8add830aab8bb37dfb80ec601df2b90c9b15796b419d88feec8aeaf4807bfce5",
+      "ok": true
+    },
+    {
+      "path": "validation/kamov-eurofighter-20261109/validation-icon-256.png",
+      "bytes": 120604,
+      "expected": "b94ffeea058a07aae9fb9b8c74d5ebd3a02fb56cce31d4627ccd44bb6091ff86",
+      "actual": "b94ffeea058a07aae9fb9b8c74d5ebd3a02fb56cce31d4627ccd44bb6091ff86",
+      "ok": true
+    },
+    {
+      "path": "validation/kamov-eurofighter-20261109/manifest.webmanifest",
+      "bytes": 434,
+      "expected": "61c27feac6a8c62e97e6add10bacffaf93444c725f5edee1cfbb0e0484195068",
+      "actual": "61c27feac6a8c62e97e6add10bacffaf93444c725f5edee1cfbb0e0484195068",
+      "ok": true
+    }
+  ]
+}
