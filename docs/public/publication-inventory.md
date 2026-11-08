@@ -11,7 +11,7 @@ Mags에서는 사용자의 로드맵과 판단을, Apps에서는 MachDefense의 
 
 HeavyMach에 관해 내가 쓴 원문과 기술 설명·수정 과정·이미지를 이 저장소에 모았다. Apps는 기술 설명, Mags는 매거진 인터뷰 형식이다. 두 곳 모두 현재 기능과 시정 과정을 다룬다. SaaS 담당 세션이 이 자료로 원고를 작성하고 서비스에 반영한다.
 
-집필은 이 저장소 **main의 최신 문서**에서 시작한다. Apple·Android 게임 릴리스는 **v0.17**이다. Android 추가 자료는 [개발 원고](android-development-20261030.md)에 있다. 현재 main에는 웹/PWA·Tauri Mac·복원 코드·게임 버튼 수정도 들어 있다. Tauri Mac 다운로드는 날짜 태그 tauri-mac-20261102로 별도 제공한다. 전체 플랫폼의 다음 정식 릴리스는 아직 없다.
+집필은 이 저장소 **main의 최신 문서**에서 시작한다. Apple·Android 게임 릴리스는 **v0.17**이다. Android 추가 자료는 [개발 원고](android-development-20261030.md)에 있다. 현재 main에는 웹/PWA·Tauri Mac·복원 코드·게임 버튼 수정도 들어 있다. 현재 신규 유닛 핫픽스 다운로드는 날짜 태그 new-unit-hotfix-20261109로 제공한다. 앱 내부 버전은 유지했다. 제작·구현 절차 위반과 수정은 아래 트러블슈팅·핫픽스 기록을 따른다.
 
 ```sh
 python3 tools/document_contract.py plan --task developer_story

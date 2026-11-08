@@ -8,6 +8,16 @@
 [한국어](CHANGELOG.md) | [English](CHANGELOG.en.md)
 <!-- language-nav:end -->
 
+<a id="new-unit-hotfix-20261109--신규-유닛-제작등록-절차-수정"></a>
+
+## new-unit-hotfix-20261109 — New-unit asset and registration procedure fix
+
+Moved separate C++ registration and image processing for the eight new units to runtime MCH/MAP data, an explicit HMEX contract, the common image loader and part renderer. Current appearance, combat and placement were preserved, along with original resources. Inaccurate reuse reports and procedure violations are recorded in Korean and English troubleshooting.
+
+Passed 26 core tests, a before-and-after comparison of 44 conditions/39,644 ticks, comparison of 63 Apple images, and Android emulator, installed Mac PWA and actual Tauri WKWebView validation. The regular iPhone build was installed, and the developer confirmed playing 2-4 and 2-5. The regular Tauri app was updated while preserving existing saves.
+
+Merged through PR #107 and #108 into main `4bbb3f50`. [Android APKs and Tauri Mac ZIP](https://github.com/gelb2/HeavyMach/releases/tag/new-unit-hotfix-20261109), [Web/PWA](https://gelb2.github.io/HeavyMach/), [structure, checks and limits](docs/reviews/new-unit-resource-hotfix-20261109.md). In-app versions and existing tags remain unchanged.
+
 ## Aircraft distribution patch — 2026-11-07
 
 - Yak-141, Harrier GR3 and F-35B now total 152 spawns across all 35 scenario stages, up from 113 across 14 stages. Each stage matches its combined Shilka/Tunguska count; aircraft totals are 51, 51 and 50.

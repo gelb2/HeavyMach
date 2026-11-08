@@ -6,6 +6,14 @@
 [한국어](CHANGELOG.md) | [English](CHANGELOG.en.md)
 <!-- language-nav:end -->
 
+## new-unit-hotfix-20261109 — 신규 유닛 제작·등록 절차 수정
+
+신규 8종의 별도 C++ 등록·이미지 처리를 실행용 MCH/MAP·명시적 HMEX·공통 이미지 로더·파츠 표시로 옮겼다. 현재 외형·전투·배치를 보존하고 원본 자원은 유지했다. 부정확한 재사용 보고와 절차 미준수는 한·영 트러블슈팅에 기록했다.
+
+Core 26개·전후 44조건/39,644틱 비교, Apple 이미지 63개 비교, Android 에뮬레이터·설치 Mac PWA·실제 Tauri WKWebView 검증을 통과했다. 아이폰 일반판을 설치했고 개발자가 2-4·2-5 플레이를 확인했다. Tauri 일반 앱도 기존 저장을 보존해 업데이트했다.
+
+PR #107·#108로 main `4bbb3f50`에 반영했다. [Android APK·Tauri Mac ZIP](https://github.com/gelb2/HeavyMach/releases/tag/new-unit-hotfix-20261109), [웹·PWA](https://gelb2.github.io/HeavyMach/), [구조·검사·한계](docs/reviews/new-unit-resource-hotfix-20261109.md). 앱 내부 버전과 기존 태그는 유지한다.
+
 ## 항공기 배치 패치 — 2026-11-07
 
 - Yak-141·Harrier GR3·F-35B를 14개 스테이지 113대에서 35개 스테이지 152대로 변경했다. 스테이지별 쉴카·퉁구스카 합계와 같으며 기종별로 51·51·50대다.

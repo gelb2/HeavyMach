@@ -1,6 +1,6 @@
 # 신규 유닛 제작·등록 절차 수정 — 2026-11-09
 
-신규 유닛 8종을 만들면서 기존 데이터 패키징과 공통 표시 경로를 끝까지 따르지 않은 문제가 있었다. Codex는 현재 그림과 전투 동작을 보존하면서 정의·배치·이미지·파츠 소비 경로를 수정했다. 작업 브랜치는 `fix/new-unit-resource-contract`다. Android·PWA·Tauri 치트 검증과 아이폰 일반판 설치를 완료했으며 배포 절차를 진행 중이다.
+신규 유닛 8종을 만들면서 기존 데이터 패키징과 공통 표시 경로를 끝까지 따르지 않은 문제가 있었다. Codex는 현재 그림과 전투 동작을 보존하면서 정의·배치·이미지·파츠 소비 경로를 수정했다. 작업 브랜치는 `fix/new-unit-resource-contract`다. Android·PWA·Tauri 치트 검증과 아이폰 일반판 설치를 완료하고 main에 반영했다.
 
 ## 문제와 기존 보고의 오류
 
@@ -49,4 +49,14 @@ Android 에뮬레이터에서 실행 검사 31개, 35스테이지를 포함한 �
 
 ## 배포 기록
 
-플랫폼 검증을 마쳤다. 작업 PR→develop→develop PR→main 순서로 병합하고, 실제 커밋·태그·웹 버전·다운로드를 이 절에 기록한다. 기존 main의 사용자 문서 수정과 태그는 보존한다.
+PR #107로 develop `26964ff9`, PR #108로 main `4bbb3f50`에 병합했다. main PR의 Core·Apple 일반/치트 빌드·문서·번역·브랜치 순서 검사를 통과했다. 제품 파일은 검증 커밋 `3729fd35`와 같다. main의 README·개발자의 변 원문을 보존했으며 트러블슈팅은 기존 본문 뒤에 추가했다.
+
+main 병합 커밋에 `new-unit-hotfix-20261109` 태그를 붙이고 [Android 일반·치트 APK와 Tauri Mac ZIP](https://github.com/gelb2/HeavyMach/releases/tag/new-unit-hotfix-20261109)을 게시했다. 공개 웹·PWA 버전은 `5be015e11fcc5269`, 포함한 게임은 `584cf2b910eda1d2`다. [배포 근거·파일 해시](../evidence/new-unit-hotfix-20261109/release.json).
+
+Tauri 일반 앱은 기존 설치본을 업데이트한 뒤 타이틀·슬롯을 확인하고 종료했다. 기존 Lv19 슬롯과 저장 데이터가 같았다. 서명 전후 Mach-O 실행·데이터 15개 섹션, ZIP 재추출 파일, 실제 설치 앱의 일치를 검사했다. [플랫폼별 상세 결과](../evidence/new-unit-hotfix-20261109/web-tauri-validation.json).
+
+공개 주소의 Mac Chrome 설치 PWA에서도 21개 검사를 통과했다. 실제 입력·사격·저장 왕복·손상 복원 거부·오프라인 재실행과 미션 진행을 확인했다. 최초 실행의 타이틀→메뉴 대기 시간 초과는 보존했다. 게임 시간 기록만 추가한 재검사는 입력·대기·판정 조건을 그대로 유지해 통과했으며 최초 실패 원인은 확정하지 않았다. Android PWA의 사용자 확인과 구분한다. [공개 PWA 검사](../evidence/new-unit-hotfix-20261109/public-pwa.json).
+
+## 다음 과제
+
+핫픽스 main 배포 뒤 개발자의 지시에 따라 [카모프 헬기·럭스루나에 유로파이터 2종 개발 계획](kamov-eurofighter-plan-20261109.md)을 작성하고 TODO에 기록했다. 구현 절차 준수를 검증할 후속 과제이며 이번 배포에는 두 유닛의 그림·코드·배치가 포함되지 않는다.
