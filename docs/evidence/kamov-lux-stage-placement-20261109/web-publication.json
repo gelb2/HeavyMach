@@ -1,0 +1,65 @@
+{
+  "base_commit": "286218c1db5fb9a6f3fbd994aca4fb8b68cefe8a",
+  "prefix": "validation/kamov-eurofighter-20261109",
+  "prior_tree": "100644 blob e69de29bb2d1d6434b8b29ae775ad8c2e48c5391\t.nojekyll\n100644 blob f15f8ed6b9c1cf9b6f2808948f88439e7fabb3b7\tASSET-LICENSES.en.md\n100644 blob 802092496fdd69a31e54fc31264f8d7d745c740e\tCREDITS.en.md\n100644 blob f73fd6bccf5cb5e884ffedc09c018e99f6833f85\tLICENSE\n100644 blob 0e1baf30b2189f00855a9bbfc6ef7d98ac43ca58\tLICENSE-SCOPE.en.md\n100644 blob 70cabe388d27da221bd769c50b427a35354f4f1d\tLICENSES/Emscripten.txt\n100644 blob 7cf0e053a08e1d98601c657ad95b161142b56fd4\tLICENSES/Gradle-8.13-LICENSE.txt\n100644 blob 00a36efcde24d430435211f7e48eeb20d156e7ad\tLICENSES/Gradle-8.13-NOTICE.txt\n100644 blob 8d5d0000656d57b6fc8118c1078aa3172b7c02ec\tLICENSES/OpenAL-Soft-LGPL-2.0.txt\n100644 blob f433b1a53f5b830a205fd2df78e2b34974656c7b\tLICENSES/Tauri-LICENSE-APACHE-2.0.txt\n100644 blob b08530d59433b3060f4fad8751ac2610c0b0aff3\tLICENSES/Tauri-LICENSE-MIT.txt\n100644 blob d67778ada6b9cda6227e9130da182c13e73c8b2e\tLICENSES/engineering-skills-MIT.txt\n100644 blob 5e611b20f101785805f5478a1522663095657ea4\tLICENSES/rust-sdl2-MIT.txt\n100644 blob a77ae91f3ec0abb0028c9d9bd8d34d880b454d38\tLICENSES/stb.txt\n100644 blob ee6256cdb62a765749a71aae3abea32884301cd1\tLICENSES/touchHLE-MPL-2.0.txt\n100644 blob 5c306d07fd43bb5d11be2361ebe3c4911de8b662\tTHIRD_PARTY_NOTICES.en.md\n100644 blob f73773852ad903905310a1a532d1ebff8e27f978\tconfig.js\n100644 blob a5a77bbced5c609aa707840e687eea5a64957c3b\tgame/584cf2b910eda1d2/hm-assets-1.data\n100644 blob f38ca26b23b2c14f18ca5a85675b54fe8c5ae447\tgame/584cf2b910eda1d2/hm-assets-2.data\n100644 blob b34ddfcfaf19368e93140ac02e3aa0a141512ad9\tgame/584cf2b910eda1d2/hm-assets.js\n100644 blob 9e212667a2954c0c95f98219f992c5f605603221\tgame/584cf2b910eda1d2/hm-assets.json\n100644 blob ff89830d47f648fb9875417b0a67457e2903dff2\tgame/584cf2b910eda1d2/index.html\n100644 blob f0f29036750d9e6bb2ee5fc8ec99041bb00b7bf9\tgame/584cf2b910eda1d2/index.js\n100755 blob fcc7d605dacfdb0e3c0a456c4e25ad0a2b176254\tgame/584cf2b910eda1d2/index.wasm\n100644 blob cb6cefb10923e8e88a7bff59203d37083244bef0\tgame/584cf2b910eda1d2/manifest.webmanifest\n100644 blob 7ae14dd0d4f6974921c9239e516cab52d826bbaa\thost.css\n100644 blob 7337cd271b57a987eba57e58e22ca312ea1b4ce2\thost.js\n100644 blob a670cff6f97ba4344bcf66c0f873cd75a98aeed0\ticon-192.png\n100644 blob 9398ef07ea1cdabf7a21d048b54572fc82e342a5\ticon-512.png\n100644 blob 2a6efbc3ce7261278d58813ee821221dddf377d8\tindex.html\n100644 blob 577a1461bacf67e2e586e1f0993cd77a1ecba324\tmanifest.webmanifest\n100644 blob a51046917b8686e7fdb873f7321362862c371536\tsaves.js\n100644 blob 29c7a2f1553a2df04697d7613424105ef108709b\tskin/background.png\n100644 blob 2ddeace2233c4feb4a2e09b0a3da6c08b904736d\tskin/button-down.png\n100644 blob 090d513614a380c650891f33ec326a6abd26c729\tskin/button.png\n100644 blob 12d5fd48275c904bdcefe9b58d7077fa1c2a3129\tskin/skin.css\n100644 blob ce7f0475c071262b4cf9c11a006d20b88833285a\tskin/source-manifest.json\n100644 blob 811042ca7d35a41e1e7509acd7e731c5d5ff7f1f\tskin/title.png\n100644 blob 130d6ee04bb1af0db0dddbbdc0dc84d9b32ff234\tsw.js\n100644 blob 4dda8a67484cf585349ed77c7dc607aee39e6c88\ttransfer/codec.js\n100755 blob ca23706c2776fa7a4ad7024f60f09ad5cae9e881\ttransfer/codec.wasm\n100644 blob a8209f428d3e1019bc8a6fa7fcbe0779e1e9e79c\ttransfer/slot-entry.js\n100644 blob 7add7d4176816d27f5bf9da747fd59f3546c17cf\ttransfer/store.js\n100644 blob 860a44bf651e1c8ce6711251d31cff399b64586a\ttransfer/transfer.js\n100644 blob 2acd0a6740f21e5a279e9fe9dcf998494bf6c9b6\ttransfer/ui.js\n100644 blob 839e31534c291760c2d0ec664df03e53588f7b8d\tvalidation/kamov-eurofighter-20261109/hm-assets-1.data\n100644 blob 933b92315db1c017124db1b89f86fc701f17b2c6\tvalidation/kamov-eurofighter-20261109/hm-assets-2.data\n100644 blob 2718ce8842db6f3eefa1cd0f8b635f9e6b0023db\tvalidation/kamov-eurofighter-20261109/hm-assets.js\n100644 blob d9145d710cecbc9e4b4d3d5d618e78e4b9ee25d1\tvalidation/kamov-eurofighter-20261109/hm-assets.json\n100644 blob 92c37f0fbb9ececcbe067077c77ca23ba49ddf09\tvalidation/kamov-eurofighter-20261109/index.html\n100644 blob 2b604325f3f132421c79c59229eac1ae1c9bf7b8\tvalidation/kamov-eurofighter-20261109/index.js\n100755 blob dd347da7e81cd856dbbc43f5354bf792e4e7a5a7\tvalidation/kamov-eurofighter-20261109/index.wasm\n100644 blob 18a981444dc3c0543d82f34069719fca2aef1d43\tvalidation/kamov-eurofighter-20261109/manifest.webmanifest\n100644 blob 877f2530cefd6145a882dcd2585498dd31fb01dc\tvalidation/kamov-eurofighter-20261109/validation-icon-256.png\n100644 blob 05e484a3fd1038ff64ed0d7082270b51e658f165\tvalidation/kamov-eurofighter-20261109/validation-icon-512.png\n",
+  "files": {
+    "build/web-validation/dist/hm-assets-1.data": {
+      "bytes": 20846165,
+      "sha256": "8a6734ce34a26cda977a674397c06d4136567036f29a6f8e9f949806bf797dfe"
+    },
+    "build/web-validation/dist/hm-assets-2.data": {
+      "bytes": 20508306,
+      "sha256": "1ad40cd97e3db5f1db95ef7c851b46250a5a42eabdb0df42e5f40bdaa965f6f2"
+    },
+    "build/web-validation/dist/hm-assets.js": {
+      "bytes": 89781,
+      "sha256": "55324978c3c5e18ed936d5eea3c095294ff62b30d00676b24bccc84d9ef21071"
+    },
+    "build/web-validation/dist/hm-assets.json": {
+      "bytes": 388,
+      "sha256": "442010db9800421b2acdb2af34ba772c62a0c2cd044d735fe5d56f3986c6bb83"
+    },
+    "build/web-validation/dist/index.html": {
+      "bytes": 13771,
+      "sha256": "b48d5be81e8a22f8c666c8eb715a8dc88433de37e6706de7e36bcd657eee1d86"
+    },
+    "build/web-validation/dist/index.js": {
+      "bytes": 128811,
+      "sha256": "cef31661a13cc992e6b88c3e379202e9bc71a68f5b94d9a9e0f3b9afdfc18a58"
+    },
+    "build/web-validation/dist/index.wasm": {
+      "bytes": 720680,
+      "sha256": "d061c43020881f63a4dba9323b17acc32423a9805923cafd5d86e45920bd1f59"
+    },
+    "build/web-validation/dist/manifest.webmanifest": {
+      "bytes": 434,
+      "sha256": "61c27feac6a8c62e97e6add10bacffaf93444c725f5edee1cfbb0e0484195068"
+    },
+    "build/web-validation/dist/validation-icon-256.png": {
+      "bytes": 120604,
+      "sha256": "b94ffeea058a07aae9fb9b8c74d5ebd3a02fb56cce31d4627ccd44bb6091ff86"
+    },
+    "build/web-validation/dist/validation-icon-512.png": {
+      "bytes": 448517,
+      "sha256": "c08b4cbc6d7c61fe2b1c1b458e99a41ca7fad8fcdb1a4dbb779dd348eead4b8e"
+    }
+  },
+  "changed_paths": [
+    "validation/kamov-eurofighter-20261109/hm-assets-1.data",
+    "validation/kamov-eurofighter-20261109/hm-assets-2.data",
+    "validation/kamov-eurofighter-20261109/hm-assets.js",
+    "validation/kamov-eurofighter-20261109/hm-assets.json"
+  ],
+  "existing_outside_prefix_changed": 0,
+  "deployment_commit": "709897a0b38b5b49b9fc28765b3c9b43deb54cca",
+  "existing_outside_prefix_preserved": 45,
+  "github_pages_run": 42519458957,
+  "github_pages_conclusion": "success",
+  "public_http_sha256_match": true,
+  "public_browser_ok": true,
+  "plain_campaign_url": "https://gelb2.github.io/HeavyMach/validation/kamov-eurofighter-20261109/",
+  "forced_enemy_spawns": 0,
+  "public_campaign_cases": 2,
+  "service_worker": "Existing root sw.js unchanged by exact Git blob comparison",
+  "scope": "Chrome headless WebGL, not a physical mobile-device check"
+}

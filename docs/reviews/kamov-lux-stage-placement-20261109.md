@@ -136,3 +136,5 @@ Stage13은 앞선 MBoss05가 살아 있어 전선이X2146, 카메라 중심이X1
 ![중간 보스 처치 후 유로파이터 편대 접근](../public/media/kamov-lux-stage-placement-20261109/campaign-3-4-eurofighter-after-miniboss.png)
 
 3-4에서 MBoss05를 처치하고 마지막 구간까지 이동해 만난 유로파이터다. 기존 편대 출현 조건을 사용한다.
+
+공개 검증판도 같은 배치로 갱신했다. 공개10파일 해시와 실제 맵 생성(Stage01 카모프1대·Stage04 유로파이터2대)을 확인했다. 검증판 첫 화면은 타이틀이며 적을 자동 생성하지 않는다. 기존 정식 웹45개 파일과 서비스 워커는 보존했다. [공개 배포](../evidence/kamov-lux-stage-placement-20261109/web-publication.json) · [공개 브라우저](../evidence/kamov-lux-stage-placement-20261109/web-public-browser.json) · [배포 파일 해시](../evidence/kamov-lux-stage-placement-20261109/web-public-http.json).
