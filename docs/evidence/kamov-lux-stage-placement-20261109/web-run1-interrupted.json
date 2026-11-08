@@ -1,0 +1,9 @@
+{
+  "status": "interrupted",
+  "reason": "Data owner identified Stage23 Ka52 roof clearance and is correcting coordinates; rebuild required before complete validation",
+  "completedMaps": [
+    "Stage01",
+    "Stage02"
+  ],
+  "notACompleteRun": true
+}

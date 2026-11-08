@@ -12,7 +12,7 @@
 | Lux_Eurofighter | 기존 Lux_F22의 HP 765·EXP 30·machType 1과 명시적 자세·난수 속성을 계승한다. |
 | Lux_Euro_Missile | Lux_F22_Missile의 피해 25·탄속 200·3연사·지연·rotWpn0을 계승한다. 무장 파츠는 tileCnt0이며 기존 고정 총구 `(-23.5,-9.5)`에서 발사한다. |
 
-2026-11-09 후속 사용자 지시로 유로파이터의 외부 포드를 제거했다. 초기 `part_sockets`·rotWpn1 정의는 이력이며, 현재는 해당 지정을 제거해 기존 Lux의 고정 총구 경로를 사용한다. 유로파이터 몸체·HP·발사 수·피해와 카모프 정의는 보존한다. 카모프의 HP 바 -18은 표시 속성만 바꾼다. 원작 및 앞서 추가한 8종의 무기 값·MCH 레코드, 43개 MAP·14개 편대는 유지한다. 웹 검증에서는 탄환 이름과 실제 피해 전후 HP를 읽어 신규 무장의 명중을 다른 적의 피해와 구분한다. 관측 코드로 명중이나 피해를 강제하지 않는다. [구현·검사 범위](reviews/kamov-eurofighter-implementation-20261109.md).
+2026-11-09 후속 사용자 지시로 유로파이터의 외부 포드를 제거했다. 초기 `part_sockets`·rotWpn1 정의는 이력이며, 현재는 해당 지정을 제거해 기존 Lux의 고정 총구 경로를 사용한다. 유로파이터 몸체·HP·발사 수·피해와 카모프 정의는 보존한다. 카모프의 HP 바 -18은 표시 속성만 바꾼다. 원작 및 앞서 추가한 8종의 무기 값·MCH 레코드는 유지한다. 후속 배치 지시에 따라 기존 MAP 항목 뒤에 Ka52 76대, 기존 편대14회에 Eurofighter 21대를 추가했다. 기존 MAP 좌표와 편대의 상대 좌표·기체 구성·발동 조건은 보존한다. 편대 폭 증가에 따른 공통 목적지 계산의 차이는 배치 보고에 기록한다. [수량·좌표·검사](reviews/kamov-lux-stage-placement-20261109.md). 웹 검증에서는 탄환 이름과 실제 피해 전후 HP를 읽어 신규 무장의 명중을 다른 적의 피해와 구분한다. 관측 코드로 명중이나 피해를 강제하지 않는다. [구현·검사 범위](reviews/kamov-eurofighter-implementation-20261109.md).
 
 정본: [canonical](canonical.md). 값의 출처는 원작1.13 데이터와 원본 함수다. 구현은 `GameData.cpp`, `Combat.cpp`, `Player.cpp`, `Enemy.cpp`, `GlobalInfo.cpp`, `Motion.cpp`, `World.cpp`. 보기 좋은 새 수식·난이도·상한을 임의 도입하지 않는다.
 

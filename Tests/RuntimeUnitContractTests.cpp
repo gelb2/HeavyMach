@@ -12,7 +12,7 @@ int main(){
  assert(original.weapons.size()==160&&original.parts.size()==294&&original.machines.size()==720);
  assert(d.weapons.size()==187&&d.parts.size()==380&&d.machines.size()==742&&d.maps.size()==43&&d.formations.size()==14);
  size_t prior=0,now=0;for(auto&[key,map]:original.maps){auto& after=d.maps.at(key);prior+=map.enemies.size();now+=after.enemies.size();assert(after.left==map.left&&after.right==map.right&&after.top==map.top&&after.bottom==map.bottom&&after.background==map.background);assert(after.objects.size()==map.objects.size()&&after.collisionPaths.size()==map.collisionPaths.size());for(size_t i=0;i<map.enemies.size();++i){const auto&a=map.enemies[i];const auto&b=after.enemies[i];assert(a.name==b.name&&a.position.x==b.position.x&&a.position.y==b.position.y&&a.isBoss==b.isBoss);}}
- assert(prior==1182&&now==1486);
+ assert(prior==1182&&now==1562);
  auto images=d.presentationImages();assert(images.size()==65);for(auto& name:images)assert(name.find('/')==std::string::npos);
  for(auto&[name,m]:original.machines)assert(!d.machines.at(name).behavior);
  for(auto&[name,p]:original.parts)assert(!d.parts.at(name).presentation);

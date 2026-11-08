@@ -1,0 +1,273 @@
+{
+  "baseline": "f89983f08358996c83a5ea261e8cae532c6efef5",
+  "unchanged_machine_part_weapon_bytes": true,
+  "original_inputs_unchanged": true,
+  "prior_authoring_definitions_preserved": true,
+  "placement_metadata_updated": true,
+  "prior_fixed_placements": 304,
+  "added_ka52": 76,
+  "current_fixed_placements": 380,
+  "prior_formation_aircraft": 72,
+  "added_eurofighter": 21,
+  "current_formation_aircraft": 93,
+  "maps": [
+    {
+      "file": "Stage01.map",
+      "before": "989e2342d83bce9b39ab8a95ffde453304f1666222b5c26caea51ef19982c16b",
+      "after": "04b80e406efcc0c3bba403d2d1956b86259e9a331ccac4a5bed5bfcd6ffd62b0",
+      "prior_nodes_preserved": true
+    },
+    {
+      "file": "Stage02.map",
+      "before": "88a1e5d9a1492c55780d55c4c8ae78a6f505fab0db6f4a430fefcab5de077ca8",
+      "after": "2fddd1c040557dc7aefa0a33c6b8867d86f6512d8c19a291f1ab80a0d52cde56",
+      "prior_nodes_preserved": true
+    },
+    {
+      "file": "Stage03.map",
+      "before": "4e1283968302b54c979e68038780438566139bacd416147ece773f48ab721708",
+      "after": "21b7c152519dcb4902b2efd41f6459f31976a5675aa34b9c2388cd7807f3e2f5",
+      "prior_nodes_preserved": true
+    },
+    {
+      "file": "Stage04.map",
+      "before": "4c08d0585f958b3e506f7d36b9da4649cca2b4a3e23299cdfd20025eb59dac7c",
+      "after": "d695a10c827a2273041042f45f1af77c39b7cf3e718391da938346b4624b39fe",
+      "prior_nodes_preserved": true
+    },
+    {
+      "file": "Stage05.map",
+      "before": "f9c2308f0aacf71fa9e711f1ae0790f399edb5ec12858358e98e8dcf6c5374b4",
+      "after": "fbbbb15c531ba40b43446101a787ed95c8076c70772ba71bb136a5cacb29a354",
+      "prior_nodes_preserved": true
+    },
+    {
+      "file": "Stage06.map",
+      "before": "a89f03ebd9c24eca2c647cceb7f5d6af2a42ffeabedbf3a823810ce80d6193dd",
+      "after": "ef80110b8b9478e0382ee876ae9b6de438afa90be79176f3d7b45f25c02f53b2",
+      "prior_nodes_preserved": true
+    },
+    {
+      "file": "Stage07.map",
+      "before": "bf8b1a0ea5a0e363c67a4ae45f12b6e59a3f7830b96ac068e548c3a6d74fdc35",
+      "after": "c3af86871eb61503d2ff6270f2d12f4c272b1f765bebb727997302e94111601d",
+      "prior_nodes_preserved": true
+    },
+    {
+      "file": "Stage08.map",
+      "before": "de2e0e1242c5556430ca0dd59a7c096b7f1420558a6310886179b729ddc6a2bd",
+      "after": "bc0ae0f7a6f8b4af86937ab26b13e1e798e743f1f813595de16d1c0413c5eed2",
+      "prior_nodes_preserved": true
+    },
+    {
+      "file": "Stage09.map",
+      "before": "2efd2805e302999716fbd5083ec4664e531edb3bcb8925257e62dae7351873ed",
+      "after": "412e062fcb311026c4d2ee1beb5af03c84bd8c2822b672abd12a6b17a1637427",
+      "prior_nodes_preserved": true
+    },
+    {
+      "file": "Stage10.map",
+      "before": "f3bae93484155e4db92cee70d7d3e4e9e70f5124db43f81cae07924f686ebbf0",
+      "after": "311474a574d80170b005baea6acb021deb278ec29964ae3af94f80f359f00db2",
+      "prior_nodes_preserved": true
+    },
+    {
+      "file": "Stage11.map",
+      "before": "375a9e39710cf5da63386fae178b488438f47c0d33f425a86cc4f5fa061e08c7",
+      "after": "8d70e3f86d9010f8142b0afc44958735cb59043579dfcc919069e1edf0fef245",
+      "prior_nodes_preserved": true
+    },
+    {
+      "file": "Stage12.map",
+      "before": "6198bcf589b2a3524aa649c079636674d39d4f73241dd9166b18069089a3024b",
+      "after": "31f27f2b751a0b1b5a0aa2a2c4d66c19497f4890b44593f39cb9147d0470d541",
+      "prior_nodes_preserved": true
+    },
+    {
+      "file": "Stage13.map",
+      "before": "9892d0b7dcfe49b1443447cf48616895a6635157be945bd03869557f8d9a959b",
+      "after": "c70213d892f0af9960c4cd9e3dd17891a6e21766dc6e29f8000e949095a21190",
+      "prior_nodes_preserved": true
+    },
+    {
+      "file": "Stage14.map",
+      "before": "ad177e385820379692d19d2a2c107c2410f7b73a89c93718041c48c34e2c4f9a",
+      "after": "6dc592552f64a6ee56adf8e36c00e419641bc37e02b70435cc03cd3b886ec1a3",
+      "prior_nodes_preserved": true
+    },
+    {
+      "file": "Stage15.map",
+      "before": "5449b39b96d1c01ceebb4133bc57522e1534ecafe4ad72b4514f819d88634039",
+      "after": "99e0511619d53d8a4e48c3fc53658a03230120118cd2fbbc0fa455b4947b45e8",
+      "prior_nodes_preserved": true
+    },
+    {
+      "file": "Stage16.map",
+      "before": "9efee5f0d95c0a097bd12aa9794332061b841bb1edc3d3df6101f519edd41189",
+      "after": "51eb2f57a201a7ff52e0191b3b6d2893e9a937497d1486a0273fcaae16df38de",
+      "prior_nodes_preserved": true
+    },
+    {
+      "file": "Stage17.map",
+      "before": "e810a648135b9d47c79b8863da5d133dd4014edcb316e3f83ef8b340b8817f91",
+      "after": "6664748abe37f13335902bde0d9ab6d9aff9d4c56f0fcd23e049d247459d41eb",
+      "prior_nodes_preserved": true
+    },
+    {
+      "file": "Stage18.map",
+      "before": "f94a2f510a2d645be8c0c14d517414f57d2b5aefe435a22a4657bd7feb3220d5",
+      "after": "6abdc7b90fba0ae0245f55014f3f978ca3e8270375a64c0f7fdd1ecb0be60a5d",
+      "prior_nodes_preserved": true
+    },
+    {
+      "file": "Stage19.map",
+      "before": "0a8330e31147b2edc3c076958f3ca28553dd3dc4480c393a45cdecc89b8ac21b",
+      "after": "8d4c26460b626ad5c392f25681f345ddeae8d088ef64c04bcb240508737984ff",
+      "prior_nodes_preserved": true
+    },
+    {
+      "file": "Stage20.map",
+      "before": "220c029b489d7f560148fdbecca54caf45d699b4b88a632f70b5436370088453",
+      "after": "d645b24cb4d4c6dfd920389388c03c19220a421035eaca2a8d5191e904888ea2",
+      "prior_nodes_preserved": true
+    },
+    {
+      "file": "Stage21.map",
+      "before": "b42afdbf14fd3e8fd0e3cae92c319a4c2738087e9593308931a8f27de23f4ac8",
+      "after": "98c0a43dd9ee6442f4c66f2cd06a8b6ea1596a1d8f5faa567fac60b82f6c6108",
+      "prior_nodes_preserved": true
+    },
+    {
+      "file": "Stage22.map",
+      "before": "93352a06f8cbf41f72a92bd22a0e2b8622d8fb9b104aa4cade4eda713167c4f7",
+      "after": "ac8683b481e6116a37df5125c7ebd5918b3cd817737c0f487ecfd733b66eb6fc",
+      "prior_nodes_preserved": true
+    },
+    {
+      "file": "Stage23.map",
+      "before": "ec61181420c927bd297de197ce9a2d32966ea664aa8a792c8d178206c770ae9c",
+      "after": "5e9218f45199193b117ed7eb619064da0b694b6bd3cc5907eb6b6d5db9e39da9",
+      "prior_nodes_preserved": true
+    },
+    {
+      "file": "Stage24.map",
+      "before": "53e30a5e348800ee7db777cccc4e72ac0d295a5511811dc185ab8957d1de828e",
+      "after": "7d39f9e5b878052f53f83f8de7b9bec08e9d09676aab2daaca9bbe21336f089d",
+      "prior_nodes_preserved": true
+    },
+    {
+      "file": "Stage25.map",
+      "before": "af483b61fe2d0848cdd9313c95dc5aae660f55ee5b40892dc0eeec68b9d1f92f",
+      "after": "f7c2a60d492a7081aea135156b48e59bc8be0a5b2dc0913b6c57ea27a3f988f7",
+      "prior_nodes_preserved": true
+    },
+    {
+      "file": "Stage26.map",
+      "before": "0906109e9be38cef9e40e1233567613a56c02e4c5e9f9934f987afc41e1a8eaa",
+      "after": "8d0917b95327800c7e3fdf5db7a6ebc32c604b97b5761e12827c6373d9380e54",
+      "prior_nodes_preserved": true
+    },
+    {
+      "file": "Stage27.map",
+      "before": "6f27e6ba3e3b5f172f10616cc4b390b03fff0b54b20bb0720a4e0cd856f6f564",
+      "after": "47e5dd8e4f30fcf2bc60d2fbaa2cfea31564234cf72728147789b74b987bc58c",
+      "prior_nodes_preserved": true
+    },
+    {
+      "file": "Stage28.map",
+      "before": "dce84389bd8666ffa048f7632c92cb5cb2a6029dcecc42d38535b27fcdc004a0",
+      "after": "396d9a000b3df9ca01e4af6046e441822c5fff0d04e9cb49f00dda1ba4f9efcf",
+      "prior_nodes_preserved": true
+    },
+    {
+      "file": "Stage29.map",
+      "before": "a6fffac303e855eecadf262f23f378a69d8bce91df53ac5da3b7a3e037071cce",
+      "after": "2113608d346857d9f1ed1780f535bd2cf32f613ca06a7c917496df592d6a5e46",
+      "prior_nodes_preserved": true
+    },
+    {
+      "file": "Stage30.map",
+      "before": "ebf7071f6f755ba0aee3ebc2f1117dc4313f48ac38e1407611a6fe794443c544",
+      "after": "433617158b075750308b639a43074cd6f38ab7f068957682382c7bcc20b0a09a",
+      "prior_nodes_preserved": true
+    },
+    {
+      "file": "Stage31.map",
+      "before": "2cb23317285f2fc411b5128f10d33632bb3305a7e60b512430c868f78367a112",
+      "after": "ebf1bf9b012d8667de249dfd5e0504035694163746ddb9504ef2b0c75764f13f",
+      "prior_nodes_preserved": true
+    },
+    {
+      "file": "Stage32.map",
+      "before": "3d0797b9a53a7c96cfb451e9291767baf6a906ecde6791c481b8a764058a61f6",
+      "after": "e8d3a0f51eccbca1c87506579d20e4d7662f70a31fedbe439ead282046ee9068",
+      "prior_nodes_preserved": true
+    },
+    {
+      "file": "Stage33.map",
+      "before": "618b83952679d1fb2757f62b79c11d7381786c89fcfa24aaab1ca85eca82808c",
+      "after": "26ee847ca2deca295ad86cd44670e6d90ad2b60457c1f624011bdd725b6a4678",
+      "prior_nodes_preserved": true
+    },
+    {
+      "file": "Stage34.map",
+      "before": "93b6e5cc5b7db92c58e0807100033b3811fa722034f865fd5a6764fe8e0bd341",
+      "after": "cd51904ab1bb6c7a95f070a7386ae4d6e61815b2e8040164c8bcabf87e07f6f6",
+      "prior_nodes_preserved": true
+    },
+    {
+      "file": "Stage35.map",
+      "before": "4997557032d8a6938bde813b67d2c501d1498f2bef1a2ceddc7aaaff94b429f4",
+      "after": "b34ee3b229bee5162cb6252730ee1ed36eafbde1c588fd1c1ed1b6d0649bd61a",
+      "prior_nodes_preserved": true
+    },
+    {
+      "file": "Stage36.map",
+      "before": "12af950af80969dd99153e081ab97955a887276ff6947459a08ebe22a8be87f6",
+      "after": "12af950af80969dd99153e081ab97955a887276ff6947459a08ebe22a8be87f6",
+      "prior_nodes_preserved": true
+    },
+    {
+      "file": "Stage37.map",
+      "before": "f566b4a5a6c6b7c29b867538f78a8d05c183c05f8c56a0a75bc5eb49573415c3",
+      "after": "f566b4a5a6c6b7c29b867538f78a8d05c183c05f8c56a0a75bc5eb49573415c3",
+      "prior_nodes_preserved": true
+    },
+    {
+      "file": "Stage38.map",
+      "before": "39800e9555a8674d29cc09080d662b4d0d7c7353aee11c020928dc1b2f1269d6",
+      "after": "39800e9555a8674d29cc09080d662b4d0d7c7353aee11c020928dc1b2f1269d6",
+      "prior_nodes_preserved": true
+    },
+    {
+      "file": "Stage39.map",
+      "before": "0ed5a7d00f43abe25b67226f119c255a7da9187a3438c2d179c50c61e6244cff",
+      "after": "0ed5a7d00f43abe25b67226f119c255a7da9187a3438c2d179c50c61e6244cff",
+      "prior_nodes_preserved": true
+    },
+    {
+      "file": "Stage40.map",
+      "before": "adfa18a9617a1e29efe90e5ac03a7ec3ca033768f401b9f476b6c66dc0f75131",
+      "after": "adfa18a9617a1e29efe90e5ac03a7ec3ca033768f401b9f476b6c66dc0f75131",
+      "prior_nodes_preserved": true
+    },
+    {
+      "file": "Stage41.map",
+      "before": "caf4b957497f31f9d40623b9eb07e6f0361e53caba23240b35500c8f20b0b4e9",
+      "after": "caf4b957497f31f9d40623b9eb07e6f0361e53caba23240b35500c8f20b0b4e9",
+      "prior_nodes_preserved": true
+    },
+    {
+      "file": "Stage42.map",
+      "before": "17c4464c82778149a06b124d500660064238874848e0add67b36481af64e3797",
+      "after": "17c4464c82778149a06b124d500660064238874848e0add67b36481af64e3797",
+      "prior_nodes_preserved": true
+    },
+    {
+      "file": "Survival.map",
+      "before": "9b0fd8fcf26964ac2feed2c0c9abe1b0a1d820d2f726521ae27ef29f7a0a6553",
+      "after": "9b0fd8fcf26964ac2feed2c0c9abe1b0a1d820d2f726521ae27ef29f7a0a6553",
+      "prior_nodes_preserved": true
+    }
+  ]
+}

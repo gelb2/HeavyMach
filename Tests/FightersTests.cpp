@@ -31,6 +31,19 @@ int main(){
  for(const auto& [key,map]:original.maps){const auto& after=data.maps.at(key);assert(after.enemies.size()>=map.enemies.size());for(size_t n=0;n<map.enemies.size();++n){const auto&a=map.enemies[n];const auto&b=after.enemies[n];assert(a.name==b.name&&a.isBoss==b.isBoss&&a.position.x==b.position.x&&a.position.y==b.position.y);}for(const auto&e:after.enemies)assert(!e.name.starts_with("Lux_"));}
  for(const auto& [key,w]:original.weapons){const auto& n=data.weapons.at(key);assert(w.spd==n.spd&&w.shotCnt==n.shotCnt&&w.shotDly==n.shotDly&&w.delay==n.delay&&n.aiTimeScale==1&&n.burstGroupSize==0);}
  assert(data.formations.size()==14);
+ // Preserve every prior aircraft, relative offset, trigger and speed. Append
+ // only the requested Eurofighter count using the existing formation contract.
+ for(const auto& prior:fighterWaves()){
+  const auto& wave=data.formations.at(prior.map);assert(wave.boss==prior.boss&&wave.entrySpeed==-2.5f&&wave.releaseSpeed==-.5f);
+  size_t index=0;float lastX=0;
+  for(size_t type=0;type<3;++type)for(int n=0;n<prior.counts[type];++n,++index){
+   const auto& unit=wave.units.at(index);assert(unit.machine==fighterSpecs()[type].name);
+   assert(unit.offset.x==prior.positions[index].x&&unit.offset.y==prior.positions[index].y);lastX=std::max(lastX,unit.offset.x);
+  }
+  const size_t added=prior.boss[0]?2:1;assert(wave.units.size()==index+added);
+  for(size_t n=0;n<added;++n){const auto& unit=wave.units[index+n];assert(unit.machine=="Lux_Eurofighter"&&unit.offset.x==lastX+140&&unit.offset.y==float(n)*70);}
+ }
+
  for(size_t n=0;n<3;++n){const auto& spec=fighterSpecs()[n];const auto& w=data.weapons.at(spec.weapon);assert(w.spd==200&&std::abs(w.delay-5.f/1.1f)<.00001f&&w.shotCnt==(n==2?6:3));
   const auto& prior=original.weapons.at(n==2?"E_0604_Wpn":"E_Wpn_ASM");assert(w.dmg==prior.dmg&&w.g==prior.g&&w.liveTm==prior.liveTm&&w.aimRand==prior.aimRand&&w.spdRand==prior.spdRand);
   BurstHost host;WeaponState state;state.weaponInfo=&w;CombatFrame f;f.machType=3;f.isPlayer=false;f.isMainPlayer=false;f.time=1;
@@ -57,7 +70,7 @@ int main(){
    i.player->position.x=trigger;i.world.processRegen(trigger,i);i.world.paused=true;i.spawnReinforcements();assert(jets()==0);i.world.paused=false;
    float playerGround=i.world.mapHeight(trigger);i.player->position.y=(playerGround==10000?i.world.map.bottom:playerGround)+30+jump;
    for(int c=0;c<60;++c)i.world.processCamera(i.player->position);
-   int bossCount=i.world.bossCount;auto seedBefore=seed;i.spawnReinforcements();assert(seed==seedBefore);int expected=0;for(int n:wave->counts)expected+=n;assert(jets()==expected&&i.world.bossCount==bossCount);
+   int bossCount=i.world.bossCount;auto seedBefore=seed;i.spawnReinforcements();assert(seed==seedBefore);int expected=wave->boss[0]?2:1;for(int n:wave->counts)expected+=n;assert(jets()==expected&&i.world.bossCount==bossCount);
    // Simultaneous flight catches the old convergence on one shared endpoint.
    std::vector<GameSession::Impl::Machine*> formation;
    for(auto& e:i.enemies)if(e.definition->name.starts_with("Lux_"))formation.push_back(&e);
@@ -88,7 +101,7 @@ int main(){
   }}
  }
  {SaveSlot save;GlobalInfo(save).selectSlot(0);GameSession game(data,save,dims,[]{return 0;});game.start(1,0,0);auto& i=*game.impl_;assert(!i.reinforcement);i.player->position.x=i.world.map.right;i.spawnReinforcements();assert(!i.reinforcementSpawned);}
- assert(totalWaves==14&&totalJets==72);std::cout<<"14 wave triggers, 72 additions; original map entries preserved PASS\n";
+ assert(totalWaves==14&&totalJets==93);std::cout<<"14 wave triggers, 72 prior + 21 Eurofighter additions; original map entries preserved PASS\n";
  for(auto& spec:fighterSpecs()){
   assert(spec.width>dims("E_Heli_Body_01.png").x&&spec.width<dims("E_Heli_Body_06.png").x);
   assert(data.machines.at(spec.name).hpMax==765);

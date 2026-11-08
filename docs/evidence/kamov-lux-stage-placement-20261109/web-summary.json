@@ -1,0 +1,728 @@
+{
+  "ok": true,
+  "type": "Aggregate of actual campaign run2 and grounded boss-clear run2, with input hashes checked",
+  "browser": "Chrome headless WebGL; not physical iPhone/Android evidence",
+  "ka52Stages": 35,
+  "ka52Total": 76,
+  "formationTriggers": 14,
+  "eurofighterTotal": 21,
+  "retainedFormationAircraft": 72,
+  "finalFormationAircraft": 93,
+  "forcedEnemySpawns": 0,
+  "ka52": [
+    {
+      "map": "Stage01",
+      "mission": 0,
+      "stage": 0,
+      "expected": 1,
+      "actual": 1,
+      "renderVerified": true,
+      "renderEvidence": "run2",
+      "initialFixtureFailure": null
+    },
+    {
+      "map": "Stage02",
+      "mission": 0,
+      "stage": 1,
+      "expected": 1,
+      "actual": 1,
+      "renderVerified": true,
+      "renderEvidence": "run2",
+      "initialFixtureFailure": null
+    },
+    {
+      "map": "Stage03",
+      "mission": 0,
+      "stage": 2,
+      "expected": 1,
+      "actual": 1,
+      "renderVerified": true,
+      "renderEvidence": "run2",
+      "initialFixtureFailure": null
+    },
+    {
+      "map": "Stage04",
+      "mission": 0,
+      "stage": 3,
+      "expected": 1,
+      "actual": 1,
+      "renderVerified": true,
+      "renderEvidence": "run2",
+      "initialFixtureFailure": null
+    },
+    {
+      "map": "Stage05",
+      "mission": 1,
+      "stage": 0,
+      "expected": 6,
+      "actual": 6,
+      "renderVerified": true,
+      "renderEvidence": "run2",
+      "initialFixtureFailure": null
+    },
+    {
+      "map": "Stage06",
+      "mission": 1,
+      "stage": 1,
+      "expected": 4,
+      "actual": 4,
+      "renderVerified": true,
+      "renderEvidence": "run2",
+      "initialFixtureFailure": null
+    },
+    {
+      "map": "Stage07",
+      "mission": 1,
+      "stage": 2,
+      "expected": 5,
+      "actual": 5,
+      "renderVerified": true,
+      "renderEvidence": "run2",
+      "initialFixtureFailure": null
+    },
+    {
+      "map": "Stage08",
+      "mission": 1,
+      "stage": 3,
+      "expected": 1,
+      "actual": 1,
+      "renderVerified": true,
+      "renderEvidence": "run2",
+      "initialFixtureFailure": null
+    },
+    {
+      "map": "Stage09",
+      "mission": 1,
+      "stage": 4,
+      "expected": 1,
+      "actual": 1,
+      "renderVerified": true,
+      "renderEvidence": "run2",
+      "initialFixtureFailure": null
+    },
+    {
+      "map": "Stage10",
+      "mission": 2,
+      "stage": 0,
+      "expected": 1,
+      "actual": 1,
+      "renderVerified": true,
+      "renderEvidence": "run2",
+      "initialFixtureFailure": null
+    },
+    {
+      "map": "Stage11",
+      "mission": 2,
+      "stage": 1,
+      "expected": 1,
+      "actual": 1,
+      "renderVerified": true,
+      "renderEvidence": "run2",
+      "initialFixtureFailure": null
+    },
+    {
+      "map": "Stage12",
+      "mission": 2,
+      "stage": 2,
+      "expected": 1,
+      "actual": 1,
+      "renderVerified": true,
+      "renderEvidence": "run2",
+      "initialFixtureFailure": null
+    },
+    {
+      "map": "Stage13",
+      "mission": 2,
+      "stage": 3,
+      "expected": 1,
+      "actual": 1,
+      "renderVerified": true,
+      "renderEvidence": "ground-run2",
+      "initialFixtureFailure": "Error: Runtime observation timed out: {\"screen\":\"game\",\"time\":34.8333,\"canvas\":[533.333,320],\"loading\":0,\"mission\":2,\"stage\":3,\"playerX\":2393.42,\"playerY\":12.2,\"hp\":840,\"enemies\":21,\"bullets\":0,\"paused\":0,\"gameState\":0,\"decodes\":298,\"loadError\":0,\"aimMode\":1,\"aimTarget\":0,\"inputBlocked\":0,\"keyboardFire\":0,\"gameMenu\":0,\"resumeRequired\":0,\"active\":1,\"keyboardAimX\":0,\"callbackInterval\":0.0541,\"ticksPerCallback\":3,\"motion\":0,\"tilt\":[0,0,-1],\"hudEditing\":0,\"hudCustomized\":0,\"hudFallback\":0,\"hudSelected\":2,\"hudDraftCustomized\":0,\"orientationHold\":0}"
+    },
+    {
+      "map": "Stage14",
+      "mission": 2,
+      "stage": 4,
+      "expected": 1,
+      "actual": 1,
+      "renderVerified": true,
+      "renderEvidence": "run2",
+      "initialFixtureFailure": null
+    },
+    {
+      "map": "Stage25",
+      "mission": 3,
+      "stage": 0,
+      "expected": 3,
+      "actual": 3,
+      "renderVerified": true,
+      "renderEvidence": "ground-run2",
+      "initialFixtureFailure": "Error: Runtime observation timed out: {\"screen\":\"game\",\"time\":42.7,\"canvas\":[533.333,320],\"loading\":0,\"mission\":3,\"stage\":0,\"playerX\":1521.98,\"playerY\":-21.87,\"hp\":840,\"enemies\":12,\"bullets\":0,\"paused\":0,\"gameState\":0,\"decodes\":327,\"loadError\":0,\"aimMode\":1,\"aimTarget\":0,\"inputBlocked\":0,\"keyboardFire\":0,\"gameMenu\":0,\"resumeRequired\":0,\"active\":1,\"keyboardAimX\":0,\"callbackInterval\":0.0166,\"ticksPerCallback\":1,\"motion\":0,\"tilt\":[0,0,-1],\"hudEditing\":0,\"hudCustomized\":0,\"hudFallback\":0,\"hudSelected\":2,\"hudDraftCustomized\":0,\"orientationHold\":0}"
+    },
+    {
+      "map": "Stage26",
+      "mission": 3,
+      "stage": 1,
+      "expected": 5,
+      "actual": 5,
+      "renderVerified": true,
+      "renderEvidence": "run2",
+      "initialFixtureFailure": null
+    },
+    {
+      "map": "Stage27",
+      "mission": 3,
+      "stage": 2,
+      "expected": 2,
+      "actual": 2,
+      "renderVerified": true,
+      "renderEvidence": "run2",
+      "initialFixtureFailure": null
+    },
+    {
+      "map": "Stage28",
+      "mission": 3,
+      "stage": 3,
+      "expected": 2,
+      "actual": 2,
+      "renderVerified": true,
+      "renderEvidence": "run2",
+      "initialFixtureFailure": null
+    },
+    {
+      "map": "Stage29",
+      "mission": 3,
+      "stage": 4,
+      "expected": 1,
+      "actual": 1,
+      "renderVerified": true,
+      "renderEvidence": "run2",
+      "initialFixtureFailure": null
+    },
+    {
+      "map": "Stage15",
+      "mission": 4,
+      "stage": 0,
+      "expected": 2,
+      "actual": 2,
+      "renderVerified": true,
+      "renderEvidence": "run2",
+      "initialFixtureFailure": null
+    },
+    {
+      "map": "Stage16",
+      "mission": 4,
+      "stage": 1,
+      "expected": 4,
+      "actual": 4,
+      "renderVerified": true,
+      "renderEvidence": "run2",
+      "initialFixtureFailure": null
+    },
+    {
+      "map": "Stage17",
+      "mission": 4,
+      "stage": 2,
+      "expected": 3,
+      "actual": 3,
+      "renderVerified": true,
+      "renderEvidence": "run2",
+      "initialFixtureFailure": null
+    },
+    {
+      "map": "Stage18",
+      "mission": 4,
+      "stage": 3,
+      "expected": 4,
+      "actual": 4,
+      "renderVerified": true,
+      "renderEvidence": "run2",
+      "initialFixtureFailure": null
+    },
+    {
+      "map": "Stage19",
+      "mission": 4,
+      "stage": 4,
+      "expected": 2,
+      "actual": 2,
+      "renderVerified": true,
+      "renderEvidence": "run2",
+      "initialFixtureFailure": null
+    },
+    {
+      "map": "Stage20",
+      "mission": 5,
+      "stage": 0,
+      "expected": 2,
+      "actual": 2,
+      "renderVerified": true,
+      "renderEvidence": "run2",
+      "initialFixtureFailure": null
+    },
+    {
+      "map": "Stage21",
+      "mission": 5,
+      "stage": 1,
+      "expected": 3,
+      "actual": 3,
+      "renderVerified": true,
+      "renderEvidence": "run2",
+      "initialFixtureFailure": null
+    },
+    {
+      "map": "Stage22",
+      "mission": 5,
+      "stage": 2,
+      "expected": 1,
+      "actual": 1,
+      "renderVerified": true,
+      "renderEvidence": "run2",
+      "initialFixtureFailure": null
+    },
+    {
+      "map": "Stage23",
+      "mission": 5,
+      "stage": 3,
+      "expected": 1,
+      "actual": 1,
+      "renderVerified": true,
+      "renderEvidence": "run2",
+      "initialFixtureFailure": null
+    },
+    {
+      "map": "Stage24",
+      "mission": 5,
+      "stage": 4,
+      "expected": 1,
+      "actual": 1,
+      "renderVerified": true,
+      "renderEvidence": "run2",
+      "initialFixtureFailure": null
+    },
+    {
+      "map": "Stage30",
+      "mission": 6,
+      "stage": 0,
+      "expected": 4,
+      "actual": 4,
+      "renderVerified": true,
+      "renderEvidence": "run2",
+      "initialFixtureFailure": null
+    },
+    {
+      "map": "Stage31",
+      "mission": 6,
+      "stage": 1,
+      "expected": 2,
+      "actual": 2,
+      "renderVerified": true,
+      "renderEvidence": "run2",
+      "initialFixtureFailure": null
+    },
+    {
+      "map": "Stage32",
+      "mission": 6,
+      "stage": 2,
+      "expected": 2,
+      "actual": 2,
+      "renderVerified": true,
+      "renderEvidence": "run2",
+      "initialFixtureFailure": null
+    },
+    {
+      "map": "Stage33",
+      "mission": 6,
+      "stage": 3,
+      "expected": 1,
+      "actual": 1,
+      "renderVerified": true,
+      "renderEvidence": "run2",
+      "initialFixtureFailure": null
+    },
+    {
+      "map": "Stage34",
+      "mission": 6,
+      "stage": 4,
+      "expected": 4,
+      "actual": 4,
+      "renderVerified": true,
+      "renderEvidence": "run2",
+      "initialFixtureFailure": null
+    },
+    {
+      "map": "Stage35",
+      "mission": 6,
+      "stage": 5,
+      "expected": 1,
+      "actual": 1,
+      "renderVerified": true,
+      "renderEvidence": "run2",
+      "initialFixtureFailure": null
+    }
+  ],
+  "formations": [
+    {
+      "map": "Stage04",
+      "boss": "Boss02",
+      "expected": {
+        "Lux_F22": 1,
+        "Lux_Su57": 1,
+        "Lux_Eurofighter": 2
+      },
+      "actual": {
+        "Lux_F22": 1,
+        "Lux_Su57": 1,
+        "Lux_Eurofighter": 2
+      },
+      "beforeTriggerLux": 0,
+      "renderVerified": true,
+      "renderEvidence": "run2",
+      "initialFixtureFailure": null
+    },
+    {
+      "map": "Stage09",
+      "boss": "Boss04",
+      "expected": {
+        "Lux_F22": 1,
+        "Lux_Su57": 1,
+        "Lux_MiG31": 2,
+        "Lux_Eurofighter": 2
+      },
+      "actual": {
+        "Lux_F22": 1,
+        "Lux_Su57": 1,
+        "Lux_MiG31": 2,
+        "Lux_Eurofighter": 2
+      },
+      "beforeTriggerLux": 0,
+      "renderVerified": true,
+      "renderEvidence": "run2",
+      "initialFixtureFailure": null
+    },
+    {
+      "map": "Stage14",
+      "boss": "Boss05",
+      "expected": {
+        "Lux_F22": 2,
+        "Lux_Su57": 2,
+        "Lux_MiG31": 2,
+        "Lux_Eurofighter": 2
+      },
+      "actual": {
+        "Lux_F22": 2,
+        "Lux_Su57": 2,
+        "Lux_MiG31": 2,
+        "Lux_Eurofighter": 2
+      },
+      "beforeTriggerLux": 0,
+      "renderVerified": true,
+      "renderEvidence": "run2",
+      "initialFixtureFailure": null
+    },
+    {
+      "map": "Stage29",
+      "boss": "Boss03",
+      "expected": {
+        "Lux_F22": 3,
+        "Lux_Su57": 3,
+        "Lux_MiG31": 2,
+        "Lux_Eurofighter": 2
+      },
+      "actual": {
+        "Lux_F22": 3,
+        "Lux_Su57": 3,
+        "Lux_MiG31": 2,
+        "Lux_Eurofighter": 2
+      },
+      "beforeTriggerLux": 0,
+      "renderVerified": true,
+      "renderEvidence": "run2",
+      "initialFixtureFailure": null
+    },
+    {
+      "map": "Stage19",
+      "boss": "Boss01",
+      "expected": {
+        "Lux_F22": 3,
+        "Lux_Su57": 2,
+        "Lux_MiG31": 3,
+        "Lux_Eurofighter": 2
+      },
+      "actual": {
+        "Lux_F22": 3,
+        "Lux_Su57": 2,
+        "Lux_MiG31": 3,
+        "Lux_Eurofighter": 2
+      },
+      "beforeTriggerLux": 0,
+      "renderVerified": true,
+      "renderEvidence": "run2",
+      "initialFixtureFailure": null
+    },
+    {
+      "map": "Stage24",
+      "boss": "Boss06",
+      "expected": {
+        "Lux_F22": 2,
+        "Lux_Su57": 3,
+        "Lux_MiG31": 3,
+        "Lux_Eurofighter": 2
+      },
+      "actual": {
+        "Lux_F22": 2,
+        "Lux_Su57": 3,
+        "Lux_MiG31": 3,
+        "Lux_Eurofighter": 2
+      },
+      "beforeTriggerLux": 0,
+      "renderVerified": true,
+      "renderEvidence": "run2",
+      "initialFixtureFailure": null
+    },
+    {
+      "map": "Stage35",
+      "boss": "Boss07",
+      "expected": {
+        "Lux_F22": 3,
+        "Lux_Su57": 3,
+        "Lux_MiG31": 2,
+        "Lux_Eurofighter": 2
+      },
+      "actual": {
+        "Lux_F22": 3,
+        "Lux_Su57": 3,
+        "Lux_MiG31": 2,
+        "Lux_Eurofighter": 2
+      },
+      "beforeTriggerLux": 0,
+      "renderVerified": true,
+      "renderEvidence": "run2",
+      "initialFixtureFailure": null
+    },
+    {
+      "map": "Stage03",
+      "boss": "",
+      "expected": {
+        "Lux_F22": 2,
+        "Lux_Su57": 1,
+        "Lux_MiG31": 1,
+        "Lux_Eurofighter": 1
+      },
+      "actual": {
+        "Lux_F22": 2,
+        "Lux_Su57": 1,
+        "Lux_MiG31": 1,
+        "Lux_Eurofighter": 1
+      },
+      "beforeTriggerLux": 0,
+      "renderVerified": true,
+      "renderEvidence": "run2",
+      "initialFixtureFailure": null
+    },
+    {
+      "map": "Stage08",
+      "boss": "",
+      "expected": {
+        "Lux_F22": 1,
+        "Lux_Su57": 2,
+        "Lux_MiG31": 1,
+        "Lux_Eurofighter": 1
+      },
+      "actual": {
+        "Lux_F22": 1,
+        "Lux_Su57": 2,
+        "Lux_MiG31": 1,
+        "Lux_Eurofighter": 1
+      },
+      "beforeTriggerLux": 0,
+      "renderVerified": true,
+      "renderEvidence": "run2",
+      "initialFixtureFailure": null
+    },
+    {
+      "map": "Stage13",
+      "boss": "",
+      "expected": {
+        "Lux_F22": 1,
+        "Lux_Su57": 1,
+        "Lux_MiG31": 2,
+        "Lux_Eurofighter": 1
+      },
+      "actual": {
+        "Lux_F22": 1,
+        "Lux_Su57": 1,
+        "Lux_MiG31": 2,
+        "Lux_Eurofighter": 1
+      },
+      "beforeTriggerLux": 0,
+      "renderVerified": true,
+      "renderEvidence": "ground-run2",
+      "initialFixtureFailure": "Error: Runtime observation timed out: {\"screen\":\"game\",\"time\":119.15,\"canvas\":[533.333,320],\"loading\":0,\"mission\":2,\"stage\":3,\"playerX\":4602.02,\"playerY\":6.81,\"hp\":840,\"enemies\":39,\"bullets\":0,\"paused\":0,\"gameState\":0,\"decodes\":523,\"loadError\":0,\"aimMode\":1,\"aimTarget\":0,\"inputBlocked\":0,\"keyboardFire\":0,\"gameMenu\":0,\"resumeRequired\":0,\"active\":1,\"keyboardAimX\":0,\"callbackInterval\":0.0165,\"ticksPerCallback\":1,\"motion\":0,\"tilt\":[0,0,-1],\"hudEditing\":0,\"hudCustomized\":0,\"hudFallback\":0,\"hudSelected\":2,\"hudDraftCustomized\":0,\"orientationHold\":0}"
+    },
+    {
+      "map": "Stage28",
+      "boss": "",
+      "expected": {
+        "Lux_F22": 2,
+        "Lux_Su57": 1,
+        "Lux_MiG31": 1,
+        "Lux_Eurofighter": 1
+      },
+      "actual": {
+        "Lux_F22": 2,
+        "Lux_Su57": 1,
+        "Lux_MiG31": 1,
+        "Lux_Eurofighter": 1
+      },
+      "beforeTriggerLux": 0,
+      "renderVerified": true,
+      "renderEvidence": "run2",
+      "initialFixtureFailure": null
+    },
+    {
+      "map": "Stage18",
+      "boss": "",
+      "expected": {
+        "Lux_F22": 1,
+        "Lux_Su57": 2,
+        "Lux_MiG31": 1,
+        "Lux_Eurofighter": 1
+      },
+      "actual": {
+        "Lux_F22": 1,
+        "Lux_Su57": 2,
+        "Lux_MiG31": 1,
+        "Lux_Eurofighter": 1
+      },
+      "beforeTriggerLux": 0,
+      "renderVerified": true,
+      "renderEvidence": "run2",
+      "initialFixtureFailure": null
+    },
+    {
+      "map": "Stage23",
+      "boss": "",
+      "expected": {
+        "Lux_F22": 1,
+        "Lux_Su57": 1,
+        "Lux_MiG31": 2,
+        "Lux_Eurofighter": 1
+      },
+      "actual": {
+        "Lux_F22": 1,
+        "Lux_Su57": 1,
+        "Lux_MiG31": 2,
+        "Lux_Eurofighter": 1
+      },
+      "beforeTriggerLux": 0,
+      "renderVerified": true,
+      "renderEvidence": "run2",
+      "initialFixtureFailure": null
+    },
+    {
+      "map": "Stage34",
+      "boss": "",
+      "expected": {
+        "Lux_F22": 2,
+        "Lux_Su57": 1,
+        "Lux_MiG31": 1,
+        "Lux_Eurofighter": 1
+      },
+      "actual": {
+        "Lux_F22": 2,
+        "Lux_Su57": 1,
+        "Lux_MiG31": 1,
+        "Lux_Eurofighter": 1
+      },
+      "beforeTriggerLux": 0,
+      "renderVerified": true,
+      "renderEvidence": "run2",
+      "initialFixtureFailure": null
+    }
+  ],
+  "groundApproach": [
+    {
+      "map": "Stage13",
+      "ok": true,
+      "actualBossDamageEvents": 19,
+      "bossFinalDamage": [
+        {
+          "boss": "MBoss05",
+          "target": 15,
+          "weapon": "P_Wpn_Laser",
+          "requested": 172,
+          "before": 76,
+          "after": 0,
+          "time": 6.26666699
+        }
+      ],
+      "kaSeen": true,
+      "euroSeen": true,
+      "screenshots": [
+        "Stage13-ground-Ka52.png",
+        "Stage13-ground-Eurofighter.png"
+      ],
+      "cheats": "Existing player invulnerability and ammunition refill explicitly enabled; enemy creation and projectile damage remain normal."
+    },
+    {
+      "map": "Stage25",
+      "ok": true,
+      "actualBossDamageEvents": 21,
+      "bossFinalDamage": [
+        {
+          "boss": "MBoss08",
+          "target": 8,
+          "weapon": "P_Wpn_Laser",
+          "requested": 172,
+          "before": 60,
+          "after": 0,
+          "time": 8.3666671
+        }
+      ],
+      "kaSeen": true,
+      "euroSeen": false,
+      "screenshots": [
+        "Stage25-ground-Ka52.png"
+      ],
+      "cheats": "Existing player invulnerability and ammunition refill explicitly enabled; enemy creation and projectile damage remain normal."
+    }
+  ],
+  "originalFailuresPreserved": [
+    "run1/interrupted.json",
+    "run2/report.json",
+    "run3/report.json"
+  ],
+  "failureResolution": "Stage13/25 teleported approach bypassed living original minibosses and left camera frontLine locked. Grounded real projectile defeat and keyboard movement resolved visibility without changing product data. run3 also introduced an unsupported ceil(AA/2) assertion; removed and replaced by approved authoring comparison.",
+  "inputUnchangedSinceBuild": true,
+  "authoringSha256": "9da2855dba79696ae3354b5ff1c5e51c9746d64586264a7c35bbed93c50b59d1",
+  "validationWasmSha256": "d061c43020881f63a4dba9323b17acc32423a9805923cafd5d86e45920bd1f59",
+  "runtimeManifestSha256": "bbd3a0b5448efd7a60620ebbe02a12da312806c47391cd954c506aaf3da1473b",
+  "sourceEvidenceSha256": {
+    "run2/report.json": "71582371ac98b217e70e94309486179b8650a1acba1b5f5761b3737ea1b91c7a",
+    "ground-run2/report.json": "0498f0c36a917dff0e20e306f51d9fa3eeb73e2d465ce49ae29a310923516840"
+  },
+  "normal": {
+    "bridge": "undefined",
+    "export": "undefined",
+    "validation": false
+  },
+  "storage": {
+    "savePath": "/validation-persist/HvM.dat",
+    "normalMount": false,
+    "prefix": "HeavyMach.Validation."
+  },
+  "unitArtCombat20WeaponReuse": {
+    "source": "build/kamov-web-validation/no-pod-v5/report.json",
+    "sourceSha256": "4687143c2609f04c24fa43291ce7d155d16f76b06b009a933cbb68d475361ccc",
+    "scope": "Unit art/rotors/actual combat and all 20 original weapons; campaign placement newly executed",
+    "identicalPaths": {
+      "Sources/Core": true,
+      "Sources/Web": true,
+      "Resources/RuntimeImages": true,
+      "Resources/RuntimeData/MachInfo.mch": true,
+      "Resources/RuntimeData/PartsInfo.mch": true,
+      "Resources/RuntimeData/WeaponInfo.mch": true
+    }
+  }
+}

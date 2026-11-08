@@ -24,7 +24,10 @@ inline const std::array<VTOLSpec,3>& fighterSpecs(){
   {"Lux_MiG31","Lux_MiG31.png","Heli010","Lux_MiG31_Missile",120,724.f/2172,{-56,-10,56,14},{-12,-9},{{{55,-3}}},true}
  }};return specs;
 }
-inline const VTOLSpec* aircraftSpec(std::string_view name){for(const auto& s:fighterSpecs())if(name==s.name)return &s;return vtolSpec(name);}
+inline const VTOLSpec* aircraftSpec(std::string_view name){
+ static const VTOLSpec euro{"Lux_Eurofighter","Lux_Eurofighter.png","Lux_F22","Lux_Euro_Missile",116,35.f/116,{-55,-14,55,17},{-23.5f,-9.5f},{{{51,-8}}},true};
+ if(name==euro.name)return &euro;
+ for(const auto& s:fighterSpecs())if(name==s.name)return &s;return vtolSpec(name);}
 inline const std::array<FighterWave,14>& fighterWaves(){
  // Authored spacing, like campaign EnemyDefinition positions. Aircraft are
  // 112..120 wide and at most 49 high; 140 X / 70 Y leaves visible separation.

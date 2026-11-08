@@ -1,0 +1,65 @@
+{
+  "ok": true,
+  "files": [
+    {
+      "file": "hm-assets-1.data",
+      "status": 200,
+      "sha256": "8a6734ce34a26cda977a674397c06d4136567036f29a6f8e9f949806bf797dfe",
+      "ok": true
+    },
+    {
+      "file": "hm-assets-2.data",
+      "status": 200,
+      "sha256": "1ad40cd97e3db5f1db95ef7c851b46250a5a42eabdb0df42e5f40bdaa965f6f2",
+      "ok": true
+    },
+    {
+      "file": "hm-assets.js",
+      "status": 200,
+      "sha256": "55324978c3c5e18ed936d5eea3c095294ff62b30d00676b24bccc84d9ef21071",
+      "ok": true
+    },
+    {
+      "file": "hm-assets.json",
+      "status": 200,
+      "sha256": "442010db9800421b2acdb2af34ba772c62a0c2cd044d735fe5d56f3986c6bb83",
+      "ok": true
+    },
+    {
+      "file": "index.html",
+      "status": 200,
+      "sha256": "b48d5be81e8a22f8c666c8eb715a8dc88433de37e6706de7e36bcd657eee1d86",
+      "ok": true
+    },
+    {
+      "file": "index.js",
+      "status": 200,
+      "sha256": "cef31661a13cc992e6b88c3e379202e9bc71a68f5b94d9a9e0f3b9afdfc18a58",
+      "ok": true
+    },
+    {
+      "file": "index.wasm",
+      "status": 200,
+      "sha256": "d061c43020881f63a4dba9323b17acc32423a9805923cafd5d86e45920bd1f59",
+      "ok": true
+    },
+    {
+      "file": "manifest.webmanifest",
+      "status": 200,
+      "sha256": "61c27feac6a8c62e97e6add10bacffaf93444c725f5edee1cfbb0e0484195068",
+      "ok": true
+    },
+    {
+      "file": "validation-icon-256.png",
+      "status": 200,
+      "sha256": "b94ffeea058a07aae9fb9b8c74d5ebd3a02fb56cce31d4627ccd44bb6091ff86",
+      "ok": true
+    },
+    {
+      "file": "validation-icon-512.png",
+      "status": 200,
+      "sha256": "c08b4cbc6d7c61fe2b1c1b458e99a41ca7fad8fcdb1a4dbb779dd348eead4b8e",
+      "ok": true
+    }
+  ]
+}
