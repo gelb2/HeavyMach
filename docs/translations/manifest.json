@@ -28,8 +28,8 @@
     },
     "CHANGELOG.md": {
       "english": "CHANGELOG.en.md",
-      "source_sha256": "88bacf2e6f0e65c20041c1c601772c9873dba706f4112ba678c65728cb3c1607",
-      "english_sha256": "97cae04944d6f2c8f38db554f3d784c13ff10d1221f489143bfaebe72132d251",
+      "source_sha256": "aaef827f7a06629f0d982b2cc2d1c7c576c96e51680db92d5b423bc866dc5a80",
+      "english_sha256": "d01d65e2fb5907288346a3adab5f1fc21c0aa87f20e6c62b5ccef98d0656d566",
       "reviewed_numeric_difference": {
         "source_only": {
           "8": 2,
@@ -44,11 +44,13 @@
           "482": 1
         },
         "english_only": {
+          "28": 1,
+          "20": 1,
           "21": 1,
           "1,482": 1
         }
       },
-      "review_note": "2026-11-09: reviewed hotfix release entry and current download-link updates in both languages; existing author text preserved."
+      "review_note": "2026-11-09: reviewed Kamov cannon removal, two sequential missiles, 0.5-second interval, 28 core tests and 20 player weapons in both languages. Existing entries preserved; Korean attached numerals and English number words account for token differences."
     },
     "CREDITS.md": {
       "english": "CREDITS.en.md",
