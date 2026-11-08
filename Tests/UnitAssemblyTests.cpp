@@ -45,8 +45,43 @@ int main(){
  assert(lux.rotWpn==0&&lux.rotWpn==priorLux.rotWpn);
  const auto& euroWeaponPart=data.parts.at("Lux_Euro_Missile");
  assert(euroWeaponPart.partsType==2&&euroWeaponPart.tileCnt==0&&!euroWeaponPart.presentation);
- for(const auto& [name,map]:data.maps)for(const auto& e:map.enemies)assert(e.name!="Ka52"&&e.name!="Lux_Eurofighter");
- for(const auto& [name,wave]:data.formations)for(const auto& e:wave.units)assert(e.machine!="Ka52"&&e.machine!="Lux_Eurofighter");
+ // Campaign records use the original MAP spawn path; no validation spawn API.
+ const std::array<int,35> expectedKa{{1,1,1,1,6,4,5,1,1,1,1,1,1,1,3,5,2,2,1,2,4,3,4,2,2,3,1,1,1,4,2,2,1,4,1}};
+ std::set<std::string> playable;int stageIndex=0,totalKa=0;
+ for(int mission=0;mission<7;++mission)for(int stage=0;stage<GlobalInfo::stageCount(mission);++stage,++stageIndex){
+  char key[32];std::snprintf(key,sizeof(key),"Stage%02d",GlobalInfo::mapNumber({mission,stage}));playable.insert(key);
+  const auto& map=data.maps.at(key);int authored=0;
+  struct TerrainHost:WorldHost {Vector2 tileSize(std::string_view)override{return {480,320};}void spawnMapObject(const MapObjectDefinition&,int)override{}void spawnEnemy(const EnemyDefinition&)override{}void spawnPlayer(Vector2)override{}void event(const WorldEvent&)override{}} host;
+  WorldState terrain;terrain.openMap(map,0,host);
+  for(const auto& e:map.enemies){assert(e.name!="Lux_Eurofighter");if(e.name!="Ka52")continue;
+   ++authored;assert(!e.isBoss&&e.position.x>map.left&&e.position.x<map.right);
+   for(float x=e.position.x-85;x<=e.position.x+85;x+=10){auto ground=terrain.mapHeight(x);
+    if(!(ground==10000||e.position.y-30>ground))std::cerr<<key<<" Ka terrain clearance x="<<x<<" y="<<e.position.y<<" ground="<<ground<<'\n';
+    assert(ground==10000||e.position.y-30>ground);
+   }
+   assert(e.position.y+40<map.top);
+   for(const auto& old:map.enemies)if(vtolSpec(old.name))assert(std::abs(e.position.x-old.position.x)>=125||std::abs(e.position.y-old.position.y)>=64.9f);
+   for(const auto& other:map.enemies)if(other.name=="Ka52"&& &other!= &e)assert(std::abs(e.position.x-other.position.x)>=125||std::abs(e.position.y-other.position.y)>=60);
+  }
+  assert(authored==expectedKa[stageIndex]&&authored>0);totalKa+=authored;
+  for(float width:{480.f,696.f}){
+   SaveSlot save;GlobalInfo(save).selectSlot(0);uint32_t seed=7;
+   GameSession campaign(data,save,[&](std::string_view name){return contractTileSize(root,name);},[&]{seed=seed*1664525+1013904223;return int32_t(seed>>1);});
+   campaign.setCanvasWidth(width);campaign.start(0,mission,stage);auto& i=*campaign.impl_;
+   auto count=[&]{int n=0;for(const auto& e:i.enemies)if(e.definition->name=="Ka52"){++n;assert(e.parts.size()==5&&e.enemy->hasWeapon&&e.enemy->hp==300);}return n;};
+   const int atStart=count();
+   for(float x=map.left;x<=map.right+1000;x+=10)i.world.processRegen(x,i);
+   assert(count()==authored);i.world.processRegen(map.right+2000,i);assert(count()==authored);
+   campaign.start(0,mission,stage);assert(count()==atStart); // replay restores the same initial original spawn window
+   for(float x=map.left;x<=map.right+1000;x+=10)i.world.processRegen(x,i);
+   assert(count()==authored);
+  }
+  std::cout<<key<<" campaign Ka52="<<authored<<" original/wide spawn, replay, terrain PASS\n";
+ }
+ assert(stageIndex==35&&totalKa==76);
+ for(const auto& [name,map]:data.maps)if(!playable.contains(name))for(const auto& e:map.enemies)assert(e.name!="Ka52"&&e.name!="Lux_Eurofighter");
+ int totalEuro=0;for(const auto& [name,wave]:data.formations){int count=0;for(const auto& e:wave.units){assert(e.machine!="Ka52");count+=e.machine=="Lux_Eurofighter";}assert(count==(wave.boss.empty()?1:2));totalEuro+=count;}assert(totalEuro==21);
+
  const std::array<std::string,6> files{{"Ka52_Body.png","Ka52_RotorUpper.png","Ka52_RotorLower.png","Ka52_Cannon.png","Ka52_Missile.png","Lux_Eurofighter.png"}};
  for(const auto& file:files)assert(std::filesystem::exists(root/"Resources/RuntimeImages/apple"/file));
  auto dims=[&](std::string_view key){return contractTileSize(root,key);};

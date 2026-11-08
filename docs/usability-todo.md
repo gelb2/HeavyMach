@@ -10,7 +10,7 @@
 최초 [개발 계획](reviews/kamov-eurofighter-plan-20261109.md) 이후 사용자가 실제 구현·웹 치트 검증을 지시했다. 작업 브랜치 `feat/kamov-lux-eurofighter`에서 카모프 Ka-52와 럭스루나에 유로파이터를 구현했다. [구현·검사 보고](reviews/kamov-eurofighter-implementation-20261109.md).
 
 - [x] 원작 헬기·항공기 레코드와 계열별 원작 미술 3개 이상을 대조하고 크기·소켓·총구·무장을 정의했다.
-- [x] 채택 생성 원본과 원작 재사용 부품, 오프라인 PNG 7개×3프로필, manifest·패키지 해시를 연결했다. 유로파이터 몸체·포드는 v2를 채택했다.
+- [x] 채택 생성 원본과 원작 재사용 부품, 초기 오프라인 PNG 7개×3프로필, manifest·패키지 해시를 연결했다. 후속 채택에서 유로파이터 몸체v2를 유지하고 외부 포드는 제거해 현재6개×3프로필이다.
 - [x] MCH 2기체·8파츠·3무기를 기존 파서·공통 파츠·전투로 연결했다. 원작 로터 2프레임, 별도 표시 무장, HP 바 -18과 기존 명시적 HMEX 속성을 검사했다.
 - [x] 코어 28개, 자원 누락·변조 검사, 기존 데이터 보존, 웹 일반판의 치트 API 제외와 검증 저장 분리를 확인했다.
 - [x] 웹 치트 v4에서 두 유닛의 실제 사격·피해 귀속·이동·피격·파괴·정지와 로터를 검사했다. 원작·Lux 비교 캡처로 최종 조립과 그림체를 검수했다.
@@ -18,7 +18,8 @@
 - [x] 소스 `77863198`를 작업 브랜치에 푸시하고 develop 대상 [초안 PR #112](https://github.com/gelb2/HeavyMach/pull/112)를 열었다.
 - [x] 별도 웹 검증판을 공개하고 공개 주소 검사 8/8, 기존 정식 파일 45개 보존과 서비스 워커 환경의 저장 분리를 확인했다. [카모프 검증판](https://gelb2.github.io/HeavyMach/validation/kamov-eurofighter-20261109/?validation-unit=Ka52) · [유로파이터 검증판](https://gelb2.github.io/HeavyMach/validation/kamov-eurofighter-20261109/?validation-unit=Lux_Eurofighter).
 - [x] 읽기용 보고 HTML의 로컬 프리뷰를 화면 폭 390·1440에서 검사했다. 이미지 10개·한글 제목·표와 HTML 저장본 일치를 확인했다. [구현 보고서](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/kamov-eurofighter-implementation-20261109.html) 게시와 게시 본문 대조도 완료했다.
-- [ ] 캠페인 등장 위치·횟수를 정하고 실제 배치로 검사한다. 현재 기존 43개 MAP와 14개 편대는 변경하지 않았다.
+- [x] 후속 요청으로 Ka52 76대를 35개 스테이지에, Eurofighter 21대를 기존 14개 편대에 추가했다. 기존 항목·조건을 보존하고 코어 28개와 실제 캠페인 생성·편대 검사를 통과했다. [배치 결과](reviews/kamov-lux-stage-placement-20261109.md).
+- [x] 이번 배치의 웹49조건 종합 검사와 아이폰 정식 업데이트 설치·저장 보존·타이틀·앱 종료·홈복귀를 기록했다. [결과](reviews/kamov-lux-stage-placement-20261109.md).
 - [ ] 신규 2종의 Android·설치 PWA·Tauri·Apple 앱 및 실기기 검사를 별도로 진행한다. 이번 결과는 로컬·공개 주소의 Chrome headless 웹 검사다.
 - [x] 사용자 지시에 따라 PR #112를 develop `c0744f70`에 병합했다. Apple·코어·문서·보안 CI 통과, 아이폰 정식 설치와 저장 보존을 기록했다.
 - [ ] 신규 2종의 main 릴리스와 나머지 플랫폼 정식 배포는 후속 지시 범위로 남긴다.
@@ -882,3 +883,7 @@ C 기능·API와 탄속·분산·비행 중 경로 보정을 삭제했다. 자�
 - [x] 「나는 이렇게 일을 시켰다」「나는 이렇게 테스트했다」 한·영 집필, README·목차·트러블슈팅·검증·Sass 자료 연결.
 - 사용자 원문은 [집필 자료](editorial/test-method-material-20261107.md)에 보존했다. [작성·검사 기록](evidence/work-test-publication-20261107.md).
 - 실제 게임의 남은 검사와 버그는 기존 TODO를 유지한다. 원고 작성으로 완료 처리하지 않는다.
+
+## iOS 자원 증분 빌드 서명 의존성 — 2026-11-09
+
+- [ ] RuntimeData만 갱신했을 때 Xcode의 상위 앱 재서명이 누락되는 의존성을 조사한다. 이번 배치에서 빌드 성공 뒤 `codesign --verify --deep --strict`가 이전 자원 서명으로 실패했다. Clean Build Folder 후 전체 빌드·서명 검사·실제 업데이트 설치는 통과했다. 사용자 저장은 보존됐다. [발견과 우회 결과](reviews/kamov-lux-stage-placement-20261109.md#아이폰-정식-앱-설치).

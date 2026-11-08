@@ -84,7 +84,8 @@
       "sources": [
         "Sources/Core/GameSession.cpp",
         "Sources/Core/GameData.cpp",
-        "Sources/Core/GlobalInfo.cpp"
+        "Sources/Core/GlobalInfo.cpp",
+        "Tests/UnitAssemblyTests.cpp"
       ],
       "tests": [
         "Tests/GameSessionTests.cpp",
@@ -94,7 +95,8 @@
       "evidence": [
         "docs/current-status.md",
         "docs/stage-journeys.md",
-        "docs/reviews/kamov-eurofighter-implementation-20261109.md"
+        "docs/reviews/kamov-eurofighter-implementation-20261109.md",
+        "docs/reviews/kamov-lux-stage-placement-20261109.md"
       ]
     },
     "input": {
@@ -233,7 +235,8 @@
         "tools/prepare_unit_data*",
         "tools/prepare_unit_images*",
         "Resources/RuntimeData/*",
-        "Resources/RuntimeImages/*"
+        "Resources/RuntimeImages/*",
+        "Tests/UnitAssemblyTests.cpp"
       ],
       "tests": [
         "Tests/CombatTests.cpp",
@@ -254,7 +257,8 @@
         "docs/current-status.md",
         "docs/reviews/new-unit-assets-audit-20261109.md",
         "docs/reviews/new-unit-hotfix-plan-20261109.md",
-        "docs/reviews/kamov-eurofighter-implementation-20261109.md"
+        "docs/reviews/kamov-eurofighter-implementation-20261109.md",
+        "docs/reviews/kamov-lux-stage-placement-20261109.md"
       ]
     },
     "runtime": {
@@ -305,20 +309,27 @@
         "tools/prepare_device_validation.py",
         ".gitignore",
         ".gitattributes",
-        "Resources/**/*"
+        "Resources/**/*",
+        "Tests/UnitAssemblyTests.cpp",
+        "Web/tests/campaign-unit-placement.mjs",
+        "Web/tests/campaign-ground-approach.mjs"
       ],
       "tests": [
         "Tests/iOS/HMFramePerformanceTests.mm",
         "Tests/iOS/HMSaveParityTests.mm",
         "tools/verify_build_resources.py",
         "tools/test_authored_unit_images.py",
-        "Web/tests/kamov-eurofighter-validation.mjs"
+        "Web/tests/kamov-eurofighter-validation.mjs",
+        "Tests/UnitAssemblyTests.cpp",
+        "Web/tests/campaign-unit-placement.mjs",
+        "Web/tests/campaign-ground-approach.mjs"
       ],
       "evidence": [
         "docs/device-validation-ready.md",
         "docs/release-review-20261025.md",
         "docs/physical-self-test-20261025.md",
-        "docs/reviews/kamov-eurofighter-implementation-20261109.md"
+        "docs/reviews/kamov-eurofighter-implementation-20261109.md",
+        "docs/reviews/kamov-lux-stage-placement-20261109.md"
       ]
     },
     "documentation": {
@@ -618,7 +629,9 @@
         "Web/shell.html",
         "Web/tools/package_assets.py",
         "Sources/Core/*",
-        "Sources/iOS/*"
+        "Sources/iOS/*",
+        "Web/tests/campaign-unit-placement.mjs",
+        "Web/tests/campaign-ground-approach.mjs"
       ],
       "tests": [
         "Web/tests/browser-smoke.mjs",
@@ -627,12 +640,15 @@
         "Tests/CoreTests.cpp",
         "Tests/GameSessionTests.cpp",
         "Tests/KeyboardInputTests.cpp",
-        "Web/tests/kamov-eurofighter-validation.mjs"
+        "Web/tests/kamov-eurofighter-validation.mjs",
+        "Web/tests/campaign-unit-placement.mjs",
+        "Web/tests/campaign-ground-approach.mjs"
       ],
       "evidence": [
         "docs/evidence/web-port-20261028.json",
         "docs/current-status.md",
-        "docs/reviews/kamov-eurofighter-implementation-20261109.md"
+        "docs/reviews/kamov-eurofighter-implementation-20261109.md",
+        "docs/reviews/kamov-lux-stage-placement-20261109.md"
       ]
     },
     "desktop": {

@@ -1,0 +1,5378 @@
+{
+  "url": "http://127.0.0.1:8891/",
+  "normalURL": "http://127.0.0.1:8892/",
+  "scope": "Explicit mission/start position only; no forced enemy spawning, no forced hit or boss activation",
+  "ka52": [
+    {
+      "map": "Stage01",
+      "mission": 0,
+      "stage": 0,
+      "ok": true,
+      "expected": 1,
+      "mapSha256": "04b80e406efcc0c3bba403d2d1956b86259e9a331ccac4a5bed5bfcd6ffd62b0",
+      "authoredPositions": [
+        [
+          748.8333129882812,
+          245.5
+        ]
+      ],
+      "fixture": {
+        "x": 778.8333129882812,
+        "y": 80
+      },
+      "actual": [
+        {
+          "id": 13,
+          "name": "Ka52",
+          "x": 748.833313,
+          "y": 245.5,
+          "hp": 300,
+          "hpMax": 300,
+          "removed": false,
+          "bounds": [
+            -20,
+            0,
+            62.6666679,
+            40
+          ]
+        }
+      ],
+      "renderedParts": [
+        {
+          "tile": "Ka52_Body.png",
+          "x": 369.77774,
+          "y": 271.5,
+          "rotation": 0,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Ka52_RotorLower.png",
+          "x": 355.77774,
+          "y": 276.5,
+          "rotation": 0,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 1
+        },
+        {
+          "tile": "Ka52_Missile.png",
+          "x": 373.27774,
+          "y": 261.5,
+          "rotation": 8.74227766e-8,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Ka52_RotorUpper.png",
+          "x": 355.77774,
+          "y": 287.5,
+          "rotation": 0,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 1
+        },
+        {
+          "tile": "Ka52_Cannon.png",
+          "x": 335.77774,
+          "y": 261.5,
+          "rotation": 8.74227766e-8,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        }
+      ],
+      "screenshot": "Stage01-Ka52.png"
+    },
+    {
+      "map": "Stage02",
+      "mission": 0,
+      "stage": 1,
+      "ok": true,
+      "expected": 1,
+      "mapSha256": "2fddd1c040557dc7aefa0a33c6b8867d86f6512d8c19a291f1ab80a0d52cde56",
+      "authoredPositions": [
+        [
+          2295,
+          226.5
+        ]
+      ],
+      "fixture": {
+        "x": 2325,
+        "y": 61
+      },
+      "actual": [
+        {
+          "id": 19,
+          "name": "Ka52",
+          "x": 2295,
+          "y": 226.5,
+          "hp": 300,
+          "hpMax": 300,
+          "removed": false,
+          "bounds": [
+            -20,
+            0,
+            62.6666679,
+            40
+          ]
+        }
+      ],
+      "renderedParts": [
+        {
+          "tile": "Ka52_Body.png",
+          "x": 375.766754,
+          "y": 334.625793,
+          "rotation": -0.0371864289,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Ka52_RotorLower.png",
+          "x": 361.962311,
+          "y": 340.142822,
+          "rotation": -0.0371864289,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Ka52_Missile.png",
+          "x": 378.89151,
+          "y": 324.446808,
+          "rotation": 8.74227766e-8,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Ka52_RotorUpper.png",
+          "x": 362.371246,
+          "y": 351.135193,
+          "rotation": -0.0371864289,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Ka52_Cannon.png",
+          "x": 341.410309,
+          "y": 325.450623,
+          "rotation": 8.74227766e-8,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        }
+      ]
+    },
+    {
+      "map": "Stage03",
+      "mission": 0,
+      "stage": 2,
+      "ok": true,
+      "expected": 1,
+      "mapSha256": "21b7c152519dcb4902b2efd41f6459f31976a5675aa34b9c2388cd7807f3e2f5",
+      "authoredPositions": [
+        [
+          4083.615478515625,
+          382.5
+        ]
+      ],
+      "fixture": {
+        "x": 4113.615478515625,
+        "y": 80
+      },
+      "actual": [
+        {
+          "id": 36,
+          "name": "Ka52",
+          "x": 4083.61548,
+          "y": 382.5,
+          "hp": 300,
+          "hpMax": 300,
+          "removed": false,
+          "bounds": [
+            -20,
+            0,
+            62.6666679,
+            40
+          ]
+        }
+      ],
+      "renderedParts": [
+        {
+          "tile": "Ka52_Body.png",
+          "x": 273.924713,
+          "y": 334.498322,
+          "rotation": -0.0497045964,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Ka52_RotorLower.png",
+          "x": 260.190582,
+          "y": 340.187744,
+          "rotation": -0.0497045964,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 1
+        },
+        {
+          "tile": "Ka52_Missile.png",
+          "x": 276.921783,
+          "y": 324.262268,
+          "rotation": 8.74227766e-8,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Ka52_RotorUpper.png",
+          "x": 260.736969,
+          "y": 351.174164,
+          "rotation": -0.0497045964,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 1
+        },
+        {
+          "tile": "Ka52_Cannon.png",
+          "x": 239.455231,
+          "y": 325.603729,
+          "rotation": 8.74227766e-8,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        }
+      ]
+    },
+    {
+      "map": "Stage04",
+      "mission": 0,
+      "stage": 3,
+      "ok": true,
+      "expected": 1,
+      "mapSha256": "d695a10c827a2273041042f45f1af77c39b7cf3e718391da938346b4624b39fe",
+      "authoredPositions": [
+        [
+          -533.8485107421875,
+          106.5
+        ]
+      ],
+      "fixture": {
+        "x": -503.8485107421875,
+        "y": 78
+      },
+      "actual": [
+        {
+          "id": 4,
+          "name": "Ka52",
+          "x": -533.848511,
+          "y": 106.5,
+          "hp": 300,
+          "hpMax": 300,
+          "removed": false,
+          "bounds": [
+            -20,
+            0,
+            62.6666679,
+            40
+          ]
+        }
+      ],
+      "renderedParts": [
+        {
+          "tile": "Ka52_Body.png",
+          "x": 369.777771,
+          "y": 267.431335,
+          "rotation": 0,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Ka52_RotorLower.png",
+          "x": 355.77774,
+          "y": 272.431335,
+          "rotation": 0,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Ka52_Missile.png",
+          "x": 373.277771,
+          "y": 257.431335,
+          "rotation": 8.74227766e-8,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Ka52_RotorUpper.png",
+          "x": 355.77774,
+          "y": 283.431335,
+          "rotation": 0,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Ka52_Cannon.png",
+          "x": 335.77774,
+          "y": 257.431335,
+          "rotation": 8.74227766e-8,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        }
+      ]
+    },
+    {
+      "map": "Stage05",
+      "mission": 1,
+      "stage": 0,
+      "ok": true,
+      "expected": 6,
+      "mapSha256": "fbbbb15c531ba40b43446101a787ed95c8076c70772ba71bb136a5cacb29a354",
+      "authoredPositions": [
+        [
+          -3090,
+          176.5
+        ],
+        [
+          -2185,
+          122.6826171875
+        ],
+        [
+          -1488.5,
+          233.5
+        ],
+        [
+          35,
+          240.19091796875
+        ],
+        [
+          704.5,
+          163.5
+        ],
+        [
+          1264.4285888671875,
+          214.5
+        ]
+      ],
+      "fixture": {
+        "x": 1294.4285888671875,
+        "y": 49
+      },
+      "actual": [
+        {
+          "id": 67,
+          "name": "Ka52",
+          "x": -3090,
+          "y": 176.5,
+          "hp": 300,
+          "hpMax": 300,
+          "removed": false,
+          "bounds": [
+            -20,
+            0,
+            62.6666679,
+            40
+          ]
+        },
+        {
+          "id": 68,
+          "name": "Ka52",
+          "x": -2185,
+          "y": 122.682617,
+          "hp": 300,
+          "hpMax": 300,
+          "removed": false,
+          "bounds": [
+            -20,
+            0,
+            62.6666679,
+            40
+          ]
+        },
+        {
+          "id": 69,
+          "name": "Ka52",
+          "x": -1488.5,
+          "y": 233.5,
+          "hp": 300,
+          "hpMax": 300,
+          "removed": false,
+          "bounds": [
+            -20,
+            0,
+            62.6666679,
+            40
+          ]
+        },
+        {
+          "id": 70,
+          "name": "Ka52",
+          "x": 35,
+          "y": 240.190918,
+          "hp": 300,
+          "hpMax": 300,
+          "removed": false,
+          "bounds": [
+            -20,
+            0,
+            62.6666679,
+            40
+          ]
+        },
+        {
+          "id": 71,
+          "name": "Ka52",
+          "x": 704.5,
+          "y": 163.5,
+          "hp": 300,
+          "hpMax": 300,
+          "removed": false,
+          "bounds": [
+            -20,
+            0,
+            62.6666679,
+            40
+          ]
+        },
+        {
+          "id": 72,
+          "name": "Ka52",
+          "x": 1264.42859,
+          "y": 214.5,
+          "hp": 300,
+          "hpMax": 300,
+          "removed": false,
+          "bounds": [
+            -20,
+            0,
+            62.6666679,
+            40
+          ]
+        }
+      ],
+      "renderedParts": [
+        {
+          "tile": "Ka52_Body.png",
+          "x": 369.77774,
+          "y": 328.539795,
+          "rotation": 0,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Ka52_RotorLower.png",
+          "x": 355.77774,
+          "y": 333.539795,
+          "rotation": 0,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Ka52_Missile.png",
+          "x": 373.27774,
+          "y": 318.539795,
+          "rotation": 8.74227766e-8,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Ka52_RotorUpper.png",
+          "x": 355.77774,
+          "y": 344.539795,
+          "rotation": 0,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Ka52_Cannon.png",
+          "x": 335.77774,
+          "y": 318.539795,
+          "rotation": 8.74227766e-8,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        }
+      ],
+      "screenshot": "Stage05-Ka52.png"
+    },
+    {
+      "map": "Stage06",
+      "mission": 1,
+      "stage": 1,
+      "ok": true,
+      "expected": 4,
+      "mapSha256": "ef80110b8b9478e0382ee876ae9b6de438afa90be79176f3d7b45f25c02f53b2",
+      "authoredPositions": [
+        [
+          -2927.60009765625,
+          145.5
+        ],
+        [
+          -1517,
+          137.5
+        ],
+        [
+          834.13330078125,
+          213.5
+        ],
+        [
+          1741.5714111328125,
+          244.5
+        ]
+      ],
+      "fixture": {
+        "x": 1771.5714111328125,
+        "y": 79
+      },
+      "actual": [
+        {
+          "id": 56,
+          "name": "Ka52",
+          "x": -2927.6001,
+          "y": 145.5,
+          "hp": 300,
+          "hpMax": 300,
+          "removed": false,
+          "bounds": [
+            -20,
+            0,
+            62.6666679,
+            40
+          ]
+        },
+        {
+          "id": 57,
+          "name": "Ka52",
+          "x": -1517,
+          "y": 137.5,
+          "hp": 300,
+          "hpMax": 300,
+          "removed": false,
+          "bounds": [
+            -20,
+            0,
+            62.6666679,
+            40
+          ]
+        },
+        {
+          "id": 58,
+          "name": "Ka52",
+          "x": 834.133301,
+          "y": 213.5,
+          "hp": 300,
+          "hpMax": 300,
+          "removed": false,
+          "bounds": [
+            -20,
+            0,
+            62.6666679,
+            40
+          ]
+        },
+        {
+          "id": 59,
+          "name": "Ka52",
+          "x": 1741.57141,
+          "y": 244.5,
+          "hp": 300,
+          "hpMax": 300,
+          "removed": false,
+          "bounds": [
+            -20,
+            0,
+            62.6666679,
+            40
+          ]
+        }
+      ],
+      "renderedParts": [
+        {
+          "tile": "Ka52_Body.png",
+          "x": 369.77774,
+          "y": 208.5,
+          "rotation": 0,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Ka52_RotorLower.png",
+          "x": 355.77774,
+          "y": 213.5,
+          "rotation": 0,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Ka52_Missile.png",
+          "x": 373.27774,
+          "y": 198.5,
+          "rotation": 8.74227766e-8,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Ka52_RotorUpper.png",
+          "x": 355.77774,
+          "y": 224.5,
+          "rotation": 0,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Ka52_Cannon.png",
+          "x": 335.77774,
+          "y": 198.5,
+          "rotation": 8.74227766e-8,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        }
+      ]
+    },
+    {
+      "map": "Stage07",
+      "mission": 1,
+      "stage": 2,
+      "ok": true,
+      "expected": 5,
+      "mapSha256": "c3af86871eb61503d2ff6270f2d12f4c272b1f765bebb727997302e94111601d",
+      "authoredPositions": [
+        [
+          -2771.428466796875,
+          117.5703125
+        ],
+        [
+          -770.1666870117188,
+          113.98193359375
+        ],
+        [
+          1279.3477783203125,
+          129
+        ],
+        [
+          1757.2940673828125,
+          143.27099609375
+        ],
+        [
+          2427.800048828125,
+          166
+        ]
+      ],
+      "fixture": {
+        "x": 2457.800048828125,
+        "y": 0.5
+      },
+      "actual": [
+        {
+          "id": 67,
+          "name": "Ka52",
+          "x": -2771.42847,
+          "y": 117.570312,
+          "hp": 300,
+          "hpMax": 300,
+          "removed": false,
+          "bounds": [
+            -20,
+            0,
+            62.6666679,
+            40
+          ]
+        },
+        {
+          "id": 68,
+          "name": "Ka52",
+          "x": -770.166687,
+          "y": 113.981934,
+          "hp": 300,
+          "hpMax": 300,
+          "removed": false,
+          "bounds": [
+            -20,
+            0,
+            62.6666679,
+            40
+          ]
+        },
+        {
+          "id": 69,
+          "name": "Ka52",
+          "x": 1279.34778,
+          "y": 129,
+          "hp": 300,
+          "hpMax": 300,
+          "removed": false,
+          "bounds": [
+            -20,
+            0,
+            62.6666679,
+            40
+          ]
+        },
+        {
+          "id": 70,
+          "name": "Ka52",
+          "x": 1757.29407,
+          "y": 143.270996,
+          "hp": 300,
+          "hpMax": 300,
+          "removed": false,
+          "bounds": [
+            -20,
+            0,
+            62.6666679,
+            40
+          ]
+        },
+        {
+          "id": 71,
+          "name": "Ka52",
+          "x": 2427.80005,
+          "y": 166,
+          "hp": 300,
+          "hpMax": 300,
+          "removed": false,
+          "bounds": [
+            -20,
+            0,
+            62.6666679,
+            40
+          ]
+        }
+      ],
+      "renderedParts": [
+        {
+          "tile": "Ka52_Body.png",
+          "x": 369.77774,
+          "y": 220.098297,
+          "rotation": 0,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Ka52_RotorLower.png",
+          "x": 355.77774,
+          "y": 225.098297,
+          "rotation": 0,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Ka52_Missile.png",
+          "x": 373.27774,
+          "y": 210.098297,
+          "rotation": 8.74227766e-8,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Ka52_RotorUpper.png",
+          "x": 355.77774,
+          "y": 236.098297,
+          "rotation": 0,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Ka52_Cannon.png",
+          "x": 335.77774,
+          "y": 210.098297,
+          "rotation": 8.74227766e-8,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        }
+      ]
+    },
+    {
+      "map": "Stage08",
+      "mission": 1,
+      "stage": 3,
+      "ok": true,
+      "expected": 1,
+      "mapSha256": "bc0ae0f7a6f8b4af86937ab26b13e1e798e743f1f813595de16d1c0413c5eed2",
+      "authoredPositions": [
+        [
+          -609.75,
+          289.34912109375
+        ]
+      ],
+      "fixture": {
+        "x": -579.75,
+        "y": 123.82065217391305
+      },
+      "actual": [
+        {
+          "id": 30,
+          "name": "Ka52",
+          "x": -609.75,
+          "y": 289.349121,
+          "hp": 300,
+          "hpMax": 300,
+          "removed": false,
+          "bounds": [
+            -20,
+            0,
+            62.6666679,
+            40
+          ]
+        }
+      ],
+      "renderedParts": [
+        {
+          "tile": "Ka52_Body.png",
+          "x": 369.77774,
+          "y": 324.49469,
+          "rotation": 0,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Ka52_RotorLower.png",
+          "x": 355.77774,
+          "y": 329.49469,
+          "rotation": 0,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Ka52_Missile.png",
+          "x": 373.27774,
+          "y": 314.49469,
+          "rotation": 8.74227766e-8,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Ka52_RotorUpper.png",
+          "x": 355.77774,
+          "y": 340.49469,
+          "rotation": 0,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Ka52_Cannon.png",
+          "x": 335.77774,
+          "y": 314.49469,
+          "rotation": 8.74227766e-8,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        }
+      ]
+    },
+    {
+      "map": "Stage09",
+      "mission": 1,
+      "stage": 4,
+      "ok": true,
+      "expected": 1,
+      "mapSha256": "412e062fcb311026c4d2ee1beb5af03c84bd8c2822b672abd12a6b17a1637427",
+      "authoredPositions": [
+        [
+          -2806.3447265625,
+          111.55322265625
+        ]
+      ],
+      "fixture": {
+        "x": -2776.3447265625,
+        "y": -53.92286285223989
+      },
+      "actual": [
+        {
+          "id": 6,
+          "name": "Ka52",
+          "x": -2806.34473,
+          "y": 111.553223,
+          "hp": 300,
+          "hpMax": 300,
+          "removed": false,
+          "bounds": [
+            -20,
+            0,
+            62.6666679,
+            40
+          ]
+        }
+      ],
+      "renderedParts": [
+        {
+          "tile": "Ka52_Body.png",
+          "x": 360.766266,
+          "y": 264.967194,
+          "rotation": 0,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Ka52_RotorLower.png",
+          "x": 346.766266,
+          "y": 269.967194,
+          "rotation": 0,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 1
+        },
+        {
+          "tile": "Ka52_Missile.png",
+          "x": 364.266266,
+          "y": 254.967194,
+          "rotation": 8.74227766e-8,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Ka52_RotorUpper.png",
+          "x": 346.766266,
+          "y": 280.967194,
+          "rotation": 0,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 1
+        },
+        {
+          "tile": "Ka52_Cannon.png",
+          "x": 326.766266,
+          "y": 254.967194,
+          "rotation": 8.74227766e-8,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        }
+      ]
+    },
+    {
+      "map": "Stage10",
+      "mission": 2,
+      "stage": 0,
+      "ok": true,
+      "expected": 1,
+      "mapSha256": "311474a574d80170b005baea6acb021deb278ec29964ae3af94f80f359f00db2",
+      "authoredPositions": [
+        [
+          1629.064453125,
+          162.5009765625
+        ]
+      ],
+      "fixture": {
+        "x": 1659.064453125,
+        "y": -2.7705647786458343
+      },
+      "actual": [
+        {
+          "id": 20,
+          "name": "Ka52",
+          "x": 1629.06445,
+          "y": 162.500977,
+          "hp": 300,
+          "hpMax": 300,
+          "removed": false,
+          "bounds": [
+            -20,
+            0,
+            62.6666679,
+            40
+          ]
+        }
+      ],
+      "renderedParts": [
+        {
+          "tile": "Ka52_Body.png",
+          "x": 369.77774,
+          "y": 249.040802,
+          "rotation": 0,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Ka52_RotorLower.png",
+          "x": 355.77774,
+          "y": 254.040802,
+          "rotation": 0,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 1
+        },
+        {
+          "tile": "Ka52_Missile.png",
+          "x": 373.27774,
+          "y": 239.040802,
+          "rotation": 8.74227766e-8,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Ka52_RotorUpper.png",
+          "x": 355.77774,
+          "y": 265.040802,
+          "rotation": 0,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 1
+        },
+        {
+          "tile": "Ka52_Cannon.png",
+          "x": 335.77774,
+          "y": 239.040802,
+          "rotation": 8.74227766e-8,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        }
+      ],
+      "screenshot": "Stage10-Ka52.png"
+    },
+    {
+      "map": "Stage11",
+      "mission": 2,
+      "stage": 1,
+      "ok": true,
+      "expected": 1,
+      "mapSha256": "8d70e3f86d9010f8142b0afc44958735cb59043579dfcc919069e1edf0fef245",
+      "authoredPositions": [
+        [
+          1616.4166259765625,
+          217.5
+        ]
+      ],
+      "fixture": {
+        "x": 1646.4166259765625,
+        "y": 39.83392835643193
+      },
+      "actual": [
+        {
+          "id": 23,
+          "name": "Ka52",
+          "x": 1616.41663,
+          "y": 217.5,
+          "hp": 300,
+          "hpMax": 300,
+          "removed": false,
+          "bounds": [
+            -20,
+            0,
+            62.6666679,
+            40
+          ]
+        }
+      ],
+      "renderedParts": [
+        {
+          "tile": "Ka52_Body.png",
+          "x": 369.77774,
+          "y": 271.5,
+          "rotation": 0,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Ka52_RotorLower.png",
+          "x": 355.77774,
+          "y": 276.5,
+          "rotation": 0,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Ka52_Missile.png",
+          "x": 373.27774,
+          "y": 261.5,
+          "rotation": 8.74227766e-8,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Ka52_RotorUpper.png",
+          "x": 355.77774,
+          "y": 287.5,
+          "rotation": 0,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Ka52_Cannon.png",
+          "x": 335.77774,
+          "y": 261.5,
+          "rotation": 8.74227766e-8,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        }
+      ]
+    },
+    {
+      "map": "Stage12",
+      "mission": 2,
+      "stage": 2,
+      "ok": true,
+      "expected": 1,
+      "mapSha256": "31f27f2b751a0b1b5a0aa2a2c4d66c19497f4890b44593f39cb9147d0470d541",
+      "authoredPositions": [
+        [
+          874.4375,
+          141.5
+        ]
+      ],
+      "fixture": {
+        "x": 904.4375,
+        "y": -24
+      },
+      "actual": [
+        {
+          "id": 15,
+          "name": "Ka52",
+          "x": 874.4375,
+          "y": 141.5,
+          "hp": 300,
+          "hpMax": 300,
+          "removed": false,
+          "bounds": [
+            -20,
+            0,
+            62.6666679,
+            40
+          ]
+        }
+      ],
+      "renderedParts": [
+        {
+          "tile": "Ka52_Body.png",
+          "x": 343.117889,
+          "y": 335.620941,
+          "rotation": 0.00119420118,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Ka52_RotorLower.png",
+          "x": 329.111908,
+          "y": 340.604218,
+          "rotation": 0.00119420118,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Ka52_Missile.png",
+          "x": 346.629852,
+          "y": 325.626923,
+          "rotation": 8.74227766e-8,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Ka52_RotorUpper.png",
+          "x": 329.098785,
+          "y": 351.604218,
+          "rotation": 0.00119420118,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Ka52_Cannon.png",
+          "x": 309.129852,
+          "y": 325.594666,
+          "rotation": 8.74227766e-8,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        }
+      ]
+    },
+    {
+      "map": "Stage13",
+      "mission": 2,
+      "stage": 3,
+      "ok": false,
+      "expected": 1,
+      "mapSha256": "c70213d892f0af9960c4cd9e3dd17891a6e21766dc6e29f8000e949095a21190",
+      "authoredPositions": [
+        [
+          2613.428466796875,
+          218
+        ]
+      ],
+      "fixture": {
+        "x": 2643.428466796875,
+        "y": 52.5
+      },
+      "actual": [
+        {
+          "id": 24,
+          "name": "Ka52",
+          "x": 2613.42847,
+          "y": 218,
+          "hp": 300,
+          "hpMax": 300,
+          "removed": false,
+          "bounds": [
+            -20,
+            0,
+            62.6666679,
+            40
+          ]
+        }
+      ],
+      "error": "Error: Runtime observation timed out: {\"screen\":\"game\",\"time\":34.8333,\"canvas\":[533.333,320],\"loading\":0,\"mission\":2,\"stage\":3,\"playerX\":2393.42,\"playerY\":12.2,\"hp\":840,\"enemies\":21,\"bullets\":0,\"paused\":0,\"gameState\":0,\"decodes\":298,\"loadError\":0,\"aimMode\":1,\"aimTarget\":0,\"inputBlocked\":0,\"keyboardFire\":0,\"gameMenu\":0,\"resumeRequired\":0,\"active\":1,\"keyboardAimX\":0,\"callbackInterval\":0.0541,\"ticksPerCallback\":3,\"motion\":0,\"tilt\":[0,0,-1],\"hudEditing\":0,\"hudCustomized\":0,\"hudFallback\":0,\"hudSelected\":2,\"hudDraftCustomized\":0,\"orientationHold\":0}"
+    },
+    {
+      "map": "Stage14",
+      "mission": 2,
+      "stage": 4,
+      "ok": true,
+      "expected": 1,
+      "mapSha256": "6dc592552f64a6ee56adf8e36c00e419641bc37e02b70435cc03cd3b886ec1a3",
+      "authoredPositions": [
+        [
+          421.5172424316406,
+          114.5
+        ]
+      ],
+      "fixture": {
+        "x": 451.5172424316406,
+        "y": -47.977752685546875
+      },
+      "actual": [
+        {
+          "id": 5,
+          "name": "Ka52",
+          "x": 421.517242,
+          "y": 114.5,
+          "hp": 300,
+          "hpMax": 300,
+          "removed": false,
+          "bounds": [
+            -20,
+            0,
+            62.6666679,
+            40
+          ]
+        }
+      ],
+      "renderedParts": [
+        {
+          "tile": "Ka52_Body.png",
+          "x": 369.777771,
+          "y": 289.5,
+          "rotation": 0,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Ka52_RotorLower.png",
+          "x": 355.777771,
+          "y": 294.5,
+          "rotation": 0,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Ka52_Missile.png",
+          "x": 373.277771,
+          "y": 279.5,
+          "rotation": 8.74227766e-8,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Ka52_RotorUpper.png",
+          "x": 355.777771,
+          "y": 305.5,
+          "rotation": 0,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Ka52_Cannon.png",
+          "x": 335.777771,
+          "y": 279.5,
+          "rotation": 8.74227766e-8,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        }
+      ]
+    },
+    {
+      "map": "Stage25",
+      "mission": 3,
+      "stage": 0,
+      "ok": false,
+      "expected": 3,
+      "mapSha256": "f7c2a60d492a7081aea135156b48e59bc8be0a5b2dc0913b6c57ea27a3f988f7",
+      "authoredPositions": [
+        [
+          1742.6842041015625,
+          190.24267578125
+        ],
+        [
+          3961.5,
+          166.91162109375
+        ],
+        [
+          6062.5556640625,
+          162
+        ]
+      ],
+      "fixture": {
+        "x": 6092.5556640625,
+        "y": -3.5
+      },
+      "actual": [
+        {
+          "id": 46,
+          "name": "Ka52",
+          "x": 1742.6842,
+          "y": 190.242676,
+          "hp": 300,
+          "hpMax": 300,
+          "removed": false,
+          "bounds": [
+            -20,
+            0,
+            62.6666679,
+            40
+          ]
+        },
+        {
+          "id": 47,
+          "name": "Ka52",
+          "x": 3961.5,
+          "y": 166.911621,
+          "hp": 300,
+          "hpMax": 300,
+          "removed": false,
+          "bounds": [
+            -20,
+            0,
+            62.6666679,
+            40
+          ]
+        },
+        {
+          "id": 48,
+          "name": "Ka52",
+          "x": 6062.55566,
+          "y": 162,
+          "hp": 300,
+          "hpMax": 300,
+          "removed": false,
+          "bounds": [
+            -20,
+            0,
+            62.6666679,
+            40
+          ]
+        }
+      ],
+      "error": "Error: Runtime observation timed out: {\"screen\":\"game\",\"time\":42.7,\"canvas\":[533.333,320],\"loading\":0,\"mission\":3,\"stage\":0,\"playerX\":1521.98,\"playerY\":-21.87,\"hp\":840,\"enemies\":12,\"bullets\":0,\"paused\":0,\"gameState\":0,\"decodes\":327,\"loadError\":0,\"aimMode\":1,\"aimTarget\":0,\"inputBlocked\":0,\"keyboardFire\":0,\"gameMenu\":0,\"resumeRequired\":0,\"active\":1,\"keyboardAimX\":0,\"callbackInterval\":0.0166,\"ticksPerCallback\":1,\"motion\":0,\"tilt\":[0,0,-1],\"hudEditing\":0,\"hudCustomized\":0,\"hudFallback\":0,\"hudSelected\":2,\"hudDraftCustomized\":0,\"orientationHold\":0}"
+    },
+    {
+      "map": "Stage26",
+      "mission": 3,
+      "stage": 1,
+      "ok": true,
+      "expected": 5,
+      "mapSha256": "8d0917b95327800c7e3fdf5db7a6ebc32c604b97b5761e12827c6373d9380e54",
+      "authoredPositions": [
+        [
+          2658.076904296875,
+          191.25
+        ],
+        [
+          3852.25,
+          121.41748046875
+        ],
+        [
+          4406.71435546875,
+          146.13818359375
+        ],
+        [
+          5310.85693359375,
+          237.22119140625
+        ],
+        [
+          6107.9091796875,
+          187.25
+        ]
+      ],
+      "fixture": {
+        "x": 6137.9091796875,
+        "y": 92.00608565167683
+      },
+      "actual": [
+        {
+          "id": 53,
+          "name": "Ka52",
+          "x": 2658.0769,
+          "y": 191.25,
+          "hp": 300,
+          "hpMax": 300,
+          "removed": false,
+          "bounds": [
+            -20,
+            0,
+            62.6666679,
+            40
+          ]
+        },
+        {
+          "id": 54,
+          "name": "Ka52",
+          "x": 3852.25,
+          "y": 121.41748,
+          "hp": 300,
+          "hpMax": 300,
+          "removed": false,
+          "bounds": [
+            -20,
+            0,
+            62.6666679,
+            40
+          ]
+        },
+        {
+          "id": 55,
+          "name": "Ka52",
+          "x": 4406.71436,
+          "y": 146.138184,
+          "hp": 300,
+          "hpMax": 300,
+          "removed": false,
+          "bounds": [
+            -20,
+            0,
+            62.6666679,
+            40
+          ]
+        },
+        {
+          "id": 56,
+          "name": "Ka52",
+          "x": 5310.85693,
+          "y": 237.221191,
+          "hp": 300,
+          "hpMax": 300,
+          "removed": false,
+          "bounds": [
+            -20,
+            0,
+            62.6666679,
+            40
+          ]
+        },
+        {
+          "id": 57,
+          "name": "Ka52",
+          "x": 6107.90918,
+          "y": 187.25,
+          "hp": 300,
+          "hpMax": 300,
+          "removed": false,
+          "bounds": [
+            -20,
+            0,
+            62.6666679,
+            40
+          ]
+        }
+      ],
+      "renderedParts": [
+        {
+          "tile": "Ka52_Body.png",
+          "x": 369.77774,
+          "y": 288.243286,
+          "rotation": 0,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Ka52_RotorLower.png",
+          "x": 355.77774,
+          "y": 293.243286,
+          "rotation": 0,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Ka52_Missile.png",
+          "x": 373.27774,
+          "y": 278.243286,
+          "rotation": 8.74227766e-8,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Ka52_RotorUpper.png",
+          "x": 355.77774,
+          "y": 304.243286,
+          "rotation": 0,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Ka52_Cannon.png",
+          "x": 335.77774,
+          "y": 278.243286,
+          "rotation": 8.74227766e-8,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        }
+      ]
+    },
+    {
+      "map": "Stage27",
+      "mission": 3,
+      "stage": 2,
+      "ok": true,
+      "expected": 2,
+      "mapSha256": "47e5dd8e4f30fcf2bc60d2fbaa2cfea31564234cf72728147789b74b987bc58c",
+      "authoredPositions": [
+        [
+          1886.6666259765625,
+          261.375
+        ],
+        [
+          3495,
+          187.375
+        ]
+      ],
+      "fixture": {
+        "x": 3525,
+        "y": 21.982142857142858
+      },
+      "actual": [
+        {
+          "id": 30,
+          "name": "Ka52",
+          "x": 1886.66663,
+          "y": 261.375,
+          "hp": 300,
+          "hpMax": 300,
+          "removed": false,
+          "bounds": [
+            -20,
+            0,
+            62.6666679,
+            40
+          ]
+        },
+        {
+          "id": 31,
+          "name": "Ka52",
+          "x": 3495,
+          "y": 187.375,
+          "hp": 300,
+          "hpMax": 300,
+          "removed": false,
+          "bounds": [
+            -20,
+            0,
+            62.6666679,
+            40
+          ]
+        }
+      ],
+      "renderedParts": [
+        {
+          "tile": "Ka52_Body.png",
+          "x": 369.77774,
+          "y": 274.033356,
+          "rotation": 0,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Ka52_RotorLower.png",
+          "x": 355.77774,
+          "y": 279.033356,
+          "rotation": 0,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Ka52_Missile.png",
+          "x": 373.27774,
+          "y": 264.033356,
+          "rotation": 8.74227766e-8,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Ka52_RotorUpper.png",
+          "x": 355.77774,
+          "y": 290.033356,
+          "rotation": 0,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Ka52_Cannon.png",
+          "x": 335.77774,
+          "y": 264.033356,
+          "rotation": 8.74227766e-8,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        }
+      ]
+    },
+    {
+      "map": "Stage28",
+      "mission": 3,
+      "stage": 3,
+      "ok": true,
+      "expected": 2,
+      "mapSha256": "396d9a000b3df9ca01e4af6046e441822c5fff0d04e9cb49f00dda1ba4f9efcf",
+      "authoredPositions": [
+        [
+          1311.4285888671875,
+          -3.5078125
+        ],
+        [
+          2873.571533203125,
+          90.52734375
+        ]
+      ],
+      "fixture": {
+        "x": 2903.571533203125,
+        "y": -61.424323586856616
+      },
+      "actual": [
+        {
+          "id": 32,
+          "name": "Ka52",
+          "x": 1311.42859,
+          "y": -3.5078125,
+          "hp": 300,
+          "hpMax": 300,
+          "removed": false,
+          "bounds": [
+            -20,
+            0,
+            62.6666679,
+            40
+          ]
+        },
+        {
+          "id": 33,
+          "name": "Ka52",
+          "x": 2873.57153,
+          "y": 90.5273438,
+          "hp": 300,
+          "hpMax": 300,
+          "removed": false,
+          "bounds": [
+            -20,
+            0,
+            62.6666679,
+            40
+          ]
+        }
+      ],
+      "renderedParts": [
+        {
+          "tile": "Ka52_Body.png",
+          "x": 369.77774,
+          "y": 175.278015,
+          "rotation": 0,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Ka52_RotorLower.png",
+          "x": 355.77774,
+          "y": 180.278015,
+          "rotation": 0,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Ka52_Missile.png",
+          "x": 373.27774,
+          "y": 165.278015,
+          "rotation": 8.74227766e-8,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Ka52_RotorUpper.png",
+          "x": 355.77774,
+          "y": 191.278015,
+          "rotation": 0,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Ka52_Cannon.png",
+          "x": 335.77774,
+          "y": 165.278015,
+          "rotation": 8.74227766e-8,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        }
+      ]
+    },
+    {
+      "map": "Stage29",
+      "mission": 3,
+      "stage": 4,
+      "ok": true,
+      "expected": 1,
+      "mapSha256": "2113608d346857d9f1ed1780f535bd2cf32f613ca06a7c917496df592d6a5e46",
+      "authoredPositions": [
+        [
+          1061.5,
+          219.6103515625
+        ]
+      ],
+      "fixture": {
+        "x": 1091.5,
+        "y": 52.3051948051948
+      },
+      "actual": [
+        {
+          "id": 7,
+          "name": "Ka52",
+          "x": 1061.5,
+          "y": 219.610352,
+          "hp": 300,
+          "hpMax": 300,
+          "removed": false,
+          "bounds": [
+            -20,
+            0,
+            62.6666679,
+            40
+          ]
+        }
+      ],
+      "renderedParts": [
+        {
+          "tile": "Ka52_Body.png",
+          "x": 235.611115,
+          "y": 247.796341,
+          "rotation": 0,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Ka52_RotorLower.png",
+          "x": 221.611115,
+          "y": 252.796341,
+          "rotation": 0,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Ka52_Missile.png",
+          "x": 239.111115,
+          "y": 237.796341,
+          "rotation": 8.74227766e-8,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Ka52_RotorUpper.png",
+          "x": 221.611115,
+          "y": 263.796326,
+          "rotation": 0,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Ka52_Cannon.png",
+          "x": 201.611115,
+          "y": 237.796341,
+          "rotation": 8.74227766e-8,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        }
+      ]
+    },
+    {
+      "map": "Stage15",
+      "mission": 4,
+      "stage": 0,
+      "ok": true,
+      "expected": 2,
+      "mapSha256": "99e0511619d53d8a4e48c3fc53658a03230120118cd2fbbc0fa455b4947b45e8",
+      "authoredPositions": [
+        [
+          2252,
+          199.2802734375
+        ],
+        [
+          5459.1796875,
+          204.5
+        ]
+      ],
+      "fixture": {
+        "x": 5489.1796875,
+        "y": 39
+      },
+      "actual": [
+        {
+          "id": 43,
+          "name": "Ka52",
+          "x": 2252,
+          "y": 199.280273,
+          "hp": 300,
+          "hpMax": 300,
+          "removed": false,
+          "bounds": [
+            -20,
+            0,
+            62.6666679,
+            40
+          ]
+        },
+        {
+          "id": 44,
+          "name": "Ka52",
+          "x": 5459.17969,
+          "y": 204.5,
+          "hp": 300,
+          "hpMax": 300,
+          "removed": false,
+          "bounds": [
+            -20,
+            0,
+            62.6666679,
+            40
+          ]
+        }
+      ],
+      "renderedParts": [
+        {
+          "tile": "Ka52_Body.png",
+          "x": 369.77774,
+          "y": 259.30899,
+          "rotation": 0,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Ka52_RotorLower.png",
+          "x": 355.77774,
+          "y": 264.30899,
+          "rotation": 0,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Ka52_Missile.png",
+          "x": 373.27774,
+          "y": 249.30899,
+          "rotation": 8.74227766e-8,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Ka52_RotorUpper.png",
+          "x": 355.77774,
+          "y": 275.30899,
+          "rotation": 0,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Ka52_Cannon.png",
+          "x": 335.77774,
+          "y": 249.30899,
+          "rotation": 8.74227766e-8,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        }
+      ],
+      "screenshot": "Stage15-Ka52.png"
+    },
+    {
+      "map": "Stage16",
+      "mission": 4,
+      "stage": 1,
+      "ok": true,
+      "expected": 4,
+      "mapSha256": "51eb2f57a201a7ff52e0191b3b6d2893e9a937497d1486a0273fcaae16df38de",
+      "authoredPositions": [
+        [
+          835.5,
+          182.41259765625
+        ],
+        [
+          1996.22216796875,
+          154
+        ],
+        [
+          4046.71435546875,
+          196.6884765625
+        ],
+        [
+          5170.39990234375,
+          195
+        ]
+      ],
+      "fixture": {
+        "x": 5200.39990234375,
+        "y": 29.5
+      },
+      "actual": [
+        {
+          "id": 57,
+          "name": "Ka52",
+          "x": 835.5,
+          "y": 182.412598,
+          "hp": 300,
+          "hpMax": 300,
+          "removed": false,
+          "bounds": [
+            -20,
+            0,
+            62.6666679,
+            40
+          ]
+        },
+        {
+          "id": 58,
+          "name": "Ka52",
+          "x": 1996.22217,
+          "y": 154,
+          "hp": 300,
+          "hpMax": 300,
+          "removed": false,
+          "bounds": [
+            -20,
+            0,
+            62.6666679,
+            40
+          ]
+        },
+        {
+          "id": 59,
+          "name": "Ka52",
+          "x": 4046.71436,
+          "y": 196.688477,
+          "hp": 300,
+          "hpMax": 300,
+          "removed": false,
+          "bounds": [
+            -20,
+            0,
+            62.6666679,
+            40
+          ]
+        },
+        {
+          "id": 60,
+          "name": "Ka52",
+          "x": 5170.3999,
+          "y": 195,
+          "hp": 300,
+          "hpMax": 300,
+          "removed": false,
+          "bounds": [
+            -20,
+            0,
+            62.6666679,
+            40
+          ]
+        }
+      ],
+      "renderedParts": [
+        {
+          "tile": "Ka52_Body.png",
+          "x": 369.77774,
+          "y": 271.22522,
+          "rotation": 0,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Ka52_RotorLower.png",
+          "x": 355.77774,
+          "y": 276.22522,
+          "rotation": 0,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Ka52_Missile.png",
+          "x": 373.27774,
+          "y": 261.22522,
+          "rotation": 8.74227766e-8,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Ka52_RotorUpper.png",
+          "x": 355.77774,
+          "y": 287.22522,
+          "rotation": 0,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Ka52_Cannon.png",
+          "x": 335.77774,
+          "y": 261.22522,
+          "rotation": 8.74227766e-8,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        }
+      ]
+    },
+    {
+      "map": "Stage17",
+      "mission": 4,
+      "stage": 2,
+      "ok": true,
+      "expected": 3,
+      "mapSha256": "6664748abe37f13335902bde0d9ab6d9aff9d4c56f0fcd23e049d247459d41eb",
+      "authoredPositions": [
+        [
+          918.1333618164062,
+          119.09521484375
+        ],
+        [
+          2386.333251953125,
+          142.619140625
+        ],
+        [
+          5028.75,
+          250
+        ]
+      ],
+      "fixture": {
+        "x": 5058.75,
+        "y": 84.5
+      },
+      "actual": [
+        {
+          "id": 50,
+          "name": "Ka52",
+          "x": 918.133362,
+          "y": 119.095215,
+          "hp": 300,
+          "hpMax": 300,
+          "removed": false,
+          "bounds": [
+            -20,
+            0,
+            62.6666679,
+            40
+          ]
+        },
+        {
+          "id": 51,
+          "name": "Ka52",
+          "x": 2386.33325,
+          "y": 142.619141,
+          "hp": 300,
+          "hpMax": 300,
+          "removed": false,
+          "bounds": [
+            -20,
+            0,
+            62.6666679,
+            40
+          ]
+        },
+        {
+          "id": 52,
+          "name": "Ka52",
+          "x": 5028.75,
+          "y": 250,
+          "hp": 300,
+          "hpMax": 300,
+          "removed": false,
+          "bounds": [
+            -20,
+            0,
+            62.6666679,
+            40
+          ]
+        }
+      ],
+      "renderedParts": [
+        {
+          "tile": "Ka52_Body.png",
+          "x": 369.77774,
+          "y": 132.741196,
+          "rotation": 0,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Ka52_RotorLower.png",
+          "x": 355.77774,
+          "y": 137.741196,
+          "rotation": 0,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 1
+        },
+        {
+          "tile": "Ka52_Missile.png",
+          "x": 373.27774,
+          "y": 122.741196,
+          "rotation": 8.74227766e-8,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Ka52_RotorUpper.png",
+          "x": 355.77774,
+          "y": 148.741196,
+          "rotation": 0,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 1
+        },
+        {
+          "tile": "Ka52_Cannon.png",
+          "x": 335.77774,
+          "y": 122.741196,
+          "rotation": 8.74227766e-8,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        }
+      ]
+    },
+    {
+      "map": "Stage18",
+      "mission": 4,
+      "stage": 3,
+      "ok": true,
+      "expected": 4,
+      "mapSha256": "6abdc7b90fba0ae0245f55014f3f978ca3e8270375a64c0f7fdd1ecb0be60a5d",
+      "authoredPositions": [
+        [
+          579,
+          317
+        ],
+        [
+          1352.0833740234375,
+          129
+        ],
+        [
+          2619.5,
+          295
+        ],
+        [
+          3299,
+          189
+        ]
+      ],
+      "fixture": {
+        "x": 3329,
+        "y": 23.5
+      },
+      "actual": [
+        {
+          "id": 37,
+          "name": "Ka52",
+          "x": 579,
+          "y": 317,
+          "hp": 300,
+          "hpMax": 300,
+          "removed": false,
+          "bounds": [
+            -20,
+            0,
+            62.6666679,
+            40
+          ]
+        },
+        {
+          "id": 38,
+          "name": "Ka52",
+          "x": 1352.08337,
+          "y": 129,
+          "hp": 300,
+          "hpMax": 300,
+          "removed": false,
+          "bounds": [
+            -20,
+            0,
+            62.6666679,
+            40
+          ]
+        },
+        {
+          "id": 39,
+          "name": "Ka52",
+          "x": 2619.5,
+          "y": 295,
+          "hp": 300,
+          "hpMax": 300,
+          "removed": false,
+          "bounds": [
+            -20,
+            0,
+            62.6666679,
+            40
+          ]
+        },
+        {
+          "id": 40,
+          "name": "Ka52",
+          "x": 3299,
+          "y": 189,
+          "hp": 300,
+          "hpMax": 300,
+          "removed": false,
+          "bounds": [
+            -20,
+            0,
+            62.6666679,
+            40
+          ]
+        }
+      ],
+      "renderedParts": [
+        {
+          "tile": "Ka52_Body.png",
+          "x": 369.77774,
+          "y": 319.645996,
+          "rotation": 0,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Ka52_RotorLower.png",
+          "x": 355.77774,
+          "y": 324.645996,
+          "rotation": 0,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 1
+        },
+        {
+          "tile": "Ka52_Missile.png",
+          "x": 373.27774,
+          "y": 309.645996,
+          "rotation": 8.74227766e-8,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Ka52_RotorUpper.png",
+          "x": 355.77774,
+          "y": 335.645996,
+          "rotation": 0,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 1
+        },
+        {
+          "tile": "Ka52_Cannon.png",
+          "x": 335.77774,
+          "y": 309.645996,
+          "rotation": 8.74227766e-8,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        }
+      ]
+    },
+    {
+      "map": "Stage19",
+      "mission": 4,
+      "stage": 4,
+      "ok": true,
+      "expected": 2,
+      "mapSha256": "8d4c26460b626ad5c392f25681f345ddeae8d088ef64c04bcb240508737984ff",
+      "authoredPositions": [
+        [
+          -60.74285888671875,
+          206.44775390625
+        ],
+        [
+          414.5714416503906,
+          207.6826171875
+        ]
+      ],
+      "fixture": {
+        "x": 444.5714416503906,
+        "y": 42.30179145951261
+      },
+      "actual": [
+        {
+          "id": 6,
+          "name": "Ka52",
+          "x": -60.7428589,
+          "y": 206.447754,
+          "hp": 300,
+          "hpMax": 300,
+          "removed": false,
+          "bounds": [
+            -20,
+            0,
+            62.6666679,
+            40
+          ]
+        },
+        {
+          "id": 17,
+          "name": "Ka52",
+          "x": 414.571442,
+          "y": 207.682617,
+          "hp": 300,
+          "hpMax": 300,
+          "removed": false,
+          "bounds": [
+            -20,
+            0,
+            62.6666679,
+            40
+          ]
+        }
+      ],
+      "renderedParts": [
+        {
+          "tile": "Ka52_Body.png",
+          "x": 282.368256,
+          "y": 272.037628,
+          "rotation": 0,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Ka52_RotorLower.png",
+          "x": 268.368256,
+          "y": 277.037628,
+          "rotation": 0,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 1
+        },
+        {
+          "tile": "Ka52_Missile.png",
+          "x": 285.868256,
+          "y": 262.037628,
+          "rotation": 8.74227766e-8,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Ka52_RotorUpper.png",
+          "x": 268.368256,
+          "y": 288.037628,
+          "rotation": 0,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 1
+        },
+        {
+          "tile": "Ka52_Cannon.png",
+          "x": 248.368256,
+          "y": 262.037628,
+          "rotation": 8.74227766e-8,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        }
+      ]
+    },
+    {
+      "map": "Stage20",
+      "mission": 5,
+      "stage": 0,
+      "ok": true,
+      "expected": 2,
+      "mapSha256": "d645b24cb4d4c6dfd920389388c03c19220a421035eaca2a8d5191e904888ea2",
+      "authoredPositions": [
+        [
+          1687,
+          220.072265625
+        ],
+        [
+          4867.4443359375,
+          330.8359375
+        ]
+      ],
+      "fixture": {
+        "x": 4897.4443359375,
+        "y": 165.44512003877736
+      },
+      "actual": [
+        {
+          "id": 39,
+          "name": "Ka52",
+          "x": 1687,
+          "y": 220.072266,
+          "hp": 300,
+          "hpMax": 300,
+          "removed": false,
+          "bounds": [
+            -20,
+            0,
+            62.6666679,
+            40
+          ]
+        },
+        {
+          "id": 40,
+          "name": "Ka52",
+          "x": 4867.44434,
+          "y": 330.835938,
+          "hp": 300,
+          "hpMax": 300,
+          "removed": false,
+          "bounds": [
+            -20,
+            0,
+            62.6666679,
+            40
+          ]
+        }
+      ],
+      "renderedParts": [
+        {
+          "tile": "Ka52_Body.png",
+          "x": 369.77774,
+          "y": 273.600983,
+          "rotation": 0,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Ka52_RotorLower.png",
+          "x": 355.77774,
+          "y": 278.600983,
+          "rotation": 0,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 1
+        },
+        {
+          "tile": "Ka52_Missile.png",
+          "x": 373.27774,
+          "y": 263.600983,
+          "rotation": 8.74227766e-8,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Ka52_RotorUpper.png",
+          "x": 355.77774,
+          "y": 289.600983,
+          "rotation": 0,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 1
+        },
+        {
+          "tile": "Ka52_Cannon.png",
+          "x": 335.77774,
+          "y": 263.600983,
+          "rotation": 8.74227766e-8,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        }
+      ],
+      "screenshot": "Stage20-Ka52.png"
+    },
+    {
+      "map": "Stage21",
+      "mission": 5,
+      "stage": 1,
+      "ok": true,
+      "expected": 3,
+      "mapSha256": "98c0a43dd9ee6442f4c66f2cd06a8b6ea1596a1d8f5faa567fac60b82f6c6108",
+      "authoredPositions": [
+        [
+          1024.800048828125,
+          244.97509765625
+        ],
+        [
+          2384,
+          169.98046875
+        ],
+        [
+          3990.0908203125,
+          192.99072265625
+        ]
+      ],
+      "fixture": {
+        "x": 4020.0908203125,
+        "y": 25.79461283623418
+      },
+      "actual": [
+        {
+          "id": 44,
+          "name": "Ka52",
+          "x": 1024.80005,
+          "y": 244.975098,
+          "hp": 300,
+          "hpMax": 300,
+          "removed": false,
+          "bounds": [
+            -20,
+            0,
+            62.6666679,
+            40
+          ]
+        },
+        {
+          "id": 45,
+          "name": "Ka52",
+          "x": 2384,
+          "y": 169.980469,
+          "hp": 300,
+          "hpMax": 300,
+          "removed": false,
+          "bounds": [
+            -20,
+            0,
+            62.6666679,
+            40
+          ]
+        },
+        {
+          "id": 46,
+          "name": "Ka52",
+          "x": 3990.09082,
+          "y": 192.990723,
+          "hp": 300,
+          "hpMax": 300,
+          "removed": false,
+          "bounds": [
+            -20,
+            0,
+            62.6666679,
+            40
+          ]
+        }
+      ],
+      "renderedParts": [
+        {
+          "tile": "Ka52_Body.png",
+          "x": 369.757355,
+          "y": 279.756744,
+          "rotation": 0.000231481492,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Ka52_RotorLower.png",
+          "x": 355.756134,
+          "y": 284.75351,
+          "rotation": 0.000231481492,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Ka52_Missile.png",
+          "x": 373.259674,
+          "y": 269.757904,
+          "rotation": 8.74227766e-8,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Ka52_RotorUpper.png",
+          "x": 355.753693,
+          "y": 295.75351,
+          "rotation": 0.000231481492,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Ka52_Cannon.png",
+          "x": 335.759674,
+          "y": 269.751648,
+          "rotation": 8.74227766e-8,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        }
+      ]
+    },
+    {
+      "map": "Stage22",
+      "mission": 5,
+      "stage": 2,
+      "ok": true,
+      "expected": 1,
+      "mapSha256": "ac8683b481e6116a37df5125c7ebd5918b3cd817737c0f487ecfd733b66eb6fc",
+      "authoredPositions": [
+        [
+          2210.3427734375,
+          367.375
+        ]
+      ],
+      "fixture": {
+        "x": 2240.3427734375,
+        "y": 201.875
+      },
+      "actual": [
+        {
+          "id": 19,
+          "name": "Ka52",
+          "x": 2210.34277,
+          "y": 367.375,
+          "hp": 300,
+          "hpMax": 300,
+          "removed": false,
+          "bounds": [
+            -20,
+            0,
+            62.6666679,
+            40
+          ]
+        }
+      ],
+      "renderedParts": [
+        {
+          "tile": "Ka52_Body.png",
+          "x": 369.77774,
+          "y": 271.645996,
+          "rotation": 0,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Ka52_RotorLower.png",
+          "x": 355.77774,
+          "y": 276.645996,
+          "rotation": 0,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Ka52_Missile.png",
+          "x": 373.27774,
+          "y": 261.645996,
+          "rotation": 8.74227766e-8,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Ka52_RotorUpper.png",
+          "x": 355.77774,
+          "y": 287.645996,
+          "rotation": 0,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Ka52_Cannon.png",
+          "x": 335.77774,
+          "y": 261.645996,
+          "rotation": 8.74227766e-8,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        }
+      ]
+    },
+    {
+      "map": "Stage23",
+      "mission": 5,
+      "stage": 3,
+      "ok": true,
+      "expected": 1,
+      "mapSha256": "5e9218f45199193b117ed7eb619064da0b694b6bd3cc5907eb6b6d5db9e39da9",
+      "authoredPositions": [
+        [
+          2027,
+          321.43310546875
+        ]
+      ],
+      "fixture": {
+        "x": 2057,
+        "y": 155.89858906525575
+      },
+      "actual": [
+        {
+          "id": 13,
+          "name": "Ka52",
+          "x": 2027,
+          "y": 321.433105,
+          "hp": 300,
+          "hpMax": 300,
+          "removed": false,
+          "bounds": [
+            -20,
+            0,
+            62.6666679,
+            40
+          ]
+        }
+      ],
+      "renderedParts": [
+        {
+          "tile": "Ka52_Body.png",
+          "x": 369.77774,
+          "y": 271.239563,
+          "rotation": 0,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Ka52_RotorLower.png",
+          "x": 355.77774,
+          "y": 276.239563,
+          "rotation": 0,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Ka52_Missile.png",
+          "x": 373.27774,
+          "y": 261.239563,
+          "rotation": 8.74227766e-8,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Ka52_RotorUpper.png",
+          "x": 355.77774,
+          "y": 287.239563,
+          "rotation": 0,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Ka52_Cannon.png",
+          "x": 335.77774,
+          "y": 261.239563,
+          "rotation": 8.74227766e-8,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        }
+      ]
+    },
+    {
+      "map": "Stage24",
+      "mission": 5,
+      "stage": 4,
+      "ok": true,
+      "expected": 1,
+      "mapSha256": "7d39f9e5b878052f53f83f8de7b9bec08e9d09676aab2daaca9bbe21336f089d",
+      "authoredPositions": [
+        [
+          608.6666870117188,
+          267.62109375
+        ]
+      ],
+      "fixture": {
+        "x": 638.6666870117188,
+        "y": 102.10246292179934
+      },
+      "actual": [
+        {
+          "id": 5,
+          "name": "Ka52",
+          "x": 608.666687,
+          "y": 267.621094,
+          "hp": 300,
+          "hpMax": 300,
+          "removed": false,
+          "bounds": [
+            -20,
+            0,
+            62.6666679,
+            40
+          ]
+        }
+      ],
+      "renderedParts": [
+        {
+          "tile": "Ka52_Body.png",
+          "x": 369.77774,
+          "y": 278.51709,
+          "rotation": 0,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Ka52_RotorLower.png",
+          "x": 355.77774,
+          "y": 283.51709,
+          "rotation": 0,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Ka52_Missile.png",
+          "x": 373.27774,
+          "y": 268.51709,
+          "rotation": 8.74227766e-8,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Ka52_RotorUpper.png",
+          "x": 355.77774,
+          "y": 294.51709,
+          "rotation": 0,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Ka52_Cannon.png",
+          "x": 335.77774,
+          "y": 268.51709,
+          "rotation": 8.74227766e-8,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        }
+      ]
+    },
+    {
+      "map": "Stage30",
+      "mission": 6,
+      "stage": 0,
+      "ok": true,
+      "expected": 4,
+      "mapSha256": "433617158b075750308b639a43074cd6f38ab7f068957682382c7bcc20b0a09a",
+      "authoredPositions": [
+        [
+          1424.77783203125,
+          171
+        ],
+        [
+          2454.428466796875,
+          110.8984375
+        ],
+        [
+          3428,
+          96.70556640625
+        ],
+        [
+          4358,
+          171
+        ]
+      ],
+      "fixture": {
+        "x": 4388,
+        "y": -12.086330935251802
+      },
+      "actual": [
+        {
+          "id": 73,
+          "name": "Ka52",
+          "x": 1424.77783,
+          "y": 171,
+          "hp": 300,
+          "hpMax": 300,
+          "removed": false,
+          "bounds": [
+            -20,
+            0,
+            62.6666679,
+            40
+          ]
+        },
+        {
+          "id": 74,
+          "name": "Ka52",
+          "x": 2454.42847,
+          "y": 110.898438,
+          "hp": 300,
+          "hpMax": 300,
+          "removed": false,
+          "bounds": [
+            -20,
+            0,
+            62.6666679,
+            40
+          ]
+        },
+        {
+          "id": 75,
+          "name": "Ka52",
+          "x": 3428,
+          "y": 96.7055664,
+          "hp": 300,
+          "hpMax": 300,
+          "removed": false,
+          "bounds": [
+            -20,
+            0,
+            62.6666679,
+            40
+          ]
+        },
+        {
+          "id": 76,
+          "name": "Ka52",
+          "x": 4358,
+          "y": 171,
+          "hp": 300,
+          "hpMax": 300,
+          "removed": false,
+          "bounds": [
+            -20,
+            0,
+            62.6666679,
+            40
+          ]
+        }
+      ],
+      "renderedParts": [
+        {
+          "tile": "Ka52_Body.png",
+          "x": 369.77774,
+          "y": 291,
+          "rotation": 0,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Ka52_RotorLower.png",
+          "x": 355.77774,
+          "y": 296,
+          "rotation": 0,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Ka52_Missile.png",
+          "x": 373.27774,
+          "y": 281,
+          "rotation": 8.74227766e-8,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Ka52_RotorUpper.png",
+          "x": 355.77774,
+          "y": 307,
+          "rotation": 0,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Ka52_Cannon.png",
+          "x": 335.77774,
+          "y": 281,
+          "rotation": 8.74227766e-8,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        }
+      ],
+      "screenshot": "Stage30-Ka52.png"
+    },
+    {
+      "map": "Stage31",
+      "mission": 6,
+      "stage": 1,
+      "ok": true,
+      "expected": 2,
+      "mapSha256": "ebf1bf9b012d8667de249dfd5e0504035694163746ddb9504ef2b0c75764f13f",
+      "authoredPositions": [
+        [
+          707.375,
+          292.0283203125
+        ],
+        [
+          4085.857177734375,
+          213
+        ]
+      ],
+      "fixture": {
+        "x": 4115.857177734375,
+        "y": 60.38395690917969
+      },
+      "actual": [
+        {
+          "id": 59,
+          "name": "Ka52",
+          "x": 707.375,
+          "y": 292.02832,
+          "hp": 300,
+          "hpMax": 300,
+          "removed": false,
+          "bounds": [
+            -20,
+            0,
+            62.6666679,
+            40
+          ]
+        },
+        {
+          "id": 60,
+          "name": "Ka52",
+          "x": 4085.85718,
+          "y": 213,
+          "hp": 300,
+          "hpMax": 300,
+          "removed": false,
+          "bounds": [
+            -20,
+            0,
+            62.6666679,
+            40
+          ]
+        }
+      ],
+      "renderedParts": [
+        {
+          "tile": "Ka52_Body.png",
+          "x": 369.77774,
+          "y": 291.687439,
+          "rotation": 0,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Ka52_RotorLower.png",
+          "x": 355.77774,
+          "y": 296.687439,
+          "rotation": 0,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Ka52_Missile.png",
+          "x": 373.27774,
+          "y": 281.687439,
+          "rotation": 8.74227766e-8,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Ka52_RotorUpper.png",
+          "x": 355.77774,
+          "y": 307.687439,
+          "rotation": 0,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Ka52_Cannon.png",
+          "x": 335.77774,
+          "y": 281.687439,
+          "rotation": 8.74227766e-8,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        }
+      ]
+    },
+    {
+      "map": "Stage32",
+      "mission": 6,
+      "stage": 2,
+      "ok": true,
+      "expected": 2,
+      "mapSha256": "e8d3a0f51eccbca1c87506579d20e4d7662f70a31fedbe439ead282046ee9068",
+      "authoredPositions": [
+        [
+          504.75,
+          299.5
+        ],
+        [
+          2686.125,
+          197.05078125
+        ]
+      ],
+      "fixture": {
+        "x": 2716.125,
+        "y": 31.51486280487805
+      },
+      "actual": [
+        {
+          "id": 31,
+          "name": "Ka52",
+          "x": 504.75,
+          "y": 299.5,
+          "hp": 300,
+          "hpMax": 300,
+          "removed": false,
+          "bounds": [
+            -20,
+            0,
+            62.6666679,
+            40
+          ]
+        },
+        {
+          "id": 32,
+          "name": "Ka52",
+          "x": 2686.125,
+          "y": 197.050781,
+          "hp": 300,
+          "hpMax": 300,
+          "removed": false,
+          "bounds": [
+            -20,
+            0,
+            62.6666679,
+            40
+          ]
+        }
+      ],
+      "renderedParts": [
+        {
+          "tile": "Ka52_Body.png",
+          "x": 369.77774,
+          "y": 291,
+          "rotation": 0,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Ka52_RotorLower.png",
+          "x": 355.77774,
+          "y": 296,
+          "rotation": 0,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Ka52_Missile.png",
+          "x": 373.27774,
+          "y": 281,
+          "rotation": 8.74227766e-8,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Ka52_RotorUpper.png",
+          "x": 355.77774,
+          "y": 307,
+          "rotation": 0,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Ka52_Cannon.png",
+          "x": 335.777771,
+          "y": 281,
+          "rotation": 8.74227766e-8,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        }
+      ]
+    },
+    {
+      "map": "Stage33",
+      "mission": 6,
+      "stage": 3,
+      "ok": true,
+      "expected": 1,
+      "mapSha256": "26ee847ca2deca295ad86cd44670e6d90ad2b60457c1f624011bdd725b6a4678",
+      "authoredPositions": [
+        [
+          3412.84619140625,
+          229.7119140625
+        ]
+      ],
+      "fixture": {
+        "x": 3442.84619140625,
+        "y": 64.27451468275758
+      },
+      "actual": [
+        {
+          "id": 50,
+          "name": "Ka52",
+          "x": 3412.84619,
+          "y": 229.711914,
+          "hp": 300,
+          "hpMax": 300,
+          "removed": false,
+          "bounds": [
+            -20,
+            0,
+            62.6666679,
+            40
+          ]
+        }
+      ],
+      "renderedParts": [
+        {
+          "tile": "Ka52_Body.png",
+          "x": 369.77774,
+          "y": 255.576904,
+          "rotation": 0,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Ka52_RotorLower.png",
+          "x": 355.77774,
+          "y": 260.576904,
+          "rotation": 0,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 1
+        },
+        {
+          "tile": "Ka52_Missile.png",
+          "x": 373.27774,
+          "y": 245.576904,
+          "rotation": 8.74227766e-8,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Ka52_RotorUpper.png",
+          "x": 355.77774,
+          "y": 271.576904,
+          "rotation": 0,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 1
+        },
+        {
+          "tile": "Ka52_Cannon.png",
+          "x": 335.77774,
+          "y": 245.576904,
+          "rotation": 8.74227766e-8,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        }
+      ]
+    },
+    {
+      "map": "Stage34",
+      "mission": 6,
+      "stage": 4,
+      "ok": true,
+      "expected": 4,
+      "mapSha256": "cd51904ab1bb6c7a95f070a7386ae4d6e61815b2e8040164c8bcabf87e07f6f6",
+      "authoredPositions": [
+        [
+          1496.5,
+          271.07373046875
+        ],
+        [
+          3227.666748046875,
+          190.42431640625
+        ],
+        [
+          5068.5,
+          213.99365234375
+        ],
+        [
+          5727.75,
+          247.5
+        ]
+      ],
+      "fixture": {
+        "x": 5757.75,
+        "y": 82
+      },
+      "actual": [
+        {
+          "id": 94,
+          "name": "Ka52",
+          "x": 1496.5,
+          "y": 271.07373,
+          "hp": 300,
+          "hpMax": 300,
+          "removed": false,
+          "bounds": [
+            -20,
+            0,
+            62.6666679,
+            40
+          ]
+        },
+        {
+          "id": 95,
+          "name": "Ka52",
+          "x": 3227.66675,
+          "y": 190.424316,
+          "hp": 300,
+          "hpMax": 300,
+          "removed": false,
+          "bounds": [
+            -20,
+            0,
+            62.6666679,
+            40
+          ]
+        },
+        {
+          "id": 96,
+          "name": "Ka52",
+          "x": 5068.5,
+          "y": 213.993652,
+          "hp": 300,
+          "hpMax": 300,
+          "removed": false,
+          "bounds": [
+            -20,
+            0,
+            62.6666679,
+            40
+          ]
+        },
+        {
+          "id": 97,
+          "name": "Ka52",
+          "x": 5727.75,
+          "y": 247.5,
+          "hp": 300,
+          "hpMax": 300,
+          "removed": false,
+          "bounds": [
+            -20,
+            0,
+            62.6666679,
+            40
+          ]
+        }
+      ],
+      "renderedParts": [
+        {
+          "tile": "Ka52_Body.png",
+          "x": 369.77774,
+          "y": 257.284241,
+          "rotation": 0,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Ka52_RotorLower.png",
+          "x": 355.77774,
+          "y": 262.284241,
+          "rotation": 0,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Ka52_Missile.png",
+          "x": 373.27774,
+          "y": 247.284256,
+          "rotation": 8.74227766e-8,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Ka52_RotorUpper.png",
+          "x": 355.77774,
+          "y": 273.284241,
+          "rotation": 0,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Ka52_Cannon.png",
+          "x": 335.77774,
+          "y": 247.284256,
+          "rotation": 8.74227766e-8,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        }
+      ]
+    },
+    {
+      "map": "Stage35",
+      "mission": 6,
+      "stage": 5,
+      "ok": true,
+      "expected": 1,
+      "mapSha256": "b34ee3b229bee5162cb6252730ee1ed36eafbde1c588fd1c1ed1b6d0649bd61a",
+      "authoredPositions": [
+        [
+          118.7391357421875,
+          150.8154296875
+        ]
+      ],
+      "fixture": {
+        "x": 148.7391357421875,
+        "y": -15.191686269399284
+      },
+      "actual": [
+        {
+          "id": 10,
+          "name": "Ka52",
+          "x": 118.739136,
+          "y": 150.81543,
+          "hp": 300,
+          "hpMax": 300,
+          "removed": false,
+          "bounds": [
+            -20,
+            0,
+            62.6666679,
+            40
+          ]
+        }
+      ],
+      "renderedParts": [
+        {
+          "tile": "Ka52_Body.png",
+          "x": 369.757385,
+          "y": 271.313843,
+          "rotation": 0.000231481492,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Ka52_RotorLower.png",
+          "x": 355.756226,
+          "y": 276.310608,
+          "rotation": 0.000231481492,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Ka52_Missile.png",
+          "x": 373.259705,
+          "y": 261.315002,
+          "rotation": 8.74227766e-8,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Ka52_RotorUpper.png",
+          "x": 355.753693,
+          "y": 287.310608,
+          "rotation": 0.000231481492,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Ka52_Cannon.png",
+          "x": 335.759705,
+          "y": 261.308777,
+          "rotation": 8.74227766e-8,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        }
+      ]
+    }
+  ],
+  "formations": [
+    {
+      "map": "Stage04",
+      "boss": "Boss02",
+      "ok": true,
+      "expectedCounts": {
+        "Lux_F22": 1,
+        "Lux_Su57": 1,
+        "Lux_Eurofighter": 2
+      },
+      "before": {
+        "x": -272,
+        "y": -89,
+        "lux": []
+      },
+      "fixture": {
+        "x": -172,
+        "y": -89
+      },
+      "actualCounts": {
+        "Lux_F22": 1,
+        "Lux_Su57": 1,
+        "Lux_Eurofighter": 2
+      },
+      "bossPresent": true,
+      "cheats": {
+        "blockedHits": 0,
+        "refilledRounds": 0,
+        "fallRescues": 0
+      },
+      "visibleParts": [
+        {
+          "tile": "Lux_F22.png",
+          "x": 323.596649,
+          "y": 179.683105,
+          "rotation": 0.0469128639,
+          "scaleX": 1,
+          "scaleY": 0.993841112,
+          "frame": 0
+        },
+        {
+          "tile": "Lux_Su57.png",
+          "x": 290.837952,
+          "y": 218.528534,
+          "rotation": -0.00961550139,
+          "scaleX": 1,
+          "scaleY": 1.00432909,
+          "frame": 0
+        },
+        {
+          "tile": "Lux_Eurofighter.png",
+          "x": 446.75885,
+          "y": 179.683105,
+          "rotation": -0.1099163,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Lux_Eurofighter.png",
+          "x": 446.75885,
+          "y": 219.184357,
+          "rotation": -0.0589987189,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        }
+      ],
+      "game": {
+        "screen": "game",
+        "time": 61.7,
+        "canvas": [
+          533.333,
+          320
+        ],
+        "loading": 0,
+        "mission": 0,
+        "stage": 3,
+        "playerX": -172,
+        "playerY": -128.5,
+        "hp": 812,
+        "enemies": 13,
+        "bullets": 17,
+        "paused": 0,
+        "gameState": 0,
+        "decodes": 510,
+        "loadError": 0,
+        "aimMode": 1,
+        "aimTarget": 0,
+        "inputBlocked": 0,
+        "keyboardFire": 0,
+        "gameMenu": 0,
+        "resumeRequired": 0,
+        "active": 1,
+        "keyboardAimX": 0,
+        "callbackInterval": 0.0166,
+        "ticksPerCallback": 1,
+        "motion": 0,
+        "tilt": [
+          0,
+          0,
+          -1
+        ],
+        "hudEditing": 0,
+        "hudCustomized": 0,
+        "hudFallback": 0,
+        "hudSelected": 2,
+        "hudDraftCustomized": 0,
+        "orientationHold": 0
+      },
+      "screenshot": "Stage04-formation.png"
+    },
+    {
+      "map": "Stage09",
+      "boss": "Boss04",
+      "ok": true,
+      "expectedCounts": {
+        "Lux_F22": 1,
+        "Lux_Su57": 1,
+        "Lux_MiG31": 2,
+        "Lux_Eurofighter": 2
+      },
+      "before": {
+        "x": -2645,
+        "y": -33,
+        "lux": []
+      },
+      "fixture": {
+        "x": -2545,
+        "y": -33
+      },
+      "actualCounts": {
+        "Lux_F22": 1,
+        "Lux_Su57": 1,
+        "Lux_MiG31": 2,
+        "Lux_Eurofighter": 2
+      },
+      "bossPresent": true,
+      "cheats": {
+        "blockedHits": 0,
+        "refilledRounds": 0,
+        "fallRescues": 0
+      },
+      "visibleParts": [
+        {
+          "tile": "Lux_F22.png",
+          "x": 141.333405,
+          "y": 178.5,
+          "rotation": 0.139626265,
+          "scaleX": 1,
+          "scaleY": 0.993841112,
+          "frame": 0
+        },
+        {
+          "tile": "Lux_Su57.png",
+          "x": 186.859039,
+          "y": 233.32486,
+          "rotation": -0.0556976236,
+          "scaleX": 1,
+          "scaleY": 1.00432909,
+          "frame": 0
+        },
+        {
+          "tile": "Lux_MiG31.png",
+          "x": 281.333405,
+          "y": 178.5,
+          "rotation": 0.139626265,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Lux_MiG31.png",
+          "x": 281.333405,
+          "y": 236.024521,
+          "rotation": 0.182152525,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Lux_Eurofighter.png",
+          "x": 421.655914,
+          "y": 178.5,
+          "rotation": 0.132732973,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Lux_Eurofighter.png",
+          "x": 421.655914,
+          "y": 248.5,
+          "rotation": 0.132732973,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        }
+      ],
+      "game": {
+        "screen": "game",
+        "time": 66.5667,
+        "canvas": [
+          533.333,
+          320
+        ],
+        "loading": 0,
+        "mission": 1,
+        "stage": 4,
+        "playerX": -2545,
+        "playerY": -72.5,
+        "hp": 593,
+        "enemies": 16,
+        "bullets": 7,
+        "paused": 0,
+        "gameState": 0,
+        "decodes": 511,
+        "loadError": 0,
+        "aimMode": 1,
+        "aimTarget": 0,
+        "inputBlocked": 0,
+        "keyboardFire": 0,
+        "gameMenu": 0,
+        "resumeRequired": 0,
+        "active": 1,
+        "keyboardAimX": 0,
+        "callbackInterval": 0.0263,
+        "ticksPerCallback": 2,
+        "motion": 0,
+        "tilt": [
+          0,
+          0,
+          -1
+        ],
+        "hudEditing": 0,
+        "hudCustomized": 0,
+        "hudFallback": 0,
+        "hudSelected": 2,
+        "hudDraftCustomized": 0,
+        "orientationHold": 0
+      },
+      "screenshot": "Stage09-formation.png"
+    },
+    {
+      "map": "Stage14",
+      "boss": "Boss05",
+      "ok": true,
+      "expectedCounts": {
+        "Lux_F22": 2,
+        "Lux_Su57": 2,
+        "Lux_MiG31": 2,
+        "Lux_Eurofighter": 2
+      },
+      "before": {
+        "x": 620,
+        "y": -45,
+        "lux": []
+      },
+      "fixture": {
+        "x": 720,
+        "y": -62
+      },
+      "actualCounts": {
+        "Lux_F22": 2,
+        "Lux_Su57": 2,
+        "Lux_MiG31": 2,
+        "Lux_Eurofighter": 2
+      },
+      "bossPresent": true,
+      "cheats": {
+        "blockedHits": 0,
+        "refilledRounds": 0,
+        "fallRescues": 0
+      },
+      "visibleParts": [
+        {
+          "tile": "Lux_F22.png",
+          "x": 182.824982,
+          "y": 170,
+          "rotation": -0.0937121809,
+          "scaleX": 1,
+          "scaleY": 0.993841112,
+          "frame": 0
+        },
+        {
+          "tile": "Lux_F22.png",
+          "x": 182.824982,
+          "y": 230.675018,
+          "rotation": -0.0554770157,
+          "scaleX": 1,
+          "scaleY": 0.993841112,
+          "frame": 0
+        },
+        {
+          "tile": "Lux_Su57.png",
+          "x": 181.928131,
+          "y": 296.634949,
+          "rotation": -0.0486978143,
+          "scaleX": 1,
+          "scaleY": 1.00432909,
+          "frame": 0
+        },
+        {
+          "tile": "Lux_Su57.png",
+          "x": 310.642242,
+          "y": 170,
+          "rotation": -0.0667131171,
+          "scaleX": 1,
+          "scaleY": 1.00432909,
+          "frame": 0
+        },
+        {
+          "tile": "Lux_MiG31.png",
+          "x": 281.833282,
+          "y": 233.339111,
+          "rotation": 0.172502413,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Lux_MiG31.png",
+          "x": 281.833282,
+          "y": 303.339081,
+          "rotation": 0.172502413,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Lux_Eurofighter.png",
+          "x": 462.825226,
+          "y": 170,
+          "rotation": -0.0937121809,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Lux_Eurofighter.png",
+          "x": 462.825226,
+          "y": 227.818497,
+          "rotation": -0.0515175723,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        }
+      ],
+      "game": {
+        "screen": "game",
+        "time": 71.45,
+        "canvas": [
+          533.333,
+          320
+        ],
+        "loading": 0,
+        "mission": 2,
+        "stage": 4,
+        "playerX": 720,
+        "playerY": -101.5,
+        "hp": 380,
+        "enemies": 17,
+        "bullets": 1,
+        "paused": 0,
+        "gameState": 0,
+        "decodes": 512,
+        "loadError": 0,
+        "aimMode": 1,
+        "aimTarget": 0,
+        "inputBlocked": 0,
+        "keyboardFire": 0,
+        "gameMenu": 0,
+        "resumeRequired": 0,
+        "active": 1,
+        "keyboardAimX": 0,
+        "callbackInterval": 0.0167,
+        "ticksPerCallback": 1,
+        "motion": 0,
+        "tilt": [
+          0,
+          0,
+          -1
+        ],
+        "hudEditing": 0,
+        "hudCustomized": 0,
+        "hudFallback": 0,
+        "hudSelected": 2,
+        "hudDraftCustomized": 0,
+        "orientationHold": 0
+      },
+      "screenshot": "Stage14-formation.png"
+    },
+    {
+      "map": "Stage29",
+      "boss": "Boss03",
+      "ok": true,
+      "expectedCounts": {
+        "Lux_F22": 3,
+        "Lux_Su57": 3,
+        "Lux_MiG31": 2,
+        "Lux_Eurofighter": 2
+      },
+      "before": {
+        "x": 1173,
+        "y": 60.5,
+        "lux": []
+      },
+      "fixture": {
+        "x": 1273,
+        "y": 62.25
+      },
+      "actualCounts": {
+        "Lux_F22": 3,
+        "Lux_Su57": 3,
+        "Lux_MiG31": 2,
+        "Lux_Eurofighter": 2
+      },
+      "bossPresent": true,
+      "cheats": {
+        "blockedHits": 0,
+        "refilledRounds": 0,
+        "fallRescues": 0
+      },
+      "visibleParts": [
+        {
+          "tile": "Lux_F22.png",
+          "x": 36.3418274,
+          "y": 167.024765,
+          "rotation": 0.0315545313,
+          "scaleX": 1,
+          "scaleY": 0.993841112,
+          "frame": 0
+        },
+        {
+          "tile": "Lux_F22.png",
+          "x": 36.3418274,
+          "y": 232.520905,
+          "rotation": 0.0656824559,
+          "scaleX": 1,
+          "scaleY": 0.993841112,
+          "frame": 0
+        },
+        {
+          "tile": "Lux_F22.png",
+          "x": 36.3418274,
+          "y": 302.520905,
+          "rotation": 0.0656824559,
+          "scaleX": 1,
+          "scaleY": 0.993841112,
+          "frame": 0
+        },
+        {
+          "tile": "Lux_Su57.png",
+          "x": 172.249664,
+          "y": 164.772797,
+          "rotation": 0.0948577896,
+          "scaleX": 1,
+          "scaleY": 1.00432909,
+          "frame": 0
+        },
+        {
+          "tile": "Lux_Su57.png",
+          "x": 172.249664,
+          "y": 234.772797,
+          "rotation": 0.0948577896,
+          "scaleX": 1,
+          "scaleY": 1.00432909,
+          "frame": 0
+        },
+        {
+          "tile": "Lux_Su57.png",
+          "x": 172.249664,
+          "y": 304.772797,
+          "rotation": 0.0948577896,
+          "scaleX": 1,
+          "scaleY": 1.00432909,
+          "frame": 0
+        },
+        {
+          "tile": "Lux_MiG31.png",
+          "x": 309.585968,
+          "y": 164.772797,
+          "rotation": 0.139626265,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Lux_MiG31.png",
+          "x": 309.585968,
+          "y": 234.772797,
+          "rotation": 0.139626265,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Lux_Eurofighter.png",
+          "x": 449.585968,
+          "y": 164.772797,
+          "rotation": 0.139626265,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Lux_Eurofighter.png",
+          "x": 449.585968,
+          "y": 234.772797,
+          "rotation": 0.139626265,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        }
+      ],
+      "game": {
+        "screen": "game",
+        "time": 76.35,
+        "canvas": [
+          533.333,
+          320
+        ],
+        "loading": 0,
+        "mission": 3,
+        "stage": 4,
+        "playerX": 1273.25,
+        "playerY": 22.73,
+        "hp": 658,
+        "enemies": 18,
+        "bullets": 7,
+        "paused": 0,
+        "gameState": 0,
+        "decodes": 516,
+        "loadError": 0,
+        "aimMode": 1,
+        "aimTarget": 0,
+        "inputBlocked": 0,
+        "keyboardFire": 0,
+        "gameMenu": 0,
+        "resumeRequired": 0,
+        "active": 1,
+        "keyboardAimX": 0,
+        "callbackInterval": 0.046,
+        "ticksPerCallback": 3,
+        "motion": 0,
+        "tilt": [
+          0,
+          0,
+          -1
+        ],
+        "hudEditing": 0,
+        "hudCustomized": 0,
+        "hudFallback": 0,
+        "hudSelected": 2,
+        "hudDraftCustomized": 0,
+        "orientationHold": 0
+      },
+      "screenshot": "Stage29-formation.png"
+    },
+    {
+      "map": "Stage19",
+      "boss": "Boss01",
+      "ok": true,
+      "expectedCounts": {
+        "Lux_F22": 3,
+        "Lux_Su57": 2,
+        "Lux_MiG31": 3,
+        "Lux_Eurofighter": 2
+      },
+      "before": {
+        "x": 461,
+        "y": 42.3444829424307,
+        "lux": []
+      },
+      "fixture": {
+        "x": 561,
+        "y": 42.60434434968017
+      },
+      "actualCounts": {
+        "Lux_F22": 3,
+        "Lux_Su57": 2,
+        "Lux_MiG31": 3,
+        "Lux_Eurofighter": 2
+      },
+      "bossPresent": true,
+      "cheats": {
+        "blockedHits": 0,
+        "refilledRounds": 0,
+        "fallRescues": 0
+      },
+      "visibleParts": [
+        {
+          "tile": "Lux_F22.png",
+          "x": 31.4586487,
+          "y": 171.945953,
+          "rotation": 0.121037059,
+          "scaleX": 1,
+          "scaleY": 0.993841112,
+          "frame": 0
+        },
+        {
+          "tile": "Lux_F22.png",
+          "x": 31.4586487,
+          "y": 241.725159,
+          "rotation": 0.123549841,
+          "scaleX": 1,
+          "scaleY": 0.993841112,
+          "frame": 0
+        },
+        {
+          "tile": "Lux_F22.png",
+          "x": 31.4586487,
+          "y": 311.725159,
+          "rotation": 0.123549841,
+          "scaleX": 1,
+          "scaleY": 0.993841112,
+          "frame": 0
+        },
+        {
+          "tile": "Lux_Su57.png",
+          "x": 176.569611,
+          "y": 171.945953,
+          "rotation": 0.0536898226,
+          "scaleX": 1,
+          "scaleY": 1.00432909,
+          "frame": 0
+        },
+        {
+          "tile": "Lux_Su57.png",
+          "x": 176.569611,
+          "y": 239.869263,
+          "rotation": 0.0698029026,
+          "scaleX": 1,
+          "scaleY": 1.00432909,
+          "frame": 0
+        },
+        {
+          "tile": "Lux_MiG31.png",
+          "x": 173.762665,
+          "y": 310.513702,
+          "rotation": 0.103769228,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Lux_MiG31.png",
+          "x": 310.339508,
+          "y": 171.945953,
+          "rotation": 0.139626265,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Lux_MiG31.png",
+          "x": 310.339508,
+          "y": 241.945953,
+          "rotation": 0.139626265,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Lux_Eurofighter.png",
+          "x": 451.001923,
+          "y": 171.945953,
+          "rotation": 0.126224771,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Lux_Eurofighter.png",
+          "x": 451.001923,
+          "y": 241.945953,
+          "rotation": 0.126224771,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        }
+      ],
+      "game": {
+        "screen": "game",
+        "time": 81.3167,
+        "canvas": [
+          533.333,
+          320
+        ],
+        "loading": 0,
+        "mission": 4,
+        "stage": 4,
+        "playerX": 560.99,
+        "playerY": 3.1,
+        "hp": 612,
+        "enemies": 27,
+        "bullets": 11,
+        "paused": 0,
+        "gameState": 0,
+        "decodes": 516,
+        "loadError": 0,
+        "aimMode": 1,
+        "aimTarget": 0,
+        "inputBlocked": 0,
+        "keyboardFire": 0,
+        "gameMenu": 0,
+        "resumeRequired": 0,
+        "active": 1,
+        "keyboardAimX": 0,
+        "callbackInterval": 0.0167,
+        "ticksPerCallback": 1,
+        "motion": 0,
+        "tilt": [
+          0,
+          0,
+          -1
+        ],
+        "hudEditing": 0,
+        "hudCustomized": 0,
+        "hudFallback": 0,
+        "hudSelected": 2,
+        "hudDraftCustomized": 0,
+        "orientationHold": 0
+      },
+      "screenshot": "Stage19-formation.png"
+    },
+    {
+      "map": "Stage24",
+      "boss": "Boss06",
+      "ok": true,
+      "expectedCounts": {
+        "Lux_F22": 2,
+        "Lux_Su57": 3,
+        "Lux_MiG31": 3,
+        "Lux_Eurofighter": 2
+      },
+      "before": {
+        "x": 983,
+        "y": 101.85545193687231,
+        "lux": []
+      },
+      "fixture": {
+        "x": 1083,
+        "y": 101.78371592539455
+      },
+      "actualCounts": {
+        "Lux_F22": 2,
+        "Lux_Su57": 3,
+        "Lux_MiG31": 3,
+        "Lux_Eurofighter": 2
+      },
+      "bossPresent": true,
+      "cheats": {
+        "blockedHits": 0,
+        "refilledRounds": 0,
+        "fallRescues": 0
+      },
+      "visibleParts": [
+        {
+          "tile": "Lux_F22.png",
+          "x": 31.2053528,
+          "y": 170.101517,
+          "rotation": 0.122425467,
+          "scaleX": 1,
+          "scaleY": 0.993841112,
+          "frame": 0
+        },
+        {
+          "tile": "Lux_F22.png",
+          "x": 31.2053528,
+          "y": 239.810303,
+          "rotation": 0.1256506,
+          "scaleX": 1,
+          "scaleY": 0.993841112,
+          "frame": 0
+        },
+        {
+          "tile": "Lux_Su57.png",
+          "x": 32.9953308,
+          "y": 309.213684,
+          "rotation": 0.103251867,
+          "scaleX": 1,
+          "scaleY": 1.00432909,
+          "frame": 0
+        },
+        {
+          "tile": "Lux_Su57.png",
+          "x": 176.561798,
+          "y": 170.101517,
+          "rotation": 0.0536898226,
+          "scaleX": 1,
+          "scaleY": 1.00432909,
+          "frame": 0
+        },
+        {
+          "tile": "Lux_Su57.png",
+          "x": 176.561798,
+          "y": 238.024826,
+          "rotation": 0.0698029026,
+          "scaleX": 1,
+          "scaleY": 1.00432909,
+          "frame": 0
+        },
+        {
+          "tile": "Lux_MiG31.png",
+          "x": 173.771759,
+          "y": 308.954834,
+          "rotation": 0.0949752852,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Lux_MiG31.png",
+          "x": 310.331696,
+          "y": 170.101517,
+          "rotation": 0.139626265,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Lux_MiG31.png",
+          "x": 310.331696,
+          "y": 239.810303,
+          "rotation": 0.142851457,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Lux_Eurofighter.png",
+          "x": 450.331696,
+          "y": 170.101517,
+          "rotation": 0.139626265,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Lux_Eurofighter.png",
+          "x": 450.331696,
+          "y": 240.101517,
+          "rotation": 0.139626265,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        }
+      ],
+      "game": {
+        "screen": "game",
+        "time": 86.1667,
+        "canvas": [
+          533.333,
+          320
+        ],
+        "loading": 0,
+        "mission": 5,
+        "stage": 4,
+        "playerX": 1083,
+        "playerY": 62.28,
+        "hp": 320,
+        "enemies": 23,
+        "bullets": 7,
+        "paused": 0,
+        "gameState": 0,
+        "decodes": 517,
+        "loadError": 0,
+        "aimMode": 1,
+        "aimTarget": 0,
+        "inputBlocked": 0,
+        "keyboardFire": 0,
+        "gameMenu": 0,
+        "resumeRequired": 0,
+        "active": 1,
+        "keyboardAimX": 0,
+        "callbackInterval": 0.0167,
+        "ticksPerCallback": 1,
+        "motion": 0,
+        "tilt": [
+          0,
+          0,
+          -1
+        ],
+        "hudEditing": 0,
+        "hudCustomized": 0,
+        "hudFallback": 0,
+        "hudSelected": 2,
+        "hudDraftCustomized": 0,
+        "orientationHold": 0
+      },
+      "screenshot": "Stage24-formation.png"
+    },
+    {
+      "map": "Stage35",
+      "boss": "Boss07",
+      "ok": true,
+      "expectedCounts": {
+        "Lux_F22": 3,
+        "Lux_Su57": 3,
+        "Lux_MiG31": 2,
+        "Lux_Eurofighter": 2
+      },
+      "before": {
+        "x": 95,
+        "y": -15.010135135135137,
+        "lux": []
+      },
+      "fixture": {
+        "x": 195,
+        "y": -15.347972972972975
+      },
+      "actualCounts": {
+        "Lux_F22": 3,
+        "Lux_Su57": 3,
+        "Lux_MiG31": 2,
+        "Lux_Eurofighter": 2
+      },
+      "bossPresent": true,
+      "cheats": {
+        "blockedHits": 0,
+        "refilledRounds": 0,
+        "fallRescues": 0
+      },
+      "visibleParts": [
+        {
+          "tile": "Lux_F22.png",
+          "x": 30.0207214,
+          "y": 181.347504,
+          "rotation": 0.13532567,
+          "scaleX": 1,
+          "scaleY": 0.993841112,
+          "frame": 0
+        },
+        {
+          "tile": "Lux_F22.png",
+          "x": 30.0207214,
+          "y": 251.347504,
+          "rotation": 0.13532567,
+          "scaleX": 1,
+          "scaleY": 0.993841112,
+          "frame": 0
+        },
+        {
+          "tile": "Lux_F22.png",
+          "x": 30.0207214,
+          "y": 321.347504,
+          "rotation": 0.13532567,
+          "scaleX": 1,
+          "scaleY": 0.993841112,
+          "frame": 0
+        },
+        {
+          "tile": "Lux_Su57.png",
+          "x": 175.54599,
+          "y": 181.347504,
+          "rotation": 0.0588069409,
+          "scaleX": 1,
+          "scaleY": 1.00432909,
+          "frame": 0
+        },
+        {
+          "tile": "Lux_Su57.png",
+          "x": 175.54599,
+          "y": 249.440552,
+          "rotation": 0.0739605576,
+          "scaleX": 1,
+          "scaleY": 1.00432909,
+          "frame": 0
+        },
+        {
+          "tile": "Lux_Su57.png",
+          "x": 175.54599,
+          "y": 319.440582,
+          "rotation": 0.0739605576,
+          "scaleX": 1,
+          "scaleY": 1.00432909,
+          "frame": 0
+        },
+        {
+          "tile": "Lux_MiG31.png",
+          "x": 309.825134,
+          "y": 181.347504,
+          "rotation": 0.139626265,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Lux_MiG31.png",
+          "x": 309.825134,
+          "y": 250.333679,
+          "rotation": 0.148969725,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Lux_Eurofighter.png",
+          "x": 449.825134,
+          "y": 181.347504,
+          "rotation": 0.139626265,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Lux_Eurofighter.png",
+          "x": 449.825134,
+          "y": 251.347504,
+          "rotation": 0.139626265,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        }
+      ],
+      "game": {
+        "screen": "game",
+        "time": 91.0333,
+        "canvas": [
+          533.333,
+          320
+        ],
+        "loading": 0,
+        "mission": 6,
+        "stage": 5,
+        "playerX": 195.01,
+        "playerY": -54.85,
+        "hp": 745,
+        "enemies": 25,
+        "bullets": 33,
+        "paused": 0,
+        "gameState": 0,
+        "decodes": 518,
+        "loadError": 0,
+        "aimMode": 1,
+        "aimTarget": 0,
+        "inputBlocked": 0,
+        "keyboardFire": 0,
+        "gameMenu": 0,
+        "resumeRequired": 0,
+        "active": 1,
+        "keyboardAimX": 0,
+        "callbackInterval": 0.0165,
+        "ticksPerCallback": 1,
+        "motion": 0,
+        "tilt": [
+          0,
+          0,
+          -1
+        ],
+        "hudEditing": 0,
+        "hudCustomized": 0,
+        "hudFallback": 0,
+        "hudSelected": 2,
+        "hudDraftCustomized": 0,
+        "orientationHold": 0
+      },
+      "screenshot": "Stage35-formation.png"
+    },
+    {
+      "map": "Stage03",
+      "boss": "",
+      "ok": true,
+      "expectedCounts": {
+        "Lux_F22": 2,
+        "Lux_Su57": 1,
+        "Lux_MiG31": 1,
+        "Lux_Eurofighter": 1
+      },
+      "before": {
+        "x": 5424,
+        "y": 38.427383863080685,
+        "lux": []
+      },
+      "fixture": {
+        "x": 5524,
+        "y": 38.37848410757946
+      },
+      "actualCounts": {
+        "Lux_F22": 2,
+        "Lux_Su57": 1,
+        "Lux_MiG31": 1,
+        "Lux_Eurofighter": 1
+      },
+      "bossPresent": true,
+      "cheats": {
+        "blockedHits": 0,
+        "refilledRounds": 0,
+        "fallRescues": 0
+      },
+      "visibleParts": [
+        {
+          "tile": "Lux_F22.png",
+          "x": 153.181793,
+          "y": 170.001389,
+          "rotation": 0.0150134228,
+          "scaleX": 1,
+          "scaleY": 0.993841112,
+          "frame": 0
+        },
+        {
+          "tile": "Lux_F22.png",
+          "x": 153.181793,
+          "y": 236.384811,
+          "rotation": 0.0383783393,
+          "scaleX": 1,
+          "scaleY": 0.993841112,
+          "frame": 0
+        },
+        {
+          "tile": "Lux_Su57.png",
+          "x": 288.562164,
+          "y": 170.001389,
+          "rotation": 0.0536898226,
+          "scaleX": 1,
+          "scaleY": 1.00432909,
+          "frame": 0
+        },
+        {
+          "tile": "Lux_MiG31.png",
+          "x": 282.332672,
+          "y": 228.112488,
+          "rotation": 0.18147862,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Lux_Eurofighter.png",
+          "x": 422.332672,
+          "y": 170.001389,
+          "rotation": 0.139626265,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        }
+      ],
+      "game": {
+        "screen": "game",
+        "time": 95.9,
+        "canvas": [
+          533.333,
+          320
+        ],
+        "loading": 0,
+        "mission": 0,
+        "stage": 2,
+        "playerX": 5524,
+        "playerY": -1.12,
+        "hp": 755,
+        "enemies": 50,
+        "bullets": 3,
+        "paused": 0,
+        "gameState": 0,
+        "decodes": 519,
+        "loadError": 0,
+        "aimMode": 1,
+        "aimTarget": 0,
+        "inputBlocked": 0,
+        "keyboardFire": 0,
+        "gameMenu": 0,
+        "resumeRequired": 0,
+        "active": 1,
+        "keyboardAimX": 0,
+        "callbackInterval": 0.0169,
+        "ticksPerCallback": 1,
+        "motion": 0,
+        "tilt": [
+          0,
+          0,
+          -1
+        ],
+        "hudEditing": 0,
+        "hudCustomized": 0,
+        "hudFallback": 0,
+        "hudSelected": 2,
+        "hudDraftCustomized": 0,
+        "orientationHold": 0
+      },
+      "screenshot": "Stage03-formation.png"
+    },
+    {
+      "map": "Stage08",
+      "boss": "",
+      "ok": true,
+      "expectedCounts": {
+        "Lux_F22": 1,
+        "Lux_Su57": 2,
+        "Lux_MiG31": 1,
+        "Lux_Eurofighter": 1
+      },
+      "before": {
+        "x": 2754,
+        "y": 127.29162746942615,
+        "lux": []
+      },
+      "fixture": {
+        "x": 2854,
+        "y": 127.47977422389464
+      },
+      "actualCounts": {
+        "Lux_F22": 1,
+        "Lux_Su57": 2,
+        "Lux_MiG31": 1,
+        "Lux_Eurofighter": 1
+      },
+      "bossPresent": true,
+      "cheats": {
+        "blockedHits": 0,
+        "refilledRounds": 0,
+        "fallRescues": 0
+      },
+      "visibleParts": [
+        {
+          "tile": "Lux_F22.png",
+          "x": 186.950592,
+          "y": 171.398148,
+          "rotation": -0.0994509086,
+          "scaleX": 1,
+          "scaleY": 0.993841112,
+          "frame": 0
+        },
+        {
+          "tile": "Lux_Su57.png",
+          "x": 164.89151,
+          "y": 235.240662,
+          "rotation": -0.0105926478,
+          "scaleX": 1,
+          "scaleY": 1.00432909,
+          "frame": 0
+        },
+        {
+          "tile": "Lux_Su57.png",
+          "x": 317.1315,
+          "y": 171.398148,
+          "rotation": -0.0817010701,
+          "scaleX": 1,
+          "scaleY": 1.00432909,
+          "frame": 0
+        },
+        {
+          "tile": "Lux_MiG31.png",
+          "x": 283.211578,
+          "y": 225.91777,
+          "rotation": 0.167740077,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Lux_Eurofighter.png",
+          "x": 439.125397,
+          "y": 171.398148,
+          "rotation": 0.0799871087,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        }
+      ],
+      "game": {
+        "screen": "game",
+        "time": 100.7333,
+        "canvas": [
+          533.333,
+          320
+        ],
+        "loading": 0,
+        "mission": 1,
+        "stage": 3,
+        "playerX": 2854,
+        "playerY": 87.98,
+        "hp": 830,
+        "enemies": 51,
+        "bullets": 5,
+        "paused": 0,
+        "gameState": 0,
+        "decodes": 521,
+        "loadError": 0,
+        "aimMode": 1,
+        "aimTarget": 0,
+        "inputBlocked": 0,
+        "keyboardFire": 0,
+        "gameMenu": 0,
+        "resumeRequired": 0,
+        "active": 1,
+        "keyboardAimX": 0,
+        "callbackInterval": 0.0166,
+        "ticksPerCallback": 1,
+        "motion": 0,
+        "tilt": [
+          0,
+          0,
+          -1
+        ],
+        "hudEditing": 0,
+        "hudCustomized": 0,
+        "hudFallback": 0,
+        "hudSelected": 2,
+        "hudDraftCustomized": 0,
+        "orientationHold": 0
+      },
+      "screenshot": "Stage08-formation.png"
+    },
+    {
+      "map": "Stage13",
+      "boss": "",
+      "ok": false,
+      "expectedCounts": {
+        "Lux_F22": 1,
+        "Lux_Su57": 1,
+        "Lux_MiG31": 2,
+        "Lux_Eurofighter": 1
+      },
+      "before": {
+        "x": 4502,
+        "y": 46.99655172413793,
+        "lux": []
+      },
+      "fixture": {
+        "x": 4602,
+        "y": 46.30689655172414
+      },
+      "actualCounts": {
+        "Lux_F22": 1,
+        "Lux_Su57": 1,
+        "Lux_MiG31": 2,
+        "Lux_Eurofighter": 1
+      },
+      "bossPresent": true,
+      "cheats": {
+        "blockedHits": 0,
+        "refilledRounds": 0,
+        "fallRescues": 0
+      },
+      "error": "Error: Runtime observation timed out: {\"screen\":\"game\",\"time\":119.15,\"canvas\":[533.333,320],\"loading\":0,\"mission\":2,\"stage\":3,\"playerX\":4602.02,\"playerY\":6.81,\"hp\":840,\"enemies\":39,\"bullets\":0,\"paused\":0,\"gameState\":0,\"decodes\":523,\"loadError\":0,\"aimMode\":1,\"aimTarget\":0,\"inputBlocked\":0,\"keyboardFire\":0,\"gameMenu\":0,\"resumeRequired\":0,\"active\":1,\"keyboardAimX\":0,\"callbackInterval\":0.0165,\"ticksPerCallback\":1,\"motion\":0,\"tilt\":[0,0,-1],\"hudEditing\":0,\"hudCustomized\":0,\"hudFallback\":0,\"hudSelected\":2,\"hudDraftCustomized\":0,\"orientationHold\":0}"
+    },
+    {
+      "map": "Stage28",
+      "boss": "",
+      "ok": true,
+      "expectedCounts": {
+        "Lux_F22": 2,
+        "Lux_Su57": 1,
+        "Lux_MiG31": 1,
+        "Lux_Eurofighter": 1
+      },
+      "before": {
+        "x": 7213,
+        "y": -29.461538461538467,
+        "lux": []
+      },
+      "fixture": {
+        "x": 7313,
+        "y": -29.06603773584905
+      },
+      "actualCounts": {
+        "Lux_F22": 2,
+        "Lux_Su57": 1,
+        "Lux_MiG31": 1,
+        "Lux_Eurofighter": 1
+      },
+      "bossPresent": true,
+      "cheats": {
+        "blockedHits": 0,
+        "refilledRounds": 0,
+        "fallRescues": 0
+      },
+      "visibleParts": [
+        {
+          "tile": "Lux_Eurofighter.png",
+          "x": 401.810699,
+          "y": 348.428467,
+          "rotation": 0.189333931,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        }
+      ],
+      "game": {
+        "screen": "game",
+        "time": 124.4833,
+        "canvas": [
+          533.333,
+          320
+        ],
+        "loading": 0,
+        "mission": 3,
+        "stage": 3,
+        "playerX": 7313.02,
+        "playerY": -68.57,
+        "hp": 760,
+        "enemies": 61,
+        "bullets": 7,
+        "paused": 0,
+        "gameState": 0,
+        "decodes": 527,
+        "loadError": 0,
+        "aimMode": 1,
+        "aimTarget": 0,
+        "inputBlocked": 0,
+        "keyboardFire": 0,
+        "gameMenu": 0,
+        "resumeRequired": 0,
+        "active": 1,
+        "keyboardAimX": 0,
+        "callbackInterval": 0.0166,
+        "ticksPerCallback": 1,
+        "motion": 0,
+        "tilt": [
+          0,
+          0,
+          -1
+        ],
+        "hudEditing": 0,
+        "hudCustomized": 0,
+        "hudFallback": 0,
+        "hudSelected": 2,
+        "hudDraftCustomized": 0,
+        "orientationHold": 0
+      },
+      "screenshot": "Stage28-formation.png"
+    },
+    {
+      "map": "Stage18",
+      "boss": "",
+      "ok": true,
+      "expectedCounts": {
+        "Lux_F22": 1,
+        "Lux_Su57": 2,
+        "Lux_MiG31": 1,
+        "Lux_Eurofighter": 1
+      },
+      "before": {
+        "x": 5008,
+        "y": 26.5,
+        "lux": []
+      },
+      "fixture": {
+        "x": 5108,
+        "y": 26.5
+      },
+      "actualCounts": {
+        "Lux_F22": 1,
+        "Lux_Su57": 2,
+        "Lux_MiG31": 1,
+        "Lux_Eurofighter": 1
+      },
+      "bossPresent": true,
+      "cheats": {
+        "blockedHits": 0,
+        "refilledRounds": 0,
+        "fallRescues": 0
+      },
+      "visibleParts": [
+        {
+          "tile": "Lux_F22.png",
+          "x": 251.333405,
+          "y": 207,
+          "rotation": 0.139626265,
+          "scaleX": 1,
+          "scaleY": 0.993841112,
+          "frame": 0
+        },
+        {
+          "tile": "Lux_Su57.png",
+          "x": 251.333405,
+          "y": 277,
+          "rotation": 0.139626265,
+          "scaleX": 1,
+          "scaleY": 1.00432909,
+          "frame": 0
+        },
+        {
+          "tile": "Lux_Su57.png",
+          "x": 391.333405,
+          "y": 207,
+          "rotation": 0.139626265,
+          "scaleX": 1,
+          "scaleY": 1.00432909,
+          "frame": 0
+        },
+        {
+          "tile": "Lux_MiG31.png",
+          "x": 391.333405,
+          "y": 277,
+          "rotation": 0.139626265,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Lux_Eurofighter.png",
+          "x": 531.333374,
+          "y": 207,
+          "rotation": 0.139626265,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        }
+      ],
+      "game": {
+        "screen": "game",
+        "time": 134.3667,
+        "canvas": [
+          533.333,
+          320
+        ],
+        "loading": 0,
+        "mission": 4,
+        "stage": 3,
+        "playerX": 5108,
+        "playerY": -13,
+        "hp": 840,
+        "enemies": 63,
+        "bullets": 0,
+        "paused": 0,
+        "gameState": 0,
+        "decodes": 531,
+        "loadError": 0,
+        "aimMode": 1,
+        "aimTarget": 0,
+        "inputBlocked": 0,
+        "keyboardFire": 0,
+        "gameMenu": 0,
+        "resumeRequired": 0,
+        "active": 1,
+        "keyboardAimX": 0,
+        "callbackInterval": 0.0166,
+        "ticksPerCallback": 1,
+        "motion": 0,
+        "tilt": [
+          0,
+          0,
+          -1
+        ],
+        "hudEditing": 0,
+        "hudCustomized": 0,
+        "hudFallback": 0,
+        "hudSelected": 2,
+        "hudDraftCustomized": 0,
+        "orientationHold": 0
+      },
+      "screenshot": "Stage18-formation.png"
+    },
+    {
+      "map": "Stage23",
+      "boss": "",
+      "ok": true,
+      "expectedCounts": {
+        "Lux_F22": 1,
+        "Lux_Su57": 1,
+        "Lux_MiG31": 2,
+        "Lux_Eurofighter": 1
+      },
+      "before": {
+        "x": 4052,
+        "y": 91.02717391304347,
+        "lux": []
+      },
+      "fixture": {
+        "x": 4152,
+        "y": 87.5
+      },
+      "actualCounts": {
+        "Lux_F22": 1,
+        "Lux_Su57": 1,
+        "Lux_MiG31": 2,
+        "Lux_Eurofighter": 1
+      },
+      "bossPresent": true,
+      "cheats": {
+        "blockedHits": 0,
+        "refilledRounds": 0,
+        "fallRescues": 0
+      },
+      "visibleParts": [
+        {
+          "tile": "Lux_F22.png",
+          "x": 174.74527,
+          "y": 182.848053,
+          "rotation": -0.0571252853,
+          "scaleX": 1,
+          "scaleY": 0.993841112,
+          "frame": 0
+        },
+        {
+          "tile": "Lux_Su57.png",
+          "x": 169.361969,
+          "y": 240.666565,
+          "rotation": -0.0432169512,
+          "scaleX": 1,
+          "scaleY": 1.00432909,
+          "frame": 0
+        },
+        {
+          "tile": "Lux_MiG31.png",
+          "x": 272.818024,
+          "y": 182.848053,
+          "rotation": 0.139626265,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Lux_MiG31.png",
+          "x": 272.818024,
+          "y": 244.615585,
+          "rotation": 0.17590417,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Lux_Eurofighter.png",
+          "x": 457.430328,
+          "y": 182.848053,
+          "rotation": -0.0994509086,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        }
+      ],
+      "game": {
+        "screen": "game",
+        "time": 139.2333,
+        "canvas": [
+          533.333,
+          320
+        ],
+        "loading": 0,
+        "mission": 5,
+        "stage": 3,
+        "playerX": 4161,
+        "playerY": 38.99,
+        "hp": 740,
+        "enemies": 30,
+        "bullets": 2,
+        "paused": 0,
+        "gameState": 0,
+        "decodes": 532,
+        "loadError": 0,
+        "aimMode": 1,
+        "aimTarget": 0,
+        "inputBlocked": 0,
+        "keyboardFire": 0,
+        "gameMenu": 0,
+        "resumeRequired": 0,
+        "active": 1,
+        "keyboardAimX": 0,
+        "callbackInterval": 0.0167,
+        "ticksPerCallback": 1,
+        "motion": 0,
+        "tilt": [
+          0,
+          0,
+          -1
+        ],
+        "hudEditing": 0,
+        "hudCustomized": 0,
+        "hudFallback": 0,
+        "hudSelected": 2,
+        "hudDraftCustomized": 0,
+        "orientationHold": 0
+      },
+      "screenshot": "Stage23-formation.png"
+    },
+    {
+      "map": "Stage34",
+      "boss": "",
+      "ok": true,
+      "expectedCounts": {
+        "Lux_F22": 2,
+        "Lux_Su57": 1,
+        "Lux_MiG31": 1,
+        "Lux_Eurofighter": 1
+      },
+      "before": {
+        "x": 6104,
+        "y": 82,
+        "lux": []
+      },
+      "fixture": {
+        "x": 6204,
+        "y": 113.04156479217603
+      },
+      "actualCounts": {
+        "Lux_F22": 2,
+        "Lux_Su57": 1,
+        "Lux_MiG31": 1,
+        "Lux_Eurofighter": 1
+      },
+      "bossPresent": true,
+      "cheats": {
+        "blockedHits": 0,
+        "refilledRounds": 0,
+        "fallRescues": 0
+      },
+      "visibleParts": [
+        {
+          "tile": "Lux_F22.png",
+          "x": 163.359528,
+          "y": 170.91301,
+          "rotation": -0.0421090014,
+          "scaleX": 1,
+          "scaleY": 0.993841112,
+          "frame": 0
+        },
+        {
+          "tile": "Lux_F22.png",
+          "x": 163.359528,
+          "y": 233.738068,
+          "rotation": -0.00803362392,
+          "scaleX": 1,
+          "scaleY": 0.993841112,
+          "frame": 0
+        },
+        {
+          "tile": "Lux_Su57.png",
+          "x": 314.034332,
+          "y": 170.91301,
+          "rotation": -0.0756761283,
+          "scaleX": 1,
+          "scaleY": 1.00432909,
+          "frame": 0
+        },
+        {
+          "tile": "Lux_MiG31.png",
+          "x": 281.835602,
+          "y": 240.805542,
+          "rotation": 0.140918791,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Lux_Eurofighter.png",
+          "x": 431.445953,
+          "y": 170.91301,
+          "rotation": 0.0242208764,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        }
+      ],
+      "game": {
+        "screen": "game",
+        "time": 144.1,
+        "canvas": [
+          533.333,
+          320
+        ],
+        "loading": 0,
+        "mission": 6,
+        "stage": 4,
+        "playerX": 6204,
+        "playerY": 73.54,
+        "hp": 309,
+        "enemies": 110,
+        "bullets": 5,
+        "paused": 0,
+        "gameState": 0,
+        "decodes": 532,
+        "loadError": 0,
+        "aimMode": 1,
+        "aimTarget": 0,
+        "inputBlocked": 0,
+        "keyboardFire": 0,
+        "gameMenu": 0,
+        "resumeRequired": 0,
+        "active": 1,
+        "keyboardAimX": 0,
+        "callbackInterval": 0.0167,
+        "ticksPerCallback": 1,
+        "motion": 0,
+        "tilt": [
+          0,
+          0,
+          -1
+        ],
+        "hudEditing": 0,
+        "hudCustomized": 0,
+        "hudFallback": 0,
+        "hudSelected": 2,
+        "hudDraftCustomized": 0,
+        "orientationHold": 0
+      },
+      "screenshot": "Stage34-formation.png"
+    }
+  ],
+  "errors": [
+    "Stage13 Ka52: Error: Runtime observation timed out: {\"screen\":\"game\",\"time\":34.8333,\"canvas\":[533.333,320],\"loading\":0,\"mission\":2,\"stage\":3,\"playerX\":2393.42,\"playerY\":12.2,\"hp\":840,\"enemies\":21,\"bullets\":0,\"paused\":0,\"gameState\":0,\"decodes\":298,\"loadError\":0,\"aimMode\":1,\"aimTarget\":0,\"inputBlocked\":0,\"keyboardFire\":0,\"gameMenu\":0,\"resumeRequired\":0,\"active\":1,\"keyboardAimX\":0,\"callbackInterval\":0.0541,\"ticksPerCallback\":3,\"motion\":0,\"tilt\":[0,0,-1],\"hudEditing\":0,\"hudCustomized\":0,\"hudFallback\":0,\"hudSelected\":2,\"hudDraftCustomized\":0,\"orientationHold\":0}",
+    "Stage25 Ka52: Error: Runtime observation timed out: {\"screen\":\"game\",\"time\":42.7,\"canvas\":[533.333,320],\"loading\":0,\"mission\":3,\"stage\":0,\"playerX\":1521.98,\"playerY\":-21.87,\"hp\":840,\"enemies\":12,\"bullets\":0,\"paused\":0,\"gameState\":0,\"decodes\":327,\"loadError\":0,\"aimMode\":1,\"aimTarget\":0,\"inputBlocked\":0,\"keyboardFire\":0,\"gameMenu\":0,\"resumeRequired\":0,\"active\":1,\"keyboardAimX\":0,\"callbackInterval\":0.0166,\"ticksPerCallback\":1,\"motion\":0,\"tilt\":[0,0,-1],\"hudEditing\":0,\"hudCustomized\":0,\"hudFallback\":0,\"hudSelected\":2,\"hudDraftCustomized\":0,\"orientationHold\":0}",
+    "Stage13 formation: Error: Runtime observation timed out: {\"screen\":\"game\",\"time\":119.15,\"canvas\":[533.333,320],\"loading\":0,\"mission\":2,\"stage\":3,\"playerX\":4602.02,\"playerY\":6.81,\"hp\":840,\"enemies\":39,\"bullets\":0,\"paused\":0,\"gameState\":0,\"decodes\":523,\"loadError\":0,\"aimMode\":1,\"aimTarget\":0,\"inputBlocked\":0,\"keyboardFire\":0,\"gameMenu\":0,\"resumeRequired\":0,\"active\":1,\"keyboardAimX\":0,\"callbackInterval\":0.0165,\"ticksPerCallback\":1,\"motion\":0,\"tilt\":[0,0,-1],\"hudEditing\":0,\"hudCustomized\":0,\"hudFallback\":0,\"hudSelected\":2,\"hudDraftCustomized\":0,\"orientationHold\":0}"
+  ],
+  "ok": false,
+  "authoringSha256": "9da2855dba79696ae3354b5ff1c5e51c9746d64586264a7c35bbed93c50b59d1",
+  "browser": "Chrome/156.0.8078.80",
+  "storage": {
+    "savePath": "/validation-persist/HvM.dat",
+    "normalMount": false,
+    "prefix": "HeavyMach.Validation."
+  },
+  "normal": {
+    "bridge": "undefined",
+    "export": "undefined",
+    "validation": false
+  }
+}

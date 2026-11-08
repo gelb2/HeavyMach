@@ -1,0 +1,174 @@
+{
+  "authoringSha256": "9da2855dba79696ae3354b5ff1c5e51c9746d64586264a7c35bbed93c50b59d1",
+  "validationWasmSha256": "d061c43020881f63a4dba9323b17acc32423a9805923cafd5d86e45920bd1f59",
+  "ok": true,
+  "cases": [
+    {
+      "fixture": {
+        "map": "Stage13",
+        "mission": 2,
+        "stage": 3,
+        "x": 1816,
+        "y": 5,
+        "ground": -35
+      },
+      "scope": "Ground approach; normal keyboard movement and actual player weapon hits. Existing invulnerability/ammunition cheats enabled explicitly; no spawn/position changes after start.",
+      "ok": true,
+      "bossDamage": [],
+      "screenshots": [
+        "Stage13-ground-Ka52.png",
+        "Stage13-ground-Eurofighter.png"
+      ],
+      "kaGame": {
+        "screen": "game",
+        "time": 10.6167,
+        "canvas": [
+          533.333,
+          320
+        ],
+        "loading": 0,
+        "mission": 2,
+        "stage": 3,
+        "playerX": 2323,
+        "playerY": 11.52,
+        "hp": 840,
+        "enemies": 19,
+        "bullets": 11,
+        "paused": 0,
+        "gameState": 0,
+        "decodes": 157,
+        "loadError": 0,
+        "aimMode": 1,
+        "aimTarget": 0,
+        "inputBlocked": 0,
+        "keyboardFire": 0,
+        "gameMenu": 0,
+        "resumeRequired": 0,
+        "active": 1,
+        "keyboardAimX": 0,
+        "callbackInterval": 0.0166,
+        "ticksPerCallback": 1,
+        "motion": 0,
+        "tilt": [
+          0,
+          0,
+          -1
+        ],
+        "hudEditing": 0,
+        "hudCustomized": 0,
+        "hudFallback": 0,
+        "hudSelected": 2,
+        "hudDraftCustomized": 0,
+        "orientationHold": 0
+      },
+      "euroGame": {
+        "screen": "game",
+        "time": 30.0333,
+        "canvas": [
+          533.333,
+          320
+        ],
+        "loading": 0,
+        "mission": 2,
+        "stage": 3,
+        "playerX": 4681.97,
+        "playerY": 5.76,
+        "hp": 840,
+        "enemies": 37,
+        "bullets": 6,
+        "paused": 0,
+        "gameState": 0,
+        "decodes": 162,
+        "loadError": 0,
+        "aimMode": 1,
+        "aimTarget": 0,
+        "inputBlocked": 0,
+        "keyboardFire": 0,
+        "gameMenu": 0,
+        "resumeRequired": 0,
+        "active": 1,
+        "keyboardAimX": 0,
+        "callbackInterval": 0.0166,
+        "ticksPerCallback": 1,
+        "motion": 0,
+        "tilt": [
+          0,
+          0,
+          -1
+        ],
+        "hudEditing": 0,
+        "hudCustomized": 0,
+        "hudFallback": 0,
+        "hudSelected": 2,
+        "hudDraftCustomized": 0,
+        "orientationHold": 0
+      },
+      "kaSeen": true,
+      "euroSeen": true,
+      "traceFrames": 237,
+      "traceFile": "Stage13-trace.json"
+    },
+    {
+      "fixture": {
+        "map": "Stage25",
+        "mission": 3,
+        "stage": 0,
+        "x": 956,
+        "y": -42.07627118644068,
+        "ground": -82.07627118644068
+      },
+      "scope": "Ground approach; normal keyboard movement and actual player weapon hits. Existing invulnerability/ammunition cheats enabled explicitly; no spawn/position changes after start.",
+      "ok": true,
+      "bossDamage": [],
+      "screenshots": [
+        "Stage25-ground-Ka52.png"
+      ],
+      "kaGame": {
+        "screen": "game",
+        "time": 15.3,
+        "canvas": [
+          533.333,
+          320
+        ],
+        "loading": 0,
+        "mission": 3,
+        "stage": 0,
+        "playerX": 1386,
+        "playerY": 41.46,
+        "hp": 840,
+        "enemies": 10,
+        "bullets": 7,
+        "paused": 0,
+        "gameState": 0,
+        "decodes": 153,
+        "loadError": 0,
+        "aimMode": 1,
+        "aimTarget": 0,
+        "inputBlocked": 0,
+        "keyboardFire": 0,
+        "gameMenu": 0,
+        "resumeRequired": 0,
+        "active": 1,
+        "keyboardAimX": 0,
+        "callbackInterval": 0.0167,
+        "ticksPerCallback": 1,
+        "motion": 0,
+        "tilt": [
+          0,
+          0,
+          -1
+        ],
+        "hudEditing": 0,
+        "hudCustomized": 0,
+        "hudFallback": 0,
+        "hudSelected": 2,
+        "hudDraftCustomized": 0,
+        "orientationHold": 0
+      },
+      "kaSeen": true,
+      "euroSeen": false,
+      "traceFrames": 123,
+      "traceFile": "Stage25-trace.json"
+    }
+  ]
+}
