@@ -1,0 +1,158 @@
+{
+  "url": "https://gelb2.github.io/HeavyMach/game/b9eb1975ed29b8f4/",
+  "touch": false,
+  "steps": [
+    {
+      "name": "title",
+      "canvas": [
+        694.857,
+        320
+      ],
+      "gameFramesPerSecond": 59.9,
+      "callbackInterval": 0.0167,
+      "ticksPerCallback": 1
+    },
+    {
+      "name": "slots"
+    },
+    {
+      "name": "mode"
+    },
+    {
+      "name": "mission"
+    },
+    {
+      "name": "game-start",
+      "screen": "game",
+      "time": 20.0167,
+      "canvas": [
+        694.857,
+        320
+      ],
+      "loading": 0,
+      "mission": 0,
+      "stage": 0,
+      "playerX": -1040,
+      "playerY": -40.5,
+      "hp": 231,
+      "enemies": 3,
+      "bullets": 0,
+      "paused": 0,
+      "gameState": 0,
+      "decodes": 169,
+      "loadError": 0,
+      "aimMode": 1,
+      "aimTarget": 0,
+      "inputBlocked": 0,
+      "keyboardFire": 0,
+      "gameMenu": 0,
+      "resumeRequired": 0,
+      "active": 1,
+      "keyboardAimX": 0,
+      "callbackInterval": 0.0167,
+      "ticksPerCallback": 1,
+      "motion": 0,
+      "tilt": [
+        0,
+        0,
+        -1
+      ],
+      "hudEditing": 0,
+      "hudCustomized": 0,
+      "hudFallback": 0,
+      "hudSelected": 2,
+      "hudDraftCustomized": 0,
+      "orientationHold": 0
+    },
+    {
+      "name": "fire",
+      "maxBullets": 3
+    },
+    {
+      "name": "move-right",
+      "from": -1040,
+      "to": -868.85
+    },
+    {
+      "name": "fire-after-move",
+      "maxBullets": 0,
+      "state": {
+        "screen": "game",
+        "time": 26,
+        "canvas": [
+          694.857,
+          320
+        ],
+        "loading": 0,
+        "mission": 0,
+        "stage": 0,
+        "playerX": -868.85,
+        "playerY": -40.5,
+        "hp": 206,
+        "enemies": 3,
+        "bullets": 0,
+        "paused": 0,
+        "gameState": 0,
+        "decodes": 170,
+        "loadError": 0,
+        "aimMode": 1,
+        "aimTarget": 0,
+        "inputBlocked": 0,
+        "keyboardFire": 0,
+        "gameMenu": 0,
+        "resumeRequired": 0,
+        "active": 1,
+        "keyboardAimX": 264,
+        "callbackInterval": 0.0166,
+        "ticksPerCallback": 1,
+        "motion": 0,
+        "tilt": [
+          0,
+          0,
+          -1
+        ],
+        "hudEditing": 0,
+        "hudCustomized": 0,
+        "hudFallback": 0,
+        "hudSelected": 2,
+        "hudDraftCustomized": 0,
+        "orientationHold": 0
+      }
+    },
+    {
+      "name": "jump",
+      "from": -40.5,
+      "to": 12.41
+    },
+    {
+      "name": "auto-aim",
+      "before": 1,
+      "on": 2,
+      "target": 1,
+      "bulletsWhileFiring": 3,
+      "off": 1
+    },
+    {
+      "name": "save-after-slot-select",
+      "bytes": 3624
+    },
+    {
+      "name": "pause",
+      "paused": 1
+    },
+    {
+      "name": "reload-save",
+      "bytes": 3624
+    },
+    {
+      "name": "reload-title-ready",
+      "observedAt": 0,
+      "tappedAt": 6.25
+    },
+    {
+      "name": "slots-after-reload"
+    }
+  ],
+  "errors": [],
+  "ok": true
+}
