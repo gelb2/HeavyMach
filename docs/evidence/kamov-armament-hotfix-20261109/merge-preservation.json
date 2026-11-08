@@ -1,0 +1,14 @@
+{
+  "mainBefore": "cc70daf9c8b600e47d18a9e123ac67d9bfb0bc9b",
+  "develop": "0a0657763622a8a097b4a7a7e2b76bf2be14d7e7",
+  "candidateTree": "adc5ed24b98b5279f278a4f24cae477cb0f72368",
+  "developTree": "adc5ed24b98b5279f278a4f24cae477cb0f72368",
+  "sameTree": true,
+  "mainOnlyCommits": [
+    "cc70daf9c8b600e47d18a9e123ac67d9bfb0bc9b Merge pull request #110 from gelb2/develop",
+    "4bbb3f50100e3568e8ea15261e85dd517f5d49d1 Merge pull request #108 from gelb2/develop",
+    "191728e310158a55df1164ee452b19b48fa97e57 Merge pull request #105 from gelb2/develop",
+    "22f6b5d9dfe7fa0968a655cc4596d69370393173 Merge pull request #103 from gelb2/develop",
+    "bd0aa73ad0bf765f3e54c1800c89b8d550a5e1e9 Merge develop: simplify essay subheadings"
+  ]
+}

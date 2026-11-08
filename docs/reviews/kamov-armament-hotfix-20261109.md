@@ -45,7 +45,21 @@ bake 목록과 Apple·Android·Web의 실행용 기관포 PNG를 제거했다. �
 
 ## 배포 범위
 
-작업 브랜치에서 develop을 거쳐 main으로 전달한다. 정식 웹·PWA와 별도 웹 치트 검증판을 갱신한다. 기존 검증 URL도 보존한다. 이 변경의 휴대폰 설치 요청은 없으며 기존 아이폰 설치본은 변경하지 않는다. 릴리스의 실제 커밋·주소와 공개 실행 결과는 배포 완료 기록에 남긴다.
+[PR #116](https://github.com/gelb2/HeavyMach/pull/116)으로 develop `0a065776`, [PR #117](https://github.com/gelb2/HeavyMach/pull/117)로 main `a7f4ac7b`에 병합했다. 두 PR의 코어·Apple 정식/치트 빌드·문서·번역 검사가 통과했다. main의 기존 글과 병합 후보를 대조했고 후보 트리는 검증한 develop과 같았다. main 병합 커밋에 [핫픽스 태그](https://github.com/gelb2/HeavyMach/releases/tag/kamov-armament-hotfix-20261109)를 붙였다.
+
+[정식 웹·PWA](https://gelb2.github.io/HeavyMach/)와 [카모프 웹 치트판](https://gelb2.github.io/HeavyMach/validation/kamov-armament-hotfix-20261109/?validation-unit=Ka52)을 갱신했다. 기존 카모프·유로파이터 검증 URL도 같은 수정본을 제공한다. Pages 커밋은 `2e948106`, PWA 버전은 `47fc92ce7e92a267`, 게임 버전은 `b9eb1975ed29b8f4`다. 공개 파일30개의 해시가 로컬 검증 산출물과 모두 같았다. 공개 Stage01에서 미사일 발사 시각1.11666667/1.61666679, 두 번의 실제 피해25, 두 로터0/1, 기관포 부재를 확인했다. [공개 파일](../evidence/kamov-armament-hotfix-20261109/public-http.json) · [공개 전투](../evidence/kamov-armament-hotfix-20261109/public-campaign.json)
+
+공개 치트 URL8조건과 정식 웹15단계도 통과했다. 정식판의 이동·점프·실제 사격·자동조준·일시정지·저장3,624바이트 복원과 재접속 슬롯 진입을 확인했다. [링크8조건](../evidence/kamov-armament-hotfix-20261109/public-link.json) · [정식판15단계](../evidence/kamov-armament-hotfix-20261109/public-normal.json)
+
+이번 갱신은 소스·웹/PWA·웹 치트판이다. 기존 아이폰·Android·Tauri 설치본은 갱신하지 않았다.
+
+## develop·main 보호
+
+사용자의 추가 지시는 본인 계정은 예외로 두고 다른 사람의 직접 커밋·병합을 막는 것이다. 서버 보호 설정을 적용하고 GET API로 다시 확인했다. 다른 기여자는 PR·승인1건·CODEOWNERS 승인·대화 해결·필수 검사를 거친다. `.github/CODEOWNERS`는 전체 경로의 소유자를 `@gelb2`로 지정한다. 일반 권한자의 강제 푸시·브랜치 삭제도 허용하지 않는다.
+
+본인은 관리자 예외를 유지한다. 현재 쓰기 권한과 관리자 권한을 가진 계정은 `gelb2` 한 명이다. 향후 다른 관리자 권한을 부여하면 그 관리자도 예외가 되므로 권한 추가 시 보호 범위를 다시 확인해야 한다. 작업자는 이번에도 작업 브랜치→develop→main 경로를 사용한다.
+
+서버 필수 검사는 두 브랜치의 `documentation`, main의 `develop-only`다. core·apple·translations는 경로 필터가 있어 모든 PR의 필수 검사로 등록하지 않았다. 이번 릴리스에서는 실제 실행된 이 검사들의 통과도 확인했다. 최신 base 동기화 강제는 껐으며, 이를 모든 통합 상태의 검사 보장으로 표현하지 않는다. [develop 설정](../evidence/kamov-armament-hotfix-20261109/protection-develop-verified.json) · [main 설정](../evidence/kamov-armament-hotfix-20261109/protection-main-verified.json)
 
 ## 근거
 

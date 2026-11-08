@@ -1,0 +1,56 @@
+{
+  "method": "oxipng --nx -o 4; no transform, metadata retained",
+  "files": [
+    {
+      "name": "helicopter-family-same-scale.png",
+      "originalBytes": 1045234,
+      "optimizedBytes": 947118,
+      "size": [
+        1800,
+        600
+      ],
+      "mode": "RGB",
+      "pixelsSame": true,
+      "metadataSame": true
+    },
+    {
+      "name": "Stage01-Ka52.png",
+      "originalBytes": 785421,
+      "optimizedBytes": 707627,
+      "size": [
+        1200,
+        720
+      ],
+      "mode": "RGB",
+      "pixelsSame": true,
+      "metadataSame": true
+    },
+    {
+      "name": "lux-family-same-scale.png",
+      "originalBytes": 999564,
+      "optimizedBytes": 901577,
+      "size": [
+        1800,
+        600
+      ],
+      "mode": "RGB",
+      "pixelsSame": true,
+      "metadataSame": true
+    },
+    {
+      "name": "Ka52-two-missiles.png",
+      "originalBytes": 768188,
+      "optimizedBytes": 688517,
+      "size": [
+        1200,
+        720
+      ],
+      "mode": "RGB",
+      "pixelsSame": true,
+      "metadataSame": true
+    }
+  ],
+  "excludedUnusedSiteCopy": "media/kamov-armament-hotfix-20261109/lux-family-same-scale.png",
+  "originalPreserved": true,
+  "siteBytes": 268397738
+}
