@@ -985,3 +985,13 @@ Site source `4608b63240afd8b9b25aa653ff206715db167152`, deployment `appgdep_6af0
 - Site source `7899b79e7d3a9791c54fd60435b929fc59059f72`, deployment `appgdep_6af0dbfac944819198c53d24e41f0450`, succeeded.
 - version `appgprj_6addbf55aea081918d3d182d7e496e88~appgver_cf3cb08701448191b35dd6c5814f7f32`.
 - 기존 소유자 전용 접근 유지. 390·1440 화면에서 이미지3개와 가로 넘침 없음을 검사했다. 게시 HTML3개는 호스팅 주입 스크립트를 제외하고 소스와 같았다. [근거](evidence/kamov-lux-stage-placement-20261109/report-site.json).
+
+## 카모프 기관포 제거·미사일 2연사 — 2026-11-09
+
+[카모프 핫픽스 보고서](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/kamov-armament-hotfix-20261109.html)를 게시했다. 기관포 제거·미사일2연사, 공통 데이터 경로, 실제 웹 전투·20무기·공개 배포 검증, main 릴리스와 본인 예외를 유지한 브랜치 보호를 기록했다. 읽기용 HTML과 같은 원고 다운로드를 제공한다.
+
+- Site source `7205811786279b1c34e7ad5ea0eccd4499cd6161`, deployment `appgdep_6af0fd2b061081919af82874381590ef`, succeeded.
+- version `appgprj_6addbf55aea081918d3d182d7e496e88~appgver_db7720bbbd5c8191a20358a35795939e`.
+- 기존 소유자 전용 접근 유지. Chrome 390·1440에서 이미지3개 표시와 가로 넘침 없음 확인. 이미지·검사 자료18개는 공개 GitHub 커밋 `fc40a53478513cbef7cde506c99b1f0b09b2107a`의 원본 주소로 연결하고 파일 해시를 대조했다. LFS 그림은 실제 이미지용 media.githubusercontent.com 주소를 쓴다.
+- 최초 게시 묶음이 256MiB 확장 용량을 넘어 거부됐다. 새 PNG 복사본의 무손실 압축과 macOS 부가파일 제외만으로는 해결되지 않았다. 기존 애니메이션의 무손실 압축 후보도 더 커서 적용하지 않았다. 최종 묶음은 이번 보고서의 이미지·검사 자료 중복 복사본만 제외했다. Git 원본과 공개 커밋의 파일, 기존 사이트 영상·이미지는 그대로다. 아카이브의 확장 크기는268,327,424바이트다.
+- [게시 결과](evidence/kamov-armament-hotfix-20261109/report-site.json) · [외부 원본18개](evidence/kamov-armament-hotfix-20261109/report-external-assets.json) · [화면 검사](evidence/kamov-armament-hotfix-20261109/report-qa.json).

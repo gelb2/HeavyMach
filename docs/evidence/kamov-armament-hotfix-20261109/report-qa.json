@@ -4,15 +4,15 @@
     "scrollWidth": 390,
     "images": [
       {
-        "src": "file:///Users/sokol/Git/ProjectGameDev-Hub/HeavyMach/build/kamov-armament-hotfix-20261109/build/report-site/.sites-checkout/dist/media/kamov-armament-hotfix-20261109/Ka52-two-missiles.png",
+        "src": "https://media.githubusercontent.com/media/gelb2/HeavyMach/fc40a53478513cbef7cde506c99b1f0b09b2107a/docs/public/media/kamov-armament-hotfix-20261109/Ka52-two-missiles.png",
         "ok": true
       },
       {
-        "src": "file:///Users/sokol/Git/ProjectGameDev-Hub/HeavyMach/build/kamov-armament-hotfix-20261109/build/report-site/.sites-checkout/dist/media/kamov-armament-hotfix-20261109/helicopter-family-same-scale.png",
+        "src": "https://media.githubusercontent.com/media/gelb2/HeavyMach/fc40a53478513cbef7cde506c99b1f0b09b2107a/docs/public/media/kamov-armament-hotfix-20261109/helicopter-family-same-scale.png",
         "ok": true
       },
       {
-        "src": "file:///Users/sokol/Git/ProjectGameDev-Hub/HeavyMach/build/kamov-armament-hotfix-20261109/build/report-site/.sites-checkout/dist/media/kamov-armament-hotfix-20261109/Stage01-Ka52.png",
+        "src": "https://media.githubusercontent.com/media/gelb2/HeavyMach/fc40a53478513cbef7cde506c99b1f0b09b2107a/docs/public/media/kamov-armament-hotfix-20261109/Stage01-Ka52.png",
         "ok": true
       }
     ],
@@ -25,26 +25,26 @@
       "file:///Users/sokol/Git/ProjectGameDev-Hub/HeavyMach/build/kamov-armament-hotfix-20261109/build/report-site/.sites-checkout/dist/kamov-armament-hotfix-20261109.html#section-3",
       "file:///Users/sokol/Git/ProjectGameDev-Hub/HeavyMach/build/kamov-armament-hotfix-20261109/build/report-site/.sites-checkout/dist/kamov-armament-hotfix-20261109.html#section-4",
       "file:///Users/sokol/Git/ProjectGameDev-Hub/HeavyMach/build/kamov-armament-hotfix-20261109/build/report-site/.sites-checkout/dist/kamov-armament-hotfix-20261109.html#section-5",
-      "file:///Users/sokol/Git/ProjectGameDev-Hub/HeavyMach/build/kamov-armament-hotfix-20261109/build/report-site/.sites-checkout/dist/evidence/kamov-armament-hotfix-20261109/preservation.json",
-      "file:///Users/sokol/Git/ProjectGameDev-Hub/HeavyMach/build/kamov-armament-hotfix-20261109/build/report-site/.sites-checkout/dist/evidence/kamov-armament-hotfix-20261109/title-timing-probe.json",
-      "file:///Users/sokol/Git/ProjectGameDev-Hub/HeavyMach/build/kamov-armament-hotfix-20261109/build/report-site/.sites-checkout/dist/evidence/kamov-armament-hotfix-20261109/normal-web-smoke.json",
+      "https://raw.githubusercontent.com/gelb2/HeavyMach/fc40a53478513cbef7cde506c99b1f0b09b2107a/docs/evidence/kamov-armament-hotfix-20261109/preservation.json",
+      "https://raw.githubusercontent.com/gelb2/HeavyMach/fc40a53478513cbef7cde506c99b1f0b09b2107a/docs/evidence/kamov-armament-hotfix-20261109/title-timing-probe.json",
+      "https://raw.githubusercontent.com/gelb2/HeavyMach/fc40a53478513cbef7cde506c99b1f0b09b2107a/docs/evidence/kamov-armament-hotfix-20261109/normal-web-smoke.json",
       "https://github.com/gelb2/HeavyMach/pull/116",
       "https://github.com/gelb2/HeavyMach/pull/117",
       "https://github.com/gelb2/HeavyMach/releases/tag/kamov-armament-hotfix-20261109",
       "https://gelb2.github.io/HeavyMach/",
       "https://gelb2.github.io/HeavyMach/validation/kamov-armament-hotfix-20261109/?validation-unit=Ka52",
-      "file:///Users/sokol/Git/ProjectGameDev-Hub/HeavyMach/build/kamov-armament-hotfix-20261109/build/report-site/.sites-checkout/dist/evidence/kamov-armament-hotfix-20261109/public-http.json",
-      "file:///Users/sokol/Git/ProjectGameDev-Hub/HeavyMach/build/kamov-armament-hotfix-20261109/build/report-site/.sites-checkout/dist/evidence/kamov-armament-hotfix-20261109/public-campaign.json",
-      "file:///Users/sokol/Git/ProjectGameDev-Hub/HeavyMach/build/kamov-armament-hotfix-20261109/build/report-site/.sites-checkout/dist/evidence/kamov-armament-hotfix-20261109/public-link.json",
-      "file:///Users/sokol/Git/ProjectGameDev-Hub/HeavyMach/build/kamov-armament-hotfix-20261109/build/report-site/.sites-checkout/dist/evidence/kamov-armament-hotfix-20261109/public-normal.json",
-      "file:///Users/sokol/Git/ProjectGameDev-Hub/HeavyMach/build/kamov-armament-hotfix-20261109/build/report-site/.sites-checkout/dist/evidence/kamov-armament-hotfix-20261109/protection-develop-verified.json",
-      "file:///Users/sokol/Git/ProjectGameDev-Hub/HeavyMach/build/kamov-armament-hotfix-20261109/build/report-site/.sites-checkout/dist/evidence/kamov-armament-hotfix-20261109/protection-main-verified.json",
-      "file:///Users/sokol/Git/ProjectGameDev-Hub/HeavyMach/build/kamov-armament-hotfix-20261109/build/report-site/.sites-checkout/dist/evidence/kamov-armament-hotfix-20261109/core-tests.txt",
-      "file:///Users/sokol/Git/ProjectGameDev-Hub/HeavyMach/build/kamov-armament-hotfix-20261109/build/report-site/.sites-checkout/dist/evidence/kamov-armament-hotfix-20261109/assembly-detail.txt",
-      "file:///Users/sokol/Git/ProjectGameDev-Hub/HeavyMach/build/kamov-armament-hotfix-20261109/build/report-site/.sites-checkout/dist/evidence/kamov-armament-hotfix-20261109/web-validation.json",
-      "file:///Users/sokol/Git/ProjectGameDev-Hub/HeavyMach/build/kamov-armament-hotfix-20261109/build/report-site/.sites-checkout/dist/evidence/kamov-armament-hotfix-20261109/web-campaign.json",
-      "file:///Users/sokol/Git/ProjectGameDev-Hub/HeavyMach/build/kamov-armament-hotfix-20261109/build/report-site/.sites-checkout/dist/evidence/kamov-armament-hotfix-20261109/image-verification.json",
-      "file:///Users/sokol/Git/ProjectGameDev-Hub/HeavyMach/build/kamov-armament-hotfix-20261109/build/report-site/.sites-checkout/dist/evidence/kamov-armament-hotfix-20261109/builds.json"
+      "https://raw.githubusercontent.com/gelb2/HeavyMach/fc40a53478513cbef7cde506c99b1f0b09b2107a/docs/evidence/kamov-armament-hotfix-20261109/public-http.json",
+      "https://raw.githubusercontent.com/gelb2/HeavyMach/fc40a53478513cbef7cde506c99b1f0b09b2107a/docs/evidence/kamov-armament-hotfix-20261109/public-campaign.json",
+      "https://raw.githubusercontent.com/gelb2/HeavyMach/fc40a53478513cbef7cde506c99b1f0b09b2107a/docs/evidence/kamov-armament-hotfix-20261109/public-link.json",
+      "https://raw.githubusercontent.com/gelb2/HeavyMach/fc40a53478513cbef7cde506c99b1f0b09b2107a/docs/evidence/kamov-armament-hotfix-20261109/public-normal.json",
+      "https://raw.githubusercontent.com/gelb2/HeavyMach/fc40a53478513cbef7cde506c99b1f0b09b2107a/docs/evidence/kamov-armament-hotfix-20261109/protection-develop-verified.json",
+      "https://raw.githubusercontent.com/gelb2/HeavyMach/fc40a53478513cbef7cde506c99b1f0b09b2107a/docs/evidence/kamov-armament-hotfix-20261109/protection-main-verified.json",
+      "https://raw.githubusercontent.com/gelb2/HeavyMach/fc40a53478513cbef7cde506c99b1f0b09b2107a/docs/evidence/kamov-armament-hotfix-20261109/core-tests.txt",
+      "https://raw.githubusercontent.com/gelb2/HeavyMach/fc40a53478513cbef7cde506c99b1f0b09b2107a/docs/evidence/kamov-armament-hotfix-20261109/assembly-detail.txt",
+      "https://raw.githubusercontent.com/gelb2/HeavyMach/fc40a53478513cbef7cde506c99b1f0b09b2107a/docs/evidence/kamov-armament-hotfix-20261109/web-validation.json",
+      "https://raw.githubusercontent.com/gelb2/HeavyMach/fc40a53478513cbef7cde506c99b1f0b09b2107a/docs/evidence/kamov-armament-hotfix-20261109/web-campaign.json",
+      "https://raw.githubusercontent.com/gelb2/HeavyMach/fc40a53478513cbef7cde506c99b1f0b09b2107a/docs/evidence/kamov-armament-hotfix-20261109/image-verification.json",
+      "https://raw.githubusercontent.com/gelb2/HeavyMach/fc40a53478513cbef7cde506c99b1f0b09b2107a/docs/evidence/kamov-armament-hotfix-20261109/builds.json"
     ],
     "missing": []
   },
@@ -53,15 +53,15 @@
     "scrollWidth": 1440,
     "images": [
       {
-        "src": "file:///Users/sokol/Git/ProjectGameDev-Hub/HeavyMach/build/kamov-armament-hotfix-20261109/build/report-site/.sites-checkout/dist/media/kamov-armament-hotfix-20261109/Ka52-two-missiles.png",
+        "src": "https://media.githubusercontent.com/media/gelb2/HeavyMach/fc40a53478513cbef7cde506c99b1f0b09b2107a/docs/public/media/kamov-armament-hotfix-20261109/Ka52-two-missiles.png",
         "ok": true
       },
       {
-        "src": "file:///Users/sokol/Git/ProjectGameDev-Hub/HeavyMach/build/kamov-armament-hotfix-20261109/build/report-site/.sites-checkout/dist/media/kamov-armament-hotfix-20261109/helicopter-family-same-scale.png",
+        "src": "https://media.githubusercontent.com/media/gelb2/HeavyMach/fc40a53478513cbef7cde506c99b1f0b09b2107a/docs/public/media/kamov-armament-hotfix-20261109/helicopter-family-same-scale.png",
         "ok": true
       },
       {
-        "src": "file:///Users/sokol/Git/ProjectGameDev-Hub/HeavyMach/build/kamov-armament-hotfix-20261109/build/report-site/.sites-checkout/dist/media/kamov-armament-hotfix-20261109/Stage01-Ka52.png",
+        "src": "https://media.githubusercontent.com/media/gelb2/HeavyMach/fc40a53478513cbef7cde506c99b1f0b09b2107a/docs/public/media/kamov-armament-hotfix-20261109/Stage01-Ka52.png",
         "ok": true
       }
     ],
@@ -74,26 +74,26 @@
       "file:///Users/sokol/Git/ProjectGameDev-Hub/HeavyMach/build/kamov-armament-hotfix-20261109/build/report-site/.sites-checkout/dist/kamov-armament-hotfix-20261109.html#section-3",
       "file:///Users/sokol/Git/ProjectGameDev-Hub/HeavyMach/build/kamov-armament-hotfix-20261109/build/report-site/.sites-checkout/dist/kamov-armament-hotfix-20261109.html#section-4",
       "file:///Users/sokol/Git/ProjectGameDev-Hub/HeavyMach/build/kamov-armament-hotfix-20261109/build/report-site/.sites-checkout/dist/kamov-armament-hotfix-20261109.html#section-5",
-      "file:///Users/sokol/Git/ProjectGameDev-Hub/HeavyMach/build/kamov-armament-hotfix-20261109/build/report-site/.sites-checkout/dist/evidence/kamov-armament-hotfix-20261109/preservation.json",
-      "file:///Users/sokol/Git/ProjectGameDev-Hub/HeavyMach/build/kamov-armament-hotfix-20261109/build/report-site/.sites-checkout/dist/evidence/kamov-armament-hotfix-20261109/title-timing-probe.json",
-      "file:///Users/sokol/Git/ProjectGameDev-Hub/HeavyMach/build/kamov-armament-hotfix-20261109/build/report-site/.sites-checkout/dist/evidence/kamov-armament-hotfix-20261109/normal-web-smoke.json",
+      "https://raw.githubusercontent.com/gelb2/HeavyMach/fc40a53478513cbef7cde506c99b1f0b09b2107a/docs/evidence/kamov-armament-hotfix-20261109/preservation.json",
+      "https://raw.githubusercontent.com/gelb2/HeavyMach/fc40a53478513cbef7cde506c99b1f0b09b2107a/docs/evidence/kamov-armament-hotfix-20261109/title-timing-probe.json",
+      "https://raw.githubusercontent.com/gelb2/HeavyMach/fc40a53478513cbef7cde506c99b1f0b09b2107a/docs/evidence/kamov-armament-hotfix-20261109/normal-web-smoke.json",
       "https://github.com/gelb2/HeavyMach/pull/116",
       "https://github.com/gelb2/HeavyMach/pull/117",
       "https://github.com/gelb2/HeavyMach/releases/tag/kamov-armament-hotfix-20261109",
       "https://gelb2.github.io/HeavyMach/",
       "https://gelb2.github.io/HeavyMach/validation/kamov-armament-hotfix-20261109/?validation-unit=Ka52",
-      "file:///Users/sokol/Git/ProjectGameDev-Hub/HeavyMach/build/kamov-armament-hotfix-20261109/build/report-site/.sites-checkout/dist/evidence/kamov-armament-hotfix-20261109/public-http.json",
-      "file:///Users/sokol/Git/ProjectGameDev-Hub/HeavyMach/build/kamov-armament-hotfix-20261109/build/report-site/.sites-checkout/dist/evidence/kamov-armament-hotfix-20261109/public-campaign.json",
-      "file:///Users/sokol/Git/ProjectGameDev-Hub/HeavyMach/build/kamov-armament-hotfix-20261109/build/report-site/.sites-checkout/dist/evidence/kamov-armament-hotfix-20261109/public-link.json",
-      "file:///Users/sokol/Git/ProjectGameDev-Hub/HeavyMach/build/kamov-armament-hotfix-20261109/build/report-site/.sites-checkout/dist/evidence/kamov-armament-hotfix-20261109/public-normal.json",
-      "file:///Users/sokol/Git/ProjectGameDev-Hub/HeavyMach/build/kamov-armament-hotfix-20261109/build/report-site/.sites-checkout/dist/evidence/kamov-armament-hotfix-20261109/protection-develop-verified.json",
-      "file:///Users/sokol/Git/ProjectGameDev-Hub/HeavyMach/build/kamov-armament-hotfix-20261109/build/report-site/.sites-checkout/dist/evidence/kamov-armament-hotfix-20261109/protection-main-verified.json",
-      "file:///Users/sokol/Git/ProjectGameDev-Hub/HeavyMach/build/kamov-armament-hotfix-20261109/build/report-site/.sites-checkout/dist/evidence/kamov-armament-hotfix-20261109/core-tests.txt",
-      "file:///Users/sokol/Git/ProjectGameDev-Hub/HeavyMach/build/kamov-armament-hotfix-20261109/build/report-site/.sites-checkout/dist/evidence/kamov-armament-hotfix-20261109/assembly-detail.txt",
-      "file:///Users/sokol/Git/ProjectGameDev-Hub/HeavyMach/build/kamov-armament-hotfix-20261109/build/report-site/.sites-checkout/dist/evidence/kamov-armament-hotfix-20261109/web-validation.json",
-      "file:///Users/sokol/Git/ProjectGameDev-Hub/HeavyMach/build/kamov-armament-hotfix-20261109/build/report-site/.sites-checkout/dist/evidence/kamov-armament-hotfix-20261109/web-campaign.json",
-      "file:///Users/sokol/Git/ProjectGameDev-Hub/HeavyMach/build/kamov-armament-hotfix-20261109/build/report-site/.sites-checkout/dist/evidence/kamov-armament-hotfix-20261109/image-verification.json",
-      "file:///Users/sokol/Git/ProjectGameDev-Hub/HeavyMach/build/kamov-armament-hotfix-20261109/build/report-site/.sites-checkout/dist/evidence/kamov-armament-hotfix-20261109/builds.json"
+      "https://raw.githubusercontent.com/gelb2/HeavyMach/fc40a53478513cbef7cde506c99b1f0b09b2107a/docs/evidence/kamov-armament-hotfix-20261109/public-http.json",
+      "https://raw.githubusercontent.com/gelb2/HeavyMach/fc40a53478513cbef7cde506c99b1f0b09b2107a/docs/evidence/kamov-armament-hotfix-20261109/public-campaign.json",
+      "https://raw.githubusercontent.com/gelb2/HeavyMach/fc40a53478513cbef7cde506c99b1f0b09b2107a/docs/evidence/kamov-armament-hotfix-20261109/public-link.json",
+      "https://raw.githubusercontent.com/gelb2/HeavyMach/fc40a53478513cbef7cde506c99b1f0b09b2107a/docs/evidence/kamov-armament-hotfix-20261109/public-normal.json",
+      "https://raw.githubusercontent.com/gelb2/HeavyMach/fc40a53478513cbef7cde506c99b1f0b09b2107a/docs/evidence/kamov-armament-hotfix-20261109/protection-develop-verified.json",
+      "https://raw.githubusercontent.com/gelb2/HeavyMach/fc40a53478513cbef7cde506c99b1f0b09b2107a/docs/evidence/kamov-armament-hotfix-20261109/protection-main-verified.json",
+      "https://raw.githubusercontent.com/gelb2/HeavyMach/fc40a53478513cbef7cde506c99b1f0b09b2107a/docs/evidence/kamov-armament-hotfix-20261109/core-tests.txt",
+      "https://raw.githubusercontent.com/gelb2/HeavyMach/fc40a53478513cbef7cde506c99b1f0b09b2107a/docs/evidence/kamov-armament-hotfix-20261109/assembly-detail.txt",
+      "https://raw.githubusercontent.com/gelb2/HeavyMach/fc40a53478513cbef7cde506c99b1f0b09b2107a/docs/evidence/kamov-armament-hotfix-20261109/web-validation.json",
+      "https://raw.githubusercontent.com/gelb2/HeavyMach/fc40a53478513cbef7cde506c99b1f0b09b2107a/docs/evidence/kamov-armament-hotfix-20261109/web-campaign.json",
+      "https://raw.githubusercontent.com/gelb2/HeavyMach/fc40a53478513cbef7cde506c99b1f0b09b2107a/docs/evidence/kamov-armament-hotfix-20261109/image-verification.json",
+      "https://raw.githubusercontent.com/gelb2/HeavyMach/fc40a53478513cbef7cde506c99b1f0b09b2107a/docs/evidence/kamov-armament-hotfix-20261109/builds.json"
     ],
     "missing": []
   }
