@@ -1,0 +1,236 @@
+{
+  "validation": "https://gelb2.github.io/HeavyMach/validation/kamov-eurofighter-20261109/",
+  "normal": "https://gelb2.github.io/HeavyMach/game/584cf2b910eda1d2/",
+  "cases": [
+    {
+      "name": "Ka52",
+      "url": "https://gelb2.github.io/HeavyMach/validation/kamov-eurofighter-20261109/?validation-unit=Ka52",
+      "ok": true,
+      "fixture": {
+        "status": "spawned",
+        "units": [
+          "Ka52"
+        ],
+        "scenario": {
+          "weapon": "P_Wpn_Gun06",
+          "mission": 0,
+          "stage": 0,
+          "level": 30,
+          "grade": 6,
+          "seed": 12345
+        },
+        "cheats": false,
+        "spawns": [
+          {
+            "name": "Ka52",
+            "x": -740,
+            "y": 59.5
+          }
+        ]
+      },
+      "parts": [
+        {
+          "tile": "Ka52_Body.png",
+          "x": 272.774139,
+          "y": 204.755615,
+          "rotation": -0.0529001467,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Ka52_RotorLower.png",
+          "x": 259.058075,
+          "y": 210.488861,
+          "rotation": -0.0529001467,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 1
+        },
+        {
+          "tile": "Ka52_Missile.png",
+          "x": 275.800812,
+          "y": 194.076843,
+          "rotation": -5.99357653,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        },
+        {
+          "tile": "Ka52_RotorUpper.png",
+          "x": 259.63974,
+          "y": 221.47348,
+          "rotation": -0.0529001467,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 1
+        },
+        {
+          "tile": "Ka52_Cannon.png",
+          "x": 238.828094,
+          "y": 192.335327,
+          "rotation": -5.97870922,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        }
+      ],
+      "savePath": "/validation-persist/HvM.dat"
+    },
+    {
+      "name": "Lux_Eurofighter",
+      "url": "https://gelb2.github.io/HeavyMach/validation/kamov-eurofighter-20261109/?validation-unit=Lux_Eurofighter",
+      "ok": true,
+      "fixture": {
+        "status": "spawned",
+        "units": [
+          "Lux_Eurofighter"
+        ],
+        "scenario": {
+          "weapon": "P_Wpn_Gun06",
+          "mission": 0,
+          "stage": 0,
+          "level": 30,
+          "grade": 6,
+          "seed": 12345
+        },
+        "cheats": false,
+        "spawns": [
+          {
+            "name": "Lux_Eurofighter",
+            "x": -740,
+            "y": 59.5
+          }
+        ]
+      },
+      "parts": [
+        {
+          "tile": "Lux_Eurofighter.png",
+          "x": 252.688568,
+          "y": 190,
+          "rotation": 0.0633427873,
+          "scaleX": 1,
+          "scaleY": 1,
+          "frame": 0
+        }
+      ],
+      "savePath": "/validation-persist/HvM.dat"
+    },
+    {
+      "name": "unknown-machine",
+      "ok": true,
+      "rejected": "Unknown or repeated unit, or more than four units requested"
+    },
+    {
+      "name": "",
+      "ok": true,
+      "rejected": "Unknown or repeated unit, or more than four units requested"
+    },
+    {
+      "name": "Ka52,Ka52",
+      "ok": true,
+      "rejected": "Unknown or repeated unit, or more than four units requested"
+    },
+    {
+      "name": "Ka52,Heli001,Heli002,Heli003,Heli004",
+      "ok": true,
+      "rejected": "Unknown or repeated unit, or more than four units requested"
+    },
+    {
+      "name": "four-catalog-units",
+      "ok": true,
+      "fixture": {
+        "status": "spawned",
+        "units": [
+          "Lux_F22",
+          "Lux_Su57",
+          "Lux_MiG31",
+          "Lux_Eurofighter"
+        ],
+        "scenario": {
+          "weapon": "P_Wpn_Gun06",
+          "mission": 0,
+          "stage": 0,
+          "level": 30,
+          "grade": 6,
+          "seed": 12345
+        },
+        "cheats": false,
+        "spawns": [
+          {
+            "name": "Lux_F22",
+            "x": -780,
+            "y": 59.5
+          },
+          {
+            "name": "Lux_Su57",
+            "x": -635,
+            "y": 59.5
+          },
+          {
+            "name": "Lux_MiG31",
+            "x": -780,
+            "y": 124.5
+          },
+          {
+            "name": "Lux_Eurofighter",
+            "x": -635,
+            "y": 124.5
+          }
+        ]
+      }
+    },
+    {
+      "name": "normal-ignores-query",
+      "ok": true,
+      "game": {
+        "screen": "title",
+        "time": 0,
+        "canvas": [
+          533.333,
+          320
+        ],
+        "loading": 0,
+        "mission": 0,
+        "stage": 0,
+        "playerX": 0,
+        "playerY": 0,
+        "hp": 0,
+        "enemies": 0,
+        "bullets": 0,
+        "paused": 0,
+        "gameState": 0,
+        "decodes": 28,
+        "loadError": 0,
+        "aimMode": 1,
+        "aimTarget": 0,
+        "inputBlocked": 1,
+        "keyboardFire": 0,
+        "gameMenu": 0,
+        "resumeRequired": 0,
+        "active": 1,
+        "keyboardAimX": 0,
+        "callbackInterval": 0,
+        "ticksPerCallback": 1,
+        "motion": 0,
+        "tilt": [
+          0,
+          0,
+          -1
+        ],
+        "hudEditing": 0,
+        "hudCustomized": 0,
+        "hudFallback": 0,
+        "hudSelected": 2,
+        "hudDraftCustomized": 0,
+        "orientationHold": 0
+      },
+      "bridge": "undefined",
+      "export": "undefined",
+      "validation": false,
+      "prefix": "HeavyMach."
+    }
+  ],
+  "errors": [],
+  "ok": true
+}
