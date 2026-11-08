@@ -1,9 +1,6 @@
 #include "WebMedia.hpp"
 #include "WebAudio.hpp"
 #include "WebGLRenderer.hpp"
-#include "Fighters.hpp"
-#include "GroundAA.hpp"
-#include "VTOL.hpp"
 #define STB_IMAGE_IMPLEMENTATION
 #define STB_IMAGE_STATIC
 #define STBI_ONLY_JPEG
@@ -28,7 +25,7 @@ bool readFile(const std::string& path,std::vector<uint8_t>& out){
     std::ifstream file(path,std::ios::binary);if(!file)return false;
     out.assign(std::istreambuf_iterator<char>(file),std::istreambuf_iterator<char>());return true;
 }
-// iOS reduces the new aircraft/auto-aim sheets once with CoreGraphics
+// iOS reduces the existing auto-aim sheet once with CoreGraphics
 // kCGInterpolationHigh. CoreGraphics is unavailable here; an area-average
 // filter over the premultiplied pixels is the web substitute (documented in
 // docs/web-port-20261028.md). It runs once per load, never per frame.
@@ -83,10 +80,8 @@ std::string Media::resourceKey(const std::string& name) const{return (resourceSc
 DecodedImage* Media::image(const std::string& name){
     const std::string key=resourceKey(name);
     if(auto found=images_.find(key);found!=images_.end())return &found->second;
-    // Generated extensions are separate resources; never replace OriginalImages.
-    // Ground AA parts are crops of shared source sheets (GroundAAArt.inc).
-    const auto* groundArt=heavymach::groundAAImage(name);
-    const std::string fileName=groundArt?groundArt->source:name;
+    // Unit PNGs are baked before packaging and use the common image path.
+    const std::string fileName=name;
     const bool extension=startsWith(name,"Extensions/");
     const std::string path=assetRoot_+(extension?"/Extensions/"+lastPathComponent(fileName):"/OriginalImages/"+fileName);
     std::vector<uint8_t> file;
@@ -107,23 +102,8 @@ DecodedImage* Media::image(const std::string& name){
     DecodedImage decoded;decoded.width=width;decoded.height=height;
     decoded.rgba.assign(pixels,pixels+size_t(width)*height*4);stbi_image_free(pixels);
     const bool rgb565=channels==3||channels==1;
-    // Prefilter new aircraft to their logical drawing size once. Sampling a
-    // 512px texture into ~110 scene pixels skipped thin edges and fine details.
+    // Keep the existing control sheet filter; unit images need no runtime transform.
     int spriteWidth=0,spriteHeight=0;
-    // HMMedia: CGImageCreateWithImageInRect on the decoded sheet, then one resize to the logical size.
-    if(groundArt){
-        const auto& r=groundArt->crop;
-        if(r[0]>=0&&r[1]>=0&&r[2]>0&&r[3]>0&&r[0]+r[2]<=width&&r[1]+r[3]<=height){
-            std::vector<uint8_t> cropped(size_t(r[2])*r[3]*4);
-            for(int y=0;y<r[3];++y)std::memcpy(&cropped[size_t(y)*r[2]*4],&decoded.rgba[(size_t(r[1]+y)*width+r[0])*4],size_t(r[2])*4);
-            decoded.rgba=std::move(cropped);decoded.width=width=r[2];decoded.height=height=r[3];
-        }
-        spriteWidth=int(groundArt->size.x);spriteHeight=int(groundArt->size.y);
-    }
-    if(startsWith(name,"Extensions/VTOL_"))for(const auto& spec:heavymach::vtolSpecs())
-        if(name==spec.tile){spriteWidth=int(std::lround(spec.width));break;}
-    if(startsWith(name,"Extensions/Lux_"))for(const auto& spec:heavymach::fighterSpecs())
-        if(name==spec.tile){spriteWidth=int(std::lround(spec.width));break;}
     if(name=="Extensions/AutoAimControls.png")spriteWidth=138; // 3 columns of 46 logical pixels, cached once.
     if(spriteWidth>0&&width>spriteWidth){
         int smallWidth=spriteWidth,smallHeight=spriteHeight?spriteHeight:std::max(1,int(std::lround(double(height)*spriteWidth/width)));

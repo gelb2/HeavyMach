@@ -4,19 +4,22 @@ import argparse, hashlib, json, os, shutil, subprocess, sys
 from pathlib import Path
 HERE=Path(__file__).resolve().parents[1];ROOT=HERE.parents[1]
 sys.path.insert(0,str(HERE/'scripts'));import protected
-p=argparse.ArgumentParser();p.add_argument('--emsdk',default=os.environ.get('EMSDK'));p.add_argument('--skip-build',action='store_true');a=p.parse_args()
+from validate_web_artifact import validate_web_artifact
+p=argparse.ArgumentParser();p.add_argument('--emsdk',default=os.environ.get('EMSDK'));p.add_argument('--skip-build',action='store_true');p.add_argument('--web-build',type=Path,default=Path(os.environ.get('HM_WEB_BUILD', str(ROOT/'build/web'))));a=p.parse_args()
 protected.check()
-web=ROOT/'build/web';out=HERE/'build/frontend'
+web=a.web_build.resolve();out=HERE/'build/frontend'
 if not a.skip_build:
  emcmake=Path(a.emsdk)/'upstream/emscripten/emcmake' if a.emsdk else Path(shutil.which('emcmake') or '')
  if not emcmake.is_file():raise SystemExit('Set EMSDK or use --emsdk PATH to an installed Emscripten 6.0.13 SDK')
  subprocess.run([str(emcmake),'cmake','-S',str(ROOT/'Web'),'-B',str(web),'-DCMAKE_BUILD_TYPE=Release'],check=True)
  subprocess.run(['cmake','--build',str(web),'--parallel','4'],check=True)
+if (web/'CMakeCache.txt').exists() and 'HM_WEB_VALIDATION:BOOL=ON' in (web/'CMakeCache.txt').read_text():raise SystemExit('Refuse validation Web assets in the production host')
 files=sorted((web/'dist').glob('*'))
 if not (web/'dist/index.wasm').is_file():raise SystemExit('Missing Web build output')
 # Only our generated host directory is replaced, never source or user saves.
+validate_web_artifact(web/'dist', validation=False)
 if out.exists():shutil.rmtree(out)
-shutil.copytree(HERE/'frontend',out)
+shutil.copytree(HERE/'frontend',out,ignore=shutil.ignore_patterns('validation.js'))
 codec=ROOT/'build/save-transfer/web'
 if not (codec/'codec.wasm').exists():raise SystemExit('Build Modules/SaveTransfer/build_web.py first')
 shutil.copytree(codec,out/'transfer')

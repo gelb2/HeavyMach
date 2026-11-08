@@ -1,0 +1,38 @@
+{
+  "binary_sha256": "acd71dbc6a53947bd754f3cef3d6d1ffa662b10f83e3de6450d2253a7e708578",
+  "packages": [
+    {
+      "name": "hm-assets-3.data",
+      "uncompressed_bytes": 20291407,
+      "uncompressed_sha256": "3c16627e68fab9a24f78da8c146386a765c8ab5bb126cf4b9edc129c37ededea",
+      "compressed_bytes": 19528321,
+      "compressed_sha256": "38a7c36d2623cf975b176a0dfa34106c9be1ad04010e4cc26e2a5f799801e2f8",
+      "full_compressed_byte_offset_in_installed_executable": 25197483
+    },
+    {
+      "name": "hm-assets-2.data",
+      "uncompressed_bytes": 20170652,
+      "uncompressed_sha256": "93d5c87fefc1e93427ad101562cce24985327e7b6cc57c5d60fc76e12dda84f8",
+      "compressed_bytes": 18492097,
+      "compressed_sha256": "606a2d01de71da200ebe553a78245dd62b2218b14912d7dbbbb43259e090f6c3",
+      "full_compressed_byte_offset_in_installed_executable": 6700922
+    },
+    {
+      "name": "hm-assets-4.data",
+      "uncompressed_bytes": 11579833,
+      "uncompressed_sha256": "330be5fcd2f4f399a859eec467c0536d2be4a4c73d2a4fb7fd2c316e8fb4f284",
+      "compressed_bytes": 10770940,
+      "compressed_sha256": "dcb9048c378a55fdc5ee33bb1eebe622929ceaa973494404d72b921edbafbbc3",
+      "full_compressed_byte_offset_in_installed_executable": 65335015
+    },
+    {
+      "name": "hm-assets-1.data",
+      "uncompressed_bytes": 20905496,
+      "uncompressed_sha256": "8176c4e73c8cea236f692545d1e9ba707f0a17f689f1ec4034902da960d36a10",
+      "compressed_bytes": 19877437,
+      "compressed_sha256": "997ea84b2385d72b1485d090e64bcdcd4d75f9c12913a233ff1e30c3a07f5108",
+      "full_compressed_byte_offset_in_installed_executable": 45102226
+    }
+  ],
+  "result": "All four complete Brotli blobs occur in the installed executable and decode to the checked web asset packages"
+}

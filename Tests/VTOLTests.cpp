@@ -1,5 +1,5 @@
 #include "World.hpp"
-#include "GroundAA.hpp"
+#include "RuntimeUnitTestSupport.hpp"
 #include "Player.hpp"
 #include "Enemy.hpp"
 #include "ItemBox.hpp"
@@ -15,17 +15,17 @@
 #include <iostream>
 using namespace heavymach;
 int main(){
- const auto root=std::filesystem::path(__FILE__).parent_path().parent_path();auto original=GameData::loadDirectory(root/"Resources/RawData"),data=original;addVTOLExpansion(data);
+ const auto root=std::filesystem::path(__FILE__).parent_path().parent_path();auto original=GameData::loadDirectory(root/"Resources/RawData"),data=GameData::loadDirectory(root/"Resources/RuntimeData",true);
  size_t added=0,originalEntries=0;int changed=0;
  for(auto& [key,map]:original.maps){auto& after=data.maps.at(key);assert(after.enemies.size()>=map.enemies.size());originalEntries+=map.enemies.size();
   for(size_t n=0;n<map.enemies.size();++n){auto& a=map.enemies[n];auto& b=after.enemies[n];assert(a.name==b.name&&a.position.x==b.position.x&&a.position.y==b.position.y&&a.isBoss==b.isBoss);}
   if(after.enemies.size()>map.enemies.size())++changed;
-  for(size_t n=map.enemies.size();n<after.enemies.size();++n){auto& e=after.enemies[n];assert(vtolSpec(e.name)&&!e.isBoss);const float margin=std::min(300.f,(map.right-map.left)*.15f);assert(e.position.x>map.left+margin&&e.position.x<map.right-margin);for(auto& old:map.enemies)if(old.isBoss)assert(std::abs(old.position.x-e.position.x)>=600);++added;}
+  for(size_t n=map.enemies.size();n<after.enemies.size();++n){auto& e=after.enemies[n];if(!vtolSpec(e.name))continue;assert(!e.isBoss);const float margin=std::min(300.f,(map.right-map.left)*.15f);assert(e.position.x>map.left+margin&&e.position.x<map.right-margin);for(auto& old:map.enemies)if(old.isBoss)assert(std::abs(old.position.x-e.position.x)>=600);++added;}
  }
  assert(added==152&&changed==35);
  // Independent ground-AA planner supplies the requested per-stage baseline.
  std::array<int,3> totals{};std::array<std::array<int,3>,7> missions{};
- for(const auto& row:groundAAPlan(original)){
+ for(const auto& row:groundAAPlan(data)){
   std::array<int,3> counts{};std::vector<float> xs;
   for(const auto& e:data.maps.at(row.map).enemies)for(size_t k=0;k<3;++k)if(e.name==vtolSpecs()[k].name){++counts[k];++totals[k];++missions[row.mission][k];xs.push_back(e.position.x);}
   assert(counts[0]+counts[1]+counts[2]==row.shilka+row.tunguska);
@@ -43,17 +43,13 @@ int main(){
  }
  for(const auto& counts:missions){assert(*std::min_element(counts.begin(),counts.end())>0);assert(*std::max_element(counts.begin(),counts.end())-*std::min_element(counts.begin(),counts.end())<=1);}
  assert((totals==std::array<int,3>{51,51,50}));
- // All platform loaders use VTOL -> fighters -> ground AA. Preserve that output.
- auto full=data;addFighterExpansion(full);addGroundAAExpansion(full);
- auto baseline=original;addFighterExpansion(baseline);addGroundAAExpansion(baseline);
- for(const auto& [key,map]:baseline.maps){std::vector<EnemyDefinition> actual;for(const auto&e:full.maps.at(key).enemies)if(!vtolSpec(e.name))actual.push_back(e);assert(actual.size()==map.enemies.size());for(size_t n=0;n<actual.size();++n){auto&a=actual[n];auto&b=map.enemies[n];assert(a.name==b.name&&a.position.x==b.position.x&&a.position.y==b.position.y&&a.isBoss==b.isBoss);}}
-addVTOLExpansion(data);size_t total=0;for(auto& [key,m]:data.maps)total+=m.enemies.size();assert(total==originalEntries+152);
- auto dims=[&](std::string_view name){auto path=name.starts_with("Extensions/")?root/"Art"/name:root/"Resources/Images"/name;std::ifstream f(path,std::ios::binary);unsigned char b[24]{};f.read((char*)b,24);if(f.gcount()!=24)return Vector2{40,12};auto be=[&](int n){return uint32_t(b[n])<<24|uint32_t(b[n+1])<<16|uint32_t(b[n+2])<<8|b[n+3];};return Vector2{float(be(16)),float(be(20))};};
+ size_t total=0;for(auto& [key,m]:data.maps)total+=m.enemies.size();assert(total==originalEntries+304);
+ auto dims=[&](std::string_view name){return contractTileSize(root,name);};
  for(auto& spec:vtolSpecs()){
   assert(spec.width>dims("E_Heli_Body_01.png").x&&spec.width<dims("E_Heli_Body_06.png").x);
   assert(data.machines.at(spec.name).hpMax==original.machines.at(spec.statsSource).hpMax);
   SaveSlot slot;GlobalInfo(slot).selectSlot(0);slot.setInt(0x28,50);uint32_t seed=5;auto rng=[&]{seed=seed*1664525+1013904223;return int32_t(seed>>1);};GameSession game(data,slot,dims,rng);game.start(0,1,1);auto& i=*game.impl_;i.enemies.clear();i.world.enemiesSpawned.assign(i.world.map.enemies.size(),true);i.world.gameState=0;i.world.paused=false;i.player->hp=100000;
-  auto pos=i.player->position;auto seedBefore=seed;i.spawnEnemy({spec.name,{pos.x+160,pos.y+100},false});auto& m=i.enemies.back();assert(seed==seedBefore);assert(m.parts.size()==2&&m.parts[1]->weapon.weaponInfo==&data.weapons.at(spec.weapon));
+  auto pos=i.player->position;auto seedBefore=seed;i.spawnEnemy({spec.name,{pos.x+160,pos.y+100},false});auto& m=i.enemies.back();assert(seed==seedBefore);assert(m.parts.size()==3&&m.parts[1]->weapon.weaponInfo==&data.weapons.at(spec.weapon));
   bool fired=false,moved=false,pitched=false,drawn=false;auto begin=m.enemy->position;int persisted=0;
   for(int n=1;n<=1200;++n){game.tick(double(n)/60,0);for(auto& node:i.dynamic)if(auto b=std::get_if<BulletState>(&node.value))if(b->info==&data.weapons.at(spec.weapon)&&b->toPlayer)fired=true;
    moved|=std::abs(m.enemy->position.x-begin.x)>1;pitched|=std::abs(m.enemy->rotation)>.01f;

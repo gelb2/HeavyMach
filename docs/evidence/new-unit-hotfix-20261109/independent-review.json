@@ -1,0 +1,260 @@
+{
+  "schema": 1,
+  "recorded_at_utc": "2026-11-08T17:58:11.505720+00:00",
+  "reviewer_role": "independent platform packaging review; reviewer did not implement the three fixes",
+  "status": "pass_after_fixes",
+  "scope": "Tauri/Web/Android validation isolation, normal-host extraction, package completeness and protected-file exceptions. Core logic was outside this review.",
+  "findings": [
+    {
+      "id": "IR-01",
+      "priority": "P1",
+      "file": "Desktop/Tauri/scripts/protected.py",
+      "defect": "Approved deletions were still rejected once removed from the Git index. Unstaged deletions remained in ls-files and hid the failure.",
+      "fix": "Allow an absent tracked path only when the explicit hotfix contract pins its after hash to null. Before/after hash checks remain active.",
+      "verification": "4 fixture cases: seven approved deletions accepted; unapproved deletion/addition and a deleted file reappearing rejected."
+    },
+    {
+      "id": "IR-02",
+      "priority": "P2",
+      "file": "tools/stage_runtime_assets.py",
+      "defect": "Missing baked PNGs were omitted from enumeration and staging succeeded; an older staged copy could then be deleted.",
+      "fix": "Compare the actual image set with manifest entries, reject duplicate manifest names, and require approved original image/audio/extension sources. Existing hashes and destination-name collision checks remain active.",
+      "verification": "11 fixture cases including complete package, missing/additional/duplicate/tampered images, missing original sources, missing HMEX and destination collision; sources unchanged in every case."
+    },
+    {
+      "id": "IR-03",
+      "priority": "P2",
+      "file": "Desktop/Tauri/scripts/prepare.py",
+      "defect": "Checking only CMakeCache allowed copied or stale validation dist into the normal host. Initial fix still accepted normal HTML/JS combined with validation WASM.",
+      "fix": "Both prepare paths validate emitted HTML mode, preference namespace, persistent mount, JS validation exports, WASM header and compiled save-root before replacing the destination frontend.",
+      "verification": "12 fixture cases using actual emitted artifacts; valid pairs accepted and cache disagreement, mixed JS/WASM, namespace/mount mismatch, missing exports and corrupt/missing WASM rejected."
+    }
+  ],
+  "test_total": 27,
+  "suites": [
+    {
+      "id": "protected",
+      "status": "pass",
+      "case_count": 4,
+      "scope": "Actual protected.check() with fixture filesystem and simulated Git metadata; no product Git index changed.",
+      "script": {
+        "path": "build/audit-logic/review-fixtures/check_protected.py",
+        "sha256": "c99d43b01fd88ee69267541ca02a82bb16f9d75bcbeb72557164c7eed8ff0d44"
+      },
+      "result": {
+        "path": "build/audit-logic/review-fixtures/protected-result.json",
+        "sha256": "dbf5761e838c2970d0ba9ea0827d12a4540f47f0c383d7aa933997c568a94320"
+      },
+      "cases": [
+        {
+          "case": "approved seven deletions after git staging",
+          "passed": true,
+          "accepted": true
+        },
+        {
+          "case": "unapproved tracked deletion",
+          "passed": true,
+          "accepted": false
+        },
+        {
+          "case": "approved deletion unexpectedly reappears",
+          "passed": true,
+          "accepted": false
+        },
+        {
+          "case": "unapproved tracked addition",
+          "passed": true,
+          "accepted": false
+        }
+      ]
+    },
+    {
+      "id": "stager",
+      "status": "pass",
+      "case_count": 11,
+      "scope": "Actual stage() against disposable source/destination fixtures; source hashes compared before and after every case.",
+      "script": {
+        "path": "build/audit-logic/review-fixtures/check_stager.py",
+        "sha256": "68b5f15a8f6850dd3a05d04ab8518bdeb93f31649b2074e15b0bcd08a1ef83e5"
+      },
+      "result": {
+        "path": "build/audit-logic/review-fixtures/stager-result.json",
+        "sha256": "36d1fd7635b1256e42969019a1692f3d3e2d30451012b6ffd85f219b1d8d8f3c"
+      },
+      "cases": [
+        {
+          "case": "complete package",
+          "passed": true,
+          "accepted": true,
+          "source_unchanged": true
+        },
+        {
+          "case": "missing baked PNG",
+          "passed": true,
+          "accepted": false,
+          "source_unchanged": true
+        },
+        {
+          "case": "unexpected baked PNG",
+          "passed": true,
+          "accepted": false,
+          "source_unchanged": true
+        },
+        {
+          "case": "duplicate manifest filename",
+          "passed": true,
+          "accepted": false,
+          "source_unchanged": true
+        },
+        {
+          "case": "tampered baked PNG",
+          "passed": true,
+          "accepted": false,
+          "source_unchanged": true
+        },
+        {
+          "case": "missing original image",
+          "passed": true,
+          "accepted": false,
+          "source_unchanged": true
+        },
+        {
+          "case": "missing original audio",
+          "passed": true,
+          "accepted": false,
+          "source_unchanged": true
+        },
+        {
+          "case": "missing shipped extension",
+          "passed": true,
+          "accepted": false,
+          "source_unchanged": true
+        },
+        {
+          "case": "missing approved authoring PNG",
+          "passed": true,
+          "accepted": false,
+          "source_unchanged": true
+        },
+        {
+          "case": "missing hmx",
+          "passed": true,
+          "accepted": false,
+          "source_unchanged": true
+        },
+        {
+          "case": "duplicate original/runtime image name",
+          "passed": true,
+          "accepted": false,
+          "source_unchanged": true
+        }
+      ]
+    },
+    {
+      "id": "web_artifact",
+      "status": "pass",
+      "case_count": 12,
+      "scope": "Actual validate_web_artifact() against copied emitted normal/validation HTML, JS and WASM, with isolated mutations.",
+      "script": {
+        "path": "build/audit-logic/review-fixtures/check_web_artifact.py",
+        "sha256": "13a3e94d5b3fde15228a16d97e2b1a96443d1cfdadd0981e98edc3810830aa62"
+      },
+      "result": {
+        "path": "build/audit-logic/review-fixtures/web-artifact-result.json",
+        "sha256": "79e48764d3d898a5ecd0fc0f8ddd44e7474e5ce6fd331ba5df213345b99404e9"
+      },
+      "cases": [
+        {
+          "case": "real normal",
+          "passed": true,
+          "accepted": true
+        },
+        {
+          "case": "real validation",
+          "passed": true,
+          "accepted": true
+        },
+        {
+          "case": "cache absent validation into normal",
+          "passed": true,
+          "accepted": false
+        },
+        {
+          "case": "cache OFF with validation into normal",
+          "passed": true,
+          "accepted": false
+        },
+        {
+          "case": "normal HTML with validation JS",
+          "passed": true,
+          "accepted": false
+        },
+        {
+          "case": "normal HTML/JS with validation WASM",
+          "passed": true,
+          "accepted": false
+        },
+        {
+          "case": "validation HTML/JS with normal WASM",
+          "passed": true,
+          "accepted": false
+        },
+        {
+          "case": "normal namespace changed",
+          "passed": true,
+          "accepted": false
+        },
+        {
+          "case": "normal persistent mount changed",
+          "passed": true,
+          "accepted": false
+        },
+        {
+          "case": "validation export missing",
+          "passed": true,
+          "accepted": false
+        },
+        {
+          "case": "invalid wasm",
+          "passed": true,
+          "accepted": false
+        },
+        {
+          "case": "missing wasm",
+          "passed": true,
+          "accepted": false
+        }
+      ]
+    }
+  ],
+  "reviewed_fix_sha256": {
+    "tools/stage_runtime_assets.py": "9b77ef5d235e27d2b49f3c014fba8521d3475d235ea9f6b6c52f9f5257269590",
+    "Desktop/Tauri/scripts/protected.py": "48041e4a634e6d47527acce9d1f2d9c199c5cf9ec0f5670bc0969a4cc8ad904b",
+    "Desktop/Tauri/scripts/prepare.py": "dd17ee56d200020528f0d7bc984b38244a73afb2477498e42bb4bf7d3e3c811d",
+    "Desktop/Tauri/scripts/prepare_validation.py": "feeb67401982a2106e2f3f7cd302ae778d801d323d4998831d9288bb37635e83",
+    "Desktop/Tauri/scripts/validate_web_artifact.py": "aaf6b58ab8e679726bc540420161c0b27b665b3886bcdf6e962a7dbe63c874f2"
+  },
+  "original_behavior_review": {
+    "normal_host": "Compared previous main.rs with current normal.rs: existing storage/backup behavior retained; module imports, function entry point and validation-configuration guard changed.",
+    "normal_build_gates": "Web and Android validation entry points remain guarded by HM_VALIDATION; normal build defaults disable validation.",
+    "storage_isolation": "Validation Web uses /validation-persist and HeavyMach.Validation.; Tauri additionally uses a distinct app identifier and WebView store; Android uses a distinct applicationId."
+  },
+  "fixture_history": [
+    {
+      "path": "build/audit-logic/review-fixtures/stager-result-initial.json",
+      "sha256": "fe3a5230af86560cd8c62dc4da76befa994748899bd67aa041395e5280b0b175",
+      "note": "Initial fixture expected a non-shipped authoring original to be optional. Revised expectation to rejection because the approved-source preservation contract requires that source too. Product code was not changed to accommodate the fixture; initial failed result retained."
+    }
+  ],
+  "document_review": {
+    "path": "docs/reviews/new-unit-resource-hotfix-20261109.md",
+    "scope": "Original-source claims, standard PNG versus CgBI encoding, original-format MCH/MAP versus HMEX additions, and common consumption path.",
+    "finding": "No unsupported original-source or encoding identity claim found. Requested that image comparison wording specify decoded/upload-input bytes rather than imply GPU framebuffer readback. Requested completion tense for the now-tested packaging fixes."
+  },
+  "limitations": [
+    "Fixture verification does not establish deployment or platform gameplay success.",
+    "Protected-file fixture simulates Git listings/show results; it does not stage or modify the product Git index.",
+    "Web artifact guard checks emitted markers and compiled save-root; it is not a cryptographic attestation of an entire build.",
+    "Only relative local evidence paths and hashes are published. Raw local result errors may contain disposable absolute fixture paths; those errors are omitted from this public summary."
+  ]
+}

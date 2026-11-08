@@ -1,5 +1,3 @@
-#include "Fighters.hpp"
-#include "GroundAA.hpp"
 #include "HMAimOverlay.hpp"
 #include "HMGameButtons.hpp"
 #import "HMResources.h"
@@ -192,11 +190,8 @@
         _saveURL=[[NSFileManager.defaultManager URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask].firstObject URLByAppendingPathComponent:@"HvM.dat"];
 #endif
         try {
-            NSString *raw=[HMGameResourceBundle().resourcePath stringByAppendingPathComponent:@"RawData"];
-            _data=heavymach::GameData::loadDirectory(raw.fileSystemRepresentation);
-            heavymach::addVTOLExpansion(_data);
-            heavymach::addFighterExpansion(_data);
-            heavymach::addGroundAAExpansion(_data);
+            NSString *raw=[HMGameResourceBundle().resourcePath stringByAppendingPathComponent:@"RuntimeData"];
+            _data=heavymach::GameData::loadDirectory(raw.fileSystemRepresentation,true);
             if ([NSFileManager.defaultManager fileExistsAtPath:_saveURL.path]) {
                 NSError *error=nil;
                 NSData *bytes=[NSData dataWithContentsOfURL:_saveURL options:0 error:&error];
@@ -308,8 +303,8 @@
         // Its HP needle, gear and closing animations continue while hidden.
         HMMedia *media=_media;
         // Prepare every radar/body frame before combat; animation must not decode PNGs.
-        for(const auto& art:heavymach::groundAAImages())@autoreleasepool{
-            [media imageSize:[NSString stringWithUTF8String:art.name.c_str()] scope:@"shared"];
+        for(const auto& image:_data.presentationImages())@autoreleasepool{
+            [media imageSize:[NSString stringWithUTF8String:image.c_str()] scope:@"shared"];
         }
         __weak HMGameView *randomOwner=self;
         _session=std::make_unique<heavymach::GameSession>(_data,_save.slots.at(slot),

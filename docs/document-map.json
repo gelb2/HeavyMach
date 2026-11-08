@@ -52,7 +52,10 @@
     "docs/public/save-recovery-20261102.md",
     "docs/public/quick-play.md",
     "docs/public/work-method.md",
-    "docs/public/testing-method.md"
+    "docs/public/testing-method.md",
+    "docs/reviews/new-unit-hotfix-plan-20261109.md",
+    "docs/reviews/new-unit-implementation-incident-20261109.md",
+    "docs/reviews/new-unit-resource-hotfix-20261109.md"
   ],
   "base_read": [
     "AGENTS.md",
@@ -138,23 +141,34 @@
         "Sources/Core/Visuals.*",
         "Sources/Core/Trail.*",
         "Art/Extensions/*",
-        "Sources/Core/VTOL.*",
         "Sources/iOS/HMGameButtons.hpp",
         "Sources/iOS/HMGameButtons.inc",
         "Sources/Web/WebGameButtons.inc",
-        "Android/app/src/main/cpp/GameButtons.inc"
+        "Android/app/src/main/cpp/GameButtons.inc",
+        "Sources/Core/GameData.*",
+        "tools/prepare_unit_data*",
+        "tools/prepare_unit_images*",
+        "Resources/RuntimeData/*",
+        "Resources/RuntimeImages/*"
       ],
       "tests": [
         "Tests/iOS/HMGLReferenceTests.mm",
         "Tests/iOS/HMResourceLifecycleTests.mm",
         "Tests/iOS/HMFramePerformanceTests.mm",
         "Tests/VTOLTests.cpp",
-        "Tests/GameButtonsTests.cpp"
+        "Tests/GameButtonsTests.cpp",
+        "Tests/RuntimeUnitContractTests.cpp",
+        "Tests/UnitContractTrace.cpp",
+        "Tests/GroundAATests.cpp",
+        "Tests/GroundAARuntimeTests.cpp",
+        "Tests/FightersTests.cpp"
       ],
       "evidence": [
         "docs/menu-joins-20261025.md",
         "docs/weapon-result-fix-20261025.md",
-        "docs/reviews/game-button-incident-20261101.md"
+        "docs/reviews/game-button-incident-20261101.md",
+        "docs/reviews/new-unit-assets-audit-20261109.md",
+        "docs/reviews/new-unit-hotfix-plan-20261109.md"
       ]
     },
     "menus": {
@@ -204,19 +218,30 @@
         "Sources/Core/World.*",
         "Sources/Core/Motion.*",
         "Sources/Core/GameSession.*",
-        "Sources/Core/VTOL.*"
+        "Sources/Core/GameData.*",
+        "tools/prepare_unit_data*",
+        "tools/prepare_unit_images*",
+        "Resources/RuntimeData/*",
+        "Resources/RuntimeImages/*"
       ],
       "tests": [
         "Tests/CombatTests.cpp",
         "Tests/PlayerTests.cpp",
         "Tests/WorldTests.cpp",
         "Tests/iOS/HMFramePerformanceTests.mm",
-        "Tests/VTOLTests.cpp"
+        "Tests/VTOLTests.cpp",
+        "Tests/RuntimeUnitContractTests.cpp",
+        "Tests/UnitContractTrace.cpp",
+        "Tests/GroundAATests.cpp",
+        "Tests/GroundAARuntimeTests.cpp",
+        "Tests/FightersTests.cpp"
       ],
       "evidence": [
         "docs/boss-motion-fix-20261025.md",
         "docs/weapon-result-fix-20261025.md",
-        "docs/current-status.md"
+        "docs/current-status.md",
+        "docs/reviews/new-unit-assets-audit-20261109.md",
+        "docs/reviews/new-unit-hotfix-plan-20261109.md"
       ]
     },
     "runtime": {

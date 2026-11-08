@@ -20,4 +20,13 @@
 
 ## 쉴카·퉁구스카 회귀 검사
 
-`GroundAATests`에서 흰색 탄환 6/4발, 미사일 2발과 간격·기존 정의 보존을 확인한다. `GroundAARuntimeTests`에서 152개 위치의 착지·좌우 이동과 플레이어 20무기×2차량의 탄환 충돌·피해·파괴를 검사한다. Apple 치트 앱에서는 `testGroundAAAssemblyRadarWeaponsAndNoShotSave`로 레이더 8방향·차체 2프레임·사격·일시정지·저장 호출을 검사하고 OpenGL 화면을 보존한다. `testEveryWeaponKeyboardSelectionAndFire`, `testAutoAimEveryWeaponWithMovementAndJump`, `testTouchFireWhileKeyboardMoves`, `testLuxEightAircraftBossWaveAndPause`도 함께 실행한다.
+`GroundAATests`에서 흰색 탄환 6/4발, 미사일 2발과 간격·기존 정의 보존을 확인한다. `GroundAARuntimeTests`에서 152개 위치의 착지·좌우 이동과 플레이어 20무기×2차량의 탄환 충돌·피해·파괴를 검사한다. Apple 치트 앱에서는 `testGroundAAAssemblyRadarWeaponsAndNoShotSave`로 레이더24프레임·차체 2프레임·사격·일시정지·저장 호출을 검사하고 OpenGL 화면을 보존한다. `testEveryWeaponKeyboardSelectionAndFire`, `testAutoAimEveryWeaponWithMovementAndJump`, `testTouchFireWhileKeyboardMoves`, `testLuxEightAircraftBossWaveAndPause`도 함께 실행한다.
+
+
+## 신규 유닛 공통 경로 전환 검사 — 2026-11-09
+
+검증 앱도 일반 앱과 같은 `RuntimeData`의 MCH/MAP와 필수 `UnitExtensions.hmx`, 플랫폼별 실제 PNG를 사용한다. 누락된 확장 계약을 C++ factory로 보충하지 않는다. 원작 데이터만 검사하는 도구의 선택적 계약 로드와 제품의 필수 계약 로드를 구분한다.
+
+`RuntimeUnitContractTests`는 원작 기본값, 추가 정의·참조, 누락/잘못된 계약 및 레이더 프레임을 검사한다. 기존 `VTOLTests/FightersTests/GroundAATests/GroundAARuntimeTests`는 직렬화된 실제 데이터로 배치·무장·착지·프레임·일시정지 검사를 수행한다. 표적 내부에 탄을 놓는 기존 피해 검사는 피해 계산의 연결만 확인한다.
+
+`Tests/UnitContractTrace.cpp`와 `tools/capture_unit_contract.py`는 별도 기준판·후보판 세션에서 같은 입력·시간·난수로 이동·적/플레이어 사격·실제 탄 비행 후 피해·draw 순서와 사각형·이벤트·저장을 대조한다. 공중 총구의 weaponPos/muzzlePos 분담과 AI 단계·발사 시점도 보존한다. 이 Core 추적의 일치가 실제 PNG 접합·GPU 출력·모든20무기 및 필살기3종의 실기기 완료를 대신하지 않는다. 플랫폼별 필수 전투·화면 검사는 위 절차대로 수행하고 [현재 상태](current-status.md)에 결과를 남긴다.

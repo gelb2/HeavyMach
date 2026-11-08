@@ -20,6 +20,7 @@ def capture(name):
  (OUT/(name+'.png')).write_bytes(subprocess.check_output(BASE+['exec-out','screencap','-p']))
 def swipe(nx,ny,ms=1200):
  raw=subprocess.check_output(BASE+['exec-out','screencap','-p']);w,h=struct.unpack('>II',raw[16:24]);shell('input','swipe',round(w*nx),round(h*ny),round(w*nx),round(h*ny),ms)
+shell('am','start','-W','-n',PKG+'/com.gelb2.heavymach.GameActivity');time.sleep(1)
 cmd('cancel');cmd('fixtureSettings',0,0,0,0);cmd('cheats',1);cmd('stage',0,0,0,0);cmd('aim',0);time.sleep(1)
 b=dump();check('game started',b.get('mission')==0 and b.get('stage')==0 and b.get('active') and not b.get('paused') and not b.get('error'),state=b)
 cmd('key',7,1);time.sleep(1.2);cmd('key',7,0);m=dump();check('keyboard forward',m.get('x',0)>b.get('x',0)+5,before=b,after=m)

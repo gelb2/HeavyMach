@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.20)
 project(HeavyMachRestoredCore LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-add_library(HeavyMachCore Sources/Core/SaveData.cpp Sources/Core/GlobalInfo.cpp Sources/Core/Geometry.cpp Sources/Core/Motion.cpp Sources/Core/TitleState.cpp Sources/Core/GameData.cpp Sources/Core/VTOL.cpp Sources/Core/Fighters.cpp Sources/Core/GroundAA.cpp Sources/Core/Combat.cpp Sources/Core/Enemy.cpp Sources/Core/Visuals.cpp Sources/Core/Player.cpp Sources/Core/World.cpp Sources/Core/ItemBox.cpp Sources/Core/GameSession.cpp Sources/Core/BulletVisual.cpp Sources/Core/Trail.cpp Sources/Core/TrailRaster.cpp Sources/Core/SpriteRaster.cpp Sources/Core/CameraShake.cpp Sources/Core/LoadingTransition.cpp)
+add_library(HeavyMachCore Sources/Core/SaveData.cpp Sources/Core/GlobalInfo.cpp Sources/Core/Geometry.cpp Sources/Core/Motion.cpp Sources/Core/TitleState.cpp Sources/Core/GameData.cpp Sources/Core/Combat.cpp Sources/Core/Enemy.cpp Sources/Core/Visuals.cpp Sources/Core/Player.cpp Sources/Core/World.cpp Sources/Core/ItemBox.cpp Sources/Core/GameSession.cpp Sources/Core/BulletVisual.cpp Sources/Core/Trail.cpp Sources/Core/TrailRaster.cpp Sources/Core/SpriteRaster.cpp Sources/Core/CameraShake.cpp Sources/Core/LoadingTransition.cpp)
 # Keep software pixel loops interactive in Debug without optimizing gameplay
 # or disabling assertions. Native Xcode targets use the same per-file -O2.
 if(CMAKE_CXX_COMPILER_ID MATCHES "Clang|GNU")
@@ -15,7 +15,7 @@ target_link_libraries(HeavyMachCoreTests PRIVATE HeavyMachCore)
 enable_testing()
 add_test(NAME HeavyMachCoreTests COMMAND HeavyMachCoreTests)
 
-foreach(domain VTOL Fighters GroundAA GroundAARuntime Combat Visuals World StageTransition GameSession AmmoSync AudioContract PlayerGauge EnemyGauge PassiveContinuity Survival CameraIntegration TextureFormat SpriteRaster HUDLayout)
+foreach(domain RuntimeUnitContract VTOL Fighters GroundAA GroundAARuntime Combat Visuals World StageTransition GameSession AmmoSync AudioContract PlayerGauge EnemyGauge PassiveContinuity Survival CameraIntegration TextureFormat SpriteRaster HUDLayout)
   add_executable(HeavyMach${domain}Tests Tests/${domain}Tests.cpp)
   target_link_libraries(HeavyMach${domain}Tests PRIVATE HeavyMachCore)
   add_test(NAME HeavyMach${domain}Tests COMMAND HeavyMach${domain}Tests)

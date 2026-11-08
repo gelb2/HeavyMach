@@ -1,6 +1,4 @@
 #include "GameSession.hpp"
-#include "Fighters.hpp"
-#include "GroundAA.hpp"
 #include "BulletVisual.hpp"
 #include "CameraShake.hpp"
 #include <algorithm>
@@ -17,8 +15,8 @@ struct GameSession::Impl final: WorldHost,CombatHost,PlayerHost,EnemyHost,ItemBo
  struct Machine {
   uintptr_t id=0;size_t mapEnemyIndex=SIZE_MAX;bool bossActivationPending=false;std::unique_ptr<GobHvM_Enemy> enemy;
   std::vector<std::unique_ptr<Part>> parts;std::vector<Part*> drawOrder;bool drawOrderDirty=true;ObjectBounds bounds{};bool removed=false,inScreen=true;
-  const VTOLSpec* vtol=nullptr;float vtolRotation=0;uint32_t vtolRandom=1;
-  bool aircraftEntering=false;float aircraftEntryEndX=0;
+  const MachineBehavior* behavior=nullptr;float attitude=0;uint32_t privateRandom=1;
+  bool formationEntering=false;float formationEndX=0;float entrySpeed=-2.5f,releaseSpeed=-.5f;
   Vector2 aimStep{};
   float gauge=1;std::array<bool,2> gaugeQueued{};const MachDefinition* definition=nullptr;
 #if defined(HM_VALIDATION) && HM_VALIDATION
@@ -36,7 +34,7 @@ struct GameSession::Impl final: WorldHost,CombatHost,PlayerHost,EnemyHost,ItemBo
  AimMode aimMode=AimMode::manual;uintptr_t aimTarget=0,excludedTarget=0;bool autoFire=false;
  AimSnapshot aimState{};Dynamic* assistedBullet=nullptr;
  Machine* current=nullptr;const MachDefinition* building=nullptr;ParticleState* acquired=nullptr;
- const FighterWave* reinforcement=nullptr;bool reinforcementSpawned=false;
+ const StageFormation* reinforcement=nullptr;bool reinforcementSpawned=false;
  int selected=0,charge=0;bool replaceWeapon=false,active=false;double globalTime=0;
 #if defined(HM_VALIDATION) && HM_VALIDATION
  bool validationCheats=false;
@@ -45,7 +43,7 @@ struct GameSession::Impl final: WorldHost,CombatHost,PlayerHost,EnemyHost,ItemBo
 #endif
  float safeBackLine=-32000,removeBgLine=-32000;uintptr_t nextID=2;
  Impl(const GameData& d,SaveSlot& s,TileSize t,Random31 r,PlayerPassives* shared,TileSize worldT):data(d),slot(s),sizes(std::move(t)),worldSizes(std::move(worldT)),random(std::move(r)),passives(shared?*shared:ownedPassives){if(!sizes||!random)throw std::invalid_argument("Session requires tile dimensions and original RNG");playerGraph.id=1;}
- int32_t random31()override{if(current&&current->vtol){current->vtolRandom=current->vtolRandom*1664525u+1013904223u;return int32_t(current->vtolRandom>>1);}
+ int32_t random31()override{if(current&&current->behavior&&current->behavior->independentRandom){current->privateRandom=current->privateRandom*1664525u+1013904223u;return int32_t(current->privateRandom>>1);}
   int32_t n=random();if(n<0)throw std::invalid_argument("Negative random31");return n;}
  float rnd(){return float(random31())*0x1p-31f;}
  Vector2 tileSize(std::string_view key)override{return sizes(key);}
@@ -75,8 +73,8 @@ struct GameSession::Impl final: WorldHost,CombatHost,PlayerHost,EnemyHost,ItemBo
  Part* addPart(Machine& graph,const PartsInfo& info,Part* base,uint8_t baseSocket,int order,uint8_t machType){
   auto owned=std::make_unique<Part>();Part* part=owned.get();part->visual.info=&info;part->order=order;
   // 1.13 tileCnt0 resolves absent PartsDummy.png to nil; keep sockets and zero tile dimensions.
-  auto logicalSize=groundAAPartSize(info.name);auto size=logicalSize?*logicalSize:info.tileCnt?tileSize(info.tileName()):Vector2{};float columns=info.tileCnt?info.tileCnt:1;part->bounds=partsBounds(size.x/columns,size.y,socket(&info,0));
-  if(auto logical=groundAAPartSize(info.name))part->bounds=partsBounds(logical->x,logical->y,socket(&info,0));
+  auto size=info.tileCnt?tileSize(info.presentation?info.presentation->frames.front().tile:info.tileName()):Vector2{};float columns=info.tileCnt?info.tileCnt:1;part->bounds=partsBounds(size.x/columns,size.y,socket(&info,0));
+  if(info.presentation&&info.presentation->logicalSize.x>0){auto logical=info.presentation->logicalSize;part->bounds=partsBounds(logical.x,logical.y,socket(&info,0));}
   part->armed=info.partsType==2;
   if(part->armed){initializeWeapon(part->weapon,world.gameTime,*this);auto w=data.weapons.find(info.name);if(w==data.weapons.end())w=data.weapons.find("E_Default_Wpn");
    if(w==data.weapons.end())throw std::runtime_error("Missing weapon definition: "+info.name);part->weapon.weaponInfo=&w->second;if(w->second.aiTimeScale!=1)part->weapon.delayTime*=w->second.aiTimeScale;
@@ -123,15 +121,14 @@ struct GameSession::Impl final: WorldHost,CombatHost,PlayerHost,EnemyHost,ItemBo
  void spawnEnemy(const EnemyDefinition& definition)override{
   auto found=data.machines.find(definition.name);if(found==data.machines.end())throw std::runtime_error("Missing machine: "+definition.name);
   enemies.emplace_back();auto& m=enemies.back();m.id=nextID++;m.enemy=std::make_unique<GobHvM_Enemy>();m.definition=&found->second;
-  m.vtol=aircraftSpec(definition.name);if(m.vtol){m.vtolRandom=2166136261u;for(unsigned char c:definition.name)m.vtolRandom=(m.vtolRandom^c)*16777619u;m.vtolRandom^=uint32_t(int32_t(definition.position.x*16));}
+  m.behavior=found->second.behavior?&*found->second.behavior:nullptr;if(m.behavior&&m.behavior->independentRandom){m.privateRandom=2166136261u;for(unsigned char c:definition.name)m.privateRandom=(m.privateRandom^c)*16777619u;m.privateRandom^=uint32_t(int32_t(definition.position.x*16));}
   auto prev=current;current=&m;building=&found->second;m.enemy->makeMachFromDefinition(found->second,*this);building=nullptr;current=prev;
 #if defined(HM_VALIDATION) && HM_VALIDATION
   m.validationSpawnPosition=definition.position;
 #endif
   m.enemy->position=definition.position;m.enemy->machState=2;m.enemy->isBoss=definition.isBoss;
   m.enemy->hasWeapon=std::any_of(m.parts.begin(),m.parts.end(),[](const auto& p){return p&&p->armed;});
-  if(isGroundAA(definition.name)){m.enemy->useEngineBounce=true;m.enemy->gaugeY=58;m.bounds={-54,0,43,55};}
-  m.vtol=aircraftSpec(definition.name);if(m.vtol){m.bounds=m.vtol->bounds;m.enemy->gaugeY=-24;}
+  if(m.behavior){const auto& b=*m.behavior;if(b.engineBounce)m.enemy->useEngineBounce=true;if(b.customGauge)m.enemy->gaugeY=b.gaugeY;if(b.fixedBounds)m.bounds={b.bounds[0],b.bounds[1],b.bounds[2],b.bounds[3]};}
  }
  void spawnMapEnemy(const EnemyDefinition& definition,size_t index)override{
   spawnEnemy(definition);enemies.back().mapEnemyIndex=index;enemies.back().bossActivationPending=definition.isBoss;
@@ -303,8 +300,8 @@ struct GameSession::Impl final: WorldHost,CombatHost,PlayerHost,EnemyHost,ItemBo
   w.fireTarget=center;w.isFire=autoFire&&clear;
  }
  CombatFrame frame(GobHvMach& owner,Machine& graph,Part& p){
-  CombatFrame f;f.time=world.gameTime;f.paused=world.paused||waitingForBossEncounter(graph)||graph.aircraftEntering;f.playerPos=player?player->position:Vector2{};f.ownerPos=owner.position;f.weaponPos=owner.position;f.rotPos=p.visual.rotatedPosition;f.socket0=socket(p.visual.info,0);f.socket1=socket(p.visual.info,1);f.machType=owner.machType;f.isPlayer=owner.player;f.isMainPlayer=&graph==&playerGraph;f.ownerInScreen=graph.inScreen;f.weaponUpgrade=slot.bytes[0x2d];
-  if(graph.vtol){auto anchor=vtolRotate(graph.vtol->muzzle,owner.rotation);f.weaponPos={owner.position.x+anchor.x,owner.position.y+anchor.y};f.rotPos={};f.socket0={};f.socket1={};}
+  CombatFrame f;f.time=world.gameTime;f.paused=world.paused||waitingForBossEncounter(graph)||graph.formationEntering;f.playerPos=player?player->position:Vector2{};f.ownerPos=owner.position;f.weaponPos=owner.position;f.rotPos=p.visual.rotatedPosition;f.socket0=socket(p.visual.info,0);f.socket1=socket(p.visual.info,1);f.machType=owner.machType;f.isPlayer=owner.player;f.isMainPlayer=&graph==&playerGraph;f.ownerInScreen=graph.inScreen;f.weaponUpgrade=slot.bytes[0x2d];
+  if(graph.behavior&&graph.behavior->mountedWeaponOrigin){auto anchor=rotateAttachment(graph.behavior->muzzle,owner.rotation);f.weaponPos={owner.position.x+anchor.x,owner.position.y+anchor.y};f.rotPos={};f.socket0={};f.socket1={};}
   if(player){f.damageBoost=player->passives.active(1);f.shield=player->passives.active(0);}f.selectedWeapon=int16_t(selected);f.selectedCharge=&charge;return f;
  }
  void removeExhaustedWeapon(){
@@ -341,7 +338,7 @@ struct GameSession::Impl final: WorldHost,CombatHost,PlayerHost,EnemyHost,ItemBo
   }
  }
  void open(StagePosition pos){stage=pos;char key[32];if(world.gameMode==1)std::snprintf(key,sizeof(key),"Survival");else std::snprintf(key,sizeof(key),"Stage%02d",GlobalInfo::mapNumber(stage));
-  auto it=data.maps.find(key);if(it==data.maps.end())throw std::runtime_error("Missing original map: "+std::string(key));reinforcement=data.machines.contains("Lux_F22")?fighterWave(key):nullptr;reinforcementSpawned=false;world.openMap(it->second,world.gameMode,*this);active=true;
+  auto it=data.maps.find(key);if(it==data.maps.end())throw std::runtime_error("Missing original map: "+std::string(key));auto formation=data.formations.find(key);reinforcement=formation==data.formations.end()?nullptr:&formation->second;reinforcementSpawned=false;world.openMap(it->second,world.gameMode,*this);active=true;
  }
  void start(int mode,StagePosition pos,double retainedWorldTime){if(!std::isfinite(retainedWorldTime)||retainedWorldTime<0)throw std::invalid_argument("invalid retained World time");events.clear();unsupported.clear();auto retainedCamera=world.camera;auto retainedWidth=world.canvasWidth;auto retainedHeight=world.canvasHeight;world=WorldState{};world.setCanvasWidth(retainedWidth);world.canvasHeight=retainedHeight;world.camera=retainedCamera;world.gameTime=retainedWorldTime;world.gameMode=mode;world.configureSurvival(slot.level());enemies.clear();dynamic.clear();mapSprites.clear();player.reset();playerGraph.parts.clear();nextID=2;selected=0;charge=0;replaceWeapon=false;acquired=nullptr;particleQueued.fill(false);aimTarget=excludedTarget=0;autoFire=false;aimState={};aimState.mode=aimMode;assistedBullet=nullptr;open(pos);
   // Original openMap0xe3f4 creates objects only. drawVisual follows tick once
@@ -350,14 +347,13 @@ struct GameSession::Impl final: WorldHost,CombatHost,PlayerHost,EnemyHost,ItemBo
  void spawnReinforcements(){
   if(!reinforcement||reinforcementSpawned||!player||world.paused||world.gameState!=0||player->hp<=0)return;
   bool ready=false;
-  if(reinforcement->boss[0]){
+  if(!reinforcement->boss.empty()){
    for(size_t n=0;n<world.map.enemies.size();++n)if(world.map.enemies[n].name==reinforcement->boss&&world.bossEncounterActivated[n]&&!world.mapEnemiesDefeated[n]){ready=true;break;}
   }else ready=player->position.x>=world.map.right-800;
   if(!ready)return;
-  reinforcementSpawned=true;int count=0;
-  for(int n:reinforcement->counts)count+=n;
+  reinforcementSpawned=true;
   float spanX=0,spanY=0;
-  for(int n=0;n<count;++n){spanX=std::max(spanX,reinforcement->positions[n].x);spanY=std::max(spanY,reinforcement->positions[n].y);}
+  for(const auto& unit:reinforcement->units){spanX=std::max(spanX,unit.offset.x);spanY=std::max(spanY,unit.offset.y);}
   const float screenRight=std::max(world.camera.x+world.canvasWidth*.5f,
    std::min(world.frontLine,player->position.x+140+world.canvasWidth*.5f));
   // Translate the whole authored formation. Each aircraft travels the same
@@ -371,20 +367,19 @@ struct GameSession::Impl final: WorldHost,CombatHost,PlayerHost,EnemyHost,ItemBo
   }
   const float floor=ground+45,ceiling=world.map.top-45;
   const float baseY=std::clamp(ground+80,floor,std::max(floor,ceiling-spanY));
-  int index=0;
-  for(size_t type=0;type<reinforcement->counts.size();++type)for(int n=0;n<reinforcement->counts[type];++n,++index){
-   const auto& spec=fighterSpecs()[type];const auto offset=reinforcement->positions[index];
-   spawnEnemy({spec.name,{spawnLeft+offset.x,baseY+offset.y},false});
-   auto& aircraft=enemies.back();aircraft.aircraftEntering=true;aircraft.aircraftEntryEndX=endLeft+offset.x;aircraft.inScreen=false;
+  for(const auto& unit:reinforcement->units){const auto offset=unit.offset;
+   spawnEnemy({unit.machine,{spawnLeft+offset.x,baseY+offset.y},false});
+   auto& machine=enemies.back();machine.formationEntering=true;machine.formationEndX=endLeft+offset.x;machine.inScreen=false;
+   machine.entrySpeed=reinforcement->entrySpeed;machine.releaseSpeed=reinforcement->releaseSpeed;
   }
  }
- MotionEvents advanceAircraftEntry(Machine& m){
+ MotionEvents advanceFormationEntry(Machine& m){
   if(!world.paused){
-   m.enemy->speed=-2.5f;m.enemy->velocity.y=0;
+   m.enemy->speed=m.entrySpeed;m.enemy->velocity.y=0;
   }
   auto events=m.enemy->GobHvMach::tick(enemyFrame(m).motion);
-  if(!world.paused&&m.enemy->position.x<=m.aircraftEntryEndX){
-   m.aircraftEntering=false;m.enemy->speed=m.enemy->speedDest=-.5f;
+  if(!world.paused&&m.enemy->position.x<=m.formationEndX){
+   m.formationEntering=false;m.enemy->speed=m.enemy->speedDest=m.releaseSpeed;
    for(auto& p:m.parts)if(p&&p->armed)p->weapon.resetTime=float(world.gameTime);
   }
   return events;
@@ -412,14 +407,14 @@ struct GameSession::Impl final: WorldHost,CombatHost,PlayerHost,EnemyHost,ItemBo
     for(auto& p:m.parts)if(p&&p->armed)p->weapon.resetTime=float(world.gameTime);
     m.bossActivationPending=false;
    }
-   current=&m;auto before=m.enemy->position;auto motion=m.aircraftEntering?advanceAircraftEntry(m):m.enemy->tick(enemyFrame(m),*this);
+   current=&m;auto before=m.enemy->position;auto motion=m.formationEntering?advanceFormationEntry(m):m.enemy->tick(enemyFrame(m),*this);
    if(!world.paused)m.aimStep={m.enemy->position.x-before.x,m.enemy->position.y-before.y};
-   if(m.vtol){
-    if(!world.paused)m.vtolRotation=vtolPitch(m.vtolRotation,m.enemy->speed,m.enemy->velocity.y);
-    m.enemy->rotation=m.vtolRotation;
-    for(auto& p:m.parts)if(p&&p->armed)p->visual.rotatedPosition=vtolRotate(p->visual.basePosition,m.vtolRotation);
-    const auto& b=m.vtol->bounds;ObjectBounds rotatedBounds{};
-    for(auto point:{Vector2{b.left,b.bottom},Vector2{b.left,b.top},Vector2{b.right,b.bottom},Vector2{b.right,b.top}}){auto r=vtolRotate(point,m.vtolRotation);rotatedBounds.left=std::min(rotatedBounds.left,r.x);rotatedBounds.right=std::max(rotatedBounds.right,r.x);rotatedBounds.bottom=std::min(rotatedBounds.bottom,r.y);rotatedBounds.top=std::max(rotatedBounds.top,r.y);}m.bounds=rotatedBounds;
+   if(m.behavior&&m.behavior->velocityPitch){
+    if(!world.paused)m.attitude=velocityPitch(m.attitude,m.enemy->speed,m.enemy->velocity.y,*m.behavior);
+    m.enemy->rotation=m.attitude;
+    for(auto& p:m.parts)if(p&&p->armed)p->visual.rotatedPosition=rotateAttachment(p->visual.basePosition,m.attitude);
+    if(m.behavior->rotateBounds){const auto& b=m.behavior->bounds;ObjectBounds rotatedBounds{};
+     for(auto point:{Vector2{b[0],b[1]},Vector2{b[0],b[3]},Vector2{b[2],b[1]},Vector2{b[2],b[3]}}){auto r=rotateAttachment(point,m.attitude);rotatedBounds.left=std::min(rotatedBounds.left,r.x);rotatedBounds.right=std::max(rotatedBounds.right,r.x);rotatedBounds.bottom=std::min(rotatedBounds.bottom,r.y);rotatedBounds.top=std::max(rotatedBounds.top,r.y);}m.bounds=rotatedBounds;}
    }
    motionEvents(*m.enemy,m,motion);current=nullptr;++it;}
   for(size_t n=0;n<world.particles.size();++n){auto& p=world.particles[n];tickParticle(p,globalTime);particleQueued[n]=p.show;}
@@ -464,21 +459,11 @@ struct GameSession::Impl final: WorldHost,CombatHost,PlayerHost,EnemyHost,ItemBo
    d.position={p.x+cameraOffset.x,p.y+cameraOffset.y};d.scale.x=child?graph.gauge:1;append(std::move(d),true);
   }
   if(!graph.inScreen&&!visibleOnCanvas(owner.position,graph.bounds))return;
-  if(graph.vtol){
-   const auto& v=*graph.vtol;
-   // Existing missile flame, separate from body/collision; world time freezes on pause.
-   for(auto nozzle:v.exhaust){
-    float length=12.f+std::clamp(owner.velocity.y/20.f,-1.f,1.f)*4.f+std::sin(float(world.gameTime)*45.f)*1.2f;
-    auto local=vtolRotate(v.aftExhaust?Vector2{nozzle.x+length*.5f,nozzle.y}:Vector2{nozzle.x,nozzle.y-length*.5f},owner.rotation);
-    auto size=tileSize("BulletEffect2.png");DrawSprite flame;flame.tile="BulletEffect2.png";flame.cols=2;flame.position={owner.position.x+local.x,owner.position.y+local.y};flame.rotation=owner.rotation+(v.aftExhaust?float(std::numbers::pi):float(std::numbers::pi/2));flame.scale={length/std::max(1.f,size.x/2),6.f/std::max(1.f,size.y)};flame.blend=2;flame.alpha=.8f;flame.z=1;append(std::move(flame));
-   }
-   auto size=tileSize(v.tile);DrawSprite body;body.tile=v.tile;body.position=owner.position;body.rotation=owner.rotation;body.scale={v.width/std::max(1.f,size.x),v.width*v.aspect/std::max(1.f,size.y)};body.z=1;append(std::move(body));
-  }
   // GobHvMach::draw0x57c0 traverses its existing layer. Original insertion
   // and refreshMyMachLayer rebuild order only when parts change.
   if(graph.drawOrderDirty){graph.drawOrder.clear();for(auto& p:graph.parts)if(p)graph.drawOrder.push_back(p.get());
    std::stable_sort(graph.drawOrder.begin(),graph.drawOrder.end(),[](auto a,auto b){return a->order<b->order;});graph.drawOrderDirty=false;}
-  for(auto p:graph.drawOrder){auto d=p->armed?drawWeapon(p->visual,p->weapon,owner.position,owner.player,owner.machType,owner.rotation,owner.engineBounce,1):drawParts(p->visual,owner.position,owner.rotation,owner.engineBounce,owner.machState,owner.speed,globalTime,1);if(p->visual.info&&p->visual.info->tileCnt==0)continue;configureGroundAADraw(d,p->visual,world.gameTime);append(std::move(d));}
+  for(auto p:graph.drawOrder){auto d=p->armed?drawWeapon(p->visual,p->weapon,owner.position,owner.player,owner.machType,owner.rotation,owner.engineBounce,1):drawParts(p->visual,owner.position,owner.rotation,owner.engineBounce,owner.machState,owner.speed,globalTime,1);if(p->visual.info&&p->visual.info->tileCnt==0)continue;if(auto f=presentationFrame(p->visual,world.gameTime))applyPartPresentation(d,p->visual,owner.position,owner.rotation,owner.velocity.y,world.gameTime,tileSize(f->tile));append(std::move(d));}
 
  }
  void collect(){

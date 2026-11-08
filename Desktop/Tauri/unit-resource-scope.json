@@ -1,0 +1,1198 @@
+{
+  "baseline_commit": "da4d0b890eeff384b1bad1308fe75d35ac365457",
+  "authorization": "2026-11-09 preserve current new-unit visuals and hotfix every platform; reviews/new-unit-hotfix-plan-20261109.md",
+  "files": {
+    "Android/app/build.gradle.kts": {
+      "before": "35dd678c9ccf6c22dca6c31177f11ea225dddfea4dcabdd743e85bbfc299f238",
+      "after": "01c2c902e59ea5ef3ea0c6c0f1ebf81178feda0cfe4cdf5dd16797831866429e"
+    },
+    "Android/app/src/main/cpp/Media.cpp": {
+      "before": "94476de104580ded8132f9cfbc33821cc47f6f228f0596bb988a068c5d115fbd",
+      "after": "da1f26eb8cd6b9e138815441eec8e9fd27e06cf882f46beff51e9884a6c05dd0"
+    },
+    "Android/app/src/main/cpp/Runtime.cpp": {
+      "before": "79905130eb8f75473234fcaee2e5c6e9c4a5756b9a6b539a1c228bc93feff7b9",
+      "after": "5951a8d9044284e8142ab598b09212332df79601c68a81d82d926bca1b251cb4"
+    },
+    "Android/tools/prepare_assets.py": {
+      "before": "567e422402417e6e478636297b54258f3c026c1d543a9759c9df05eef7e8b20a",
+      "after": "31af15d0d045f6f47f7f8383f86c5651708043f190d6b56eb6eae1256ffa34aa"
+    },
+    "Android/tools/validate_runtime.py": {
+      "before": "efe5d978d0d62f909b735f87b367f1afbe2aff3d0626b7cf04de2a799c14f2de",
+      "after": "c0952627264df9de1ac650650b757ef3dc62e34ac9f80247e1cf2f2dec6a5698"
+    },
+    "Android/tools/validate_unit_contract.py": {
+      "before": null,
+      "after": "6bd720e08b6158019474a56bb7368bd0959c2cfb9a069e6f9f793386356172a9"
+    },
+    "CMakeLists.txt": {
+      "before": "9340de9bbd6ffee1ad1402f91cdc98c946e55230b8f8fc9d84301d65701b8c85",
+      "after": "575ccb6dd56d8494112a06c6fdac7ceb745b540cb1f64a5026d81ea6c83976f7"
+    },
+    "Modules/HeavyMachModules.xcodeproj/project.pbxproj": {
+      "before": "dda7cba442764d82d7cf65aec74850b05795623ab3da3c54ccf6b34554a8da6e",
+      "after": "d8eb0a2ea1367bf3e28dd53498968e4ea6efd7025a57c20d566c925750e5659c"
+    },
+    "Modules/project.yml": {
+      "before": "4ed29c74fd4c4ac6ffd07a5108bd1e228274cc21a47582813795638faf26e125",
+      "after": "62876d4e3277a87093a53327d7958c329b5e9268f52453e01620d16df26fa009"
+    },
+    "Resources/RuntimeData/MachInfo.mch": {
+      "before": null,
+      "after": "c52e94aaeb73ab990921a90bf653de53deb1dcc534291e099809a7988ce46ca2"
+    },
+    "Resources/RuntimeData/PartsInfo.mch": {
+      "before": null,
+      "after": "2fb66f2c61c274912c757852fc4def301cbb025a8c07555e15c39c8bafd20ec6"
+    },
+    "Resources/RuntimeData/Stage01.map": {
+      "before": null,
+      "after": "989e2342d83bce9b39ab8a95ffde453304f1666222b5c26caea51ef19982c16b"
+    },
+    "Resources/RuntimeData/Stage02.map": {
+      "before": null,
+      "after": "88a1e5d9a1492c55780d55c4c8ae78a6f505fab0db6f4a430fefcab5de077ca8"
+    },
+    "Resources/RuntimeData/Stage03.map": {
+      "before": null,
+      "after": "4e1283968302b54c979e68038780438566139bacd416147ece773f48ab721708"
+    },
+    "Resources/RuntimeData/Stage04.map": {
+      "before": null,
+      "after": "4c08d0585f958b3e506f7d36b9da4649cca2b4a3e23299cdfd20025eb59dac7c"
+    },
+    "Resources/RuntimeData/Stage05.map": {
+      "before": null,
+      "after": "f9c2308f0aacf71fa9e711f1ae0790f399edb5ec12858358e98e8dcf6c5374b4"
+    },
+    "Resources/RuntimeData/Stage06.map": {
+      "before": null,
+      "after": "a89f03ebd9c24eca2c647cceb7f5d6af2a42ffeabedbf3a823810ce80d6193dd"
+    },
+    "Resources/RuntimeData/Stage07.map": {
+      "before": null,
+      "after": "bf8b1a0ea5a0e363c67a4ae45f12b6e59a3f7830b96ac068e548c3a6d74fdc35"
+    },
+    "Resources/RuntimeData/Stage08.map": {
+      "before": null,
+      "after": "de2e0e1242c5556430ca0dd59a7c096b7f1420558a6310886179b729ddc6a2bd"
+    },
+    "Resources/RuntimeData/Stage09.map": {
+      "before": null,
+      "after": "2efd2805e302999716fbd5083ec4664e531edb3bcb8925257e62dae7351873ed"
+    },
+    "Resources/RuntimeData/Stage10.map": {
+      "before": null,
+      "after": "f3bae93484155e4db92cee70d7d3e4e9e70f5124db43f81cae07924f686ebbf0"
+    },
+    "Resources/RuntimeData/Stage11.map": {
+      "before": null,
+      "after": "375a9e39710cf5da63386fae178b488438f47c0d33f425a86cc4f5fa061e08c7"
+    },
+    "Resources/RuntimeData/Stage12.map": {
+      "before": null,
+      "after": "6198bcf589b2a3524aa649c079636674d39d4f73241dd9166b18069089a3024b"
+    },
+    "Resources/RuntimeData/Stage13.map": {
+      "before": null,
+      "after": "9892d0b7dcfe49b1443447cf48616895a6635157be945bd03869557f8d9a959b"
+    },
+    "Resources/RuntimeData/Stage14.map": {
+      "before": null,
+      "after": "ad177e385820379692d19d2a2c107c2410f7b73a89c93718041c48c34e2c4f9a"
+    },
+    "Resources/RuntimeData/Stage15.map": {
+      "before": null,
+      "after": "5449b39b96d1c01ceebb4133bc57522e1534ecafe4ad72b4514f819d88634039"
+    },
+    "Resources/RuntimeData/Stage16.map": {
+      "before": null,
+      "after": "9efee5f0d95c0a097bd12aa9794332061b841bb1edc3d3df6101f519edd41189"
+    },
+    "Resources/RuntimeData/Stage17.map": {
+      "before": null,
+      "after": "e810a648135b9d47c79b8863da5d133dd4014edcb316e3f83ef8b340b8817f91"
+    },
+    "Resources/RuntimeData/Stage18.map": {
+      "before": null,
+      "after": "f94a2f510a2d645be8c0c14d517414f57d2b5aefe435a22a4657bd7feb3220d5"
+    },
+    "Resources/RuntimeData/Stage19.map": {
+      "before": null,
+      "after": "0a8330e31147b2edc3c076958f3ca28553dd3dc4480c393a45cdecc89b8ac21b"
+    },
+    "Resources/RuntimeData/Stage20.map": {
+      "before": null,
+      "after": "220c029b489d7f560148fdbecca54caf45d699b4b88a632f70b5436370088453"
+    },
+    "Resources/RuntimeData/Stage21.map": {
+      "before": null,
+      "after": "b42afdbf14fd3e8fd0e3cae92c319a4c2738087e9593308931a8f27de23f4ac8"
+    },
+    "Resources/RuntimeData/Stage22.map": {
+      "before": null,
+      "after": "93352a06f8cbf41f72a92bd22a0e2b8622d8fb9b104aa4cade4eda713167c4f7"
+    },
+    "Resources/RuntimeData/Stage23.map": {
+      "before": null,
+      "after": "ec61181420c927bd297de197ce9a2d32966ea664aa8a792c8d178206c770ae9c"
+    },
+    "Resources/RuntimeData/Stage24.map": {
+      "before": null,
+      "after": "53e30a5e348800ee7db777cccc4e72ac0d295a5511811dc185ab8957d1de828e"
+    },
+    "Resources/RuntimeData/Stage25.map": {
+      "before": null,
+      "after": "af483b61fe2d0848cdd9313c95dc5aae660f55ee5b40892dc0eeec68b9d1f92f"
+    },
+    "Resources/RuntimeData/Stage26.map": {
+      "before": null,
+      "after": "0906109e9be38cef9e40e1233567613a56c02e4c5e9f9934f987afc41e1a8eaa"
+    },
+    "Resources/RuntimeData/Stage27.map": {
+      "before": null,
+      "after": "6f27e6ba3e3b5f172f10616cc4b390b03fff0b54b20bb0720a4e0cd856f6f564"
+    },
+    "Resources/RuntimeData/Stage28.map": {
+      "before": null,
+      "after": "dce84389bd8666ffa048f7632c92cb5cb2a6029dcecc42d38535b27fcdc004a0"
+    },
+    "Resources/RuntimeData/Stage29.map": {
+      "before": null,
+      "after": "a6fffac303e855eecadf262f23f378a69d8bce91df53ac5da3b7a3e037071cce"
+    },
+    "Resources/RuntimeData/Stage30.map": {
+      "before": null,
+      "after": "ebf7071f6f755ba0aee3ebc2f1117dc4313f48ac38e1407611a6fe794443c544"
+    },
+    "Resources/RuntimeData/Stage31.map": {
+      "before": null,
+      "after": "2cb23317285f2fc411b5128f10d33632bb3305a7e60b512430c868f78367a112"
+    },
+    "Resources/RuntimeData/Stage32.map": {
+      "before": null,
+      "after": "3d0797b9a53a7c96cfb451e9291767baf6a906ecde6791c481b8a764058a61f6"
+    },
+    "Resources/RuntimeData/Stage33.map": {
+      "before": null,
+      "after": "618b83952679d1fb2757f62b79c11d7381786c89fcfa24aaab1ca85eca82808c"
+    },
+    "Resources/RuntimeData/Stage34.map": {
+      "before": null,
+      "after": "93b6e5cc5b7db92c58e0807100033b3811fa722034f865fd5a6764fe8e0bd341"
+    },
+    "Resources/RuntimeData/Stage35.map": {
+      "before": null,
+      "after": "4997557032d8a6938bde813b67d2c501d1498f2bef1a2ceddc7aaaff94b429f4"
+    },
+    "Resources/RuntimeData/Stage36.map": {
+      "before": null,
+      "after": "12af950af80969dd99153e081ab97955a887276ff6947459a08ebe22a8be87f6"
+    },
+    "Resources/RuntimeData/Stage37.map": {
+      "before": null,
+      "after": "f566b4a5a6c6b7c29b867538f78a8d05c183c05f8c56a0a75bc5eb49573415c3"
+    },
+    "Resources/RuntimeData/Stage38.map": {
+      "before": null,
+      "after": "39800e9555a8674d29cc09080d662b4d0d7c7353aee11c020928dc1b2f1269d6"
+    },
+    "Resources/RuntimeData/Stage39.map": {
+      "before": null,
+      "after": "0ed5a7d00f43abe25b67226f119c255a7da9187a3438c2d179c50c61e6244cff"
+    },
+    "Resources/RuntimeData/Stage40.map": {
+      "before": null,
+      "after": "adfa18a9617a1e29efe90e5ac03a7ec3ca033768f401b9f476b6c66dc0f75131"
+    },
+    "Resources/RuntimeData/Stage41.map": {
+      "before": null,
+      "after": "caf4b957497f31f9d40623b9eb07e6f0361e53caba23240b35500c8f20b0b4e9"
+    },
+    "Resources/RuntimeData/Stage42.map": {
+      "before": null,
+      "after": "17c4464c82778149a06b124d500660064238874848e0add67b36481af64e3797"
+    },
+    "Resources/RuntimeData/Survival.map": {
+      "before": null,
+      "after": "9b0fd8fcf26964ac2feed2c0c9abe1b0a1d820d2f726521ae27ef29f7a0a6553"
+    },
+    "Resources/RuntimeData/UnitExtensions.hmx": {
+      "before": null,
+      "after": "e3940603f740a9ecc27e33d22123d93aa15575685761d33af4a0e433c6fac35b"
+    },
+    "Resources/RuntimeData/WeaponInfo.mch": {
+      "before": null,
+      "after": "6b0fc57078f7c3a36622bbf9d20fc54dd7d68d6f5213ce33fc391ad8434d5d22"
+    },
+    "Resources/RuntimeData/manifest.json": {
+      "before": null,
+      "after": "327d8833f2ab24938296d58d47516818d6f238f3b3b38131a46e11ec10969ba9"
+    },
+    "Resources/RuntimeImages/android/GAA_Shilka_Body.png": {
+      "before": null,
+      "after": "ed70226028cef8b51de44550be30a7b56bef1833011e3b223b354e08ec08d82a"
+    },
+    "Resources/RuntimeImages/android/GAA_Shilka_Body2.png": {
+      "before": null,
+      "after": "f492c17033c14c649b49cfbd15a10b5f8fa4d2f1438251b1a5e5b199d8b838d9"
+    },
+    "Resources/RuntimeImages/android/GAA_Shilka_Gun.png": {
+      "before": null,
+      "after": "1f367799b2e9d232ad950b2b3a4933cb7bca169eda702a4147c0d4631a18fc49"
+    },
+    "Resources/RuntimeImages/android/GAA_Shilka_Radar0.png": {
+      "before": null,
+      "after": "95fcb4174140bcf87ff78edb941660549053bf8fab696467502bd2b526f7f153"
+    },
+    "Resources/RuntimeImages/android/GAA_Shilka_Radar1.png": {
+      "before": null,
+      "after": "4cbdcb5ae23aafd975d80ed52b571d19e3fa3b19575d3391a67d52605c1118c7"
+    },
+    "Resources/RuntimeImages/android/GAA_Shilka_Radar10.png": {
+      "before": null,
+      "after": "33ef4f4e463fbd42ec45fa4947fbefee070c89a1ff2a202c1c8c439a868a6fe5"
+    },
+    "Resources/RuntimeImages/android/GAA_Shilka_Radar11.png": {
+      "before": null,
+      "after": "2f33dfb76728c812c77942a56333836c640ecd896f7a0e6fb6428ba797940438"
+    },
+    "Resources/RuntimeImages/android/GAA_Shilka_Radar12.png": {
+      "before": null,
+      "after": "978a3eaa2ee876066574cc9df1e6313ea13444925e9d9c20c6301a531e535688"
+    },
+    "Resources/RuntimeImages/android/GAA_Shilka_Radar13.png": {
+      "before": null,
+      "after": "2b31ae1ac8a742de6afb207f27cbd3fb8cd18a7787d2b6d933f69dedf5976f37"
+    },
+    "Resources/RuntimeImages/android/GAA_Shilka_Radar14.png": {
+      "before": null,
+      "after": "fa097a15776b71b89c233bcd8d84016141ad3b9d345d8b1cd505041b32c59f7e"
+    },
+    "Resources/RuntimeImages/android/GAA_Shilka_Radar15.png": {
+      "before": null,
+      "after": "0ddfbf75aad3080410b74280a23d03febf9478088a2739e9f75a1b4864ec7764"
+    },
+    "Resources/RuntimeImages/android/GAA_Shilka_Radar16.png": {
+      "before": null,
+      "after": "dbf3ab3649bd45ce18f4ff10ba17c7ea5d323c4103a87640498ab9789ca37dc2"
+    },
+    "Resources/RuntimeImages/android/GAA_Shilka_Radar17.png": {
+      "before": null,
+      "after": "5fb8c4380f661a33bd0f7757b32d02ebe4dd8684e577d2073b173b80bd5b97ba"
+    },
+    "Resources/RuntimeImages/android/GAA_Shilka_Radar18.png": {
+      "before": null,
+      "after": "6e319d3f44e23f314ca3f1d5fc183f2311822c5892fe606615fe8c7b742e9470"
+    },
+    "Resources/RuntimeImages/android/GAA_Shilka_Radar19.png": {
+      "before": null,
+      "after": "3fd220e6825e3e87dc0a64d533dfce0760534e973dfbad0c3add63a3af1f7498"
+    },
+    "Resources/RuntimeImages/android/GAA_Shilka_Radar2.png": {
+      "before": null,
+      "after": "9c05cbb6b04ee23f8b178e81ffd1cba6acdcbf24fb68003051e0eae636b101b2"
+    },
+    "Resources/RuntimeImages/android/GAA_Shilka_Radar20.png": {
+      "before": null,
+      "after": "14ef3c2e0d332972ce14fce86102c1490437c1e2e7ab6f5baf77c26820c6f289"
+    },
+    "Resources/RuntimeImages/android/GAA_Shilka_Radar21.png": {
+      "before": null,
+      "after": "2e31c14400d10d53b27479ecb721bd30ed4f4d819eb628453d46738d3684d738"
+    },
+    "Resources/RuntimeImages/android/GAA_Shilka_Radar22.png": {
+      "before": null,
+      "after": "db86a2d37b1e6a2b9385c8605d1d343817ba17c198763473c0609ed9030ca91e"
+    },
+    "Resources/RuntimeImages/android/GAA_Shilka_Radar23.png": {
+      "before": null,
+      "after": "fb14c7646154b099c708ecee92d7d199e4708456e4d440d9bd404e0aad0579a1"
+    },
+    "Resources/RuntimeImages/android/GAA_Shilka_Radar3.png": {
+      "before": null,
+      "after": "c4a4a3b47daa42b6b69a8980508bb33aa360d7a447fb7725225524ef7d271911"
+    },
+    "Resources/RuntimeImages/android/GAA_Shilka_Radar4.png": {
+      "before": null,
+      "after": "fb41e1fb322b0e1a05af4da5c315f156b86af416e5ba2c53d9df064ef8595624"
+    },
+    "Resources/RuntimeImages/android/GAA_Shilka_Radar5.png": {
+      "before": null,
+      "after": "9e2287ad0e33dcb29c6cdbcad35db6465f101838cec1e31409a6b83fe08a9dfc"
+    },
+    "Resources/RuntimeImages/android/GAA_Shilka_Radar6.png": {
+      "before": null,
+      "after": "f7de7f113206f8641725aacaf15f63ad9af61fe26574e0b8035080f886b7dfe2"
+    },
+    "Resources/RuntimeImages/android/GAA_Shilka_Radar7.png": {
+      "before": null,
+      "after": "63c564fea14ebfe48f9b732b64f8a45bfd59531c7d3d1b050da7b95df1057e60"
+    },
+    "Resources/RuntimeImages/android/GAA_Shilka_Radar8.png": {
+      "before": null,
+      "after": "b265dccf95b41b2a54f17fe404cc605a3975c36eb00664b70cc7bd295039e980"
+    },
+    "Resources/RuntimeImages/android/GAA_Shilka_Radar9.png": {
+      "before": null,
+      "after": "161b42b09c1427177151bae0831505b1976e09ee545b8d3d57a1876b64b28c78"
+    },
+    "Resources/RuntimeImages/android/GAA_Shilka_Turret.png": {
+      "before": null,
+      "after": "8f8e0f7aed8c395132cf955ec8f7c9c424b20bafc532dd5639cd41c733eb00d4"
+    },
+    "Resources/RuntimeImages/android/GAA_Tunguska_Body.png": {
+      "before": null,
+      "after": "ad9ad57bf25f7638c7a8f40572e87c36d22b1f4cc57ca8af5a99cc22f6fabdf8"
+    },
+    "Resources/RuntimeImages/android/GAA_Tunguska_Body2.png": {
+      "before": null,
+      "after": "8b92d39b84e5088f617e23b1615d7303383ca21c3e3f906ffd3e553a6af7c54c"
+    },
+    "Resources/RuntimeImages/android/GAA_Tunguska_Gun.png": {
+      "before": null,
+      "after": "da1313577f36dbe5f1ac7f1e288eb6444e392f2586815f7c025bfb148aa733a8"
+    },
+    "Resources/RuntimeImages/android/GAA_Tunguska_Missile.png": {
+      "before": null,
+      "after": "a18870b08d7aff51674d4d7c622ffbca661183de54fe07291ba7274d0253c3fe"
+    },
+    "Resources/RuntimeImages/android/GAA_Tunguska_Radar0.png": {
+      "before": null,
+      "after": "a9a4cd781337454cf2ae196240fe1b7e82ff3e7d95ce06633f83e972b0f74890"
+    },
+    "Resources/RuntimeImages/android/GAA_Tunguska_Radar1.png": {
+      "before": null,
+      "after": "d54188b123f12fade1b1b15cf25699f176fc98d82edce9021600ca67017a6265"
+    },
+    "Resources/RuntimeImages/android/GAA_Tunguska_Radar10.png": {
+      "before": null,
+      "after": "891abf6569bd56bff4bb94194d47bf29dcaea2e28955812a1bc5aca7bddd8cae"
+    },
+    "Resources/RuntimeImages/android/GAA_Tunguska_Radar11.png": {
+      "before": null,
+      "after": "7c7c641b603488a341d518a5b9e2f005c0aae92be2271a2e72b86f0394e03d79"
+    },
+    "Resources/RuntimeImages/android/GAA_Tunguska_Radar12.png": {
+      "before": null,
+      "after": "80e872d942510dd647968ab4b051a1eb21e61e7d4fdf3d543edc15ce2df4e691"
+    },
+    "Resources/RuntimeImages/android/GAA_Tunguska_Radar13.png": {
+      "before": null,
+      "after": "6cc8d58206be6f5b5f008f844a78c881a1545aa9bf5cdf2c2f5c3b8306eb96cc"
+    },
+    "Resources/RuntimeImages/android/GAA_Tunguska_Radar14.png": {
+      "before": null,
+      "after": "eda686f121778e193dcfbce7ada48dd4785fc91f891313166783fa9fb6249afd"
+    },
+    "Resources/RuntimeImages/android/GAA_Tunguska_Radar15.png": {
+      "before": null,
+      "after": "5bb295d8e422f74f70b88da11325a98eb142282e9c93a8b69348e6ea526b2a20"
+    },
+    "Resources/RuntimeImages/android/GAA_Tunguska_Radar16.png": {
+      "before": null,
+      "after": "adec8be381f4266cf91430aa7d5d8a141e39d0eb24e8a24826c576d0f4d1e556"
+    },
+    "Resources/RuntimeImages/android/GAA_Tunguska_Radar17.png": {
+      "before": null,
+      "after": "538f5a718d5a03356469292cb5d73346d83df609d567e38849281dc5445c98b4"
+    },
+    "Resources/RuntimeImages/android/GAA_Tunguska_Radar18.png": {
+      "before": null,
+      "after": "46c23566d8281d1915af05ffadeff47c5552f1b1840ba0002fc10319be0c80be"
+    },
+    "Resources/RuntimeImages/android/GAA_Tunguska_Radar19.png": {
+      "before": null,
+      "after": "aee3b3250f0077573f2adb20899748acae17744cb174ccbda1536a59f2db34d7"
+    },
+    "Resources/RuntimeImages/android/GAA_Tunguska_Radar2.png": {
+      "before": null,
+      "after": "7fba053d0cd1e1fd503d3bb289cf83d15236054313e1facbc420f05a1afcc3b6"
+    },
+    "Resources/RuntimeImages/android/GAA_Tunguska_Radar20.png": {
+      "before": null,
+      "after": "51dd82aa9aa33a784127441f27024e6331cf56d2c90cb808b937b42df988226a"
+    },
+    "Resources/RuntimeImages/android/GAA_Tunguska_Radar21.png": {
+      "before": null,
+      "after": "d65303467f475541f90ad3f8097a38f962ec3f3b2a6023a74522fa185b61d41c"
+    },
+    "Resources/RuntimeImages/android/GAA_Tunguska_Radar22.png": {
+      "before": null,
+      "after": "ee0e20194bd5ed9d0d47c113811f7cf8fcec5ed813f34dd2229882236dbf18ea"
+    },
+    "Resources/RuntimeImages/android/GAA_Tunguska_Radar23.png": {
+      "before": null,
+      "after": "51f71eb027526419d13f252558fc29f8e435bc3d1bb6025cc0a3de1ab3607089"
+    },
+    "Resources/RuntimeImages/android/GAA_Tunguska_Radar3.png": {
+      "before": null,
+      "after": "545e99276befb71c59ea5758aa89f496f5902912cab751a73b0f697835fc55b8"
+    },
+    "Resources/RuntimeImages/android/GAA_Tunguska_Radar4.png": {
+      "before": null,
+      "after": "7a4f3e34d3cad486742905b86dec100619dc91b46d0bda1ea778acfb91afde23"
+    },
+    "Resources/RuntimeImages/android/GAA_Tunguska_Radar5.png": {
+      "before": null,
+      "after": "fb554cd30b689e7699984b4355ff189f5f9cd10bedd8264eadfe16e7c53a92ba"
+    },
+    "Resources/RuntimeImages/android/GAA_Tunguska_Radar6.png": {
+      "before": null,
+      "after": "e3fd4711679215fa6b3f45a8a5813c546fe6bf1864f8288b732bc035deefba8d"
+    },
+    "Resources/RuntimeImages/android/GAA_Tunguska_Radar7.png": {
+      "before": null,
+      "after": "8cb4d9908343f15f433789236a803ea10238f4926a2c092dafcfe2fc2eebb48a"
+    },
+    "Resources/RuntimeImages/android/GAA_Tunguska_Radar8.png": {
+      "before": null,
+      "after": "9a957ff9bbb5f7863bb7d4c9a61fd786a30bd8315b3918147b295748ad7f813e"
+    },
+    "Resources/RuntimeImages/android/GAA_Tunguska_Radar9.png": {
+      "before": null,
+      "after": "36f01224f50569c7be6f231083e82148712ff03eb34f1771c5469b6c0f3f7ab2"
+    },
+    "Resources/RuntimeImages/android/GAA_Tunguska_Turret.png": {
+      "before": null,
+      "after": "94574a51e24a3a1ed809a06e471be3d0577eaa10353d36a04531e600d1986d89"
+    },
+    "Resources/RuntimeImages/android/Lux_F22.png": {
+      "before": null,
+      "after": "ba85eea24c1d925cb873bb1f40bf8b43f9bc7d02097886ffb9ab00f78139bc55"
+    },
+    "Resources/RuntimeImages/android/Lux_MiG31.png": {
+      "before": null,
+      "after": "2706e83d07e8fd2c15ddf6ed79b03cbb987cf672f15188edbebc5a31f02cac96"
+    },
+    "Resources/RuntimeImages/android/Lux_Su57.png": {
+      "before": null,
+      "after": "60e7a8ef41ed9959320b76691eceff1ae51f22b520a1b22975abe7652074bcd0"
+    },
+    "Resources/RuntimeImages/android/VTOL_F35B.png": {
+      "before": null,
+      "after": "75a48432fbf4c68bd34db04f4dd83a8e40714e5e30ab1a6b4ace3d3987fd6d04"
+    },
+    "Resources/RuntimeImages/android/VTOL_Harrier.png": {
+      "before": null,
+      "after": "d87414990cd13521319ed82cd999cc3669395645c32bd34727d7c899cd5af26f"
+    },
+    "Resources/RuntimeImages/android/VTOL_Yak141.png": {
+      "before": null,
+      "after": "6960cc95d16124c88f23fb4ab5c2069be43a4817c8995b7c473f3c15d603bd28"
+    },
+    "Resources/RuntimeImages/apple/GAA_Shilka_Body.png": {
+      "before": null,
+      "after": "dd7875c09c7b85b7ee78ac37969c4691f85d5ae9d70ca574cbd2089497b0a89c"
+    },
+    "Resources/RuntimeImages/apple/GAA_Shilka_Body2.png": {
+      "before": null,
+      "after": "ef8974a6e316e96a43b52bcf2f461c1cc0e0aace0efa7a6321505d862600eb15"
+    },
+    "Resources/RuntimeImages/apple/GAA_Shilka_Gun.png": {
+      "before": null,
+      "after": "7e3160127d5b45e760e0c4bad999090e45ae296dd2ca1abebc0e0c458318816e"
+    },
+    "Resources/RuntimeImages/apple/GAA_Shilka_Radar0.png": {
+      "before": null,
+      "after": "699176c5002a38b5bf214cb9709685214d84452650a465251f7eed86b81a49f7"
+    },
+    "Resources/RuntimeImages/apple/GAA_Shilka_Radar1.png": {
+      "before": null,
+      "after": "94c603034a9cb87e24258e4f897a179311d7a1f819a8fc6442855c7514b6a0a3"
+    },
+    "Resources/RuntimeImages/apple/GAA_Shilka_Radar10.png": {
+      "before": null,
+      "after": "3c7d40dfcccbe76f385f6b6fad7de1e94fc36002f932915a690f9ea27d20d342"
+    },
+    "Resources/RuntimeImages/apple/GAA_Shilka_Radar11.png": {
+      "before": null,
+      "after": "aef40a14d02bfc5a6babfa4b95cf92d1e27eb7a936235a120f48b616a5e7cbd5"
+    },
+    "Resources/RuntimeImages/apple/GAA_Shilka_Radar12.png": {
+      "before": null,
+      "after": "6206fb067136b0ab105b08fd3db4612af9b946af872a5f8fa7b00b1cc47d58a9"
+    },
+    "Resources/RuntimeImages/apple/GAA_Shilka_Radar13.png": {
+      "before": null,
+      "after": "8b969929ae6caeea7feb32ad2d9deb820208d0662f58e9bb9cad050a680b0d39"
+    },
+    "Resources/RuntimeImages/apple/GAA_Shilka_Radar14.png": {
+      "before": null,
+      "after": "3ec8f748464cb7fb3dbad9f7f484b7d2b944c24301fd7a4aedca506b5fcd3488"
+    },
+    "Resources/RuntimeImages/apple/GAA_Shilka_Radar15.png": {
+      "before": null,
+      "after": "124e73d928e0d329292d684264f062c36cb1deb7e7192ade5d3f9b57cf669a12"
+    },
+    "Resources/RuntimeImages/apple/GAA_Shilka_Radar16.png": {
+      "before": null,
+      "after": "00e4538a2a6cd40fb014cebaa011915562329108c083161a30a0b35329601e8f"
+    },
+    "Resources/RuntimeImages/apple/GAA_Shilka_Radar17.png": {
+      "before": null,
+      "after": "88cf341b9af155a87de62561c72b50385b0f5310099c51f352ab0eb6199bd27a"
+    },
+    "Resources/RuntimeImages/apple/GAA_Shilka_Radar18.png": {
+      "before": null,
+      "after": "58570f4c44e898ac60dcb13b0bedb1b175944187912b93c6253db51010adc36f"
+    },
+    "Resources/RuntimeImages/apple/GAA_Shilka_Radar19.png": {
+      "before": null,
+      "after": "02828eb284b07a89c0aa44b91356719f2a256464e150e297d7826a42539166c5"
+    },
+    "Resources/RuntimeImages/apple/GAA_Shilka_Radar2.png": {
+      "before": null,
+      "after": "83fcf524377bc89893bb0866817b1723476969df02b5ba3b4b839c815dd82c37"
+    },
+    "Resources/RuntimeImages/apple/GAA_Shilka_Radar20.png": {
+      "before": null,
+      "after": "88a058a8f76dbc4ac8898941dcbf37e792d95fa4e08555990ba57a1df6ee762b"
+    },
+    "Resources/RuntimeImages/apple/GAA_Shilka_Radar21.png": {
+      "before": null,
+      "after": "d99179788510c3b0baa8cf163c0177d5c74c3a5cdaf052347a1dbdaee1197f69"
+    },
+    "Resources/RuntimeImages/apple/GAA_Shilka_Radar22.png": {
+      "before": null,
+      "after": "701d0e66adb856eef0cafa114a672a9ff9f05c885876329927503835838fa8c1"
+    },
+    "Resources/RuntimeImages/apple/GAA_Shilka_Radar23.png": {
+      "before": null,
+      "after": "9f4af7a3536af40fb2a2cf1203f823ac357beccf7bcf5f1a5d1bfb4420a33669"
+    },
+    "Resources/RuntimeImages/apple/GAA_Shilka_Radar3.png": {
+      "before": null,
+      "after": "f0c1beb1229ee13fbb90fa55cd8e0fbf7b1a7c41f5ccb00004795060a1435b86"
+    },
+    "Resources/RuntimeImages/apple/GAA_Shilka_Radar4.png": {
+      "before": null,
+      "after": "20374a6c9eb882bea22824f7252caf360d88a222136fd1348a6eb4d498476c60"
+    },
+    "Resources/RuntimeImages/apple/GAA_Shilka_Radar5.png": {
+      "before": null,
+      "after": "833527eac1936ea8e4b65bb68098ad68963ff6fdcbeabbe649ebcc7f2999da44"
+    },
+    "Resources/RuntimeImages/apple/GAA_Shilka_Radar6.png": {
+      "before": null,
+      "after": "61c8033c60206aa62be48d3290a48314ce3f31c5fa982d7ebd2ae85b303b95cc"
+    },
+    "Resources/RuntimeImages/apple/GAA_Shilka_Radar7.png": {
+      "before": null,
+      "after": "32a730a349b9f4a4a0690c6ed805bb2468f16127e1935217606c31ddc580b119"
+    },
+    "Resources/RuntimeImages/apple/GAA_Shilka_Radar8.png": {
+      "before": null,
+      "after": "aec65d747769f042de82d9062617c2d14407933f277f56243daf5cac77ceb3dd"
+    },
+    "Resources/RuntimeImages/apple/GAA_Shilka_Radar9.png": {
+      "before": null,
+      "after": "40ed4c60f1f621824eb1304bc56e7039bef04785f945e6d833752e54e6087530"
+    },
+    "Resources/RuntimeImages/apple/GAA_Shilka_Turret.png": {
+      "before": null,
+      "after": "49969a71b0f2f58c08652de43bd7c9816bed900ddba0acb8a3bbff9aa855d97f"
+    },
+    "Resources/RuntimeImages/apple/GAA_Tunguska_Body.png": {
+      "before": null,
+      "after": "09e2ce9b0cd49e898fa9429395a32614f257fc03df57a5fd3c8ec65014d936cb"
+    },
+    "Resources/RuntimeImages/apple/GAA_Tunguska_Body2.png": {
+      "before": null,
+      "after": "33e90b69dd8ab2f49862df326b356e48105b4ad835d2420d994491e6caf60d92"
+    },
+    "Resources/RuntimeImages/apple/GAA_Tunguska_Gun.png": {
+      "before": null,
+      "after": "9f9c2e0d792e75b2fd4fe2eea569b34a654b6b5b16ad87335ed544809824c950"
+    },
+    "Resources/RuntimeImages/apple/GAA_Tunguska_Missile.png": {
+      "before": null,
+      "after": "a362a1a126e2cb7cb3f4bf5fd55dc975abf2d1f28762729367f77fde4c2b8a82"
+    },
+    "Resources/RuntimeImages/apple/GAA_Tunguska_Radar0.png": {
+      "before": null,
+      "after": "965891fbcdd749ed5dd0b71a72592cd79a08c87aef7e1fdff2b924ee8843d8df"
+    },
+    "Resources/RuntimeImages/apple/GAA_Tunguska_Radar1.png": {
+      "before": null,
+      "after": "1c9cc216dbd0d6648d1c2ea571dd3e323a8dd37ed592c8c5cb1247b448306260"
+    },
+    "Resources/RuntimeImages/apple/GAA_Tunguska_Radar10.png": {
+      "before": null,
+      "after": "7a0594984b1ee24f349b1093fd5c1844d10cdac64a40eac4c701716d40c3c350"
+    },
+    "Resources/RuntimeImages/apple/GAA_Tunguska_Radar11.png": {
+      "before": null,
+      "after": "ecf6db353cf7cdf039477ffaf624f440b783a6ca55826ea70ea96cd5ff63d295"
+    },
+    "Resources/RuntimeImages/apple/GAA_Tunguska_Radar12.png": {
+      "before": null,
+      "after": "0ecd479ec210a4af1d3fa30a38f823d33a18d9a3a340c2c0137917f27d4f77ae"
+    },
+    "Resources/RuntimeImages/apple/GAA_Tunguska_Radar13.png": {
+      "before": null,
+      "after": "2ee899a149fb9cc2c10d4b72cf5d8ddde2b423c7e634075a08950280ca3afe2a"
+    },
+    "Resources/RuntimeImages/apple/GAA_Tunguska_Radar14.png": {
+      "before": null,
+      "after": "edc8a37f67985b024a3a54d7b647e54c748ea4193e39ba38cc412f191126fc20"
+    },
+    "Resources/RuntimeImages/apple/GAA_Tunguska_Radar15.png": {
+      "before": null,
+      "after": "e3c5bf6c4960e542b3c6f492bfbe887361515f9b3d5030516cec40690578e337"
+    },
+    "Resources/RuntimeImages/apple/GAA_Tunguska_Radar16.png": {
+      "before": null,
+      "after": "51afd21e3f79f81d319f91d7b8a5aeabb9db5eb17325cbaa234ace6d5f650827"
+    },
+    "Resources/RuntimeImages/apple/GAA_Tunguska_Radar17.png": {
+      "before": null,
+      "after": "a9692224fdd57a673be8a5328ca1003b77cff1052f4678ee1d74ff46e6f04802"
+    },
+    "Resources/RuntimeImages/apple/GAA_Tunguska_Radar18.png": {
+      "before": null,
+      "after": "ea23574b3156ec67256f2a9710fbcb954066ddc1b863c29f136be4d1f002e4c1"
+    },
+    "Resources/RuntimeImages/apple/GAA_Tunguska_Radar19.png": {
+      "before": null,
+      "after": "3381118e97a23ca81f66b9a7b7ea562ebbd0f56f813cbfc414de7085667dee3c"
+    },
+    "Resources/RuntimeImages/apple/GAA_Tunguska_Radar2.png": {
+      "before": null,
+      "after": "691449ce73b976a703b93d8cc49c41189d1fe9c3ab6e58963dd5bf4bf5cfdf91"
+    },
+    "Resources/RuntimeImages/apple/GAA_Tunguska_Radar20.png": {
+      "before": null,
+      "after": "b4fde585a599b722b339d70070deb3e1ffe1c9bfeada24ea12f758b25a17b0d5"
+    },
+    "Resources/RuntimeImages/apple/GAA_Tunguska_Radar21.png": {
+      "before": null,
+      "after": "e532469255630325b7d7681dc75e34b0424128c5b03f16763e3268c454c8384a"
+    },
+    "Resources/RuntimeImages/apple/GAA_Tunguska_Radar22.png": {
+      "before": null,
+      "after": "0153a9224e1f9c7ffca9be568153054ccdc1cc9d27c63c53858973951dec577a"
+    },
+    "Resources/RuntimeImages/apple/GAA_Tunguska_Radar23.png": {
+      "before": null,
+      "after": "43f4aa957ea4ad167460c200127eec060f1deeaab2ad995e132304b71ccf0428"
+    },
+    "Resources/RuntimeImages/apple/GAA_Tunguska_Radar3.png": {
+      "before": null,
+      "after": "1e1daec48f359b2c742b9629de5bed37fa9668d3dc5604b9979af25533da2eeb"
+    },
+    "Resources/RuntimeImages/apple/GAA_Tunguska_Radar4.png": {
+      "before": null,
+      "after": "3aa02742a6513ce61ddffcba3bb52963f38a0224571c69b6aafa4f5853a0758c"
+    },
+    "Resources/RuntimeImages/apple/GAA_Tunguska_Radar5.png": {
+      "before": null,
+      "after": "e8883078d3b5052dd0521eb4cfa3a5b0929e2f1da004356e8585ea67f4c5b2e0"
+    },
+    "Resources/RuntimeImages/apple/GAA_Tunguska_Radar6.png": {
+      "before": null,
+      "after": "090eecc5c0a65dde399788fd007862280d162b8ef54adb0c25e9a4b70a4cdcd7"
+    },
+    "Resources/RuntimeImages/apple/GAA_Tunguska_Radar7.png": {
+      "before": null,
+      "after": "2b436747c33185b8b215f4e7b69d0454cfb01879e2fed996cf7c9d35dfd7b1e6"
+    },
+    "Resources/RuntimeImages/apple/GAA_Tunguska_Radar8.png": {
+      "before": null,
+      "after": "65f0f3c94ca986a20b3597909473c4c9b2b4870f9f232910052ccbfa91b5ced1"
+    },
+    "Resources/RuntimeImages/apple/GAA_Tunguska_Radar9.png": {
+      "before": null,
+      "after": "22d3ddeba6a2b1e363bf2a7dec8eb38eaa1db0e89267082699c722ad2581fa7b"
+    },
+    "Resources/RuntimeImages/apple/GAA_Tunguska_Turret.png": {
+      "before": null,
+      "after": "217e769bcb3b3f67b9e4c03c02b4c2b3e1a224967042d7b2287a3076334cdd9f"
+    },
+    "Resources/RuntimeImages/apple/Lux_F22.png": {
+      "before": null,
+      "after": "4c65eb6555084935a2d1b8fbe4bf4555889071110324adafe3dd73784c722760"
+    },
+    "Resources/RuntimeImages/apple/Lux_MiG31.png": {
+      "before": null,
+      "after": "887603726fe0c89bcaca44f3cc2f6fa42bff76b1ff25ca685393bbcaad19bee9"
+    },
+    "Resources/RuntimeImages/apple/Lux_Su57.png": {
+      "before": null,
+      "after": "6b02bfdf620f489db1994cfb3102bffac671861b805db200d21c688fbf0153cf"
+    },
+    "Resources/RuntimeImages/apple/VTOL_F35B.png": {
+      "before": null,
+      "after": "3c268bff05158fe278c4e8937d74784e7d13a1984a2a8e90790e2cd3157a851f"
+    },
+    "Resources/RuntimeImages/apple/VTOL_Harrier.png": {
+      "before": null,
+      "after": "17d731c012637dbe2c52c6a66015f92a79e9db976e081fe4f4b524957aed6e4d"
+    },
+    "Resources/RuntimeImages/apple/VTOL_Yak141.png": {
+      "before": null,
+      "after": "38a667384b266446299ae0434b5e7ab39d81daddc46dda664d6e2e39579d9992"
+    },
+    "Resources/RuntimeImages/manifest.json": {
+      "before": null,
+      "after": "35ba83ce2cfd979d582746caf7c7ca0c291d02dc16fac40947b1bac86e6bfd61"
+    },
+    "Resources/RuntimeImages/web/GAA_Shilka_Body.png": {
+      "before": null,
+      "after": "ed70226028cef8b51de44550be30a7b56bef1833011e3b223b354e08ec08d82a"
+    },
+    "Resources/RuntimeImages/web/GAA_Shilka_Body2.png": {
+      "before": null,
+      "after": "f492c17033c14c649b49cfbd15a10b5f8fa4d2f1438251b1a5e5b199d8b838d9"
+    },
+    "Resources/RuntimeImages/web/GAA_Shilka_Gun.png": {
+      "before": null,
+      "after": "1f367799b2e9d232ad950b2b3a4933cb7bca169eda702a4147c0d4631a18fc49"
+    },
+    "Resources/RuntimeImages/web/GAA_Shilka_Radar0.png": {
+      "before": null,
+      "after": "95fcb4174140bcf87ff78edb941660549053bf8fab696467502bd2b526f7f153"
+    },
+    "Resources/RuntimeImages/web/GAA_Shilka_Radar1.png": {
+      "before": null,
+      "after": "4cbdcb5ae23aafd975d80ed52b571d19e3fa3b19575d3391a67d52605c1118c7"
+    },
+    "Resources/RuntimeImages/web/GAA_Shilka_Radar10.png": {
+      "before": null,
+      "after": "33ef4f4e463fbd42ec45fa4947fbefee070c89a1ff2a202c1c8c439a868a6fe5"
+    },
+    "Resources/RuntimeImages/web/GAA_Shilka_Radar11.png": {
+      "before": null,
+      "after": "2f33dfb76728c812c77942a56333836c640ecd896f7a0e6fb6428ba797940438"
+    },
+    "Resources/RuntimeImages/web/GAA_Shilka_Radar12.png": {
+      "before": null,
+      "after": "978a3eaa2ee876066574cc9df1e6313ea13444925e9d9c20c6301a531e535688"
+    },
+    "Resources/RuntimeImages/web/GAA_Shilka_Radar13.png": {
+      "before": null,
+      "after": "2b31ae1ac8a742de6afb207f27cbd3fb8cd18a7787d2b6d933f69dedf5976f37"
+    },
+    "Resources/RuntimeImages/web/GAA_Shilka_Radar14.png": {
+      "before": null,
+      "after": "fa097a15776b71b89c233bcd8d84016141ad3b9d345d8b1cd505041b32c59f7e"
+    },
+    "Resources/RuntimeImages/web/GAA_Shilka_Radar15.png": {
+      "before": null,
+      "after": "0ddfbf75aad3080410b74280a23d03febf9478088a2739e9f75a1b4864ec7764"
+    },
+    "Resources/RuntimeImages/web/GAA_Shilka_Radar16.png": {
+      "before": null,
+      "after": "dbf3ab3649bd45ce18f4ff10ba17c7ea5d323c4103a87640498ab9789ca37dc2"
+    },
+    "Resources/RuntimeImages/web/GAA_Shilka_Radar17.png": {
+      "before": null,
+      "after": "5fb8c4380f661a33bd0f7757b32d02ebe4dd8684e577d2073b173b80bd5b97ba"
+    },
+    "Resources/RuntimeImages/web/GAA_Shilka_Radar18.png": {
+      "before": null,
+      "after": "6e319d3f44e23f314ca3f1d5fc183f2311822c5892fe606615fe8c7b742e9470"
+    },
+    "Resources/RuntimeImages/web/GAA_Shilka_Radar19.png": {
+      "before": null,
+      "after": "3fd220e6825e3e87dc0a64d533dfce0760534e973dfbad0c3add63a3af1f7498"
+    },
+    "Resources/RuntimeImages/web/GAA_Shilka_Radar2.png": {
+      "before": null,
+      "after": "9c05cbb6b04ee23f8b178e81ffd1cba6acdcbf24fb68003051e0eae636b101b2"
+    },
+    "Resources/RuntimeImages/web/GAA_Shilka_Radar20.png": {
+      "before": null,
+      "after": "14ef3c2e0d332972ce14fce86102c1490437c1e2e7ab6f5baf77c26820c6f289"
+    },
+    "Resources/RuntimeImages/web/GAA_Shilka_Radar21.png": {
+      "before": null,
+      "after": "2e31c14400d10d53b27479ecb721bd30ed4f4d819eb628453d46738d3684d738"
+    },
+    "Resources/RuntimeImages/web/GAA_Shilka_Radar22.png": {
+      "before": null,
+      "after": "db86a2d37b1e6a2b9385c8605d1d343817ba17c198763473c0609ed9030ca91e"
+    },
+    "Resources/RuntimeImages/web/GAA_Shilka_Radar23.png": {
+      "before": null,
+      "after": "fb14c7646154b099c708ecee92d7d199e4708456e4d440d9bd404e0aad0579a1"
+    },
+    "Resources/RuntimeImages/web/GAA_Shilka_Radar3.png": {
+      "before": null,
+      "after": "c4a4a3b47daa42b6b69a8980508bb33aa360d7a447fb7725225524ef7d271911"
+    },
+    "Resources/RuntimeImages/web/GAA_Shilka_Radar4.png": {
+      "before": null,
+      "after": "fb41e1fb322b0e1a05af4da5c315f156b86af416e5ba2c53d9df064ef8595624"
+    },
+    "Resources/RuntimeImages/web/GAA_Shilka_Radar5.png": {
+      "before": null,
+      "after": "9e2287ad0e33dcb29c6cdbcad35db6465f101838cec1e31409a6b83fe08a9dfc"
+    },
+    "Resources/RuntimeImages/web/GAA_Shilka_Radar6.png": {
+      "before": null,
+      "after": "f7de7f113206f8641725aacaf15f63ad9af61fe26574e0b8035080f886b7dfe2"
+    },
+    "Resources/RuntimeImages/web/GAA_Shilka_Radar7.png": {
+      "before": null,
+      "after": "63c564fea14ebfe48f9b732b64f8a45bfd59531c7d3d1b050da7b95df1057e60"
+    },
+    "Resources/RuntimeImages/web/GAA_Shilka_Radar8.png": {
+      "before": null,
+      "after": "b265dccf95b41b2a54f17fe404cc605a3975c36eb00664b70cc7bd295039e980"
+    },
+    "Resources/RuntimeImages/web/GAA_Shilka_Radar9.png": {
+      "before": null,
+      "after": "161b42b09c1427177151bae0831505b1976e09ee545b8d3d57a1876b64b28c78"
+    },
+    "Resources/RuntimeImages/web/GAA_Shilka_Turret.png": {
+      "before": null,
+      "after": "8f8e0f7aed8c395132cf955ec8f7c9c424b20bafc532dd5639cd41c733eb00d4"
+    },
+    "Resources/RuntimeImages/web/GAA_Tunguska_Body.png": {
+      "before": null,
+      "after": "ad9ad57bf25f7638c7a8f40572e87c36d22b1f4cc57ca8af5a99cc22f6fabdf8"
+    },
+    "Resources/RuntimeImages/web/GAA_Tunguska_Body2.png": {
+      "before": null,
+      "after": "8b92d39b84e5088f617e23b1615d7303383ca21c3e3f906ffd3e553a6af7c54c"
+    },
+    "Resources/RuntimeImages/web/GAA_Tunguska_Gun.png": {
+      "before": null,
+      "after": "da1313577f36dbe5f1ac7f1e288eb6444e392f2586815f7c025bfb148aa733a8"
+    },
+    "Resources/RuntimeImages/web/GAA_Tunguska_Missile.png": {
+      "before": null,
+      "after": "a18870b08d7aff51674d4d7c622ffbca661183de54fe07291ba7274d0253c3fe"
+    },
+    "Resources/RuntimeImages/web/GAA_Tunguska_Radar0.png": {
+      "before": null,
+      "after": "a9a4cd781337454cf2ae196240fe1b7e82ff3e7d95ce06633f83e972b0f74890"
+    },
+    "Resources/RuntimeImages/web/GAA_Tunguska_Radar1.png": {
+      "before": null,
+      "after": "d54188b123f12fade1b1b15cf25699f176fc98d82edce9021600ca67017a6265"
+    },
+    "Resources/RuntimeImages/web/GAA_Tunguska_Radar10.png": {
+      "before": null,
+      "after": "891abf6569bd56bff4bb94194d47bf29dcaea2e28955812a1bc5aca7bddd8cae"
+    },
+    "Resources/RuntimeImages/web/GAA_Tunguska_Radar11.png": {
+      "before": null,
+      "after": "7c7c641b603488a341d518a5b9e2f005c0aae92be2271a2e72b86f0394e03d79"
+    },
+    "Resources/RuntimeImages/web/GAA_Tunguska_Radar12.png": {
+      "before": null,
+      "after": "80e872d942510dd647968ab4b051a1eb21e61e7d4fdf3d543edc15ce2df4e691"
+    },
+    "Resources/RuntimeImages/web/GAA_Tunguska_Radar13.png": {
+      "before": null,
+      "after": "6cc8d58206be6f5b5f008f844a78c881a1545aa9bf5cdf2c2f5c3b8306eb96cc"
+    },
+    "Resources/RuntimeImages/web/GAA_Tunguska_Radar14.png": {
+      "before": null,
+      "after": "eda686f121778e193dcfbce7ada48dd4785fc91f891313166783fa9fb6249afd"
+    },
+    "Resources/RuntimeImages/web/GAA_Tunguska_Radar15.png": {
+      "before": null,
+      "after": "5bb295d8e422f74f70b88da11325a98eb142282e9c93a8b69348e6ea526b2a20"
+    },
+    "Resources/RuntimeImages/web/GAA_Tunguska_Radar16.png": {
+      "before": null,
+      "after": "adec8be381f4266cf91430aa7d5d8a141e39d0eb24e8a24826c576d0f4d1e556"
+    },
+    "Resources/RuntimeImages/web/GAA_Tunguska_Radar17.png": {
+      "before": null,
+      "after": "538f5a718d5a03356469292cb5d73346d83df609d567e38849281dc5445c98b4"
+    },
+    "Resources/RuntimeImages/web/GAA_Tunguska_Radar18.png": {
+      "before": null,
+      "after": "46c23566d8281d1915af05ffadeff47c5552f1b1840ba0002fc10319be0c80be"
+    },
+    "Resources/RuntimeImages/web/GAA_Tunguska_Radar19.png": {
+      "before": null,
+      "after": "aee3b3250f0077573f2adb20899748acae17744cb174ccbda1536a59f2db34d7"
+    },
+    "Resources/RuntimeImages/web/GAA_Tunguska_Radar2.png": {
+      "before": null,
+      "after": "7fba053d0cd1e1fd503d3bb289cf83d15236054313e1facbc420f05a1afcc3b6"
+    },
+    "Resources/RuntimeImages/web/GAA_Tunguska_Radar20.png": {
+      "before": null,
+      "after": "51dd82aa9aa33a784127441f27024e6331cf56d2c90cb808b937b42df988226a"
+    },
+    "Resources/RuntimeImages/web/GAA_Tunguska_Radar21.png": {
+      "before": null,
+      "after": "d65303467f475541f90ad3f8097a38f962ec3f3b2a6023a74522fa185b61d41c"
+    },
+    "Resources/RuntimeImages/web/GAA_Tunguska_Radar22.png": {
+      "before": null,
+      "after": "ee0e20194bd5ed9d0d47c113811f7cf8fcec5ed813f34dd2229882236dbf18ea"
+    },
+    "Resources/RuntimeImages/web/GAA_Tunguska_Radar23.png": {
+      "before": null,
+      "after": "51f71eb027526419d13f252558fc29f8e435bc3d1bb6025cc0a3de1ab3607089"
+    },
+    "Resources/RuntimeImages/web/GAA_Tunguska_Radar3.png": {
+      "before": null,
+      "after": "545e99276befb71c59ea5758aa89f496f5902912cab751a73b0f697835fc55b8"
+    },
+    "Resources/RuntimeImages/web/GAA_Tunguska_Radar4.png": {
+      "before": null,
+      "after": "7a4f3e34d3cad486742905b86dec100619dc91b46d0bda1ea778acfb91afde23"
+    },
+    "Resources/RuntimeImages/web/GAA_Tunguska_Radar5.png": {
+      "before": null,
+      "after": "fb554cd30b689e7699984b4355ff189f5f9cd10bedd8264eadfe16e7c53a92ba"
+    },
+    "Resources/RuntimeImages/web/GAA_Tunguska_Radar6.png": {
+      "before": null,
+      "after": "e3fd4711679215fa6b3f45a8a5813c546fe6bf1864f8288b732bc035deefba8d"
+    },
+    "Resources/RuntimeImages/web/GAA_Tunguska_Radar7.png": {
+      "before": null,
+      "after": "8cb4d9908343f15f433789236a803ea10238f4926a2c092dafcfe2fc2eebb48a"
+    },
+    "Resources/RuntimeImages/web/GAA_Tunguska_Radar8.png": {
+      "before": null,
+      "after": "9a957ff9bbb5f7863bb7d4c9a61fd786a30bd8315b3918147b295748ad7f813e"
+    },
+    "Resources/RuntimeImages/web/GAA_Tunguska_Radar9.png": {
+      "before": null,
+      "after": "36f01224f50569c7be6f231083e82148712ff03eb34f1771c5469b6c0f3f7ab2"
+    },
+    "Resources/RuntimeImages/web/GAA_Tunguska_Turret.png": {
+      "before": null,
+      "after": "94574a51e24a3a1ed809a06e471be3d0577eaa10353d36a04531e600d1986d89"
+    },
+    "Resources/RuntimeImages/web/Lux_F22.png": {
+      "before": null,
+      "after": "ba85eea24c1d925cb873bb1f40bf8b43f9bc7d02097886ffb9ab00f78139bc55"
+    },
+    "Resources/RuntimeImages/web/Lux_MiG31.png": {
+      "before": null,
+      "after": "2706e83d07e8fd2c15ddf6ed79b03cbb987cf672f15188edbebc5a31f02cac96"
+    },
+    "Resources/RuntimeImages/web/Lux_Su57.png": {
+      "before": null,
+      "after": "60e7a8ef41ed9959320b76691eceff1ae51f22b520a1b22975abe7652074bcd0"
+    },
+    "Resources/RuntimeImages/web/VTOL_F35B.png": {
+      "before": null,
+      "after": "75a48432fbf4c68bd34db04f4dd83a8e40714e5e30ab1a6b4ace3d3987fd6d04"
+    },
+    "Resources/RuntimeImages/web/VTOL_Harrier.png": {
+      "before": null,
+      "after": "d87414990cd13521319ed82cd999cc3669395645c32bd34727d7c899cd5af26f"
+    },
+    "Resources/RuntimeImages/web/VTOL_Yak141.png": {
+      "before": null,
+      "after": "6960cc95d16124c88f23fb4ab5c2069be43a4817c8995b7c473f3c15d603bd28"
+    },
+    "Sources/Core/Fighters.cpp": {
+      "before": "d88d097dd602d73986179c6472b7f3c6ef85704ceaea9d5f43d4436802526763",
+      "after": null
+    },
+    "Sources/Core/Fighters.hpp": {
+      "before": "f31ea58044012a1257ba4e075d9048dad6705f8626d5a241347d14cb3ba19a14",
+      "after": null
+    },
+    "Sources/Core/GameData.cpp": {
+      "before": "51aa866c3794670773db3b324b8b30197af76b0857724b317597c2f30d3c112f",
+      "after": "0b37c202169d307604183f7d9c50dde0e9f7d6ed81449bb9ac8be6e47ead71db"
+    },
+    "Sources/Core/GameData.hpp": {
+      "before": "44dc8b804c3c1e72710279491449ea3f00bf5093be3c927a91c9d994eca84cf9",
+      "after": "529cd88f1aed1c91a44776c2210f92bc0e90b0817670958c15ddddd83522de62"
+    },
+    "Sources/Core/GameSession.cpp": {
+      "before": "a45755ce6ae33133a3a7755131b4f0cbc7d90b97833b61873bc493ad871be867",
+      "after": "a855899b396500e7e6347051b0f36a1ad8c91e20943272d6da3da1a504861480"
+    },
+    "Sources/Core/GameSession.hpp": {
+      "before": "d55e82e9e4091ff18b715f7304a788ca8543f51984a6b4fe0f9e995619d30e6c",
+      "after": "f85fd622e3ca223a7dfb39ea4ec660da928c669e8c4c961901311314659bf9ec"
+    },
+    "Sources/Core/GroundAA.cpp": {
+      "before": "01ecdf2f3f7a8716d35a70410fc54cb11872ad9d60ea8a370075ab1a44da1150",
+      "after": null
+    },
+    "Sources/Core/GroundAA.hpp": {
+      "before": "24e1f839ef9dd4051eb4f5db9b2f19a629c56d9b560bb2a4cbc80bc71918044d",
+      "after": null
+    },
+    "Sources/Core/GroundAAArt.inc": {
+      "before": "28b02ae179776cac2ca87f7eb93b4e7688f2d882ece361e537aabe8288cf2e36",
+      "after": null
+    },
+    "Sources/Core/VTOL.cpp": {
+      "before": "ffe82dfbd8170bf6e8b59241dce7b58b0f47f01aa623fac4e6c1c4700ff9fcb4",
+      "after": null
+    },
+    "Sources/Core/VTOL.hpp": {
+      "before": "caf1b8e7511ed631448e126c96f96aad1ab53cd1f3631d53997bc7a138f6af50",
+      "after": null
+    },
+    "Sources/Core/Visuals.cpp": {
+      "before": "951d7604a9b1ad67bbf023a162be2fed74bdd8ae39192195c503fb4b316865d8",
+      "after": "9036373d126012f002a6915fd20fb6711d8c646c83874e3510ceefe79528776d"
+    },
+    "Sources/Core/Visuals.hpp": {
+      "before": "1fa510a53cf9f48ab59a7c24f9ccc832084a573e53f28df5624445546c8d7407",
+      "after": "05c87d191baabf259db0e1ff09bc76f2317cb48fb5bb588c4ca293b784fc86d9"
+    },
+    "Sources/Web/WebGameView.cpp": {
+      "before": "0f6870f185ba4613d9ea35a1be6b8d4c2161eda97f59e558fe23441286e20066",
+      "after": "bf732b8216a52e0d4e943440255d2a9fc77e13a473caeb06d798e995d1e287ef"
+    },
+    "Sources/Web/WebGameView.hpp": {
+      "before": "fc536641c666dca1c2c6e965cefa0e68157110c78e90f376e36df71672fe235f",
+      "after": "e56c8852e2f66c4d09643192502e5199975a85e0dfbb4eebfe0ea858887e82d6"
+    },
+    "Sources/Web/WebMain.cpp": {
+      "before": "08586dda333d71b11bbcaf8fc74e96ff505a4e6ad81a9c77c0f19b71c7b01936",
+      "after": "898396ecda2772bc0eb0bffae65822bf98b761abc50ec99062771232913b6ed2"
+    },
+    "Sources/Web/WebMedia.cpp": {
+      "before": "71a7155405f2f4f3190d8e7b5a697d3e7bc995f0ef6008764c8d30037a2328c4",
+      "after": "a518044d7991f237bf854418b74700f391d4f18e22c17e576d41592f2115548d"
+    },
+    "Sources/iOS/HMGameView.mm": {
+      "before": "6afd6c5f67288e77fe4bc57ca5d57e2fdf9de1db838fabdd43a51d1f0f03dd4a",
+      "after": "75229a4e49706f60846c5d035e1c8ab930191c11d406da9304ad3d358009655b"
+    },
+    "Sources/iOS/HMMedia.mm": {
+      "before": "c3c45892a6c11589597243c92f9f2d3fb85731ce3a4ef6c50cf3df15db403872",
+      "after": "2d8fcf7b3322b094e79464300bf7a7c686bf7946da805af0ce4232553bf10b3c"
+    },
+    "Tests/Apple/HMAppleInputTests.mm": {
+      "before": "394ef434bb416f1d16cca05e6232e4bf8845924b28d0d43fc96d5efb91881f14",
+      "after": "47dd3d308404179da2c29859ccf8f865fb41f75fd4af3f7488e62886fb32772f"
+    },
+    "Tests/Apple/HMUnitImagePreservationTests.mm": {
+      "before": null,
+      "after": "73b6f4f959357229e784d2ab6a66093c318f0cde48606a9764b432c6c1128ac4"
+    },
+    "Tests/Apple/UnitPresentationGolden.hpp": {
+      "before": null,
+      "after": "0169e676ba965b1f45d62345cf469395dd775bf1a747db2547975373735ffaac"
+    },
+    "Tests/FightersTests.cpp": {
+      "before": "6494bfe138ae24aaf5eba195d70a41dd97e42ad7c24fed4f6a60bdb25680d388",
+      "after": "a5676da76ac562f6d3af2e65ba5495d294d344b825ae47230282298ff2b81c66"
+    },
+    "Tests/GroundAARuntimeTests.cpp": {
+      "before": "63af8420731b92380bfdab30d5f5a65680f839a3d9fc52613fa34d366719dcfe",
+      "after": "76d4672d2f0161d818a18557f4be41d4cf3b873d638a3ccdc2f3a95eb3f4ce6a"
+    },
+    "Tests/GroundAATests.cpp": {
+      "before": "3c3630164f51a9cd2724a332222d6295146d76140c381d3386e17420c191144c",
+      "after": "09aa42e1fd0ed6ff374a381ee046a263fe5ec1a772aa0d850a6a67a07814bc0e"
+    },
+    "Tests/RuntimeUnitContractTests.cpp": {
+      "before": null,
+      "after": "f61d7474c5d27631e095e7245b63bb0515012629f2356cefe642eabc01ecea0c"
+    },
+    "Tests/RuntimeUnitTestSupport.hpp": {
+      "before": null,
+      "after": "81f6d6d8d59ef5c7640ccdef1ea748bdcfab82a3d3d4e58c3c1ac502f004213a"
+    },
+    "Tests/UnitContractTrace.cpp": {
+      "before": null,
+      "after": "155325497040dfb68ac5c340faceee386df1f3bec41f1f8a3a6bba55f11f34d3"
+    },
+    "Tests/UnitContractTrace.md": {
+      "before": null,
+      "after": "711cc60b930a4ccb2819610df1fd2d4f9ad06aad4cd909051256a0a68dd95f53"
+    },
+    "Tests/VTOLTests.cpp": {
+      "before": "83f348d6cbb14d14233c5d2b071490b2b6d47e84c6d485a4b66bce539671d097",
+      "after": "26621c2810c5f1da77bbb27d272e1d775e201a46a5336eea93a8656cbb3965e2"
+    },
+    "Web/CMakeLists.txt": {
+      "before": "5ce75df645ea02d1679395ec617ce60501042fb14b41dab6080bb4f62d9cfab7",
+      "after": "27f6e36d6087071a7ce05f7c2405a16330623c12cfff430f53d6feea3c562149"
+    },
+    "Web/shell.html": {
+      "before": "ca22832240dd496a6c1aab7cc47d87ab723ad89f85f9165c67e63c856188375a",
+      "after": "a3bb0aa4aa406663b61f2a5813ab3b2b5fc0397665ff74e026554eec3e1ae364"
+    },
+    "Web/tests/pwa-unit-validation.mjs": {
+      "before": null,
+      "after": "f9a5ee368b6315d41442ce75edb4aa6f8fa7463bf25d73006594df4cef8f0368"
+    },
+    "Web/tests/unit-validation.mjs": {
+      "before": null,
+      "after": "31e146159c5b5e897fbcd84529898f283cbf39eb16806d7747a743f62e3b55b7"
+    },
+    "Web/validation.webmanifest": {
+      "before": null,
+      "after": "61c27feac6a8c62e97e6add10bacffaf93444c725f5edee1cfbb0e0484195068"
+    },
+    "iOS/HeavyMachRestored.xcodeproj/project.pbxproj": {
+      "before": "f34d1252bc7971b0a06c7e296bd09284b2cc9e65334f35ec958c46e3f5c889fb",
+      "after": "ae5d4f36803d45487c511ad4ac0d64bf4ac9d15b8b08af4c8aebc8acda8ba21e"
+    },
+    "iOS/HeavyMachRestored.xcodeproj/xcshareddata/xcschemes/HeavyMachValidation.xcscheme": {
+      "before": "df58832c09e7e5029daee48cb3a17f5c150ed623bbd7700333608b7ee6bb1b06",
+      "after": "60212493d0cfe5b5a193f3339c9fc1a75d98ededcc1df7fb0a353acada4bd82d"
+    },
+    "iOS/project.yml": {
+      "before": "5bdd94fb125a3b267642d27248719e0be7f4fb366fc80e66abc4c5aa02a088fb",
+      "after": "c861580318bfc1eda84d1b6519babdf795b36dd8fa9770bee8985fec2b96b53d"
+    },
+    "macOS/HeavyMachMac.xcodeproj/project.pbxproj": {
+      "before": "3b16cf5c0edf6ba294c22427536248dde72780caf66257c5b86d16b546a3cd79",
+      "after": "ef97b343b37ff639f9f3e4adc2bc762cea05c55236b111af22fa4d03d78c971b"
+    },
+    "macOS/HeavyMachMac.xcodeproj/xcshareddata/xcschemes/HeavyMachMacValidation.xcscheme": {
+      "before": "1f271fe3a70d4921dd10c1177392f7902b61ea942908992c3f702ea0c8b3c9f6",
+      "after": "aab67c782ee9d823bfb8501759d216a87eddb31206963d360c0e4ec9fcb13386"
+    },
+    "macOS/project.yml": {
+      "before": "9263c59bd0bb45ad761fa7daa22bb355c45c307f91e2b4b0ae9faa6b74935983",
+      "after": "41f32328fa9cd7221281b5dcfba14942b66e284734fe2bb5d6313c971bea0411"
+    },
+    "tools/capture_unit_contract.py": {
+      "before": null,
+      "after": "951f680fe02cca8f939ff32d2382e837a03b44a1afdc7be9a093ba656d2945bd"
+    },
+    "tools/prepare_unit_data.md": {
+      "before": null,
+      "after": "30ea63d89c61c5d1f94b89ccd1d57af87b8f9743cb37eed183d44977a366c126"
+    },
+    "tools/prepare_unit_data.py": {
+      "before": null,
+      "after": "b38626343eb7ee15c61257c9cb780c469522d79e261f3963b81611e6d3def654"
+    },
+    "tools/prepare_unit_data_authoring.json": {
+      "before": null,
+      "after": "5685dd5ecf4a354c541a6569b9abe9896a0ae71e1748fa20c6c4f017b347fd72"
+    },
+    "tools/prepare_unit_data_baseline.cpp": {
+      "before": null,
+      "after": "38b07f6950fae3dd5f483a4776dd55b823e6a8f8db4684f3dba4ca3f08bb8a86"
+    },
+    "tools/prepare_unit_images.mm": {
+      "before": null,
+      "after": "6bfaa2b3ee0d23a5ce8ef5e690fba049ab01ae017c6792e19ba30f3d2f31ab6f"
+    },
+    "tools/prepare_unit_images.py": {
+      "before": null,
+      "after": "77dc092a7ae146a19d4ffb5861fe9f74515d9d9f3078a501595289784d451907"
+    },
+    "tools/prepare_unit_images_verify.py": {
+      "before": null,
+      "after": "a5417a75606622102b6be52d98e6f7a40f10066765b2efbb628d0875515a58e3"
+    },
+    "tools/stage_runtime_assets.py": {
+      "before": null,
+      "after": "9b77ef5d235e27d2b49f3c014fba8521d3475d235ea9f6b6c52f9f5257269590"
+    },
+    "tools/stage_unit_image_test_fixtures.py": {
+      "before": null,
+      "after": "7c2b9ca6c8cc3751d8583ee634dd3155576840491ad0a0d0538146a6bb4901ab"
+    }
+  }
+}

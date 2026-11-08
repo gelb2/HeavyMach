@@ -214,3 +214,19 @@ The [incident report (Korean)](../../reviews/game-button-incident-20261101.md#ga
 The save-transfer feature keeps the original three slots and uses a shared C++ module. Restoring a default HUD over an old custom layout, reopening after interrupted restoration, and copying/pasting codes exposed different problems in platform adapters. The [recovery-code article](save-recovery-20261102.md) brings together the design decisions, fixes, platform checks and actual screens.
 
 [How I directed the work](work-method.md) · [Testing with cheat builds and direct play](testing-method.md)
+
+
+<a id="new-unit-resource-procedure"></a>
+<a id="신규-유닛의-에셋-제작코드-구현-절차-미준수"></a>
+
+## New units bypassed the asset and code implementation procedure
+
+On November 9, 2026, after finding inaccurate asset reports and arbitrary implementation choices in MachDefense work, I ordered a full audit of HeavyMach 1. Adding a unit already required following the asset creation, integration and source implementation rules used by existing units. I questioned why I had to specify file extensions and interfaces individually, and requested a hotfix that preserved the current appearance, together with an incident report.
+
+The audit found that Codex registered the eight new units through separate C++ functions after reading the original MCH/MAP files. Six aircraft drew their bodies directly. Two ground units combined common part assembly with unit-specific image aliases, cropping and resizing. Shared movement, firing and damage code was reused, but the complete asset preparation, packaging, registration and rendering procedure was not. Reports that failed to distinguish these scopes were inaccurate. Visible output and compliance with the implementation procedure needed separate checks.
+
+Codex generated a separate runtime MCH/MAP package for the existing parser and connected 63 actual PNG files to the common image loader and part renderer. Unit-specific C++ registration functions, runtime image aliases, cropping, resizing and direct aircraft-body rendering were removed. Radar, pitch and Lux Lunae reinforcement properties absent from the original format were separated into an explicit HMEX extension contract. The new images are standard PNG files; their encoding differs from the original Apple CgBI images. Authoring sources and original files were preserved.
+
+The 26 core tests and the before-and-after comparison covering 44 conditions and 39,644 ticks passed. Previous image output, actual part assembly and firing were compared, with devices and test scope recorded separately. The regular build with cheats disabled was installed on my iPhone, and I played missions 2-4 and 2-5. I directed the remaining validation to use separate Android, PWA and Tauri cheat builds.
+
+The [incident report](../../reviews/new-unit-implementation-incident-20261109.md), [hotfix structure, validation and deployment results](../../reviews/new-unit-resource-hotfix-20261109.md), and [follow-up tasks](../../usability-todo.md#hm-new-unit-hotfix) record the changes, evidence and remaining work.

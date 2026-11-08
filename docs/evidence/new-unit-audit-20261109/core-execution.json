@@ -1,0 +1,25 @@
+{
+  "source_commit": "de492285",
+  "main_same_tree": "191728e310158a55df1164ee452b19b48fa97e57",
+  "build": "c++ -std=c++20 -ffp-contract=off -I Sources/Core build/audit-logic/inventory.cpp Sources/Core/GameData.cpp Sources/Core/VTOL.cpp Sources/Core/Fighters.cpp Sources/Core/GroundAA.cpp Sources/Core/World.cpp Sources/Core/GlobalInfo.cpp Sources/Core/Motion.cpp Sources/Core/Geometry.cpp Sources/Core/SaveData.cpp Sources/Core/Visuals.cpp Sources/Core/Combat.cpp -o build/audit-logic/inventory-from-source",
+  "run": "build/audit-logic/inventory-from-source Resources/RawData",
+  "run_exit": 0,
+  "comparison": "inventory.txt == inventory-from-source.txt bytewise",
+  "sha256": {
+    "Sources/Core/GameData.cpp": "51aa866c3794670773db3b324b8b30197af76b0857724b317597c2f30d3c112f",
+    "Sources/Core/VTOL.cpp": "ffe82dfbd8170bf6e8b59241dce7b58b0f47f01aa623fac4e6c1c4700ff9fcb4",
+    "Sources/Core/Fighters.cpp": "d88d097dd602d73986179c6472b7f3c6ef85704ceaea9d5f43d4436802526763",
+    "Sources/Core/GroundAA.cpp": "01ecdf2f3f7a8716d35a70410fc54cb11872ad9d60ea8a370075ab1a44da1150",
+    "Sources/Core/World.cpp": "9622d48888566d020bb8a82f81fdbe3664ec765d498775f7f4d5ac29dbb3f58c",
+    "Sources/Core/GlobalInfo.cpp": "ba16167af9a5fa139a7fe691de3b967068dc11cc285cdc08f88f6d8d264d4d97",
+    "Sources/Core/Motion.cpp": "e7f7c655dc1a07119933053fb90219b2ce64a6f8060d3a929c52395cce2075ea",
+    "Sources/Core/Geometry.cpp": "b753120ea9d9530a569c5916dcf3895e1f5fa4b0a05dd36cd43e1b5eed23924d",
+    "Sources/Core/SaveData.cpp": "1d522f930e0ba6da69be9939fdb6db46672d02cee9be36443a01771ffc6e5f7e",
+    "Sources/Core/Visuals.cpp": "951d7604a9b1ad67bbf023a162be2fed74bdd8ae39192195c503fb4b316865d8",
+    "Sources/Core/Combat.cpp": "0566f3fa7e40b671cb38631be4a9dce65aa9823ef60da66ad4e1cc5617f1b1f9",
+    "build/audit-logic/inventory.cpp": "11120bb6e3aded1863fed2e97a5d3c09be23561f81f8e0346b7b826cd53e4cbf",
+    "build/audit-logic/inventory.txt": "0d708e74ca4d98dc5e06508ac099961d9cbc3be9bc33741ac29a9a70de6fce67",
+    "build/audit-logic/inventory-from-source.txt": "0d708e74ca4d98dc5e06508ac099961d9cbc3be9bc33741ac29a9a70de6fce67",
+    "build/audit-logic/findings.md": "6292e223cc72e8b904a1e799a5125e3e2aee5bad29c761cf864f81e76189426c"
+  }
+}

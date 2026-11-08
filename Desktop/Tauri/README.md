@@ -62,3 +62,43 @@ Open **Saved progress** in the launcher to export a JSON backup, import one thro
 The launcher uses the menu artwork prepared by `Distribution/Web/launcher/`. Game files remain unchanged.
 
 OS 오류 회귀는 `src-tauri/tests/storage_faults.rs`에서 실제 저장 모듈을 사용한다. 기본 실행은 임시 폴더의 권한 거부와 별도 저장 프로세스 강제 종료를 검사한다. 디스크 부족 검사는 별도로 마운트한 시험 디스크에 `heavymach-test-volume` 표식을 만들고, `HM_FULL_DISK`에 그 경로를 지정해 `cargo test --test storage_faults -- --ignored --exact disk_full_retains_save`로 실행한다. 앱 저장 경로를 지정하지 않는다.
+
+## Isolated unit-validation build
+
+`validation` is an explicit Cargo feature and uses `src-tauri/tauri.validation.conf.json`.
+It has app identifier `com.gelb2.heavymach.desktop.validation`, WKWebView store
+`HeavyMachValV001`, IDBFS mount `/validation-persist`, and preference prefix
+`HeavyMach.Validation.`. The production launcher, backup, restore and transfer
+scripts are not compiled/injected into this host. Production builds retain the
+existing app identifier, WebView store, `/persist`, and backup workflow.
+
+Prepare the Web build with `-DHM_WEB_VALIDATION=ON` in
+`build/web-unit-validation`; the normal build defaults to OFF. Then, from this
+folder, run:
+
+```sh
+python3 scripts/prepare_validation.py --skip-build
+CARGO_TARGET_DIR="$PWD/build/validation-target" npm run tauri -- build --config src-tauri/tauri.validation.conf.json --features validation --bundles app
+```
+
+Preparation runs the existing protected-source checks before and after packaging.
+The bundled frontend is copied byte-for-byte from the Web validation build.
+The feature/configuration pair is checked at startup; the validation config
+cannot silently open the production host or its WebView store.
+
+The game exposes the validation panel for map, weapon, level, part grade and
+optional starting coordinates. Damage/ammo cheats start OFF and require an
+explicit toggle. The native **Run Unit and Weapon Checks** menu (Cmd-Shift-V)
+uses existing `ValidationScenario`, enemy spawning, player touch, projectile and
+collision functions. `HEAVYMACH_VALIDATION_RUN=1` opts into the same checks when
+launching the app executable. No normal-game state is modified.
+
+Reports are written only to the validation app's application-data folder under
+`validation-reports/`. The eight-unit check requires a drawn sprite, a real
+player shot, a live bullet and enemy HP loss. The twenty-weapon check requires
+actual player fire of each selected definition, including the three Rader
+specials; it is not a claim that every weapon hits every target. Quitting flushes
+only the validation IDBFS mount before closing.
+
+The normal `scripts/prepare.py --web-build PATH` option, or `HM_WEB_BUILD=PATH`
+for the Tauri before-build hook, can select another normal Web build directory. It rejects a build configured with validation ON.

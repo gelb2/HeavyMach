@@ -1,9 +1,7 @@
-#include "GroundAA.hpp"
 #import "HMResources.h"
 #import "HMMedia.h"
 #import "HMGLRenderer.h"
 #import "HMOpenALAudio.h"
-#include "Fighters.hpp"
 #import <objc/runtime.h>
 #define STB_IMAGE_IMPLEMENTATION
 #define STB_IMAGE_STATIC
@@ -84,9 +82,8 @@ template<class Raster> static void HMDrawRaster(Raster& raster,CGPoint offset,CG
 - (HMImage *)image:(NSString *)name {
     NSString *key=[self resourceKey:name];
     HMImage *image=_images[key];if(image)return image;
-    // Generated extensions are separate resources; never replace OriginalImages.
-    const auto* groundArt=heavymach::groundAAImage(name.UTF8String);
-    NSString *fileName=groundArt?[NSString stringWithUTF8String:groundArt->source.c_str()]:name;
+    // Unit PNGs are baked before packaging and use the common image path.
+    NSString *fileName=name;
     BOOL extension=[name hasPrefix:@"Extensions/"];
     NSString *path=[HMGameResourceBundle() pathForResource:extension?fileName.lastPathComponent:fileName ofType:nil inDirectory:extension?@"Extensions":@"OriginalImages"];
     NSData *file=path?[NSData dataWithContentsOfFile:path]:nil;
@@ -110,19 +107,8 @@ template<class Raster> static void HMDrawRaster(Raster& raster,CGPoint offset,CG
     CGColorSpaceRef space=CGColorSpaceCreateDeviceRGB();
     CGBitmapInfo flags=CGBitmapInfo(kCGBitmapByteOrder32Big)|CGBitmapInfo(rgb565?kCGImageAlphaNoneSkipLast:kCGImageAlphaPremultipliedLast);
     CGImageRef decoded=CGImageCreate(width,height,8,32,size_t(width)*4,space,flags,provider,nullptr,false,kCGRenderingIntentDefault);
-    // Prefilter new aircraft to their logical drawing size once. Sampling a
-    // 512px texture into ~110 scene pixels skipped thin edges and fine details.
+    // Preserve the existing auto-aim control sheet filter; unit art is already sized.
     int spriteWidth=0,spriteHeight=0;
-    if(groundArt&&decoded){
-        const auto& r=groundArt->crop;
-        CGImageRef cropped=CGImageCreateWithImageInRect(decoded,CGRectMake(r[0],r[1],r[2],r[3]));
-        if(cropped){CGImageRelease(decoded);decoded=cropped;width=r[2];height=r[3];}
-        spriteWidth=int(groundArt->size.x);spriteHeight=int(groundArt->size.y);
-    }
-    if([name hasPrefix:@"Extensions/VTOL_"])for(const auto& spec:heavymach::vtolSpecs())
-        if([name isEqualToString:[NSString stringWithUTF8String:spec.tile]]){spriteWidth=int(std::lround(spec.width));break;}
-    if([name hasPrefix:@"Extensions/Lux_"])for(const auto& spec:heavymach::fighterSpecs())
-        if([name isEqualToString:[NSString stringWithUTF8String:spec.tile]]){spriteWidth=int(std::lround(spec.width));break;}
     if([name isEqualToString:@"Extensions/AutoAimControls.png"])spriteWidth=138; // 3 columns of 46 logical pixels, cached once.
     if(decoded&&spriteWidth>0&&width>spriteWidth){
         int smallWidth=spriteWidth,smallHeight=spriteHeight?spriteHeight:std::max(1,int(std::lround(double(height)*spriteWidth/width)));

@@ -1,7 +1,4 @@
 #include "Runtime.hpp"
-#include "VTOL.hpp"
-#include "Fighters.hpp"
-#include "GroundAA.hpp"
 #include "HMAimOverlay.hpp"
 #include <fstream>
 #include <sstream>
@@ -32,12 +29,12 @@ Runtime::Runtime(AAssetManager* a,std::string files):assets_(a),files_(std::move
 }
 Runtime::~Runtime()=default;
 void Runtime::loadData(){
- for(auto v:heavymach::GameData::parseWeapons(assetBytes(assets_,"RawData/WeaponInfo.mch")))_data.weapons.emplace(v.name,v);
- for(auto v:heavymach::GameData::parseParts(assetBytes(assets_,"RawData/PartsInfo.mch")))_data.parts.emplace(v.name,v);
- for(auto v:heavymach::GameData::parseMachines(assetBytes(assets_,"RawData/MachInfo.mch")))_data.machines.emplace(v.name,v);
- AAssetDir* dir=AAssetManager_openDir(assets_,"RawData");if(!dir)throw std::runtime_error("RawData directory missing");
- try{while(const char* n=AAssetDir_getNextFileName(dir)){std::string name(n);if(name.ends_with(".map"))_data.maps.emplace(name.substr(0,name.size()-4),heavymach::GameData::parseMap(assetBytes(assets_,"RawData/"+name)));}}catch(...){AAssetDir_close(dir);throw;}AAssetDir_close(dir);
- heavymach::addVTOLExpansion(_data);heavymach::addFighterExpansion(_data);heavymach::addGroundAAExpansion(_data);
+ for(auto v:heavymach::GameData::parseWeapons(assetBytes(assets_,"RuntimeData/WeaponInfo.mch")))_data.weapons.emplace(v.name,v);
+ for(auto v:heavymach::GameData::parseParts(assetBytes(assets_,"RuntimeData/PartsInfo.mch")))_data.parts.emplace(v.name,v);
+ for(auto v:heavymach::GameData::parseMachines(assetBytes(assets_,"RuntimeData/MachInfo.mch")))_data.machines.emplace(v.name,v);
+ AAssetDir* dir=AAssetManager_openDir(assets_,"RuntimeData");if(!dir)throw std::runtime_error("RuntimeData directory missing");
+ try{while(const char* n=AAssetDir_getNextFileName(dir)){std::string name(n);if(name.ends_with(".map"))_data.maps.emplace(name.substr(0,name.size()-4),heavymach::GameData::parseMap(assetBytes(assets_,"RuntimeData/"+name)));}}catch(...){AAssetDir_close(dir);throw;}AAssetDir_close(dir);
+ _data.applyExtensions(assetBytes(assets_,"RuntimeData/UnitExtensions.hmx"));
 }
 int32_t Runtime::nextOriginalRandom(){uint32_t x=random_;x^=x<<13;x^=x>>17;x^=x<<5;random_=x;return int32_t(x&0x7fffffff);}
 void Runtime::persistSave(std::shared_ptr<const heavymach::SaveSlot> snapshot){auto saved=_save;if(snapshot)saved.slots.at(_slotIndex)=*snapshot;auto bytes=saved.encode();atomicWrite(files_+"/HvM.dat",bytes.data(),bytes.size());++saveWrites_;}
@@ -65,7 +62,7 @@ void Runtime::updateCanvasGeometry(){
 void Runtime::startSlot(int slot,int mode,int mission,int stage){
  if(_session){_retainedWorldTime=_session->world().gameTime;_retainedWorldCamera=_session->world().camera;}
  _slotIndex=slot;_originalSelectedSlot=&_save.slots.at(slot);_hasKeyboardAim=false;_ammoPreview=-1;_gameMenu=false;_hpGauge=1;_expGauge=_reloadGauge=0;
- for(const auto& art:heavymach::groundAAImages())_media->imageSize(art.name,"shared");
+ for(const auto& image:_data.presentationImages())_media->imageSize(image,"shared");
  _session=std::make_unique<heavymach::GameSession>(_data,_save.slots.at(slot),[this](std::string_view n){auto z=_media->imageSize(std::string(n),"shared");return heavymach::Vector2{float(z.width),float(z.height)};},[this]{return nextOriginalRandom();},&_passives,[this](std::string_view n){auto z=_media->imageSize(std::string(n),"world");return heavymach::Vector2{float(z.width),float(z.height)};});
  _showMenu=false;updateCanvasGeometry();_session->restoreWorldCamera(_retainedWorldCamera);
 #if HM_VALIDATION
@@ -339,6 +336,14 @@ void Runtime::command(const std::string& name,int a,int b,int c,int d){
  else if(name=="fixtureSettings"){fixtureGrades_={uint8_t(std::clamp(a,0,6)),uint8_t(std::clamp(b,0,6)),uint8_t(std::clamp(c,0,6))};fixtureNearLevel_=bool(d&1);fixtureBoss_=(d>>1)-1;}
  else if(name=="saved"){if(!_save.slots[0].occupied()){notice="No saved game.";return;}_resumeRequired=false;_loading={};_hud->setMenuVisible(false);startSlot(0,0,_save.slots[0].i32(0xc),_save.slots[0].i32(0x10));}
  else if(name=="cheats"){cheats_=a!=0;if(_session)_session->validationSetCheats(cheats_);}
+ else if(name=="auditUnit"&&_session&&_session->player()){
+  // Shell-only validation fixture. Spawn through the core's ordinary enemy path.
+  static const char* units[]={"VTOL_Yak141","VTOL_Harrier","VTOL_F35B","Lux_F22","Lux_Su57","Lux_MiG31","GAA_Shilka_M1","GAA_Tunguska_M1"};
+  if(a<0||a>=8)return;
+  const float x=_session->player()->position.x+200.f;
+  const float y=_session->world().mapHeight(x)+(a<6?140.f:10.f);
+  _session->validationSpawnEnemy({units[a],{x,y},false});
+ }
  else if(name=="weapon"&&_session){_session->selectWeapon(a);consumeGameEvents();}
  else if(name=="exp"&&_session){_session->validationAddExperience(a);consumeGameEvents();}
  else if(name=="wide"){wide_=a!=0;updateCanvasGeometry();}
@@ -356,6 +361,11 @@ void Runtime::command(const std::string& name,int a,int b,int c,int d){
 std::string Runtime::diagnostics(){std::ostringstream s;s<<"{\"frames\":"<<_media->frames<<",\"drawCalls\":"<<_media->_drawCalls<<",\"uploads\":"<<_media->uploads<<",\"contexts\":"<<_media->contextCreations<<",\"editor\":"<<(_hudEditing?"true":"false")<<",\"time\":"<<_time<<",\"canvas\":["<<_canvasWidth<<','<<_canvasHeight<<"],\"saveWrites\":"<<saveWrites_<<",\"hudWrites\":"<<hudWrites_<<",\"voices\":"<<_media->audio->voices()<<",\"audioStarts\":"<<_media->audio->starts()<<",\"audioStops\":"<<_media->audio->stops()<<",\"audioActive\":"<<(_media->audio->isActive()?"true":"false")<<",\"active\":"<<(_active?"true":"false")<<",\"error\":\""<<escape(error)<<'"';if(_session){auto*p=_session->player();auto stage=_session->stage();const auto& slot=_save.slots.at(_slotIndex);s<<",\"level\":"<<slot.level()<<",\"experience\":"<<slot.experience()<<",\"upgradeStep\":"<<(p?p->upgradeStep:0)<<",\"gameMenu\":"<<(_gameMenu?"true":"false")<<",\"grades\":["<<int(slot.bytes[0x2f])<<','<<int(slot.bytes[0x2e])<<','<<int(slot.bytes[0x2d])<<']';s<<",\"worldTime\":"<<_session->world().gameTime<<",\"mission\":"<<stage.mission<<",\"stage\":"<<stage.stage<<",\"paused\":"<<(_session->world().paused?"true":"false")<<",\"x\":"<<(p?p->position.x:0)<<",\"y\":"<<(p?p->position.y:0)<<",\"hp\":"<<(p?p->hp:0)<<",\"enemies\":"<<_session->enemyCount()<<",\"bullets\":"<<_session->bulletCount()<<",\"weapon\":"<<_session->selectedWeapon()<<",\"aim\":"<<int(_session->aimMode())<<",\"aimTarget\":"<<_session->aimSnapshot().target<<",\"aimStatus\":"<<int(_session->aimSnapshot().status)<<",\"assistedShots\":"<<_session->aimSnapshot().assistedShots<<",\"targetHits\":"<<_session->aimSnapshot().targetHits;
 #if HM_VALIDATION
  s<<",\"shots\":"<<observedShots_;
+ s<<",\"enemyStates\":[";bool firstEnemy=true;
+ for(const auto& e:_session->validationEnemies()){if(!firstEnemy)s<<',';firstEnemy=false;s<<"{\"id\":"<<e.id<<",\"name\":\""<<escape(e.name)<<"\",\"x\":"<<e.position.x<<",\"y\":"<<e.position.y<<",\"hp\":"<<e.hp<<",\"hpMax\":"<<e.hpMax<<",\"removed\":"<<(e.removed?"true":"false")<<'}';}
+ s<<"],\"unitDraws\":[";bool firstDraw=true;
+ for(const auto& d:_session->sprites()){if(d.tile.rfind("VTOL_",0)!=0&&d.tile.rfind("Lux_",0)!=0&&d.tile.rfind("GAA_",0)!=0)continue;if(!firstDraw)s<<',';firstDraw=false;s<<"{\"tile\":\""<<escape(d.tile)<<"\",\"frame\":"<<d.frame<<",\"x\":"<<d.position.x<<",\"y\":"<<d.position.y<<",\"alpha\":"<<d.alpha<<'}';}
+ s<<']';
 #endif
  }s<<",\"stageFields\":[";for(size_t i=0;i<stageFields_.size();++i){if(i)s<<',';s<<stageFields_[i];}s<<"],\"bindings\":[";for(size_t i=0;i<_keyboardControls.bindings.size();++i){if(i)s<<',';s<<_keyboardControls.bindings[i];}s<<"],\"screen\":"<<transferScreen_<<",\"showMenu\":"<<(_showMenu?"true":"false")<<",\"captureKey\":"<<(_capturingKey?"true":"false")<<",\"keySelection\":"<<_settingsSelection<<",\"recoveryCodeBytes\":"<<recoveryCode_.size()<<",\"panel\":"<<int(panel_)<<",\"textRevision\":"<<textRevision_<<",\"uiStatus\":\""<<escape(uiStatus_)<<"\",\"buttons\":[";bool first=true;for(const auto& button:gameButtons_.items()){if(!first)s<<',';first=false;const auto&r=button.bounds;s<<"{\"id\":"<<button.id<<",\"label\":\""<<escape(button.label)<<"\",\"rect\":["<<r.x<<','<<r.y<<','<<r.width<<','<<r.height<<"],\"enabled\":"<<(button.enabled?"true":"false")<<'}';}s<<"],\"originalButtons\":[";first=true;auto emit=[&](int id,CGRect r){if(!first)s<<',';first=false;s<<"{\"id\":"<<id<<",\"rect\":["<<r.origin.x<<','<<r.origin.y<<','<<r.size.width<<','<<r.size.height<<"]}";};if(_showMenu){for(auto& button:_menus->_buttons)emit(button.identifier,CGRectOffset(button.bounds,0,(_canvasHeight-320)/2));}else if(_session){for(auto&button:_hud->keyboardButtons()){auto r=button.bounds;emit(button.identifier,CGRectMake(_hudOffset.x+r.origin.x*_hudScale,_hudOffset.y+r.origin.y*_hudScale,r.size.width*_hudScale,r.size.height*_hudScale));}}s<<"]}";return s.str();}
 #include "Transfer.inc"

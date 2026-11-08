@@ -1,0 +1,17 @@
+{
+  "manifest_hash_records": 83,
+  "current_matches": 73,
+  "historical_before_hashes": 4,
+  "local_untracked_references_recovered": 6,
+  "all_records_explained": true,
+  "new_png_matching_imagegen_output": 22,
+  "generator_reproduction_sha256": "28b02ae179776cac2ca87f7eb93b4e7688f2d882ece361e537aabe8288cf2e36",
+  "active_png_bytes": 15873012,
+  "inactive_png_bytes": 16080324,
+  "all_new_png_bytes": 31953336,
+  "limits": [
+    "Six generation references are not tracked by Git.",
+    "Image generation is not deterministically reproducible.",
+    "Raw personal session transcripts remain local."
+  ]
+}

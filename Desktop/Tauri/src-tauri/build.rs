@@ -1,6 +1,8 @@
 fn main() {
     tauri_build::try_build(tauri_build::Attributes::new().app_manifest(
         tauri_build::AppManifest::new().commands(&[
+            "validation_report",
+            "validation_finish_close",
             "backup_status",
             "transfer_file",
             "backup_write",

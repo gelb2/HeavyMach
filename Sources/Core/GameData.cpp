@@ -3,6 +3,8 @@
 #include <bit>
 #include <fstream>
 #include <iterator>
+#include <cmath>
+#include <unordered_set>
 #include <stdexcept>
 
 namespace heavymach {
@@ -82,6 +84,54 @@ template <typename T> void insert(std::unordered_map<std::string,T>& target, std
             throw std::runtime_error("Duplicate resource name: " + name);
     }
 }
+// HMEX0001 is a separately versioned extension contract. Original MCH/MAP
+// parsers above never accept these fields or synthesize missing definitions.
+struct ExtensionReader {
+    Reader r; size_t at=0;
+    uint8_t byte(){auto n=r.u8(at);++at;return n;}
+    uint32_t count(uint32_t limit=10000){auto n=r.u32(at);at+=4;if(n>limit)throw std::runtime_error("Extension count exceeds limit");return n;}
+    float number(){auto n=r.f32(at);at+=4;if(!std::isfinite(n))throw std::runtime_error("Non-finite extension value");return n;}
+    Vector2 point(){return {number(),number()};}
+    std::string name(){auto n=r.u16(at);at+=2;r.require(at,n);if(n>255)throw std::runtime_error("Extension name too long");std::string s(reinterpret_cast<const char*>(r.data.data()+at),n);at+=n;
+        if(s.find('\0')!=std::string::npos||s.find("..")!=std::string::npos||s.find('\\')!=std::string::npos)throw std::runtime_error("Invalid extension name");return s;}
+};
+void applyUnitExtensions(GameData& data,std::span<const uint8_t> bytes){
+    if(bytes.size()>4*1024*1024||bytes.size()<8||std::string(reinterpret_cast<const char*>(bytes.data()),8)!="HMEX0001")throw std::runtime_error("Unsupported unit extension contract");
+    ExtensionReader e{Reader{bytes},8};
+    for(uint32_t n=e.count();n;--n){auto name=e.name();auto found=data.parts.find(name);if(found==data.parts.end()||found->second.presentation)throw std::runtime_error("Unknown/duplicate presentation: "+name);
+        PartPresentation p;p.logicalSize=e.point();auto animation=e.byte();p.period=e.number();auto effect=e.byte();p.columns=e.byte();
+        if(animation>1||effect>1||!p.columns||p.logicalSize.x<0||p.logicalSize.y<0||(animation&&p.period<=0))throw std::runtime_error("Invalid part presentation");
+        p.animation=PartAnimation(animation);p.effect=PartEffect(effect);auto frames=e.count(255);if(!frames)throw std::runtime_error("Empty presentation frames");
+        for(uint32_t i=0;i<frames;++i){PartFrame f;f.tile=e.name();f.offset=e.point();if(f.tile.empty()||f.tile.front()=='/')throw std::runtime_error("Invalid frame tile");p.frames.push_back(std::move(f));}
+        p.nozzle=e.point();auto aft=e.byte();if(aft>1)throw std::runtime_error("Invalid effect direction");p.aft=aft;
+        p.length=e.number();p.velocityReference=e.number();p.velocityAmplitude=e.number();p.frequency=e.number();p.amplitude=e.number();p.thickness=e.number();p.alpha=e.number();
+        if(p.velocityReference<=0||p.length<=0||p.thickness<=0||p.alpha<0||p.alpha>1)throw std::runtime_error("Invalid effect values");
+        if(p.animation==PartAnimation::Original&&p.effect==PartEffect::None&&p.frames.size()!=found->second.tileCnt)throw std::runtime_error("Part frame count mismatch");
+        found->second.presentation=std::move(p);
+    }
+    for(uint32_t n=e.count();n;--n){auto name=e.name();auto found=data.machines.find(name);if(found==data.machines.end()||found->second.behavior)throw std::runtime_error("Unknown/duplicate machine behavior: "+name);
+        MachineBehavior b;auto flags=e.count(127);b.fixedBounds=flags&1;b.customGauge=flags&2;b.engineBounce=flags&4;b.independentRandom=flags&8;b.velocityPitch=flags&16;b.mountedWeaponOrigin=flags&32;b.rotateBounds=flags&64;
+        for(auto& x:b.bounds)x=e.number();b.gaugeY=e.number();b.muzzle=e.point();b.horizontalDegrees=e.number();b.verticalDegrees=e.number();b.horizontalSpeed=e.number();b.verticalSpeed=e.number();b.easing=e.number();
+        if(b.bounds[0]>b.bounds[2]||b.bounds[1]>b.bounds[3]||b.horizontalSpeed<=0||b.verticalSpeed<=0||b.easing<=0)throw std::runtime_error("Invalid machine behavior");found->second.behavior=b;
+    }
+    std::unordered_set<std::string> weaponNames;
+    for(uint32_t n=e.count();n;--n){auto name=e.name();auto found=data.weapons.find(name);if(found==data.weapons.end()||!weaponNames.insert(name).second)throw std::runtime_error("Unknown/duplicate weapon behavior: "+name);
+        auto& w=found->second;w.aiTimeScale=e.number();w.burstGroupDelay=e.number();w.burstGroupSize=e.byte();if(w.aiTimeScale<=0||w.burstGroupDelay<0||w.burstGroupSize>w.shotCnt)throw std::runtime_error("Invalid weapon behavior");}
+    for(uint32_t n=e.count();n;--n){auto map=e.name();auto found=data.maps.find(map);if(found==data.maps.end()||data.formations.contains(map))throw std::runtime_error("Unknown/duplicate formation map: "+map);
+        StageFormation f;f.boss=e.name();f.entrySpeed=e.number();f.releaseSpeed=e.number();if(f.entrySpeed>=0||f.releaseSpeed>=0)throw std::runtime_error("Invalid formation entry speed");
+        if(!f.boss.empty()&&std::none_of(found->second.enemies.begin(),found->second.enemies.end(),[&](const auto& enemy){return enemy.name==f.boss&&enemy.isBoss;}))throw std::runtime_error("Missing formation trigger boss");
+        auto units=e.count(64);if(!units)throw std::runtime_error("Empty formation");for(uint32_t i=0;i<units;++i){StageFormationUnit u;u.machine=e.name();u.offset=e.point();auto m=data.machines.find(u.machine);if(m==data.machines.end()||!m->second.behavior||!m->second.behavior->velocityPitch)throw std::runtime_error("Invalid formation unit");f.units.push_back(std::move(u));}data.formations.emplace(std::move(map),std::move(f));
+    }
+    if(e.at!=bytes.size())throw std::runtime_error("Trailing unit extension bytes");
+}
+
+}
+
+void GameData::applyExtensions(std::span<const uint8_t> bytes){applyUnitExtensions(*this,bytes);}
+std::vector<std::string> GameData::presentationImages() const {
+    std::vector<std::string> result;
+    for(const auto& [name,p]:parts)if(p.presentation)for(const auto& f:p.presentation->frames)result.push_back(f.tile);
+    std::sort(result.begin(),result.end());result.erase(std::unique(result.begin(),result.end()),result.end());return result;
 }
 
 int WeaponInfo::effectTypeNumber() const {
@@ -205,7 +255,7 @@ std::vector<ColVector> MapDefinition::collisionVectors() const {
     }
     return result;
 }
-GameData GameData::loadDirectory(const std::filesystem::path& directory) {
+GameData GameData::loadDirectory(const std::filesystem::path& directory,bool requireExtensions) {
     GameData result;
     insert(result.weapons,parseWeapons(readFile(directory/"WeaponInfo.mch")));
     insert(result.parts,parseParts(readFile(directory/"PartsInfo.mch")));
@@ -214,6 +264,9 @@ GameData GameData::loadDirectory(const std::filesystem::path& directory) {
         if (entry.is_regular_file() && entry.path().extension()==".map")
             result.maps.emplace(entry.path().stem().string(),parseMap(readFile(entry.path())));
     }
+    const auto extensions=directory/"UnitExtensions.hmx";
+    if(std::filesystem::exists(extensions))result.applyExtensions(readFile(extensions));
+    else if(requireExtensions)throw std::runtime_error("Required unit extension contract missing: "+extensions.string());
     return result;
 }
 }

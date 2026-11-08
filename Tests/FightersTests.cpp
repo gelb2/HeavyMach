@@ -1,4 +1,5 @@
 #include "World.hpp"
+#include "RuntimeUnitTestSupport.hpp"
 #include "Player.hpp"
 #include "Enemy.hpp"
 #include "ItemBox.hpp"
@@ -25,12 +26,11 @@ struct BurstHost:CombatHost {
  void spawnBullet(const WeaponInfo&,bool,float,Vector2,double t)override{times.push_back(t);}
 };
 int main(){
- const auto root=std::filesystem::path(__FILE__).parent_path().parent_path();auto original=GameData::loadDirectory(root/"Resources/RawData"),data=original;addVTOLExpansion(data);addFighterExpansion(data);
+ const auto root=std::filesystem::path(__FILE__).parent_path().parent_path();auto original=GameData::loadDirectory(root/"Resources/RawData"),data=GameData::loadDirectory(root/"Resources/RuntimeData",true);
  // Definitions are additive; original weapons and all authored spawn entries stay intact.
- auto vtolOnly=original;addVTOLExpansion(vtolOnly);
- for(const auto& [key,map]:vtolOnly.maps){const auto& after=data.maps.at(key);assert(map.enemies.size()==after.enemies.size());for(size_t n=0;n<map.enemies.size();++n){const auto&a=map.enemies[n];const auto&b=after.enemies[n];assert(a.name==b.name&&a.isBoss==b.isBoss&&a.position.x==b.position.x&&a.position.y==b.position.y);}}
+ for(const auto& [key,map]:original.maps){const auto& after=data.maps.at(key);assert(after.enemies.size()>=map.enemies.size());for(size_t n=0;n<map.enemies.size();++n){const auto&a=map.enemies[n];const auto&b=after.enemies[n];assert(a.name==b.name&&a.isBoss==b.isBoss&&a.position.x==b.position.x&&a.position.y==b.position.y);}for(const auto&e:after.enemies)assert(!e.name.starts_with("Lux_"));}
  for(const auto& [key,w]:original.weapons){const auto& n=data.weapons.at(key);assert(w.spd==n.spd&&w.shotCnt==n.shotCnt&&w.shotDly==n.shotDly&&w.delay==n.delay&&n.aiTimeScale==1&&n.burstGroupSize==0);}
- auto count=data.machines.size();addFighterExpansion(data);assert(data.machines.size()==count);
+ assert(data.formations.size()==14);
  for(size_t n=0;n<3;++n){const auto& spec=fighterSpecs()[n];const auto& w=data.weapons.at(spec.weapon);assert(w.spd==200&&std::abs(w.delay-5.f/1.1f)<.00001f&&w.shotCnt==(n==2?6:3));
   const auto& prior=original.weapons.at(n==2?"E_0604_Wpn":"E_Wpn_ASM");assert(w.dmg==prior.dmg&&w.g==prior.g&&w.liveTm==prior.liveTm&&w.aimRand==prior.aimRand&&w.spdRand==prior.spdRand);
   BurstHost host;WeaponState state;state.weaponInfo=&w;CombatFrame f;f.machType=3;f.isPlayer=false;f.isMainPlayer=false;f.time=1;
@@ -43,7 +43,7 @@ int main(){
   f.time=2;processWeaponAI(state,f,host);assert(std::abs(state.delayTime-.05f/1.1f)<.00001f);
   f.time=3;processWeaponAI(state,f,host);assert(std::abs(state.delayTime-.5f/1.1f)<.00001f);
  }
- auto dims=[&](std::string_view name){auto path=name.starts_with("Extensions/")?root/"Art"/name:root/"Resources/Images"/name;std::ifstream f(path,std::ios::binary);unsigned char b[24]{};f.read((char*)b,24);if(f.gcount()!=24)return Vector2{40,12};auto be=[&](int n){return uint32_t(b[n])<<24|uint32_t(b[n+1])<<16|uint32_t(b[n+2])<<8|b[n+3];};return Vector2{float(be(16)),float(be(20))};};
+ auto dims=[&](std::string_view name){return contractTileSize(root,name);};
  // All fourteen real map triggers; wide prefetch and pause must not emit a wave.
  int totalWaves=0,totalJets=0;
  for(int mission=0;mission<7;++mission)for(int stage=0;stage<GlobalInfo::stageCount(mission);++stage){char key[32];snprintf(key,sizeof(key),"Stage%02d",GlobalInfo::mapNumber({mission,stage}));auto wave=fighterWave(key);if(!wave)continue;
@@ -63,24 +63,24 @@ int main(){
    for(auto& e:i.enemies)if(e.definition->name.starts_with("Lux_"))formation.push_back(&e);
    std::vector<Vector2> starts;for(auto* e:formation)starts.push_back(e->enemy->position);
    auto separated=[&]{for(size_t a=0;a<formation.size();++a){auto& e=*formation[a];
-     assert(e.enemy->position.y+e.vtol->width*e.vtol->aspect*.5f<i.world.map.top);
-     auto ground=i.world.mapHeight(e.enemy->position.x);assert(ground==10000||e.enemy->position.y-e.vtol->width*e.vtol->aspect*.5f>ground);
+     assert(e.enemy->position.y+aircraftSpec(e.definition->name)->width*aircraftSpec(e.definition->name)->aspect*.5f<i.world.map.top);
+     auto ground=i.world.mapHeight(e.enemy->position.x);assert(ground==10000||e.enemy->position.y-aircraftSpec(e.definition->name)->width*aircraftSpec(e.definition->name)->aspect*.5f>ground);
      for(size_t b=0;b<a;++b){auto& other=*formation[b];
       float dx=std::abs(e.enemy->position.x-other.enemy->position.x),dy=std::abs(e.enemy->position.y-other.enemy->position.y);
-      assert(dx>=(e.vtol->width+other.vtol->width)*.5f+10 || dy>=(e.vtol->width*e.vtol->aspect+other.vtol->width*other.vtol->aspect)*.5f+10);
+      assert(dx>=(aircraftSpec(e.definition->name)->width+aircraftSpec(other.definition->name)->width)*.5f+10 || dy>=(aircraftSpec(e.definition->name)->width*aircraftSpec(e.definition->name)->aspect+aircraftSpec(other.definition->name)->width*aircraftSpec(other.definition->name)->aspect)*.5f+10);
      }
    }};
    separated();int entryTicks=0;
-   while(formation.front()->aircraftEntering&&entryTicks++<1000){for(auto* e:formation)i.advanceAircraftEntry(*e);separated();
-    for(auto* e:formation)assert(e->aircraftEntering==formation.front()->aircraftEntering);
+   while(formation.front()->formationEntering&&entryTicks++<1000){for(auto* e:formation)i.advanceFormationEntry(*e);separated();
+    for(auto* e:formation)assert(e->formationEntering==formation.front()->formationEntering);
    }
    assert(entryTicks<1000);
-   for(size_t n=0;n<formation.size();++n){formation[n]->enemy->position=starts[n];formation[n]->aircraftEntering=true;}
-   for(auto& e:i.enemies)if(e.definition->name.starts_with("Lux_")){assert(!e.enemy->isBoss&&e.enemy->hp==765);assert(e.enemy->position.x-e.vtol->width*.5f>i.world.camera.x+width*.5f);
-    assert(e.aircraftEntering);auto start=e.enemy->position;auto beforeRng=seed;
-    i.world.paused=true;i.advanceAircraftEntry(e);assert(e.enemy->position.x==start.x&&e.aircraftEntering);i.world.paused=false;
-    int steps=0;while(e.aircraftEntering&&steps++<1000){float before=e.enemy->position.x;i.advanceAircraftEntry(e);assert(before-e.enemy->position.x>0&&before-e.enemy->position.x<=2.501f);}
-    assert(!e.aircraftEntering&&steps<1000&&seed==beforeRng);assert(e.enemy->position.x<=e.aircraftEntryEndX);
+   for(size_t n=0;n<formation.size();++n){formation[n]->enemy->position=starts[n];formation[n]->formationEntering=true;}
+   for(auto& e:i.enemies)if(e.definition->name.starts_with("Lux_")){assert(!e.enemy->isBoss&&e.enemy->hp==765);assert(e.enemy->position.x-aircraftSpec(e.definition->name)->width*.5f>i.world.camera.x+width*.5f);
+    assert(e.formationEntering);auto start=e.enemy->position;auto beforeRng=seed;
+    i.world.paused=true;i.advanceFormationEntry(e);assert(e.enemy->position.x==start.x&&e.formationEntering);i.world.paused=false;
+    int steps=0;while(e.formationEntering&&steps++<1000){float before=e.enemy->position.x;i.advanceFormationEntry(e);assert(before-e.enemy->position.x>0&&before-e.enemy->position.x<=2.501f);}
+    assert(!e.formationEntering&&steps<1000&&seed==beforeRng);assert(e.enemy->position.x<=e.formationEndX);
     assert(e.enemy->position.y<i.world.map.top);auto ground=i.world.mapHeight(e.enemy->position.x);assert(ground==10000||e.enemy->position.y>ground+10);}
    game.setCanvasWidth(width==480?900:480);i.spawnReinforcements();i.world.paused=true;i.world.paused=false;i.spawnReinforcements();assert(jets()==expected);
    game.start(0,mission,stage);assert(!i.reinforcementSpawned&&jets()==0);
@@ -93,15 +93,15 @@ int main(){
   assert(spec.width>dims("E_Heli_Body_01.png").x&&spec.width<dims("E_Heli_Body_06.png").x);
   assert(data.machines.at(spec.name).hpMax==765);
   SaveSlot slot;GlobalInfo(slot).selectSlot(0);slot.setInt(0x28,50);uint32_t seed=5;auto rng=[&]{seed=seed*1664525+1013904223;return int32_t(seed>>1);};GameSession game(data,slot,dims,rng);game.start(0,1,1);auto& i=*game.impl_;i.enemies.clear();i.world.enemiesSpawned.assign(i.world.map.enemies.size(),true);i.world.gameState=0;i.world.paused=false;i.player->hp=100000;
-  auto pos=i.player->position;auto seedBefore=seed;i.spawnEnemy({spec.name,{pos.x+160,pos.y+100},false});auto& m=i.enemies.back();assert(seed==seedBefore);assert(m.parts.size()==2&&m.parts[1]->weapon.weaponInfo==&data.weapons.at(spec.weapon));
-  for(int c=0;c<60;++c)i.world.processCamera(i.player->position);m.aircraftEntering=true;m.aircraftEntryEndX=pos.x+160;m.enemy->position.x=std::max(m.aircraftEntryEndX+200,i.world.camera.x+i.world.canvasWidth*.5f+80);
+  auto pos=i.player->position;auto seedBefore=seed;i.spawnEnemy({spec.name,{pos.x+160,pos.y+100},false});auto& m=i.enemies.back();assert(seed==seedBefore);assert(m.parts.size()==3&&m.parts[1]->weapon.weaponInfo==&data.weapons.at(spec.weapon));
+  for(int c=0;c<60;++c)i.world.processCamera(i.player->position);m.formationEntering=true;m.formationEndX=pos.x+160;m.enemy->position.x=std::max(m.formationEndX+200,i.world.camera.x+i.world.canvasWidth*.5f+80);
   bool fired=false,moved=false,pitched=false,drawn=false;auto begin=m.enemy->position;int persisted=0;
-  for(int n=1;n<=1200;++n){game.tick(double(n)/60,0);for(auto& node:i.dynamic)if(auto b=std::get_if<BulletState>(&node.value))if(b->info==&data.weapons.at(spec.weapon)&&b->toPlayer){assert(!m.aircraftEntering);fired=true;}
+  for(int n=1;n<=1200;++n){game.tick(double(n)/60,0);for(auto& node:i.dynamic)if(auto b=std::get_if<BulletState>(&node.value))if(b->info==&data.weapons.at(spec.weapon)&&b->toPlayer){assert(!m.formationEntering);fired=true;}
    moved|=std::abs(m.enemy->position.x-begin.x)>1;pitched|=std::abs(m.enemy->rotation)>.01f;
    for(auto& d:game.sprites())if(d.tile==spec.tile){drawn=true;assert(std::abs(d.scale.x*dims(spec.tile).x-spec.width)<.01f);}
    for(auto& e:game.takeEvents())if(e.kind==SessionEventKind::PersistSave)++persisted;
   }
-  std::cerr<<spec.name<<" fired="<<fired<<" moved="<<moved<<" pitched="<<pitched<<" drawn="<<drawn<<" saves="<<persisted<<" entry="<<m.aircraftEntering<<" x="<<m.enemy->position.x<<" end="<<m.aircraftEntryEndX<<" player="<<i.player->position.x<<" hp="<<m.enemy->hp<<"\n";assert(fired&&moved&&pitched&&drawn&&persisted==0&&!m.aircraftEntering);
+  std::cerr<<spec.name<<" fired="<<fired<<" moved="<<moved<<" pitched="<<pitched<<" drawn="<<drawn<<" saves="<<persisted<<" entry="<<m.formationEntering<<" x="<<m.enemy->position.x<<" end="<<m.formationEndX<<" player="<<i.player->position.x<<" hp="<<m.enemy->hp<<"\n";assert(fired&&moved&&pitched&&drawn&&persisted==0&&!m.formationEntering);
   // Exactly one aft exhaust remains; rotation/paused animation uses the same draw path.
   m.inScreen=true;m.enemy->visible=true;i.draws.clear();i.render.clear();i.machineDraw(*m.enemy,m);
   size_t flames=0;for(auto& d:i.draws)if(d.tile=="BulletEffect2.png")++flames;assert(flames==1);

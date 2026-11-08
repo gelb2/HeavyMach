@@ -29,19 +29,34 @@ def check():
   allowed.update(buttons.get('changed_files',{}));new.update(buttons.get('new_files',[]))
  def addition(p):return p in new or bool(roots) and p.startswith(roots)
  if any(p.startswith(('Sources/Core/','Resources/','Art/','vendor/')) for p in allowed):raise RuntimeError('Core/assets cannot be excepted')
+ # Approved cross-platform resource-contract hotfix. Every changed, added or
+ # deleted product path is pinned to the reviewed before/after content.
+ hotfix_path=ROOT/'Desktop/Tauri/unit-resource-scope.json'
+ hotfix={}
+ if hotfix_path.exists():
+  contract=json.loads(hotfix_path.read_text())
+  if contract['baseline_commit']!=git('rev-parse','da4d0b89').decode().strip():raise RuntimeError('Unexpected hotfix baseline')
+  for name,h in contract['files'].items():
+   if name.split('/')[0] not in ROOTS and '/' in name:raise RuntimeError('Unexpected hotfix scope: '+name)
+   before=subprocess.run(['git','show',contract['baseline_commit']+':'+name],cwd=ROOT,capture_output=True)
+   actual_before=hashlib.sha256(before.stdout).hexdigest() if before.returncode==0 else None
+   actual_after=digest(ROOT/name) if (ROOT/name).is_file() else None
+   if actual_before!=h['before'] or actual_after!=h['after']:raise RuntimeError('Hotfix scope hash mismatch: '+name)
+  hotfix=contract['files'];allowed.update(hotfix);new.update(n for n,h in hotfix.items() if h['before'] is None)
  # 2026-11-07 user-requested cross-platform gameplay patch, pinned byte-for-byte.
  patch=json.loads((ROOT/'Desktop/Tauri/vtol-distribution-scope.json').read_text())
  approved=patch['files']
  if set(approved)!={'Sources/Core/VTOL.cpp','Tests/VTOLTests.cpp','Tests/Apple/HMAppleInputTests.mm','tools/build_report_site.py'}:
   raise RuntimeError('Unexpected VTOL patch scope')
  for p,hashes in approved.items():
-  if files.get(p)!=hashes['before'] or not (ROOT/p).is_file() or digest(ROOT/p)!=hashes['after']:
+  if files.get(p)!=hashes['before'] or (hotfix[p]['before'] if p in hotfix else digest(ROOT/p) if (ROOT/p).is_file() else None)!=hashes['after']:
    raise RuntimeError('VTOL patch hash mismatch: '+p)
  allowed.update(approved)
  current=set(paths());expected=set(files)
- bad.extend('added/deleted: '+p for p in current^expected if not (p in current and addition(p)))
+ bad.extend('added/deleted: '+p for p in current^expected if not (
+  p in current and addition(p) or p not in current and p in hotfix and hotfix[p]['after'] is None))
  for p,h in files.items():
-  if not (ROOT/p).is_file() or (digest(ROOT/p)!=h and p not in allowed):bad.append('changed: '+p)
+  if p not in allowed and (not (ROOT/p).is_file() or digest(ROOT/p)!=h):bad.append('changed: '+p)
  extra=git('ls-files','--others','--exclude-standard','-z','--',*ROOTS).decode().split('\0')
  bad.extend('untracked: '+p for p in extra if p and not addition(p))
  # Existing workflows stay unchanged; new platform-only workflows are allowed.
