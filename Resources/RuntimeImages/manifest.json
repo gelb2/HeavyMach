@@ -1381,27 +1381,6 @@
         "upload_equal": true
       },
       {
-        "file": "Ka52_Cannon.png",
-        "source": "Resources/OriginalImages/E_Tank_Wpn_01.png",
-        "source_sha256": "28350b21e834faff0b5f63ec6891adad1da8326a37becbde5bca171364be903f",
-        "source_crop": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "source_transform": "none",
-        "width": 30,
-        "height": 6,
-        "bytes": 466,
-        "sha256": "26c9aac264036df3032149885825342b5705b78fbe451ae6c160cbb6a954427a",
-        "baseline_premultiplied_sha256": "a4170135595816d6c0d015643ef2d72de611b2a0757f4c33a4dcc7fc6ee0f4ab",
-        "decoded_premultiplied_sha256": "a4170135595816d6c0d015643ef2d72de611b2a0757f4c33a4dcc7fc6ee0f4ab",
-        "upload_rgba_sha256": "e14a758ff6047a278da7d640853514826f34c698aab72e069610e839fd8968a9",
-        "decode_equal": true,
-        "upload_equal": true
-      },
-      {
         "file": "Ka52_Missile.png",
         "source": "Resources/OriginalImages/P_Wpn_Missile01.png",
         "source_sha256": "dccc51910c4a99ceb5c99fa786d3ca523c8eb045c01baa279468ffe3cbd01756",
@@ -2765,27 +2744,6 @@
         "baseline_premultiplied_sha256": "d74deb62c58b531ad9f2c21e83cf35bc279ec39d6783a842e994925982ae97cc",
         "decoded_premultiplied_sha256": "d74deb62c58b531ad9f2c21e83cf35bc279ec39d6783a842e994925982ae97cc",
         "upload_rgba_sha256": "e1f6646315d061abb33df48091a1638a67fd589e55c4c8b2cd8418ac4569c4bb",
-        "decode_equal": true,
-        "upload_equal": true
-      },
-      {
-        "file": "Ka52_Cannon.png",
-        "source": "Resources/OriginalImages/E_Tank_Wpn_01.png",
-        "source_sha256": "28350b21e834faff0b5f63ec6891adad1da8326a37becbde5bca171364be903f",
-        "source_crop": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "source_transform": "none",
-        "width": 30,
-        "height": 6,
-        "bytes": 466,
-        "sha256": "26c9aac264036df3032149885825342b5705b78fbe451ae6c160cbb6a954427a",
-        "baseline_premultiplied_sha256": "a4170135595816d6c0d015643ef2d72de611b2a0757f4c33a4dcc7fc6ee0f4ab",
-        "decoded_premultiplied_sha256": "a4170135595816d6c0d015643ef2d72de611b2a0757f4c33a4dcc7fc6ee0f4ab",
-        "upload_rgba_sha256": "e14a758ff6047a278da7d640853514826f34c698aab72e069610e839fd8968a9",
         "decode_equal": true,
         "upload_equal": true
       },
@@ -4157,27 +4115,6 @@
         "upload_equal": true
       },
       {
-        "file": "Ka52_Cannon.png",
-        "source": "Resources/OriginalImages/E_Tank_Wpn_01.png",
-        "source_sha256": "28350b21e834faff0b5f63ec6891adad1da8326a37becbde5bca171364be903f",
-        "source_crop": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "source_transform": "none",
-        "width": 30,
-        "height": 6,
-        "bytes": 466,
-        "sha256": "26c9aac264036df3032149885825342b5705b78fbe451ae6c160cbb6a954427a",
-        "baseline_premultiplied_sha256": "a4170135595816d6c0d015643ef2d72de611b2a0757f4c33a4dcc7fc6ee0f4ab",
-        "decoded_premultiplied_sha256": "a4170135595816d6c0d015643ef2d72de611b2a0757f4c33a4dcc7fc6ee0f4ab",
-        "upload_rgba_sha256": "e14a758ff6047a278da7d640853514826f34c698aab72e069610e839fd8968a9",
-        "decode_equal": true,
-        "upload_equal": true
-      },
-      {
         "file": "Ka52_Missile.png",
         "source": "Resources/OriginalImages/P_Wpn_Missile01.png",
         "source_sha256": "dccc51910c4a99ceb5c99fa786d3ca523c8eb045c01baa279468ffe3cbd01756",
@@ -4202,7 +4139,7 @@
   },
   "authored_additions": {
     "manifest": "Art/KamovEurofighter/20261109/bake.json",
-    "sha256": "153e05c12db029c39f71f92633378db2d0407807ddd8ad27caa7c29611ca7126",
+    "sha256": "3cfee93a33ae27a45fa58675162f2fbade64f1f35fce5d9219a4e60bca29b7d1",
     "generator_sha256": "68f6a0302fa15ac042351555274485dd8608eabc4c37c755e45206b4dac9bb00",
     "helper_sha256": "13c0642c6472977ab748967cd6b560757c41064746f20d190f64e457c064c61f"
   }

@@ -1,6 +1,6 @@
 {
   "baseline_commit": "da4d0b890eeff384b1bad1308fe75d35ac365457",
-  "authorization": "2026-11-09 preserve current new-unit visuals and hotfix every platform; reviews/new-unit-hotfix-plan-20261109.md",
+  "authorization": "2026-11-09: existing resource-path hotfix; approved Kamov/Eurofighter implementation and placement (PR112,114); requested Kamov cannon removal and two sequential missiles. Exact baseline/after hashes; no runtime bypass.",
   "files": {
     "Android/app/build.gradle.kts": {
       "before": "35dd678c9ccf6c22dca6c31177f11ea225dddfea4dcabdd743e85bbfc299f238",
@@ -28,7 +28,7 @@
     },
     "CMakeLists.txt": {
       "before": "9340de9bbd6ffee1ad1402f91cdc98c946e55230b8f8fc9d84301d65701b8c85",
-      "after": "575ccb6dd56d8494112a06c6fdac7ceb745b540cb1f64a5026d81ea6c83976f7"
+      "after": "f4ce59c2bf2464323900b9f5bae4cd52a16a98cf4558e0185a777dfa9cf1690f"
     },
     "Modules/HeavyMachModules.xcodeproj/project.pbxproj": {
       "before": "dda7cba442764d82d7cf65aec74850b05795623ab3da3c54ccf6b34554a8da6e",
@@ -40,151 +40,151 @@
     },
     "Resources/RuntimeData/MachInfo.mch": {
       "before": null,
-      "after": "c52e94aaeb73ab990921a90bf653de53deb1dcc534291e099809a7988ce46ca2"
+      "after": "13a268ce13c9d32f38fb9746775112e4ccaf0cd60eb11df2012851fc39f3a4be"
     },
     "Resources/RuntimeData/PartsInfo.mch": {
       "before": null,
-      "after": "2fb66f2c61c274912c757852fc4def301cbb025a8c07555e15c39c8bafd20ec6"
+      "after": "26559cd7b6e47c4efeadaf09ea27c3b0daf108b109a8601a0608394b501e98f1"
     },
     "Resources/RuntimeData/Stage01.map": {
       "before": null,
-      "after": "989e2342d83bce9b39ab8a95ffde453304f1666222b5c26caea51ef19982c16b"
+      "after": "04b80e406efcc0c3bba403d2d1956b86259e9a331ccac4a5bed5bfcd6ffd62b0"
     },
     "Resources/RuntimeData/Stage02.map": {
       "before": null,
-      "after": "88a1e5d9a1492c55780d55c4c8ae78a6f505fab0db6f4a430fefcab5de077ca8"
+      "after": "2fddd1c040557dc7aefa0a33c6b8867d86f6512d8c19a291f1ab80a0d52cde56"
     },
     "Resources/RuntimeData/Stage03.map": {
       "before": null,
-      "after": "4e1283968302b54c979e68038780438566139bacd416147ece773f48ab721708"
+      "after": "21b7c152519dcb4902b2efd41f6459f31976a5675aa34b9c2388cd7807f3e2f5"
     },
     "Resources/RuntimeData/Stage04.map": {
       "before": null,
-      "after": "4c08d0585f958b3e506f7d36b9da4649cca2b4a3e23299cdfd20025eb59dac7c"
+      "after": "d695a10c827a2273041042f45f1af77c39b7cf3e718391da938346b4624b39fe"
     },
     "Resources/RuntimeData/Stage05.map": {
       "before": null,
-      "after": "f9c2308f0aacf71fa9e711f1ae0790f399edb5ec12858358e98e8dcf6c5374b4"
+      "after": "fbbbb15c531ba40b43446101a787ed95c8076c70772ba71bb136a5cacb29a354"
     },
     "Resources/RuntimeData/Stage06.map": {
       "before": null,
-      "after": "a89f03ebd9c24eca2c647cceb7f5d6af2a42ffeabedbf3a823810ce80d6193dd"
+      "after": "ef80110b8b9478e0382ee876ae9b6de438afa90be79176f3d7b45f25c02f53b2"
     },
     "Resources/RuntimeData/Stage07.map": {
       "before": null,
-      "after": "bf8b1a0ea5a0e363c67a4ae45f12b6e59a3f7830b96ac068e548c3a6d74fdc35"
+      "after": "c3af86871eb61503d2ff6270f2d12f4c272b1f765bebb727997302e94111601d"
     },
     "Resources/RuntimeData/Stage08.map": {
       "before": null,
-      "after": "de2e0e1242c5556430ca0dd59a7c096b7f1420558a6310886179b729ddc6a2bd"
+      "after": "bc0ae0f7a6f8b4af86937ab26b13e1e798e743f1f813595de16d1c0413c5eed2"
     },
     "Resources/RuntimeData/Stage09.map": {
       "before": null,
-      "after": "2efd2805e302999716fbd5083ec4664e531edb3bcb8925257e62dae7351873ed"
+      "after": "412e062fcb311026c4d2ee1beb5af03c84bd8c2822b672abd12a6b17a1637427"
     },
     "Resources/RuntimeData/Stage10.map": {
       "before": null,
-      "after": "f3bae93484155e4db92cee70d7d3e4e9e70f5124db43f81cae07924f686ebbf0"
+      "after": "311474a574d80170b005baea6acb021deb278ec29964ae3af94f80f359f00db2"
     },
     "Resources/RuntimeData/Stage11.map": {
       "before": null,
-      "after": "375a9e39710cf5da63386fae178b488438f47c0d33f425a86cc4f5fa061e08c7"
+      "after": "8d70e3f86d9010f8142b0afc44958735cb59043579dfcc919069e1edf0fef245"
     },
     "Resources/RuntimeData/Stage12.map": {
       "before": null,
-      "after": "6198bcf589b2a3524aa649c079636674d39d4f73241dd9166b18069089a3024b"
+      "after": "31f27f2b751a0b1b5a0aa2a2c4d66c19497f4890b44593f39cb9147d0470d541"
     },
     "Resources/RuntimeData/Stage13.map": {
       "before": null,
-      "after": "9892d0b7dcfe49b1443447cf48616895a6635157be945bd03869557f8d9a959b"
+      "after": "c70213d892f0af9960c4cd9e3dd17891a6e21766dc6e29f8000e949095a21190"
     },
     "Resources/RuntimeData/Stage14.map": {
       "before": null,
-      "after": "ad177e385820379692d19d2a2c107c2410f7b73a89c93718041c48c34e2c4f9a"
+      "after": "6dc592552f64a6ee56adf8e36c00e419641bc37e02b70435cc03cd3b886ec1a3"
     },
     "Resources/RuntimeData/Stage15.map": {
       "before": null,
-      "after": "5449b39b96d1c01ceebb4133bc57522e1534ecafe4ad72b4514f819d88634039"
+      "after": "99e0511619d53d8a4e48c3fc53658a03230120118cd2fbbc0fa455b4947b45e8"
     },
     "Resources/RuntimeData/Stage16.map": {
       "before": null,
-      "after": "9efee5f0d95c0a097bd12aa9794332061b841bb1edc3d3df6101f519edd41189"
+      "after": "51eb2f57a201a7ff52e0191b3b6d2893e9a937497d1486a0273fcaae16df38de"
     },
     "Resources/RuntimeData/Stage17.map": {
       "before": null,
-      "after": "e810a648135b9d47c79b8863da5d133dd4014edcb316e3f83ef8b340b8817f91"
+      "after": "6664748abe37f13335902bde0d9ab6d9aff9d4c56f0fcd23e049d247459d41eb"
     },
     "Resources/RuntimeData/Stage18.map": {
       "before": null,
-      "after": "f94a2f510a2d645be8c0c14d517414f57d2b5aefe435a22a4657bd7feb3220d5"
+      "after": "6abdc7b90fba0ae0245f55014f3f978ca3e8270375a64c0f7fdd1ecb0be60a5d"
     },
     "Resources/RuntimeData/Stage19.map": {
       "before": null,
-      "after": "0a8330e31147b2edc3c076958f3ca28553dd3dc4480c393a45cdecc89b8ac21b"
+      "after": "8d4c26460b626ad5c392f25681f345ddeae8d088ef64c04bcb240508737984ff"
     },
     "Resources/RuntimeData/Stage20.map": {
       "before": null,
-      "after": "220c029b489d7f560148fdbecca54caf45d699b4b88a632f70b5436370088453"
+      "after": "d645b24cb4d4c6dfd920389388c03c19220a421035eaca2a8d5191e904888ea2"
     },
     "Resources/RuntimeData/Stage21.map": {
       "before": null,
-      "after": "b42afdbf14fd3e8fd0e3cae92c319a4c2738087e9593308931a8f27de23f4ac8"
+      "after": "98c0a43dd9ee6442f4c66f2cd06a8b6ea1596a1d8f5faa567fac60b82f6c6108"
     },
     "Resources/RuntimeData/Stage22.map": {
       "before": null,
-      "after": "93352a06f8cbf41f72a92bd22a0e2b8622d8fb9b104aa4cade4eda713167c4f7"
+      "after": "ac8683b481e6116a37df5125c7ebd5918b3cd817737c0f487ecfd733b66eb6fc"
     },
     "Resources/RuntimeData/Stage23.map": {
       "before": null,
-      "after": "ec61181420c927bd297de197ce9a2d32966ea664aa8a792c8d178206c770ae9c"
+      "after": "5e9218f45199193b117ed7eb619064da0b694b6bd3cc5907eb6b6d5db9e39da9"
     },
     "Resources/RuntimeData/Stage24.map": {
       "before": null,
-      "after": "53e30a5e348800ee7db777cccc4e72ac0d295a5511811dc185ab8957d1de828e"
+      "after": "7d39f9e5b878052f53f83f8de7b9bec08e9d09676aab2daaca9bbe21336f089d"
     },
     "Resources/RuntimeData/Stage25.map": {
       "before": null,
-      "after": "af483b61fe2d0848cdd9313c95dc5aae660f55ee5b40892dc0eeec68b9d1f92f"
+      "after": "f7c2a60d492a7081aea135156b48e59bc8be0a5b2dc0913b6c57ea27a3f988f7"
     },
     "Resources/RuntimeData/Stage26.map": {
       "before": null,
-      "after": "0906109e9be38cef9e40e1233567613a56c02e4c5e9f9934f987afc41e1a8eaa"
+      "after": "8d0917b95327800c7e3fdf5db7a6ebc32c604b97b5761e12827c6373d9380e54"
     },
     "Resources/RuntimeData/Stage27.map": {
       "before": null,
-      "after": "6f27e6ba3e3b5f172f10616cc4b390b03fff0b54b20bb0720a4e0cd856f6f564"
+      "after": "47e5dd8e4f30fcf2bc60d2fbaa2cfea31564234cf72728147789b74b987bc58c"
     },
     "Resources/RuntimeData/Stage28.map": {
       "before": null,
-      "after": "dce84389bd8666ffa048f7632c92cb5cb2a6029dcecc42d38535b27fcdc004a0"
+      "after": "396d9a000b3df9ca01e4af6046e441822c5fff0d04e9cb49f00dda1ba4f9efcf"
     },
     "Resources/RuntimeData/Stage29.map": {
       "before": null,
-      "after": "a6fffac303e855eecadf262f23f378a69d8bce91df53ac5da3b7a3e037071cce"
+      "after": "2113608d346857d9f1ed1780f535bd2cf32f613ca06a7c917496df592d6a5e46"
     },
     "Resources/RuntimeData/Stage30.map": {
       "before": null,
-      "after": "ebf7071f6f755ba0aee3ebc2f1117dc4313f48ac38e1407611a6fe794443c544"
+      "after": "433617158b075750308b639a43074cd6f38ab7f068957682382c7bcc20b0a09a"
     },
     "Resources/RuntimeData/Stage31.map": {
       "before": null,
-      "after": "2cb23317285f2fc411b5128f10d33632bb3305a7e60b512430c868f78367a112"
+      "after": "ebf1bf9b012d8667de249dfd5e0504035694163746ddb9504ef2b0c75764f13f"
     },
     "Resources/RuntimeData/Stage32.map": {
       "before": null,
-      "after": "3d0797b9a53a7c96cfb451e9291767baf6a906ecde6791c481b8a764058a61f6"
+      "after": "e8d3a0f51eccbca1c87506579d20e4d7662f70a31fedbe439ead282046ee9068"
     },
     "Resources/RuntimeData/Stage33.map": {
       "before": null,
-      "after": "618b83952679d1fb2757f62b79c11d7381786c89fcfa24aaab1ca85eca82808c"
+      "after": "26ee847ca2deca295ad86cd44670e6d90ad2b60457c1f624011bdd725b6a4678"
     },
     "Resources/RuntimeData/Stage34.map": {
       "before": null,
-      "after": "93b6e5cc5b7db92c58e0807100033b3811fa722034f865fd5a6764fe8e0bd341"
+      "after": "cd51904ab1bb6c7a95f070a7386ae4d6e61815b2e8040164c8bcabf87e07f6f6"
     },
     "Resources/RuntimeData/Stage35.map": {
       "before": null,
-      "after": "4997557032d8a6938bde813b67d2c501d1498f2bef1a2ceddc7aaaff94b429f4"
+      "after": "b34ee3b229bee5162cb6252730ee1ed36eafbde1c588fd1c1ed1b6d0649bd61a"
     },
     "Resources/RuntimeData/Stage36.map": {
       "before": null,
@@ -220,15 +220,15 @@
     },
     "Resources/RuntimeData/UnitExtensions.hmx": {
       "before": null,
-      "after": "e3940603f740a9ecc27e33d22123d93aa15575685761d33af4a0e433c6fac35b"
+      "after": "2b8ac2c07a992e0a993aa14665c8cb7bb75a3faf535c53a5bce0c3937fb3535e"
     },
     "Resources/RuntimeData/WeaponInfo.mch": {
       "before": null,
-      "after": "6b0fc57078f7c3a36622bbf9d20fc54dd7d68d6f5213ce33fc391ad8434d5d22"
+      "after": "be743b32d3ef6e8a8f3a292a5e22f0f2f53b59ab5d7ce77b549c1d258967d6c2"
     },
     "Resources/RuntimeData/manifest.json": {
       "before": null,
-      "after": "327d8833f2ab24938296d58d47516818d6f238f3b3b38131a46e11ec10969ba9"
+      "after": "f17f7ae6af367fe4c0a168155c5ec0fe4a073352a4db69709eff98fb15d1e3f1"
     },
     "Resources/RuntimeImages/android/GAA_Shilka_Body.png": {
       "before": null,
@@ -736,7 +736,7 @@
     },
     "Resources/RuntimeImages/manifest.json": {
       "before": null,
-      "after": "35ba83ce2cfd979d582746caf7c7ca0c291d02dc16fac40947b1bac86e6bfd61"
+      "after": "5e1846f0039dfba8ad0a8c97c57e6831f82deefe55c7ec76dffd10ef38aab39d"
     },
     "Resources/RuntimeImages/web/GAA_Shilka_Body.png": {
       "before": null,
@@ -1008,11 +1008,11 @@
     },
     "Sources/Core/GameSession.cpp": {
       "before": "a45755ce6ae33133a3a7755131b4f0cbc7d90b97833b61873bc493ad871be867",
-      "after": "a855899b396500e7e6347051b0f36a1ad8c91e20943272d6da3da1a504861480"
+      "after": "cfc3869fd8b76730d24d762ac5ed777337eaa98d1c4f8e4b22f5c2e45d84bcca"
     },
     "Sources/Core/GameSession.hpp": {
       "before": "d55e82e9e4091ff18b715f7304a788ca8543f51984a6b4fe0f9e995619d30e6c",
-      "after": "f85fd622e3ca223a7dfb39ea4ec660da928c669e8c4c961901311314659bf9ec"
+      "after": "7c1893a9e8fa5229eb2692b6c391faeb1182e414141f6271e80072f010599d08"
     },
     "Sources/Core/GroundAA.cpp": {
       "before": "01ecdf2f3f7a8716d35a70410fc54cb11872ad9d60ea8a370075ab1a44da1150",
@@ -1044,11 +1044,11 @@
     },
     "Sources/Web/WebGameView.cpp": {
       "before": "0f6870f185ba4613d9ea35a1be6b8d4c2161eda97f59e558fe23441286e20066",
-      "after": "bf732b8216a52e0d4e943440255d2a9fc77e13a473caeb06d798e995d1e287ef"
+      "after": "f91171259a5d7f4b9e9c61ad1a97805bf7181823ec95c3e65fbba260fb93b47b"
     },
     "Sources/Web/WebGameView.hpp": {
       "before": "fc536641c666dca1c2c6e965cefa0e68157110c78e90f376e36df71672fe235f",
-      "after": "e56c8852e2f66c4d09643192502e5199975a85e0dfbb4eebfe0ea858887e82d6"
+      "after": "a266ee72063c8b270e4c1a8e07f0c6c07a6944a36f996739cbb6c28a294a006f"
     },
     "Sources/Web/WebMain.cpp": {
       "before": "08586dda333d71b11bbcaf8fc74e96ff505a4e6ad81a9c77c0f19b71c7b01936",
@@ -1080,7 +1080,7 @@
     },
     "Tests/FightersTests.cpp": {
       "before": "6494bfe138ae24aaf5eba195d70a41dd97e42ad7c24fed4f6a60bdb25680d388",
-      "after": "a5676da76ac562f6d3af2e65ba5495d294d344b825ae47230282298ff2b81c66"
+      "after": "da26d20db73944c4f1d098447673b013da03c62c668f131fcefec407b122fb2b"
     },
     "Tests/GroundAARuntimeTests.cpp": {
       "before": "63af8420731b92380bfdab30d5f5a65680f839a3d9fc52613fa34d366719dcfe",
@@ -1092,11 +1092,11 @@
     },
     "Tests/RuntimeUnitContractTests.cpp": {
       "before": null,
-      "after": "f61d7474c5d27631e095e7245b63bb0515012629f2356cefe642eabc01ecea0c"
+      "after": "bfd64b8a8ece916be4205de07cb2c109a6231f6a15684dd62623e937152d336d"
     },
     "Tests/RuntimeUnitTestSupport.hpp": {
       "before": null,
-      "after": "81f6d6d8d59ef5c7640ccdef1ea748bdcfab82a3d3d4e58c3c1ac502f004213a"
+      "after": "99a98f65e5cbd56a45aea5ebd5f5706080c70e075b3eb2bb0d25279b22e48bd2"
     },
     "Tests/UnitContractTrace.cpp": {
       "before": null,
@@ -1108,7 +1108,7 @@
     },
     "Tests/VTOLTests.cpp": {
       "before": "83f348d6cbb14d14233c5d2b071490b2b6d47e84c6d485a4b66bce539671d097",
-      "after": "26621c2810c5f1da77bbb27d272e1d775e201a46a5336eea93a8656cbb3965e2"
+      "after": "220c356ee21322f8e78e7e99cff003ff98221b0d69b53255810e81606ddd3fe6"
     },
     "Web/CMakeLists.txt": {
       "before": "5ce75df645ea02d1679395ec617ce60501042fb14b41dab6080bb4f62d9cfab7",
@@ -1116,7 +1116,7 @@
     },
     "Web/shell.html": {
       "before": "ca22832240dd496a6c1aab7cc47d87ab723ad89f85f9165c67e63c856188375a",
-      "after": "a3bb0aa4aa406663b61f2a5813ab3b2b5fc0397665ff74e026554eec3e1ae364"
+      "after": "9ac3b4b6cd88becf96caf59566a79a20078c51941536ca60bf92982d1450356e"
     },
     "Web/tests/pwa-unit-validation.mjs": {
       "before": null,
@@ -1160,15 +1160,15 @@
     },
     "tools/prepare_unit_data.md": {
       "before": null,
-      "after": "30ea63d89c61c5d1f94b89ccd1d57af87b8f9743cb37eed183d44977a366c126"
+      "after": "1f39ff0c370f73613795b648ba7b52dc5936d7a92f2ef332e0c4f7dbd958c070"
     },
     "tools/prepare_unit_data.py": {
       "before": null,
-      "after": "b38626343eb7ee15c61257c9cb780c469522d79e261f3963b81611e6d3def654"
+      "after": "1fd1275ae28afe201c4790b5e8f5ba9f1a5102e3931a057f46218eb5cff432e4"
     },
     "tools/prepare_unit_data_authoring.json": {
       "before": null,
-      "after": "5685dd5ecf4a354c541a6569b9abe9896a0ae71e1748fa20c6c4f017b347fd72"
+      "after": "5857db76e66f7aeddaf03e1a00c86d9873a8bd4413680368677f5c93ef555402"
     },
     "tools/prepare_unit_data_baseline.cpp": {
       "before": null,
@@ -1176,11 +1176,11 @@
     },
     "tools/prepare_unit_images.mm": {
       "before": null,
-      "after": "6bfaa2b3ee0d23a5ce8ef5e690fba049ab01ae017c6792e19ba30f3d2f31ab6f"
+      "after": "13c0642c6472977ab748967cd6b560757c41064746f20d190f64e457c064c61f"
     },
     "tools/prepare_unit_images.py": {
       "before": null,
-      "after": "77dc092a7ae146a19d4ffb5861fe9f74515d9d9f3078a501595289784d451907"
+      "after": "68f6a0302fa15ac042351555274485dd8608eabc4c37c755e45206b4dac9bb00"
     },
     "tools/prepare_unit_images_verify.py": {
       "before": null,
@@ -1192,7 +1192,155 @@
     },
     "tools/stage_unit_image_test_fixtures.py": {
       "before": null,
-      "after": "7c2b9ca6c8cc3751d8583ee634dd3155576840491ad0a0d0538146a6bb4901ab"
+      "after": "e51e7d525709531906458c74b73f82f86c36c06a8da51d9d6ea9a0f6025af507"
+    },
+    "Art/KamovEurofighter/20261109/bake.json": {
+      "before": null,
+      "after": "3cfee93a33ae27a45fa58675162f2fbade64f1f35fce5d9219a4e60bca29b7d1"
+    },
+    "Resources/RuntimeImages/android/Ka52_Cannon.png": {
+      "before": null,
+      "after": null
+    },
+    "Resources/RuntimeImages/apple/Ka52_Cannon.png": {
+      "before": null,
+      "after": null
+    },
+    "Resources/RuntimeImages/web/Ka52_Cannon.png": {
+      "before": null,
+      "after": null
+    },
+    "Tests/UnitAssemblyTests.cpp": {
+      "before": null,
+      "after": "8cbccf40163ee4150396fd7fc1e58acf1c94cb55f6ff5e348dd7f7b5c61dde19"
+    },
+    "Web/tests/campaign-unit-placement.mjs": {
+      "before": null,
+      "after": "a3eb9310f9e23312f9cf8c017a06144d538edb01806b22f96df4dfe272d681ec"
+    },
+    "Web/tests/kamov-eurofighter-validation.mjs": {
+      "before": null,
+      "after": "685dc0676bf4c7f5ed4e34f30959cb38685df7b8e356c343d18a1d0633d18fa8"
+    },
+    "Web/tests/kamov-armament-campaign.mjs": {
+      "before": null,
+      "after": "a59768138a11e0e95438f10ad7c278a1d4d9dd657b62ba3adc1daa8d4c93b531"
+    },
+    "Art/KamovEurofighter/20261109/Euro-pod-generated-v2.png": {
+      "before": null,
+      "after": "b1cf5935916a3292fb3d1a99502d8c166c1c0976f3fa2b4d88659ac1158b1bf7"
+    },
+    "Art/KamovEurofighter/20261109/Eurofighter-generated-v1.png": {
+      "before": null,
+      "after": "5a73a8d5001e51039db9ac7480a22541443d9a9170116524ab85ef2528bc4a60"
+    },
+    "Art/KamovEurofighter/20261109/Eurofighter-generated-v2.png": {
+      "before": null,
+      "after": "ed70539f96f604481b03f997fef0e9fadf42fb4a1f4133907183d8259a284d7f"
+    },
+    "Art/KamovEurofighter/20261109/Ka52-generated-v1.png": {
+      "before": null,
+      "after": "09c4e374313a52177fa941253df5ba401ae399695fbe7792f6d84364a3fbceda"
+    },
+    "Art/KamovEurofighter/20261109/prompts.json": {
+      "before": null,
+      "after": "95995ec8fa50fe3a51b915f07260563ac00666c8e18eb9b6c8841c0f8109a77e"
+    },
+    "Art/KamovEurofighter/20261109/reference-metrics.json": {
+      "before": null,
+      "after": "572d70ccb8a2668e6b3f448f17abab96d5fcd3192d27a119f7f99da9c51d33fe"
+    },
+    "Art/KamovEurofighter/20261109/references/eurofighter-profile.jpg": {
+      "before": null,
+      "after": "092f18d470bb13ae08cf798d04624d68732965a7b682c58dd93c2d2d09b68478"
+    },
+    "Art/KamovEurofighter/20261109/references/ka52-photo.jpg": {
+      "before": null,
+      "after": "00450c1712a5e262030045e654022b690ad9188def411b0eed93a1e459aa909e"
+    },
+    "Art/KamovEurofighter/20261109/runtime-metrics.json": {
+      "before": null,
+      "after": "de77e63128c59a9a3daec48aac33f0d6b2602344d0c3c4440be01f365297c10e"
+    },
+    "Resources/RuntimeImages/android/Ka52_Body.png": {
+      "before": null,
+      "after": "ee43b3d33d30606b4606888ceee6c47c5b41b0213fb35d600559518634f04136"
+    },
+    "Resources/RuntimeImages/android/Ka52_Missile.png": {
+      "before": null,
+      "after": "b9c24e19b48ad39fba953201a26ff2ed99273a52ea1cf2185bbc8eb5cd42a42a"
+    },
+    "Resources/RuntimeImages/android/Ka52_RotorLower.png": {
+      "before": null,
+      "after": "c90f1c6a64c8d8be6c040bb2b27efefbad16d8b8a33c4e43ba0ab15a76c20902"
+    },
+    "Resources/RuntimeImages/android/Ka52_RotorUpper.png": {
+      "before": null,
+      "after": "c90f1c6a64c8d8be6c040bb2b27efefbad16d8b8a33c4e43ba0ab15a76c20902"
+    },
+    "Resources/RuntimeImages/android/Lux_Eurofighter.png": {
+      "before": null,
+      "after": "01d065b5b711af25728f104f694dd60a0ebf18b04ed8f0c2d7168fe9ce2f1951"
+    },
+    "Resources/RuntimeImages/apple/Ka52_Body.png": {
+      "before": null,
+      "after": "eec7dfa0d647ed7633cd05bd1cc9480bb904e6ead98ff4247914a2fb7ae354e8"
+    },
+    "Resources/RuntimeImages/apple/Ka52_Missile.png": {
+      "before": null,
+      "after": "f1695f0eafb7932838e0c51aab65e5eba4fa1cb235c329fdb8c32aaf92fd9139"
+    },
+    "Resources/RuntimeImages/apple/Ka52_RotorLower.png": {
+      "before": null,
+      "after": "5041fe996941668e8376a1fef839686efe74e203944d9b27767800f7723c7f78"
+    },
+    "Resources/RuntimeImages/apple/Ka52_RotorUpper.png": {
+      "before": null,
+      "after": "5041fe996941668e8376a1fef839686efe74e203944d9b27767800f7723c7f78"
+    },
+    "Resources/RuntimeImages/apple/Lux_Eurofighter.png": {
+      "before": null,
+      "after": "ce36cc50798a7291833e20f338b4f77c6355142f4caf49f10b4f3cd09e5599f5"
+    },
+    "Resources/RuntimeImages/web/Ka52_Body.png": {
+      "before": null,
+      "after": "ee43b3d33d30606b4606888ceee6c47c5b41b0213fb35d600559518634f04136"
+    },
+    "Resources/RuntimeImages/web/Ka52_Missile.png": {
+      "before": null,
+      "after": "b9c24e19b48ad39fba953201a26ff2ed99273a52ea1cf2185bbc8eb5cd42a42a"
+    },
+    "Resources/RuntimeImages/web/Ka52_RotorLower.png": {
+      "before": null,
+      "after": "c90f1c6a64c8d8be6c040bb2b27efefbad16d8b8a33c4e43ba0ab15a76c20902"
+    },
+    "Resources/RuntimeImages/web/Ka52_RotorUpper.png": {
+      "before": null,
+      "after": "c90f1c6a64c8d8be6c040bb2b27efefbad16d8b8a33c4e43ba0ab15a76c20902"
+    },
+    "Resources/RuntimeImages/web/Lux_Eurofighter.png": {
+      "before": null,
+      "after": "01d065b5b711af25728f104f694dd60a0ebf18b04ed8f0c2d7168fe9ce2f1951"
+    },
+    "Web/tests/campaign-ground-approach.mjs": {
+      "before": null,
+      "after": "7a65c5f67225745741afa10af2a766bbcd5685d8cbef82f66a571b14c49b8770"
+    },
+    "Web/tests/validation-link.mjs": {
+      "before": null,
+      "after": "5d43df24b974d34c1e18792f29cb05342b1df2b4c1fdf4a894042cbddb9eddeb"
+    },
+    "tools/test_authored_unit_images.py": {
+      "before": null,
+      "after": "e8d327d189bf75b98fd6896fa5954a0d0456974d53e6d08063c7d78fd17a53f2"
+    },
+    "Web/tests/browser-smoke.mjs": {
+      "before": "2a30839710666a891489718cd4824262cb005ccba568b80bd1c1f8257428b4ee",
+      "after": "aa94ebbbca7c8a40850b137160bdf3feaf5766fa5f620257530fb24c5b419e88"
+    },
+    "tools/build_kamov_armament_report.py": {
+      "before": null,
+      "after": "9b8c9666d892a2bffbaa5a46da6ec100ccbb226d60e60a481d98f346c43afcaa"
     }
   }
 }

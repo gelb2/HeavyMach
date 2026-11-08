@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "baseline": "191728e310158a55df1164ee452b19b48fa97e57",
-  "authoring_sha256": "9da2855dba79696ae3354b5ff1c5e51c9746d64586264a7c35bbed93c50b59d1",
+  "authoring_sha256": "5857db76e66f7aeddaf03e1a00c86d9873a8bd4413680368677f5c93ef555402",
   "original_sha256": {
     "MachInfo.mch": "c29eef4990655868b82361ba8f0119841f8c74bed5dcf31410094c5521459b05",
     "PartsInfo.mch": "f7b8ba0da76447c2f022d0114a582e57eb3085bba584c187cc635ad6ad4b6792",
@@ -51,8 +51,8 @@
     "WeaponInfo.mch": "460000cd8480addc496ce4afaa5f3a2385fcc81ad7fa440b1bfa6c338c4365fe"
   },
   "runtime_sha256": {
-    "MachInfo.mch": "205024a88c3cb772458345cc3b1d0731e1b98bf1ac7b65891de26c0b1cdec638",
-    "PartsInfo.mch": "27f3bd4d8dac2e3488004c42d9079f8a3ccf4612882be9026bdb95cde783f65c",
+    "MachInfo.mch": "13a268ce13c9d32f38fb9746775112e4ccaf0cd60eb11df2012851fc39f3a4be",
+    "PartsInfo.mch": "26559cd7b6e47c4efeadaf09ea27c3b0daf108b109a8601a0608394b501e98f1",
     "Stage01.map": "04b80e406efcc0c3bba403d2d1956b86259e9a331ccac4a5bed5bfcd6ffd62b0",
     "Stage02.map": "2fddd1c040557dc7aefa0a33c6b8867d86f6512d8c19a291f1ab80a0d52cde56",
     "Stage03.map": "21b7c152519dcb4902b2efd41f6459f31976a5675aa34b9c2388cd7807f3e2f5",
@@ -97,12 +97,12 @@
     "Stage42.map": "17c4464c82778149a06b124d500660064238874848e0add67b36481af64e3797",
     "Survival.map": "9b0fd8fcf26964ac2feed2c0c9abe1b0a1d820d2f726521ae27ef29f7a0a6553",
     "UnitExtensions.hmx": "2b8ac2c07a992e0a993aa14665c8cb7bb75a3faf535c53a5bce0c3937fb3535e",
-    "WeaponInfo.mch": "4dd78178b5d70b09e7176cf65509576c73407917c20b98615802685646c1119f"
+    "WeaponInfo.mch": "be743b32d3ef6e8a8f3a292a5e22f0f2f53b59ab5d7ce77b549c1d258967d6c2"
   },
   "added": {
     "machines": 22,
-    "parts": 86,
-    "weapons": 27,
+    "parts": 85,
+    "weapons": 26,
     "placements": 380,
     "formations": 14
   }

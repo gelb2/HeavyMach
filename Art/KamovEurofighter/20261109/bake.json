@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "purpose": "Ka-52 and Lux Eurofighter: generated bodies, original animated rotor and Ka-52 weapon parts; Eurofighter uses invisible Lux missile mount",
+  "purpose": "Ka-52 missile-only loadout and Lux Eurofighter: adopted bodies, original animated rotors and missile part; removed cannon and Eurofighter external pod",
   "images": [
     {
       "name": "Ka52_Body.png",
@@ -59,21 +59,6 @@
       ],
       "size": [
         240,
-        0
-      ]
-    },
-    {
-      "name": "Ka52_Cannon.png",
-      "source": "Resources/OriginalImages/E_Tank_Wpn_01.png",
-      "source_sha256": "28350b21e834faff0b5f63ec6891adad1da8326a37becbde5bca171364be903f",
-      "crop": [
-        0,
-        0,
-        0,
-        0
-      ],
-      "size": [
-        30,
         0
       ]
     },

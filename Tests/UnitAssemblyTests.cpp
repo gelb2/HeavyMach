@@ -32,14 +32,13 @@ int main(){
  assert(!heli.behavior->fixedBounds&&!heli.behavior->velocityPitch&&!heli.behavior->mountedWeaponOrigin&&!heli.behavior->independentRandom);
  assert(euro.behavior&&euro.behavior->mountedWeaponOrigin);
  assert(near(euro.behavior->muzzle.x,-23.5f)&&near(euro.behavior->muzzle.y,-9.5f));
- for(auto key:{"Ka52_Cannon","Ka52_Missile"}){
+ assert(!data.parts.contains("Ka52_Cannon")&&!data.weapons.contains("Ka52_Cannon"));
+ for(auto key:{"Ka52_Missile"}){
   const auto& p=data.parts.at(key);assert(p.partsType==2&&p.tileCnt==1&&p.sockets.size()==2);
   assert(data.weapons.at(key).rotWpn==1&&data.weapons.at(key).shotCnt>0);
  }
- const auto& cannon=data.weapons.at("Ka52_Cannon");const auto& priorGun=original.weapons.at("E_Tank_Wpn_01");
- assert(cannon.dmg==priorGun.dmg&&cannon.spd==priorGun.spd&&cannon.delay==priorGun.delay&&cannon.shotCnt==priorGun.shotCnt);
  const auto& missile=data.weapons.at("Ka52_Missile");const auto& priorMissile=original.weapons.at("E_Wpn_ASM");
- assert(missile.dmg==priorMissile.dmg&&missile.spd==priorMissile.spd&&missile.delay==priorMissile.delay&&missile.shotCnt==priorMissile.shotCnt);
+ assert(missile.dmg==priorMissile.dmg&&missile.spd==priorMissile.spd&&missile.delay==priorMissile.delay&&missile.shotCnt==2&&missile.shotDly==.5f);
  const auto& lux=data.weapons.at("Lux_Euro_Missile");const auto& priorLux=data.weapons.at("Lux_F22_Missile");
  assert(lux.dmg==priorLux.dmg&&lux.spd==priorLux.spd&&lux.delay==priorLux.delay&&lux.shotCnt==priorLux.shotCnt&&lux.shotDly==priorLux.shotDly&&lux.aiTimeScale==priorLux.aiTimeScale);
  assert(lux.rotWpn==0&&lux.rotWpn==priorLux.rotWpn);
@@ -68,7 +67,7 @@ int main(){
    SaveSlot save;GlobalInfo(save).selectSlot(0);uint32_t seed=7;
    GameSession campaign(data,save,[&](std::string_view name){return contractTileSize(root,name);},[&]{seed=seed*1664525+1013904223;return int32_t(seed>>1);});
    campaign.setCanvasWidth(width);campaign.start(0,mission,stage);auto& i=*campaign.impl_;
-   auto count=[&]{int n=0;for(const auto& e:i.enemies)if(e.definition->name=="Ka52"){++n;assert(e.parts.size()==5&&e.enemy->hasWeapon&&e.enemy->hp==300);}return n;};
+   auto count=[&]{int n=0;for(const auto& e:i.enemies)if(e.definition->name=="Ka52"){++n;assert(e.parts.size()==4&&e.enemy->hasWeapon&&e.enemy->hp==300);}return n;};
    const int atStart=count();
    for(float x=map.left;x<=map.right+1000;x+=10)i.world.processRegen(x,i);
    assert(count()==authored);i.world.processRegen(map.right+2000,i);assert(count()==authored);
@@ -82,7 +81,8 @@ int main(){
  for(const auto& [name,map]:data.maps)if(!playable.contains(name))for(const auto& e:map.enemies)assert(e.name!="Ka52"&&e.name!="Lux_Eurofighter");
  int totalEuro=0;for(const auto& [name,wave]:data.formations){int count=0;for(const auto& e:wave.units){assert(e.machine!="Ka52");count+=e.machine=="Lux_Eurofighter";}assert(count==(wave.boss.empty()?1:2));totalEuro+=count;}assert(totalEuro==21);
 
- const std::array<std::string,6> files{{"Ka52_Body.png","Ka52_RotorUpper.png","Ka52_RotorLower.png","Ka52_Cannon.png","Ka52_Missile.png","Lux_Eurofighter.png"}};
+ const std::array<std::string,5> files{{"Ka52_Body.png","Ka52_RotorUpper.png","Ka52_RotorLower.png","Ka52_Missile.png","Lux_Eurofighter.png"}};
+ for(const auto* profile:{"apple","android","web"})assert(!std::filesystem::exists(root/"Resources/RuntimeImages"/profile/"Ka52_Cannon.png"));
  for(const auto& file:files)assert(std::filesystem::exists(root/"Resources/RuntimeImages/apple"/file));
  auto dims=[&](std::string_view key){return contractTileSize(root,key);};
  for(const auto& key:{"Ka52_RotorUpper","Ka52_RotorLower"}){
@@ -96,8 +96,9 @@ int main(){
   uint32_t seed=5;GameSession game(data,slot,dims,[&]{seed=seed*1664525+1013904223;return int32_t(seed>>1);});
   game.start(0,1,1);auto& i=*game.impl_;i.enemies.clear();i.world.enemiesSpawned.assign(i.world.map.enemies.size(),true);i.world.gameState=0;i.world.paused=false;i.player->hp=100000;
   auto start=i.player->position;i.spawnEnemy({name,{start.x+160,start.y+100},false});auto& m=i.enemies.back();
-  assert(m.parts.size()==(name=="Ka52"?5:3));assert(m.enemy->hasWeapon);
-  std::set<std::string> wanted=name=="Ka52"?std::set<std::string>{"Ka52_Cannon","Ka52_Missile"}:std::set<std::string>{"Lux_Euro_Missile"};
+  assert(m.parts.size()==(name=="Ka52"?4:3));assert(m.enemy->hasWeapon);
+  std::set<std::string> wanted=name=="Ka52"?std::set<std::string>{"Ka52_Missile"}:std::set<std::string>{"Lux_Euro_Missile"};
+  std::set<double> missileBirths;
   std::set<std::string> fired,drawn;std::set<int> upperFrames,lowerFrames;
 #if defined(HM_VALIDATION) && HM_VALIDATION
   std::set<std::string> impacting;
@@ -106,10 +107,10 @@ int main(){
   });
 #endif
   const auto begin=m.enemy->position;bool moved=false;int persisted=0,gaugeChecks=0;
-  for(int n=1;n<=1200;++n){
+  for(int n=1;n<=2400;++n){
    game.tick(double(n)/60,0);
    moved|=std::abs(m.enemy->position.x-begin.x)>1||std::abs(m.enemy->position.y-begin.y)>1;
-   for(const auto& node:i.dynamic)if(auto b=std::get_if<BulletState>(&node.value))if(b->toPlayer&&b->info&&wanted.contains(b->info->name))fired.insert(b->info->name);
+   for(const auto& node:i.dynamic)if(auto b=std::get_if<BulletState>(&node.value))if(b->toPlayer&&b->info){assert(b->info->name!="Ka52_Cannon");if(wanted.contains(b->info->name))fired.insert(b->info->name);if(name=="Ka52"&&b->info->name=="Ka52_Missile")missileBirths.insert(b->startTime);}
 #if defined(HM_VALIDATION) && HM_VALIDATION
    const auto stateBefore=seed;const auto hpBefore=i.player->hp;const auto countBefore=i.dynamic.size();
    const auto observed=game.validationBullets();
@@ -137,11 +138,20 @@ int main(){
 #if defined(HM_VALIDATION) && HM_VALIDATION
   assert(impacting==wanted);game.validationObserveDamage({});std::cout<<name<<" attributed real weapon impacts="<<impacting.size()<<" PASS\n";
 #endif
-  if(name=="Ka52")for(auto& key:wanted)assert(drawn.contains(key+".png"));
+  if(name=="Ka52"){
+   assert(!drawn.contains("Ka52_Cannon.png"));
+   for(auto& key:wanted)assert(drawn.contains(key+".png"));
+   std::vector<double> times(missileBirths.begin(),missileBirths.end());std::cout<<"observed missile births="<<times.size()<<std::endl;assert(times.size()>=6);
+   for(size_t n=0;n+1<times.size();n+=2){
+    const double spacing=times[n+1]-times[n];assert(spacing>=.5-1e-5&&spacing<=.5+1./60+1e-5);
+    if(n+2<times.size())assert(times[n+2]-times[n+1]>5.);
+   }
+   std::cout<<"Ka52 actual missile births=";for(auto time:times)std::cout<<time<<',';std::cout<<" two-shot cadence PASS\n";
+  }
   else assert(!drawn.contains("Lux_Euro_Missile.png"));
   assert(drawn.contains(name=="Ka52"?"Ka52_Body.png":"Lux_Eurofighter.png"));
   if(name=="Ka52"){assert((upperFrames==std::set<int>{0,1})&&(lowerFrames==std::set<int>{0,1})&&gaugeChecks>0);std::cout<<"Ka52 gauge/body/weapon nonoverlap checks="<<gaugeChecks<<'\n';}
-  const auto beforePause=m.enemy->position;game.setPaused(true);game.tick(21,0);assert(near(m.enemy->position.x,beforePause.x)&&near(m.enemy->position.y,beforePause.y));game.setPaused(false);
+  const auto beforePause=m.enemy->position;game.setPaused(true);game.tick(41,0);assert(near(m.enemy->position.x,beforePause.x)&&near(m.enemy->position.y,beforePause.y));game.setPaused(false);
   // Visible Ka52 weapons use their sockets. Eurofighter uses the existing
   // Lux fixed-muzzle contract while its missile weapon remains invisible.
   for(float angle:{-.18f,0.f,.18f})for(auto& p:m.parts)if(p->armed){

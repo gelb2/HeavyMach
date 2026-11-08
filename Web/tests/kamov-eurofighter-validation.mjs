@@ -22,13 +22,31 @@ page.on('pageerror',error=>report.errors.push(error.message));
 const state=()=>page.evaluate(()=>hmValidation.state());
 const release=()=>page.evaluate(()=>{const p=window.__validationLastTouch;if(p)hmValidation.touch(p.x,p.y,2);});
 async function until(predicate,timeout,label){const end=Date.now()+timeout;for(;;){const s=await state();if(predicate(s))return s;if(Date.now()>=end)throw Error(label+'; last='+JSON.stringify({game:s.game,error:s.error}));await wait(40);}}
-async function start(){check(await page.evaluate(()=>hmValidation.start({weapon:'P_Wpn_Gun06',level:30,grade:6,seed:12345}))===1,'Scenario start rejected');await until(s=>!s.game.loading&&!s.game.paused&&s.game.hp>0,10000,'Scenario did not run');await wait(4200);}
+async function start(){check(await page.evaluate(()=>hmValidation.start({weapon:'P_Wpn_Gun06',mission:0,stage:1,level:30,grade:6,seed:12345}))===1,'Scenario start rejected');await until(s=>!s.game.loading&&!s.game.paused&&s.game.hp>0,10000,'Scenario did not run');await wait(4200);}
 async function spawn(name){const s=await state();check(await page.evaluate(({name,x,y})=>hmValidation.spawn(name,x,y),{name,x:s.game.playerX+300,y:s.game.playerY+90})===1,'Spawn rejected '+name);return (await until(s=>s.enemies.some(e=>e.name===name),3000,'Spawn missing')).enemies.filter(e=>e.name===name).at(-1);}
 async function record(name,id){await page.evaluate(({name,id})=>{
  window.__unitTrace={name,id,frames:[],running:true};
  const step=()=>{const trace=window.__unitTrace;if(!trace.running)return;const s=hmValidation.state();const target=s.enemies.find(e=>e.id===id);trace.frames.push({time:s.game.time,hp:s.game.hp,paused:s.game.paused,gameState:s.game.gameState,shots:s.shots,damage:s.damage.filter(d=>d.time>(trace.lastDamageTime??-1)),target:target||null,bullets:s.bullets,sprites:s.sprites.filter(d=>d.tile.startsWith(name==='Ka52'?'Ka52':'Lux_Euro')||d.tile==='BulletEffect2.png'),cheats:s.cheats});if(s.damage.length)trace.lastDamageTime=s.damage.at(-1).time;requestAnimationFrame(step);};requestAnimationFrame(step);
  },{name,id});}
 async function finishTrace(file){const trace=await page.evaluate(()=>{window.__unitTrace.running=false;return window.__unitTrace;});fs.writeFileSync(path.join(out,file),trace.frames.map(row=>JSON.stringify(row)).join('\n')+'\n');return trace.frames;}
+// Start times come from the actual BulletState, not inferred screen motion.
+// A >0.75s gap closes a burst; the authored 0.5s delay may round by one 60Hz tick.
+function kamovBurstEvidence(frames){
+ const times=new Set();
+ for(const f of frames){
+  check(!f.sprites.some(s=>s.tile==='Ka52_Cannon.png'),'Removed cannon sprite observed');
+  check(!f.bullets.some(b=>b.weapon==='Ka52_Cannon'),'Removed cannon projectile observed');
+  for(const b of f.bullets)if(b.toPlayer&&b.weapon==='Ka52_Missile'){
+   check(Number.isFinite(b.startTime),'Bullet startTime observation is missing');times.add(b.startTime);
+  }
+ }
+ const starts=[...times].sort((a,b)=>a-b),groups=[];
+ for(const time of starts){if(!groups.length||time-groups.at(-1).at(-1)>.75)groups.push([]);groups.at(-1).push(time);}
+ const now=frames.at(-1)?.time??0;
+ const complete=groups.filter((g,i)=>i<groups.length-1||now-g.at(-1)>.75).map(g=>({startTimes:g,shots:g.length,interval:g.length===2?g[1]-g[0]:null}));
+ for(const burst of complete){check(burst.shots===2,'Ka52 burst must contain exactly two real projectiles: '+JSON.stringify(burst));check(burst.interval>=.499&&burst.interval<=.518,'Ka52 missile interval differs from 0.5s plus at most one 60Hz tick: '+JSON.stringify(burst));}
+ return {method:'Unique live projectile startTime observations; one Ka52; completed groups separated by >0.75s',startTimes:starts,complete};
+}
 function animationEvidence(frames,name){
  const byTile={};for(const f of frames)for(const sprite of f.sprites){const row=byTile[sprite.tile]??={frames:new Set(),scales:new Set(),positions:[]};row.frames.add(sprite.frame);row.scales.add(sprite.scaleX+','+sprite.scaleY);row.positions.push([sprite.x,sprite.y]);}
  return Object.fromEntries(Object.entries(byTile).map(([tile,r])=>[tile,{frames:[...r.frames],scales:[...r.scales],first:r.positions[0],last:r.positions.at(-1)}]));
@@ -47,14 +65,28 @@ try{
    await wait(1200);await page.screenshot({path:path.join(out,name+'-assembled.png')});
    const before=await state();row.initialPlayerHP=before.game.hp;
    // Wait for the machine's actual two-way combat. No player shot during this phase.
-   const attackEnd=Date.now()+30000;
+   const attackEnd=Date.now()+(name==='Ka52'?60000:30000);
    for(;;){
     const s=await state();const firing=await page.evaluate(()=>[...new Set(window.__unitTrace.frames.flatMap(f=>f.bullets.filter(b=>b.toPlayer).map(b=>b.weapon)))]);
     row.enemyWeapons=firing;row.minPlayerHP=s.game.hp;
-    const prefix=name==='Ka52'?'Ka52':'Lux_Euro',expected=name==='Ka52'?2:1;
+    const prefix=name==='Ka52'?'Ka52':'Lux_Euro',expected=1;
     row.enemyDamage=s.damage.filter(d=>d.target===1&&d.weapon.startsWith(prefix)&&d.after<d.before);const hitWeapons=new Set(row.enemyDamage.map(d=>d.weapon));
     const moved=await page.evaluate(()=>{const rows=window.__unitTrace.frames.filter(f=>f.target);if(!rows.length)return false;const first=rows[0].target;return rows.some(f=>Math.hypot(f.target.x-first.x,f.target.y-first.y)>1);});
-    if(firing.filter(n=>n.startsWith(prefix)).length>=expected&&hitWeapons.size>=expected&&moved)break;
+    let burstReady=true;
+    if(name==='Ka52'){
+     check(s.enemies.filter(e=>e.name==='Ka52'&&!e.removed).length===1,'Burst observation requires exactly one live Ka52');
+     const activeMissiles=s.bullets.filter(b=>b.toPlayer&&b.weapon==='Ka52_Missile'&&!b.removed);
+     if(!row.twoMissileFrame&&activeMissiles.length===2){row.twoMissileFrame={time:s.game.time,bullets:activeMissiles,file:'Ka52-two-missiles.png'};await page.screenshot({path:path.join(out,row.twoMissileFrame.file)});}
+
+     const sample=await page.evaluate(()=>{
+      const frames=window.__unitTrace.frames,starts=new Map();let cannonSprite=false;
+      for(const f of frames){cannonSprite||=f.sprites.some(s=>s.tile==='Ka52_Cannon.png');for(const b of f.bullets)if(b.weapon.startsWith('Ka52_'))starts.set(b.weapon+':'+b.startTime,b);}
+      return {time:frames.at(-1)?.time??0,sprites:cannonSprite?[{tile:'Ka52_Cannon.png'}]:[],bullets:[...starts.values()]};
+     });
+     row.missileBursts=kamovBurstEvidence([sample]);
+     burstReady=row.missileBursts.complete.length>=3;
+    }
+    if(firing.filter(n=>n.startsWith(prefix)).length>=expected&&hitWeapons.size>=expected&&moved&&burstReady)break;
     check(s.game.hp>0,'Player died before all enemy weapons were observed');check(Date.now()<attackEnd,'Enemy weapon, attributed damage or movement was not observed');await wait(50);
    }
    await page.screenshot({path:path.join(out,name+'-enemy-fire.png')});
@@ -65,7 +97,11 @@ try{
     const lower=Object.entries(row.animation).find(([tile])=>tile.includes('RotorLower'));
     check(upper&&lower,'Both coaxial rotor sprites must be visible');check(upper[1].frames.length>=2&&lower[1].frames.length>=2,'Both rotors must animate');
     const dual=attackFrames.find(f=>f.sprites.some(s=>s.tile===upper[0])&&f.sprites.some(s=>s.tile===lower[0]));const a=dual.sprites.find(s=>s.tile===upper[0]),b=dual.sprites.find(s=>s.tile===lower[0]);row.rotorSeparation=Math.hypot(a.x-b.x,a.y-b.y);check(row.rotorSeparation>0,'Coaxial rotors share the same socket');
-    check(Object.keys(row.animation).some(t=>t.includes('Cannon'))&&Object.keys(row.animation).some(t=>t.includes('Missile')),'Cannon or missile mount is invisible');
+    check(!Object.keys(row.animation).some(t=>t.includes('Cannon')),'Removed Ka52 cannon remains visible');
+    check(Object.keys(row.animation).includes('Ka52_Missile.png'),'Ka52 missile mount is invisible');
+    check(!row.enemyWeapons.includes('Ka52_Cannon')&&!row.enemyDamage.some(d=>d.weapon==='Ka52_Cannon'),'Removed Ka52 cannon still attacks');
+    row.missileBursts=kamovBurstEvidence(attackFrames);
+    check(row.missileBursts.complete.length>=3,'Fewer than three complete observed missile bursts');
    }else{row.externalPodVisible=Object.keys(row.animation).some(t=>t==='Lux_Euro_Missile.png');check(!row.externalPodVisible,'Removed Eurofighter external missile pod remains visible');check(row.enemyDamage.some(d=>d.weapon.startsWith('Lux_Euro')&&d.after<d.before),'Eurofighter internal missile launcher did not cause actual damage');check(Object.keys(row.animation).includes('BulletEffect2.png'),'Eurofighter exhaust effect not visible');}
    // Pause through the actual keyboard path and compare cached frame/positions.
    await page.keyboard.press('Escape');await until(s=>s.game.paused,3000,'Escape did not pause');const pausedA=await state();await wait(300);const pausedB=await state();row.pauseStable=JSON.stringify(pausedA.sprites)===JSON.stringify(pausedB.sprites)&&JSON.stringify(pausedA.enemies)===JSON.stringify(pausedB.enemies);check(row.pauseStable,'Parts moved/animated while paused');
@@ -77,7 +113,7 @@ try{
     if(killed){row.destroyed=true;break;}check(Date.now()<killEnd,'Actual player fire did not destroy '+name);check(s.game.hp>0,'Player died during destruction trial');await wait(35);
    }
    await release();row.damageTrace=name+'-player-fire.jsonl';const damageFrames=await finishTrace(row.damageTrace);row.minTargetHP=Math.min(...damageFrames.filter(f=>f.target).map(f=>f.target.hp));row.playerShots=Math.max(...damageFrames.map(f=>f.shots));
-   check(row.playerShots>0&&row.minTargetHP===0,'Missing actual shot/HP-zero evidence');check(damageFrames.every(f=>f.cheats.blockedHits===0&&f.cheats.refilledRounds===0&&f.cheats.fallRescues===0),'Unrequested cheats affected combat');
+   check(row.playerShots>0&&row.minTargetHP===0,'Missing actual shot/HP-zero evidence');if(name==='Ka52')check(damageFrames.every(f=>!f.sprites.some(s=>s.tile==='Ka52_Cannon.png')&&!f.bullets.some(b=>b.weapon==='Ka52_Cannon')),'Removed cannon appeared during destruction');check(damageFrames.every(f=>f.cheats.blockedHits===0&&f.cheats.refilledRounds===0&&f.cheats.fallRescues===0),'Unrequested cheats affected combat');
    await page.screenshot({path:path.join(out,name+'-destroyed.png')});row.ok=true;
   }catch(error){row.error=String(error);report.errors.push(name+': '+error);try{if(await page.evaluate(()=>!!window.__unitTrace?.running))await finishTrace(name+'-failed.jsonl');}catch{}}
   console.log(JSON.stringify(row));
