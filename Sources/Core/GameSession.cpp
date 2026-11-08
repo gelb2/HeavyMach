@@ -571,7 +571,7 @@ std::vector<GameSession::ValidationEnemySnapshot> GameSession::validationEnemies
 std::vector<GameSession::ValidationBulletSnapshot> GameSession::validationBullets()const{
  std::vector<ValidationBulletSnapshot> result;
  for(const auto& node:impl_->dynamic)if(const auto* b=std::get_if<BulletState>(&node.value))
-  result.push_back({b->info?b->info->name:std::string{},b->toPlayer,b->removed,b->pos,b->vel});
+  result.push_back({b->info?b->info->name:std::string{},b->toPlayer,b->removed,b->pos,b->vel,b->startTime});
  return result;
 }
 void GameSession::startValidation(const ValidationScenario& scenario){

@@ -22,7 +22,7 @@
     "Resources/Validation": 1,
     "Art/Extensions": 28,
     "Resources/RuntimeData": 48,
-    "Resources/RuntimeImages": 208,
+    "Resources/RuntimeImages": 205,
     "Art/KamovEurofighter/20261109": 10
   },
   "files": [
@@ -7553,13 +7553,13 @@
     },
     {
       "path": "Resources/RuntimeData/MachInfo.mch",
-      "bytes": 126464,
-      "sha256": "205024a88c3cb772458345cc3b1d0731e1b98bf1ac7b65891de26c0b1cdec638"
+      "bytes": 126422,
+      "sha256": "13a268ce13c9d32f38fb9746775112e4ccaf0cd60eb11df2012851fc39f3a4be"
     },
     {
       "path": "Resources/RuntimeData/PartsInfo.mch",
-      "bytes": 23300,
-      "sha256": "27f3bd4d8dac2e3488004c42d9079f8a3ccf4612882be9026bdb95cde783f65c"
+      "bytes": 23233,
+      "sha256": "26559cd7b6e47c4efeadaf09ea27c3b0daf108b109a8601a0608394b501e98f1"
     },
     {
       "path": "Resources/RuntimeData/Stage01.map",
@@ -7783,13 +7783,13 @@
     },
     {
       "path": "Resources/RuntimeData/WeaponInfo.mch",
-      "bytes": 32180,
-      "sha256": "4dd78178b5d70b09e7176cf65509576c73407917c20b98615802685646c1119f"
+      "bytes": 32008,
+      "sha256": "be743b32d3ef6e8a8f3a292a5e22f0f2f53b59ab5d7ce77b549c1d258967d6c2"
     },
     {
       "path": "Resources/RuntimeData/manifest.json",
       "bytes": 8449,
-      "sha256": "bbd3a0b5448efd7a60620ebbe02a12da312806c47391cd954c506aaf3da1473b"
+      "sha256": "f17f7ae6af367fe4c0a168155c5ec0fe4a073352a4db69709eff98fb15d1e3f1"
     },
     {
       "path": "Resources/RuntimeImages/android/GAA_Shilka_Body.png",
@@ -8080,11 +8080,6 @@
       "path": "Resources/RuntimeImages/android/Ka52_Body.png",
       "bytes": 6094,
       "sha256": "ee43b3d33d30606b4606888ceee6c47c5b41b0213fb35d600559518634f04136"
-    },
-    {
-      "path": "Resources/RuntimeImages/android/Ka52_Cannon.png",
-      "bytes": 466,
-      "sha256": "26c9aac264036df3032149885825342b5705b78fbe451ae6c160cbb6a954427a"
     },
     {
       "path": "Resources/RuntimeImages/android/Ka52_Missile.png",
@@ -8427,11 +8422,6 @@
       "sha256": "eec7dfa0d647ed7633cd05bd1cc9480bb904e6ead98ff4247914a2fb7ae354e8"
     },
     {
-      "path": "Resources/RuntimeImages/apple/Ka52_Cannon.png",
-      "bytes": 466,
-      "sha256": "26c9aac264036df3032149885825342b5705b78fbe451ae6c160cbb6a954427a"
-    },
-    {
       "path": "Resources/RuntimeImages/apple/Ka52_Missile.png",
       "bytes": 677,
       "sha256": "f1695f0eafb7932838e0c51aab65e5eba4fa1cb235c329fdb8c32aaf92fd9139"
@@ -8483,8 +8473,8 @@
     },
     {
       "path": "Resources/RuntimeImages/manifest.json",
-      "bytes": 174831,
-      "sha256": "e67699e771c39bd0022a0926fc569e5efe3646f65980d78d5824595bc011c528"
+      "bytes": 172263,
+      "sha256": "5e1846f0039dfba8ad0a8c97c57e6831f82deefe55c7ec76dffd10ef38aab39d"
     },
     {
       "path": "Resources/RuntimeImages/web/GAA_Shilka_Body.png",
@@ -8777,11 +8767,6 @@
       "sha256": "ee43b3d33d30606b4606888ceee6c47c5b41b0213fb35d600559518634f04136"
     },
     {
-      "path": "Resources/RuntimeImages/web/Ka52_Cannon.png",
-      "bytes": 466,
-      "sha256": "26c9aac264036df3032149885825342b5705b78fbe451ae6c160cbb6a954427a"
-    },
-    {
       "path": "Resources/RuntimeImages/web/Ka52_Missile.png",
       "bytes": 684,
       "sha256": "b9c24e19b48ad39fba953201a26ff2ed99273a52ea1cf2185bbc8eb5cd42a42a"
@@ -8853,8 +8838,8 @@
     },
     {
       "path": "Art/KamovEurofighter/20261109/bake.json",
-      "bytes": 2158,
-      "sha256": "153e05c12db029c39f71f92633378db2d0407807ddd8ad27caa7c29611ca7126"
+      "bytes": 1858,
+      "sha256": "3cfee93a33ae27a45fa58675162f2fbade64f1f35fce5d9219a4e60bca29b7d1"
     },
     {
       "path": "Art/KamovEurofighter/20261109/prompts.json",

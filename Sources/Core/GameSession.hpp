@@ -41,7 +41,7 @@ public:
  struct ValidationEnemySnapshot { uintptr_t id;std::string name;Vector2 position;int32_t hp,hpMax;bool boss,removed;Vector2 spawnPosition;ObjectBounds bounds; };
  std::vector<ValidationEnemySnapshot> validationEnemies()const;
  // Read-only view of live projectiles for the separate validation host.
- struct ValidationBulletSnapshot {std::string weapon;bool toPlayer,removed;Vector2 position,velocity;};
+ struct ValidationBulletSnapshot {std::string weapon;bool toPlayer,removed;Vector2 position,velocity;double startTime;};
  std::vector<ValidationBulletSnapshot> validationBullets()const;
  void validationSpawnEnemy(const EnemyDefinition&);
  Vector2 validationAimOrigin()const;

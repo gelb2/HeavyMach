@@ -1,0 +1,106 @@
+{
+  "baseline": "6a143380 (product files identical to c5cc2531 worktree)",
+  "original_roots": {
+    "Resources/OriginalImages": 695,
+    "Resources/RawData": 46,
+    "Resources/Audio": 31
+  },
+  "runtime": {
+    "WeaponInfo.mch": {
+      "preserved_records": 185,
+      "changed": [
+        "Ka52_Missile"
+      ],
+      "removed": [
+        "Ka52_Cannon"
+      ],
+      "added": [],
+      "order_preserved": true
+    },
+    "Stage06.map": "byte-identical",
+    "Stage12.map": "byte-identical",
+    "PartsInfo.mch": {
+      "preserved_records": 378,
+      "changed": [
+        "Ka52_Body"
+      ],
+      "removed": [
+        "Ka52_Cannon"
+      ],
+      "added": [],
+      "order_preserved": true
+    },
+    "Stage13.map": "byte-identical",
+    "Stage07.map": "byte-identical",
+    "Stage39.map": "byte-identical",
+    "Stage11.map": "byte-identical",
+    "Stage05.map": "byte-identical",
+    "Stage04.map": "byte-identical",
+    "Stage10.map": "byte-identical",
+    "Stage38.map": "byte-identical",
+    "MachInfo.mch": {
+      "preserved_records": 741,
+      "changed": [
+        "Ka52"
+      ],
+      "removed": [],
+      "added": [],
+      "order_preserved": true
+    },
+    "Stage14.map": "byte-identical",
+    "Stage28.map": "byte-identical",
+    "Stage29.map": "byte-identical",
+    "Stage01.map": "byte-identical",
+    "Stage15.map": "byte-identical",
+    "Stage03.map": "byte-identical",
+    "Stage17.map": "byte-identical",
+    "Stage16.map": "byte-identical",
+    "Stage02.map": "byte-identical",
+    "Stage27.map": "byte-identical",
+    "Stage33.map": "byte-identical",
+    "Stage32.map": "byte-identical",
+    "Stage26.map": "byte-identical",
+    "Stage18.map": "byte-identical",
+    "Stage30.map": "byte-identical",
+    "Stage24.map": "byte-identical",
+    "Stage25.map": "byte-identical",
+    "Stage31.map": "byte-identical",
+    "Stage19.map": "byte-identical",
+    "Stage35.map": "byte-identical",
+    "Stage21.map": "byte-identical",
+    "Stage09.map": "byte-identical",
+    "Stage08.map": "byte-identical",
+    "Stage20.map": "byte-identical",
+    "Stage34.map": "byte-identical",
+    "Stage22.map": "byte-identical",
+    "Stage36.map": "byte-identical",
+    "Stage37.map": "byte-identical",
+    "Stage23.map": "byte-identical",
+    "Stage42.map": "byte-identical",
+    "UnitExtensions.hmx": "byte-identical",
+    "Stage41.map": "byte-identical",
+    "Survival.map": "byte-identical",
+    "Stage40.map": "byte-identical"
+  },
+  "images": {
+    "apple": {
+      "unchanged": 68,
+      "removed": "Ka52_Cannon.png"
+    },
+    "android": {
+      "unchanged": 68,
+      "removed": "Ka52_Cannon.png"
+    },
+    "web": {
+      "unchanged": 68,
+      "removed": "Ka52_Cannon.png"
+    }
+  },
+  "expected_changes": [
+    "Ka52",
+    "Ka52_Body",
+    "Ka52_Cannon (removed)",
+    "Ka52_Missile (2 shots / 0.5s)"
+  ],
+  "ok": true
+}

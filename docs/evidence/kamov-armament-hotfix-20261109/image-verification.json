@@ -1,0 +1,10 @@
+{
+  "authored_images": 5,
+  "profiles": [
+    "apple",
+    "web",
+    "android"
+  ],
+  "decode_upload_roundtrips": 15,
+  "verified_only": true
+}
