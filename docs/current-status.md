@@ -10,7 +10,13 @@
 
 전체 플레이어 무기 20종의 발사·연사·탄약 검사는 v3에서 통과했다. v4는 유로파이터 몸체 PNG만 달라졌고 WebAssembly와 게임 데이터가 바이트 동일하므로 그 결과를 재사용했다. v4에서 20종을 다시 실행한 것으로 보고하지 않는다. 일반 웹 빌드에 치트 API가 없고, 검증 저장이 일반 저장과 분리됨을 확인했다.
 
-현재 새 유닛은 검증 생성으로 검사했다. 캠페인 배치는 바꾸지 않았다. 신규 2종을 포함한 실기기 설치·Android/PWA/Tauri 앱 검사와 develop·main 병합·운영 배포는 아직 하지 않았다. 아래의 이전 핫픽스 설치·배포 결과를 이번 2종의 결과로 사용하지 않는다.
+소스 `7786319823fb187f892e2a97afd2a4bd6e5735fd`를 작업 브랜치에 푸시했고, develop을 대상으로 [초안 PR #112](https://github.com/gelb2/HeavyMach/pull/112)를 열었다. 별도 `/validation/kamov-eurofighter-20261109/` 경로의 웹 치트 검증판은 gh-pages `9431b7c117434847d164f7669a054ef523477f82`로 공개했다. [카모프 검증판](https://gelb2.github.io/HeavyMach/validation/kamov-eurofighter-20261109/?validation-unit=Ka52) · [유로파이터 검증판](https://gelb2.github.io/HeavyMach/validation/kamov-eurofighter-20261109/?validation-unit=Lux_Eurofighter).
+
+공개 주소에서 기체 2종 진입·표시, 4종 동시 생성, 잘못된 요청 거부와 일반판의 검증 요청 무시를 포함한 8개 검사를 통과했다. 기존 정식 배포의 추적 파일 45개 내용은 모두 보존했다. 정식 PWA 서비스 워커가 먼저 설치된 환경에서도 검증판 진입과 별도 저장을 확인했다. [배포·보존 결과](evidence/kamov-eurofighter-20261109/publication-final.json), [공개 브라우저 검사](evidence/kamov-eurofighter-20261109/publication-browser-report.json), [서비스 워커 검사](evidence/kamov-eurofighter-20261109/publication-sw.json).
+
+읽기용 보고 HTML은 로컬 프리뷰의 화면 폭 390·1440에서 한글 제목·표·이미지 10개와 가로 넘침 없음을 확인했다. HTML 저장본과 화면 원고의 바이트도 일치했다. 이후 [구현 보고서](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/kamov-eurofighter-implementation-20261109.html) 게시도 완료했다. 게시 주소의 HTML을 호스팅 주입 스크립트 1개를 제외하고 원고와 대조했고, 기존 Markdown 주소의 UTF-8 BOM과 읽기용 HTML 연결을 확인했다. [보고 HTML 검사](evidence/kamov-eurofighter-20261109/report-html-qa.json).
+
+현재 새 유닛은 검증 생성으로 검사했다. 캠페인 배치는 바꾸지 않았다. 신규 2종을 포함한 실기기 설치·Android/PWA/Tauri 앱 검사, develop·main 병합과 정식 게임 교체 배포는 아직 하지 않았다. 별도 공개 검증판 배포와 정식 게임 배포를 구분한다. 아래의 이전 핫픽스 설치·배포 결과를 이번 2종의 결과로 사용하지 않는다.
 
 ## 2026-11-09 신규 유닛 공통 자원 핫픽스 — main 배포
 

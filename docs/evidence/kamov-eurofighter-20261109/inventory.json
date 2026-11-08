@@ -26,6 +26,11 @@
       "sha256": "06016c6f6de6d3f1b2eb8a02e58f4bcb9c4bc326d1af2db4866bf93d81ca39d2"
     },
     {
+      "path": "docs/evidence/kamov-eurofighter-20261109/link-report.json",
+      "bytes": 5517,
+      "sha256": "8a2a06a891afbe31fbcf949ee682613a04bae3a9837b400bf35f48aca13173be"
+    },
+    {
       "path": "docs/evidence/kamov-eurofighter-20261109/map-preservation.json",
       "bytes": 854,
       "sha256": "d56849b7a39410a40ce5a80e5dee9ba8d01be1f01f982e647d9998ae8d1a2dae"
@@ -41,9 +46,39 @@
       "sha256": "2ca24150af2a1d0a749736e190cba5394b897d2f7dd3a2109bba8b2871c5490f"
     },
     {
+      "path": "docs/evidence/kamov-eurofighter-20261109/publication-browser-report.json",
+      "bytes": 5696,
+      "sha256": "fe507692805645468d5eb86d13373967a2111f324a84268e51c183425dd8c5fd"
+    },
+    {
+      "path": "docs/evidence/kamov-eurofighter-20261109/publication-final.json",
+      "bytes": 3705,
+      "sha256": "9656abb46a2a9f52172b7c134dd8071f2a29d3d1235ea03b5828a7cff9a14bdb"
+    },
+    {
+      "path": "docs/evidence/kamov-eurofighter-20261109/publication-http.json",
+      "bytes": 2789,
+      "sha256": "5c4ac9c6447284af2739cfd98f06d1724725dcc7ac815c3493201eba8af480f1"
+    },
+    {
+      "path": "docs/evidence/kamov-eurofighter-20261109/publication-sw.json",
+      "bytes": 919,
+      "sha256": "882827755055bd6e5edddf7ad712a768f3fffa69132ca7e180daf7537d2c5074"
+    },
+    {
+      "path": "docs/evidence/kamov-eurofighter-20261109/report-html-qa.json",
+      "bytes": 6780,
+      "sha256": "9491e3c13ac6fb76f469a16cadb915094910ea567c9282591c1e1fc4662694a6"
+    },
+    {
       "path": "docs/evidence/kamov-eurofighter-20261109/result.json",
       "bytes": 965,
       "sha256": "1d15b1d2eb93fc9e9349eb3bab9ec47280166ca1f6b8c319c2e0932b1e6247ec"
+    },
+    {
+      "path": "docs/evidence/kamov-eurofighter-20261109/site-live.json",
+      "bytes": 1975,
+      "sha256": "8ad99aecbaab6cb38651278905ada403de3e544901125897b8b723b2b4138ab9"
     },
     {
       "path": "docs/evidence/kamov-eurofighter-20261109/v1-report.json",

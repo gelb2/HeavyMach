@@ -12,9 +12,12 @@
 - [x] 코어 28개, 자원 누락·변조 검사, 기존 데이터 보존, 웹 일반판의 치트 API 제외와 검증 저장 분리를 확인했다.
 - [x] 웹 치트 v4에서 두 유닛의 실제 사격·피해 귀속·이동·피격·파괴·정지와 로터를 검사했다. 원작·Lux 비교 캡처로 최종 조립과 그림체를 검수했다.
 - [x] 전체 20무기 발사·연사·탄약 검사는 v3 성공 결과를 보존했다. 게임 WebAssembly·데이터가 같은 v4에서는 이 결과를 재사용했다.
+- [x] 소스 `77863198`를 작업 브랜치에 푸시하고 develop 대상 [초안 PR #112](https://github.com/gelb2/HeavyMach/pull/112)를 열었다.
+- [x] 별도 웹 검증판을 공개하고 공개 주소 검사 8/8, 기존 정식 파일 45개 보존과 서비스 워커 환경의 저장 분리를 확인했다. [카모프 검증판](https://gelb2.github.io/HeavyMach/validation/kamov-eurofighter-20261109/?validation-unit=Ka52) · [유로파이터 검증판](https://gelb2.github.io/HeavyMach/validation/kamov-eurofighter-20261109/?validation-unit=Lux_Eurofighter).
+- [x] 읽기용 보고 HTML의 로컬 프리뷰를 화면 폭 390·1440에서 검사했다. 이미지 10개·한글 제목·표와 HTML 저장본 일치를 확인했다. [구현 보고서](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/kamov-eurofighter-implementation-20261109.html) 게시와 게시 본문 대조도 완료했다.
 - [ ] 캠페인 등장 위치·횟수를 정하고 실제 배치로 검사한다. 현재 기존 43개 MAP와 14개 편대는 변경하지 않았다.
-- [ ] 신규 2종의 Android·설치 PWA·Tauri·Apple 앱 및 실기기 검사를 별도로 진행한다. 이번 결과는 로컬 Chrome 웹 검사다.
-- [ ] 작업 브랜치→develop→main 절차로 병합하고 운영 배포 결과를 기록한다. 신규 2종의 main 배포·아이폰 설치는 아직 하지 않았다.
+- [ ] 신규 2종의 Android·설치 PWA·Tauri·Apple 앱 및 실기기 검사를 별도로 진행한다. 이번 결과는 로컬·공개 주소의 Chrome headless 웹 검사다.
+- [ ] 작업 브랜치→develop→main 절차로 병합하고 정식 게임 배포 결과를 기록한다. 초안 PR #112는 미병합이며 신규 2종의 main 배포·아이폰 설치는 아직 하지 않았다.
 
 <a id="hm-new-unit-hotfix"></a>
 

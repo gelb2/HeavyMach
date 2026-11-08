@@ -1,0 +1,104 @@
+{
+  "deployment_commit": "9431b7c117434847d164f7669a054ef523477f82",
+  "branch": "gh-pages",
+  "github_pages_run": "https://github.com/gelb2/HeavyMach/actions/runs/42513286415",
+  "existing_tracked_files_preserved": 45,
+  "existing_content_changed": 0,
+  "public_artifacts": {
+    "url": "https://gelb2.github.io/HeavyMach/validation/kamov-eurofighter-20261109/",
+    "deployment_commit": "9431b7c117434847d164f7669a054ef523477f82",
+    "run": 42513286415,
+    "checked_at": "2026-11-08T19:07:04.594404+00:00",
+    "ok": true,
+    "files": [
+      {
+        "file": "hm-assets-1.data",
+        "status": 200,
+        "content_type": "application/octet-stream",
+        "bytes": 20846403,
+        "sha256": "cfa2f9ba1c8068ea85676086993ed7ac201d0ee38741eac639733445c811bee7",
+        "matches_build": true
+      },
+      {
+        "file": "hm-assets-2.data",
+        "status": 200,
+        "content_type": "application/octet-stream",
+        "bytes": 20504552,
+        "sha256": "ae37256ccca1dafdff8f6cdbe5f5661a724c06f79cdf5b9932bb5b16725205f0",
+        "matches_build": true
+      },
+      {
+        "file": "hm-assets.js",
+        "status": 200,
+        "content_type": "application/javascript; charset=utf-8",
+        "bytes": 89876,
+        "sha256": "64d175c0c0cf6d2f4d99d63ec4265f8b534efb66d3368cf24e08e109cedb698a",
+        "matches_build": true
+      },
+      {
+        "file": "hm-assets.json",
+        "status": 200,
+        "content_type": "application/json; charset=utf-8",
+        "bytes": 388,
+        "sha256": "bf31c10079e9c4d4015f63a6ca7dd6e8e8270ff18973ce0a3156f67ec873bc52",
+        "matches_build": true
+      },
+      {
+        "file": "index.html",
+        "status": 200,
+        "content_type": "text/html; charset=utf-8",
+        "bytes": 13771,
+        "sha256": "b48d5be81e8a22f8c666c8eb715a8dc88433de37e6706de7e36bcd657eee1d86",
+        "matches_build": true
+      },
+      {
+        "file": "index.js",
+        "status": 200,
+        "content_type": "application/javascript; charset=utf-8",
+        "bytes": 128811,
+        "sha256": "cef31661a13cc992e6b88c3e379202e9bc71a68f5b94d9a9e0f3b9afdfc18a58",
+        "matches_build": true
+      },
+      {
+        "file": "index.wasm",
+        "status": 200,
+        "content_type": "application/wasm",
+        "bytes": 720680,
+        "sha256": "d061c43020881f63a4dba9323b17acc32423a9805923cafd5d86e45920bd1f59",
+        "matches_build": true
+      },
+      {
+        "file": "manifest.webmanifest",
+        "status": 200,
+        "content_type": "application/manifest+json; charset=utf-8",
+        "bytes": 434,
+        "sha256": "61c27feac6a8c62e97e6add10bacffaf93444c725f5edee1cfbb0e0484195068",
+        "matches_build": true
+      },
+      {
+        "file": "validation-icon-256.png",
+        "status": 200,
+        "content_type": "image/png",
+        "bytes": 120604,
+        "sha256": "b94ffeea058a07aae9fb9b8c74d5ebd3a02fb56cce31d4627ccd44bb6091ff86",
+        "matches_build": true
+      },
+      {
+        "file": "validation-icon-512.png",
+        "status": 200,
+        "content_type": "image/png",
+        "bytes": 448517,
+        "sha256": "c08b4cbc6d7c61fe2b1c1b458e99a41ca7fad8fcdb1a4dbb779dd348eead4b8e",
+        "matches_build": true
+      }
+    ]
+  },
+  "public_browser_cases": 8,
+  "public_browser_ok": true,
+  "existing_production_service_worker_ok": true,
+  "scope": "Chrome headless WebGL. No physical Android or iPhone verification. Source branch not merged by this deployment.",
+  "links": [
+    "https://gelb2.github.io/HeavyMach/validation/kamov-eurofighter-20261109/?validation-unit=Ka52",
+    "https://gelb2.github.io/HeavyMach/validation/kamov-eurofighter-20261109/?validation-unit=Lux_Eurofighter"
+  ]
+}
