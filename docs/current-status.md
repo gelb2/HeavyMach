@@ -2,7 +2,7 @@
 
 ## 2026-11-09 최종 채택·아이폰 정식 설치
 
-유로파이터 외부 포드를 제거했다. 기존 Lux와 같은 숨김 무장 파츠·고정 총구를 사용하며 나머지 몸체·도장·카모프·수치는 사용자 채택 상태로 유지했다. 실행 PNG는 6종×3프로필이다. 코어28개와 웹v5의 신규2종·플레이어20무기 재실행이 통과했다. 아이폰 Air iOS27.2에 정식 앱을 무선 업데이트 설치하고 타이틀 실행·Documents2파일보존·앱종료·홈복귀를 확인했다. [근거](evidence/kamov-eurofighter-no-pod-20261109/iphone-normal.json). 최종 변경을 [PR #112](https://github.com/gelb2/HeavyMach/pull/112)로 develop에 반영한다. main 배포는 이번 지시 범위에 없다.
+유로파이터 외부 포드를 제거했다. 기존 Lux와 같은 숨김 무장 파츠·고정 총구를 사용하며 나머지 몸체·도장·카모프·수치는 사용자 채택 상태로 유지했다. 실행 PNG는 6종×3프로필이다. 코어28개와 웹v5의 신규2종·플레이어20무기 재실행이 통과했다. 아이폰 Air iOS27.2에 정식 앱을 무선 업데이트 설치하고 타이틀 실행·Documents2파일보존·앱종료·홈복귀를 확인했다. [근거](evidence/kamov-eurofighter-no-pod-20261109/iphone-normal.json). 최종 변경을 [PR #112](https://github.com/gelb2/HeavyMach/pull/112)로 develop `c0744f7057c09da46d6fdb3f5041a0e5b888fdd4`에 병합했다. 병합 직전 Apple·코어·문서·보안 CI가 모두 통과했다. main 배포는 이번 지시 범위에 없다.
 
 ## 2026-11-09 카모프·럭스루나에 유로파이터 — 구현·웹 검증
 

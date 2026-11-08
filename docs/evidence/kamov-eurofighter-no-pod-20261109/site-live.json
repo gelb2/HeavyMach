@@ -1,0 +1,54 @@
+{
+  "ok": true,
+  "pages": [
+    {
+      "path": "kamov-eurofighter-implementation-20261109.html",
+      "status": 200,
+      "content_type": "text/html",
+      "bytes": 19279,
+      "matches_published_source": false,
+      "sha256": "f3953b54e075dcfc1c846b1ca7573e483330a107600177cec48c2ea7c16e40b6",
+      "matches_html_without_host_injected_scripts": true,
+      "host_injected_scripts": 1
+    },
+    {
+      "path": "kamov-eurofighter-plan-20261109.html",
+      "status": 200,
+      "content_type": "text/html",
+      "bytes": 11398,
+      "matches_published_source": false,
+      "sha256": "e9d4f4c5ed0aac310cc38ced26d37502f583169f5f332117fe15e7ccb562f08d",
+      "matches_html_without_host_injected_scripts": true,
+      "host_injected_scripts": 1
+    },
+    {
+      "path": "new-unit-resource-hotfix-20261109.html",
+      "status": 200,
+      "content_type": "text/html",
+      "bytes": 12992,
+      "matches_published_source": false,
+      "sha256": "168c44d1a018a886fc1b4b8cc3e6415d07492681aa8be67dd3fc1f945162cf0d",
+      "matches_html_without_host_injected_scripts": true,
+      "host_injected_scripts": 1
+    },
+    {
+      "path": "new-unit-audit-20261109/docs/reviews/kamov-eurofighter-plan-20261109.md",
+      "status": 200,
+      "content_type": "text/markdown",
+      "bytes": 7403,
+      "matches_published_source": true,
+      "sha256": "4b71cbb4c7648d10329bad18e4bac1a6a764ee0740873effc505d4b519624ed9",
+      "utf8_bom": true
+    },
+    {
+      "path": "index.html",
+      "status": 200,
+      "content_type": "text/html",
+      "bytes": 79033,
+      "matches_published_source": false,
+      "sha256": "af73ae3104c346a1c2c838059e2b8837967419bb3fc61be1142d7ceb3e4ea4f0",
+      "matches_html_without_host_injected_scripts": true,
+      "host_injected_scripts": 1
+    }
+  ]
+}
