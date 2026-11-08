@@ -1,9 +1,6 @@
 #include "Media.hpp"
 #include "HMCompatibilityPixels.hpp"
 #include "TextureFormat.hpp"
-#include "GroundAA.hpp"
-#include "VTOL.hpp"
-#include "Fighters.hpp"
 #include <cstring>
 #define STB_IMAGE_IMPLEMENTATION
 #define STB_IMAGE_STATIC
@@ -81,16 +78,14 @@ bool Media::present(){
 Media::Texture* Media::texture(const std::string& name){
  std::string key=resourceScope+"|"+name;auto found=textures_.find(key);
  if(found==textures_.end()){
-  const auto* art=heavymach::groundAAImage(name);std::string file=art?art->source:name;
+  // Baked unit PNGs use the same path and decoder as existing images.
+  const std::string& file=name;
   auto bytes=assetBytes(assets_,name.starts_with("Extensions/")?file:"OriginalImages/"+file);
   stbi_convert_iphone_png_to_rgb_thread(1);stbi_set_unpremultiply_on_load_thread(1);
   int w,h,ch;auto*p=stbi_load_from_memory(bytes.data(),int(bytes.size()),&w,&h,&ch,4);if(!p)throw std::runtime_error("Image decode failed: "+name);
   std::vector<uint8_t> rgba(p,p+size_t(w)*h*4);stbi_image_free(p);
   const unsigned char png[]={137,80,78,71,13,10,26,10};if(bytes.size()>=8&&!memcmp(bytes.data(),png,8))for(size_t i=0;i<rgba.size();i+=4){float a=float(rgba[i+3])/255.f;for(int c=0;c<3;++c)rgba[i+c]=uint8_t(float(rgba[i+c])*a);}
   int targetW=0,targetH=0;
-  if(art){auto r=art->crop;if(r[0]<0||r[1]<0||r[2]<=0||r[3]<=0||r[0]+r[2]>w||r[1]+r[3]>h)throw std::runtime_error("Invalid crop: "+name);std::vector<uint8_t> crop(size_t(r[2])*r[3]*4);for(int y=0;y<r[3];++y)std::copy_n(rgba.data()+(size_t(y+r[1])*w+r[0])*4,size_t(r[2])*4,crop.data()+size_t(y)*r[2]*4);rgba=std::move(crop);w=r[2];h=r[3];targetW=int(art->size.x);targetH=int(art->size.y);}
-  for(const auto& spec:heavymach::vtolSpecs())if(name==spec.tile)targetW=int(std::lround(spec.width));
-  for(const auto& spec:heavymach::fighterSpecs())if(name==spec.tile)targetW=int(std::lround(spec.width));
   if(name=="Extensions/AutoAimControls.png")targetW=138;
   // Area prefilter averages coverage before the final linear texture sampling.
   if(targetW>0&&w>targetW){targetH=targetH?targetH:std::max(1,int(std::lround(double(h)*targetW/w)));std::vector<uint8_t> small(size_t(targetW)*targetH*4);

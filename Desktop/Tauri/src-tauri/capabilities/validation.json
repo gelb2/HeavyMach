@@ -1,0 +1,11 @@
+{
+  "identifier": "validation",
+  "description": "Isolated validation reports and save-complete close only",
+  "windows": [
+    "validation"
+  ],
+  "permissions": [
+    "allow-validation-report",
+    "allow-validation-finish-close"
+  ]
+}

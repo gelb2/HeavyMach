@@ -1,7 +1,7 @@
 #pragma once
 // C++ translation of Sources/iOS/HMGameView for the browser host.
-// Scope: the normal application (HM_VALIDATION=0). The validation/cheat panel,
-// the CPU comparison drawRect path and Mac/AppKit branches are not ported.
+// Normal builds omit validation exports. HM_WEB_VALIDATION enables an isolated
+// ValidationScenario bridge; the CPU drawRect and AppKit paths are not ported.
 #include "WebTypes.hpp"
 #include "HMGameButtons.hpp"
 #include "WebAudio.hpp"
@@ -65,6 +65,14 @@ public:
     // 0 RESET LAYOUT, 1 CANCEL, 2 APPLY, 3 PREVIEW, 4 SAMPLE/CURRENT SCENE, 5 TOOLS.
     void hudControl(int tag);
     std::string loadError() const {return _loadError;}
+#if defined(HM_VALIDATION) && HM_VALIDATION
+    std::string validationCatalog() const;
+    bool validationStart(const char* weapon,int mission,int stage,int level,int grade,double x,double y,bool explicitPosition,uint32_t seed);
+    bool validationSpawn(const char* name,double x,double y);
+    bool validationTouch(double x,double y,int state);
+    void validationCheats(bool enabled);
+    std::string validationState();
+#endif
 private:
     heavymach::gameui::Buttons _gameButtons;
     bool _transferReady=false,_transferBusy=false,_transferSettings=true,_hudToolFocus=false;
@@ -152,6 +160,11 @@ private:
     float _hpGauge=0,_expGauge=0,_reloadGauge=0;
     heavymach::GameData _data;
     heavymach::SaveData _save;
+#if defined(HM_VALIDATION) && HM_VALIDATION
+    std::optional<heavymach::ValidationScenario> _validationFixture;
+    std::string _validationError,_validationLastShot;
+    uint64_t _validationShots=0;
+#endif
     std::shared_ptr<const heavymach::SaveSlot> _pendingSaveSnapshot;
     int _transferScreen=0;
     bool _showMenu=false;

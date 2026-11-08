@@ -1,0 +1,9 @@
+// Exercise the validation-only host script against the actual Web game. Native
+// report/close IPC is mocked here; this is explicitly not WKWebView validation.
+import fs from 'node:fs';
+import path from 'node:path';
+import puppeteer from '../../../Web/tests/node_modules/puppeteer-core/lib/puppeteer/puppeteer-core.js';
+const url=process.argv[2]||'http://127.0.0.1:8873/';const out=process.argv[3]||'validation-browser.json';
+const browser=await puppeteer.launch({executablePath:'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',headless:true,args:['--enable-unsafe-swiftshader','--autoplay-policy=no-user-gesture-required'],defaultViewport:{width:1200,height:800}});
+const page=await browser.newPage();let latest;await page.exposeFunction('captureValidationReport',value=>{latest=JSON.parse(value);console.log(latest.phase);});
+try{await page.goto(url);await page.waitForFunction(()=>window.hmValidation,{timeout:60000});await page.evaluate(()=>{window.__TAURI__={core:{invoke:async(name,args)=>{if(name==='backup_status')throw Error('Production command unavailable in validation fixture');if(name==='validation_report')return window.captureValidationReport(args.report);throw Error('Unexpected native command '+name);}}};window.__hmValidationAutorun=true;});await page.addScriptTag({content:fs.readFileSync(new URL('../frontend/validation.js',import.meta.url),'utf8')});const deadline=Date.now()+180000;while(latest?.phase!=='complete'){if(Date.now()>deadline)throw Error('Host script timeout');await new Promise(r=>setTimeout(r,500));}latest.platform='chrome-validation-host-fixture';latest.nativeIPC='mocked; separate WKWebView execution is required';fs.mkdirSync(path.dirname(out),{recursive:true});fs.writeFileSync(out,JSON.stringify(latest,null,2)+'\n');console.log(JSON.stringify({ok:latest.ok,units:latest.units.length,weapons:latest.weapons.length,errors:latest.errors}));if(!latest.ok)process.exitCode=1;}finally{await browser.close();}

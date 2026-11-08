@@ -9,14 +9,14 @@
 #include "GameSession.hpp"
 #undef private
 #include "../Sources/Core/GameSession.cpp"
-#include "GroundAA.hpp"
+#include "RuntimeUnitTestSupport.hpp"
 #include <cassert>
 #include <fstream>
 #include <iostream>
 #include <set>
 using namespace heavymach;
 struct TerrainHost:WorldHost {Vector2 tileSize(std::string_view)override{return {480,320};}void spawnMapObject(const MapObjectDefinition&,int)override{}void spawnEnemy(const EnemyDefinition&)override{}void spawnPlayer(Vector2)override{}void event(const WorldEvent&)override{}};
-int main(){const auto root=std::filesystem::path(__FILE__).parent_path().parent_path();auto data=GameData::loadDirectory(root/"Resources/RawData");addVTOLExpansion(data);addFighterExpansion(data);addGroundAAExpansion(data);int landed=0;
+int main(){const auto root=std::filesystem::path(__FILE__).parent_path().parent_path();auto data=GameData::loadDirectory(root/"Resources/RuntimeData",true);int landed=0;
  for(const auto& row:groundAAPlan(data)){TerrainHost host;WorldState world;world.openMap(data.maps.at(row.map),0,host);
   for(const auto& spawn:world.map.enemies)if(isGroundAA(spawn.name)){
    GobHvMach enemy;enemy.machType=0;enemy.machState=2;enemy.position=spawn.position;enemy.useEngineBounce=true;
@@ -26,7 +26,7 @@ int main(){const auto root=std::filesystem::path(__FILE__).parent_path().parent_
   }
  }
  std::cout<<"all "<<landed<<" authored new spawn points landed and moved left/right on original terrain\n";
- auto dims=[&](std::string_view name){if(auto art=groundAAImage(name))return art->size;auto path=root/"Resources/Images"/name;std::ifstream f(path,std::ios::binary);unsigned char b[24]{};f.read((char*)b,24);if(f.gcount()!=24)return Vector2{40,12};auto be=[&](int n){return uint32_t(b[n])<<24|uint32_t(b[n+1])<<16|uint32_t(b[n+2])<<8|b[n+3];};return Vector2{float(be(16)),float(be(20))};};
+ auto dims=[&](std::string_view name){return contractTileSize(root,name);};
  // Actual session collision/damage path, all twenty player weapons, both units.
  // Flat fixture isolates hit registration from terrain interception and aiming.
  auto& map=data.maps.at("Stage01");map.enemies.clear();map.objects.clear();map.left=0;map.right=3000;map.bottom=-200;map.collisionPaths={{{0,0},{3000,0}}};

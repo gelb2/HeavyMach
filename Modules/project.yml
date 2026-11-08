@@ -25,6 +25,9 @@ targets:
       excludes:
       - SpriteRaster.cpp
       - TrailRaster.cpp
+      - VTOL.cpp
+      - Fighters.cpp
+      - GroundAA.cpp
     - path: ../Sources/Core/SpriteRaster.cpp
       compilerFlags: -O2
     - path: ../Sources/Core/TrailRaster.cpp
@@ -48,6 +51,9 @@ targets:
       excludes:
       - SpriteRaster.cpp
       - TrailRaster.cpp
+      - VTOL.cpp
+      - Fighters.cpp
+      - GroundAA.cpp
     - path: ../Sources/Core/SpriteRaster.cpp
       compilerFlags: -O2
     - path: ../Sources/Core/TrailRaster.cpp
@@ -67,21 +73,17 @@ targets:
     - iOS
     - macOS
     sources:
-    - path: ../Resources/OriginalImages
-      type: folder
-      buildPhase: resources
     - path: ../Resources/Images
       type: folder
       buildPhase: resources
     - path: ../Resources/Audio
       type: folder
       buildPhase: resources
-    - path: ../Resources/RawData
-      type: folder
-      buildPhase: resources
-    - path: ../Art/Extensions
-      type: folder
-      buildPhase: resources
+    postBuildScripts:
+    - name: Stage verified runtime resources
+      basedOnDependencyAnalysis: false
+      script: |
+        python3 "$SRCROOT/../tools/stage_runtime_assets.py" --profile apple --destination "$TARGET_BUILD_DIR/$UNLOCALIZED_RESOURCES_FOLDER_PATH"
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.gelb2.heavymach.assets

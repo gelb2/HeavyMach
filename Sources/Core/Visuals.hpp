@@ -26,6 +26,13 @@ struct PartsState {
  float rotation=999,previousX=0; // 0x114d8 sentinel forces first anchor refresh.
  int tileFrame=0;
 };
+// Common optional presentation contract; original parts have no override.
+const PartFrame* presentationFrame(const PartsState&,double worldTime);
+void applyPartPresentation(DrawSprite&,const PartsState&,Vector2 ownerPosition,
+                           float ownerRotation,float verticalVelocity,double worldTime,
+                           Vector2 textureSize);
+Vector2 rotateAttachment(Vector2,float);
+float velocityPitch(float previous,float horizontal,float vertical,const MachineBehavior&);
 Vector2 partsSocketPosition(const PartsState&,uint8_t socket);
 void attachParts(PartsState&,const PartsState* base,uint8_t socket);
 void refreshPartsRotation(PartsState&,float parentRotation);

@@ -1,0 +1,3825 @@
+{
+  "schema": 1,
+  "purpose": "Offline preservation of the pre-hotfix 63 logical images",
+  "format": {
+    "encoding": "standard PNG (not CgBI)",
+    "bit_depth": 8,
+    "color_type": 6,
+    "alpha": "straight; exact inverse of current float32 premultiply",
+    "interlace": 0,
+    "chunks": [
+      "IHDR",
+      "IDAT",
+      "IEND"
+    ],
+    "filter": 0,
+    "zlib_level": 9
+  },
+  "baseline_source_sha256": {
+    "Sources/iOS/HMMedia.mm": "c3c45892a6c11589597243c92f9f2d3fb85731ce3a4ef6c50cf3df15db403872",
+    "Sources/Web/WebMedia.cpp": "71a7155405f2f4f3190d8e7b5a697d3e7bc995f0ef6008764c8d30037a2328c4",
+    "Android/app/src/main/cpp/Media.cpp": "94476de104580ded8132f9cfbc33821cc47f6f228f0596bb988a068c5d115fbd",
+    "Sources/iOS/HMCompatibilityPixels.hpp": "d4403e9db4bebeb6fe5c9e2eff45e956d6a8c369388817fa34c492e9cc968a79",
+    "Sources/Core/VTOL.cpp": "ffe82dfbd8170bf6e8b59241dce7b58b0f47f01aa623fac4e6c1c4700ff9fcb4",
+    "Sources/Core/Fighters.cpp": "d88d097dd602d73986179c6472b7f3c6ef85704ceaea9d5f43d4436802526763",
+    "Sources/Core/GroundAAArt.inc": "28b02ae179776cac2ca87f7eb93b4e7688f2d882ece361e537aabe8288cf2e36",
+    "vendor/stb/stb_image.h": "8b64b9e299f7a0305ac15737647c09603d2758bc01814809d7ed57856bc66a89"
+  },
+  "generator_sha256": {
+    "tools/prepare_unit_images.py": "77dc092a7ae146a19d4ffb5861fe9f74515d9d9f3078a501595289784d451907",
+    "tools/prepare_unit_images.mm": "6bfaa2b3ee0d23a5ce8ef5e690fba049ab01ae017c6792e19ba30f3d2f31ab6f"
+  },
+  "apple_bake_environment": {
+    "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+    "compiler": "Apple clang version 21.0.0 (clang-2100.3.34.2)"
+  },
+  "roundtrip_scope": "Native helper: baseline crop/filter and common stb/options/premultiply plus compatibility/POT; full application/device verification is separate",
+  "profiles": {
+    "apple": [
+      {
+        "file": "VTOL_Yak141.png",
+        "source": "Art/Extensions/VTOL_Yak141.png",
+        "source_sha256": "fdff4c3a7193738d2da9ecb0dd233397490a5e1dc29a65544726cd9c68ace626",
+        "source_crop": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "width": 112,
+        "height": 37,
+        "bytes": 4448,
+        "sha256": "38a667384b266446299ae0434b5e7ab39d81daddc46dda664d6e2e39579d9992",
+        "baseline_premultiplied_sha256": "889d6347e8f7473750fc6d233eb446501fc80dd5e646ab17709c1d6b7daf1494",
+        "decoded_premultiplied_sha256": "889d6347e8f7473750fc6d233eb446501fc80dd5e646ab17709c1d6b7daf1494",
+        "upload_rgba_sha256": "a6b12c04b2a8081872ddb9ace9daf82a8eef5b11368f1d822439ba22285c698f",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "VTOL_Harrier.png",
+        "source": "Art/Extensions/VTOL_Harrier.png",
+        "source_sha256": "9a523efede9a292a274671142430c7a028f49282235ab9248499a66f2c6d0dfb",
+        "source_crop": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "width": 108,
+        "height": 41,
+        "bytes": 4638,
+        "sha256": "17d731c012637dbe2c52c6a66015f92a79e9db976e081fe4f4b524957aed6e4d",
+        "baseline_premultiplied_sha256": "24e51a2cdd64de56c6c3610fd05031b859dc6766551369327e2d0923c79292c5",
+        "decoded_premultiplied_sha256": "24e51a2cdd64de56c6c3610fd05031b859dc6766551369327e2d0923c79292c5",
+        "upload_rgba_sha256": "79927ffc807c606771f750ee760e030eb146af513dfd1307a5440dac2f4d4562",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "VTOL_F35B.png",
+        "source": "Art/Extensions/VTOL_F35B.png",
+        "source_sha256": "8c2663b77851cde0665186c3ace3e7032de687e011162cfebe28fc71018a6913",
+        "source_crop": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "width": 116,
+        "height": 44,
+        "bytes": 5198,
+        "sha256": "3c268bff05158fe278c4e8937d74784e7d13a1984a2a8e90790e2cd3157a851f",
+        "baseline_premultiplied_sha256": "6aef9bd78ac15c2ae01581240318fe9dda92056a59b7e8c45145fae1296b2bc4",
+        "decoded_premultiplied_sha256": "6aef9bd78ac15c2ae01581240318fe9dda92056a59b7e8c45145fae1296b2bc4",
+        "upload_rgba_sha256": "00115139ed1767f8869b542e4d5b89dd60a2f276b7d0edcb158365f382220e63",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "Lux_F22.png",
+        "source": "Art/Extensions/Lux_F22.png",
+        "source_sha256": "8cf228dafd366849f50ce623901a1106dad35df4ccb451e1de6e346c79f6f082",
+        "source_crop": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "width": 112,
+        "height": 49,
+        "bytes": 4840,
+        "sha256": "4c65eb6555084935a2d1b8fbe4bf4555889071110324adafe3dd73784c722760",
+        "baseline_premultiplied_sha256": "7fc3009adadccd0090881724d719d2069c2aba72d79dede32092fc4d3546b5f5",
+        "decoded_premultiplied_sha256": "7fc3009adadccd0090881724d719d2069c2aba72d79dede32092fc4d3546b5f5",
+        "upload_rgba_sha256": "7e493e19b9ec959c9d149508940268d537ce6f140293cecc2fbcff73ecc58774",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "Lux_Su57.png",
+        "source": "Art/Extensions/Lux_Su57.png",
+        "source_sha256": "d8797d4559d71df8923e3d755f4f51237053a3ec1d374f0022834111b775a197",
+        "source_crop": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "width": 116,
+        "height": 42,
+        "bytes": 4819,
+        "sha256": "6b02bfdf620f489db1994cfb3102bffac671861b805db200d21c688fbf0153cf",
+        "baseline_premultiplied_sha256": "1f54b1f5a829eff12d565e5674f29b0f8041f63563b98053d8cda50e20aea842",
+        "decoded_premultiplied_sha256": "1f54b1f5a829eff12d565e5674f29b0f8041f63563b98053d8cda50e20aea842",
+        "upload_rgba_sha256": "85b2e7ac5ccfde8bbc2a8caec53c9bedcd8b0cf86d2d1bf7465ffb6249ec9b61",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "Lux_MiG31.png",
+        "source": "Art/Extensions/Lux_MiG31.png",
+        "source_sha256": "ef9351c5bb4112c0bc10befa489ae989d3b341e69da29a047c6570d3c468260d",
+        "source_crop": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "width": 120,
+        "height": 40,
+        "bytes": 4648,
+        "sha256": "887603726fe0c89bcaca44f3cc2f6fa42bff76b1ff25ca685393bbcaad19bee9",
+        "baseline_premultiplied_sha256": "4dff76dfc42b9c27b720520fedb1ddcb631ba47373934b21db698743bb40ee62",
+        "decoded_premultiplied_sha256": "4dff76dfc42b9c27b720520fedb1ddcb631ba47373934b21db698743bb40ee62",
+        "upload_rgba_sha256": "c02a2e8db6e4ec13eba63474304524740c3084cf02ad2f255cb17476320d7437",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Shilka_Body.png",
+        "source": "Art/Extensions/GAA_Shilka_Parts_v2.png",
+        "source_sha256": "53bb7031b265ab3439d64c217259f75d2351359fdd446e2519fef174339c8e6a",
+        "source_crop": [
+          95,
+          26,
+          1307,
+          282
+        ],
+        "width": 80,
+        "height": 18,
+        "bytes": 4316,
+        "sha256": "dd7875c09c7b85b7ee78ac37969c4691f85d5ae9d70ca574cbd2089497b0a89c",
+        "baseline_premultiplied_sha256": "db0059cb4078f2198e7ca6c89f07b8c104bb04643db4e4eef3e67e4fcbbcb9db",
+        "decoded_premultiplied_sha256": "db0059cb4078f2198e7ca6c89f07b8c104bb04643db4e4eef3e67e4fcbbcb9db",
+        "upload_rgba_sha256": "9ab8c35118c6b35a7974121c323408e084657380519d8b36f66051812119a933",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Shilka_Body2.png",
+        "source": "Art/Extensions/GAA_Shilka_Parts_v2.png",
+        "source_sha256": "53bb7031b265ab3439d64c217259f75d2351359fdd446e2519fef174339c8e6a",
+        "source_crop": [
+          96,
+          343,
+          1309,
+          282
+        ],
+        "width": 80,
+        "height": 18,
+        "bytes": 4250,
+        "sha256": "ef8974a6e316e96a43b52bcf2f461c1cc0e0aace0efa7a6321505d862600eb15",
+        "baseline_premultiplied_sha256": "8ce85f2ab6b9f2314055d1c143ba1fe952cae3148ac1bf6342a2109bfba8cd2c",
+        "decoded_premultiplied_sha256": "8ce85f2ab6b9f2314055d1c143ba1fe952cae3148ac1bf6342a2109bfba8cd2c",
+        "upload_rgba_sha256": "75a1dfeb101af75791cda829aeeecb50bad24b3aba1346dfddee6d830058e28d",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Shilka_Turret.png",
+        "source": "Art/Extensions/GAA_Shilka_Turret_v3.png",
+        "source_sha256": "b6d21f38c6ea995e58cb16dbf7f7f5f6f11e004d2ec2c2915b39749d6b03c331",
+        "source_crop": [
+          84,
+          95,
+          1804,
+          578
+        ],
+        "width": 51,
+        "height": 29,
+        "bytes": 3684,
+        "sha256": "49969a71b0f2f58c08652de43bd7c9816bed900ddba0acb8a3bbff9aa855d97f",
+        "baseline_premultiplied_sha256": "11c9c4f36d841e56aef0a6c91c9eb301470c938bfc43d14b69ac42fc244a5802",
+        "decoded_premultiplied_sha256": "11c9c4f36d841e56aef0a6c91c9eb301470c938bfc43d14b69ac42fc244a5802",
+        "upload_rgba_sha256": "74a8dd9a65c69fc7129be4b65532d67b931ea777e18ac8209d29543634d4e366",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Shilka_Gun.png",
+        "source": "Art/Extensions/GAA_Shilka_Parts_v2.png",
+        "source_sha256": "53bb7031b265ab3439d64c217259f75d2351359fdd446e2519fef174339c8e6a",
+        "source_crop": [
+          445,
+          904,
+          580,
+          113
+        ],
+        "width": 32,
+        "height": 6,
+        "bytes": 711,
+        "sha256": "7e3160127d5b45e760e0c4bad999090e45ae296dd2ca1abebc0e0c458318816e",
+        "baseline_premultiplied_sha256": "622d8caf6c98d766ab7bf44eaf97cf35b864b5820075117a7b9eebce5f4b923f",
+        "decoded_premultiplied_sha256": "622d8caf6c98d766ab7bf44eaf97cf35b864b5820075117a7b9eebce5f4b923f",
+        "upload_rgba_sha256": "265137552ea916ebe583b1b0e79783af718955d0a0165408bb92f82d356cef8c",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Tunguska_Body.png",
+        "source": "Art/Extensions/GAA_Tunguska_Parts_v2.png",
+        "source_sha256": "a43afb7e3111085b6c1d9d841d3640976211e33e951537fef81324b48a3dcc8a",
+        "source_crop": [
+          12,
+          93,
+          998,
+          265
+        ],
+        "width": 85,
+        "height": 22,
+        "bytes": 5465,
+        "sha256": "09e2ce9b0cd49e898fa9429395a32614f257fc03df57a5fd3c8ec65014d936cb",
+        "baseline_premultiplied_sha256": "fe82d03c3882cecd4cb6b942ef5673a1ecaa402e4f9e7347578275b8afbad474",
+        "decoded_premultiplied_sha256": "fe82d03c3882cecd4cb6b942ef5673a1ecaa402e4f9e7347578275b8afbad474",
+        "upload_rgba_sha256": "095f7347c8863a781beeba239c4c9c4632a442014ffe7d55fd9aa63f6d02e4d8",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Tunguska_Body2.png",
+        "source": "Art/Extensions/GAA_Tunguska_Parts_v2.png",
+        "source_sha256": "a43afb7e3111085b6c1d9d841d3640976211e33e951537fef81324b48a3dcc8a",
+        "source_crop": [
+          13,
+          417,
+          999,
+          265
+        ],
+        "width": 85,
+        "height": 22,
+        "bytes": 5451,
+        "sha256": "33e90b69dd8ab2f49862df326b356e48105b4ad835d2420d994491e6caf60d92",
+        "baseline_premultiplied_sha256": "a9d64b012d8aa06bb6b890de14b900d9123d047e5e58b1ad53dd7394e853bae6",
+        "decoded_premultiplied_sha256": "a9d64b012d8aa06bb6b890de14b900d9123d047e5e58b1ad53dd7394e853bae6",
+        "upload_rgba_sha256": "7ec9328c5e150926ca8516718a277a9c99cc96e22c919c368a16a41d0cd140e4",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Tunguska_Turret.png",
+        "source": "Art/Extensions/GAA_Tunguska_Parts_v2.png",
+        "source_sha256": "a43afb7e3111085b6c1d9d841d3640976211e33e951537fef81324b48a3dcc8a",
+        "source_crop": [
+          199,
+          690,
+          776,
+          447
+        ],
+        "width": 50,
+        "height": 29,
+        "bytes": 2915,
+        "sha256": "217e769bcb3b3f67b9e4c03c02b4c2b3e1a224967042d7b2287a3076334cdd9f",
+        "baseline_premultiplied_sha256": "a98c1df3d9376a1aad0810cea62045da6bf3d578ca7c0099bd6ffa69147eb55e",
+        "decoded_premultiplied_sha256": "a98c1df3d9376a1aad0810cea62045da6bf3d578ca7c0099bd6ffa69147eb55e",
+        "upload_rgba_sha256": "41c9c848f2386fd56872634d95eedeb33f08fde2f6ff21fd26487f36a70f7dd1",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Tunguska_Gun.png",
+        "source": "Art/Extensions/GAA_Tunguska_Parts_v2.png",
+        "source_sha256": "a43afb7e3111085b6c1d9d841d3640976211e33e951537fef81324b48a3dcc8a",
+        "source_crop": [
+          110,
+          1167,
+          706,
+          137
+        ],
+        "width": 37,
+        "height": 7,
+        "bytes": 832,
+        "sha256": "9f9c2e0d792e75b2fd4fe2eea569b34a654b6b5b16ad87335ed544809824c950",
+        "baseline_premultiplied_sha256": "cadf3d54885a08ccd03ceb1b3675c73fa122155a4b7d6520a50df2c25356889e",
+        "decoded_premultiplied_sha256": "cadf3d54885a08ccd03ceb1b3675c73fa122155a4b7d6520a50df2c25356889e",
+        "upload_rgba_sha256": "a10b56133508b6968f0b4b9e2e796c0c71c1d77ccbdebb17db6cd3d15c3d9d94",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Tunguska_Missile.png",
+        "source": "Art/Extensions/GAA_Tunguska_Parts_v2.png",
+        "source_sha256": "a43afb7e3111085b6c1d9d841d3640976211e33e951537fef81324b48a3dcc8a",
+        "source_crop": [
+          347,
+          1323,
+          378,
+          194
+        ],
+        "width": 30,
+        "height": 15,
+        "bytes": 1502,
+        "sha256": "a362a1a126e2cb7cb3f4bf5fd55dc975abf2d1f28762729367f77fde4c2b8a82",
+        "baseline_premultiplied_sha256": "b410757d4f15ea01b9116449390aea7801817aa5e98395ddcab4cf6184fc04d2",
+        "decoded_premultiplied_sha256": "b410757d4f15ea01b9116449390aea7801817aa5e98395ddcab4cf6184fc04d2",
+        "upload_rgba_sha256": "351c9dc375b934776647275a25a1ba22c4706fe3921db883c50487572fc65504",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Shilka_Radar0.png",
+        "source": "Art/Extensions/GAA_Shilka_Radar_v2.png",
+        "source_sha256": "8c6f7624ffb0962f9690adce0e74d54e71fac9b3a814ab4f2afe568989eba167",
+        "source_crop": [
+          0,
+          0,
+          256,
+          256
+        ],
+        "width": 16,
+        "height": 16,
+        "bytes": 641,
+        "sha256": "699176c5002a38b5bf214cb9709685214d84452650a465251f7eed86b81a49f7",
+        "baseline_premultiplied_sha256": "2ee0d95148a3aba0981ecc5223b7559044f5e9503fc09008631dde8ba50677a9",
+        "decoded_premultiplied_sha256": "2ee0d95148a3aba0981ecc5223b7559044f5e9503fc09008631dde8ba50677a9",
+        "upload_rgba_sha256": "2ee0d95148a3aba0981ecc5223b7559044f5e9503fc09008631dde8ba50677a9",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Shilka_Radar1.png",
+        "source": "Art/Extensions/GAA_Shilka_Radar_v2.png",
+        "source_sha256": "8c6f7624ffb0962f9690adce0e74d54e71fac9b3a814ab4f2afe568989eba167",
+        "source_crop": [
+          256,
+          0,
+          256,
+          256
+        ],
+        "width": 16,
+        "height": 16,
+        "bytes": 675,
+        "sha256": "94c603034a9cb87e24258e4f897a179311d7a1f819a8fc6442855c7514b6a0a3",
+        "baseline_premultiplied_sha256": "72f70b5015d2f8ce074e6a2c0bc9d578e941f640e773839e2455b826e231e4ee",
+        "decoded_premultiplied_sha256": "72f70b5015d2f8ce074e6a2c0bc9d578e941f640e773839e2455b826e231e4ee",
+        "upload_rgba_sha256": "72f70b5015d2f8ce074e6a2c0bc9d578e941f640e773839e2455b826e231e4ee",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Shilka_Radar2.png",
+        "source": "Art/Extensions/GAA_Shilka_Radar_v2.png",
+        "source_sha256": "8c6f7624ffb0962f9690adce0e74d54e71fac9b3a814ab4f2afe568989eba167",
+        "source_crop": [
+          512,
+          0,
+          256,
+          256
+        ],
+        "width": 16,
+        "height": 16,
+        "bytes": 686,
+        "sha256": "83fcf524377bc89893bb0866817b1723476969df02b5ba3b4b839c815dd82c37",
+        "baseline_premultiplied_sha256": "432394a33dab43eac8e1979d145f47d7d466d1c5aafcae78adc2b41acba2a724",
+        "decoded_premultiplied_sha256": "432394a33dab43eac8e1979d145f47d7d466d1c5aafcae78adc2b41acba2a724",
+        "upload_rgba_sha256": "432394a33dab43eac8e1979d145f47d7d466d1c5aafcae78adc2b41acba2a724",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Shilka_Radar3.png",
+        "source": "Art/Extensions/GAA_Shilka_Radar_v2.png",
+        "source_sha256": "8c6f7624ffb0962f9690adce0e74d54e71fac9b3a814ab4f2afe568989eba167",
+        "source_crop": [
+          768,
+          0,
+          256,
+          256
+        ],
+        "width": 16,
+        "height": 16,
+        "bytes": 672,
+        "sha256": "f0c1beb1229ee13fbb90fa55cd8e0fbf7b1a7c41f5ccb00004795060a1435b86",
+        "baseline_premultiplied_sha256": "d7c04eae67cfd5feb69b043b1c82129badcdb9725b666bd584b61433beb4d77f",
+        "decoded_premultiplied_sha256": "d7c04eae67cfd5feb69b043b1c82129badcdb9725b666bd584b61433beb4d77f",
+        "upload_rgba_sha256": "d7c04eae67cfd5feb69b043b1c82129badcdb9725b666bd584b61433beb4d77f",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Shilka_Radar4.png",
+        "source": "Art/Extensions/GAA_Shilka_Radar_v2.png",
+        "source_sha256": "8c6f7624ffb0962f9690adce0e74d54e71fac9b3a814ab4f2afe568989eba167",
+        "source_crop": [
+          1024,
+          0,
+          256,
+          256
+        ],
+        "width": 16,
+        "height": 16,
+        "bytes": 639,
+        "sha256": "20374a6c9eb882bea22824f7252caf360d88a222136fd1348a6eb4d498476c60",
+        "baseline_premultiplied_sha256": "7ad71f68a9fd989c3e944f7d6fa423f2b3090d5ca3a00745b0fede877ceb628e",
+        "decoded_premultiplied_sha256": "7ad71f68a9fd989c3e944f7d6fa423f2b3090d5ca3a00745b0fede877ceb628e",
+        "upload_rgba_sha256": "7ad71f68a9fd989c3e944f7d6fa423f2b3090d5ca3a00745b0fede877ceb628e",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Shilka_Radar5.png",
+        "source": "Art/Extensions/GAA_Shilka_Radar_v2.png",
+        "source_sha256": "8c6f7624ffb0962f9690adce0e74d54e71fac9b3a814ab4f2afe568989eba167",
+        "source_crop": [
+          1280,
+          0,
+          256,
+          256
+        ],
+        "width": 16,
+        "height": 16,
+        "bytes": 600,
+        "sha256": "833527eac1936ea8e4b65bb68098ad68963ff6fdcbeabbe649ebcc7f2999da44",
+        "baseline_premultiplied_sha256": "231bdc73b3169c3de63b2aa46ac236a16a18df69286f6ecb7e45d284d9307b99",
+        "decoded_premultiplied_sha256": "231bdc73b3169c3de63b2aa46ac236a16a18df69286f6ecb7e45d284d9307b99",
+        "upload_rgba_sha256": "231bdc73b3169c3de63b2aa46ac236a16a18df69286f6ecb7e45d284d9307b99",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Shilka_Radar6.png",
+        "source": "Art/Extensions/GAA_Shilka_Radar_v2.png",
+        "source_sha256": "8c6f7624ffb0962f9690adce0e74d54e71fac9b3a814ab4f2afe568989eba167",
+        "source_crop": [
+          0,
+          256,
+          256,
+          256
+        ],
+        "width": 16,
+        "height": 16,
+        "bytes": 487,
+        "sha256": "61c8033c60206aa62be48d3290a48314ce3f31c5fa982d7ebd2ae85b303b95cc",
+        "baseline_premultiplied_sha256": "9ba6295470da69e7abb7ff9c772888335d32dda9fceaaa4321e779af1ee0d180",
+        "decoded_premultiplied_sha256": "9ba6295470da69e7abb7ff9c772888335d32dda9fceaaa4321e779af1ee0d180",
+        "upload_rgba_sha256": "9ba6295470da69e7abb7ff9c772888335d32dda9fceaaa4321e779af1ee0d180",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Shilka_Radar7.png",
+        "source": "Art/Extensions/GAA_Shilka_Radar_v2.png",
+        "source_sha256": "8c6f7624ffb0962f9690adce0e74d54e71fac9b3a814ab4f2afe568989eba167",
+        "source_crop": [
+          256,
+          256,
+          256,
+          256
+        ],
+        "width": 16,
+        "height": 16,
+        "bytes": 513,
+        "sha256": "32a730a349b9f4a4a0690c6ed805bb2468f16127e1935217606c31ddc580b119",
+        "baseline_premultiplied_sha256": "92f602359829022f14057dcf64b0cb8fe866ed310e7f36c1ce6ed9219bf6431a",
+        "decoded_premultiplied_sha256": "92f602359829022f14057dcf64b0cb8fe866ed310e7f36c1ce6ed9219bf6431a",
+        "upload_rgba_sha256": "92f602359829022f14057dcf64b0cb8fe866ed310e7f36c1ce6ed9219bf6431a",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Shilka_Radar8.png",
+        "source": "Art/Extensions/GAA_Shilka_Radar_v2.png",
+        "source_sha256": "8c6f7624ffb0962f9690adce0e74d54e71fac9b3a814ab4f2afe568989eba167",
+        "source_crop": [
+          512,
+          256,
+          256,
+          256
+        ],
+        "width": 16,
+        "height": 16,
+        "bytes": 537,
+        "sha256": "aec65d747769f042de82d9062617c2d14407933f277f56243daf5cac77ceb3dd",
+        "baseline_premultiplied_sha256": "e7c073ae82e21f705040bea6914514117c68e0fa08e7c2cb6e9cd0a2d6b32bf8",
+        "decoded_premultiplied_sha256": "e7c073ae82e21f705040bea6914514117c68e0fa08e7c2cb6e9cd0a2d6b32bf8",
+        "upload_rgba_sha256": "e7c073ae82e21f705040bea6914514117c68e0fa08e7c2cb6e9cd0a2d6b32bf8",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Shilka_Radar9.png",
+        "source": "Art/Extensions/GAA_Shilka_Radar_v2.png",
+        "source_sha256": "8c6f7624ffb0962f9690adce0e74d54e71fac9b3a814ab4f2afe568989eba167",
+        "source_crop": [
+          768,
+          256,
+          256,
+          256
+        ],
+        "width": 16,
+        "height": 16,
+        "bytes": 570,
+        "sha256": "40ed4c60f1f621824eb1304bc56e7039bef04785f945e6d833752e54e6087530",
+        "baseline_premultiplied_sha256": "a238609b6599b17a9fe6f32126d61476737ce6d9fa9298fd8416ac96c2a0abcb",
+        "decoded_premultiplied_sha256": "a238609b6599b17a9fe6f32126d61476737ce6d9fa9298fd8416ac96c2a0abcb",
+        "upload_rgba_sha256": "a238609b6599b17a9fe6f32126d61476737ce6d9fa9298fd8416ac96c2a0abcb",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Shilka_Radar10.png",
+        "source": "Art/Extensions/GAA_Shilka_Radar_v2.png",
+        "source_sha256": "8c6f7624ffb0962f9690adce0e74d54e71fac9b3a814ab4f2afe568989eba167",
+        "source_crop": [
+          1024,
+          256,
+          256,
+          256
+        ],
+        "width": 16,
+        "height": 16,
+        "bytes": 617,
+        "sha256": "3c7d40dfcccbe76f385f6b6fad7de1e94fc36002f932915a690f9ea27d20d342",
+        "baseline_premultiplied_sha256": "7725abbaba12cd2ceb8e29c0e0461a8c662f4dc5b3ad13c4b947d20168adbe9f",
+        "decoded_premultiplied_sha256": "7725abbaba12cd2ceb8e29c0e0461a8c662f4dc5b3ad13c4b947d20168adbe9f",
+        "upload_rgba_sha256": "7725abbaba12cd2ceb8e29c0e0461a8c662f4dc5b3ad13c4b947d20168adbe9f",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Shilka_Radar11.png",
+        "source": "Art/Extensions/GAA_Shilka_Radar_v2.png",
+        "source_sha256": "8c6f7624ffb0962f9690adce0e74d54e71fac9b3a814ab4f2afe568989eba167",
+        "source_crop": [
+          1280,
+          256,
+          256,
+          256
+        ],
+        "width": 16,
+        "height": 16,
+        "bytes": 607,
+        "sha256": "aef40a14d02bfc5a6babfa4b95cf92d1e27eb7a936235a120f48b616a5e7cbd5",
+        "baseline_premultiplied_sha256": "3ae1739ad6dce593acabe21519a55b570d44022432aaa5fef24e3a5e6f55768e",
+        "decoded_premultiplied_sha256": "3ae1739ad6dce593acabe21519a55b570d44022432aaa5fef24e3a5e6f55768e",
+        "upload_rgba_sha256": "3ae1739ad6dce593acabe21519a55b570d44022432aaa5fef24e3a5e6f55768e",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Shilka_Radar12.png",
+        "source": "Art/Extensions/GAA_Shilka_Radar_v2.png",
+        "source_sha256": "8c6f7624ffb0962f9690adce0e74d54e71fac9b3a814ab4f2afe568989eba167",
+        "source_crop": [
+          0,
+          512,
+          256,
+          256
+        ],
+        "width": 16,
+        "height": 16,
+        "bytes": 735,
+        "sha256": "6206fb067136b0ab105b08fd3db4612af9b946af872a5f8fa7b00b1cc47d58a9",
+        "baseline_premultiplied_sha256": "88f732bacf458cb5e894f71a75cccad9c3c10b842a1fecda55e1894e73dd696a",
+        "decoded_premultiplied_sha256": "88f732bacf458cb5e894f71a75cccad9c3c10b842a1fecda55e1894e73dd696a",
+        "upload_rgba_sha256": "88f732bacf458cb5e894f71a75cccad9c3c10b842a1fecda55e1894e73dd696a",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Shilka_Radar13.png",
+        "source": "Art/Extensions/GAA_Shilka_Radar_v2.png",
+        "source_sha256": "8c6f7624ffb0962f9690adce0e74d54e71fac9b3a814ab4f2afe568989eba167",
+        "source_crop": [
+          256,
+          512,
+          256,
+          256
+        ],
+        "width": 16,
+        "height": 16,
+        "bytes": 703,
+        "sha256": "8b969929ae6caeea7feb32ad2d9deb820208d0662f58e9bb9cad050a680b0d39",
+        "baseline_premultiplied_sha256": "5c00fdd6763a5e36b7fe435c2389504460de16c3e5de2be2496066fd4425e315",
+        "decoded_premultiplied_sha256": "5c00fdd6763a5e36b7fe435c2389504460de16c3e5de2be2496066fd4425e315",
+        "upload_rgba_sha256": "5c00fdd6763a5e36b7fe435c2389504460de16c3e5de2be2496066fd4425e315",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Shilka_Radar14.png",
+        "source": "Art/Extensions/GAA_Shilka_Radar_v2.png",
+        "source_sha256": "8c6f7624ffb0962f9690adce0e74d54e71fac9b3a814ab4f2afe568989eba167",
+        "source_crop": [
+          512,
+          512,
+          256,
+          256
+        ],
+        "width": 16,
+        "height": 16,
+        "bytes": 707,
+        "sha256": "3ec8f748464cb7fb3dbad9f7f484b7d2b944c24301fd7a4aedca506b5fcd3488",
+        "baseline_premultiplied_sha256": "9c28dcf27bd4ca9fa1aae738735f146717c3ba61234235106a9f0df7b202a98b",
+        "decoded_premultiplied_sha256": "9c28dcf27bd4ca9fa1aae738735f146717c3ba61234235106a9f0df7b202a98b",
+        "upload_rgba_sha256": "9c28dcf27bd4ca9fa1aae738735f146717c3ba61234235106a9f0df7b202a98b",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Shilka_Radar15.png",
+        "source": "Art/Extensions/GAA_Shilka_Radar_v2.png",
+        "source_sha256": "8c6f7624ffb0962f9690adce0e74d54e71fac9b3a814ab4f2afe568989eba167",
+        "source_crop": [
+          768,
+          512,
+          256,
+          256
+        ],
+        "width": 16,
+        "height": 16,
+        "bytes": 646,
+        "sha256": "124e73d928e0d329292d684264f062c36cb1deb7e7192ade5d3f9b57cf669a12",
+        "baseline_premultiplied_sha256": "8613351cf430cf1c961dfcec9de402394a1541fbf72dfa29fb00969320bdb073",
+        "decoded_premultiplied_sha256": "8613351cf430cf1c961dfcec9de402394a1541fbf72dfa29fb00969320bdb073",
+        "upload_rgba_sha256": "8613351cf430cf1c961dfcec9de402394a1541fbf72dfa29fb00969320bdb073",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Shilka_Radar16.png",
+        "source": "Art/Extensions/GAA_Shilka_Radar_v2.png",
+        "source_sha256": "8c6f7624ffb0962f9690adce0e74d54e71fac9b3a814ab4f2afe568989eba167",
+        "source_crop": [
+          1024,
+          512,
+          256,
+          256
+        ],
+        "width": 16,
+        "height": 16,
+        "bytes": 643,
+        "sha256": "00e4538a2a6cd40fb014cebaa011915562329108c083161a30a0b35329601e8f",
+        "baseline_premultiplied_sha256": "f0acbf93447e4310bb50ea0816d9eb869226be277a7944ffcf454370d63bed26",
+        "decoded_premultiplied_sha256": "f0acbf93447e4310bb50ea0816d9eb869226be277a7944ffcf454370d63bed26",
+        "upload_rgba_sha256": "f0acbf93447e4310bb50ea0816d9eb869226be277a7944ffcf454370d63bed26",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Shilka_Radar17.png",
+        "source": "Art/Extensions/GAA_Shilka_Radar_v2.png",
+        "source_sha256": "8c6f7624ffb0962f9690adce0e74d54e71fac9b3a814ab4f2afe568989eba167",
+        "source_crop": [
+          1280,
+          512,
+          256,
+          256
+        ],
+        "width": 16,
+        "height": 16,
+        "bytes": 604,
+        "sha256": "88cf341b9af155a87de62561c72b50385b0f5310099c51f352ab0eb6199bd27a",
+        "baseline_premultiplied_sha256": "1827904a3f860604a15dd3c30ae7a4f9fb17ff7f90ede6d20e251be8cb694b47",
+        "decoded_premultiplied_sha256": "1827904a3f860604a15dd3c30ae7a4f9fb17ff7f90ede6d20e251be8cb694b47",
+        "upload_rgba_sha256": "1827904a3f860604a15dd3c30ae7a4f9fb17ff7f90ede6d20e251be8cb694b47",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Shilka_Radar18.png",
+        "source": "Art/Extensions/GAA_Shilka_Radar_v2.png",
+        "source_sha256": "8c6f7624ffb0962f9690adce0e74d54e71fac9b3a814ab4f2afe568989eba167",
+        "source_crop": [
+          0,
+          768,
+          256,
+          256
+        ],
+        "width": 16,
+        "height": 16,
+        "bytes": 469,
+        "sha256": "58570f4c44e898ac60dcb13b0bedb1b175944187912b93c6253db51010adc36f",
+        "baseline_premultiplied_sha256": "f776f426d77d0186f8d9028487aa4e51dc77a60bc66337397df8776190f910fe",
+        "decoded_premultiplied_sha256": "f776f426d77d0186f8d9028487aa4e51dc77a60bc66337397df8776190f910fe",
+        "upload_rgba_sha256": "f776f426d77d0186f8d9028487aa4e51dc77a60bc66337397df8776190f910fe",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Shilka_Radar19.png",
+        "source": "Art/Extensions/GAA_Shilka_Radar_v2.png",
+        "source_sha256": "8c6f7624ffb0962f9690adce0e74d54e71fac9b3a814ab4f2afe568989eba167",
+        "source_crop": [
+          256,
+          768,
+          256,
+          256
+        ],
+        "width": 16,
+        "height": 16,
+        "bytes": 601,
+        "sha256": "02828eb284b07a89c0aa44b91356719f2a256464e150e297d7826a42539166c5",
+        "baseline_premultiplied_sha256": "64ef0715623acfd97dc92b8c5e8199f33a8fea52a3f0ae965a257b7287a71248",
+        "decoded_premultiplied_sha256": "64ef0715623acfd97dc92b8c5e8199f33a8fea52a3f0ae965a257b7287a71248",
+        "upload_rgba_sha256": "64ef0715623acfd97dc92b8c5e8199f33a8fea52a3f0ae965a257b7287a71248",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Shilka_Radar20.png",
+        "source": "Art/Extensions/GAA_Shilka_Radar_v2.png",
+        "source_sha256": "8c6f7624ffb0962f9690adce0e74d54e71fac9b3a814ab4f2afe568989eba167",
+        "source_crop": [
+          512,
+          768,
+          256,
+          256
+        ],
+        "width": 16,
+        "height": 16,
+        "bytes": 646,
+        "sha256": "88a058a8f76dbc4ac8898941dcbf37e792d95fa4e08555990ba57a1df6ee762b",
+        "baseline_premultiplied_sha256": "2b23df12c035e7c1dbe6e004990842bdd29c8a195b3738f22a6ed97c20ccbc95",
+        "decoded_premultiplied_sha256": "2b23df12c035e7c1dbe6e004990842bdd29c8a195b3738f22a6ed97c20ccbc95",
+        "upload_rgba_sha256": "2b23df12c035e7c1dbe6e004990842bdd29c8a195b3738f22a6ed97c20ccbc95",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Shilka_Radar21.png",
+        "source": "Art/Extensions/GAA_Shilka_Radar_v2.png",
+        "source_sha256": "8c6f7624ffb0962f9690adce0e74d54e71fac9b3a814ab4f2afe568989eba167",
+        "source_crop": [
+          768,
+          768,
+          256,
+          256
+        ],
+        "width": 16,
+        "height": 16,
+        "bytes": 651,
+        "sha256": "d99179788510c3b0baa8cf163c0177d5c74c3a5cdaf052347a1dbdaee1197f69",
+        "baseline_premultiplied_sha256": "da4fac34c8a5e196d5a6e334d3bb5598ac9b9d1d56b5b7232e4db744ab81610b",
+        "decoded_premultiplied_sha256": "da4fac34c8a5e196d5a6e334d3bb5598ac9b9d1d56b5b7232e4db744ab81610b",
+        "upload_rgba_sha256": "da4fac34c8a5e196d5a6e334d3bb5598ac9b9d1d56b5b7232e4db744ab81610b",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Shilka_Radar22.png",
+        "source": "Art/Extensions/GAA_Shilka_Radar_v2.png",
+        "source_sha256": "8c6f7624ffb0962f9690adce0e74d54e71fac9b3a814ab4f2afe568989eba167",
+        "source_crop": [
+          1024,
+          768,
+          256,
+          256
+        ],
+        "width": 16,
+        "height": 16,
+        "bytes": 680,
+        "sha256": "701d0e66adb856eef0cafa114a672a9ff9f05c885876329927503835838fa8c1",
+        "baseline_premultiplied_sha256": "f06412a8304a0e6066ec0f66bd6b76fcefe6d7543a98365e8a79539ac18881ca",
+        "decoded_premultiplied_sha256": "f06412a8304a0e6066ec0f66bd6b76fcefe6d7543a98365e8a79539ac18881ca",
+        "upload_rgba_sha256": "f06412a8304a0e6066ec0f66bd6b76fcefe6d7543a98365e8a79539ac18881ca",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Shilka_Radar23.png",
+        "source": "Art/Extensions/GAA_Shilka_Radar_v2.png",
+        "source_sha256": "8c6f7624ffb0962f9690adce0e74d54e71fac9b3a814ab4f2afe568989eba167",
+        "source_crop": [
+          1280,
+          768,
+          256,
+          256
+        ],
+        "width": 16,
+        "height": 16,
+        "bytes": 657,
+        "sha256": "9f4af7a3536af40fb2a2cf1203f823ac357beccf7bcf5f1a5d1bfb4420a33669",
+        "baseline_premultiplied_sha256": "22de39d1a324d06b013c720a8a081587019451558abe99266092b2de8da68b26",
+        "decoded_premultiplied_sha256": "22de39d1a324d06b013c720a8a081587019451558abe99266092b2de8da68b26",
+        "upload_rgba_sha256": "22de39d1a324d06b013c720a8a081587019451558abe99266092b2de8da68b26",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Tunguska_Radar0.png",
+        "source": "Art/Extensions/GAA_Tunguska_Radar_v2.png",
+        "source_sha256": "07c00647b1e714fabf8be6b0f1336983e490c437071158cd9d1db6d155646d02",
+        "source_crop": [
+          0,
+          0,
+          256,
+          256
+        ],
+        "width": 21,
+        "height": 21,
+        "bytes": 746,
+        "sha256": "965891fbcdd749ed5dd0b71a72592cd79a08c87aef7e1fdff2b924ee8843d8df",
+        "baseline_premultiplied_sha256": "49fbf5dfafd9c8c546f783014ac778ca7c5a744c82dcd19fe2843e8a17f6ee33",
+        "decoded_premultiplied_sha256": "49fbf5dfafd9c8c546f783014ac778ca7c5a744c82dcd19fe2843e8a17f6ee33",
+        "upload_rgba_sha256": "bb2cf79be519cdc4a4fb1e383b5f535deb022c4acff73a09fa893e8d38c45424",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Tunguska_Radar1.png",
+        "source": "Art/Extensions/GAA_Tunguska_Radar_v2.png",
+        "source_sha256": "07c00647b1e714fabf8be6b0f1336983e490c437071158cd9d1db6d155646d02",
+        "source_crop": [
+          256,
+          0,
+          256,
+          256
+        ],
+        "width": 21,
+        "height": 21,
+        "bytes": 794,
+        "sha256": "1c9cc216dbd0d6648d1c2ea571dd3e323a8dd37ed592c8c5cb1247b448306260",
+        "baseline_premultiplied_sha256": "97aa348ce3c336e025f946935aa3187e3be65e2deb6c515417ab150731c06a15",
+        "decoded_premultiplied_sha256": "97aa348ce3c336e025f946935aa3187e3be65e2deb6c515417ab150731c06a15",
+        "upload_rgba_sha256": "e441039803626841f1f1f597446e7efdd5431cf3cbeb540338f8afc7a1a36727",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Tunguska_Radar2.png",
+        "source": "Art/Extensions/GAA_Tunguska_Radar_v2.png",
+        "source_sha256": "07c00647b1e714fabf8be6b0f1336983e490c437071158cd9d1db6d155646d02",
+        "source_crop": [
+          512,
+          0,
+          256,
+          256
+        ],
+        "width": 21,
+        "height": 21,
+        "bytes": 817,
+        "sha256": "691449ce73b976a703b93d8cc49c41189d1fe9c3ab6e58963dd5bf4bf5cfdf91",
+        "baseline_premultiplied_sha256": "0274f6da1c43edd7a52a37811fd68fd4febe0b462884b8e6c14a762dc3477f80",
+        "decoded_premultiplied_sha256": "0274f6da1c43edd7a52a37811fd68fd4febe0b462884b8e6c14a762dc3477f80",
+        "upload_rgba_sha256": "a8905ae2852e9eed299e35e4405a8e70e50ebfbf2d52e9720d435900aea22780",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Tunguska_Radar3.png",
+        "source": "Art/Extensions/GAA_Tunguska_Radar_v2.png",
+        "source_sha256": "07c00647b1e714fabf8be6b0f1336983e490c437071158cd9d1db6d155646d02",
+        "source_crop": [
+          768,
+          0,
+          256,
+          256
+        ],
+        "width": 21,
+        "height": 21,
+        "bytes": 723,
+        "sha256": "1e1daec48f359b2c742b9629de5bed37fa9668d3dc5604b9979af25533da2eeb",
+        "baseline_premultiplied_sha256": "5886cc058e98c5824d1ad09b0dc2635d962451d7d71044203d31a5fdb795ab95",
+        "decoded_premultiplied_sha256": "5886cc058e98c5824d1ad09b0dc2635d962451d7d71044203d31a5fdb795ab95",
+        "upload_rgba_sha256": "15534a356017bc1a65216fcab562329614508b713a928c929f0710fe5cf64354",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Tunguska_Radar4.png",
+        "source": "Art/Extensions/GAA_Tunguska_Radar_v2.png",
+        "source_sha256": "07c00647b1e714fabf8be6b0f1336983e490c437071158cd9d1db6d155646d02",
+        "source_crop": [
+          1024,
+          0,
+          256,
+          256
+        ],
+        "width": 21,
+        "height": 21,
+        "bytes": 709,
+        "sha256": "3aa02742a6513ce61ddffcba3bb52963f38a0224571c69b6aafa4f5853a0758c",
+        "baseline_premultiplied_sha256": "97b965f748bc30fa069172c41d6c1fe8a8f5cf3dbb0a3ba92de8b81cce3ae8a8",
+        "decoded_premultiplied_sha256": "97b965f748bc30fa069172c41d6c1fe8a8f5cf3dbb0a3ba92de8b81cce3ae8a8",
+        "upload_rgba_sha256": "a34e477e7400ccd320340ff4a103d052801920b2e81db646f94f4c0f7b26185a",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Tunguska_Radar5.png",
+        "source": "Art/Extensions/GAA_Tunguska_Radar_v2.png",
+        "source_sha256": "07c00647b1e714fabf8be6b0f1336983e490c437071158cd9d1db6d155646d02",
+        "source_crop": [
+          1280,
+          0,
+          256,
+          256
+        ],
+        "width": 21,
+        "height": 21,
+        "bytes": 707,
+        "sha256": "e8883078d3b5052dd0521eb4cfa3a5b0929e2f1da004356e8585ea67f4c5b2e0",
+        "baseline_premultiplied_sha256": "d8c52d0a028760229ebe0115b5825cd4d5f3f9c92b012e9b7d0fd14c1f3c9362",
+        "decoded_premultiplied_sha256": "d8c52d0a028760229ebe0115b5825cd4d5f3f9c92b012e9b7d0fd14c1f3c9362",
+        "upload_rgba_sha256": "e7ffd14e1b719c1dc0241b138238532e4578ea1919343b9e87ab04259ccc99fa",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Tunguska_Radar6.png",
+        "source": "Art/Extensions/GAA_Tunguska_Radar_v2.png",
+        "source_sha256": "07c00647b1e714fabf8be6b0f1336983e490c437071158cd9d1db6d155646d02",
+        "source_crop": [
+          0,
+          256,
+          256,
+          256
+        ],
+        "width": 21,
+        "height": 21,
+        "bytes": 488,
+        "sha256": "090eecc5c0a65dde399788fd007862280d162b8ef54adb0c25e9a4b70a4cdcd7",
+        "baseline_premultiplied_sha256": "58fd4c2c171d2c387a88946bf070cc35d7bbabd125ea50c025b255cd17d6b11d",
+        "decoded_premultiplied_sha256": "58fd4c2c171d2c387a88946bf070cc35d7bbabd125ea50c025b255cd17d6b11d",
+        "upload_rgba_sha256": "2e449f44c11645fb92387d462dfc590ab55e9fe8a0794be78bf55944b2ca203e",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Tunguska_Radar7.png",
+        "source": "Art/Extensions/GAA_Tunguska_Radar_v2.png",
+        "source_sha256": "07c00647b1e714fabf8be6b0f1336983e490c437071158cd9d1db6d155646d02",
+        "source_crop": [
+          256,
+          256,
+          256,
+          256
+        ],
+        "width": 21,
+        "height": 21,
+        "bytes": 686,
+        "sha256": "2b436747c33185b8b215f4e7b69d0454cfb01879e2fed996cf7c9d35dfd7b1e6",
+        "baseline_premultiplied_sha256": "73cb0b67fe23039a0e8e3a8aa5e643145eb0826196a04599572190d5c4c47221",
+        "decoded_premultiplied_sha256": "73cb0b67fe23039a0e8e3a8aa5e643145eb0826196a04599572190d5c4c47221",
+        "upload_rgba_sha256": "d4c5cd262cca90b4a9e1f4fbe90ff0e5b62242f3e28d465afad4db46e969d89e",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Tunguska_Radar8.png",
+        "source": "Art/Extensions/GAA_Tunguska_Radar_v2.png",
+        "source_sha256": "07c00647b1e714fabf8be6b0f1336983e490c437071158cd9d1db6d155646d02",
+        "source_crop": [
+          512,
+          256,
+          256,
+          256
+        ],
+        "width": 21,
+        "height": 21,
+        "bytes": 780,
+        "sha256": "65f0f3c94ca986a20b3597909473c4c9b2b4870f9f232910052ccbfa91b5ced1",
+        "baseline_premultiplied_sha256": "f12bf11d22bdf3131d647a5e2733d72f1ad3a9ecec6cf1baa891683ad9305d4c",
+        "decoded_premultiplied_sha256": "f12bf11d22bdf3131d647a5e2733d72f1ad3a9ecec6cf1baa891683ad9305d4c",
+        "upload_rgba_sha256": "268d602be3e2d93c2ec2aa48dad5d5961a5c107b224e0562441ad6bc2d12134c",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Tunguska_Radar9.png",
+        "source": "Art/Extensions/GAA_Tunguska_Radar_v2.png",
+        "source_sha256": "07c00647b1e714fabf8be6b0f1336983e490c437071158cd9d1db6d155646d02",
+        "source_crop": [
+          768,
+          256,
+          256,
+          256
+        ],
+        "width": 21,
+        "height": 21,
+        "bytes": 771,
+        "sha256": "22d3ddeba6a2b1e363bf2a7dec8eb38eaa1db0e89267082699c722ad2581fa7b",
+        "baseline_premultiplied_sha256": "dfc585699de4aeae65130fbaccf066c459319fe89523f34b16e6c966060d7dbf",
+        "decoded_premultiplied_sha256": "dfc585699de4aeae65130fbaccf066c459319fe89523f34b16e6c966060d7dbf",
+        "upload_rgba_sha256": "fed16363563444c407b1621db3c10d92f092e750bb34c417aaab052e2d53f508",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Tunguska_Radar10.png",
+        "source": "Art/Extensions/GAA_Tunguska_Radar_v2.png",
+        "source_sha256": "07c00647b1e714fabf8be6b0f1336983e490c437071158cd9d1db6d155646d02",
+        "source_crop": [
+          1024,
+          256,
+          256,
+          256
+        ],
+        "width": 21,
+        "height": 21,
+        "bytes": 793,
+        "sha256": "7a0594984b1ee24f349b1093fd5c1844d10cdac64a40eac4c701716d40c3c350",
+        "baseline_premultiplied_sha256": "ffdd60f4a7ddaf404b5a15839ed121b5e17383afbb22471a751657e5559704d8",
+        "decoded_premultiplied_sha256": "ffdd60f4a7ddaf404b5a15839ed121b5e17383afbb22471a751657e5559704d8",
+        "upload_rgba_sha256": "d6573d23c763ea73ca06d7d9eae94228059c079b512eb3d51ef01c6106a95582",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Tunguska_Radar11.png",
+        "source": "Art/Extensions/GAA_Tunguska_Radar_v2.png",
+        "source_sha256": "07c00647b1e714fabf8be6b0f1336983e490c437071158cd9d1db6d155646d02",
+        "source_crop": [
+          1280,
+          256,
+          256,
+          256
+        ],
+        "width": 21,
+        "height": 21,
+        "bytes": 805,
+        "sha256": "ecf6db353cf7cdf039477ffaf624f440b783a6ca55826ea70ea96cd5ff63d295",
+        "baseline_premultiplied_sha256": "9e1534358fcfde4745ac9b722459f2c35e94ef9b2d0b11c5606b5c8d7044bbce",
+        "decoded_premultiplied_sha256": "9e1534358fcfde4745ac9b722459f2c35e94ef9b2d0b11c5606b5c8d7044bbce",
+        "upload_rgba_sha256": "0a5c729fced96b224dc6e325b2dec4bcac6d490e6c61cf454badb6b98f5f742f",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Tunguska_Radar12.png",
+        "source": "Art/Extensions/GAA_Tunguska_Radar_v2.png",
+        "source_sha256": "07c00647b1e714fabf8be6b0f1336983e490c437071158cd9d1db6d155646d02",
+        "source_crop": [
+          0,
+          512,
+          256,
+          256
+        ],
+        "width": 21,
+        "height": 21,
+        "bytes": 773,
+        "sha256": "0ecd479ec210a4af1d3fa30a38f823d33a18d9a3a340c2c0137917f27d4f77ae",
+        "baseline_premultiplied_sha256": "0c3ee5af90727676ee01c88c04a1d8ca94f31fe884f743f0eacceeaf55c21144",
+        "decoded_premultiplied_sha256": "0c3ee5af90727676ee01c88c04a1d8ca94f31fe884f743f0eacceeaf55c21144",
+        "upload_rgba_sha256": "7d5c36995c40d9a7673c916e615f1f5bc0295bde3ccf4d748df46ac5b8db4398",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Tunguska_Radar13.png",
+        "source": "Art/Extensions/GAA_Tunguska_Radar_v2.png",
+        "source_sha256": "07c00647b1e714fabf8be6b0f1336983e490c437071158cd9d1db6d155646d02",
+        "source_crop": [
+          256,
+          512,
+          256,
+          256
+        ],
+        "width": 21,
+        "height": 21,
+        "bytes": 828,
+        "sha256": "2ee899a149fb9cc2c10d4b72cf5d8ddde2b423c7e634075a08950280ca3afe2a",
+        "baseline_premultiplied_sha256": "a92e63d14d1b092389a82899267104f64ca2826c8af9117888b938ab8467e8a3",
+        "decoded_premultiplied_sha256": "a92e63d14d1b092389a82899267104f64ca2826c8af9117888b938ab8467e8a3",
+        "upload_rgba_sha256": "0512dfaebab9d45b779dc5cd0a553455dc5c4fff46c9a86ad4889ada5d8cc8ee",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Tunguska_Radar14.png",
+        "source": "Art/Extensions/GAA_Tunguska_Radar_v2.png",
+        "source_sha256": "07c00647b1e714fabf8be6b0f1336983e490c437071158cd9d1db6d155646d02",
+        "source_crop": [
+          512,
+          512,
+          256,
+          256
+        ],
+        "width": 21,
+        "height": 21,
+        "bytes": 808,
+        "sha256": "edc8a37f67985b024a3a54d7b647e54c748ea4193e39ba38cc412f191126fc20",
+        "baseline_premultiplied_sha256": "c6ee403162115dc1ef3b4ebea295376647ef2a93d4eefbeaa9e75eb1ac612e59",
+        "decoded_premultiplied_sha256": "c6ee403162115dc1ef3b4ebea295376647ef2a93d4eefbeaa9e75eb1ac612e59",
+        "upload_rgba_sha256": "36a90813d85400932246dd3ab919ab7e5a6327ba4c32eea9f0b1b88b0ae922bc",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Tunguska_Radar15.png",
+        "source": "Art/Extensions/GAA_Tunguska_Radar_v2.png",
+        "source_sha256": "07c00647b1e714fabf8be6b0f1336983e490c437071158cd9d1db6d155646d02",
+        "source_crop": [
+          768,
+          512,
+          256,
+          256
+        ],
+        "width": 21,
+        "height": 21,
+        "bytes": 753,
+        "sha256": "e3c5bf6c4960e542b3c6f492bfbe887361515f9b3d5030516cec40690578e337",
+        "baseline_premultiplied_sha256": "7d3fa9231cf796a343d1037343e661759f3db0a1f00dacdc0f25dc6aa46026f5",
+        "decoded_premultiplied_sha256": "7d3fa9231cf796a343d1037343e661759f3db0a1f00dacdc0f25dc6aa46026f5",
+        "upload_rgba_sha256": "30f6b974a26667e285407d9134c09c4b36dd222e2e2cea663bc2cf91a6264a00",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Tunguska_Radar16.png",
+        "source": "Art/Extensions/GAA_Tunguska_Radar_v2.png",
+        "source_sha256": "07c00647b1e714fabf8be6b0f1336983e490c437071158cd9d1db6d155646d02",
+        "source_crop": [
+          1024,
+          512,
+          256,
+          256
+        ],
+        "width": 21,
+        "height": 21,
+        "bytes": 763,
+        "sha256": "51afd21e3f79f81d319f91d7b8a5aeabb9db5eb17325cbaa234ace6d5f650827",
+        "baseline_premultiplied_sha256": "b1c7066e53504745375d91c0f6aa48306a4f5ada81b6c59cc7389d7d578f611e",
+        "decoded_premultiplied_sha256": "b1c7066e53504745375d91c0f6aa48306a4f5ada81b6c59cc7389d7d578f611e",
+        "upload_rgba_sha256": "11d6f8a2e286b993bcf8ed567d5ba2cf3cf01c095bbf1c4be19888ba47858011",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Tunguska_Radar17.png",
+        "source": "Art/Extensions/GAA_Tunguska_Radar_v2.png",
+        "source_sha256": "07c00647b1e714fabf8be6b0f1336983e490c437071158cd9d1db6d155646d02",
+        "source_crop": [
+          1280,
+          512,
+          256,
+          256
+        ],
+        "width": 21,
+        "height": 21,
+        "bytes": 774,
+        "sha256": "a9692224fdd57a673be8a5328ca1003b77cff1052f4678ee1d74ff46e6f04802",
+        "baseline_premultiplied_sha256": "4951a59780a97866092578cbfda151cb87a5d13ad5f624a3a4e7ad9a833d6c31",
+        "decoded_premultiplied_sha256": "4951a59780a97866092578cbfda151cb87a5d13ad5f624a3a4e7ad9a833d6c31",
+        "upload_rgba_sha256": "b5343e8b615aade3ae68d32ea5a96ebf4a399d169d7417c4b99fdad0363ebc85",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Tunguska_Radar18.png",
+        "source": "Art/Extensions/GAA_Tunguska_Radar_v2.png",
+        "source_sha256": "07c00647b1e714fabf8be6b0f1336983e490c437071158cd9d1db6d155646d02",
+        "source_crop": [
+          0,
+          768,
+          256,
+          256
+        ],
+        "width": 21,
+        "height": 21,
+        "bytes": 479,
+        "sha256": "ea23574b3156ec67256f2a9710fbcb954066ddc1b863c29f136be4d1f002e4c1",
+        "baseline_premultiplied_sha256": "baab6f3d992990eb281afaeaa967a4efd21d0659cb06c6d4d7e1078883ca2fb3",
+        "decoded_premultiplied_sha256": "baab6f3d992990eb281afaeaa967a4efd21d0659cb06c6d4d7e1078883ca2fb3",
+        "upload_rgba_sha256": "7efb78bd9f6516b8b81b1f5fccff82b6ded4e6892c00ffbd33aeeb4d48884a74",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Tunguska_Radar19.png",
+        "source": "Art/Extensions/GAA_Tunguska_Radar_v2.png",
+        "source_sha256": "07c00647b1e714fabf8be6b0f1336983e490c437071158cd9d1db6d155646d02",
+        "source_crop": [
+          256,
+          768,
+          256,
+          256
+        ],
+        "width": 21,
+        "height": 21,
+        "bytes": 754,
+        "sha256": "3381118e97a23ca81f66b9a7b7ea562ebbd0f56f813cbfc414de7085667dee3c",
+        "baseline_premultiplied_sha256": "e6f082658a8f2b114e0accb75fef7320f57c25e85123362fa89f1b934c7307ba",
+        "decoded_premultiplied_sha256": "e6f082658a8f2b114e0accb75fef7320f57c25e85123362fa89f1b934c7307ba",
+        "upload_rgba_sha256": "134a3837e00ec5bcb2891c98bf38d4bb50c453fca2ed1ed859d91459190fe85c",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Tunguska_Radar20.png",
+        "source": "Art/Extensions/GAA_Tunguska_Radar_v2.png",
+        "source_sha256": "07c00647b1e714fabf8be6b0f1336983e490c437071158cd9d1db6d155646d02",
+        "source_crop": [
+          512,
+          768,
+          256,
+          256
+        ],
+        "width": 21,
+        "height": 21,
+        "bytes": 768,
+        "sha256": "b4fde585a599b722b339d70070deb3e1ffe1c9bfeada24ea12f758b25a17b0d5",
+        "baseline_premultiplied_sha256": "93f3ce85f1d8871f7e0794fc1a5c7ee91feb720be04995d7c7ecc53db4b5cbf3",
+        "decoded_premultiplied_sha256": "93f3ce85f1d8871f7e0794fc1a5c7ee91feb720be04995d7c7ecc53db4b5cbf3",
+        "upload_rgba_sha256": "d90ceaa00f23476976f6054f55c0098ed48a21bedd48f9db3262d8b422644e19",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Tunguska_Radar21.png",
+        "source": "Art/Extensions/GAA_Tunguska_Radar_v2.png",
+        "source_sha256": "07c00647b1e714fabf8be6b0f1336983e490c437071158cd9d1db6d155646d02",
+        "source_crop": [
+          768,
+          768,
+          256,
+          256
+        ],
+        "width": 21,
+        "height": 21,
+        "bytes": 802,
+        "sha256": "e532469255630325b7d7681dc75e34b0424128c5b03f16763e3268c454c8384a",
+        "baseline_premultiplied_sha256": "8ee321f7c525ce627626c74db7c6384a673ad256a16d7615ebb6b7a3aec00a21",
+        "decoded_premultiplied_sha256": "8ee321f7c525ce627626c74db7c6384a673ad256a16d7615ebb6b7a3aec00a21",
+        "upload_rgba_sha256": "e9fa160f60e7bf05c81c99adebe91775f771ce7168598a3b2342d64c50a8321b",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Tunguska_Radar22.png",
+        "source": "Art/Extensions/GAA_Tunguska_Radar_v2.png",
+        "source_sha256": "07c00647b1e714fabf8be6b0f1336983e490c437071158cd9d1db6d155646d02",
+        "source_crop": [
+          1024,
+          768,
+          256,
+          256
+        ],
+        "width": 21,
+        "height": 21,
+        "bytes": 767,
+        "sha256": "0153a9224e1f9c7ffca9be568153054ccdc1cc9d27c63c53858973951dec577a",
+        "baseline_premultiplied_sha256": "639cb76dc1280a1a9f9d22bc0eea915d0614b8fdbf7002f410ccb7405c6e2e47",
+        "decoded_premultiplied_sha256": "639cb76dc1280a1a9f9d22bc0eea915d0614b8fdbf7002f410ccb7405c6e2e47",
+        "upload_rgba_sha256": "75d67ed15fb7ae9cf0412adf99bc2c437dbd9e0390037e089425a95daca27979",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Tunguska_Radar23.png",
+        "source": "Art/Extensions/GAA_Tunguska_Radar_v2.png",
+        "source_sha256": "07c00647b1e714fabf8be6b0f1336983e490c437071158cd9d1db6d155646d02",
+        "source_crop": [
+          1280,
+          768,
+          256,
+          256
+        ],
+        "width": 21,
+        "height": 21,
+        "bytes": 737,
+        "sha256": "43f4aa957ea4ad167460c200127eec060f1deeaab2ad995e132304b71ccf0428",
+        "baseline_premultiplied_sha256": "5b71cb595bbcbcdfe7ef6b9f1eb23c810849ee405a71be3dde0b0c832a3db84c",
+        "decoded_premultiplied_sha256": "5b71cb595bbcbcdfe7ef6b9f1eb23c810849ee405a71be3dde0b0c832a3db84c",
+        "upload_rgba_sha256": "dbe92d7945d7acd06129ae1cc00f581a0865d77e96f248707a616aab7cb33ab6",
+        "decode_equal": true,
+        "upload_equal": true
+      }
+    ],
+    "web": [
+      {
+        "file": "VTOL_Yak141.png",
+        "source": "Art/Extensions/VTOL_Yak141.png",
+        "source_sha256": "fdff4c3a7193738d2da9ecb0dd233397490a5e1dc29a65544726cd9c68ace626",
+        "source_crop": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "width": 112,
+        "height": 37,
+        "bytes": 4366,
+        "sha256": "6960cc95d16124c88f23fb4ab5c2069be43a4817c8995b7c473f3c15d603bd28",
+        "baseline_premultiplied_sha256": "3bf4057f4598642191d12d7df7c3fc64b36889d61475932785089506c37d3429",
+        "decoded_premultiplied_sha256": "3bf4057f4598642191d12d7df7c3fc64b36889d61475932785089506c37d3429",
+        "upload_rgba_sha256": "7af2f05c286536872d42d81b00c25b017e480f71803be9ae6b035d98e1b34031",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "VTOL_Harrier.png",
+        "source": "Art/Extensions/VTOL_Harrier.png",
+        "source_sha256": "9a523efede9a292a274671142430c7a028f49282235ab9248499a66f2c6d0dfb",
+        "source_crop": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "width": 108,
+        "height": 41,
+        "bytes": 4518,
+        "sha256": "d87414990cd13521319ed82cd999cc3669395645c32bd34727d7c899cd5af26f",
+        "baseline_premultiplied_sha256": "0f465742a1c70239e1083e22162e70f9d99c4025a22071adb3216d70ac83885f",
+        "decoded_premultiplied_sha256": "0f465742a1c70239e1083e22162e70f9d99c4025a22071adb3216d70ac83885f",
+        "upload_rgba_sha256": "3d9a742d56b5493b8df68c94a6bb0584c965dcba3a2954941fc25db12171d2c2",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "VTOL_F35B.png",
+        "source": "Art/Extensions/VTOL_F35B.png",
+        "source_sha256": "8c2663b77851cde0665186c3ace3e7032de687e011162cfebe28fc71018a6913",
+        "source_crop": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "width": 116,
+        "height": 44,
+        "bytes": 5087,
+        "sha256": "75a48432fbf4c68bd34db04f4dd83a8e40714e5e30ab1a6b4ace3d3987fd6d04",
+        "baseline_premultiplied_sha256": "153d3075ee70925fec4b884deaaec01a84c442fd41ba01f5e1633a1dae96c91a",
+        "decoded_premultiplied_sha256": "153d3075ee70925fec4b884deaaec01a84c442fd41ba01f5e1633a1dae96c91a",
+        "upload_rgba_sha256": "fd202d63e38e212acac4864af9211beccd3ae0dbc6784ab8697fd03da06968ad",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "Lux_F22.png",
+        "source": "Art/Extensions/Lux_F22.png",
+        "source_sha256": "8cf228dafd366849f50ce623901a1106dad35df4ccb451e1de6e346c79f6f082",
+        "source_crop": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "width": 112,
+        "height": 49,
+        "bytes": 4688,
+        "sha256": "ba85eea24c1d925cb873bb1f40bf8b43f9bc7d02097886ffb9ab00f78139bc55",
+        "baseline_premultiplied_sha256": "eaf4904c141a923dfcdc4d42cedf4cbcca0ebdaaecf81f7bf0cbd810423c52bf",
+        "decoded_premultiplied_sha256": "eaf4904c141a923dfcdc4d42cedf4cbcca0ebdaaecf81f7bf0cbd810423c52bf",
+        "upload_rgba_sha256": "dc059eb4a126f2a842fcf41d702c9e52cb7fcdafea95f99709ba872dfc787e63",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "Lux_Su57.png",
+        "source": "Art/Extensions/Lux_Su57.png",
+        "source_sha256": "d8797d4559d71df8923e3d755f4f51237053a3ec1d374f0022834111b775a197",
+        "source_crop": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "width": 116,
+        "height": 42,
+        "bytes": 4708,
+        "sha256": "60e7a8ef41ed9959320b76691eceff1ae51f22b520a1b22975abe7652074bcd0",
+        "baseline_premultiplied_sha256": "5ff407c4bb3353437b973f7fdf7f3a6887a7435f761820574d642f8652d12963",
+        "decoded_premultiplied_sha256": "5ff407c4bb3353437b973f7fdf7f3a6887a7435f761820574d642f8652d12963",
+        "upload_rgba_sha256": "a50e3ec8bbc4a75a5a5efd54076ba2093ee12cb29fee23e9fd2c4cd9a800d51d",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "Lux_MiG31.png",
+        "source": "Art/Extensions/Lux_MiG31.png",
+        "source_sha256": "ef9351c5bb4112c0bc10befa489ae989d3b341e69da29a047c6570d3c468260d",
+        "source_crop": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "width": 120,
+        "height": 40,
+        "bytes": 4400,
+        "sha256": "2706e83d07e8fd2c15ddf6ed79b03cbb987cf672f15188edbebc5a31f02cac96",
+        "baseline_premultiplied_sha256": "d21a0eaea48c62060578b5c3ee37eeaae468e96175006a10a874158a96ea0e6f",
+        "decoded_premultiplied_sha256": "d21a0eaea48c62060578b5c3ee37eeaae468e96175006a10a874158a96ea0e6f",
+        "upload_rgba_sha256": "eee58cc812b8e789699e4d5b69b09e9fa5cf6d94768b44208de0ef747ffc6b0b",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Shilka_Body.png",
+        "source": "Art/Extensions/GAA_Shilka_Parts_v2.png",
+        "source_sha256": "53bb7031b265ab3439d64c217259f75d2351359fdd446e2519fef174339c8e6a",
+        "source_crop": [
+          95,
+          26,
+          1307,
+          282
+        ],
+        "width": 80,
+        "height": 18,
+        "bytes": 4299,
+        "sha256": "ed70226028cef8b51de44550be30a7b56bef1833011e3b223b354e08ec08d82a",
+        "baseline_premultiplied_sha256": "c38cea69b27f3afb239b50b30228758f7b299c6ebc57fcc4541b12ea9e186b5f",
+        "decoded_premultiplied_sha256": "c38cea69b27f3afb239b50b30228758f7b299c6ebc57fcc4541b12ea9e186b5f",
+        "upload_rgba_sha256": "8db09d9d3200cdbecc9153bcf624b5fb78cdab4cb810382a351fc0d8756a89fa",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Shilka_Body2.png",
+        "source": "Art/Extensions/GAA_Shilka_Parts_v2.png",
+        "source_sha256": "53bb7031b265ab3439d64c217259f75d2351359fdd446e2519fef174339c8e6a",
+        "source_crop": [
+          96,
+          343,
+          1309,
+          282
+        ],
+        "width": 80,
+        "height": 18,
+        "bytes": 4290,
+        "sha256": "f492c17033c14c649b49cfbd15a10b5f8fa4d2f1438251b1a5e5b199d8b838d9",
+        "baseline_premultiplied_sha256": "e47a0a5c7c73c8ce78b28bf01354ba54e2732071ac53e33fc40fd7bbd9694940",
+        "decoded_premultiplied_sha256": "e47a0a5c7c73c8ce78b28bf01354ba54e2732071ac53e33fc40fd7bbd9694940",
+        "upload_rgba_sha256": "751eadac869e6a73177df4798442fe7a024c1b77d8912bd3420b6698d58104b7",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Shilka_Turret.png",
+        "source": "Art/Extensions/GAA_Shilka_Turret_v3.png",
+        "source_sha256": "b6d21f38c6ea995e58cb16dbf7f7f5f6f11e004d2ec2c2915b39749d6b03c331",
+        "source_crop": [
+          84,
+          95,
+          1804,
+          578
+        ],
+        "width": 51,
+        "height": 29,
+        "bytes": 3695,
+        "sha256": "8f8e0f7aed8c395132cf955ec8f7c9c424b20bafc532dd5639cd41c733eb00d4",
+        "baseline_premultiplied_sha256": "6b4831d74abb93ae70a6741e87aef1119bf08b48c433fe22f0fbb95ca62d531b",
+        "decoded_premultiplied_sha256": "6b4831d74abb93ae70a6741e87aef1119bf08b48c433fe22f0fbb95ca62d531b",
+        "upload_rgba_sha256": "a57e8a91996aa683d11c8751c123019dfad6bf29884cbd0aa57f1d4096354d6c",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Shilka_Gun.png",
+        "source": "Art/Extensions/GAA_Shilka_Parts_v2.png",
+        "source_sha256": "53bb7031b265ab3439d64c217259f75d2351359fdd446e2519fef174339c8e6a",
+        "source_crop": [
+          445,
+          904,
+          580,
+          113
+        ],
+        "width": 32,
+        "height": 6,
+        "bytes": 733,
+        "sha256": "1f367799b2e9d232ad950b2b3a4933cb7bca169eda702a4147c0d4631a18fc49",
+        "baseline_premultiplied_sha256": "21c50892749b0b734d6831b8bd6ff081881fc9858b1e4f411e1a92d0a04724f6",
+        "decoded_premultiplied_sha256": "21c50892749b0b734d6831b8bd6ff081881fc9858b1e4f411e1a92d0a04724f6",
+        "upload_rgba_sha256": "9d1de132b8e5ae55e32125ef001cc89f72dc24b419f1b4c7b5dab35e6933ef1c",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Tunguska_Body.png",
+        "source": "Art/Extensions/GAA_Tunguska_Parts_v2.png",
+        "source_sha256": "a43afb7e3111085b6c1d9d841d3640976211e33e951537fef81324b48a3dcc8a",
+        "source_crop": [
+          12,
+          93,
+          998,
+          265
+        ],
+        "width": 85,
+        "height": 22,
+        "bytes": 5524,
+        "sha256": "ad9ad57bf25f7638c7a8f40572e87c36d22b1f4cc57ca8af5a99cc22f6fabdf8",
+        "baseline_premultiplied_sha256": "8dd7f49c37735cee022b4b16dfe0cb7b17f5c8e27561fa79892ebadad767fa59",
+        "decoded_premultiplied_sha256": "8dd7f49c37735cee022b4b16dfe0cb7b17f5c8e27561fa79892ebadad767fa59",
+        "upload_rgba_sha256": "0c6dc5bc938399ee9ff2823c7accd55c7858227c211acde2fb72bf6108db520f",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Tunguska_Body2.png",
+        "source": "Art/Extensions/GAA_Tunguska_Parts_v2.png",
+        "source_sha256": "a43afb7e3111085b6c1d9d841d3640976211e33e951537fef81324b48a3dcc8a",
+        "source_crop": [
+          13,
+          417,
+          999,
+          265
+        ],
+        "width": 85,
+        "height": 22,
+        "bytes": 5512,
+        "sha256": "8b92d39b84e5088f617e23b1615d7303383ca21c3e3f906ffd3e553a6af7c54c",
+        "baseline_premultiplied_sha256": "66749db4db4f00272f9f15aefbd595c1e8bc074a539ebd9d1cbd18dbbb441a63",
+        "decoded_premultiplied_sha256": "66749db4db4f00272f9f15aefbd595c1e8bc074a539ebd9d1cbd18dbbb441a63",
+        "upload_rgba_sha256": "8b0adadfd0ee6bfc0c5a324d93d359089f2f7b9cda54f12b40d7c5dc5a7d3897",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Tunguska_Turret.png",
+        "source": "Art/Extensions/GAA_Tunguska_Parts_v2.png",
+        "source_sha256": "a43afb7e3111085b6c1d9d841d3640976211e33e951537fef81324b48a3dcc8a",
+        "source_crop": [
+          199,
+          690,
+          776,
+          447
+        ],
+        "width": 50,
+        "height": 29,
+        "bytes": 2882,
+        "sha256": "94574a51e24a3a1ed809a06e471be3d0577eaa10353d36a04531e600d1986d89",
+        "baseline_premultiplied_sha256": "6f91e6e15233967e8d9cd6c8280632f47655095cd5ca7a4deec73d1fdfc25c7c",
+        "decoded_premultiplied_sha256": "6f91e6e15233967e8d9cd6c8280632f47655095cd5ca7a4deec73d1fdfc25c7c",
+        "upload_rgba_sha256": "3d427322739e4070ee110221514d4f2b4f94f12e9299e4e3ee4ec2cd386bf8a5",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Tunguska_Gun.png",
+        "source": "Art/Extensions/GAA_Tunguska_Parts_v2.png",
+        "source_sha256": "a43afb7e3111085b6c1d9d841d3640976211e33e951537fef81324b48a3dcc8a",
+        "source_crop": [
+          110,
+          1167,
+          706,
+          137
+        ],
+        "width": 37,
+        "height": 7,
+        "bytes": 855,
+        "sha256": "da1313577f36dbe5f1ac7f1e288eb6444e392f2586815f7c025bfb148aa733a8",
+        "baseline_premultiplied_sha256": "18b4e392afdb0443f2650cf9ad2a6ff74f1c346784763d78982d9d438c036843",
+        "decoded_premultiplied_sha256": "18b4e392afdb0443f2650cf9ad2a6ff74f1c346784763d78982d9d438c036843",
+        "upload_rgba_sha256": "fb37decb34a6379805cf7317eb70ec9a1cfacd8d5c31a8f118803c979e94951c",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Tunguska_Missile.png",
+        "source": "Art/Extensions/GAA_Tunguska_Parts_v2.png",
+        "source_sha256": "a43afb7e3111085b6c1d9d841d3640976211e33e951537fef81324b48a3dcc8a",
+        "source_crop": [
+          347,
+          1323,
+          378,
+          194
+        ],
+        "width": 30,
+        "height": 15,
+        "bytes": 1538,
+        "sha256": "a18870b08d7aff51674d4d7c622ffbca661183de54fe07291ba7274d0253c3fe",
+        "baseline_premultiplied_sha256": "2fdae320a8651eea86978ca7882f88fe51de1489518830472786f26cb54e98e2",
+        "decoded_premultiplied_sha256": "2fdae320a8651eea86978ca7882f88fe51de1489518830472786f26cb54e98e2",
+        "upload_rgba_sha256": "833aedade33852c4bad7dfdde38034f9ed09c36dee9dedc3e244197034fc3840",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Shilka_Radar0.png",
+        "source": "Art/Extensions/GAA_Shilka_Radar_v2.png",
+        "source_sha256": "8c6f7624ffb0962f9690adce0e74d54e71fac9b3a814ab4f2afe568989eba167",
+        "source_crop": [
+          0,
+          0,
+          256,
+          256
+        ],
+        "width": 16,
+        "height": 16,
+        "bytes": 633,
+        "sha256": "95fcb4174140bcf87ff78edb941660549053bf8fab696467502bd2b526f7f153",
+        "baseline_premultiplied_sha256": "2b288cac0139fd753dc19180fd0f88ccae9e6dd54a31598486058c65d0090f75",
+        "decoded_premultiplied_sha256": "2b288cac0139fd753dc19180fd0f88ccae9e6dd54a31598486058c65d0090f75",
+        "upload_rgba_sha256": "2b288cac0139fd753dc19180fd0f88ccae9e6dd54a31598486058c65d0090f75",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Shilka_Radar1.png",
+        "source": "Art/Extensions/GAA_Shilka_Radar_v2.png",
+        "source_sha256": "8c6f7624ffb0962f9690adce0e74d54e71fac9b3a814ab4f2afe568989eba167",
+        "source_crop": [
+          256,
+          0,
+          256,
+          256
+        ],
+        "width": 16,
+        "height": 16,
+        "bytes": 686,
+        "sha256": "4cbdcb5ae23aafd975d80ed52b571d19e3fa3b19575d3391a67d52605c1118c7",
+        "baseline_premultiplied_sha256": "e53ab8cc90b8d6b8a3722354651f7c11f740dbd52d1f032aa808eb077f30c066",
+        "decoded_premultiplied_sha256": "e53ab8cc90b8d6b8a3722354651f7c11f740dbd52d1f032aa808eb077f30c066",
+        "upload_rgba_sha256": "e53ab8cc90b8d6b8a3722354651f7c11f740dbd52d1f032aa808eb077f30c066",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Shilka_Radar2.png",
+        "source": "Art/Extensions/GAA_Shilka_Radar_v2.png",
+        "source_sha256": "8c6f7624ffb0962f9690adce0e74d54e71fac9b3a814ab4f2afe568989eba167",
+        "source_crop": [
+          512,
+          0,
+          256,
+          256
+        ],
+        "width": 16,
+        "height": 16,
+        "bytes": 677,
+        "sha256": "9c05cbb6b04ee23f8b178e81ffd1cba6acdcbf24fb68003051e0eae636b101b2",
+        "baseline_premultiplied_sha256": "15909f54d3cc31b01ad5cdd086cd3125c3d84e0ea829de5e2f02f07662550a89",
+        "decoded_premultiplied_sha256": "15909f54d3cc31b01ad5cdd086cd3125c3d84e0ea829de5e2f02f07662550a89",
+        "upload_rgba_sha256": "15909f54d3cc31b01ad5cdd086cd3125c3d84e0ea829de5e2f02f07662550a89",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Shilka_Radar3.png",
+        "source": "Art/Extensions/GAA_Shilka_Radar_v2.png",
+        "source_sha256": "8c6f7624ffb0962f9690adce0e74d54e71fac9b3a814ab4f2afe568989eba167",
+        "source_crop": [
+          768,
+          0,
+          256,
+          256
+        ],
+        "width": 16,
+        "height": 16,
+        "bytes": 681,
+        "sha256": "c4a4a3b47daa42b6b69a8980508bb33aa360d7a447fb7725225524ef7d271911",
+        "baseline_premultiplied_sha256": "ca84079753db42f2d15faa9b7e8ac3e31da6bf643f9fa4ac6acf1861a56631a8",
+        "decoded_premultiplied_sha256": "ca84079753db42f2d15faa9b7e8ac3e31da6bf643f9fa4ac6acf1861a56631a8",
+        "upload_rgba_sha256": "ca84079753db42f2d15faa9b7e8ac3e31da6bf643f9fa4ac6acf1861a56631a8",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Shilka_Radar4.png",
+        "source": "Art/Extensions/GAA_Shilka_Radar_v2.png",
+        "source_sha256": "8c6f7624ffb0962f9690adce0e74d54e71fac9b3a814ab4f2afe568989eba167",
+        "source_crop": [
+          1024,
+          0,
+          256,
+          256
+        ],
+        "width": 16,
+        "height": 16,
+        "bytes": 655,
+        "sha256": "fb41e1fb322b0e1a05af4da5c315f156b86af416e5ba2c53d9df064ef8595624",
+        "baseline_premultiplied_sha256": "cb66b411e540acaa6a4f33b7cf69dddfbdca065fa35aa918d5f56afcaf7cc2d3",
+        "decoded_premultiplied_sha256": "cb66b411e540acaa6a4f33b7cf69dddfbdca065fa35aa918d5f56afcaf7cc2d3",
+        "upload_rgba_sha256": "cb66b411e540acaa6a4f33b7cf69dddfbdca065fa35aa918d5f56afcaf7cc2d3",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Shilka_Radar5.png",
+        "source": "Art/Extensions/GAA_Shilka_Radar_v2.png",
+        "source_sha256": "8c6f7624ffb0962f9690adce0e74d54e71fac9b3a814ab4f2afe568989eba167",
+        "source_crop": [
+          1280,
+          0,
+          256,
+          256
+        ],
+        "width": 16,
+        "height": 16,
+        "bytes": 601,
+        "sha256": "9e2287ad0e33dcb29c6cdbcad35db6465f101838cec1e31409a6b83fe08a9dfc",
+        "baseline_premultiplied_sha256": "d77470be2d6afcbb741d2ac5e87419ada972e0a90ac0ef393c644b24d4b2ab18",
+        "decoded_premultiplied_sha256": "d77470be2d6afcbb741d2ac5e87419ada972e0a90ac0ef393c644b24d4b2ab18",
+        "upload_rgba_sha256": "d77470be2d6afcbb741d2ac5e87419ada972e0a90ac0ef393c644b24d4b2ab18",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Shilka_Radar6.png",
+        "source": "Art/Extensions/GAA_Shilka_Radar_v2.png",
+        "source_sha256": "8c6f7624ffb0962f9690adce0e74d54e71fac9b3a814ab4f2afe568989eba167",
+        "source_crop": [
+          0,
+          256,
+          256,
+          256
+        ],
+        "width": 16,
+        "height": 16,
+        "bytes": 502,
+        "sha256": "f7de7f113206f8641725aacaf15f63ad9af61fe26574e0b8035080f886b7dfe2",
+        "baseline_premultiplied_sha256": "7f439098f819f17b59f450df3614aa407f9312458dd0ced2e40d122a90aa1f12",
+        "decoded_premultiplied_sha256": "7f439098f819f17b59f450df3614aa407f9312458dd0ced2e40d122a90aa1f12",
+        "upload_rgba_sha256": "7f439098f819f17b59f450df3614aa407f9312458dd0ced2e40d122a90aa1f12",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Shilka_Radar7.png",
+        "source": "Art/Extensions/GAA_Shilka_Radar_v2.png",
+        "source_sha256": "8c6f7624ffb0962f9690adce0e74d54e71fac9b3a814ab4f2afe568989eba167",
+        "source_crop": [
+          256,
+          256,
+          256,
+          256
+        ],
+        "width": 16,
+        "height": 16,
+        "bytes": 533,
+        "sha256": "63c564fea14ebfe48f9b732b64f8a45bfd59531c7d3d1b050da7b95df1057e60",
+        "baseline_premultiplied_sha256": "535393aa7f99c8b099b3bd1d9443d4e5fe3858a39df390d116fa10dd55f3b5ae",
+        "decoded_premultiplied_sha256": "535393aa7f99c8b099b3bd1d9443d4e5fe3858a39df390d116fa10dd55f3b5ae",
+        "upload_rgba_sha256": "535393aa7f99c8b099b3bd1d9443d4e5fe3858a39df390d116fa10dd55f3b5ae",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Shilka_Radar8.png",
+        "source": "Art/Extensions/GAA_Shilka_Radar_v2.png",
+        "source_sha256": "8c6f7624ffb0962f9690adce0e74d54e71fac9b3a814ab4f2afe568989eba167",
+        "source_crop": [
+          512,
+          256,
+          256,
+          256
+        ],
+        "width": 16,
+        "height": 16,
+        "bytes": 566,
+        "sha256": "b265dccf95b41b2a54f17fe404cc605a3975c36eb00664b70cc7bd295039e980",
+        "baseline_premultiplied_sha256": "3e4638c33553a5e1bfb33c0ea5bc9bfe6b462bf0127c8b611d30fa77b5f807a8",
+        "decoded_premultiplied_sha256": "3e4638c33553a5e1bfb33c0ea5bc9bfe6b462bf0127c8b611d30fa77b5f807a8",
+        "upload_rgba_sha256": "3e4638c33553a5e1bfb33c0ea5bc9bfe6b462bf0127c8b611d30fa77b5f807a8",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Shilka_Radar9.png",
+        "source": "Art/Extensions/GAA_Shilka_Radar_v2.png",
+        "source_sha256": "8c6f7624ffb0962f9690adce0e74d54e71fac9b3a814ab4f2afe568989eba167",
+        "source_crop": [
+          768,
+          256,
+          256,
+          256
+        ],
+        "width": 16,
+        "height": 16,
+        "bytes": 612,
+        "sha256": "161b42b09c1427177151bae0831505b1976e09ee545b8d3d57a1876b64b28c78",
+        "baseline_premultiplied_sha256": "a1304d34b4430eba71996246a2e2fd8836a3a501fbb486774ea6434fe4aff713",
+        "decoded_premultiplied_sha256": "a1304d34b4430eba71996246a2e2fd8836a3a501fbb486774ea6434fe4aff713",
+        "upload_rgba_sha256": "a1304d34b4430eba71996246a2e2fd8836a3a501fbb486774ea6434fe4aff713",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Shilka_Radar10.png",
+        "source": "Art/Extensions/GAA_Shilka_Radar_v2.png",
+        "source_sha256": "8c6f7624ffb0962f9690adce0e74d54e71fac9b3a814ab4f2afe568989eba167",
+        "source_crop": [
+          1024,
+          256,
+          256,
+          256
+        ],
+        "width": 16,
+        "height": 16,
+        "bytes": 657,
+        "sha256": "33ef4f4e463fbd42ec45fa4947fbefee070c89a1ff2a202c1c8c439a868a6fe5",
+        "baseline_premultiplied_sha256": "a4ddfda6776d40b84a60605a909aff19582b979bce8e330174d160a0de662dbf",
+        "decoded_premultiplied_sha256": "a4ddfda6776d40b84a60605a909aff19582b979bce8e330174d160a0de662dbf",
+        "upload_rgba_sha256": "a4ddfda6776d40b84a60605a909aff19582b979bce8e330174d160a0de662dbf",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Shilka_Radar11.png",
+        "source": "Art/Extensions/GAA_Shilka_Radar_v2.png",
+        "source_sha256": "8c6f7624ffb0962f9690adce0e74d54e71fac9b3a814ab4f2afe568989eba167",
+        "source_crop": [
+          1280,
+          256,
+          256,
+          256
+        ],
+        "width": 16,
+        "height": 16,
+        "bytes": 637,
+        "sha256": "2f33dfb76728c812c77942a56333836c640ecd896f7a0e6fb6428ba797940438",
+        "baseline_premultiplied_sha256": "c022ee286f51723f6c44943f0f067264265152336a9f2b0c3300fbe7b9bbfd05",
+        "decoded_premultiplied_sha256": "c022ee286f51723f6c44943f0f067264265152336a9f2b0c3300fbe7b9bbfd05",
+        "upload_rgba_sha256": "c022ee286f51723f6c44943f0f067264265152336a9f2b0c3300fbe7b9bbfd05",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Shilka_Radar12.png",
+        "source": "Art/Extensions/GAA_Shilka_Radar_v2.png",
+        "source_sha256": "8c6f7624ffb0962f9690adce0e74d54e71fac9b3a814ab4f2afe568989eba167",
+        "source_crop": [
+          0,
+          512,
+          256,
+          256
+        ],
+        "width": 16,
+        "height": 16,
+        "bytes": 760,
+        "sha256": "978a3eaa2ee876066574cc9df1e6313ea13444925e9d9c20c6301a531e535688",
+        "baseline_premultiplied_sha256": "59207068f0a464990aebde467a83769805f4e6d258e14434d19db122751f3540",
+        "decoded_premultiplied_sha256": "59207068f0a464990aebde467a83769805f4e6d258e14434d19db122751f3540",
+        "upload_rgba_sha256": "59207068f0a464990aebde467a83769805f4e6d258e14434d19db122751f3540",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Shilka_Radar13.png",
+        "source": "Art/Extensions/GAA_Shilka_Radar_v2.png",
+        "source_sha256": "8c6f7624ffb0962f9690adce0e74d54e71fac9b3a814ab4f2afe568989eba167",
+        "source_crop": [
+          256,
+          512,
+          256,
+          256
+        ],
+        "width": 16,
+        "height": 16,
+        "bytes": 697,
+        "sha256": "2b31ae1ac8a742de6afb207f27cbd3fb8cd18a7787d2b6d933f69dedf5976f37",
+        "baseline_premultiplied_sha256": "2c275181b3308dc14f444cf936555fc79492cc711fcaa085987217f720690178",
+        "decoded_premultiplied_sha256": "2c275181b3308dc14f444cf936555fc79492cc711fcaa085987217f720690178",
+        "upload_rgba_sha256": "2c275181b3308dc14f444cf936555fc79492cc711fcaa085987217f720690178",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Shilka_Radar14.png",
+        "source": "Art/Extensions/GAA_Shilka_Radar_v2.png",
+        "source_sha256": "8c6f7624ffb0962f9690adce0e74d54e71fac9b3a814ab4f2afe568989eba167",
+        "source_crop": [
+          512,
+          512,
+          256,
+          256
+        ],
+        "width": 16,
+        "height": 16,
+        "bytes": 720,
+        "sha256": "fa097a15776b71b89c233bcd8d84016141ad3b9d345d8b1cd505041b32c59f7e",
+        "baseline_premultiplied_sha256": "043e6cae3e17da0efc77dc50b7ce808a45761b42425770318d1b4dc462d372f3",
+        "decoded_premultiplied_sha256": "043e6cae3e17da0efc77dc50b7ce808a45761b42425770318d1b4dc462d372f3",
+        "upload_rgba_sha256": "043e6cae3e17da0efc77dc50b7ce808a45761b42425770318d1b4dc462d372f3",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Shilka_Radar15.png",
+        "source": "Art/Extensions/GAA_Shilka_Radar_v2.png",
+        "source_sha256": "8c6f7624ffb0962f9690adce0e74d54e71fac9b3a814ab4f2afe568989eba167",
+        "source_crop": [
+          768,
+          512,
+          256,
+          256
+        ],
+        "width": 16,
+        "height": 16,
+        "bytes": 656,
+        "sha256": "0ddfbf75aad3080410b74280a23d03febf9478088a2739e9f75a1b4864ec7764",
+        "baseline_premultiplied_sha256": "951ddac6a5771729933a6a181ff5eae46d0854f56b30209304316caf6122f028",
+        "decoded_premultiplied_sha256": "951ddac6a5771729933a6a181ff5eae46d0854f56b30209304316caf6122f028",
+        "upload_rgba_sha256": "951ddac6a5771729933a6a181ff5eae46d0854f56b30209304316caf6122f028",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Shilka_Radar16.png",
+        "source": "Art/Extensions/GAA_Shilka_Radar_v2.png",
+        "source_sha256": "8c6f7624ffb0962f9690adce0e74d54e71fac9b3a814ab4f2afe568989eba167",
+        "source_crop": [
+          1024,
+          512,
+          256,
+          256
+        ],
+        "width": 16,
+        "height": 16,
+        "bytes": 651,
+        "sha256": "dbf3ab3649bd45ce18f4ff10ba17c7ea5d323c4103a87640498ab9789ca37dc2",
+        "baseline_premultiplied_sha256": "f594464a2eb70ba23e65021346fd2929371f2f867a86be27229363580ced0c3a",
+        "decoded_premultiplied_sha256": "f594464a2eb70ba23e65021346fd2929371f2f867a86be27229363580ced0c3a",
+        "upload_rgba_sha256": "f594464a2eb70ba23e65021346fd2929371f2f867a86be27229363580ced0c3a",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Shilka_Radar17.png",
+        "source": "Art/Extensions/GAA_Shilka_Radar_v2.png",
+        "source_sha256": "8c6f7624ffb0962f9690adce0e74d54e71fac9b3a814ab4f2afe568989eba167",
+        "source_crop": [
+          1280,
+          512,
+          256,
+          256
+        ],
+        "width": 16,
+        "height": 16,
+        "bytes": 627,
+        "sha256": "5fb8c4380f661a33bd0f7757b32d02ebe4dd8684e577d2073b173b80bd5b97ba",
+        "baseline_premultiplied_sha256": "f2b0d70ae538ad6c94f1351244419028bea3493ad1c10fb2010588d55f0d27fe",
+        "decoded_premultiplied_sha256": "f2b0d70ae538ad6c94f1351244419028bea3493ad1c10fb2010588d55f0d27fe",
+        "upload_rgba_sha256": "f2b0d70ae538ad6c94f1351244419028bea3493ad1c10fb2010588d55f0d27fe",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Shilka_Radar18.png",
+        "source": "Art/Extensions/GAA_Shilka_Radar_v2.png",
+        "source_sha256": "8c6f7624ffb0962f9690adce0e74d54e71fac9b3a814ab4f2afe568989eba167",
+        "source_crop": [
+          0,
+          768,
+          256,
+          256
+        ],
+        "width": 16,
+        "height": 16,
+        "bytes": 479,
+        "sha256": "6e319d3f44e23f314ca3f1d5fc183f2311822c5892fe606615fe8c7b742e9470",
+        "baseline_premultiplied_sha256": "5a10f4c7a989e4dd1f034bf2f1a786a2fdde962f5bbb150f0effbc8fcec82f66",
+        "decoded_premultiplied_sha256": "5a10f4c7a989e4dd1f034bf2f1a786a2fdde962f5bbb150f0effbc8fcec82f66",
+        "upload_rgba_sha256": "5a10f4c7a989e4dd1f034bf2f1a786a2fdde962f5bbb150f0effbc8fcec82f66",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Shilka_Radar19.png",
+        "source": "Art/Extensions/GAA_Shilka_Radar_v2.png",
+        "source_sha256": "8c6f7624ffb0962f9690adce0e74d54e71fac9b3a814ab4f2afe568989eba167",
+        "source_crop": [
+          256,
+          768,
+          256,
+          256
+        ],
+        "width": 16,
+        "height": 16,
+        "bytes": 614,
+        "sha256": "3fd220e6825e3e87dc0a64d533dfce0760534e973dfbad0c3add63a3af1f7498",
+        "baseline_premultiplied_sha256": "fa9d351a7afe056fa2ea19f22128aba6b34e27344df85a228685364b973e7a33",
+        "decoded_premultiplied_sha256": "fa9d351a7afe056fa2ea19f22128aba6b34e27344df85a228685364b973e7a33",
+        "upload_rgba_sha256": "fa9d351a7afe056fa2ea19f22128aba6b34e27344df85a228685364b973e7a33",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Shilka_Radar20.png",
+        "source": "Art/Extensions/GAA_Shilka_Radar_v2.png",
+        "source_sha256": "8c6f7624ffb0962f9690adce0e74d54e71fac9b3a814ab4f2afe568989eba167",
+        "source_crop": [
+          512,
+          768,
+          256,
+          256
+        ],
+        "width": 16,
+        "height": 16,
+        "bytes": 670,
+        "sha256": "14ef3c2e0d332972ce14fce86102c1490437c1e2e7ab6f5baf77c26820c6f289",
+        "baseline_premultiplied_sha256": "5a1a1f7a4c166e01c0e8af83f1da5e62f003124909e49e3bae912b21f37e28ba",
+        "decoded_premultiplied_sha256": "5a1a1f7a4c166e01c0e8af83f1da5e62f003124909e49e3bae912b21f37e28ba",
+        "upload_rgba_sha256": "5a1a1f7a4c166e01c0e8af83f1da5e62f003124909e49e3bae912b21f37e28ba",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Shilka_Radar21.png",
+        "source": "Art/Extensions/GAA_Shilka_Radar_v2.png",
+        "source_sha256": "8c6f7624ffb0962f9690adce0e74d54e71fac9b3a814ab4f2afe568989eba167",
+        "source_crop": [
+          768,
+          768,
+          256,
+          256
+        ],
+        "width": 16,
+        "height": 16,
+        "bytes": 673,
+        "sha256": "2e31c14400d10d53b27479ecb721bd30ed4f4d819eb628453d46738d3684d738",
+        "baseline_premultiplied_sha256": "80c4674999baeeabd1c80e1f3db4999a2051c16893f7e5877a436d81b0f2df46",
+        "decoded_premultiplied_sha256": "80c4674999baeeabd1c80e1f3db4999a2051c16893f7e5877a436d81b0f2df46",
+        "upload_rgba_sha256": "80c4674999baeeabd1c80e1f3db4999a2051c16893f7e5877a436d81b0f2df46",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Shilka_Radar22.png",
+        "source": "Art/Extensions/GAA_Shilka_Radar_v2.png",
+        "source_sha256": "8c6f7624ffb0962f9690adce0e74d54e71fac9b3a814ab4f2afe568989eba167",
+        "source_crop": [
+          1024,
+          768,
+          256,
+          256
+        ],
+        "width": 16,
+        "height": 16,
+        "bytes": 695,
+        "sha256": "db86a2d37b1e6a2b9385c8605d1d343817ba17c198763473c0609ed9030ca91e",
+        "baseline_premultiplied_sha256": "81c1ef51404602540cc7c98c5db5a5d27fae10c3e26d325fbf5e630639e96ede",
+        "decoded_premultiplied_sha256": "81c1ef51404602540cc7c98c5db5a5d27fae10c3e26d325fbf5e630639e96ede",
+        "upload_rgba_sha256": "81c1ef51404602540cc7c98c5db5a5d27fae10c3e26d325fbf5e630639e96ede",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Shilka_Radar23.png",
+        "source": "Art/Extensions/GAA_Shilka_Radar_v2.png",
+        "source_sha256": "8c6f7624ffb0962f9690adce0e74d54e71fac9b3a814ab4f2afe568989eba167",
+        "source_crop": [
+          1280,
+          768,
+          256,
+          256
+        ],
+        "width": 16,
+        "height": 16,
+        "bytes": 698,
+        "sha256": "fb14c7646154b099c708ecee92d7d199e4708456e4d440d9bd404e0aad0579a1",
+        "baseline_premultiplied_sha256": "2c88ad5aaec9c79527dfcfffc815b6854a95298001690d0d68d70c3c81a2f3af",
+        "decoded_premultiplied_sha256": "2c88ad5aaec9c79527dfcfffc815b6854a95298001690d0d68d70c3c81a2f3af",
+        "upload_rgba_sha256": "2c88ad5aaec9c79527dfcfffc815b6854a95298001690d0d68d70c3c81a2f3af",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Tunguska_Radar0.png",
+        "source": "Art/Extensions/GAA_Tunguska_Radar_v2.png",
+        "source_sha256": "07c00647b1e714fabf8be6b0f1336983e490c437071158cd9d1db6d155646d02",
+        "source_crop": [
+          0,
+          0,
+          256,
+          256
+        ],
+        "width": 21,
+        "height": 21,
+        "bytes": 779,
+        "sha256": "a9a4cd781337454cf2ae196240fe1b7e82ff3e7d95ce06633f83e972b0f74890",
+        "baseline_premultiplied_sha256": "0eb85ad2c32bc4f215e7d5680617b7d8a2071b18054e13bffeb061badf232882",
+        "decoded_premultiplied_sha256": "0eb85ad2c32bc4f215e7d5680617b7d8a2071b18054e13bffeb061badf232882",
+        "upload_rgba_sha256": "e8cb4e898138dd2746e21790013055a639aecee9c0856c37fb73837522b4ad82",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Tunguska_Radar1.png",
+        "source": "Art/Extensions/GAA_Tunguska_Radar_v2.png",
+        "source_sha256": "07c00647b1e714fabf8be6b0f1336983e490c437071158cd9d1db6d155646d02",
+        "source_crop": [
+          256,
+          0,
+          256,
+          256
+        ],
+        "width": 21,
+        "height": 21,
+        "bytes": 809,
+        "sha256": "d54188b123f12fade1b1b15cf25699f176fc98d82edce9021600ca67017a6265",
+        "baseline_premultiplied_sha256": "513960cd720e109ba10d9577d4c28e61b3fb113dcc99149c7be98a1a3933fe3b",
+        "decoded_premultiplied_sha256": "513960cd720e109ba10d9577d4c28e61b3fb113dcc99149c7be98a1a3933fe3b",
+        "upload_rgba_sha256": "93482cec78240378366468731d5352cb1f2d16870800cedb541faf05fe7edd09",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Tunguska_Radar2.png",
+        "source": "Art/Extensions/GAA_Tunguska_Radar_v2.png",
+        "source_sha256": "07c00647b1e714fabf8be6b0f1336983e490c437071158cd9d1db6d155646d02",
+        "source_crop": [
+          512,
+          0,
+          256,
+          256
+        ],
+        "width": 21,
+        "height": 21,
+        "bytes": 807,
+        "sha256": "7fba053d0cd1e1fd503d3bb289cf83d15236054313e1facbc420f05a1afcc3b6",
+        "baseline_premultiplied_sha256": "b19cd33623c68cbe1784696b4cceb771d77fc76f7a8f620c8bf9dcefec648e09",
+        "decoded_premultiplied_sha256": "b19cd33623c68cbe1784696b4cceb771d77fc76f7a8f620c8bf9dcefec648e09",
+        "upload_rgba_sha256": "3119ddb7cb0efa59134069a6971aa0f7f9a02dcacdfa45f55745a093c7248c07",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Tunguska_Radar3.png",
+        "source": "Art/Extensions/GAA_Tunguska_Radar_v2.png",
+        "source_sha256": "07c00647b1e714fabf8be6b0f1336983e490c437071158cd9d1db6d155646d02",
+        "source_crop": [
+          768,
+          0,
+          256,
+          256
+        ],
+        "width": 21,
+        "height": 21,
+        "bytes": 740,
+        "sha256": "545e99276befb71c59ea5758aa89f496f5902912cab751a73b0f697835fc55b8",
+        "baseline_premultiplied_sha256": "2b03a3357d36e98efca862a773461a7c01dbd6fa2539ebcc0a96a23dff500525",
+        "decoded_premultiplied_sha256": "2b03a3357d36e98efca862a773461a7c01dbd6fa2539ebcc0a96a23dff500525",
+        "upload_rgba_sha256": "00d7ce6c5dcfcd2cd2ef5b5c7d139949f2e6a113b9b89de73292e5ea4818e47b",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Tunguska_Radar4.png",
+        "source": "Art/Extensions/GAA_Tunguska_Radar_v2.png",
+        "source_sha256": "07c00647b1e714fabf8be6b0f1336983e490c437071158cd9d1db6d155646d02",
+        "source_crop": [
+          1024,
+          0,
+          256,
+          256
+        ],
+        "width": 21,
+        "height": 21,
+        "bytes": 764,
+        "sha256": "7a4f3e34d3cad486742905b86dec100619dc91b46d0bda1ea778acfb91afde23",
+        "baseline_premultiplied_sha256": "61b0b7f69aa12a7220375c63d8c86a574202ce52721f151d52b0072625d37d12",
+        "decoded_premultiplied_sha256": "61b0b7f69aa12a7220375c63d8c86a574202ce52721f151d52b0072625d37d12",
+        "upload_rgba_sha256": "0d0f85f326c4479c5f495eef5872bbfa209008859df9814be4d4fba0377e9ab4",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Tunguska_Radar5.png",
+        "source": "Art/Extensions/GAA_Tunguska_Radar_v2.png",
+        "source_sha256": "07c00647b1e714fabf8be6b0f1336983e490c437071158cd9d1db6d155646d02",
+        "source_crop": [
+          1280,
+          0,
+          256,
+          256
+        ],
+        "width": 21,
+        "height": 21,
+        "bytes": 708,
+        "sha256": "fb554cd30b689e7699984b4355ff189f5f9cd10bedd8264eadfe16e7c53a92ba",
+        "baseline_premultiplied_sha256": "da3c4a21b039c2988809a4e64277745085925df3e420dcd3e43a713b49051ea8",
+        "decoded_premultiplied_sha256": "da3c4a21b039c2988809a4e64277745085925df3e420dcd3e43a713b49051ea8",
+        "upload_rgba_sha256": "e7376de695ece507e05523a2c1061fe69390166161fdcbd586704ac542998101",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Tunguska_Radar6.png",
+        "source": "Art/Extensions/GAA_Tunguska_Radar_v2.png",
+        "source_sha256": "07c00647b1e714fabf8be6b0f1336983e490c437071158cd9d1db6d155646d02",
+        "source_crop": [
+          0,
+          256,
+          256,
+          256
+        ],
+        "width": 21,
+        "height": 21,
+        "bytes": 492,
+        "sha256": "e3fd4711679215fa6b3f45a8a5813c546fe6bf1864f8288b732bc035deefba8d",
+        "baseline_premultiplied_sha256": "b77de5391befd1afcdcb3ccc599bfe6c8a974bccd53302006be626c3190cee8e",
+        "decoded_premultiplied_sha256": "b77de5391befd1afcdcb3ccc599bfe6c8a974bccd53302006be626c3190cee8e",
+        "upload_rgba_sha256": "3094848abe4452cd48ec70e58c73b4776ac433f963288394c389dc4d1446b32e",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Tunguska_Radar7.png",
+        "source": "Art/Extensions/GAA_Tunguska_Radar_v2.png",
+        "source_sha256": "07c00647b1e714fabf8be6b0f1336983e490c437071158cd9d1db6d155646d02",
+        "source_crop": [
+          256,
+          256,
+          256,
+          256
+        ],
+        "width": 21,
+        "height": 21,
+        "bytes": 715,
+        "sha256": "8cb4d9908343f15f433789236a803ea10238f4926a2c092dafcfe2fc2eebb48a",
+        "baseline_premultiplied_sha256": "faf67ea1e8b870280c8836ebdf9ba32ee8253fda108e4eaa843d91960b15394c",
+        "decoded_premultiplied_sha256": "faf67ea1e8b870280c8836ebdf9ba32ee8253fda108e4eaa843d91960b15394c",
+        "upload_rgba_sha256": "389f44aa30bf0c4b8335bfe8cfab86ef76aeaa9d14bda8566e528c299618675a",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Tunguska_Radar8.png",
+        "source": "Art/Extensions/GAA_Tunguska_Radar_v2.png",
+        "source_sha256": "07c00647b1e714fabf8be6b0f1336983e490c437071158cd9d1db6d155646d02",
+        "source_crop": [
+          512,
+          256,
+          256,
+          256
+        ],
+        "width": 21,
+        "height": 21,
+        "bytes": 794,
+        "sha256": "9a957ff9bbb5f7863bb7d4c9a61fd786a30bd8315b3918147b295748ad7f813e",
+        "baseline_premultiplied_sha256": "d35fad0adc01946587b7a3b761f0847c0d52f9821d8b33da0a9cf904e204f321",
+        "decoded_premultiplied_sha256": "d35fad0adc01946587b7a3b761f0847c0d52f9821d8b33da0a9cf904e204f321",
+        "upload_rgba_sha256": "63f2ae4b8112dabb13b78b279da93fa7c427d9958cbc0ad69931904742b08d57",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Tunguska_Radar9.png",
+        "source": "Art/Extensions/GAA_Tunguska_Radar_v2.png",
+        "source_sha256": "07c00647b1e714fabf8be6b0f1336983e490c437071158cd9d1db6d155646d02",
+        "source_crop": [
+          768,
+          256,
+          256,
+          256
+        ],
+        "width": 21,
+        "height": 21,
+        "bytes": 809,
+        "sha256": "36f01224f50569c7be6f231083e82148712ff03eb34f1771c5469b6c0f3f7ab2",
+        "baseline_premultiplied_sha256": "7c09a3e210a95279947dc0a65e561051e4b3f496d6f075342b8157a194b7401c",
+        "decoded_premultiplied_sha256": "7c09a3e210a95279947dc0a65e561051e4b3f496d6f075342b8157a194b7401c",
+        "upload_rgba_sha256": "53e47e9f463011427539739881278dea268266f5b5ddf9e8f45d92a5e3a75bf7",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Tunguska_Radar10.png",
+        "source": "Art/Extensions/GAA_Tunguska_Radar_v2.png",
+        "source_sha256": "07c00647b1e714fabf8be6b0f1336983e490c437071158cd9d1db6d155646d02",
+        "source_crop": [
+          1024,
+          256,
+          256,
+          256
+        ],
+        "width": 21,
+        "height": 21,
+        "bytes": 828,
+        "sha256": "891abf6569bd56bff4bb94194d47bf29dcaea2e28955812a1bc5aca7bddd8cae",
+        "baseline_premultiplied_sha256": "3c5faf7f47f2002dd778ffcc9149a23c18ad6bd2a9bd200e5bfccd23fa56b260",
+        "decoded_premultiplied_sha256": "3c5faf7f47f2002dd778ffcc9149a23c18ad6bd2a9bd200e5bfccd23fa56b260",
+        "upload_rgba_sha256": "1b02e27b21c3d5fdf343dc245c7b0beb3621e3ae2e7b6374a6977f348c4d953f",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Tunguska_Radar11.png",
+        "source": "Art/Extensions/GAA_Tunguska_Radar_v2.png",
+        "source_sha256": "07c00647b1e714fabf8be6b0f1336983e490c437071158cd9d1db6d155646d02",
+        "source_crop": [
+          1280,
+          256,
+          256,
+          256
+        ],
+        "width": 21,
+        "height": 21,
+        "bytes": 828,
+        "sha256": "7c7c641b603488a341d518a5b9e2f005c0aae92be2271a2e72b86f0394e03d79",
+        "baseline_premultiplied_sha256": "6ef21b768c1b0bc48192d6f54f86bd33c9efcd1460fd37409e5c5ad8d37756d2",
+        "decoded_premultiplied_sha256": "6ef21b768c1b0bc48192d6f54f86bd33c9efcd1460fd37409e5c5ad8d37756d2",
+        "upload_rgba_sha256": "e020e1e27b786ccde2e649597c0589549e1985abfc86dc9c6ce20d814aea9916",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Tunguska_Radar12.png",
+        "source": "Art/Extensions/GAA_Tunguska_Radar_v2.png",
+        "source_sha256": "07c00647b1e714fabf8be6b0f1336983e490c437071158cd9d1db6d155646d02",
+        "source_crop": [
+          0,
+          512,
+          256,
+          256
+        ],
+        "width": 21,
+        "height": 21,
+        "bytes": 753,
+        "sha256": "80e872d942510dd647968ab4b051a1eb21e61e7d4fdf3d543edc15ce2df4e691",
+        "baseline_premultiplied_sha256": "1b8f17e80f0906f7b4b658c925a490f6b6cac093bfd368def5d7d3604e46cb3c",
+        "decoded_premultiplied_sha256": "1b8f17e80f0906f7b4b658c925a490f6b6cac093bfd368def5d7d3604e46cb3c",
+        "upload_rgba_sha256": "6dce0044c562f6a487bbeba4f63ed51ee0b4122acf752423a666550a19b6dfcf",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Tunguska_Radar13.png",
+        "source": "Art/Extensions/GAA_Tunguska_Radar_v2.png",
+        "source_sha256": "07c00647b1e714fabf8be6b0f1336983e490c437071158cd9d1db6d155646d02",
+        "source_crop": [
+          256,
+          512,
+          256,
+          256
+        ],
+        "width": 21,
+        "height": 21,
+        "bytes": 829,
+        "sha256": "6cc8d58206be6f5b5f008f844a78c881a1545aa9bf5cdf2c2f5c3b8306eb96cc",
+        "baseline_premultiplied_sha256": "4b3f068bed6877e480d0056c63473629952056ff81c3210d93fe541f468c6a7d",
+        "decoded_premultiplied_sha256": "4b3f068bed6877e480d0056c63473629952056ff81c3210d93fe541f468c6a7d",
+        "upload_rgba_sha256": "1a14fcb6cc3c6e49996f1c8746beff85e7348e3f924a77fd9623ce9b49e4de79",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Tunguska_Radar14.png",
+        "source": "Art/Extensions/GAA_Tunguska_Radar_v2.png",
+        "source_sha256": "07c00647b1e714fabf8be6b0f1336983e490c437071158cd9d1db6d155646d02",
+        "source_crop": [
+          512,
+          512,
+          256,
+          256
+        ],
+        "width": 21,
+        "height": 21,
+        "bytes": 836,
+        "sha256": "eda686f121778e193dcfbce7ada48dd4785fc91f891313166783fa9fb6249afd",
+        "baseline_premultiplied_sha256": "6e003d8645f40900e0f0407836891795ebe0496fdd6c46899b8b7cb872b26cf4",
+        "decoded_premultiplied_sha256": "6e003d8645f40900e0f0407836891795ebe0496fdd6c46899b8b7cb872b26cf4",
+        "upload_rgba_sha256": "cc66f65e34837217003204fc1e935ffef7a30b3a2afc3b4243f27c9a2661ef19",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Tunguska_Radar15.png",
+        "source": "Art/Extensions/GAA_Tunguska_Radar_v2.png",
+        "source_sha256": "07c00647b1e714fabf8be6b0f1336983e490c437071158cd9d1db6d155646d02",
+        "source_crop": [
+          768,
+          512,
+          256,
+          256
+        ],
+        "width": 21,
+        "height": 21,
+        "bytes": 780,
+        "sha256": "5bb295d8e422f74f70b88da11325a98eb142282e9c93a8b69348e6ea526b2a20",
+        "baseline_premultiplied_sha256": "0a4e4372ad2d31fb0443b0cfb496d16661c1e272573359e35db2c8b3dc87d149",
+        "decoded_premultiplied_sha256": "0a4e4372ad2d31fb0443b0cfb496d16661c1e272573359e35db2c8b3dc87d149",
+        "upload_rgba_sha256": "77971e8087efecad220c2bfbc4510eb0361b5000caa1d2184c49dd55d919eec5",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Tunguska_Radar16.png",
+        "source": "Art/Extensions/GAA_Tunguska_Radar_v2.png",
+        "source_sha256": "07c00647b1e714fabf8be6b0f1336983e490c437071158cd9d1db6d155646d02",
+        "source_crop": [
+          1024,
+          512,
+          256,
+          256
+        ],
+        "width": 21,
+        "height": 21,
+        "bytes": 782,
+        "sha256": "adec8be381f4266cf91430aa7d5d8a141e39d0eb24e8a24826c576d0f4d1e556",
+        "baseline_premultiplied_sha256": "fcd0bf126ac8772b84ef29e8cf2a43e45449ec45fce3f8b90ad2aecd039f2ac0",
+        "decoded_premultiplied_sha256": "fcd0bf126ac8772b84ef29e8cf2a43e45449ec45fce3f8b90ad2aecd039f2ac0",
+        "upload_rgba_sha256": "dab241819762d96e64e8c09b1063b5210101c25bfc3e0bb35b4c06770c09aa6e",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Tunguska_Radar17.png",
+        "source": "Art/Extensions/GAA_Tunguska_Radar_v2.png",
+        "source_sha256": "07c00647b1e714fabf8be6b0f1336983e490c437071158cd9d1db6d155646d02",
+        "source_crop": [
+          1280,
+          512,
+          256,
+          256
+        ],
+        "width": 21,
+        "height": 21,
+        "bytes": 792,
+        "sha256": "538f5a718d5a03356469292cb5d73346d83df609d567e38849281dc5445c98b4",
+        "baseline_premultiplied_sha256": "62673eae871af588cc5a5c11be480afcc615c5a64f2fb16432e5c7c9b8c81b4e",
+        "decoded_premultiplied_sha256": "62673eae871af588cc5a5c11be480afcc615c5a64f2fb16432e5c7c9b8c81b4e",
+        "upload_rgba_sha256": "c410fd12833bc6fd8cfae0b09abe48d3ea77d1418ab54f553347504e8d6e5749",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Tunguska_Radar18.png",
+        "source": "Art/Extensions/GAA_Tunguska_Radar_v2.png",
+        "source_sha256": "07c00647b1e714fabf8be6b0f1336983e490c437071158cd9d1db6d155646d02",
+        "source_crop": [
+          0,
+          768,
+          256,
+          256
+        ],
+        "width": 21,
+        "height": 21,
+        "bytes": 499,
+        "sha256": "46c23566d8281d1915af05ffadeff47c5552f1b1840ba0002fc10319be0c80be",
+        "baseline_premultiplied_sha256": "cf3d8310eb75b4c52b6e6c662593e17fd7b7c40535ec43940c3ef26ced6638dc",
+        "decoded_premultiplied_sha256": "cf3d8310eb75b4c52b6e6c662593e17fd7b7c40535ec43940c3ef26ced6638dc",
+        "upload_rgba_sha256": "1691b8c195a85a8a8f20dc73ba50c7055c19f3f6584d2c6148fdde60597e388d",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Tunguska_Radar19.png",
+        "source": "Art/Extensions/GAA_Tunguska_Radar_v2.png",
+        "source_sha256": "07c00647b1e714fabf8be6b0f1336983e490c437071158cd9d1db6d155646d02",
+        "source_crop": [
+          256,
+          768,
+          256,
+          256
+        ],
+        "width": 21,
+        "height": 21,
+        "bytes": 790,
+        "sha256": "aee3b3250f0077573f2adb20899748acae17744cb174ccbda1536a59f2db34d7",
+        "baseline_premultiplied_sha256": "ae1636c5038db70f51b27cd1a61b5b49341ae6e7aad79cee01ce86e78cc9e31c",
+        "decoded_premultiplied_sha256": "ae1636c5038db70f51b27cd1a61b5b49341ae6e7aad79cee01ce86e78cc9e31c",
+        "upload_rgba_sha256": "4409408193aaeb188cdcfd50a2a0e42ad4aa0fa96e304503eb9b581f43a1f6b7",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Tunguska_Radar20.png",
+        "source": "Art/Extensions/GAA_Tunguska_Radar_v2.png",
+        "source_sha256": "07c00647b1e714fabf8be6b0f1336983e490c437071158cd9d1db6d155646d02",
+        "source_crop": [
+          512,
+          768,
+          256,
+          256
+        ],
+        "width": 21,
+        "height": 21,
+        "bytes": 789,
+        "sha256": "51dd82aa9aa33a784127441f27024e6331cf56d2c90cb808b937b42df988226a",
+        "baseline_premultiplied_sha256": "d3d41d8275bef2bd12dac3ced6f7b4123b68da5a7feca311bdd8d48c7c1f2fa8",
+        "decoded_premultiplied_sha256": "d3d41d8275bef2bd12dac3ced6f7b4123b68da5a7feca311bdd8d48c7c1f2fa8",
+        "upload_rgba_sha256": "86af551c733581d8776bcdb6e1ee363f232a0f52ee2ce0f22af1300e0b4c8a3b",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Tunguska_Radar21.png",
+        "source": "Art/Extensions/GAA_Tunguska_Radar_v2.png",
+        "source_sha256": "07c00647b1e714fabf8be6b0f1336983e490c437071158cd9d1db6d155646d02",
+        "source_crop": [
+          768,
+          768,
+          256,
+          256
+        ],
+        "width": 21,
+        "height": 21,
+        "bytes": 814,
+        "sha256": "d65303467f475541f90ad3f8097a38f962ec3f3b2a6023a74522fa185b61d41c",
+        "baseline_premultiplied_sha256": "3fb547bd83a8092a1bb8939a8fbfefebcc2b2928069d90e6cb985a19570edba1",
+        "decoded_premultiplied_sha256": "3fb547bd83a8092a1bb8939a8fbfefebcc2b2928069d90e6cb985a19570edba1",
+        "upload_rgba_sha256": "d6578ddfd8a1ca14c5927ce678207ea7e750fd96c8779ba20771bb2ba3e0e845",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Tunguska_Radar22.png",
+        "source": "Art/Extensions/GAA_Tunguska_Radar_v2.png",
+        "source_sha256": "07c00647b1e714fabf8be6b0f1336983e490c437071158cd9d1db6d155646d02",
+        "source_crop": [
+          1024,
+          768,
+          256,
+          256
+        ],
+        "width": 21,
+        "height": 21,
+        "bytes": 808,
+        "sha256": "ee0e20194bd5ed9d0d47c113811f7cf8fcec5ed813f34dd2229882236dbf18ea",
+        "baseline_premultiplied_sha256": "77db84a061d15807f4c009b686ddc01b012ed9b9167e81ef61bcec94caaf62eb",
+        "decoded_premultiplied_sha256": "77db84a061d15807f4c009b686ddc01b012ed9b9167e81ef61bcec94caaf62eb",
+        "upload_rgba_sha256": "e13b5a7f763088881e96241a3b94643b2b23aa842b633d54c5a87242848ac4f6",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Tunguska_Radar23.png",
+        "source": "Art/Extensions/GAA_Tunguska_Radar_v2.png",
+        "source_sha256": "07c00647b1e714fabf8be6b0f1336983e490c437071158cd9d1db6d155646d02",
+        "source_crop": [
+          1280,
+          768,
+          256,
+          256
+        ],
+        "width": 21,
+        "height": 21,
+        "bytes": 770,
+        "sha256": "51f71eb027526419d13f252558fc29f8e435bc3d1bb6025cc0a3de1ab3607089",
+        "baseline_premultiplied_sha256": "238a422c84509b2c6a91b2d49af82a0400622ebafeb6dc3fd0063234f6714434",
+        "decoded_premultiplied_sha256": "238a422c84509b2c6a91b2d49af82a0400622ebafeb6dc3fd0063234f6714434",
+        "upload_rgba_sha256": "138f3ab2c0260ccdf51d040c6fd2fe2245f9c3383e0488a42b8356971018b3c7",
+        "decode_equal": true,
+        "upload_equal": true
+      }
+    ],
+    "android": [
+      {
+        "file": "VTOL_Yak141.png",
+        "source": "Art/Extensions/VTOL_Yak141.png",
+        "source_sha256": "fdff4c3a7193738d2da9ecb0dd233397490a5e1dc29a65544726cd9c68ace626",
+        "source_crop": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "width": 112,
+        "height": 37,
+        "bytes": 4366,
+        "sha256": "6960cc95d16124c88f23fb4ab5c2069be43a4817c8995b7c473f3c15d603bd28",
+        "baseline_premultiplied_sha256": "3bf4057f4598642191d12d7df7c3fc64b36889d61475932785089506c37d3429",
+        "decoded_premultiplied_sha256": "3bf4057f4598642191d12d7df7c3fc64b36889d61475932785089506c37d3429",
+        "upload_rgba_sha256": "7af2f05c286536872d42d81b00c25b017e480f71803be9ae6b035d98e1b34031",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "VTOL_Harrier.png",
+        "source": "Art/Extensions/VTOL_Harrier.png",
+        "source_sha256": "9a523efede9a292a274671142430c7a028f49282235ab9248499a66f2c6d0dfb",
+        "source_crop": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "width": 108,
+        "height": 41,
+        "bytes": 4518,
+        "sha256": "d87414990cd13521319ed82cd999cc3669395645c32bd34727d7c899cd5af26f",
+        "baseline_premultiplied_sha256": "0f465742a1c70239e1083e22162e70f9d99c4025a22071adb3216d70ac83885f",
+        "decoded_premultiplied_sha256": "0f465742a1c70239e1083e22162e70f9d99c4025a22071adb3216d70ac83885f",
+        "upload_rgba_sha256": "3d9a742d56b5493b8df68c94a6bb0584c965dcba3a2954941fc25db12171d2c2",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "VTOL_F35B.png",
+        "source": "Art/Extensions/VTOL_F35B.png",
+        "source_sha256": "8c2663b77851cde0665186c3ace3e7032de687e011162cfebe28fc71018a6913",
+        "source_crop": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "width": 116,
+        "height": 44,
+        "bytes": 5087,
+        "sha256": "75a48432fbf4c68bd34db04f4dd83a8e40714e5e30ab1a6b4ace3d3987fd6d04",
+        "baseline_premultiplied_sha256": "153d3075ee70925fec4b884deaaec01a84c442fd41ba01f5e1633a1dae96c91a",
+        "decoded_premultiplied_sha256": "153d3075ee70925fec4b884deaaec01a84c442fd41ba01f5e1633a1dae96c91a",
+        "upload_rgba_sha256": "fd202d63e38e212acac4864af9211beccd3ae0dbc6784ab8697fd03da06968ad",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "Lux_F22.png",
+        "source": "Art/Extensions/Lux_F22.png",
+        "source_sha256": "8cf228dafd366849f50ce623901a1106dad35df4ccb451e1de6e346c79f6f082",
+        "source_crop": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "width": 112,
+        "height": 49,
+        "bytes": 4688,
+        "sha256": "ba85eea24c1d925cb873bb1f40bf8b43f9bc7d02097886ffb9ab00f78139bc55",
+        "baseline_premultiplied_sha256": "eaf4904c141a923dfcdc4d42cedf4cbcca0ebdaaecf81f7bf0cbd810423c52bf",
+        "decoded_premultiplied_sha256": "eaf4904c141a923dfcdc4d42cedf4cbcca0ebdaaecf81f7bf0cbd810423c52bf",
+        "upload_rgba_sha256": "dc059eb4a126f2a842fcf41d702c9e52cb7fcdafea95f99709ba872dfc787e63",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "Lux_Su57.png",
+        "source": "Art/Extensions/Lux_Su57.png",
+        "source_sha256": "d8797d4559d71df8923e3d755f4f51237053a3ec1d374f0022834111b775a197",
+        "source_crop": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "width": 116,
+        "height": 42,
+        "bytes": 4708,
+        "sha256": "60e7a8ef41ed9959320b76691eceff1ae51f22b520a1b22975abe7652074bcd0",
+        "baseline_premultiplied_sha256": "5ff407c4bb3353437b973f7fdf7f3a6887a7435f761820574d642f8652d12963",
+        "decoded_premultiplied_sha256": "5ff407c4bb3353437b973f7fdf7f3a6887a7435f761820574d642f8652d12963",
+        "upload_rgba_sha256": "a50e3ec8bbc4a75a5a5efd54076ba2093ee12cb29fee23e9fd2c4cd9a800d51d",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "Lux_MiG31.png",
+        "source": "Art/Extensions/Lux_MiG31.png",
+        "source_sha256": "ef9351c5bb4112c0bc10befa489ae989d3b341e69da29a047c6570d3c468260d",
+        "source_crop": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "width": 120,
+        "height": 40,
+        "bytes": 4400,
+        "sha256": "2706e83d07e8fd2c15ddf6ed79b03cbb987cf672f15188edbebc5a31f02cac96",
+        "baseline_premultiplied_sha256": "d21a0eaea48c62060578b5c3ee37eeaae468e96175006a10a874158a96ea0e6f",
+        "decoded_premultiplied_sha256": "d21a0eaea48c62060578b5c3ee37eeaae468e96175006a10a874158a96ea0e6f",
+        "upload_rgba_sha256": "eee58cc812b8e789699e4d5b69b09e9fa5cf6d94768b44208de0ef747ffc6b0b",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Shilka_Body.png",
+        "source": "Art/Extensions/GAA_Shilka_Parts_v2.png",
+        "source_sha256": "53bb7031b265ab3439d64c217259f75d2351359fdd446e2519fef174339c8e6a",
+        "source_crop": [
+          95,
+          26,
+          1307,
+          282
+        ],
+        "width": 80,
+        "height": 18,
+        "bytes": 4299,
+        "sha256": "ed70226028cef8b51de44550be30a7b56bef1833011e3b223b354e08ec08d82a",
+        "baseline_premultiplied_sha256": "c38cea69b27f3afb239b50b30228758f7b299c6ebc57fcc4541b12ea9e186b5f",
+        "decoded_premultiplied_sha256": "c38cea69b27f3afb239b50b30228758f7b299c6ebc57fcc4541b12ea9e186b5f",
+        "upload_rgba_sha256": "8db09d9d3200cdbecc9153bcf624b5fb78cdab4cb810382a351fc0d8756a89fa",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Shilka_Body2.png",
+        "source": "Art/Extensions/GAA_Shilka_Parts_v2.png",
+        "source_sha256": "53bb7031b265ab3439d64c217259f75d2351359fdd446e2519fef174339c8e6a",
+        "source_crop": [
+          96,
+          343,
+          1309,
+          282
+        ],
+        "width": 80,
+        "height": 18,
+        "bytes": 4290,
+        "sha256": "f492c17033c14c649b49cfbd15a10b5f8fa4d2f1438251b1a5e5b199d8b838d9",
+        "baseline_premultiplied_sha256": "e47a0a5c7c73c8ce78b28bf01354ba54e2732071ac53e33fc40fd7bbd9694940",
+        "decoded_premultiplied_sha256": "e47a0a5c7c73c8ce78b28bf01354ba54e2732071ac53e33fc40fd7bbd9694940",
+        "upload_rgba_sha256": "751eadac869e6a73177df4798442fe7a024c1b77d8912bd3420b6698d58104b7",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Shilka_Turret.png",
+        "source": "Art/Extensions/GAA_Shilka_Turret_v3.png",
+        "source_sha256": "b6d21f38c6ea995e58cb16dbf7f7f5f6f11e004d2ec2c2915b39749d6b03c331",
+        "source_crop": [
+          84,
+          95,
+          1804,
+          578
+        ],
+        "width": 51,
+        "height": 29,
+        "bytes": 3695,
+        "sha256": "8f8e0f7aed8c395132cf955ec8f7c9c424b20bafc532dd5639cd41c733eb00d4",
+        "baseline_premultiplied_sha256": "6b4831d74abb93ae70a6741e87aef1119bf08b48c433fe22f0fbb95ca62d531b",
+        "decoded_premultiplied_sha256": "6b4831d74abb93ae70a6741e87aef1119bf08b48c433fe22f0fbb95ca62d531b",
+        "upload_rgba_sha256": "a57e8a91996aa683d11c8751c123019dfad6bf29884cbd0aa57f1d4096354d6c",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Shilka_Gun.png",
+        "source": "Art/Extensions/GAA_Shilka_Parts_v2.png",
+        "source_sha256": "53bb7031b265ab3439d64c217259f75d2351359fdd446e2519fef174339c8e6a",
+        "source_crop": [
+          445,
+          904,
+          580,
+          113
+        ],
+        "width": 32,
+        "height": 6,
+        "bytes": 733,
+        "sha256": "1f367799b2e9d232ad950b2b3a4933cb7bca169eda702a4147c0d4631a18fc49",
+        "baseline_premultiplied_sha256": "21c50892749b0b734d6831b8bd6ff081881fc9858b1e4f411e1a92d0a04724f6",
+        "decoded_premultiplied_sha256": "21c50892749b0b734d6831b8bd6ff081881fc9858b1e4f411e1a92d0a04724f6",
+        "upload_rgba_sha256": "9d1de132b8e5ae55e32125ef001cc89f72dc24b419f1b4c7b5dab35e6933ef1c",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Tunguska_Body.png",
+        "source": "Art/Extensions/GAA_Tunguska_Parts_v2.png",
+        "source_sha256": "a43afb7e3111085b6c1d9d841d3640976211e33e951537fef81324b48a3dcc8a",
+        "source_crop": [
+          12,
+          93,
+          998,
+          265
+        ],
+        "width": 85,
+        "height": 22,
+        "bytes": 5524,
+        "sha256": "ad9ad57bf25f7638c7a8f40572e87c36d22b1f4cc57ca8af5a99cc22f6fabdf8",
+        "baseline_premultiplied_sha256": "8dd7f49c37735cee022b4b16dfe0cb7b17f5c8e27561fa79892ebadad767fa59",
+        "decoded_premultiplied_sha256": "8dd7f49c37735cee022b4b16dfe0cb7b17f5c8e27561fa79892ebadad767fa59",
+        "upload_rgba_sha256": "0c6dc5bc938399ee9ff2823c7accd55c7858227c211acde2fb72bf6108db520f",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Tunguska_Body2.png",
+        "source": "Art/Extensions/GAA_Tunguska_Parts_v2.png",
+        "source_sha256": "a43afb7e3111085b6c1d9d841d3640976211e33e951537fef81324b48a3dcc8a",
+        "source_crop": [
+          13,
+          417,
+          999,
+          265
+        ],
+        "width": 85,
+        "height": 22,
+        "bytes": 5512,
+        "sha256": "8b92d39b84e5088f617e23b1615d7303383ca21c3e3f906ffd3e553a6af7c54c",
+        "baseline_premultiplied_sha256": "66749db4db4f00272f9f15aefbd595c1e8bc074a539ebd9d1cbd18dbbb441a63",
+        "decoded_premultiplied_sha256": "66749db4db4f00272f9f15aefbd595c1e8bc074a539ebd9d1cbd18dbbb441a63",
+        "upload_rgba_sha256": "8b0adadfd0ee6bfc0c5a324d93d359089f2f7b9cda54f12b40d7c5dc5a7d3897",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Tunguska_Turret.png",
+        "source": "Art/Extensions/GAA_Tunguska_Parts_v2.png",
+        "source_sha256": "a43afb7e3111085b6c1d9d841d3640976211e33e951537fef81324b48a3dcc8a",
+        "source_crop": [
+          199,
+          690,
+          776,
+          447
+        ],
+        "width": 50,
+        "height": 29,
+        "bytes": 2882,
+        "sha256": "94574a51e24a3a1ed809a06e471be3d0577eaa10353d36a04531e600d1986d89",
+        "baseline_premultiplied_sha256": "6f91e6e15233967e8d9cd6c8280632f47655095cd5ca7a4deec73d1fdfc25c7c",
+        "decoded_premultiplied_sha256": "6f91e6e15233967e8d9cd6c8280632f47655095cd5ca7a4deec73d1fdfc25c7c",
+        "upload_rgba_sha256": "3d427322739e4070ee110221514d4f2b4f94f12e9299e4e3ee4ec2cd386bf8a5",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Tunguska_Gun.png",
+        "source": "Art/Extensions/GAA_Tunguska_Parts_v2.png",
+        "source_sha256": "a43afb7e3111085b6c1d9d841d3640976211e33e951537fef81324b48a3dcc8a",
+        "source_crop": [
+          110,
+          1167,
+          706,
+          137
+        ],
+        "width": 37,
+        "height": 7,
+        "bytes": 855,
+        "sha256": "da1313577f36dbe5f1ac7f1e288eb6444e392f2586815f7c025bfb148aa733a8",
+        "baseline_premultiplied_sha256": "18b4e392afdb0443f2650cf9ad2a6ff74f1c346784763d78982d9d438c036843",
+        "decoded_premultiplied_sha256": "18b4e392afdb0443f2650cf9ad2a6ff74f1c346784763d78982d9d438c036843",
+        "upload_rgba_sha256": "fb37decb34a6379805cf7317eb70ec9a1cfacd8d5c31a8f118803c979e94951c",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Tunguska_Missile.png",
+        "source": "Art/Extensions/GAA_Tunguska_Parts_v2.png",
+        "source_sha256": "a43afb7e3111085b6c1d9d841d3640976211e33e951537fef81324b48a3dcc8a",
+        "source_crop": [
+          347,
+          1323,
+          378,
+          194
+        ],
+        "width": 30,
+        "height": 15,
+        "bytes": 1538,
+        "sha256": "a18870b08d7aff51674d4d7c622ffbca661183de54fe07291ba7274d0253c3fe",
+        "baseline_premultiplied_sha256": "2fdae320a8651eea86978ca7882f88fe51de1489518830472786f26cb54e98e2",
+        "decoded_premultiplied_sha256": "2fdae320a8651eea86978ca7882f88fe51de1489518830472786f26cb54e98e2",
+        "upload_rgba_sha256": "833aedade33852c4bad7dfdde38034f9ed09c36dee9dedc3e244197034fc3840",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Shilka_Radar0.png",
+        "source": "Art/Extensions/GAA_Shilka_Radar_v2.png",
+        "source_sha256": "8c6f7624ffb0962f9690adce0e74d54e71fac9b3a814ab4f2afe568989eba167",
+        "source_crop": [
+          0,
+          0,
+          256,
+          256
+        ],
+        "width": 16,
+        "height": 16,
+        "bytes": 633,
+        "sha256": "95fcb4174140bcf87ff78edb941660549053bf8fab696467502bd2b526f7f153",
+        "baseline_premultiplied_sha256": "2b288cac0139fd753dc19180fd0f88ccae9e6dd54a31598486058c65d0090f75",
+        "decoded_premultiplied_sha256": "2b288cac0139fd753dc19180fd0f88ccae9e6dd54a31598486058c65d0090f75",
+        "upload_rgba_sha256": "2b288cac0139fd753dc19180fd0f88ccae9e6dd54a31598486058c65d0090f75",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Shilka_Radar1.png",
+        "source": "Art/Extensions/GAA_Shilka_Radar_v2.png",
+        "source_sha256": "8c6f7624ffb0962f9690adce0e74d54e71fac9b3a814ab4f2afe568989eba167",
+        "source_crop": [
+          256,
+          0,
+          256,
+          256
+        ],
+        "width": 16,
+        "height": 16,
+        "bytes": 686,
+        "sha256": "4cbdcb5ae23aafd975d80ed52b571d19e3fa3b19575d3391a67d52605c1118c7",
+        "baseline_premultiplied_sha256": "e53ab8cc90b8d6b8a3722354651f7c11f740dbd52d1f032aa808eb077f30c066",
+        "decoded_premultiplied_sha256": "e53ab8cc90b8d6b8a3722354651f7c11f740dbd52d1f032aa808eb077f30c066",
+        "upload_rgba_sha256": "e53ab8cc90b8d6b8a3722354651f7c11f740dbd52d1f032aa808eb077f30c066",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Shilka_Radar2.png",
+        "source": "Art/Extensions/GAA_Shilka_Radar_v2.png",
+        "source_sha256": "8c6f7624ffb0962f9690adce0e74d54e71fac9b3a814ab4f2afe568989eba167",
+        "source_crop": [
+          512,
+          0,
+          256,
+          256
+        ],
+        "width": 16,
+        "height": 16,
+        "bytes": 677,
+        "sha256": "9c05cbb6b04ee23f8b178e81ffd1cba6acdcbf24fb68003051e0eae636b101b2",
+        "baseline_premultiplied_sha256": "15909f54d3cc31b01ad5cdd086cd3125c3d84e0ea829de5e2f02f07662550a89",
+        "decoded_premultiplied_sha256": "15909f54d3cc31b01ad5cdd086cd3125c3d84e0ea829de5e2f02f07662550a89",
+        "upload_rgba_sha256": "15909f54d3cc31b01ad5cdd086cd3125c3d84e0ea829de5e2f02f07662550a89",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Shilka_Radar3.png",
+        "source": "Art/Extensions/GAA_Shilka_Radar_v2.png",
+        "source_sha256": "8c6f7624ffb0962f9690adce0e74d54e71fac9b3a814ab4f2afe568989eba167",
+        "source_crop": [
+          768,
+          0,
+          256,
+          256
+        ],
+        "width": 16,
+        "height": 16,
+        "bytes": 681,
+        "sha256": "c4a4a3b47daa42b6b69a8980508bb33aa360d7a447fb7725225524ef7d271911",
+        "baseline_premultiplied_sha256": "ca84079753db42f2d15faa9b7e8ac3e31da6bf643f9fa4ac6acf1861a56631a8",
+        "decoded_premultiplied_sha256": "ca84079753db42f2d15faa9b7e8ac3e31da6bf643f9fa4ac6acf1861a56631a8",
+        "upload_rgba_sha256": "ca84079753db42f2d15faa9b7e8ac3e31da6bf643f9fa4ac6acf1861a56631a8",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Shilka_Radar4.png",
+        "source": "Art/Extensions/GAA_Shilka_Radar_v2.png",
+        "source_sha256": "8c6f7624ffb0962f9690adce0e74d54e71fac9b3a814ab4f2afe568989eba167",
+        "source_crop": [
+          1024,
+          0,
+          256,
+          256
+        ],
+        "width": 16,
+        "height": 16,
+        "bytes": 655,
+        "sha256": "fb41e1fb322b0e1a05af4da5c315f156b86af416e5ba2c53d9df064ef8595624",
+        "baseline_premultiplied_sha256": "cb66b411e540acaa6a4f33b7cf69dddfbdca065fa35aa918d5f56afcaf7cc2d3",
+        "decoded_premultiplied_sha256": "cb66b411e540acaa6a4f33b7cf69dddfbdca065fa35aa918d5f56afcaf7cc2d3",
+        "upload_rgba_sha256": "cb66b411e540acaa6a4f33b7cf69dddfbdca065fa35aa918d5f56afcaf7cc2d3",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Shilka_Radar5.png",
+        "source": "Art/Extensions/GAA_Shilka_Radar_v2.png",
+        "source_sha256": "8c6f7624ffb0962f9690adce0e74d54e71fac9b3a814ab4f2afe568989eba167",
+        "source_crop": [
+          1280,
+          0,
+          256,
+          256
+        ],
+        "width": 16,
+        "height": 16,
+        "bytes": 601,
+        "sha256": "9e2287ad0e33dcb29c6cdbcad35db6465f101838cec1e31409a6b83fe08a9dfc",
+        "baseline_premultiplied_sha256": "d77470be2d6afcbb741d2ac5e87419ada972e0a90ac0ef393c644b24d4b2ab18",
+        "decoded_premultiplied_sha256": "d77470be2d6afcbb741d2ac5e87419ada972e0a90ac0ef393c644b24d4b2ab18",
+        "upload_rgba_sha256": "d77470be2d6afcbb741d2ac5e87419ada972e0a90ac0ef393c644b24d4b2ab18",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Shilka_Radar6.png",
+        "source": "Art/Extensions/GAA_Shilka_Radar_v2.png",
+        "source_sha256": "8c6f7624ffb0962f9690adce0e74d54e71fac9b3a814ab4f2afe568989eba167",
+        "source_crop": [
+          0,
+          256,
+          256,
+          256
+        ],
+        "width": 16,
+        "height": 16,
+        "bytes": 502,
+        "sha256": "f7de7f113206f8641725aacaf15f63ad9af61fe26574e0b8035080f886b7dfe2",
+        "baseline_premultiplied_sha256": "7f439098f819f17b59f450df3614aa407f9312458dd0ced2e40d122a90aa1f12",
+        "decoded_premultiplied_sha256": "7f439098f819f17b59f450df3614aa407f9312458dd0ced2e40d122a90aa1f12",
+        "upload_rgba_sha256": "7f439098f819f17b59f450df3614aa407f9312458dd0ced2e40d122a90aa1f12",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Shilka_Radar7.png",
+        "source": "Art/Extensions/GAA_Shilka_Radar_v2.png",
+        "source_sha256": "8c6f7624ffb0962f9690adce0e74d54e71fac9b3a814ab4f2afe568989eba167",
+        "source_crop": [
+          256,
+          256,
+          256,
+          256
+        ],
+        "width": 16,
+        "height": 16,
+        "bytes": 533,
+        "sha256": "63c564fea14ebfe48f9b732b64f8a45bfd59531c7d3d1b050da7b95df1057e60",
+        "baseline_premultiplied_sha256": "535393aa7f99c8b099b3bd1d9443d4e5fe3858a39df390d116fa10dd55f3b5ae",
+        "decoded_premultiplied_sha256": "535393aa7f99c8b099b3bd1d9443d4e5fe3858a39df390d116fa10dd55f3b5ae",
+        "upload_rgba_sha256": "535393aa7f99c8b099b3bd1d9443d4e5fe3858a39df390d116fa10dd55f3b5ae",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Shilka_Radar8.png",
+        "source": "Art/Extensions/GAA_Shilka_Radar_v2.png",
+        "source_sha256": "8c6f7624ffb0962f9690adce0e74d54e71fac9b3a814ab4f2afe568989eba167",
+        "source_crop": [
+          512,
+          256,
+          256,
+          256
+        ],
+        "width": 16,
+        "height": 16,
+        "bytes": 566,
+        "sha256": "b265dccf95b41b2a54f17fe404cc605a3975c36eb00664b70cc7bd295039e980",
+        "baseline_premultiplied_sha256": "3e4638c33553a5e1bfb33c0ea5bc9bfe6b462bf0127c8b611d30fa77b5f807a8",
+        "decoded_premultiplied_sha256": "3e4638c33553a5e1bfb33c0ea5bc9bfe6b462bf0127c8b611d30fa77b5f807a8",
+        "upload_rgba_sha256": "3e4638c33553a5e1bfb33c0ea5bc9bfe6b462bf0127c8b611d30fa77b5f807a8",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Shilka_Radar9.png",
+        "source": "Art/Extensions/GAA_Shilka_Radar_v2.png",
+        "source_sha256": "8c6f7624ffb0962f9690adce0e74d54e71fac9b3a814ab4f2afe568989eba167",
+        "source_crop": [
+          768,
+          256,
+          256,
+          256
+        ],
+        "width": 16,
+        "height": 16,
+        "bytes": 612,
+        "sha256": "161b42b09c1427177151bae0831505b1976e09ee545b8d3d57a1876b64b28c78",
+        "baseline_premultiplied_sha256": "a1304d34b4430eba71996246a2e2fd8836a3a501fbb486774ea6434fe4aff713",
+        "decoded_premultiplied_sha256": "a1304d34b4430eba71996246a2e2fd8836a3a501fbb486774ea6434fe4aff713",
+        "upload_rgba_sha256": "a1304d34b4430eba71996246a2e2fd8836a3a501fbb486774ea6434fe4aff713",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Shilka_Radar10.png",
+        "source": "Art/Extensions/GAA_Shilka_Radar_v2.png",
+        "source_sha256": "8c6f7624ffb0962f9690adce0e74d54e71fac9b3a814ab4f2afe568989eba167",
+        "source_crop": [
+          1024,
+          256,
+          256,
+          256
+        ],
+        "width": 16,
+        "height": 16,
+        "bytes": 657,
+        "sha256": "33ef4f4e463fbd42ec45fa4947fbefee070c89a1ff2a202c1c8c439a868a6fe5",
+        "baseline_premultiplied_sha256": "a4ddfda6776d40b84a60605a909aff19582b979bce8e330174d160a0de662dbf",
+        "decoded_premultiplied_sha256": "a4ddfda6776d40b84a60605a909aff19582b979bce8e330174d160a0de662dbf",
+        "upload_rgba_sha256": "a4ddfda6776d40b84a60605a909aff19582b979bce8e330174d160a0de662dbf",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Shilka_Radar11.png",
+        "source": "Art/Extensions/GAA_Shilka_Radar_v2.png",
+        "source_sha256": "8c6f7624ffb0962f9690adce0e74d54e71fac9b3a814ab4f2afe568989eba167",
+        "source_crop": [
+          1280,
+          256,
+          256,
+          256
+        ],
+        "width": 16,
+        "height": 16,
+        "bytes": 637,
+        "sha256": "2f33dfb76728c812c77942a56333836c640ecd896f7a0e6fb6428ba797940438",
+        "baseline_premultiplied_sha256": "c022ee286f51723f6c44943f0f067264265152336a9f2b0c3300fbe7b9bbfd05",
+        "decoded_premultiplied_sha256": "c022ee286f51723f6c44943f0f067264265152336a9f2b0c3300fbe7b9bbfd05",
+        "upload_rgba_sha256": "c022ee286f51723f6c44943f0f067264265152336a9f2b0c3300fbe7b9bbfd05",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Shilka_Radar12.png",
+        "source": "Art/Extensions/GAA_Shilka_Radar_v2.png",
+        "source_sha256": "8c6f7624ffb0962f9690adce0e74d54e71fac9b3a814ab4f2afe568989eba167",
+        "source_crop": [
+          0,
+          512,
+          256,
+          256
+        ],
+        "width": 16,
+        "height": 16,
+        "bytes": 760,
+        "sha256": "978a3eaa2ee876066574cc9df1e6313ea13444925e9d9c20c6301a531e535688",
+        "baseline_premultiplied_sha256": "59207068f0a464990aebde467a83769805f4e6d258e14434d19db122751f3540",
+        "decoded_premultiplied_sha256": "59207068f0a464990aebde467a83769805f4e6d258e14434d19db122751f3540",
+        "upload_rgba_sha256": "59207068f0a464990aebde467a83769805f4e6d258e14434d19db122751f3540",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Shilka_Radar13.png",
+        "source": "Art/Extensions/GAA_Shilka_Radar_v2.png",
+        "source_sha256": "8c6f7624ffb0962f9690adce0e74d54e71fac9b3a814ab4f2afe568989eba167",
+        "source_crop": [
+          256,
+          512,
+          256,
+          256
+        ],
+        "width": 16,
+        "height": 16,
+        "bytes": 697,
+        "sha256": "2b31ae1ac8a742de6afb207f27cbd3fb8cd18a7787d2b6d933f69dedf5976f37",
+        "baseline_premultiplied_sha256": "2c275181b3308dc14f444cf936555fc79492cc711fcaa085987217f720690178",
+        "decoded_premultiplied_sha256": "2c275181b3308dc14f444cf936555fc79492cc711fcaa085987217f720690178",
+        "upload_rgba_sha256": "2c275181b3308dc14f444cf936555fc79492cc711fcaa085987217f720690178",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Shilka_Radar14.png",
+        "source": "Art/Extensions/GAA_Shilka_Radar_v2.png",
+        "source_sha256": "8c6f7624ffb0962f9690adce0e74d54e71fac9b3a814ab4f2afe568989eba167",
+        "source_crop": [
+          512,
+          512,
+          256,
+          256
+        ],
+        "width": 16,
+        "height": 16,
+        "bytes": 720,
+        "sha256": "fa097a15776b71b89c233bcd8d84016141ad3b9d345d8b1cd505041b32c59f7e",
+        "baseline_premultiplied_sha256": "043e6cae3e17da0efc77dc50b7ce808a45761b42425770318d1b4dc462d372f3",
+        "decoded_premultiplied_sha256": "043e6cae3e17da0efc77dc50b7ce808a45761b42425770318d1b4dc462d372f3",
+        "upload_rgba_sha256": "043e6cae3e17da0efc77dc50b7ce808a45761b42425770318d1b4dc462d372f3",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Shilka_Radar15.png",
+        "source": "Art/Extensions/GAA_Shilka_Radar_v2.png",
+        "source_sha256": "8c6f7624ffb0962f9690adce0e74d54e71fac9b3a814ab4f2afe568989eba167",
+        "source_crop": [
+          768,
+          512,
+          256,
+          256
+        ],
+        "width": 16,
+        "height": 16,
+        "bytes": 656,
+        "sha256": "0ddfbf75aad3080410b74280a23d03febf9478088a2739e9f75a1b4864ec7764",
+        "baseline_premultiplied_sha256": "951ddac6a5771729933a6a181ff5eae46d0854f56b30209304316caf6122f028",
+        "decoded_premultiplied_sha256": "951ddac6a5771729933a6a181ff5eae46d0854f56b30209304316caf6122f028",
+        "upload_rgba_sha256": "951ddac6a5771729933a6a181ff5eae46d0854f56b30209304316caf6122f028",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Shilka_Radar16.png",
+        "source": "Art/Extensions/GAA_Shilka_Radar_v2.png",
+        "source_sha256": "8c6f7624ffb0962f9690adce0e74d54e71fac9b3a814ab4f2afe568989eba167",
+        "source_crop": [
+          1024,
+          512,
+          256,
+          256
+        ],
+        "width": 16,
+        "height": 16,
+        "bytes": 651,
+        "sha256": "dbf3ab3649bd45ce18f4ff10ba17c7ea5d323c4103a87640498ab9789ca37dc2",
+        "baseline_premultiplied_sha256": "f594464a2eb70ba23e65021346fd2929371f2f867a86be27229363580ced0c3a",
+        "decoded_premultiplied_sha256": "f594464a2eb70ba23e65021346fd2929371f2f867a86be27229363580ced0c3a",
+        "upload_rgba_sha256": "f594464a2eb70ba23e65021346fd2929371f2f867a86be27229363580ced0c3a",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Shilka_Radar17.png",
+        "source": "Art/Extensions/GAA_Shilka_Radar_v2.png",
+        "source_sha256": "8c6f7624ffb0962f9690adce0e74d54e71fac9b3a814ab4f2afe568989eba167",
+        "source_crop": [
+          1280,
+          512,
+          256,
+          256
+        ],
+        "width": 16,
+        "height": 16,
+        "bytes": 627,
+        "sha256": "5fb8c4380f661a33bd0f7757b32d02ebe4dd8684e577d2073b173b80bd5b97ba",
+        "baseline_premultiplied_sha256": "f2b0d70ae538ad6c94f1351244419028bea3493ad1c10fb2010588d55f0d27fe",
+        "decoded_premultiplied_sha256": "f2b0d70ae538ad6c94f1351244419028bea3493ad1c10fb2010588d55f0d27fe",
+        "upload_rgba_sha256": "f2b0d70ae538ad6c94f1351244419028bea3493ad1c10fb2010588d55f0d27fe",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Shilka_Radar18.png",
+        "source": "Art/Extensions/GAA_Shilka_Radar_v2.png",
+        "source_sha256": "8c6f7624ffb0962f9690adce0e74d54e71fac9b3a814ab4f2afe568989eba167",
+        "source_crop": [
+          0,
+          768,
+          256,
+          256
+        ],
+        "width": 16,
+        "height": 16,
+        "bytes": 479,
+        "sha256": "6e319d3f44e23f314ca3f1d5fc183f2311822c5892fe606615fe8c7b742e9470",
+        "baseline_premultiplied_sha256": "5a10f4c7a989e4dd1f034bf2f1a786a2fdde962f5bbb150f0effbc8fcec82f66",
+        "decoded_premultiplied_sha256": "5a10f4c7a989e4dd1f034bf2f1a786a2fdde962f5bbb150f0effbc8fcec82f66",
+        "upload_rgba_sha256": "5a10f4c7a989e4dd1f034bf2f1a786a2fdde962f5bbb150f0effbc8fcec82f66",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Shilka_Radar19.png",
+        "source": "Art/Extensions/GAA_Shilka_Radar_v2.png",
+        "source_sha256": "8c6f7624ffb0962f9690adce0e74d54e71fac9b3a814ab4f2afe568989eba167",
+        "source_crop": [
+          256,
+          768,
+          256,
+          256
+        ],
+        "width": 16,
+        "height": 16,
+        "bytes": 614,
+        "sha256": "3fd220e6825e3e87dc0a64d533dfce0760534e973dfbad0c3add63a3af1f7498",
+        "baseline_premultiplied_sha256": "fa9d351a7afe056fa2ea19f22128aba6b34e27344df85a228685364b973e7a33",
+        "decoded_premultiplied_sha256": "fa9d351a7afe056fa2ea19f22128aba6b34e27344df85a228685364b973e7a33",
+        "upload_rgba_sha256": "fa9d351a7afe056fa2ea19f22128aba6b34e27344df85a228685364b973e7a33",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Shilka_Radar20.png",
+        "source": "Art/Extensions/GAA_Shilka_Radar_v2.png",
+        "source_sha256": "8c6f7624ffb0962f9690adce0e74d54e71fac9b3a814ab4f2afe568989eba167",
+        "source_crop": [
+          512,
+          768,
+          256,
+          256
+        ],
+        "width": 16,
+        "height": 16,
+        "bytes": 670,
+        "sha256": "14ef3c2e0d332972ce14fce86102c1490437c1e2e7ab6f5baf77c26820c6f289",
+        "baseline_premultiplied_sha256": "5a1a1f7a4c166e01c0e8af83f1da5e62f003124909e49e3bae912b21f37e28ba",
+        "decoded_premultiplied_sha256": "5a1a1f7a4c166e01c0e8af83f1da5e62f003124909e49e3bae912b21f37e28ba",
+        "upload_rgba_sha256": "5a1a1f7a4c166e01c0e8af83f1da5e62f003124909e49e3bae912b21f37e28ba",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Shilka_Radar21.png",
+        "source": "Art/Extensions/GAA_Shilka_Radar_v2.png",
+        "source_sha256": "8c6f7624ffb0962f9690adce0e74d54e71fac9b3a814ab4f2afe568989eba167",
+        "source_crop": [
+          768,
+          768,
+          256,
+          256
+        ],
+        "width": 16,
+        "height": 16,
+        "bytes": 673,
+        "sha256": "2e31c14400d10d53b27479ecb721bd30ed4f4d819eb628453d46738d3684d738",
+        "baseline_premultiplied_sha256": "80c4674999baeeabd1c80e1f3db4999a2051c16893f7e5877a436d81b0f2df46",
+        "decoded_premultiplied_sha256": "80c4674999baeeabd1c80e1f3db4999a2051c16893f7e5877a436d81b0f2df46",
+        "upload_rgba_sha256": "80c4674999baeeabd1c80e1f3db4999a2051c16893f7e5877a436d81b0f2df46",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Shilka_Radar22.png",
+        "source": "Art/Extensions/GAA_Shilka_Radar_v2.png",
+        "source_sha256": "8c6f7624ffb0962f9690adce0e74d54e71fac9b3a814ab4f2afe568989eba167",
+        "source_crop": [
+          1024,
+          768,
+          256,
+          256
+        ],
+        "width": 16,
+        "height": 16,
+        "bytes": 695,
+        "sha256": "db86a2d37b1e6a2b9385c8605d1d343817ba17c198763473c0609ed9030ca91e",
+        "baseline_premultiplied_sha256": "81c1ef51404602540cc7c98c5db5a5d27fae10c3e26d325fbf5e630639e96ede",
+        "decoded_premultiplied_sha256": "81c1ef51404602540cc7c98c5db5a5d27fae10c3e26d325fbf5e630639e96ede",
+        "upload_rgba_sha256": "81c1ef51404602540cc7c98c5db5a5d27fae10c3e26d325fbf5e630639e96ede",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Shilka_Radar23.png",
+        "source": "Art/Extensions/GAA_Shilka_Radar_v2.png",
+        "source_sha256": "8c6f7624ffb0962f9690adce0e74d54e71fac9b3a814ab4f2afe568989eba167",
+        "source_crop": [
+          1280,
+          768,
+          256,
+          256
+        ],
+        "width": 16,
+        "height": 16,
+        "bytes": 698,
+        "sha256": "fb14c7646154b099c708ecee92d7d199e4708456e4d440d9bd404e0aad0579a1",
+        "baseline_premultiplied_sha256": "2c88ad5aaec9c79527dfcfffc815b6854a95298001690d0d68d70c3c81a2f3af",
+        "decoded_premultiplied_sha256": "2c88ad5aaec9c79527dfcfffc815b6854a95298001690d0d68d70c3c81a2f3af",
+        "upload_rgba_sha256": "2c88ad5aaec9c79527dfcfffc815b6854a95298001690d0d68d70c3c81a2f3af",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Tunguska_Radar0.png",
+        "source": "Art/Extensions/GAA_Tunguska_Radar_v2.png",
+        "source_sha256": "07c00647b1e714fabf8be6b0f1336983e490c437071158cd9d1db6d155646d02",
+        "source_crop": [
+          0,
+          0,
+          256,
+          256
+        ],
+        "width": 21,
+        "height": 21,
+        "bytes": 779,
+        "sha256": "a9a4cd781337454cf2ae196240fe1b7e82ff3e7d95ce06633f83e972b0f74890",
+        "baseline_premultiplied_sha256": "0eb85ad2c32bc4f215e7d5680617b7d8a2071b18054e13bffeb061badf232882",
+        "decoded_premultiplied_sha256": "0eb85ad2c32bc4f215e7d5680617b7d8a2071b18054e13bffeb061badf232882",
+        "upload_rgba_sha256": "e8cb4e898138dd2746e21790013055a639aecee9c0856c37fb73837522b4ad82",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Tunguska_Radar1.png",
+        "source": "Art/Extensions/GAA_Tunguska_Radar_v2.png",
+        "source_sha256": "07c00647b1e714fabf8be6b0f1336983e490c437071158cd9d1db6d155646d02",
+        "source_crop": [
+          256,
+          0,
+          256,
+          256
+        ],
+        "width": 21,
+        "height": 21,
+        "bytes": 809,
+        "sha256": "d54188b123f12fade1b1b15cf25699f176fc98d82edce9021600ca67017a6265",
+        "baseline_premultiplied_sha256": "513960cd720e109ba10d9577d4c28e61b3fb113dcc99149c7be98a1a3933fe3b",
+        "decoded_premultiplied_sha256": "513960cd720e109ba10d9577d4c28e61b3fb113dcc99149c7be98a1a3933fe3b",
+        "upload_rgba_sha256": "93482cec78240378366468731d5352cb1f2d16870800cedb541faf05fe7edd09",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Tunguska_Radar2.png",
+        "source": "Art/Extensions/GAA_Tunguska_Radar_v2.png",
+        "source_sha256": "07c00647b1e714fabf8be6b0f1336983e490c437071158cd9d1db6d155646d02",
+        "source_crop": [
+          512,
+          0,
+          256,
+          256
+        ],
+        "width": 21,
+        "height": 21,
+        "bytes": 807,
+        "sha256": "7fba053d0cd1e1fd503d3bb289cf83d15236054313e1facbc420f05a1afcc3b6",
+        "baseline_premultiplied_sha256": "b19cd33623c68cbe1784696b4cceb771d77fc76f7a8f620c8bf9dcefec648e09",
+        "decoded_premultiplied_sha256": "b19cd33623c68cbe1784696b4cceb771d77fc76f7a8f620c8bf9dcefec648e09",
+        "upload_rgba_sha256": "3119ddb7cb0efa59134069a6971aa0f7f9a02dcacdfa45f55745a093c7248c07",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Tunguska_Radar3.png",
+        "source": "Art/Extensions/GAA_Tunguska_Radar_v2.png",
+        "source_sha256": "07c00647b1e714fabf8be6b0f1336983e490c437071158cd9d1db6d155646d02",
+        "source_crop": [
+          768,
+          0,
+          256,
+          256
+        ],
+        "width": 21,
+        "height": 21,
+        "bytes": 740,
+        "sha256": "545e99276befb71c59ea5758aa89f496f5902912cab751a73b0f697835fc55b8",
+        "baseline_premultiplied_sha256": "2b03a3357d36e98efca862a773461a7c01dbd6fa2539ebcc0a96a23dff500525",
+        "decoded_premultiplied_sha256": "2b03a3357d36e98efca862a773461a7c01dbd6fa2539ebcc0a96a23dff500525",
+        "upload_rgba_sha256": "00d7ce6c5dcfcd2cd2ef5b5c7d139949f2e6a113b9b89de73292e5ea4818e47b",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Tunguska_Radar4.png",
+        "source": "Art/Extensions/GAA_Tunguska_Radar_v2.png",
+        "source_sha256": "07c00647b1e714fabf8be6b0f1336983e490c437071158cd9d1db6d155646d02",
+        "source_crop": [
+          1024,
+          0,
+          256,
+          256
+        ],
+        "width": 21,
+        "height": 21,
+        "bytes": 764,
+        "sha256": "7a4f3e34d3cad486742905b86dec100619dc91b46d0bda1ea778acfb91afde23",
+        "baseline_premultiplied_sha256": "61b0b7f69aa12a7220375c63d8c86a574202ce52721f151d52b0072625d37d12",
+        "decoded_premultiplied_sha256": "61b0b7f69aa12a7220375c63d8c86a574202ce52721f151d52b0072625d37d12",
+        "upload_rgba_sha256": "0d0f85f326c4479c5f495eef5872bbfa209008859df9814be4d4fba0377e9ab4",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Tunguska_Radar5.png",
+        "source": "Art/Extensions/GAA_Tunguska_Radar_v2.png",
+        "source_sha256": "07c00647b1e714fabf8be6b0f1336983e490c437071158cd9d1db6d155646d02",
+        "source_crop": [
+          1280,
+          0,
+          256,
+          256
+        ],
+        "width": 21,
+        "height": 21,
+        "bytes": 708,
+        "sha256": "fb554cd30b689e7699984b4355ff189f5f9cd10bedd8264eadfe16e7c53a92ba",
+        "baseline_premultiplied_sha256": "da3c4a21b039c2988809a4e64277745085925df3e420dcd3e43a713b49051ea8",
+        "decoded_premultiplied_sha256": "da3c4a21b039c2988809a4e64277745085925df3e420dcd3e43a713b49051ea8",
+        "upload_rgba_sha256": "e7376de695ece507e05523a2c1061fe69390166161fdcbd586704ac542998101",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Tunguska_Radar6.png",
+        "source": "Art/Extensions/GAA_Tunguska_Radar_v2.png",
+        "source_sha256": "07c00647b1e714fabf8be6b0f1336983e490c437071158cd9d1db6d155646d02",
+        "source_crop": [
+          0,
+          256,
+          256,
+          256
+        ],
+        "width": 21,
+        "height": 21,
+        "bytes": 492,
+        "sha256": "e3fd4711679215fa6b3f45a8a5813c546fe6bf1864f8288b732bc035deefba8d",
+        "baseline_premultiplied_sha256": "b77de5391befd1afcdcb3ccc599bfe6c8a974bccd53302006be626c3190cee8e",
+        "decoded_premultiplied_sha256": "b77de5391befd1afcdcb3ccc599bfe6c8a974bccd53302006be626c3190cee8e",
+        "upload_rgba_sha256": "3094848abe4452cd48ec70e58c73b4776ac433f963288394c389dc4d1446b32e",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Tunguska_Radar7.png",
+        "source": "Art/Extensions/GAA_Tunguska_Radar_v2.png",
+        "source_sha256": "07c00647b1e714fabf8be6b0f1336983e490c437071158cd9d1db6d155646d02",
+        "source_crop": [
+          256,
+          256,
+          256,
+          256
+        ],
+        "width": 21,
+        "height": 21,
+        "bytes": 715,
+        "sha256": "8cb4d9908343f15f433789236a803ea10238f4926a2c092dafcfe2fc2eebb48a",
+        "baseline_premultiplied_sha256": "faf67ea1e8b870280c8836ebdf9ba32ee8253fda108e4eaa843d91960b15394c",
+        "decoded_premultiplied_sha256": "faf67ea1e8b870280c8836ebdf9ba32ee8253fda108e4eaa843d91960b15394c",
+        "upload_rgba_sha256": "389f44aa30bf0c4b8335bfe8cfab86ef76aeaa9d14bda8566e528c299618675a",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Tunguska_Radar8.png",
+        "source": "Art/Extensions/GAA_Tunguska_Radar_v2.png",
+        "source_sha256": "07c00647b1e714fabf8be6b0f1336983e490c437071158cd9d1db6d155646d02",
+        "source_crop": [
+          512,
+          256,
+          256,
+          256
+        ],
+        "width": 21,
+        "height": 21,
+        "bytes": 794,
+        "sha256": "9a957ff9bbb5f7863bb7d4c9a61fd786a30bd8315b3918147b295748ad7f813e",
+        "baseline_premultiplied_sha256": "d35fad0adc01946587b7a3b761f0847c0d52f9821d8b33da0a9cf904e204f321",
+        "decoded_premultiplied_sha256": "d35fad0adc01946587b7a3b761f0847c0d52f9821d8b33da0a9cf904e204f321",
+        "upload_rgba_sha256": "63f2ae4b8112dabb13b78b279da93fa7c427d9958cbc0ad69931904742b08d57",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Tunguska_Radar9.png",
+        "source": "Art/Extensions/GAA_Tunguska_Radar_v2.png",
+        "source_sha256": "07c00647b1e714fabf8be6b0f1336983e490c437071158cd9d1db6d155646d02",
+        "source_crop": [
+          768,
+          256,
+          256,
+          256
+        ],
+        "width": 21,
+        "height": 21,
+        "bytes": 809,
+        "sha256": "36f01224f50569c7be6f231083e82148712ff03eb34f1771c5469b6c0f3f7ab2",
+        "baseline_premultiplied_sha256": "7c09a3e210a95279947dc0a65e561051e4b3f496d6f075342b8157a194b7401c",
+        "decoded_premultiplied_sha256": "7c09a3e210a95279947dc0a65e561051e4b3f496d6f075342b8157a194b7401c",
+        "upload_rgba_sha256": "53e47e9f463011427539739881278dea268266f5b5ddf9e8f45d92a5e3a75bf7",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Tunguska_Radar10.png",
+        "source": "Art/Extensions/GAA_Tunguska_Radar_v2.png",
+        "source_sha256": "07c00647b1e714fabf8be6b0f1336983e490c437071158cd9d1db6d155646d02",
+        "source_crop": [
+          1024,
+          256,
+          256,
+          256
+        ],
+        "width": 21,
+        "height": 21,
+        "bytes": 828,
+        "sha256": "891abf6569bd56bff4bb94194d47bf29dcaea2e28955812a1bc5aca7bddd8cae",
+        "baseline_premultiplied_sha256": "3c5faf7f47f2002dd778ffcc9149a23c18ad6bd2a9bd200e5bfccd23fa56b260",
+        "decoded_premultiplied_sha256": "3c5faf7f47f2002dd778ffcc9149a23c18ad6bd2a9bd200e5bfccd23fa56b260",
+        "upload_rgba_sha256": "1b02e27b21c3d5fdf343dc245c7b0beb3621e3ae2e7b6374a6977f348c4d953f",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Tunguska_Radar11.png",
+        "source": "Art/Extensions/GAA_Tunguska_Radar_v2.png",
+        "source_sha256": "07c00647b1e714fabf8be6b0f1336983e490c437071158cd9d1db6d155646d02",
+        "source_crop": [
+          1280,
+          256,
+          256,
+          256
+        ],
+        "width": 21,
+        "height": 21,
+        "bytes": 828,
+        "sha256": "7c7c641b603488a341d518a5b9e2f005c0aae92be2271a2e72b86f0394e03d79",
+        "baseline_premultiplied_sha256": "6ef21b768c1b0bc48192d6f54f86bd33c9efcd1460fd37409e5c5ad8d37756d2",
+        "decoded_premultiplied_sha256": "6ef21b768c1b0bc48192d6f54f86bd33c9efcd1460fd37409e5c5ad8d37756d2",
+        "upload_rgba_sha256": "e020e1e27b786ccde2e649597c0589549e1985abfc86dc9c6ce20d814aea9916",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Tunguska_Radar12.png",
+        "source": "Art/Extensions/GAA_Tunguska_Radar_v2.png",
+        "source_sha256": "07c00647b1e714fabf8be6b0f1336983e490c437071158cd9d1db6d155646d02",
+        "source_crop": [
+          0,
+          512,
+          256,
+          256
+        ],
+        "width": 21,
+        "height": 21,
+        "bytes": 753,
+        "sha256": "80e872d942510dd647968ab4b051a1eb21e61e7d4fdf3d543edc15ce2df4e691",
+        "baseline_premultiplied_sha256": "1b8f17e80f0906f7b4b658c925a490f6b6cac093bfd368def5d7d3604e46cb3c",
+        "decoded_premultiplied_sha256": "1b8f17e80f0906f7b4b658c925a490f6b6cac093bfd368def5d7d3604e46cb3c",
+        "upload_rgba_sha256": "6dce0044c562f6a487bbeba4f63ed51ee0b4122acf752423a666550a19b6dfcf",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Tunguska_Radar13.png",
+        "source": "Art/Extensions/GAA_Tunguska_Radar_v2.png",
+        "source_sha256": "07c00647b1e714fabf8be6b0f1336983e490c437071158cd9d1db6d155646d02",
+        "source_crop": [
+          256,
+          512,
+          256,
+          256
+        ],
+        "width": 21,
+        "height": 21,
+        "bytes": 829,
+        "sha256": "6cc8d58206be6f5b5f008f844a78c881a1545aa9bf5cdf2c2f5c3b8306eb96cc",
+        "baseline_premultiplied_sha256": "4b3f068bed6877e480d0056c63473629952056ff81c3210d93fe541f468c6a7d",
+        "decoded_premultiplied_sha256": "4b3f068bed6877e480d0056c63473629952056ff81c3210d93fe541f468c6a7d",
+        "upload_rgba_sha256": "1a14fcb6cc3c6e49996f1c8746beff85e7348e3f924a77fd9623ce9b49e4de79",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Tunguska_Radar14.png",
+        "source": "Art/Extensions/GAA_Tunguska_Radar_v2.png",
+        "source_sha256": "07c00647b1e714fabf8be6b0f1336983e490c437071158cd9d1db6d155646d02",
+        "source_crop": [
+          512,
+          512,
+          256,
+          256
+        ],
+        "width": 21,
+        "height": 21,
+        "bytes": 836,
+        "sha256": "eda686f121778e193dcfbce7ada48dd4785fc91f891313166783fa9fb6249afd",
+        "baseline_premultiplied_sha256": "6e003d8645f40900e0f0407836891795ebe0496fdd6c46899b8b7cb872b26cf4",
+        "decoded_premultiplied_sha256": "6e003d8645f40900e0f0407836891795ebe0496fdd6c46899b8b7cb872b26cf4",
+        "upload_rgba_sha256": "cc66f65e34837217003204fc1e935ffef7a30b3a2afc3b4243f27c9a2661ef19",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Tunguska_Radar15.png",
+        "source": "Art/Extensions/GAA_Tunguska_Radar_v2.png",
+        "source_sha256": "07c00647b1e714fabf8be6b0f1336983e490c437071158cd9d1db6d155646d02",
+        "source_crop": [
+          768,
+          512,
+          256,
+          256
+        ],
+        "width": 21,
+        "height": 21,
+        "bytes": 780,
+        "sha256": "5bb295d8e422f74f70b88da11325a98eb142282e9c93a8b69348e6ea526b2a20",
+        "baseline_premultiplied_sha256": "0a4e4372ad2d31fb0443b0cfb496d16661c1e272573359e35db2c8b3dc87d149",
+        "decoded_premultiplied_sha256": "0a4e4372ad2d31fb0443b0cfb496d16661c1e272573359e35db2c8b3dc87d149",
+        "upload_rgba_sha256": "77971e8087efecad220c2bfbc4510eb0361b5000caa1d2184c49dd55d919eec5",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Tunguska_Radar16.png",
+        "source": "Art/Extensions/GAA_Tunguska_Radar_v2.png",
+        "source_sha256": "07c00647b1e714fabf8be6b0f1336983e490c437071158cd9d1db6d155646d02",
+        "source_crop": [
+          1024,
+          512,
+          256,
+          256
+        ],
+        "width": 21,
+        "height": 21,
+        "bytes": 782,
+        "sha256": "adec8be381f4266cf91430aa7d5d8a141e39d0eb24e8a24826c576d0f4d1e556",
+        "baseline_premultiplied_sha256": "fcd0bf126ac8772b84ef29e8cf2a43e45449ec45fce3f8b90ad2aecd039f2ac0",
+        "decoded_premultiplied_sha256": "fcd0bf126ac8772b84ef29e8cf2a43e45449ec45fce3f8b90ad2aecd039f2ac0",
+        "upload_rgba_sha256": "dab241819762d96e64e8c09b1063b5210101c25bfc3e0bb35b4c06770c09aa6e",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Tunguska_Radar17.png",
+        "source": "Art/Extensions/GAA_Tunguska_Radar_v2.png",
+        "source_sha256": "07c00647b1e714fabf8be6b0f1336983e490c437071158cd9d1db6d155646d02",
+        "source_crop": [
+          1280,
+          512,
+          256,
+          256
+        ],
+        "width": 21,
+        "height": 21,
+        "bytes": 792,
+        "sha256": "538f5a718d5a03356469292cb5d73346d83df609d567e38849281dc5445c98b4",
+        "baseline_premultiplied_sha256": "62673eae871af588cc5a5c11be480afcc615c5a64f2fb16432e5c7c9b8c81b4e",
+        "decoded_premultiplied_sha256": "62673eae871af588cc5a5c11be480afcc615c5a64f2fb16432e5c7c9b8c81b4e",
+        "upload_rgba_sha256": "c410fd12833bc6fd8cfae0b09abe48d3ea77d1418ab54f553347504e8d6e5749",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Tunguska_Radar18.png",
+        "source": "Art/Extensions/GAA_Tunguska_Radar_v2.png",
+        "source_sha256": "07c00647b1e714fabf8be6b0f1336983e490c437071158cd9d1db6d155646d02",
+        "source_crop": [
+          0,
+          768,
+          256,
+          256
+        ],
+        "width": 21,
+        "height": 21,
+        "bytes": 499,
+        "sha256": "46c23566d8281d1915af05ffadeff47c5552f1b1840ba0002fc10319be0c80be",
+        "baseline_premultiplied_sha256": "cf3d8310eb75b4c52b6e6c662593e17fd7b7c40535ec43940c3ef26ced6638dc",
+        "decoded_premultiplied_sha256": "cf3d8310eb75b4c52b6e6c662593e17fd7b7c40535ec43940c3ef26ced6638dc",
+        "upload_rgba_sha256": "1691b8c195a85a8a8f20dc73ba50c7055c19f3f6584d2c6148fdde60597e388d",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Tunguska_Radar19.png",
+        "source": "Art/Extensions/GAA_Tunguska_Radar_v2.png",
+        "source_sha256": "07c00647b1e714fabf8be6b0f1336983e490c437071158cd9d1db6d155646d02",
+        "source_crop": [
+          256,
+          768,
+          256,
+          256
+        ],
+        "width": 21,
+        "height": 21,
+        "bytes": 790,
+        "sha256": "aee3b3250f0077573f2adb20899748acae17744cb174ccbda1536a59f2db34d7",
+        "baseline_premultiplied_sha256": "ae1636c5038db70f51b27cd1a61b5b49341ae6e7aad79cee01ce86e78cc9e31c",
+        "decoded_premultiplied_sha256": "ae1636c5038db70f51b27cd1a61b5b49341ae6e7aad79cee01ce86e78cc9e31c",
+        "upload_rgba_sha256": "4409408193aaeb188cdcfd50a2a0e42ad4aa0fa96e304503eb9b581f43a1f6b7",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Tunguska_Radar20.png",
+        "source": "Art/Extensions/GAA_Tunguska_Radar_v2.png",
+        "source_sha256": "07c00647b1e714fabf8be6b0f1336983e490c437071158cd9d1db6d155646d02",
+        "source_crop": [
+          512,
+          768,
+          256,
+          256
+        ],
+        "width": 21,
+        "height": 21,
+        "bytes": 789,
+        "sha256": "51dd82aa9aa33a784127441f27024e6331cf56d2c90cb808b937b42df988226a",
+        "baseline_premultiplied_sha256": "d3d41d8275bef2bd12dac3ced6f7b4123b68da5a7feca311bdd8d48c7c1f2fa8",
+        "decoded_premultiplied_sha256": "d3d41d8275bef2bd12dac3ced6f7b4123b68da5a7feca311bdd8d48c7c1f2fa8",
+        "upload_rgba_sha256": "86af551c733581d8776bcdb6e1ee363f232a0f52ee2ce0f22af1300e0b4c8a3b",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Tunguska_Radar21.png",
+        "source": "Art/Extensions/GAA_Tunguska_Radar_v2.png",
+        "source_sha256": "07c00647b1e714fabf8be6b0f1336983e490c437071158cd9d1db6d155646d02",
+        "source_crop": [
+          768,
+          768,
+          256,
+          256
+        ],
+        "width": 21,
+        "height": 21,
+        "bytes": 814,
+        "sha256": "d65303467f475541f90ad3f8097a38f962ec3f3b2a6023a74522fa185b61d41c",
+        "baseline_premultiplied_sha256": "3fb547bd83a8092a1bb8939a8fbfefebcc2b2928069d90e6cb985a19570edba1",
+        "decoded_premultiplied_sha256": "3fb547bd83a8092a1bb8939a8fbfefebcc2b2928069d90e6cb985a19570edba1",
+        "upload_rgba_sha256": "d6578ddfd8a1ca14c5927ce678207ea7e750fd96c8779ba20771bb2ba3e0e845",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Tunguska_Radar22.png",
+        "source": "Art/Extensions/GAA_Tunguska_Radar_v2.png",
+        "source_sha256": "07c00647b1e714fabf8be6b0f1336983e490c437071158cd9d1db6d155646d02",
+        "source_crop": [
+          1024,
+          768,
+          256,
+          256
+        ],
+        "width": 21,
+        "height": 21,
+        "bytes": 808,
+        "sha256": "ee0e20194bd5ed9d0d47c113811f7cf8fcec5ed813f34dd2229882236dbf18ea",
+        "baseline_premultiplied_sha256": "77db84a061d15807f4c009b686ddc01b012ed9b9167e81ef61bcec94caaf62eb",
+        "decoded_premultiplied_sha256": "77db84a061d15807f4c009b686ddc01b012ed9b9167e81ef61bcec94caaf62eb",
+        "upload_rgba_sha256": "e13b5a7f763088881e96241a3b94643b2b23aa842b633d54c5a87242848ac4f6",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "GAA_Tunguska_Radar23.png",
+        "source": "Art/Extensions/GAA_Tunguska_Radar_v2.png",
+        "source_sha256": "07c00647b1e714fabf8be6b0f1336983e490c437071158cd9d1db6d155646d02",
+        "source_crop": [
+          1280,
+          768,
+          256,
+          256
+        ],
+        "width": 21,
+        "height": 21,
+        "bytes": 770,
+        "sha256": "51f71eb027526419d13f252558fc29f8e435bc3d1bb6025cc0a3de1ab3607089",
+        "baseline_premultiplied_sha256": "238a422c84509b2c6a91b2d49af82a0400622ebafeb6dc3fd0063234f6714434",
+        "decoded_premultiplied_sha256": "238a422c84509b2c6a91b2d49af82a0400622ebafeb6dc3fd0063234f6714434",
+        "upload_rgba_sha256": "138f3ab2c0260ccdf51d040c6fd2fe2245f9c3383e0488a42b8356971018b3c7",
+        "decode_equal": true,
+        "upload_equal": true
+      }
+    ]
+  }
+}

@@ -1,0 +1,532 @@
+{
+  "recorded_utc": "2026-11-08T17:55:49.343814+00:00",
+  "device": {
+    "kind": "Android emulator, not physical phone",
+    "avd": "HeavyMachHotfix1109",
+    "serial": "emulator-5570",
+    "model": "sdk_gphone64_arm64",
+    "os": "16",
+    "gpu_backend": "host / Apple M4 Pro",
+    "canvas": [
+      711.111,
+      320
+    ]
+  },
+  "apk": {
+    "path": "Android/app/build/outputs/apk/cheat/debug/app-cheat-debug.apk",
+    "sha256": "59e21cc9261c824e0ae18fd21bf94d8be31094ae8ec2a8d474df7b38b569ccf6",
+    "edition": "cheat debug, HM_VALIDATION observations enabled",
+    "installed_sha256": "59e21cc9261c824e0ae18fd21bf94d8be31094ae8ec2a8d474df7b38b569ccf6"
+  },
+  "source_sha256": {
+    "Android/app/src/main/cpp/Runtime.cpp": "5951a8d9044284e8142ab598b09212332df79601c68a81d82d926bca1b251cb4",
+    "Android/tools/validate_runtime.py": "c0952627264df9de1ac650650b757ef3dc62e34ac9f80247e1cf2f2dec6a5698",
+    "Android/tools/validate_campaign.py": "c0f140a8b31227bb5a60eddefff0cf993a304d588f1083d27c76c467ac68f441",
+    "Android/tools/validate_unit_contract.py": "6bd720e08b6158019474a56bb7368bd0959c2cfb9a069e6f9f793386356172a9",
+    "Resources/RuntimeData/UnitExtensions.hmx": "e3940603f740a9ecc27e33d22123d93aa15575685761d33af4a0e433c6fac35b"
+  },
+  "runtime": {
+    "passed": 31,
+    "total": 31,
+    "evidence": "Android/build/evidence/runtime-20261109-025338",
+    "checks": [
+      {
+        "check": "game started",
+        "passed": true
+      },
+      {
+        "check": "keyboard forward",
+        "passed": true
+      },
+      {
+        "check": "keyboard backward",
+        "passed": true
+      },
+      {
+        "check": "jump rises",
+        "passed": true
+      },
+      {
+        "check": "touch fire at expanded right side",
+        "passed": true
+      },
+      {
+        "check": "firing does not save",
+        "passed": true
+      },
+      {
+        "check": "background/foreground pauses world",
+        "passed": true
+      },
+      {
+        "check": "explicit resume advances world",
+        "passed": true
+      },
+      {
+        "check": "audio focus loss pauses and recovery retains pause",
+        "passed": true
+      },
+      {
+        "check": "audio requests resume after focus recovery",
+        "passed": true
+      },
+      {
+        "check": "automatic aim mode remains enabled",
+        "passed": true
+      },
+      {
+        "check": "weapon P_Wpn_Gun01",
+        "passed": true
+      },
+      {
+        "check": "weapon P_Wpn_RaderBomb",
+        "passed": true
+      },
+      {
+        "check": "weapon P_Wpn_RaderMsl",
+        "passed": true
+      },
+      {
+        "check": "weapon P_Wpn_RaderLsr",
+        "passed": true
+      },
+      {
+        "check": "weapon P_Wpn_Canon01",
+        "passed": true
+      },
+      {
+        "check": "weapon P_Wpn_Canon02",
+        "passed": true
+      },
+      {
+        "check": "weapon P_Wpn_Canon03",
+        "passed": true
+      },
+      {
+        "check": "weapon P_Wpn_ElShock",
+        "passed": true
+      },
+      {
+        "check": "weapon P_Wpn_Gun02",
+        "passed": true
+      },
+      {
+        "check": "weapon P_Wpn_Gun03",
+        "passed": true
+      },
+      {
+        "check": "weapon P_Wpn_Gun04",
+        "passed": true
+      },
+      {
+        "check": "weapon P_Wpn_Gun05",
+        "passed": true
+      },
+      {
+        "check": "weapon P_Wpn_Gun06",
+        "passed": true
+      },
+      {
+        "check": "weapon P_Wpn_Gun07",
+        "passed": true
+      },
+      {
+        "check": "weapon P_Wpn_Laser",
+        "passed": true
+      },
+      {
+        "check": "weapon P_Wpn_Missile01",
+        "passed": true
+      },
+      {
+        "check": "weapon P_Wpn_Missile02",
+        "passed": true
+      },
+      {
+        "check": "weapon P_Wpn_Missile03",
+        "passed": true
+      },
+      {
+        "check": "weapon P_Wpn_Shotgun01",
+        "passed": true
+      },
+      {
+        "check": "weapon P_Wpn_Shotgun02",
+        "passed": true
+      }
+    ],
+    "weapons": 20,
+    "special_weapons_included": [
+      "P_Wpn_RaderBomb",
+      "P_Wpn_RaderMsl",
+      "P_Wpn_RaderLsr"
+    ],
+    "method": "Actual Android touch swipe fires every weapon; shot counter increases. Lifecycle, movement, jump, pause/audio recovery and no firing-time save checked."
+  },
+  "campaign": {
+    "passed": 39,
+    "total": 39,
+    "stages": 35,
+    "evidence": "Android/build/evidence/campaign-20261109-025217",
+    "checks": [
+      {
+        "check": "campaign 1-1 starts",
+        "passed": true
+      },
+      {
+        "check": "campaign 1-2 starts",
+        "passed": true
+      },
+      {
+        "check": "campaign 1-3 starts",
+        "passed": true
+      },
+      {
+        "check": "campaign 1-4 starts",
+        "passed": true
+      },
+      {
+        "check": "campaign 2-1 starts",
+        "passed": true
+      },
+      {
+        "check": "campaign 2-2 starts",
+        "passed": true
+      },
+      {
+        "check": "campaign 2-3 starts",
+        "passed": true
+      },
+      {
+        "check": "campaign 2-4 starts",
+        "passed": true
+      },
+      {
+        "check": "campaign 2-5 starts",
+        "passed": true
+      },
+      {
+        "check": "campaign 3-1 starts",
+        "passed": true
+      },
+      {
+        "check": "campaign 3-2 starts",
+        "passed": true
+      },
+      {
+        "check": "campaign 3-3 starts",
+        "passed": true
+      },
+      {
+        "check": "campaign 3-4 starts",
+        "passed": true
+      },
+      {
+        "check": "campaign 3-5 starts",
+        "passed": true
+      },
+      {
+        "check": "campaign 4-1 starts",
+        "passed": true
+      },
+      {
+        "check": "campaign 4-2 starts",
+        "passed": true
+      },
+      {
+        "check": "campaign 4-3 starts",
+        "passed": true
+      },
+      {
+        "check": "campaign 4-4 starts",
+        "passed": true
+      },
+      {
+        "check": "campaign 4-5 starts",
+        "passed": true
+      },
+      {
+        "check": "campaign 5-1 starts",
+        "passed": true
+      },
+      {
+        "check": "campaign 5-2 starts",
+        "passed": true
+      },
+      {
+        "check": "campaign 5-3 starts",
+        "passed": true
+      },
+      {
+        "check": "campaign 5-4 starts",
+        "passed": true
+      },
+      {
+        "check": "campaign 5-5 starts",
+        "passed": true
+      },
+      {
+        "check": "campaign 6-1 starts",
+        "passed": true
+      },
+      {
+        "check": "campaign 6-2 starts",
+        "passed": true
+      },
+      {
+        "check": "campaign 6-3 starts",
+        "passed": true
+      },
+      {
+        "check": "campaign 6-4 starts",
+        "passed": true
+      },
+      {
+        "check": "campaign 6-5 starts",
+        "passed": true
+      },
+      {
+        "check": "campaign 7-1 starts",
+        "passed": true
+      },
+      {
+        "check": "campaign 7-2 starts",
+        "passed": true
+      },
+      {
+        "check": "campaign 7-3 starts",
+        "passed": true
+      },
+      {
+        "check": "campaign 7-4 starts",
+        "passed": true
+      },
+      {
+        "check": "campaign 7-5 starts",
+        "passed": true
+      },
+      {
+        "check": "campaign 7-6 starts",
+        "passed": true
+      },
+      {
+        "check": "automatic aim acquires boss-stage enemy",
+        "passed": true
+      },
+      {
+        "check": "auto-aim fires original weapon",
+        "passed": true
+      },
+      {
+        "check": "Android F key fires",
+        "passed": true
+      },
+      {
+        "check": "Android E key changes weapon",
+        "passed": true
+      }
+    ]
+  },
+  "new_units": {
+    "passed": 8,
+    "total": 8,
+    "evidence": "Android/build/evidence/unit-contract-20261109-025152",
+    "method": "Common GameSession spawn; existing automatic aim and default gun; same enemy ID has observed HP reduction. No bullet/damage injection. All eight screenshots inspected.",
+    "results": [
+      {
+        "unit": "VTOL_Yak141",
+        "passed": true,
+        "drawn": true,
+        "actual_hp_damage": true,
+        "initial_hp": 210,
+        "observations": 2,
+        "hp_before": 210,
+        "hp_after": 200,
+        "shots_before": 0,
+        "shots_after": 1,
+        "draw_tiles": [
+          "VTOL_Yak141.png"
+        ],
+        "capture_sha256": "fb5c4a106478d8773e3fdbc216af4a0c6e33381444e575197c73b063942ed9c1"
+      },
+      {
+        "unit": "VTOL_Harrier",
+        "passed": true,
+        "drawn": true,
+        "actual_hp_damage": true,
+        "initial_hp": 400,
+        "observations": 2,
+        "hp_before": 400,
+        "hp_after": 390,
+        "shots_before": 2,
+        "shots_after": 3,
+        "draw_tiles": [
+          "VTOL_Harrier.png"
+        ],
+        "capture_sha256": "153eda22ebf46b1ce5ebf4c86e3eb4bfc19a63ea920adddf207047612743e584"
+      },
+      {
+        "unit": "VTOL_F35B",
+        "passed": true,
+        "drawn": true,
+        "actual_hp_damage": true,
+        "initial_hp": 900,
+        "observations": 2,
+        "hp_before": 900,
+        "hp_after": 890,
+        "shots_before": 4,
+        "shots_after": 5,
+        "draw_tiles": [
+          "VTOL_F35B.png"
+        ],
+        "capture_sha256": "44f424c714479b154c40f3fff9067c053f5dfba673d9c23628160a8c882cc369"
+      },
+      {
+        "unit": "Lux_F22",
+        "passed": true,
+        "drawn": true,
+        "actual_hp_damage": true,
+        "initial_hp": 765,
+        "observations": 2,
+        "hp_before": 765,
+        "hp_after": 755,
+        "shots_before": 6,
+        "shots_after": 7,
+        "draw_tiles": [
+          "Lux_F22.png"
+        ],
+        "capture_sha256": "3e27eb2147a79eeb0198d015f2699849ddd668349f0eccb9f3e8c7d2c2e85380"
+      },
+      {
+        "unit": "Lux_Su57",
+        "passed": true,
+        "drawn": true,
+        "actual_hp_damage": true,
+        "initial_hp": 765,
+        "observations": 2,
+        "hp_before": 765,
+        "hp_after": 755,
+        "shots_before": 8,
+        "shots_after": 9,
+        "draw_tiles": [
+          "Lux_Su57.png"
+        ],
+        "capture_sha256": "2f934a0cf9a46ac6b15a0362d8b14c4557e9051e6e872e74c6bdc1d0e02f6184"
+      },
+      {
+        "unit": "Lux_MiG31",
+        "passed": true,
+        "drawn": true,
+        "actual_hp_damage": true,
+        "initial_hp": 765,
+        "observations": 2,
+        "hp_before": 765,
+        "hp_after": 755,
+        "shots_before": 10,
+        "shots_after": 11,
+        "draw_tiles": [
+          "Lux_MiG31.png"
+        ],
+        "capture_sha256": "a227c6499602845496f589e6862f78f4eddcdcf4068977c506179e105912125a"
+      },
+      {
+        "unit": "GAA_Shilka_M1",
+        "passed": true,
+        "drawn": true,
+        "actual_hp_damage": true,
+        "initial_hp": 250,
+        "observations": 2,
+        "hp_before": 250,
+        "hp_after": 240,
+        "shots_before": 12,
+        "shots_after": 13,
+        "draw_tiles": [
+          "GAA_Shilka_Body2.png",
+          "GAA_Shilka_Gun.png",
+          "GAA_Shilka_Radar10.png",
+          "GAA_Shilka_Turret.png"
+        ],
+        "capture_sha256": "11ba53e8c04184dae7aba7a45b94f2f0af35832bd80fc3f6e6f7cf4657f9df89"
+      },
+      {
+        "unit": "GAA_Tunguska_M1",
+        "passed": true,
+        "drawn": true,
+        "actual_hp_damage": true,
+        "initial_hp": 250,
+        "observations": 2,
+        "hp_before": 250,
+        "hp_after": 240,
+        "shots_before": 14,
+        "shots_after": 16,
+        "draw_tiles": [
+          "GAA_Tunguska_Body2.png",
+          "GAA_Tunguska_Gun.png",
+          "GAA_Tunguska_Missile.png",
+          "GAA_Tunguska_Radar10.png",
+          "GAA_Tunguska_Turret.png"
+        ],
+        "capture_sha256": "7625e7516b60cd230538f52aa146c85dfc690adf1ee53ab423f37e685cd4d13f"
+      }
+    ]
+  },
+  "retained_failures": [
+    {
+      "evidence": "build/hotfix-evidence/android-emulator-runtime.log",
+      "finding": "The validator broadcast commands without launching the Activity; native session was uninitialized. Added one initial Activity launch."
+    },
+    {
+      "evidence": "build/hotfix-evidence/android-validation-session/after-launch-diagnostics.json",
+      "finding": "Default AVD GPU disabled: required GLES framebuffer/RGBA8 extension unavailable, frames=0. Restarting dedicated AVD with -gpu host restored rendering. Renderer requirement unchanged."
+    },
+    {
+      "evidence": "Android/build/evidence/runtime-20261109-024941/results.json",
+      "finding": "30/31 passed; backward direction assertion failed with default emulator acceleration 0:9.77631:0.812349. Separate held reverse probe confirmed reverse motion; neutral acceleration 0:0:9.80665 yielded all31 passing. Product input code unchanged."
+    },
+    {
+      "evidence": "Android/build/evidence/unit-contract-20261109-025121/results.json",
+      "finding": "All eight had real HP loss. Two GAA draw assertions expected only Body.png but runtime correctly selected Body2.png. Validator now accepts the animated Body tile prefix; all8 passed on rerun."
+    }
+  ],
+  "input_source_baseline_comparison": {
+    "Sources/Core/TiltState.hpp": {
+      "baseline_sha256": "c5bcda32f9a8100e21b214575b5c417015c137d06401282df2b59c1131f56382",
+      "candidate_sha256": "c5bcda32f9a8100e21b214575b5c417015c137d06401282df2b59c1131f56382",
+      "identical": true
+    },
+    "Sources/Core/KeyboardInput.hpp": {
+      "baseline_sha256": "a4bbfac0eb6a8de3107b42793456ab8f6d9a886bd465a3556ce646c0385d5546",
+      "candidate_sha256": "a4bbfac0eb6a8de3107b42793456ab8f6d9a886bd465a3556ce646c0385d5546",
+      "identical": true
+    },
+    "Sources/Core/Motion.cpp": {
+      "baseline_sha256": "e7f7c655dc1a07119933053fb90219b2ce64a6f8060d3a929c52395cce2075ea",
+      "candidate_sha256": "e7f7c655dc1a07119933053fb90219b2ce64a6f8060d3a929c52395cce2075ea",
+      "identical": true
+    },
+    "Android/app/src/main/java/com/gelb2/heavymach/GameActivity.kt": {
+      "baseline_sha256": "be6905be1a3d9c615fc4cf0a5191cf258b6352c9bdd7c55c83d12ff526e0ac25",
+      "candidate_sha256": "be6905be1a3d9c615fc4cf0a5191cf258b6352c9bdd7c55c83d12ff526e0ac25",
+      "identical": true
+    },
+    "Android/app/src/main/java/com/gelb2/heavymach/GameEngine.kt": {
+      "baseline_sha256": "1ea5bb51d6f2882da635b015333278decff76cac7721ddd16a7980db5ad2e174",
+      "candidate_sha256": "1ea5bb51d6f2882da635b015333278decff76cac7721ddd16a7980db5ad2e174",
+      "identical": true
+    }
+  },
+  "cleanup": {
+    "target_app_force_stopped": true,
+    "returned_to_home": true,
+    "emulator_acceleration_restored": "0:9.77631:0.812349",
+    "user_normal_app_data_modified": false,
+    "validation_files_backup": "build/hotfix-evidence/android-validation-session/before-validation-files.tar"
+  },
+  "limits": [
+    "No physical Galaxy device was connected; this is emulator evidence.",
+    "One expanded Android canvas was tested; this is not the full multi-resolution 360-input weapon matrix.",
+    "20 weapon checks prove real input and shot emission; per-weapon damage/ammo/dispersion matrix was not performed here. The eight-unit fixture separately proves actual ordinary bullet HP damage.",
+    "No current-versus-baseline APK execution comparison was performed. Input source hashes match baseline; deterministic core trace comparison is recorded separately.",
+    "Audio API start/stop was checked; audible output and physical performance/heat were not measured."
+  ]
+}

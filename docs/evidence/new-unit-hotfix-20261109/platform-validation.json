@@ -1,0 +1,101 @@
+{
+  "date": "2026-11-09",
+  "source_branch": "fix/new-unit-resource-contract",
+  "baseline_commit": "da4d0b890eeff384b1bad1308fe75d35ac365457",
+  "platforms": {
+    "native_mac": {
+      "passedTests": 9,
+      "failedTests": 0,
+      "skippedTests": 0,
+      "raw_summary_sha256": "26d3bebec53299a08c11491d346e74dfdc3d97d6d47fb976e4cfd6be76ed7a47"
+    },
+    "ios_simulator_combat": {
+      "passedTests": 9,
+      "failedTests": 0,
+      "skippedTests": 0,
+      "raw_summary_sha256": "c1519abe8309d41b3d4ba37fb22b06725f8899be6915e2429e3e812a47775f4f"
+    },
+    "ios_simulator_images": {
+      "passedTests": 1,
+      "failedTests": 0,
+      "images_compared": 63,
+      "method": "Actual CoreGraphics high-filter RGBA and upload-input comparison",
+      "log_sha256": "7cb77e00f2b57682dd5c4bdfb9a63a741f7e88e677c5b5ac56ea90a6f368bd90"
+    },
+    "iphone_normal": {
+      "installed": true,
+      "edition": "normal",
+      "bundle_id": "com.gelb2.heavymach.restored",
+      "cheat_symbols_absent": true,
+      "documents_unchanged": true,
+      "document_files": 2,
+      "executable_sha256": "70dd9091e8b326317da3a2ddcfaedd0c7d7182ebfac13c8ebc6a5b2fc26f96ba",
+      "app_resource_files": 842,
+      "source_branch": "fix/new-unit-resource-contract",
+      "source_commit": "da4d0b890eeff384b1bad1308fe75d35ac365457",
+      "uncommitted_hotfix": true,
+      "checked_at_utc": "2026-11-08T17:49:13.087821+00:00",
+      "user_report": {
+        "missions": [
+          "2-4",
+          "2-5"
+        ],
+        "description": "User confirmed playing both missions after installation",
+        "date": "2026-11-09"
+      }
+    },
+    "installed_pwa": {
+      "platform": "Mac Chrome installed standalone PWA",
+      "ok": true,
+      "units": 8,
+      "weapons": 20,
+      "raw_report_sha256": "4aa446f1444c86e848b7b71c809e3cabdaf943dafd2069cf963985afbaf9529f"
+    },
+    "tauri_wkwebview": {
+      "ok": true,
+      "units": 8,
+      "weapons": 20,
+      "raw_report_sha256": "5acba5ade176da7a1a05be55486950fadba8d5e5aaca22ad54a2bded00328cd8"
+    }
+  },
+  "loader_fixtures": {
+    "scope": "Verbatim actual pre/post loader method bodies compiled in native fixtures; platform shell mocks, no device/GPU execution",
+    "raw_report_sha256": "b33ee663f1aa985c0bdca1c13c72d00f960c519f24a44773e9e3bde546ab7d42",
+    "profiles": [
+      {
+        "profile": "apple",
+        "actual_loader_method_pairs": 63,
+        "decode_and_upload_equal": true,
+        "path": "Sources/iOS/HMMedia.mm",
+        "baseline_method_sha256": "669bae0ec9e8a50955eec014a1736375609ec65dba11210ade2d386649d482ff",
+        "candidate_method_sha256": "9928fab2172383d87bd3fdde4df769f6938a6146ceecbe84395640a92c976e1f",
+        "fixture_sha256": "c7bb96fb42cbbe432b760470101a52c472c8b77c43b0546b923159b0c05aa7f3"
+      },
+      {
+        "profile": "web",
+        "actual_loader_method_pairs": 63,
+        "decode_and_upload_equal": true,
+        "path": "Sources/Web/WebMedia.cpp",
+        "baseline_method_sha256": "2859ddc3416c2f3aaef4c79bfee8e842c1b641a5e49e55f1aecabcb969e14a41",
+        "candidate_method_sha256": "f50907c0516cbf936f14be70153e72cc5c0fd6d62ee783b590e9d028b0f1c37e",
+        "fixture_sha256": "44d35328ec82bd0c1e58a37ead790c9dc849e10e5bc23576f71e45b2cdc07a6a"
+      },
+      {
+        "profile": "android",
+        "actual_loader_method_pairs": 63,
+        "upload_equal": true,
+        "path": "Android/app/src/main/cpp/Media.cpp",
+        "baseline_method_sha256": "00a70f035a1f70c0f9fd5ba5d2894899302f290cb50eacbf79b3025a39db3f19",
+        "candidate_method_sha256": "cfb895f4f52998ea7f8056e5eaf83be4837c840249abfec5a3a382dff78f882a",
+        "fixture_sha256": "22dfe40c0c8f7b56de2ebc122cb8d315d0753cfab9540f193af77d2a586daa84"
+      }
+    ]
+  },
+  "limits": [
+    "Android execution used a dedicated emulator, not a physical Galaxy.",
+    "PWA validation used Mac Chrome.",
+    "Physical iPhone/iPad cheat tests were replaced by user instruction after the signing-app limit.",
+    "Normal iPhone was built with development signing and cheats disabled.",
+    "GPU readback and exhaustive long-duration mission difficulty are not claimed."
+  ]
+}

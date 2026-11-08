@@ -1,5 +1,6 @@
 #include "Visuals.hpp"
 #include <cmath>
+#include <algorithm>
 #include <numbers>
 #include <stdexcept>
 namespace heavymach {
@@ -19,6 +20,30 @@ int shortTime(double value){
  unsigned low=static_cast<unsigned>(static_cast<int32_t>(value))&65535u;
  int s=low>=32768?int(low)-65536:int(low);return std::abs(s);
 }
+}
+Vector2 rotateAttachment(Vector2 p,float a){return {p.x*std::cos(a)-p.y*std::sin(a),p.x*std::sin(a)+p.y*std::cos(a)};}
+float velocityPitch(float previous,float x,float y,const MachineBehavior& b){
+ constexpr float rad=3.14159265358979323846f/180;
+ float target=std::clamp(-x/b.horizontalSpeed,-1.f,1.f)*b.horizontalDegrees*rad-std::clamp(y/b.verticalSpeed,-1.f,1.f)*b.verticalDegrees*rad;
+ return previous+(target-previous)/b.easing;
+}
+const PartFrame* presentationFrame(const PartsState& p,double time){
+ if(!p.info||!p.info->presentation)return nullptr;const auto& v=*p.info->presentation;
+ int frame=p.tileFrame;if(v.animation==PartAnimation::WorldLoop)frame=int(std::floor(std::fmod(std::max(0.,time),double(v.period))*v.frames.size()/v.period));
+ if(frame<0||size_t(frame)>=v.frames.size())throw std::runtime_error("Presentation frame outside contract");return &v.frames[size_t(frame)];
+}
+void applyPartPresentation(DrawSprite& d,const PartsState& p,Vector2 pos,float angle,float vertical,double time,Vector2 texture){
+ auto frame=presentationFrame(p,time);if(!frame)return;const auto& v=*p.info->presentation;
+ d.tile=frame->tile;d.cols=v.columns;d.rows=1;d.frame=0;
+ d.position.x+=frame->offset.x*std::cos(p.rotation)-frame->offset.y*std::sin(p.rotation);
+ d.position.y+=frame->offset.x*std::sin(p.rotation)+frame->offset.y*std::cos(p.rotation);
+ if(v.logicalSize.x>0&&v.logicalSize.y>0)d.scale={v.logicalSize.x/std::max(1.f,texture.x),v.logicalSize.y/std::max(1.f,texture.y)};
+ if(v.effect==PartEffect::PulsedExhaust){
+  float length=v.length+std::clamp(vertical/v.velocityReference,-1.f,1.f)*v.velocityAmplitude+std::sin(float(time)*v.frequency)*v.amplitude;
+  auto local=rotateAttachment(v.aft?Vector2{v.nozzle.x+length*.5f,v.nozzle.y}:Vector2{v.nozzle.x,v.nozzle.y-length*.5f},angle);
+  d.position={pos.x+local.x,pos.y+local.y};d.rotation=angle+(v.aft?float(std::numbers::pi):float(std::numbers::pi/2));
+  d.scale={length/std::max(1.f,texture.x/v.columns),v.thickness/std::max(1.f,texture.y)};d.blend=2;d.alpha=v.alpha;
+ }
 }
 // 0x92b4: reset deliberately preserves alpha/show, as does the original pool reset.
 void resetParticle(ParticleState& p,double time){

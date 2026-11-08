@@ -23,7 +23,8 @@ class GameSession {
 public:
  using TileSize=std::function<Vector2(std::string_view)>;
  using Random31=std::function<int32_t()>;
- // RNG must share original random() ordering across all objects. No hidden seed.
+ // Default objects share original random() ordering. Explicit MachineBehavior
+ // contracts may select the preserved per-machine random stream.
  // Native host supplies its GuiGame-lifetime passive slots. Default ownership
  // lasts for this session, including every player/stage replacement.
  // An external sharedPassives owner must outlive the session.

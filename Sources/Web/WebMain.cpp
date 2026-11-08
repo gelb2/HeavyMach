@@ -26,6 +26,14 @@ void motionTick(void*){
 }
 
 extern "C" {
+#if defined(HM_VALIDATION) && HM_VALIDATION
+EMSCRIPTEN_KEEPALIVE const char* hm_validation_catalog(){debugText=view?view->validationCatalog():"{}";return debugText.c_str();}
+EMSCRIPTEN_KEEPALIVE const char* hm_validation_state(){debugText=view?view->validationState():"{}";return debugText.c_str();}
+EMSCRIPTEN_KEEPALIVE int hm_validation_start(const char* weapon,int mission,int stage,int level,int grade,double x,double y,int position,unsigned seed){return view&&view->validationStart(weapon,mission,stage,level,grade,x,y,position!=0,seed)?1:0;}
+EMSCRIPTEN_KEEPALIVE int hm_validation_spawn(const char* name,double x,double y){return view&&view->validationSpawn(name,x,y)?1:0;}
+EMSCRIPTEN_KEEPALIVE int hm_validation_touch(double x,double y,int state){return view&&view->validationTouch(x,y,state)?1:0;}
+EMSCRIPTEN_KEEPALIVE void hm_validation_cheats(int enabled){if(view)view->validationCheats(enabled!=0);}
+#endif
 EMSCRIPTEN_KEEPALIVE void hm_storage_ui(const char* status){if(view)view->storageUIState(status);}
 EMSCRIPTEN_KEEPALIVE void hm_transfer_state(int ready,int mode,int busy,int source,int target,int settings,const char* status){if(view)view->transferUIState(ready,mode,busy,source,target,settings,status);}
 EMSCRIPTEN_KEEPALIVE const char* hm_game_ui(){debugText=view?view->gameUIDebug():"{}";return debugText.c_str();}
@@ -54,7 +62,11 @@ int main(){
     attributes.majorVersion=2;attributes.minorVersion=0;attributes.alpha=false;attributes.depth=false;attributes.stencil=false;
     attributes.antialias=false;attributes.premultipliedAlpha=false;attributes.preserveDrawingBuffer=false;
     EMSCRIPTEN_WEBGL_CONTEXT_HANDLE context=emscripten_webgl_create_context("#canvas",&attributes);
+#if defined(HM_VALIDATION) && HM_VALIDATION
+    view=std::make_unique<hmweb::GameView>("/assets","/validation-persist");
+#else
     view=std::make_unique<hmweb::GameView>("/assets","/persist");
+#endif
     if(context<=0){std::fprintf(stderr,"WebGL2 unavailable (%d)\n",int(context));EM_ASM({if(Module.hmFatal)Module.hmFatal('이 브라우저는 WebGL2를 지원하지 않습니다.');});return 0;}
     emscripten_webgl_make_context_current(context);
     if(!view->initRenderer())return 0;

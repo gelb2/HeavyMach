@@ -11,7 +11,10 @@
     "windows": [],
     "withGlobalTauri": true,
     "security": {
-      "csp": null
+      "csp": null,
+      "capabilities": [
+        "main"
+      ]
     }
   },
   "bundle": {

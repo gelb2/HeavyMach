@@ -8,6 +8,12 @@
 
 Current main includes tank movement, jumping, firing, weapons, parts, upgrades, missions, bosses, result screens and saves. Wider screens, Apple/Android support, auto-aim, six aircraft, two ground enemies, HUD editing and cross-device recovery codes are additions I planned and asked Codex to implement. The web port came from [fastutlego’s PR #24](https://github.com/gelb2/HeavyMach/pull/24); I then requested PWA and Tauri distribution based on that work.
 
+<a id="신규-유닛-구조-수정--2026-11-09"></a>
+
+## New-unit implementation changes — 2026-11-09
+
+The production and loading paths are being revised while preserving the 8 adopted units' artwork, dimensions, movement, weapons and appearances. On the working branch, runtime C++ registration and separate aircraft-body drawing have been replaced with original-format MCH/MAP data and common part assembly and drawing. Radar timing, pitch, additional firing behavior and reinforcements that the original format cannot express remain explicit common extensions. See [current status](../../current-status.md) for platform validation and release completion. The dated planning and production history below is preserved. [Audit and incident account](../../reviews/new-unit-implementation-incident-20261109.md).
+
 <a id="넓은-화면과-메뉴"></a>
 
 ## Wider screens and menus
@@ -110,7 +116,7 @@ After removing C, Codex passed 20 core tests and Apple input tests. Manual firin
 
 I requested Yak, Harrier and F35 aircraft as airborne enemies moving like helicopters. They were to be added between existing placements, without replacing enemies, in numbers based on each mission's average helicopter count. Codex's first draft introduced an unrequested reinterpretation of their shapes; I asked for a redraw. Codex added rules for preserving real aircraft shapes to the art skill, then checked nose, intake, wing and tail proportions against photographs and drawings. Existing helicopters supplied color and texture references. After approving the new draft, I required this procedure for future real-world units. [First draft and corrections](../../public/vtol-art-and-loadout-20261027.md)
 
-I later requested cleaner outlines and removal of the forward flames. Codex changed the artwork and effects. All three aircraft are longer than Heli001's body length of 99 and shorter than Heli006's 126, with proportional heights. Images are resized only at load time and reused on the GPU.
+I later requested cleaner outlines and removal of the forward flames. Codex changed the artwork and effects. All three aircraft are longer than Heli001's body length of 99 and shorter than Heli006's 126, with proportional heights. At that time, images were resized only at load time and reused on the GPU. The implementation revision exports the same resized results as actual PNG files during production and reads them through the common loader.
 
 | Aircraft | HP / EXP | Reused weapon | Display length |
 |---|---|---|---:|
@@ -126,19 +132,21 @@ I chose the three aircraft and required weapon reuse. Codex proposed the referen
 
 The aircraft reuse the helicopters' `machType=1` movement. Only the new aircraft add pitch of up to 8 degrees from horizontal speed and 3 degrees from vertical speed. Attitude changes gradually toward the target angle. The muzzle, rear nozzle and hit area rotate with the aircraft. One rear nozzle uses the existing exhaust image.
 
-`VTOL.cpp` appends definitions and placements after data loading. The 1,182 original enemy entries retain their names, coordinates, order and boss flags. The number of ordinary helicopters per mission is divided by its total sub-mission count and rounded; selected stages receive that many aircraft.
+The initial `VTOL.cpp` implementation appended definitions and placements after data loading. That registration code has been removed in the implementation revision. The 1,182 original enemy entries retain their names, coordinates, order and boss flags. The number of ordinary helicopters per mission is divided by its total sub-mission count and rounded; selected stages receive that many aircraft.
 
-| Aircraft | Missions and quantities | Total |
+The table below records the original 113 placements from 2026-10-27. Since 2026-11-07, the 7 missions and 35 stages contain 51 Yak, 51 Harrier and 50 F-35B aircraft, totaling 152. Every mission includes all three types, and each stage's aircraft total matches its combined Shilka/Tunguska count. The hotfix preserves these coordinates and their order. [Current placement](../../vtol-expansion.md).
+
+| Aircraft | Initial missions and quantities | Total |
 |---|---|---:|
 | Yak-141 | 2-2: 5, 2-4: 5, 3-2: 7, 4-2: 4, 5-2: 9 | 30 |
 | Harrier GR3 | 3-3: 7, 4-3: 4, 5-3: 9, 6-3: 10, 7-2: 11 | 41 |
 | F-35B | 6-2: 10, 6-4: 10, 7-3: 11, 7-4: 11 | 42 |
 
-There are 113 additions across 14 sub-missions. Missions 1 and 8 and Survival placements remain unchanged. Aircraft avoid the outer 300 units at each map end and 600 around bosses, and are spread at 140 above terrain. New units use separate random state, preserving the original enemies' random-call sequence.
+At that time there were 113 additions across 14 sub-missions. Missions 1 and 8 and Survival placements were retained. Aircraft avoid the outer 300 units at each map end and 600 around bosses, and are spread at 140 above terrain. New units use separate random state, preserving the original enemies' random-call sequence.
 
 Codex's automated tests covered original placement preservation, duplicate prevention, movement, firing, attitude, pausing, destruction and collisions for 20 weapons × 3 aircraft. Added difficulty across all missions and long-session heat have not yet been tested.
 
-[Artwork, placement and tests](../../public/vtol-art-and-loadout-20261027.md) · [VTOL.cpp](../../../Sources/Core/VTOL.cpp)
+[Artwork, placement and tests](../../public/vtol-art-and-loadout-20261027.md) · [Current data and part structure](../../design.md#승인된-공중-적-확장--2026-10-27)
 
 <a id="럭스루나에-도색-전투기-3종"></a>
 
@@ -182,7 +190,7 @@ While playing the regular app, I saw fighters appear suddenly in midair and aske
 
 Codex ran 21 core tests and combat, input and off-screen entry tests on iPhone, iPad and Mac. After Codex updated regular and cheat apps on iPhone and iPad, I played the regular app. Full-campaign difficulty tuning remains for later testing.
 
-[Designs, gameplay and tests](../../public/lux-lunae-design-20261027.md) · [Fighters.cpp](../../../Sources/Core/Fighters.cpp)
+[Designs, gameplay and tests](../../public/lux-lunae-design-20261027.md) · [Current formation and part structure](../../design.md#럭스루나에-전투기)
 
 <a id="다음-기능"></a>
 

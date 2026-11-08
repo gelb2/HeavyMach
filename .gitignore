@@ -13,6 +13,8 @@ __pycache__/
 !/Resources/Images/
 !/Resources/Audio/
 !/Resources/RawData/
+!/Resources/RuntimeData/
+!/Resources/RuntimeImages/
 !/Resources/Assets.xcassets/
 !/Resources/Validation/
 /Analysis/
