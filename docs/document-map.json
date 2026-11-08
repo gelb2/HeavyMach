@@ -52,7 +52,9 @@
     "docs/public/save-recovery-20261102.md",
     "docs/public/quick-play.md",
     "docs/public/work-method.md",
-    "docs/public/testing-method.md"
+    "docs/public/testing-method.md",
+    "docs/reviews/new-unit-hotfix-plan-20261109.md",
+    "docs/reviews/new-unit-implementation-incident-20261109.md"
   ],
   "base_read": [
     "AGENTS.md",

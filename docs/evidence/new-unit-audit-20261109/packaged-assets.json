@@ -1,0 +1,76 @@
+{
+  "source_commit": "191728e310158a55df1164ee452b19b48fa97e57",
+  "expected_new_unit_pngs": {
+    "Lux_MiG31.png": "ef9351c5bb4112c0bc10befa489ae989d3b341e69da29a047c6570d3c468260d",
+    "GAA_Shilka_Body2.png": "2285a254646e75fce3e6188455d0275a066e08d99ebdf2cbb4c4575f0dbccf12",
+    "GAA_Shilka_Body.png": "8b78b67c7362b47133fab6e238823f0e153c1ef8c173a6f3223ab30a3f419de2",
+    "Lux_Su57.png": "d8797d4559d71df8923e3d755f4f51237053a3ec1d374f0022834111b775a197",
+    "GAA_Tunguska_Radar.png": "602eb34b1abf661f987ae7f9f2a225c7b39ea44e6217095f8fd7c3124d406e5b",
+    "VTOL_F35B.png": "8c2663b77851cde0665186c3ace3e7032de687e011162cfebe28fc71018a6913",
+    "GAA_Tunguska_Missile.png": "c9f52354db3c1f44aeb4bcdfd9777f417cf3568b6b845cd7a379f2e1eba57453",
+    "GAA_Tunguska_Turret.png": "164754098fe7d5390dc43e3eedddaa18942e280118788de45cc2df6307f06aad",
+    "VTOL_Harrier.png": "9a523efede9a292a274671142430c7a028f49282235ab9248499a66f2c6d0dfb",
+    "VTOL_Yak141.png": "fdff4c3a7193738d2da9ecb0dd233397490a5e1dc29a65544726cd9c68ace626",
+    "GAA_Shilka_Turret_v3.png": "b6d21f38c6ea995e58cb16dbf7f7f5f6f11e004d2ec2c2915b39749d6b03c331",
+    "GAA_Shilka_Turret.png": "850cce1e9cf80af45f8b34703e51fa821813da1f78f896ff36a72019248f4d06",
+    "GAA_Shilka_Radar_v2.png": "8c6f7624ffb0962f9690adce0e74d54e71fac9b3a814ab4f2afe568989eba167",
+    "GAA_Tunguska_Parts_v2.png": "a43afb7e3111085b6c1d9d841d3640976211e33e951537fef81324b48a3dcc8a",
+    "GAA_Tunguska_Gun.png": "e74def2b25fa8fdb811f17b36dd37a50ded771cb36cbdb9155909e20439e7439",
+    "GAA_Tunguska_Body.png": "33235639ee574cb3ee689c044f48235180a066e30ea1319098f68684c0bf583e",
+    "GAA_Tunguska_Body2.png": "191c96c8f1365807c4efbecc7906d362e5fc816889e32fb87c021baeb3ed8a5d",
+    "GAA_Tunguska_Radar_v2.png": "07c00647b1e714fabf8be6b0f1336983e490c437071158cd9d1db6d155646d02",
+    "GAA_Shilka_Parts_v2.png": "53bb7031b265ab3439d64c217259f75d2351359fdd446e2519fef174339c8e6a",
+    "GAA_Shilka_Gun.png": "f727e5b2356b63339eb064966393d2c236b986a76d81dc7d22717193ca801c24",
+    "Lux_F22.png": "8cf228dafd366849f50ce623901a1106dad35df4ccb451e1de6e346c79f6f082",
+    "GAA_Shilka_Radar.png": "fd335b45f3f2b4aa497b5f2553c903eb237e1c13bc7a6392f9ade807b947411f"
+  },
+  "packages": {
+    "ios": {
+      "new_unit_file_count": 22,
+      "all_match_repository": true,
+      "raw_data_count": 46,
+      "raw_data_matches_repository": true
+    },
+    "native_mac": {
+      "new_unit_file_count": 22,
+      "all_match_repository": true,
+      "raw_data_count": 46,
+      "raw_data_matches_repository": true
+    },
+    "android": {
+      "apk_sha256": "13014e7aeab9d3a63c96807af077caede42321dc92029ea37567e10a180d0ed7",
+      "new_unit_file_count": 22,
+      "all_match_repository": true,
+      "raw_data_count": 46,
+      "raw_data_matches_repository": true
+    },
+    "web": {
+      "new_unit_file_count": 22,
+      "all_match_repository": true,
+      "raw_data_count": 46,
+      "raw_data_matches_repository": true,
+      "packages": [
+        {
+          "name": "hm-assets-1.data",
+          "bytes": 20905496,
+          "sha256": "8176c4e73c8cea236f692545d1e9ba707f0a17f689f1ec4034902da960d36a10"
+        },
+        {
+          "name": "hm-assets-2.data",
+          "bytes": 20170652,
+          "sha256": "93d5c87fefc1e93427ad101562cce24985327e7b6cc57c5d60fc76e12dda84f8"
+        },
+        {
+          "name": "hm-assets-3.data",
+          "bytes": 20291407,
+          "sha256": "3c16627e68fab9a24f78da8c146386a765c8ab5bb126cf4b9edc129c37ededea"
+        },
+        {
+          "name": "hm-assets-4.data",
+          "bytes": 11579833,
+          "sha256": "330be5fcd2f4f399a859eec467c0536d2be4a4c73d2a4fb7fd2c316e8fb4f284"
+        }
+      ]
+    }
+  }
+}

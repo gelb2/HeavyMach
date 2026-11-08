@@ -1,0 +1,24 @@
+{
+  "model": "IEEE754 binary32 rounding after division and multiplication; uint8 truncation",
+  "expression": "uint8(float(S) * (float(A) / 255.f))",
+  "alpha_range": [
+    0,
+    255
+  ],
+  "premultiplied_channel_range": "0 <= C <= A",
+  "straight_input_range": [
+    0,
+    255
+  ],
+  "tie_rule": "lowest S among exact preimages",
+  "tested_alpha_channel_combinations": 32896,
+  "missing_preimages": [],
+  "all_valid_premultiplied_channels_representable": true,
+  "inverse_table_order": "alpha ascending, then channel ascending",
+  "inverse_table_sha256": "cdba343b7c5b9d29594744cc4e38ea1af46825111b0dc904a141e72589863294",
+  "limits": [
+    "Scalar arithmetic model only; no compiled platform loader execution.",
+    "No PNG assets, 63-image bake, color conversion, POT, or GPU comparison performed.",
+    "Targets with C > A or nonzero RGB at A = 0 are outside this proof."
+  ]
+}

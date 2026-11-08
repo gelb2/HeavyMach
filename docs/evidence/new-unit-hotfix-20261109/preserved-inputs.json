@@ -1,0 +1,4399 @@
+{
+  "date": "2026-11-09",
+  "product_main": "191728e310158a55df1164ee452b19b48fa97e57",
+  "planning_start_commit": "6b7af9b715ab774b35bd9bdb67b13b21b48d443a",
+  "branch": "audit/new-unit-assets-20261109",
+  "meaning": "Source/asset preservation baseline for planning; no new runtime captures",
+  "files": [
+    {
+      "path": "Sources/Core/GroundAAArt.inc",
+      "bytes": 7170,
+      "sha256": "28b02ae179776cac2ca87f7eb93b4e7688f2d882ece361e537aabe8288cf2e36"
+    },
+    {
+      "path": "Sources/Core/HUDConfiguration.hpp",
+      "bytes": 1952,
+      "sha256": "de473ab8fb586cd8a8a54379c1a2de255fd5ffaf690ad96c3b10a3ac691af534"
+    },
+    {
+      "path": "Sources/Core/GlobalInfo.hpp",
+      "bytes": 1051,
+      "sha256": "d1a5ab355499e230b57f737c49b6ec0878a7560651debb1e7a40bc72b3e725de"
+    },
+    {
+      "path": "Sources/Core/Enemy.hpp",
+      "bytes": 1401,
+      "sha256": "997fc29e720e7aa090dffd2ad9a450d4faac5721cc59853275133b5bb6337c3c"
+    },
+    {
+      "path": "Sources/Core/CanvasGeometry.hpp",
+      "bytes": 836,
+      "sha256": "79eca73d20eb7b440e9fdb2f35db2db7317ef185d62a7beea0e63d71e875951a"
+    },
+    {
+      "path": "Sources/Core/LoadingTransition.cpp",
+      "bytes": 2747,
+      "sha256": "688db407f042f1992c8847e1b109abbdeea933294ccd8b95e960321a00ae0fd8"
+    },
+    {
+      "path": "Sources/Core/Geometry.cpp",
+      "bytes": 4843,
+      "sha256": "b753120ea9d9530a569c5916dcf3895e1f5fa4b0a05dd36cd43e1b5eed23924d"
+    },
+    {
+      "path": "Sources/Core/Trail.hpp",
+      "bytes": 1413,
+      "sha256": "24520d2e61a35ff477b232420f59bf0de0ae1510283cae9e8f123578ed7ea3ff"
+    },
+    {
+      "path": "Sources/Core/SpriteRaster.hpp",
+      "bytes": 2104,
+      "sha256": "d3ed65be021b0350243851fe2bdd9b579c76169e1910917badfbdf1ee95445b4"
+    },
+    {
+      "path": "Sources/Core/Viewport.hpp",
+      "bytes": 1677,
+      "sha256": "ecbea77ee5b91855a2070cdb829f0f170c5424f18635672e53a4ddd5da38c0d6"
+    },
+    {
+      "path": "Sources/Core/World.hpp",
+      "bytes": 4292,
+      "sha256": "77cab3c100dcda6e32dd4bd19ab9bb66777457217f2e421adbeb57e3ba559c96"
+    },
+    {
+      "path": "Sources/Core/AudioContract.hpp",
+      "bytes": 1560,
+      "sha256": "a962f3e71243c3f6732fb839ec37426e1131983d63d1c09c654722d17814f1e1"
+    },
+    {
+      "path": "Sources/Core/VTOL.hpp",
+      "bytes": 725,
+      "sha256": "caf1b8e7511ed631448e126c96f96aad1ab53cd1f3631d53997bc7a138f6af50"
+    },
+    {
+      "path": "Sources/Core/GameData.hpp",
+      "bytes": 2756,
+      "sha256": "44dc8b804c3c1e72710279491449ea3f00bf5093be3c927a91c9d994eca84cf9"
+    },
+    {
+      "path": "Sources/Core/Player.cpp",
+      "bytes": 6742,
+      "sha256": "ca218285dd25c05bf5a5a4d3a5f8074e535d7e5ea007ff8977df9633bf8d2a99"
+    },
+    {
+      "path": "Sources/Core/ValidationScenario.cpp",
+      "bytes": 5810,
+      "sha256": "48f7680249e020bf282bf28a34a28a18a9e7920c0f2205504abae29855af8eba"
+    },
+    {
+      "path": "Sources/Core/TextureFormat.hpp",
+      "bytes": 1058,
+      "sha256": "4003793d4d08408bf75fe9bb76778f17dc2653a1f208d3428eccb4792efbd9fa"
+    },
+    {
+      "path": "Sources/Core/TitleState.cpp",
+      "bytes": 1756,
+      "sha256": "f4a675a17845c4ceb91be986046eb2e205dbcedff6654e957fec21456b2fd704"
+    },
+    {
+      "path": "Sources/Core/CameraShake.hpp",
+      "bytes": 688,
+      "sha256": "052f0a81943abf91ca66cd1b6a75f58e900bbffed916ee7634f9c8eff18767a5"
+    },
+    {
+      "path": "Sources/Core/Fighters.cpp",
+      "bytes": 3110,
+      "sha256": "d88d097dd602d73986179c6472b7f3c6ef85704ceaea9d5f43d4436802526763"
+    },
+    {
+      "path": "Sources/Core/Combat.hpp",
+      "bytes": 3274,
+      "sha256": "4cfadf89d0d9b8f23d6c41e6c0b40a9d6afb4272b2a5c2ac38b039667d042280"
+    },
+    {
+      "path": "Sources/Core/GameSession.cpp",
+      "bytes": 50618,
+      "sha256": "a45755ce6ae33133a3a7755131b4f0cbc7d90b97833b61873bc493ad871be867"
+    },
+    {
+      "path": "Sources/Core/KeyboardInput.hpp",
+      "bytes": 2508,
+      "sha256": "a4bbfac0eb6a8de3107b42793456ab8f6d9a886bd465a3556ce646c0385d5546"
+    },
+    {
+      "path": "Sources/Core/TrailRaster.hpp",
+      "bytes": 795,
+      "sha256": "59e1d60bd231546fa87124dba07c3453c9e800e77a4b2fa91b066e175f1f006b"
+    },
+    {
+      "path": "Sources/Core/BulletVisual.hpp",
+      "bytes": 873,
+      "sha256": "b8ea1a42b1f9a4d22febded0c59132b7d046525fcd33e546bb8eb2419077aca3"
+    },
+    {
+      "path": "Sources/Core/SaveData.cpp",
+      "bytes": 2673,
+      "sha256": "1d522f930e0ba6da69be9939fdb6db46672d02cee9be36443a01771ffc6e5f7e"
+    },
+    {
+      "path": "Sources/Core/GroundAA.hpp",
+      "bytes": 972,
+      "sha256": "24e1f839ef9dd4051eb4f5db9b2f19a629c56d9b560bb2a4cbc80bc71918044d"
+    },
+    {
+      "path": "Sources/Core/Motion.cpp",
+      "bytes": 6717,
+      "sha256": "e7f7c655dc1a07119933053fb90219b2ce64a6f8060d3a929c52395cce2075ea"
+    },
+    {
+      "path": "Sources/Core/ItemBox.cpp",
+      "bytes": 2544,
+      "sha256": "4992096a314c9ea066b2f5a343596cf60980e36174f5ab32f55385d4c401a062"
+    },
+    {
+      "path": "Sources/Core/Visuals.hpp",
+      "bytes": 2029,
+      "sha256": "1fa510a53cf9f48ab59a7c24f9ccc832084a573e53f28df5624445546c8d7407"
+    },
+    {
+      "path": "Sources/Core/Fighters.hpp",
+      "bytes": 610,
+      "sha256": "f31ea58044012a1257ba4e075d9048dad6705f8626d5a241347d14cb3ba19a14"
+    },
+    {
+      "path": "Sources/Core/GameSession.hpp",
+      "bytes": 4829,
+      "sha256": "d55e82e9e4091ff18b715f7304a788ca8543f51984a6b4fe0f9e995619d30e6c"
+    },
+    {
+      "path": "Sources/Core/Combat.cpp",
+      "bytes": 10356,
+      "sha256": "0566f3fa7e40b671cb38631be4a9dce65aa9823ef60da66ad4e1cc5617f1b1f9"
+    },
+    {
+      "path": "Sources/Core/TrailRaster.cpp",
+      "bytes": 4414,
+      "sha256": "8275c75a9e0082c6936acfc9667e8b136a8aa1bf3f2e7e8a32cb468d29a6d1e2"
+    },
+    {
+      "path": "Sources/Core/BulletVisual.cpp",
+      "bytes": 3124,
+      "sha256": "3d4161dfde4f2547781f315a429bd29ddb987d5e00c534f86e0051f1e571aca2"
+    },
+    {
+      "path": "Sources/Core/SaveData.hpp",
+      "bytes": 1702,
+      "sha256": "6190cc12fae20c3d0684b4cc537dc98092c48ddbb4958095886f95564670436b"
+    },
+    {
+      "path": "Sources/Core/AutoAim.hpp",
+      "bytes": 1950,
+      "sha256": "569620ed92a561560ed469a10d3a91be335bbc1a62f30816069b164e26ef3cba"
+    },
+    {
+      "path": "Sources/Core/GroundAA.cpp",
+      "bytes": 7431,
+      "sha256": "01ecdf2f3f7a8716d35a70410fc54cb11872ad9d60ea8a370075ab1a44da1150"
+    },
+    {
+      "path": "Sources/Core/TiltState.hpp",
+      "bytes": 617,
+      "sha256": "c5bcda32f9a8100e21b214575b5c417015c137d06401282df2b59c1131f56382"
+    },
+    {
+      "path": "Sources/Core/Motion.hpp",
+      "bytes": 1846,
+      "sha256": "8e9be5f4498359d298bb534301b4ef60a440e4b3fa2b60b27fa153593d3892ea"
+    },
+    {
+      "path": "Sources/Core/ItemBox.hpp",
+      "bytes": 1417,
+      "sha256": "a2a651171a0adf2ca4e1cfbf09b5426502865819d16d78c866df502624ea749f"
+    },
+    {
+      "path": "Sources/Core/Visuals.cpp",
+      "bytes": 6573,
+      "sha256": "951d7604a9b1ad67bbf023a162be2fed74bdd8ae39192195c503fb4b316865d8"
+    },
+    {
+      "path": "Sources/Core/GlobalInfo.cpp",
+      "bytes": 7114,
+      "sha256": "ba16167af9a5fa139a7fe691de3b967068dc11cc285cdc08f88f6d8d264d4d97"
+    },
+    {
+      "path": "Sources/Core/Enemy.cpp",
+      "bytes": 4694,
+      "sha256": "fe8e22021e65fcd9f677c175e98375bfe37fcf18519a4c157e94c5407b309160"
+    },
+    {
+      "path": "Sources/Core/LoadingTransition.hpp",
+      "bytes": 1475,
+      "sha256": "1010b6ba8a98f4e842f67de4a41193fe2b6ef9653b9e9a80ba3898e0bdd8c6a7"
+    },
+    {
+      "path": "Sources/Core/Geometry.hpp",
+      "bytes": 2064,
+      "sha256": "3d0b3736acc0dfd61ccb2734277c022086e683a8dd01c7047e7b5187479f6fb0"
+    },
+    {
+      "path": "Sources/Core/Trail.cpp",
+      "bytes": 4377,
+      "sha256": "4cfe21c94c74c66d24eee0f214ebd920e45d94c44a6b1ba44bc092f7c5d902f5"
+    },
+    {
+      "path": "Sources/Core/SpriteRaster.cpp",
+      "bytes": 5843,
+      "sha256": "b398aead1850e5b9c3ef68872a8d48cdbfc1caa2992f97102fa0228b45492005"
+    },
+    {
+      "path": "Sources/Core/World.cpp",
+      "bytes": 13380,
+      "sha256": "9622d48888566d020bb8a82f81fdbe3664ec765d498775f7f4d5ac29dbb3f58c"
+    },
+    {
+      "path": "Sources/Core/HUDLayout.hpp",
+      "bytes": 3897,
+      "sha256": "682c7c39b8d7ec5b519b44e81910ddc4c04fffe76fb8d1615ae3fd4eeb1fdf24"
+    },
+    {
+      "path": "Sources/Core/Player.hpp",
+      "bytes": 2584,
+      "sha256": "c966e64b226b04acad932ffc73355f0a5ab05287c1b32c8b1f271280ce5636db"
+    },
+    {
+      "path": "Sources/Core/GameData.cpp",
+      "bytes": 9177,
+      "sha256": "51aa866c3794670773db3b324b8b30197af76b0857724b317597c2f30d3c112f"
+    },
+    {
+      "path": "Sources/Core/VTOL.cpp",
+      "bytes": 5233,
+      "sha256": "ffe82dfbd8170bf6e8b59241dce7b58b0f47f01aa623fac4e6c1c4700ff9fcb4"
+    },
+    {
+      "path": "Sources/Core/ValidationScenario.hpp",
+      "bytes": 1187,
+      "sha256": "519525ea989f5d12dca01c6ec6554d83224e0baa0244d1b5710dea17144e5eb0"
+    },
+    {
+      "path": "Sources/Core/TitleState.hpp",
+      "bytes": 957,
+      "sha256": "c094bd00c0e7c616e09a59070d2d0728fea7e13341081607d9cf64a372c00223"
+    },
+    {
+      "path": "Sources/Core/CameraShake.cpp",
+      "bytes": 1079,
+      "sha256": "4461811278a353197d204934e7a28baffeac7f3b13361505cb6c3fc82d1b2a1d"
+    },
+    {
+      "path": "Sources/iOS/HMGameGlyphMetrics.hpp",
+      "bytes": 407,
+      "sha256": "df10286e30d32e3c728853c1504ee4a124481f3aaff7a3369435b803212b1837"
+    },
+    {
+      "path": "Sources/iOS/HMGameHUD.mm",
+      "bytes": 21947,
+      "sha256": "161fef5ee63ad6c6f6e7528cfd03fee885cd96145c0e88f34342341e82ffb5b6"
+    },
+    {
+      "path": "Sources/iOS/HMMedia.h",
+      "bytes": 2398,
+      "sha256": "f13661546a2037ec4d27de75f5c696ef97000c57bc9c7763fafb983977abc8dd"
+    },
+    {
+      "path": "Sources/iOS/HMValidationControls.h",
+      "bytes": 423,
+      "sha256": "bcd7c42c7482c75a16cd6f2c29eb63c1dfa2b06fc53a11f7b60ffada8039cef9"
+    },
+    {
+      "path": "Sources/iOS/HMGLRenderer.mm",
+      "bytes": 30088,
+      "sha256": "3c03c027dd73c7b17c159a4749a0bbf9dc7514d00109f2ec0e8168fb0e3525d0"
+    },
+    {
+      "path": "Sources/iOS/HMGameHUD.h",
+      "bytes": 2227,
+      "sha256": "c1d1812533227fc91ae749aabbea0f0c688d35951dea5b113418c626e635c3e5"
+    },
+    {
+      "path": "Sources/iOS/HMGLRenderer.h",
+      "bytes": 2639,
+      "sha256": "84f8a51795def74a1a82164bba1ebedbe4449b6b1df21c6250c35f47b0397a91"
+    },
+    {
+      "path": "Sources/iOS/Application.mm",
+      "bytes": 1865,
+      "sha256": "5aca889bdd8b3775bd9ca90173b8169f1d54232503d88f142b0cb4a1ceb9f4b6"
+    },
+    {
+      "path": "Sources/iOS/HMTransfer.inc",
+      "bytes": 8609,
+      "sha256": "2e4dedb53162da2fa346e060ddf9e9c14f92130702240d9079d9cceef300ea76"
+    },
+    {
+      "path": "Sources/iOS/HMGameButtons.hpp",
+      "bytes": 8313,
+      "sha256": "826d1fe0064cb45e1ae39e25408b2c92804a257fd7de7129cc9f1d9dcfbf6675"
+    },
+    {
+      "path": "Sources/iOS/HMOpenALAudio.mm",
+      "bytes": 11265,
+      "sha256": "8b79549bef32207f1b0c69c30e675f14511f3091759cc8fff2de34f8f2f5026b"
+    },
+    {
+      "path": "Sources/iOS/HMGameView.mm",
+      "bytes": 74892,
+      "sha256": "6afd6c5f67288e77fe4bc57ca5d57e2fdf9de1db838fabdd43a51d1f0f03dd4a"
+    },
+    {
+      "path": "Sources/iOS/HMMenus.mm",
+      "bytes": 22465,
+      "sha256": "76c91ab47ecec688e28da26d3bd2760a860d54664dc7ee8d65c4eec752655014"
+    },
+    {
+      "path": "Sources/iOS/HMGameButtons.inc",
+      "bytes": 8021,
+      "sha256": "918b114833e2fbdb42969f755033a6476d55e157f0588f6199ce0528772f1daa"
+    },
+    {
+      "path": "Sources/iOS/HMGameView.h",
+      "bytes": 112,
+      "sha256": "75ce9b85652838690229036e6ea14056d91a714a4d0d5e7a7fabf87ad6edac41"
+    },
+    {
+      "path": "Sources/iOS/HMAimOverlay.hpp",
+      "bytes": 2204,
+      "sha256": "bfb02fd0eaece8d7f909ed4dab340f1e8ff85328c4071ce9eb15e631f58ae638"
+    },
+    {
+      "path": "Sources/iOS/HMMedia.mm",
+      "bytes": 17479,
+      "sha256": "c3c45892a6c11589597243c92f9f2d3fb85731ce3a4ef6c50cf3df15db403872"
+    },
+    {
+      "path": "Sources/iOS/HMCompatibilityPixels.hpp",
+      "bytes": 1797,
+      "sha256": "d4403e9db4bebeb6fe5c9e2eff45e956d6a8c369388817fa34c492e9cc968a79"
+    },
+    {
+      "path": "Sources/iOS/HMHUDEditor.inc",
+      "bytes": 11735,
+      "sha256": "f61855f6910a932b3331a3f26a3e682918e7fab3b5b7905b906b8d17d0079b27"
+    },
+    {
+      "path": "Sources/iOS/HMOpenALAudio.h",
+      "bytes": 432,
+      "sha256": "9d187610970434e0a4295c406d14178b807a8fa159e0f06f12174e82a914f843"
+    },
+    {
+      "path": "Sources/iOS/HMValidationControls.mm",
+      "bytes": 352,
+      "sha256": "3a2d49eff16244fd822dd2f88c0b9bff1dbe2e23a4380a8158b03d942f7180ef"
+    },
+    {
+      "path": "Sources/iOS/HMButtonState.hpp",
+      "bytes": 2054,
+      "sha256": "8e8f3035cc7dd2fd422122d99d9ccb9278d629663035bce4f9543cfb83808e52"
+    },
+    {
+      "path": "Sources/iOS/HMValidationPanel.mm",
+      "bytes": 4603,
+      "sha256": "2daea1e62b3e6720fa4c4fc3d1b02ae6e450eb3e94250d687c3deb1a7e94c792"
+    },
+    {
+      "path": "Sources/iOS/HMValidationPanel.h",
+      "bytes": 638,
+      "sha256": "f83606cbce3f912bdf2ead44c3098d994f0a337ba245174dfbb9ee7e70837a71"
+    },
+    {
+      "path": "Sources/iOS/HMMenus.h",
+      "bytes": 1495,
+      "sha256": "dadab8b1c44e134f4d56ea08a5efca7ce8f5c7eedf840b488ea0cc7bb8b1419d"
+    },
+    {
+      "path": "Sources/Web/WebMedia.cpp",
+      "bytes": 11461,
+      "sha256": "71a7155405f2f4f3190d8e7b5a697d3e7bc995f0ef6008764c8d30037a2328c4"
+    },
+    {
+      "path": "Sources/Web/WebGLRenderer.cpp",
+      "bytes": 23556,
+      "sha256": "1c865f8ad191201fc64217860c5e091e997fef1c7ae2f1c27c41ac55eca33391"
+    },
+    {
+      "path": "Sources/Web/WebMain.cpp",
+      "bytes": 4226,
+      "sha256": "08586dda333d71b11bbcaf8fc74e96ff505a4e6ad81a9c77c0f19b71c7b01936"
+    },
+    {
+      "path": "Sources/Web/WebGameHUD.cpp",
+      "bytes": 22033,
+      "sha256": "b4a84e051c8e18ca8bc7133c5553b3bf270c95cbeefdf02f480a2a9b2dd2d9d0"
+    },
+    {
+      "path": "Sources/Web/WebAudio.cpp",
+      "bytes": 6469,
+      "sha256": "d5abfa49f542a948e566d0fb0d113f7212443ba650273f652a9c709ab44f4493"
+    },
+    {
+      "path": "Sources/Web/WebGameView.hpp",
+      "bytes": 8157,
+      "sha256": "fc536641c666dca1c2c6e965cefa0e68157110c78e90f376e36df71672fe235f"
+    },
+    {
+      "path": "Sources/Web/WebMenus.cpp",
+      "bytes": 23306,
+      "sha256": "8a76a946e4392db67553c77bc05b464b146bf29bd2575da7742f24d00e1749a9"
+    },
+    {
+      "path": "Sources/Web/WebAudio.hpp",
+      "bytes": 1223,
+      "sha256": "3decc562b60d3b8882941e7afd9d53a2fc3d7d81c40d4361aacfcb7836295105"
+    },
+    {
+      "path": "Sources/Web/WebGameView.cpp",
+      "bytes": 56298,
+      "sha256": "0f6870f185ba4613d9ea35a1be6b8d4c2161eda97f59e558fe23441286e20066"
+    },
+    {
+      "path": "Sources/Web/WebMenus.hpp",
+      "bytes": 1585,
+      "sha256": "0c8d5dbca5793cb65036d666bcced5f322287fb6d353f0d8879f0d1e4d09743b"
+    },
+    {
+      "path": "Sources/Web/WebGameButtons.inc",
+      "bytes": 7369,
+      "sha256": "5023ceaefd858827831d57422db27d64f292e4dbeddf103cd507303e1b353aad"
+    },
+    {
+      "path": "Sources/Web/WebMedia.hpp",
+      "bytes": 3039,
+      "sha256": "9fb4a259f72637ff68aa37309d53559524d12a682efa23d5017b0af53d6b29dd"
+    },
+    {
+      "path": "Sources/Web/WebHUDEditor.inc",
+      "bytes": 11558,
+      "sha256": "707cbdf691f6bb0e19a3a14c2475248a6b7fa081801135d11594eae107004b99"
+    },
+    {
+      "path": "Sources/Web/WebGLRenderer.hpp",
+      "bytes": 4132,
+      "sha256": "6a9f0c2cca6b3977a166e9f69183b6560490f34ea911fa7074cfd01be3873247"
+    },
+    {
+      "path": "Sources/Web/WebTypes.hpp",
+      "bytes": 2572,
+      "sha256": "2c5e583a600eb8395517d0d3d0e3fde64c5c217ac6fb766269098429b3fa4267"
+    },
+    {
+      "path": "Sources/Web/WebGameHUD.hpp",
+      "bytes": 2411,
+      "sha256": "624fd1aa049f792179de8c13c0a34e53ef57020c4e0ad2820c16795925769176"
+    },
+    {
+      "path": "Android/app/src/main/cpp/Media.cpp",
+      "bytes": 19134,
+      "sha256": "94476de104580ded8132f9cfbc33821cc47f6f228f0596bb988a068c5d115fbd"
+    },
+    {
+      "path": "Android/app/src/main/cpp/Runtime.hpp",
+      "bytes": 5256,
+      "sha256": "81313e46126d574aae7bd11b068e6d1990230f6363702c7228a6438a5b029b2e"
+    },
+    {
+      "path": "Android/app/src/main/cpp/HUD.hpp",
+      "bytes": 20070,
+      "sha256": "82f3bdb1bdd6b471ca063594777bd20b0ada446e4390e9b3fe5df2d120ea3abb"
+    },
+    {
+      "path": "Android/app/src/main/cpp/Transfer.inc",
+      "bytes": 1678,
+      "sha256": "3137a2a5a6603bcd9520397732d003edaf4aa41820533209f318ade25ebcbd7f"
+    },
+    {
+      "path": "Android/app/src/main/cpp/GameButtons.inc",
+      "bytes": 11260,
+      "sha256": "229ae583ef63fd0aaea4d909f7626af70b35fac97177f8b5996b9b6d72693791"
+    },
+    {
+      "path": "Android/app/src/main/cpp/Audio.cpp",
+      "bytes": 4402,
+      "sha256": "69fb0551af7eef307a345927218abb6128422d43f06992ae10c0e0084e89d67c"
+    },
+    {
+      "path": "Android/app/src/main/cpp/Menus.hpp",
+      "bytes": 20701,
+      "sha256": "0bee8bdd86568bb342233be842e3192a238838934bd6ce44aae1c1b7341244b6"
+    },
+    {
+      "path": "Android/app/src/main/cpp/Bridge.cpp",
+      "bytes": 3316,
+      "sha256": "61b6e8f30a68998277ab0f3586bfa516881b0f0140c45ac7b881535fa69414ad"
+    },
+    {
+      "path": "Android/app/src/main/cpp/Audio.hpp",
+      "bytes": 737,
+      "sha256": "0e56d1a16128c16fb9a17784f6321ace615a5a8c1f6925d7bd7aaec7d1bb7050"
+    },
+    {
+      "path": "Android/app/src/main/cpp/Media.hpp",
+      "bytes": 2285,
+      "sha256": "23a9d6aad13f6cd2c429fe62875b00d4b2009d441d1bd65a2c366d9df8bae773"
+    },
+    {
+      "path": "Android/app/src/main/cpp/Types.hpp",
+      "bytes": 1816,
+      "sha256": "1413f0e65bb9d0c56289c35719849c29c382577166410da62110e9a4fd4af0c7"
+    },
+    {
+      "path": "Android/app/src/main/cpp/Runtime.cpp",
+      "bytes": 50669,
+      "sha256": "79905130eb8f75473234fcaee2e5c6e9c4a5756b9a6b539a1c228bc93feff7b9"
+    },
+    {
+      "path": "Resources/OriginalImages/P_Wpn_Canon01.png",
+      "bytes": 3701,
+      "sha256": "5c782bb970fcce86952fc6366cd617280566db0ff4aca36047b3f9aae338e650"
+    },
+    {
+      "path": "Resources/OriginalImages/E_0705_Wpn.png",
+      "bytes": 4144,
+      "sha256": "0510941962c21e2c5afccb80342c6a4f036a9a337d2ae57e037adc394e15e3b1"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map13_s1_02.png",
+      "bytes": 14703,
+      "sha256": "172c37fa040c93430cf931745c45b8a961e8d72082d640a0c48393167b27cdac"
+    },
+    {
+      "path": "Resources/OriginalImages/Loading_Bottom.png",
+      "bytes": 124851,
+      "sha256": "1021423c3d75300b01e92a98cae22d378a51dfaa76b5fb9589b5290af6ddc237"
+    },
+    {
+      "path": "Resources/OriginalImages/P_Wpn_Gun.png",
+      "bytes": 3723,
+      "sha256": "b97587ab502032941a27333029f3755fb36ccb88f0ca506f61a25c8c8ccfcaf5"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map11_12.png",
+      "bytes": 24334,
+      "sha256": "cc86692481fce3b8f68963293a6ed6e773cb9d4bed4864ca69e096a6a59c4de5"
+    },
+    {
+      "path": "Resources/OriginalImages/P_Wpn_Gun07.png",
+      "bytes": 4784,
+      "sha256": "a215bb7c7db6755b5814c8bc19c12cb4780ce1b610fb15c0eed95f9e497c4399"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map11_06.png",
+      "bytes": 2370,
+      "sha256": "e5dffd1b7514d1e7ca5bdd0f32c9d179e72444f34e7cb2bfe82b9e8fa2da427d"
+    },
+    {
+      "path": "Resources/OriginalImages/Bullet.png",
+      "bytes": 10583,
+      "sha256": "ef115528802d64c474c0e7639b15d7bd016e0309924ba33a29a06d3345824190"
+    },
+    {
+      "path": "Resources/OriginalImages/E_Turret_09.png",
+      "bytes": 6391,
+      "sha256": "b4e147b0c8619d0de2e9623d853d0bd79544a892615c16e92a96c8e95f832a7a"
+    },
+    {
+      "path": "Resources/OriginalImages/E_ArmoCar_03.png",
+      "bytes": 5871,
+      "sha256": "95711eebdb1f43f4a7586eb2353861d7348c43e649e4307367be16ae0034e55a"
+    },
+    {
+      "path": "Resources/OriginalImages/BG_map12c.png",
+      "bytes": 233646,
+      "sha256": "4b71017ce5d6aff4c9f188c0e5c0e599c4b426c82d53c4dac12812d82600ceee"
+    },
+    {
+      "path": "Resources/OriginalImages/E_MBoss0501_Wpn.png",
+      "bytes": 3568,
+      "sha256": "61acfad3a3e4a719fbc85faf7490841e20b9bee153fa4bf70997456cf93b230a"
+    },
+    {
+      "path": "Resources/OriginalImages/E_Heli_Body_02.png",
+      "bytes": 9296,
+      "sha256": "4f76caf48c2db99b35c429ecba37a0cbcad46a6d30ce6da855b91a93485ce574"
+    },
+    {
+      "path": "Resources/OriginalImages/BG_map09d.png",
+      "bytes": 272555,
+      "sha256": "abb5ea59eca915afa4b5e988b3d73df8c4348a279385b8518c4cca85e08ce7a3"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_map06_08.png",
+      "bytes": 27082,
+      "sha256": "92b1ee97cadfbf7e58c05241186377287e7a9db2370bf7ae52546ea5731ff581"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_map06_20.png",
+      "bytes": 39574,
+      "sha256": "cd7ca2f74b5cc77d908293bd5f3faf488bb5b6fd7951592a300a088229f5b4c1"
+    },
+    {
+      "path": "Resources/OriginalImages/GameUI_Exp.png",
+      "bytes": 3036,
+      "sha256": "f7454da734853faf7c18d2965ebe05ad7f98855f7e7959541d899279db2ec8cb"
+    },
+    {
+      "path": "Resources/OriginalImages/Efx_Damage.png",
+      "bytes": 25592,
+      "sha256": "9861b5e987fed5e2edc5842136497fcc6acccb2bfef6d5062ec9af2434d81c0b"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_map11_10.png",
+      "bytes": 172990,
+      "sha256": "59165e3ce5ad6b8c8a7751c77235fdf2c7a5d952c10f10936bd4b4caa9cc183f"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_map11_04.png",
+      "bytes": 25694,
+      "sha256": "68ac9f22c1cc6119819f5525f7a340c1567f0419ee53a2f49032dc16f19e87dc"
+    },
+    {
+      "path": "Resources/OriginalImages/E_0504_Body.png",
+      "bytes": 12967,
+      "sha256": "4a1226a9fff289e12d0bd7d6c322d4eaa2392f690752bd45ee768b9aadb967e6"
+    },
+    {
+      "path": "Resources/OriginalImages/E_0505_Body.png",
+      "bytes": 28791,
+      "sha256": "03d69730a2ba956ca6cf5b95f7d4b49c054af780b50bccaac113bf367b777ef1"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_map11_05.png",
+      "bytes": 16565,
+      "sha256": "673528cf2d8d5b81381a7598583bdd3c412f90d07c4445470909a0df669853aa"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_map11_11.png",
+      "bytes": 42067,
+      "sha256": "ea8467cf7fb3923e7a4f822c36bed9b9c5045ac3640089ea332b926f5ee2d132"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_map06_21.png",
+      "bytes": 75141,
+      "sha256": "a69648d81fa6b31278167ee7e04a69b19f9f0adf57146b6e637099b323c3348c"
+    },
+    {
+      "path": "Resources/OriginalImages/E_Turret_Wpn_08.png",
+      "bytes": 4066,
+      "sha256": "20a32717730cc6f9d7bfc770066f468d826935bf0cc5aa928b44c4a136b4959a"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_map06_09.png",
+      "bytes": 14791,
+      "sha256": "bfbe4122df27f337b74c1a709dbac87eeb1593fe9581e41e29cd7e1b7ae25897"
+    },
+    {
+      "path": "Resources/OriginalImages/BG_map08a.png",
+      "bytes": 249064,
+      "sha256": "eaf3644da3e0f1922ba67f8c4a6e2e4eacb6ac90360e765ea3f7bdb3e44ecb49"
+    },
+    {
+      "path": "Resources/OriginalImages/E_Heli_Body_03.png",
+      "bytes": 9497,
+      "sha256": "78cf31602a4636fb603e202e00f0631bbcea364b2f55dfc62e7be2d71b35a317"
+    },
+    {
+      "path": "Resources/OriginalImages/BG_map13f.png",
+      "bytes": 250663,
+      "sha256": "19bca1fb8fbf7083a0f0da75442be077aa05d8674c1cfe3de0ae95a6e99cd381"
+    },
+    {
+      "path": "Resources/OriginalImages/BG_map12b.png",
+      "bytes": 249264,
+      "sha256": "fad442a95596c21719c797d71cbf46025070ea3500e71e1c9771f6ee79aad001"
+    },
+    {
+      "path": "Resources/OriginalImages/E_ArmoCar_02.png",
+      "bytes": 5059,
+      "sha256": "deb7d9ef75f95daadfb2853bd5272096636b7a0f37e3f0200c890ecd030117e7"
+    },
+    {
+      "path": "Resources/OriginalImages/EnemyMissile.png",
+      "bytes": 6911,
+      "sha256": "f8d607851701392f2a56826906b809ea59e2c60af07c8756d6d204d1f67b7ff2"
+    },
+    {
+      "path": "Resources/OriginalImages/E_Turret_08.png",
+      "bytes": 5470,
+      "sha256": "f237230bcc8dc83f42b38872b23b18bda2cfd11a3ecb7f2b425e6ad10e9d60fe"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map11_07.png",
+      "bytes": 3566,
+      "sha256": "a640329ba86f94fb10111f71a1986a29b5ce72f985ec1e6e5a743c4539a6dd66"
+    },
+    {
+      "path": "Resources/OriginalImages/P_Wpn_Gun06.png",
+      "bytes": 4168,
+      "sha256": "3d7a107eb10b5a91600416dfb19a66f68daf79e29808bb2c26d6a45333a46039"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map13_s1_03.png",
+      "bytes": 5323,
+      "sha256": "9d4d2e1bc0c6c8708059fe4f1825660fecaa91d7b1dff98946b27fc068a261af"
+    },
+    {
+      "path": "Resources/OriginalImages/GameMenu.png",
+      "bytes": 7393,
+      "sha256": "30641162dfdf1e64ef2f62bc3eac44772484608d1be35744c17c7173733e07f8"
+    },
+    {
+      "path": "Resources/OriginalImages/E_MBoss0601_Top.png",
+      "bytes": 12893,
+      "sha256": "b7a4d4cf92155238d7411e3fc799e05ec7d2539dc0b7ff6d90d2279ce6ac9b6f"
+    },
+    {
+      "path": "Resources/OriginalImages/P_Wpn_Canon02.png",
+      "bytes": 3701,
+      "sha256": "5c782bb970fcce86952fc6366cd617280566db0ff4aca36047b3f9aae338e650"
+    },
+    {
+      "path": "Resources/OriginalImages/E_Truck_04.png",
+      "bytes": 11786,
+      "sha256": "e82198caa90de228f79acb8f02787e2ed4965f4e921530fe35507daf53271edd"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map08_18.png",
+      "bytes": 7682,
+      "sha256": "033f3985f587b5a6cdfc4920c5df61045c3fca53a869b668d59d40733c938307"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map13_s1_01.png",
+      "bytes": 11486,
+      "sha256": "5c99909182177513b74bbd055867b9227f018dbfd28e7a13d9c45bdba9c5eb40"
+    },
+    {
+      "path": "Resources/OriginalImages/E_Tank_Top_08.png",
+      "bytes": 5263,
+      "sha256": "83cf0cd22c1abe87f4fd3ae55c8625f0272b5e47683fdcdbbc689a7822a7c660"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map11_05.png",
+      "bytes": 4156,
+      "sha256": "264c5dfb543aecf06042805f069ff53754e0e431963d4dc0338f786ed28fa793"
+    },
+    {
+      "path": "Resources/OriginalImages/P_Wpn_Gun04.png",
+      "bytes": 3859,
+      "sha256": "de223d310394dbeb77f274ff6933c890cbd0da1773ee32a337aec6fd62df3e18"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map11_11.png",
+      "bytes": 9281,
+      "sha256": "62fe6f908d22652d29dbf3d0e237cb8aa6f07232afdcacb3aca536503854e577"
+    },
+    {
+      "path": "Resources/OriginalImages/E_0606_Wpn.png",
+      "bytes": 6382,
+      "sha256": "faa5d18d1a9c04f35a50f92a66f53f0c2f11ffcb39018002d45be69091621153"
+    },
+    {
+      "path": "Resources/OriginalImages/E_Canon_Wpn_01.png",
+      "bytes": 3742,
+      "sha256": "d3906fb8d20b62f9741c79b949c19dcec02023d46a438a37f8ed6d699089c54c"
+    },
+    {
+      "path": "Resources/OriginalImages/E_MBoss_03_Wpn.png",
+      "bytes": 4475,
+      "sha256": "983f8e60cbd06b0e47d0bd97ac201aa6f6e27d66cae2929881dcdc09605a5fa3"
+    },
+    {
+      "path": "Resources/OriginalImages/E_05MB01_Wpn.png",
+      "bytes": 3568,
+      "sha256": "61acfad3a3e4a719fbc85faf7490841e20b9bee153fa4bf70997456cf93b230a"
+    },
+    {
+      "path": "Resources/OriginalImages/BG_map13d.png",
+      "bytes": 225003,
+      "sha256": "e6affd1d2ef77c8f516be860393d450feafee9fb3dc52f0e68c87f0a0f9fe03e"
+    },
+    {
+      "path": "Resources/OriginalImages/Loading_Top.png",
+      "bytes": 123612,
+      "sha256": "cf83758390632724d07e873a271e3709fa9cb9c52f226a9a374ab06da44089f4"
+    },
+    {
+      "path": "Resources/OriginalImages/E_0502_Wpn.png",
+      "bytes": 4641,
+      "sha256": "6e41b108b1726e8355552dfaaa01df99b365e85116169f068a461ba3e5dc2009"
+    },
+    {
+      "path": "Resources/OriginalImages/BG_map08c.png",
+      "bytes": 200775,
+      "sha256": "5813c21476f36b834c5828c4124ea11bcd33109a804e4b63d84c9ca0945d9622"
+    },
+    {
+      "path": "Resources/OriginalImages/E_Heli_Body_01.png",
+      "bytes": 9685,
+      "sha256": "a53e23f7c1ad8f6d24bbb4e1b2857cd6cb80095019d1ce7ff3684679cc16b7f3"
+    },
+    {
+      "path": "Resources/OriginalImages/Text_Mission.png",
+      "bytes": 6978,
+      "sha256": "99dbe081572220e25ea09aedd0448cfa463dbe24151ce3495f1c253b189f6048"
+    },
+    {
+      "path": "Resources/OriginalImages/Icon.png",
+      "bytes": 107205,
+      "sha256": "eabeb17a817580dcbc10027d787f4d60ec64ec0d5ad3d354dac78bc7ae4f0e35"
+    },
+    {
+      "path": "Resources/OriginalImages/StageClear.jpg",
+      "bytes": 96836,
+      "sha256": "9b79527089a43f52e2f8f946e39c5c6d2ab6cc657ad2ee1b9fcd524c3d432b2d"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map13_s3_04.png",
+      "bytes": 65394,
+      "sha256": "b40e1c61fbee1cb042830a7ae8e45aef6763133246c71bb04dd69257a05a7b48"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_map11_07.png",
+      "bytes": 44107,
+      "sha256": "b0d67fa8e4fd22c8f182b24a758d56964ba0baba80f95bbccb9a6d93e4f8860f"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_map11_13.png",
+      "bytes": 51073,
+      "sha256": "d41342ca8861a408378706095e0abb7d1b0cfb5a37133e5430060ef963ab91bb"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_map11_12.png",
+      "bytes": 23567,
+      "sha256": "ced2cf89d851f6ffd9a13236874c471c78451415f29c242282275343e622a4ec"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_map11_06.png",
+      "bytes": 64826,
+      "sha256": "3b07c6a3415df4ebe955eb3e2981eb6549e2cf4dd0501be12bab8eef018ff9a9"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map13_s3_05.png",
+      "bytes": 73637,
+      "sha256": "de96383e7b32d54918cc02dd3f80e41387ded69058eb5ace57b6f18bb8be1a3a"
+    },
+    {
+      "path": "Resources/OriginalImages/Icon.png.orig",
+      "bytes": 9424,
+      "sha256": "512c6360644acbc090e1b711fcbe84136828ff1b32929e119730b8282d881814"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_map06_22.png",
+      "bytes": 47557,
+      "sha256": "b40e0058b92059093b043502a939917c26f45ede5ae192ae95eddac1f02b96f3"
+    },
+    {
+      "path": "Resources/OriginalImages/GameLoading_01E.jpg",
+      "bytes": 45611,
+      "sha256": "4815abe4615890daa4c9f62826c8966b7fbc268ff1f492fb561acb57fa930d4b"
+    },
+    {
+      "path": "Resources/OriginalImages/BG_map08b.png",
+      "bytes": 205575,
+      "sha256": "2f15ec88aaba8407baba631c5f05ff419eef2045bf7a4c386b88df5193daa8db"
+    },
+    {
+      "path": "Resources/OriginalImages/BG_map12a.png",
+      "bytes": 215601,
+      "sha256": "933f207c2e75009a3d63b227b797fbabe7281696e9cb7a1afd509cf7f4dfa93c"
+    },
+    {
+      "path": "Resources/OriginalImages/E_ArmoCar_01.png",
+      "bytes": 5407,
+      "sha256": "cbdf5091b0a8e999d2633d79cbd4043736ae7c1cabb1f6d7bf7f135879a08aca"
+    },
+    {
+      "path": "Resources/OriginalImages/BG_map13e.png",
+      "bytes": 280736,
+      "sha256": "cfd33938f778aea49f3a76cad60a16da5020372261679985e248620561fb4a9e"
+    },
+    {
+      "path": "Resources/OriginalImages/Explode.png",
+      "bytes": 17276,
+      "sha256": "cc77a822827f396c911557fe61add821c9fd15b6f1632fb0c44b071223014669"
+    },
+    {
+      "path": "Resources/OriginalImages/P_Wpn_Gun05.png",
+      "bytes": 4071,
+      "sha256": "67155fd1dfe69cfe445cf3682d7ecb44fb9310b6699dbbb658a6b600ee404ae7"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map11_10.png",
+      "bytes": 1780,
+      "sha256": "a95e8557f874010b1967b37a139ab81f24b719f0885559d92e5f8c1a198fa063"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map11_04.png",
+      "bytes": 1540,
+      "sha256": "f91760076ffa763f9fbca020f531211544853b7018d18c4133566ae2b795b18d"
+    },
+    {
+      "path": "Resources/OriginalImages/E_Tank_Top_09.png",
+      "bytes": 5341,
+      "sha256": "5dc7ebbe6ec0994bccd3405f4d638307bfdb94a6e0978ccaf20f42f320e09e50"
+    },
+    {
+      "path": "Resources/OriginalImages/Main_Title.png",
+      "bytes": 67637,
+      "sha256": "38090c52848d207b5470582308390c0795972c8b1d6fc464369f3cfb18397d7e"
+    },
+    {
+      "path": "Resources/OriginalImages/GameUI_Top.png",
+      "bytes": 27185,
+      "sha256": "49016c118bcebbc10baf96b0151a1e8406fa49b3453de936b6d1da3dae098885"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map08_19.png",
+      "bytes": 17700,
+      "sha256": "42c300003aa5e786b144e512004fe4165e06eab2a2086cf0b7882d5ebccf3538"
+    },
+    {
+      "path": "Resources/OriginalImages/E_Truck_05.png",
+      "bytes": 15381,
+      "sha256": "61d8bf9cbdd88e7277de18fa0e1bf3827fa8f83cef9662db1fd28ff8095dcdf5"
+    },
+    {
+      "path": "Resources/OriginalImages/P_Wpn_Canon03.png",
+      "bytes": 3701,
+      "sha256": "5c782bb970fcce86952fc6366cd617280566db0ff4aca36047b3f9aae338e650"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map08_09.png",
+      "bytes": 6183,
+      "sha256": "faeaa5891d244fcd1660a30fc48c7fbad9ed47e1146366dbbfb9e9252fac7640"
+    },
+    {
+      "path": "Resources/OriginalImages/E_Truck_01.png",
+      "bytes": 8704,
+      "sha256": "27d29562d7f12c144376258aadad8f62d6c0302de9f1e449e4e64059a15b0ea3"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map13_s1_04.png",
+      "bytes": 5468,
+      "sha256": "09b3d415c20435839dcf3988f63f4e1097e21613e6ada8bd80aabed72520314d"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map13_s1_10.png",
+      "bytes": 112053,
+      "sha256": "b4ae348c72f11e2bdeb494cf8c0a51d12b12e66258d416dfe02cc0012cf6c52e"
+    },
+    {
+      "path": "Resources/OriginalImages/E_0702_Body.png",
+      "bytes": 17714,
+      "sha256": "ce50077486651f517f0d4d59f2d07ee757bed3d9e9e441c347292f3ea34c8ab4"
+    },
+    {
+      "path": "Resources/OriginalImages/E_0703_Body.png",
+      "bytes": 17971,
+      "sha256": "db9e95befa7dc4868985a9cbad8030db1923f9c6956a2289745eb7f98ed35571"
+    },
+    {
+      "path": "Resources/OriginalImages/P_Wpn_Gun01.png",
+      "bytes": 3274,
+      "sha256": "96cc032c49a46acf69acab7a101323bc8a05ace7a633b0470c4547c51f263ad9"
+    },
+    {
+      "path": "Resources/OriginalImages/BG_map13a.png",
+      "bytes": 244969,
+      "sha256": "7309a5bf712c0e00c2ca70a845f41b23e50f720414a0b268b4df2cc0153af8b4"
+    },
+    {
+      "path": "Resources/OriginalImages/E_ArmoCar_05.png",
+      "bytes": 7842,
+      "sha256": "a7cd7279e83a934eb884b538fd237f40aeea85d7fc22c490cd67ecc23759c004"
+    },
+    {
+      "path": "Resources/OriginalImages/BG_map12e.png",
+      "bytes": 228982,
+      "sha256": "b96c4658aac3c423e095d1b96af3ae3553cfe756afccee2abdc64f445d4f8dd3"
+    },
+    {
+      "path": "Resources/OriginalImages/HPGaugeEnemy.png",
+      "bytes": 2902,
+      "sha256": "cba4488630ef7627bd9686e6c1f4ed38842fa868da74ff17d0e0185c50b10fb0"
+    },
+    {
+      "path": "Resources/OriginalImages/E_Heli_Body_10.png",
+      "bytes": 19067,
+      "sha256": "b2c15a0b2f1f75bc16c9868e672a59cd509ca2e451d59ae0c181557637168943"
+    },
+    {
+      "path": "Resources/OriginalImages/E_Heli_Body_04.png",
+      "bytes": 9246,
+      "sha256": "d07102ca0ad42651e9fe1f81fb329c794dd52a2315a0ac9c6e1b95900262a0f0"
+    },
+    {
+      "path": "Resources/OriginalImages/GameUI_BlueLight.png",
+      "bytes": 5183,
+      "sha256": "478555dc7e4b7841272214e664b92eb03f0a89e529470597b170987db178ae9d"
+    },
+    {
+      "path": "Resources/OriginalImages/BG_map09b.png",
+      "bytes": 132325,
+      "sha256": "c743fcbe363b5b0a42d3b0a16b24ebb2ed857adbe2242ef582c2a21351dc47b3"
+    },
+    {
+      "path": "Resources/OriginalImages/BulletEffect2.png",
+      "bytes": 3281,
+      "sha256": "4e2fd506410e39d3e620b0d9b820ae0cac821cd272152fd40949294991074421"
+    },
+    {
+      "path": "Resources/OriginalImages/HPGaugeBoss.png",
+      "bytes": 3260,
+      "sha256": "24550f682d1921a659953848d71b6e3e7b3e7add133f9a3d747f0d41d9c3d20b"
+    },
+    {
+      "path": "Resources/OriginalImages/GameUI_Gear.png",
+      "bytes": 3276,
+      "sha256": "b13f9077235f675b000525b8556bbcd6780bb77561ffc74f1c65a6d50bc42e03"
+    },
+    {
+      "path": "Resources/OriginalImages/E_0503_Wpn.png",
+      "bytes": 6475,
+      "sha256": "efb1f040b50bbb0fe6a668410f6ba758ac72a359961a5bde2f8a11f31d320e24"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map13_s3_01.png",
+      "bytes": 109173,
+      "sha256": "fda97dab498967a6a56bb7f56ede97b2913f7068d5c79d3a21555ed088ae6a6b"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_map11_02.png",
+      "bytes": 9175,
+      "sha256": "7001e4a85a256d40e8497f813737d926ca2a947833979de7c27d5ff7250703e4"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_map11_16.png",
+      "bytes": 24668,
+      "sha256": "53553af904d80706db58ee0c3011e9ac9dbc21b578c1ec024efa27da0f53ee68"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_map11_17.png",
+      "bytes": 52603,
+      "sha256": "e42fb1b624838a85f8ca4959639f274601a2a06b3d4181a672c99c14c351bcc2"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_map11_03.png",
+      "bytes": 9159,
+      "sha256": "b711d611084613ccb8935b9a49c7166c19cfdddb7b38521bc618c458677c9c31"
+    },
+    {
+      "path": "Resources/OriginalImages/P_Wpn_RaderLsr.png",
+      "bytes": 3480,
+      "sha256": "f9a238f9c6cb74a61866fdf25b41604cf219042cf36a07e8161f4e6dfd4333ca"
+    },
+    {
+      "path": "Resources/OriginalImages/SelMission_Btn_Up.png",
+      "bytes": 12010,
+      "sha256": "4b621429d123c71802e75b87d2cc4da6ede25e3eea7f6b909ef8d3fb877d4bf5"
+    },
+    {
+      "path": "Resources/OriginalImages/E_Heli_Body_05.png",
+      "bytes": 9667,
+      "sha256": "02d766f18bc4e1f251aa8a0b99d5d3634df30ef1c6cc4de6c1789f3c136046e0"
+    },
+    {
+      "path": "Resources/OriginalImages/BG_map09c.png",
+      "bytes": 227330,
+      "sha256": "8eb1380f2cb1f8eb1837422c3902623e7908b069f3f1f3d89a1191d89f0368d4"
+    },
+    {
+      "path": "Resources/OriginalImages/BG_map12d.png",
+      "bytes": 250886,
+      "sha256": "fa85ee334d5a438e06b23ed153c3e58623d00f516705e6574e304450ca982c41"
+    },
+    {
+      "path": "Resources/OriginalImages/E_ArmoCar_04.png",
+      "bytes": 6988,
+      "sha256": "0e569ddb6d21586f2350fadfd1deb7ec8e9f7a3258c0ebd2bca4b189c11ad3a0"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map12_s3_05a.png",
+      "bytes": 14418,
+      "sha256": "97b11c028cdc4692041633c8fc8638b062f6535b1976708a84389a9be55a3600"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map11_01.png",
+      "bytes": 18247,
+      "sha256": "3df73105b7e5eb528951650adce03b7933e3a7f7abe12bc0c71208e17c7fd42f"
+    },
+    {
+      "path": "Resources/OriginalImages/SelMode_Btn_Survival.png",
+      "bytes": 56348,
+      "sha256": "0559a83afdf7da771831dcbd7874e3b15dce6b0409c278bd5b19d61926c177b5"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map13_s1_05.png",
+      "bytes": 5528,
+      "sha256": "7732e09aeac69ed153dc769107c6fe07de0a3c4d1b687c1d8a8547180312e401"
+    },
+    {
+      "path": "Resources/OriginalImages/E_0512_Body.png",
+      "bytes": 27822,
+      "sha256": "dc3fc5071fe533b1fbc9d874db7b873ab975591541d665edf3dcf4a4ea85dc98"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map08_20.png",
+      "bytes": 2663,
+      "sha256": "1ec267d07f11af58c5eea97628036eca3584c9fca9fd03ebbef08d74689ecc83"
+    },
+    {
+      "path": "Resources/OriginalImages/E_06MB04_Body.png",
+      "bytes": 36252,
+      "sha256": "023442a19d71203e283ed48be377a3ba082bcd094c1bb915080ddff3b5a04485"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map08_08.png",
+      "bytes": 37308,
+      "sha256": "4cc9dfde87e2e60532dfa5531fa4a314d65e521a7761f15578267b30004426da"
+    },
+    {
+      "path": "Resources/OriginalImages/E_05MB01_Body.png",
+      "bytes": 30012,
+      "sha256": "db347ebb28c3ad5e7a2001ee80e89201fa69e158b17bc4c5a8e4065dbc626894"
+    },
+    {
+      "path": "Resources/OriginalImages/SmokeEffect2.png",
+      "bytes": 16076,
+      "sha256": "b98408f85f44343d64e70f2d69fa481301add20efd9027fbf3d5c7ea572e593a"
+    },
+    {
+      "path": "Resources/OriginalImages/E_Truck_02.png",
+      "bytes": 14437,
+      "sha256": "7ece316bc0a2c710e32395fb17d5ad7a4f6a99bb217559699d3364e953bd3823"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map13_s1_07.png",
+      "bytes": 46383,
+      "sha256": "4bb03f70aa0d286f50a40b7760c74ea0664dcf5b1a8751c038e7f9ab3afc3274"
+    },
+    {
+      "path": "Resources/OriginalImages/P_Wpn_Gun02.png",
+      "bytes": 3497,
+      "sha256": "215c5b5c6468c5188185682d97c4d1b2fba30704d7e9bbd43844e5979dfc8792"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map11_03.png",
+      "bytes": 2475,
+      "sha256": "9b1d78f38d65a575802f18d0aab1fa12705948e1d78b541888d6a1bfc5290163"
+    },
+    {
+      "path": "Resources/OriginalImages/E_ArmoCar_06.png",
+      "bytes": 9443,
+      "sha256": "6ea30c9e650ae08ad6695e8daf01ee238ec216bd512f71604cf02a5a18e68649"
+    },
+    {
+      "path": "Resources/OriginalImages/BG_map12f.png",
+      "bytes": 210830,
+      "sha256": "b54d0b159e4c8d71d9c7bb29c63ced9a3db913153c01447fa294d67552a901a8"
+    },
+    {
+      "path": "Resources/OriginalImages/BG_map13b.png",
+      "bytes": 204414,
+      "sha256": "ffc67828f454a291e4d3c3c13191f8577d388a0a627a045565b57ada702e1253"
+    },
+    {
+      "path": "Resources/OriginalImages/E_0704_Wpn.png",
+      "bytes": 3600,
+      "sha256": "fabc80a74f25ed2f4db10a6c8ce0c41c44c5baa206e6a486f99297fdedce5b55"
+    },
+    {
+      "path": "Resources/OriginalImages/BG_map09a.png",
+      "bytes": 184991,
+      "sha256": "f734148bccbf439e06d0bef4a0bff4e2737a4aca1ead32c002ad19f511ed8c2d"
+    },
+    {
+      "path": "Resources/OriginalImages/E_Heli_Body_07.png",
+      "bytes": 11864,
+      "sha256": "2c4dd581a06fdb1e70ad6211f9f135f582b1e63c8120294f7e08748dbd5f7287"
+    },
+    {
+      "path": "Resources/OriginalImages/BG_map08e.png",
+      "bytes": 271128,
+      "sha256": "67e0e96f0bd0903bf8e2396332f048356b9f158a7c9e2d77b8063c18fdcb7420"
+    },
+    {
+      "path": "Resources/OriginalImages/SelMission_BG.png",
+      "bytes": 279880,
+      "sha256": "ebdb3e073d42e8706c641ddcb6f9be998ea5dec01b04464f9964f557f460fef5"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_map08_08.png",
+      "bytes": 120704,
+      "sha256": "3d836ab53be9c72f9d355303b6bfd7456a402074470eed0e6e07cf89b31365ad"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_map06_19.png",
+      "bytes": 56397,
+      "sha256": "ed1cf2697730684c8a91a66b4b8e54cf2fc7dc3d31c2d6a340d40f897d28aad5"
+    },
+    {
+      "path": "Resources/OriginalImages/P_Wpn_Rader.png",
+      "bytes": 3480,
+      "sha256": "f9a238f9c6cb74a61866fdf25b41604cf219042cf36a07e8161f4e6dfd4333ca"
+    },
+    {
+      "path": "Resources/OriginalImages/E_MBoss0701_Msl.png",
+      "bytes": 5499,
+      "sha256": "855be6a7b6de563ba72b3c424c9df3c9b8f3ad34d38f1c3f6730399072d299e4"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_map11_15.png",
+      "bytes": 16382,
+      "sha256": "2afdd32602b6a90b8dfee1fb5fee74af0e646e194da9f2ee9cf797cb3dd49dd6"
+    },
+    {
+      "path": "Resources/OriginalImages/E_0601_Body.png",
+      "bytes": 14683,
+      "sha256": "50852d7c7675c3e24eea8b8f3b512eae5de42da656f6f69aa0645cd7c4271128"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map13_s3_02.png",
+      "bytes": 86359,
+      "sha256": "c99a8334a733b751126b79185d56f9aafa08a562f2d2994746c5c4e4d68510fd"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_map11_01.png",
+      "bytes": 8468,
+      "sha256": "5678d3482d69887f089fcebbfd2c3e05706a0aafe77533144b00770844507bab"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map13_s3_03.png",
+      "bytes": 102221,
+      "sha256": "0582ef6fe9dde2af9edf733b77ceedd6d3c26205019b1efbc191ce6476cbcb35"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_map11_14.png",
+      "bytes": 20565,
+      "sha256": "ed9b2bb58608f8afba2762a5d8c621cf65b86aa0e7783b1481ae284938f80719"
+    },
+    {
+      "path": "Resources/OriginalImages/P_Wpn_Missile.png",
+      "bytes": 4565,
+      "sha256": "dccc51910c4a99ceb5c99fa786d3ca523c8eb045c01baa279468ffe3cbd01756"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map12_s2_08.png",
+      "bytes": 32930,
+      "sha256": "c109bc3bc3991657ae8d7ad96aa92e933b0e293dec254723ffd64e2287eec71a"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_map06_18.png",
+      "bytes": 94597,
+      "sha256": "81f96cd6425c934f3c82138a470ddbcbcc9ee2377d5b7328284f6f7cd6fdcaee"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_map08_09.png",
+      "bytes": 115711,
+      "sha256": "02dc570a039a9a7f1cfeae92591864b8f6cdbe230ad247e93989a825e47327ef"
+    },
+    {
+      "path": "Resources/OriginalImages/Common_Btn_OK.png",
+      "bytes": 16404,
+      "sha256": "a72a5ba050721a60064b0fd98b708f0d9cf8692c9aa652c0cbef4394943ec6c6"
+    },
+    {
+      "path": "Resources/OriginalImages/Upgrade_Weapon.png",
+      "bytes": 13582,
+      "sha256": "ef2d34a13c55db5f401e2576902e0a1455e44bf7a867994b12f5d442fe0a8550"
+    },
+    {
+      "path": "Resources/OriginalImages/Common_Btn_NO.png",
+      "bytes": 15022,
+      "sha256": "4035fc53cd239ebc8867cde24d896831a20c39a85d101f94faaafed2506e2a79"
+    },
+    {
+      "path": "Resources/OriginalImages/BG_map08d.png",
+      "bytes": 192372,
+      "sha256": "ab62cf2d6f139433c610b48ade9a0d0163075ee13ad1a6944715600c2240dab6"
+    },
+    {
+      "path": "Resources/OriginalImages/E_Heli_Body_06.png",
+      "bytes": 12087,
+      "sha256": "07b36d526e71bab25c182bc07f6cd2bcfeae1356f1a21256e6767d68b25681b8"
+    },
+    {
+      "path": "Resources/OriginalImages/BG_map13c.png",
+      "bytes": 277316,
+      "sha256": "f6b4ca622ce3e94934ede847ef353abbb7835b72b0608222a220dc21d13d830f"
+    },
+    {
+      "path": "Resources/OriginalImages/E_ArmoCar_07.png",
+      "bytes": 10319,
+      "sha256": "a6867ee16faeba0e9290038b8d2f83d07e2cd2436259223863d72f4f7785858e"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map11_02.png",
+      "bytes": 25177,
+      "sha256": "d671fa2fad2cd93ff9eeee98aed664c17bd95f7b55941abe1dcacd33979034f3"
+    },
+    {
+      "path": "Resources/OriginalImages/P_Wpn_Gun03.png",
+      "bytes": 3638,
+      "sha256": "a55be94531e8ea5b5ec3abb95c4e5465fd5117f9f7d789a1bd8f099ccc70243f"
+    },
+    {
+      "path": "Resources/OriginalImages/E_MBoss0601.png",
+      "bytes": 19196,
+      "sha256": "b4f187df423854bf7aa73e8864614c774ec557e41fe27c4e075238bda27d6017"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map13_s1_06.png",
+      "bytes": 7330,
+      "sha256": "f9df478c1abd07be0e01d0ebbcdba3d7c9d40687427cf866eff2375ec6b5278f"
+    },
+    {
+      "path": "Resources/OriginalImages/E_Truck_03.png",
+      "bytes": 11590,
+      "sha256": "28beaccb82418825082da93a82a87961cdc85a2248f85bc8a610c9de0b9fe9eb"
+    },
+    {
+      "path": "Resources/OriginalImages/E_Tank_Wpn_10.png",
+      "bytes": 3432,
+      "sha256": "c91538e2059face9aeb8594c4d602890ac5f70ddd62816d0ee805cdf43b355d2"
+    },
+    {
+      "path": "Resources/OriginalImages/E_Tank_Wpn_04.png",
+      "bytes": 3210,
+      "sha256": "238a07260d59ebede2cdfd89e57fbe53ed91769ae02cdef2048e7116e17f46ff"
+    },
+    {
+      "path": "Resources/OriginalImages/E_ArmoCar_Msl_04.png",
+      "bytes": 4142,
+      "sha256": "0a713dc2ce57fc51299ea69ba70a62abde3c7b1eb45176115a28eef6ca58951c"
+    },
+    {
+      "path": "Resources/OriginalImages/E_0705_Body.png",
+      "bytes": 18598,
+      "sha256": "393b2fc64952f9b7a20bef12eec1fa9d6b88c1293a8949b929c97e6574fb4523"
+    },
+    {
+      "path": "Resources/OriginalImages/E_Howitzer_06.png",
+      "bytes": 6740,
+      "sha256": "1e1abf4eb45183e6880c7559cadffe00a06a7520d2c04fb03dcdb02fdf89a771"
+    },
+    {
+      "path": "Resources/OriginalImages/E_0704_Body.png",
+      "bytes": 19058,
+      "sha256": "6d8ff7f4e65e302cb80984d4c2eb7ec38f69aa5dd3b2b0015499c55890a589e7"
+    },
+    {
+      "path": "Resources/OriginalImages/GameLoading_06.jpg",
+      "bytes": 47393,
+      "sha256": "2f3fd9cb3070c66c1564e1c9861537807ee0364219d04f564132df558d0e76c1"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_map07_03.png",
+      "bytes": 67159,
+      "sha256": "5ea4fc76d28f934e0f9a390c780ae7df5464d296ba6894e6d365c15028fa73f3"
+    },
+    {
+      "path": "Resources/OriginalImages/SelWeapon.png",
+      "bytes": 3404,
+      "sha256": "d96daed3864bc17b7d0a39377ea98344022b48b691271ad0241b89dc4c5065ca"
+    },
+    {
+      "path": "Resources/OriginalImages/SmokeEffect.png",
+      "bytes": 3036,
+      "sha256": "eb293ee8866335061de330bb570dc2fdbac48a336a4f2b1c52ec2acf3cd8e8f7"
+    },
+    {
+      "path": "Resources/OriginalImages/Main_TapToStart.png",
+      "bytes": 5421,
+      "sha256": "08fd0193325e406df6b5a5a68a10839924f3b35db3219b0c80cdd73a7b7e5459"
+    },
+    {
+      "path": "Resources/OriginalImages/E_MBoss0701_Bullet.png",
+      "bytes": 3494,
+      "sha256": "9e2a8dd4e89612db3a5179a1537dccdb36597a7bbeaa822da6392e31219edac8"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_map09_12.png",
+      "bytes": 29298,
+      "sha256": "2a7d8b1d62cc2ec870edd25df9bd86aeab461c1f64d851fe7c045b336e3f7e7d"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_map09_06.png",
+      "bytes": 22094,
+      "sha256": "8c835f6a909dc91de3a34862c253a8e7e327cde81604708ec81309611759a1e2"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_City05.png",
+      "bytes": 10084,
+      "sha256": "a0b29ac0b125686627ed201bedbc291af0fb19e806f989930fdbe39f0238a2a1"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_City11.png",
+      "bytes": 17044,
+      "sha256": "6e1ceb445438c98f7260936c2510cf5edddf8051382d0c3f4345c4e5666f5a75"
+    },
+    {
+      "path": "Resources/OriginalImages/SelMission_Text.png",
+      "bytes": 5003,
+      "sha256": "5eca8524e2d2f37a0870654f37f708361a08a5c58f73de0cf8b58ab91ce3c7af"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map12_s3_02a.png",
+      "bytes": 113315,
+      "sha256": "26d5196132393dada2a9089873a56ce4cee2154dcfc552d12d2f7019aa96cb55"
+    },
+    {
+      "path": "Resources/OriginalImages/E_0501_Wpn.png",
+      "bytes": 6587,
+      "sha256": "56c62602555b5dc54b702abd23be9f3e7634a378f179a4536302165e1768534f"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map12_s3_07.png",
+      "bytes": 68029,
+      "sha256": "6c15e96038a8fbfb02f0786539eced851223c1461ef09daa26145eabc99ea931"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_Ruin03.png",
+      "bytes": 7349,
+      "sha256": "17a0172e8aaabb557f4bdb630a47fc442378154496fe302d66810121a93ff8ed"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map07_01.png",
+      "bytes": 6774,
+      "sha256": "76561f61e27dcc5e046409dcf33f8dcdc26ad994392d8efa1c8784e26fd1a58a"
+    },
+    {
+      "path": "Resources/OriginalImages/E_05MB02_Wpn.png",
+      "bytes": 3972,
+      "sha256": "9184df949a89bc653dc1e0c01505d2ebbc8805bd1fdd489fdc24f34cf7a7c094"
+    },
+    {
+      "path": "Resources/OriginalImages/SelSlot_BG.png",
+      "bytes": 257334,
+      "sha256": "843775a225ecc80c776f51b52fc5ae1e8d767e4278e6cfc51472adb4e3d19119"
+    },
+    {
+      "path": "Resources/OriginalImages/E_ArmoCar_Top_03.png",
+      "bytes": 4670,
+      "sha256": "f09b4cbddddfc25dd5ab311462ffde04e57bfff027f2bd4172dbb616487720d9"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map12_s1_02.png",
+      "bytes": 87933,
+      "sha256": "25de6bd458db1556c17ad71dfbfaa4284fe4fce0e4c524474dc290fad28d01ab"
+    },
+    {
+      "path": "Resources/OriginalImages/E_Boss01.png",
+      "bytes": 83631,
+      "sha256": "5c32a1835c575e7fba03a83eaf014c1ffb2d4d85fa7f7d6a398cfb4e4e75eb79"
+    },
+    {
+      "path": "Resources/OriginalImages/Dummy.png",
+      "bytes": 3158,
+      "sha256": "ecfe2f1b482907ba8fce1f6b045b365e592703534063e059c945e0952d35802e"
+    },
+    {
+      "path": "Resources/OriginalImages/E_Boss08_Wpn_02.png",
+      "bytes": 4557,
+      "sha256": "944b03cd30f575801c7bdb475c01801802764d800ed69b6f9feed443be936a9a"
+    },
+    {
+      "path": "Resources/OriginalImages/P_Top_02.png",
+      "bytes": 6291,
+      "sha256": "493bf533f183b51d41e4e4dfa38c1aa209e903f170eec1a95c8f28fdbea2f15d"
+    },
+    {
+      "path": "Resources/OriginalImages/E_MobileGun_03.png",
+      "bytes": 9285,
+      "sha256": "5ca2215b96ff4da683463287916f38232ebe30a83503f1ac486a3c19618f7066"
+    },
+    {
+      "path": "Resources/OriginalImages/E_MobileGun_02.png",
+      "bytes": 8265,
+      "sha256": "e82a3f8a17047b2d49e9bf1e063b9afb5c3a55d7923faa8f13b680e93f9c21d2"
+    },
+    {
+      "path": "Resources/OriginalImages/P_Top_03.png",
+      "bytes": 6784,
+      "sha256": "7110d00eff7696422e0536d5d06413075063054ac34b3bfc63b7cc6f5a7ac443"
+    },
+    {
+      "path": "Resources/OriginalImages/E_Boss08_Wpn_03.png",
+      "bytes": 4742,
+      "sha256": "d1addf117b7998400b676b2ddfd86ab3a0f9ccfed34cd7f6bcc81dae3be665d5"
+    },
+    {
+      "path": "Resources/OriginalImages/Btn_Empty.png",
+      "bytes": 13782,
+      "sha256": "27446a329afafb2c9738edf85d8872e29dc21231f2f7bb41c47423de7fce9181"
+    },
+    {
+      "path": "Resources/OriginalImages/SelMode_BG.png",
+      "bytes": 272213,
+      "sha256": "c70273bbe97e63852f42204140967309ac48a30870dbb49054838c91f97c10c8"
+    },
+    {
+      "path": "Resources/OriginalImages/E_08MB01_Body.png",
+      "bytes": 35798,
+      "sha256": "cb0c922327c38984a34ebfa00abc17b748b97fc840ed2b73fdba79c8db65d155"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map12_s1_03.png",
+      "bytes": 94276,
+      "sha256": "0e85c8de77ee3f389fa364fdc1e791e0be07a841188e3c8ae6ef625a0665c19d"
+    },
+    {
+      "path": "Resources/OriginalImages/E_ArmoCar_Top_02.png",
+      "bytes": 4079,
+      "sha256": "c680f38107292aec13e4b50edaf03ee662e76af0dfda86fb0be7d818dd376c8a"
+    },
+    {
+      "path": "Resources/OriginalImages/GameLoading_07E.jpg",
+      "bytes": 41809,
+      "sha256": "f30496b968695e8a7b0e2aca5b18c366dbfeb2dc928fd8dc1958a238aa46a138"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map09_11.png",
+      "bytes": 12719,
+      "sha256": "bd4b71bd5b09c525437d7fb90bfaed3e85a805ad96bcf04bd890badb9c9da138"
+    },
+    {
+      "path": "Resources/OriginalImages/E_MBoss0701_Top.png",
+      "bytes": 8753,
+      "sha256": "f10d46f7daafc451ebb571f978177767a85b1702862204f7effdf7db1eed2ed6"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map12_s3_06.png",
+      "bytes": 168495,
+      "sha256": "e9c383113b1b4889c2708fb8b31d3a57086c6838ea7bc1454eaac39ab0316d93"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_Ruin02.png",
+      "bytes": 6961,
+      "sha256": "d3dd76b51b9f66b90aa34c2cb76ddbd048c2bd539632e49620bc937c2745c4e0"
+    },
+    {
+      "path": "Resources/OriginalImages/Upgrade_Body.png",
+      "bytes": 49314,
+      "sha256": "7270ffe3498e2cfba2885ef3bff2c261cdb1accadea63084a259c871b128f2ac"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_City10.png",
+      "bytes": 29418,
+      "sha256": "1689e38d92317e965b8f025c57d22191135997f0321475e7968db022418c387c"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_City04.png",
+      "bytes": 6899,
+      "sha256": "d6da6d74203894fd28ec6385c5c43029adb55be9cc29337709786c7b33e16eb2"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_map09_07.png",
+      "bytes": 45320,
+      "sha256": "4cd43fd8287c7b8ee38367afa3d9f45733dab3d85eb32d2bd958d5f3ab98c9d5"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_map09_13.png",
+      "bytes": 37343,
+      "sha256": "7d7f44f058cf4526e1a866ae0df1a5a07a3639dfd90c52c229b3083039a71a88"
+    },
+    {
+      "path": "Resources/OriginalImages/GameLoading_07.jpg",
+      "bytes": 34142,
+      "sha256": "ba06c050d747082c7da683912488914e5229f66595086c43cedf762f3dc00860"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_map07_02.png",
+      "bytes": 80180,
+      "sha256": "401381eba7611e4f4472fa77be21285754e5251407abd9c3ed23845193afd850"
+    },
+    {
+      "path": "Resources/OriginalImages/E_Howitzer_07.png",
+      "bytes": 9140,
+      "sha256": "c6f1c874cc48b84f3bbb37f8d564cb8b263d3de186de8b26ca538ecc39a501da"
+    },
+    {
+      "path": "Resources/OriginalImages/E_07MB02_Wpn1.png",
+      "bytes": 3977,
+      "sha256": "294acd3cef52591b45118a8d6ae4bf040bac8524ded39726c33d27404ca4f7db"
+    },
+    {
+      "path": "Resources/OriginalImages/E_ArmoCar_Msl_05.png",
+      "bytes": 3903,
+      "sha256": "7d93582a0c6e5174439b2467049ba2cec65873fd54e20baee0a8482faa609c6e"
+    },
+    {
+      "path": "Resources/OriginalImages/E_Tank_Wpn_05.png",
+      "bytes": 3264,
+      "sha256": "4600fdbb7c13d542d46df616b79421d72ccd58a97d1e88169cfddde2a8860778"
+    },
+    {
+      "path": "Resources/OriginalImages/E_Tank_Wpn_11.png",
+      "bytes": 3643,
+      "sha256": "07d2b48849e86ef58f72d6c292bed17ddf4da9fb0d11c4af7abf97e51c25e6ca"
+    },
+    {
+      "path": "Resources/OriginalImages/E_Tank_Wpn_07.png",
+      "bytes": 3437,
+      "sha256": "7562738e58eae5b86ed55b59c662ccb042e680098fa585143d81a12158b0edde"
+    },
+    {
+      "path": "Resources/OriginalImages/E_Howitzer_05.png",
+      "bytes": 6426,
+      "sha256": "d3b93af6e7232bc690f43facc582b25683374db499e9b368909a188affd2df71"
+    },
+    {
+      "path": "Resources/OriginalImages/GameLoading_05.jpg",
+      "bytes": 49508,
+      "sha256": "73e58a3a37e8ccad27d1bd65fde0068c389b55c258d479e99ca297019d08ea8e"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_map09_05.png",
+      "bytes": 29171,
+      "sha256": "d7e95d491c188620d7a06c915de23b61c335e265ddb6b3c8e5cf88d93cd12921"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_City12.png",
+      "bytes": 11769,
+      "sha256": "d09a23b7444ae17437d37b83388e1745d4a1e012196b99fccc7c01740c03ab9e"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_City06.png",
+      "bytes": 12005,
+      "sha256": "39ccc11c7038b8f18067bfd34a14638dc335471ddb7a83ef841428e53104de7d"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map12_s3_04.png",
+      "bytes": 56646,
+      "sha256": "2440058922ab87e28cff8e74b482384b36780023557577f5e169e0a7fe75816b"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map12_s3_10.png",
+      "bytes": 48882,
+      "sha256": "f701b48ccbe07f1e70453dde3ad7dc163e625e27bdcbec5615d780a1c81f1b2f"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map07_02.png",
+      "bytes": 6238,
+      "sha256": "cf5cc0403178f1ec4db67d574205913c538f747f57db1d034f1d5de7fe4ef244"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map12_s1_01.png",
+      "bytes": 97641,
+      "sha256": "84aa9b35a15e5f9efac6d04977e370af6352beda159c0be0bf637974824e562b"
+    },
+    {
+      "path": "Resources/OriginalImages/E_Boss02.png",
+      "bytes": 44005,
+      "sha256": "398e25e193f7e8d2f29e5defcb22151fd11153482fe871547016f85dd5cdca38"
+    },
+    {
+      "path": "Resources/OriginalImages/E_0606_Body.png",
+      "bytes": 20740,
+      "sha256": "c6ee360ae187d5bad3c599b9d1dcbce06f548dd3c10d735a2cf9a2ba561f6434"
+    },
+    {
+      "path": "Resources/OriginalImages/E_Boss08_Wpn_01.png",
+      "bytes": 3248,
+      "sha256": "74598ec7e38e6e413042487625a131df781df58d9433f93e4dba536bbd17ede2"
+    },
+    {
+      "path": "Resources/OriginalImages/P_Top_01.png",
+      "bytes": 5687,
+      "sha256": "b2e29140f65cb6176a2f78ef36c950657741da7fc01c2e20c171462b2c273499"
+    },
+    {
+      "path": "Resources/OriginalImages/Upgrade_Top.png",
+      "bytes": 38777,
+      "sha256": "cbd0d5f5904153153b77288465613a52dc222d9a1fe79348c5ffe6f744a8e205"
+    },
+    {
+      "path": "Resources/OriginalImages/E_0508_Wpn.png",
+      "bytes": 4809,
+      "sha256": "5b7956aabbd0f057e4b55caa7a8914b8b50c057c22dac236992301c71a216bf8"
+    },
+    {
+      "path": "Resources/OriginalImages/E_MobileGun_01.png",
+      "bytes": 7309,
+      "sha256": "dadf485c0471d7fd0575c41081c05cde13be7535f832a9847439a6abe8a210d4"
+    },
+    {
+      "path": "Resources/OriginalImages/E_ArmoCar_Top_01.png",
+      "bytes": 4187,
+      "sha256": "c9c71d4ce512a8de98b044c67b998e72953c7762562816b2c799a54c4844db3f"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map07_03.png",
+      "bytes": 8583,
+      "sha256": "2f651b6c85b0e9182773d918f0a333c68dd999cc6de0a5aaca8481c60e7120fd"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_Ruin01.png",
+      "bytes": 6870,
+      "sha256": "c47f5926bd0fe0cb8bb4a7c9dd8964b07dad6d388df9ad1053fa8e6ceeb2bbfd"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map12_s3_05.png",
+      "bytes": 92020,
+      "sha256": "b0512ce53ab282c4ac8caaf598d0cd017bf7ecf3f8b137fcbd7252c24928fc5b"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_City07.png",
+      "bytes": 7292,
+      "sha256": "7e63e5a02c8b55b1fd01de0aaa7959ac55b1c34b3031d61fe0a4fe1473609e82"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_City13.png",
+      "bytes": 6648,
+      "sha256": "feacc2429cd225373b9ae2ad4f8646f8a262a896e1a4021987ef5ec642273797"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_map09_10.png",
+      "bytes": 31563,
+      "sha256": "c74d6b6e6f6479cce7298e741e7f3bb7f75e272d87c1b83dd6b27384131f021d"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_map09_04.png",
+      "bytes": 32948,
+      "sha256": "b43f33587c88d41c426e8edce1a19021fc6744054f8d166127839287e86837da"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_map07_01.png",
+      "bytes": 57032,
+      "sha256": "894eeaf43f367bb96c9bbb455aafe1a5fa752922c822f5d2d2779502233199fb"
+    },
+    {
+      "path": "Resources/OriginalImages/GameLoading_04.jpg",
+      "bytes": 51018,
+      "sha256": "3b30210f6c52e83859ce0f7cb9dd0b9283f94b565958f9312e2f2ca647bdd896"
+    },
+    {
+      "path": "Resources/OriginalImages/E_07MB02_Wpn2.png",
+      "bytes": 6585,
+      "sha256": "13fdb36e6f64dd8352b9da3fa4d4c5f9fea917a03d81e1b8b16315d019fac282"
+    },
+    {
+      "path": "Resources/OriginalImages/E_Howitzer_04.png",
+      "bytes": 5507,
+      "sha256": "2ba77578be18360d75df07cebcc51fe7184e7ca55d5686d7d1c6efea5f98139f"
+    },
+    {
+      "path": "Resources/OriginalImages/E_Tank_Wpn_06.png",
+      "bytes": 3379,
+      "sha256": "a910d0ca03d01f45f0b63ab71f956da28723d36756e900e2ec0715e74cf270b2"
+    },
+    {
+      "path": "Resources/OriginalImages/E_Tank_Wpn_02.png",
+      "bytes": 3289,
+      "sha256": "b3ff18760d3f792b06a16be15b3c7ae7d222ba4be56c55dced1f9b9fef86d729"
+    },
+    {
+      "path": "Resources/OriginalImages/E_ArmoCar_Msl_02.png",
+      "bytes": 4420,
+      "sha256": "ac53f7bfddedd22bd55b6bbd76ef05c0f4c9bddcdb8c03ad5690abdc64a02e9a"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_map09_14.png",
+      "bytes": 21020,
+      "sha256": "124a32c0a657e655b658ab3d0ae322a69f8d296af6afe84aac02062a0cf95fe8"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_map07_11.png",
+      "bytes": 6093,
+      "sha256": "101f18fc06480f969479dd29ceb9b2454cca752b89cdb1ef804d658e4489dfdc"
+    },
+    {
+      "path": "Resources/OriginalImages/SelMode_Btn_Scenario.png",
+      "bytes": 56189,
+      "sha256": "5a7edd0292404afd2b81d6a674d1bd318d1bd2e8c60c5524ba0029514a5ddb78"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_map07_05.png",
+      "bytes": 24755,
+      "sha256": "90b43e3249936b22687b07348763d18ff8cfe920eac24cf85af63a19a59cfce5"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_map09_28.png",
+      "bytes": 9711,
+      "sha256": "5f47b76c9f67118ca136cc384aa8cf8f89d295477b15f32a452ac59c415a7a70"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_City17.png",
+      "bytes": 22903,
+      "sha256": "54a78e1df61f900822f601e848eb0164d9e6c172e826f3b38c2047c884719d60"
+    },
+    {
+      "path": "Resources/OriginalImages/E_MBoss_08_Wpn.png",
+      "bytes": 6851,
+      "sha256": "2614877f32116a239f7bef5b2685c3a54c520817aa91a69cc0ecbcddf0bbe5a7"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_City03.png",
+      "bytes": 12105,
+      "sha256": "1d23c376fbc4a585c642d1ae518b601728046cabb7d5b3fd94c4ed5ef6c5de0b"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map12_s3_01.png",
+      "bytes": 223438,
+      "sha256": "b42f7c751a409112136eeaeedd3d29f6f50ec55e3c07cd268cd409c963ee77d7"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_Ruin05.png",
+      "bytes": 5689,
+      "sha256": "518ea45fe9bd2cb6e573e2244dde6e25298388713ea1522ffd2cfa419a1dfa76"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map09_16.png",
+      "bytes": 6614,
+      "sha256": "21ff5f7bf29cc9b5fe3eac9b7fea6cb27ce879c91333dec0ab37e5e0774b412e"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map07_07.png",
+      "bytes": 4078,
+      "sha256": "4597af5b1ad68333e3e3d5d3cc122068e503289dae5edcd27f3a623d3432606e"
+    },
+    {
+      "path": "Resources/OriginalImages/E_0509_Wpn.png",
+      "bytes": 3979,
+      "sha256": "3aff2b90694176717090b508878df1a0363f6b5994403318d81134a79ac06776"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map12_s1_04.png",
+      "bytes": 74092,
+      "sha256": "ee40653d6839842cfbcd2a2abe9e7f8d4145a7d9b99109fcdadba19b74ddf023"
+    },
+    {
+      "path": "Resources/OriginalImages/E_Boss07.png",
+      "bytes": 34048,
+      "sha256": "9476351ed7c045a99f670fd387d714c4b53b34ec02b4f7b0bb4cc4ccee928477"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map12_s1_10.png",
+      "bytes": 23719,
+      "sha256": "cf4877335744526fb3b0ead65bb3b21f0e6b3d873f1e541a6466e23292583b11"
+    },
+    {
+      "path": "Resources/OriginalImages/E_ArmoCar_Top_05.png",
+      "bytes": 4465,
+      "sha256": "c84245f799183c195ff2ad46cf16744e56bcfe201dbe82b63edfa89332603158"
+    },
+    {
+      "path": "Resources/OriginalImages/BG_map07.png",
+      "bytes": 217224,
+      "sha256": "a87acc8aaea74ad5f563b85a4d7210ffc85ac1b728f8457a0f013f22e9b67162"
+    },
+    {
+      "path": "Resources/OriginalImages/E_07MB02_Body.png",
+      "bytes": 31993,
+      "sha256": "cb9a730707e3f82323fa4a603added0a35c689d50e2c3480341e936389d35e53"
+    },
+    {
+      "path": "Resources/OriginalImages/Common_Btn_DEL.png",
+      "bytes": 14584,
+      "sha256": "1fabdd40aa5bb3509787077fb10c59fe1a6825d1d21c78d6e83648fe06eb9226"
+    },
+    {
+      "path": "Resources/OriginalImages/E_07MB03_Body.png",
+      "bytes": 33448,
+      "sha256": "1eed4c4e00f2853eef9cd0ee8ce9cfcabf4a64f36cc9704f2c40f89f439b0b1f"
+    },
+    {
+      "path": "Resources/OriginalImages/E_MobileGun_05.png",
+      "bytes": 10598,
+      "sha256": "3c863417506319893b9c12d26d0f6d0f95cf27916243d50e370fe8bb3bd21e1b"
+    },
+    {
+      "path": "Resources/OriginalImages/P_Top_04.png",
+      "bytes": 6704,
+      "sha256": "9831b7c9b4fbdd8cb7f1b4a35839e0d635e0a9c18cad034502afa159ee072ea6"
+    },
+    {
+      "path": "Resources/OriginalImages/E_MBoss_08.png",
+      "bytes": 38126,
+      "sha256": "8f3bfe244e93032726ede7a855d6d8971b46db90acab2b6b8cd694f53b924bde"
+    },
+    {
+      "path": "Resources/OriginalImages/E_MBoss_09.png",
+      "bytes": 45042,
+      "sha256": "75a7f4677682caec3724966f7e45ed19615069236b436217f7e62b787347720f"
+    },
+    {
+      "path": "Resources/OriginalImages/P_Top_05.png",
+      "bytes": 7168,
+      "sha256": "5be3e66fc2cbf48623a487dc74e07c99f71af4d68d98b8edf18935506d800a27"
+    },
+    {
+      "path": "Resources/OriginalImages/E_MobileGun_04.png",
+      "bytes": 7671,
+      "sha256": "6ae31bc10678612aa05ffd3d1fefa2a9ab8ae1535c5c4f2f0f14dead5d0044f3"
+    },
+    {
+      "path": "Resources/OriginalImages/E_Heli_Prop_02.png",
+      "bytes": 4778,
+      "sha256": "4903e3ba39a805007685c038952b746873d304b960f344b52c00ab9bfc2e78ae"
+    },
+    {
+      "path": "Resources/OriginalImages/SmokeTrail1.png",
+      "bytes": 2171,
+      "sha256": "8d3a4a11efc80c45e651d03c2e0e94ff5e52d86907025dde7db232a4e93c2eb6"
+    },
+    {
+      "path": "Resources/OriginalImages/E_0503_Body.png",
+      "bytes": 9259,
+      "sha256": "dd95dfad205f0654c43c81da4609249e148ad52c6df3aea9e1c8147b1f2b8ee6"
+    },
+    {
+      "path": "Resources/OriginalImages/BG_map06.png",
+      "bytes": 322302,
+      "sha256": "ca59dfc254d75be2ce434c19bf1d610f12e37a6b0348e430433254669ae5feee"
+    },
+    {
+      "path": "Resources/OriginalImages/E_ArmoCar_Top_04.png",
+      "bytes": 4466,
+      "sha256": "40deab278f640033d8dd6b9585fca1a68f46a535de4d0331a89b41d3f47c885a"
+    },
+    {
+      "path": "Resources/OriginalImages/E_0502_Body.png",
+      "bytes": 10767,
+      "sha256": "1ce71794331f609c6669603f68a4e2742724ed8728153d816553b073323ffdd9"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map12_s1_11.png",
+      "bytes": 103939,
+      "sha256": "196c7e6ab8fbd00f9bcbaebd3cfa26cc2f553533e96b171e047602a03c5d6f01"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map12_s1_05.png",
+      "bytes": 67555,
+      "sha256": "05b74f7cf09f3b131aa659b050efcae1600b497de43bb01a4b957179ab5ecce2"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map07_06.png",
+      "bytes": 5204,
+      "sha256": "7afe9c156ad76f8ef92a387de9d7d2ff5e59af89f6956cf4250aee09dd6e11c1"
+    },
+    {
+      "path": "Resources/OriginalImages/E_MBoss0701.png",
+      "bytes": 29721,
+      "sha256": "4982972569cd938d6a6edf6da9d14f3085d1f08e19c0e6321d3ed1e5608c0ff7"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map13_s5_02.png",
+      "bytes": 91550,
+      "sha256": "e2e3910d30d55fea0d447b80e1b777b956887c3dab0accff14a402ad6010c8fd"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_Ruin04.png",
+      "bytes": 6876,
+      "sha256": "bd5c3c4c71d607413b342a3269920bf1e2ec7edc57e0f55201b796acee77455f"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_City02.png",
+      "bytes": 18615,
+      "sha256": "37fd2127949d36057a37aa7634a7dc529255c4095164b8f805a31c71491f7fa6"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_City16.png",
+      "bytes": 11830,
+      "sha256": "dc101587985d024cc595e372fba2b5d978df1512b864578ff9a7fee83efd77fd"
+    },
+    {
+      "path": "Resources/OriginalImages/BG_Ruin01.png",
+      "bytes": 311740,
+      "sha256": "7737feb86d6953b302d5ba3d299e57e05a98dbeaefc422038c7c1280046169c6"
+    },
+    {
+      "path": "Resources/OriginalImages/GameLoading_01.jpg",
+      "bytes": 36635,
+      "sha256": "5b2211359fda6f9534925ab26624910237ba29c9d8faaa3fb0300ae29e2f8ff2"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_map07_04.png",
+      "bytes": 66201,
+      "sha256": "c5252a6302de596eb8c834a2ce027a8b087f0ccbb3854967c07e9ec75a404bf3"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_map07_10.png",
+      "bytes": 6223,
+      "sha256": "47963660e2c545af1dd8d3017a410e7caf57c4f2ba4395d52ff04958d5b69768"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_map09_15.png",
+      "bytes": 18856,
+      "sha256": "7dc070012e5f284d44a73274ce9d7fbee8f7853c27adeed468817d590f4bf9b5"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_map09_01.png",
+      "bytes": 18930,
+      "sha256": "f782a2f077b7604418a83fce72c20b693f3c8d0c0a479550784849fbe6abf633"
+    },
+    {
+      "path": "Resources/OriginalImages/E_06MB01_Wpn.png",
+      "bytes": 6506,
+      "sha256": "1cc36cc5c9afaaaeee664f22e4af4558752743a57ff5430e347c7c57a373db0f"
+    },
+    {
+      "path": "Resources/OriginalImages/E_ArmoCar_Msl_03.png",
+      "bytes": 4060,
+      "sha256": "6a254acab1442b28efcbe6c9682b7eb8ce9b1b73c8f974e962547681f2b8e24f"
+    },
+    {
+      "path": "Resources/OriginalImages/E_Tank_Wpn_03.png",
+      "bytes": 2980,
+      "sha256": "4636c9b7f57166998f7d83d4d3e5543da257bb71a5d1334645ae00e445bea492"
+    },
+    {
+      "path": "Resources/OriginalImages/E_Howitzer_01.png",
+      "bytes": 4975,
+      "sha256": "b4415d69070864934ea8361ecc297dc8b4712932e0b914fcb7a9152b4040f4f4"
+    },
+    {
+      "path": "Resources/OriginalImages/E_Howitzer_03.png",
+      "bytes": 5230,
+      "sha256": "26dd37ea285bfab827e8544f47ce23677e2ad52b1b1e28b2656fc7e430d0da00"
+    },
+    {
+      "path": "Resources/OriginalImages/E_Tank_Wpn_01.png",
+      "bytes": 3243,
+      "sha256": "28350b21e834faff0b5f63ec6891adad1da8326a37becbde5bca171364be903f"
+    },
+    {
+      "path": "Resources/OriginalImages/E_ArmoCar_Msl_01.png",
+      "bytes": 4101,
+      "sha256": "89ca87c6ed57dfa73bad02174bdec60afbdef8db3769b7e7b3fc9d4c67fc5412"
+    },
+    {
+      "path": "Resources/OriginalImages/E_0510_Wpn.png",
+      "bytes": 3904,
+      "sha256": "e961f6394c0fd54f341f1b4dd4d30a4461ba69d9542378eaf75ecb564ffaf891"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_map09_17.png",
+      "bytes": 20068,
+      "sha256": "910ad9b3a0bb430ca6dd6c2e7f616801fa084d8ce082692ed7080fcd397d5917"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_map09_03.png",
+      "bytes": 49014,
+      "sha256": "c91fa307eb38c70f9ef49dfe95c2c785f9b4c91d331b94b9ec98337c91db4260"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_map07_06.png",
+      "bytes": 15166,
+      "sha256": "ad5da3b9891e2d4295c91fc46135f3b2f383e780f3d26d605f77633b2382652d"
+    },
+    {
+      "path": "Resources/OriginalImages/GameLoading_03.jpg",
+      "bytes": 45803,
+      "sha256": "9f450366e4819b2d1149e8f23dba04f615d83c1fd4c337f4fcb56f2b0966e41d"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_map07_12.png",
+      "bytes": 7637,
+      "sha256": "59fec2fad72797757dbfed00b00b02f9c0e2496671eda5272d3e9d137535208c"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_City14.png",
+      "bytes": 11776,
+      "sha256": "49459825ca02c46df6db8a50f3ed1fd9d8f77eddfb1b5dc7f2635f92ec2fc0c8"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_Ruin06.png",
+      "bytes": 6126,
+      "sha256": "7f2e370749edc3b0c1790cb6695452a64a0b9bca75aeceafe7e25494104f6495"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map12_s3_02.png",
+      "bytes": 233836,
+      "sha256": "5ecb3f1ca07d3364e43a4b9976b41bc64e8ca7cbcf6fbe399be47d9e25603423"
+    },
+    {
+      "path": "Resources/OriginalImages/E_MBoss0601_Msl.png",
+      "bytes": 6049,
+      "sha256": "b95cd7bb3b8acd0c14962f9d19fb1367ad8e11940da5eea93944eb729cc47b54"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map13_s2_09.png",
+      "bytes": 5467,
+      "sha256": "9c01aef765ef539ca2f565facadafb802b3701a5dc61463928a05a1251d72c48"
+    },
+    {
+      "path": "Resources/OriginalImages/GameLoading_06E.jpg",
+      "bytes": 36941,
+      "sha256": "923eb6436cecd70bdb9bb412c8f4bf0d571b51d9c3fd7979f0c6bfe09e78c531"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_City08.png",
+      "bytes": 3255,
+      "sha256": "aa1abaf8dbdea480d512db0f95378b4abde45c44f4481ae8c076e8468f65cc34"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map07_04.png",
+      "bytes": 8519,
+      "sha256": "ad69a3129f9fea0e01d55774770bfb5cd6ba90b576ae794e01d67501b12e9815"
+    },
+    {
+      "path": "Resources/OriginalImages/E_07Boss_Body.png",
+      "bytes": 75424,
+      "sha256": "f926633a3a06e2097594896c16206d709657b2a04b94c9d1af9961bcae4e2ec9"
+    },
+    {
+      "path": "Resources/OriginalImages/E_08MB04_Wpn.png",
+      "bytes": 3700,
+      "sha256": "3725d3686ef6a1d7749b64fc3993e10f4395e5af28f698a8dc8218fa05e99984"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map12_s1_07.png",
+      "bytes": 8015,
+      "sha256": "bb33fc77aef564f129d157f1f5e8b2b5a21aee84f836f77e25e3b6c2a3dc7c47"
+    },
+    {
+      "path": "Resources/OriginalImages/E_ArmoCar_Top_06.png",
+      "bytes": 5159,
+      "sha256": "08358814467dc7a2f6e1419e51a7303627a4b1b63c4e8a518d97d31112d75222"
+    },
+    {
+      "path": "Resources/OriginalImages/E_05MB03_Wpn.png",
+      "bytes": 3255,
+      "sha256": "dee559ecb1c710294cfe68f678e23870c9534f698628caaaba7631ca302319d3"
+    },
+    {
+      "path": "Resources/OriginalImages/E_MBoss0501.png",
+      "bytes": 30012,
+      "sha256": "db347ebb28c3ad5e7a2001ee80e89201fa69e158b17bc4c5a8e4065dbc626894"
+    },
+    {
+      "path": "Resources/OriginalImages/P_Top_07.png",
+      "bytes": 7385,
+      "sha256": "965ec9b31c73487c49c0617d46491984a3dfff177b49ecfcb0366a3995d36f03"
+    },
+    {
+      "path": "Resources/OriginalImages/E_MobileGun_06.png",
+      "bytes": 10879,
+      "sha256": "0e10ce7f2a9bff4f2cb30014291c76a807ec8c1f5b2c63c899df4d8774ce69e5"
+    },
+    {
+      "path": "Resources/OriginalImages/SelMission_Btn_Dn.png",
+      "bytes": 12117,
+      "sha256": "a5c52c285df7dedefe83a74deb01fafeb1c91a1047379ddab6450339b4837334"
+    },
+    {
+      "path": "Resources/OriginalImages/SelMission_TileMission.png",
+      "bytes": 36154,
+      "sha256": "44d6377f92b7dd8daca9ca27be0f3c0aa21ad3afc74934565c46e99b6ed99271"
+    },
+    {
+      "path": "Resources/OriginalImages/P_Top_06.png",
+      "bytes": 7002,
+      "sha256": "bad715115dc8661cbdcf7463e28d3d169878207f20b1ff9323b5ef22b88d84e3"
+    },
+    {
+      "path": "Resources/OriginalImages/Upgrade_BG.png",
+      "bytes": 43795,
+      "sha256": "3830f1e6a29ae394885b5068c2c037938397b02945e0daa8f1433cca5473ede1"
+    },
+    {
+      "path": "Resources/OriginalImages/E_Heli_Prop_01.png",
+      "bytes": 6693,
+      "sha256": "27c1fde2a503b4c537a80ff17d9572760c85b4814700b3ff966f904b0ba0027f"
+    },
+    {
+      "path": "Resources/OriginalImages/SmokeTrail2.png",
+      "bytes": 2602,
+      "sha256": "911bfc910c7568acc104afcc5cf65d2a3ef548527b6fee428527695928f6a18c"
+    },
+    {
+      "path": "Resources/OriginalImages/E_ArmoCar_Top_07.png",
+      "bytes": 3878,
+      "sha256": "0d16d410782fd41a158e8c94ffc78bbafea96672db019af8b8a22c236282887c"
+    },
+    {
+      "path": "Resources/OriginalImages/E_Canon_01.png",
+      "bytes": 6049,
+      "sha256": "ff17760d78c8ad997e513c8e4054dc5a672da2ecddaffd5cfb702d2d1247bcab"
+    },
+    {
+      "path": "Resources/OriginalImages/E_Boss05.png",
+      "bytes": 40351,
+      "sha256": "c3ffcd83832885be3f93c5257e21992176059a886afb1f6399fae0241ebc2680"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map12_s1_06.png",
+      "bytes": 99340,
+      "sha256": "d96cf4ed8eb9bd9fe08d14d73c308595cddeef681765814b6cfa2628881a5f30"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_City09.png",
+      "bytes": 3483,
+      "sha256": "835c591b2bc196476bd2ceb78e88d679a05cc7026f914f7ac4f2a30663d527bb"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map07_05.png",
+      "bytes": 6049,
+      "sha256": "ef5312f351941735c3189d9bb05025fdad0e1978fe92f75963e0b8c6ec4efdde"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map13_s5_01.png",
+      "bytes": 115975,
+      "sha256": "10db60c27d2ad224c331f8f24269c53b1a956e0ec69279e32d272199a9da00a3"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map13_s2_08.png",
+      "bytes": 14344,
+      "sha256": "018a8a48d9380e6647b9c31552ed9a1865cb4c22aaee092d653b38961c152852"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_Ruin07.png",
+      "bytes": 5290,
+      "sha256": "99e4824ea3107f620994efc8ec87adb9911293881eb3c7de4afacc76689183ae"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map12_s3_03.png",
+      "bytes": 186423,
+      "sha256": "475ca3176d0a91938536ac06e6532337dbcc403e4d24e42cf40e5c1fa49ce29c"
+    },
+    {
+      "path": "Resources/OriginalImages/E_0509_Body.png",
+      "bytes": 19178,
+      "sha256": "46c497e0f9f684863d965c8aec434e7c6cdb8061871a75fd532a7d45fa1cb2ef"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_City15.png",
+      "bytes": 7402,
+      "sha256": "65ee89ce7c99d5bd30c22224fa7bc199214de883391c92975341a44f164fa1b4"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_City01.png",
+      "bytes": 29685,
+      "sha256": "f368e4c6d5daddaf49d99fd7fed67c000fdec14e99b9c85924bd6f3b14df199c"
+    },
+    {
+      "path": "Resources/OriginalImages/E_0508_Body.png",
+      "bytes": 20809,
+      "sha256": "8d63ae8b5f42ffbb8f20087c6b17e9449f4f89b950030912db97b061077b572e"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_map07_07.png",
+      "bytes": 14700,
+      "sha256": "5682531a6d0635f04d413d6a024eab3e0024acba1d44806bb87d25f0b03775fb"
+    },
+    {
+      "path": "Resources/OriginalImages/GameLoading_02.jpg",
+      "bytes": 54499,
+      "sha256": "bccd27d2eb80e1681290583a592323f86acc9db3f86c2246c5662a91b1499c16"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_map09_02.png",
+      "bytes": 32724,
+      "sha256": "da34272b350895bdae21f9531c6b188076c1f86abb01e141b29e8db9dd47e967"
+    },
+    {
+      "path": "Resources/OriginalImages/GameUI_Gauge.png",
+      "bytes": 3022,
+      "sha256": "0c26874e34c4b580cf53acf55b9a43841757baeee3505d700eeb1013802e39a2"
+    },
+    {
+      "path": "Resources/OriginalImages/E_Howitzer_02.png",
+      "bytes": 5690,
+      "sha256": "1cb6787f2d9e4a6b13a0bf395ab21b9e2629ccb84dc43c016bce6bb45fd698dc"
+    },
+    {
+      "path": "Resources/OriginalImages/Weapon.png",
+      "bytes": 4236,
+      "sha256": "b2c8844973e4d987817249dd747a2540ce7f22c64d4f78278b71f7a49acdc980"
+    },
+    {
+      "path": "Resources/OriginalImages/E_05MB02_Body.png",
+      "bytes": 29118,
+      "sha256": "baf6632261806ce8c26cff8e72f4a51d0bcbe4200f54e4f5f2ca8c783f3c646f"
+    },
+    {
+      "path": "Resources/OriginalImages/E_05MB03_Body.png",
+      "bytes": 49957,
+      "sha256": "7901804711fa9625194a3ed265850d889362a3daf0fb4a3123800c7d34fafc13"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_map09_27.png",
+      "bytes": 9849,
+      "sha256": "80dd71878b1569800d1d24ba3ebbb7888ab8cd1e2332a1777100ed73478bb33f"
+    },
+    {
+      "path": "Resources/OriginalImages/P_Wpn_RaderBomb.png",
+      "bytes": 3480,
+      "sha256": "f9a238f9c6cb74a61866fdf25b41604cf219042cf36a07e8161f4e6dfd4333ca"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_City18.png",
+      "bytes": 11764,
+      "sha256": "265c6e7afdf90cbc6eb61d0a30e0b0a51a706ede01760bc7f8fcf904525551ab"
+    },
+    {
+      "path": "Resources/OriginalImages/SelMission_Stage02.png",
+      "bytes": 6358,
+      "sha256": "8b179a7c537d65d8ac8409adba034b55f7157d20b8552359e1af495f724a57fd"
+    },
+    {
+      "path": "Resources/OriginalImages/P_Body_04.png",
+      "bytes": 12575,
+      "sha256": "443bdab2f92c997494e61da11057075e88694bbcd8e8e03f9ebcbbe2e5c8ee7d"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map13_s2_05.png",
+      "bytes": 14264,
+      "sha256": "cff693530b2a3094d42a40570216893b7332c9e4ad502ab28d10e671e21b03d2"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map13_s2_11.png",
+      "bytes": 176015,
+      "sha256": "51b28ab6b5b0f942806450fc844f5aee16cf76d58e6ccdec01cf3e595f5c0489"
+    },
+    {
+      "path": "Resources/OriginalImages/GameLoading_05E.jpg",
+      "bytes": 49433,
+      "sha256": "2c9616eb6d00ae067efd0b31992b582fa7b93f0b19b222c80337142641be963f"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_City10.png",
+      "bytes": 8635,
+      "sha256": "0f6358ab52fd841827cfe3c2717c0c89277c5412c03299befd59e92fe4e6bf11"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_City04.png",
+      "bytes": 5303,
+      "sha256": "755515f951b4f35c0a3d2af6d785243b0437cf740687c20c1478c450e453bb78"
+    },
+    {
+      "path": "Resources/OriginalImages/SelMission_Btn_Left.png",
+      "bytes": 9551,
+      "sha256": "99a763ae8c8d8c2dddc33985fc0fab5043a415c4fc2242f44a4f5e25c2c85abc"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_Ruin02.png",
+      "bytes": 55659,
+      "sha256": "a143eea7a66a3280bda79f53ae64407dc04434de83a47fa2dfa69b9d490863e6"
+    },
+    {
+      "path": "Resources/OriginalImages/E_Boss08.png",
+      "bytes": 35126,
+      "sha256": "73661ce2955e938c191063bfaa4392ff7c02c5cb325266b4d94b107aa02e20dc"
+    },
+    {
+      "path": "Resources/OriginalImages/BG_City01.png",
+      "bytes": 358085,
+      "sha256": "3913995a6c9e487a9a4f8475282d2eb59d2a1bc65aa594482abbe64d47ab3bb6"
+    },
+    {
+      "path": "Resources/OriginalImages/E_0603_Body.png",
+      "bytes": 13670,
+      "sha256": "d6bf78b6907b83bd1336b86adb377e4d3dc97218cde8cbf0f4bcd315c6ccf7f9"
+    },
+    {
+      "path": "Resources/OriginalImages/E_Truck_Wpn_06.png",
+      "bytes": 5729,
+      "sha256": "f4e49902cae56593dc988e590d92218c208997d3a6c89af384cb1051a9003069"
+    },
+    {
+      "path": "Resources/OriginalImages/E_0602_Body.png",
+      "bytes": 16801,
+      "sha256": "18175d55ce1369cbc99575ee0d5b4a89922f136ea7f9af997b699e9d57e19a7b"
+    },
+    {
+      "path": "Resources/OriginalImages/E_MBoss_07.png",
+      "bytes": 40558,
+      "sha256": "c110f8abfe248844d8a6a8848aa4a87221283eb1918984cd9a550da704ec4086"
+    },
+    {
+      "path": "Resources/OriginalImages/E_0505_Wpn.png",
+      "bytes": 5303,
+      "sha256": "1c138e9fff7e9361bcb1974a2a97e20ed3a6ed436d88fa2c33fdff20f57f9291"
+    },
+    {
+      "path": "Resources/OriginalImages/E_MBoss_06.png",
+      "bytes": 38005,
+      "sha256": "7a8cbd99e36f9e953e73bf1207e2b990459ead148cf09e4c0a6e8bfd6598b11c"
+    },
+    {
+      "path": "Resources/OriginalImages/BG_map09.png",
+      "bytes": 128646,
+      "sha256": "7168d295d37d7de04d76113160ab1fcd88f4435725b34d7b1927da2c43929a5b"
+    },
+    {
+      "path": "Resources/OriginalImages/E_MBoss0901.png",
+      "bytes": 30373,
+      "sha256": "8058f0cd4253d273f129bfea20698ca56cbc693671fb7884dbc31085c9871afe"
+    },
+    {
+      "path": "Resources/OriginalImages/E_Boss09.png",
+      "bytes": 65392,
+      "sha256": "c70fb2785302391be1d4cbd6638d894684b4a291aceebc865d564cfd6723fbdd"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_Ruin03.png",
+      "bytes": 40133,
+      "sha256": "63676df3810cf6feac9716d5057efde17ddede223899cf1a049a890d413a9e46"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_City05.png",
+      "bytes": 3319,
+      "sha256": "79fb149206968813e9398afd60d7e75a0492dfbb8a068a38c51d6f72869f39ad"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map13_s2_10.png",
+      "bytes": 136958,
+      "sha256": "83abd5d426ff9edbd9b55d836c5a7e3d68fd0821616dfaebe6a60306a058734c"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map13_s2_04.png",
+      "bytes": 11601,
+      "sha256": "c1a32c954eaf8dde939ca0e68cd60c6ce37c31cdef7961abaa2344a062307b62"
+    },
+    {
+      "path": "Resources/OriginalImages/E_08MB01_Wpn.png",
+      "bytes": 6412,
+      "sha256": "343901f5a15d3f68295a1f4ce7e821fe96379da39a12c376f96a1a32fec06eb0"
+    },
+    {
+      "path": "Resources/OriginalImages/SelMission_Btn_Right.png",
+      "bytes": 9634,
+      "sha256": "dae58686ba2454d6d1b20e10b0fbb7d735ce43ab2d919417ef25b49df0e99fd0"
+    },
+    {
+      "path": "Resources/OriginalImages/Common_Btn_YES.png",
+      "bytes": 15682,
+      "sha256": "3ca7c81c2ffaf8588d27f305df7f60f12117ce231fa06a48d44f62a967b1aead"
+    },
+    {
+      "path": "Resources/OriginalImages/Main_Episode.png",
+      "bytes": 13034,
+      "sha256": "412d07369b6d36536fb30162262b4399484f550601c93b07bdccc297d507f84e"
+    },
+    {
+      "path": "Resources/OriginalImages/P_Body_05.png",
+      "bytes": 13772,
+      "sha256": "40d46e8f03f52f57af8a2c97333b3efaaa642ebf83b9fee2370cc3e7790bccd3"
+    },
+    {
+      "path": "Resources/OriginalImages/SelMission_Stage03.png",
+      "bytes": 6442,
+      "sha256": "90e7dec0a7fcbced23bf362358f5491c75e37e60de8f516c74b667a8af8741d0"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_City19.png",
+      "bytes": 9100,
+      "sha256": "00014e41bc130b14b1ae88136f5333de21b542e78a40bb5bf39b9341cbe69e5c"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_map09_26.png",
+      "bytes": 20557,
+      "sha256": "72005762d7f801ae9a797894b9d96c05e45eb2e04fbe208d9ba526a6390f769e"
+    },
+    {
+      "path": "Resources/OriginalImages/E_0601_Wpn.png",
+      "bytes": 7300,
+      "sha256": "e1ed6c746a1de1d0a5702f1d05aa1aa4d17f6b2dd8f0b404827d3c062a2487ed"
+    },
+    {
+      "path": "Resources/OriginalImages/LaserTrail.png",
+      "bytes": 1510,
+      "sha256": "ab499436e0440fe4403c0294faba908adf4f365cf4172624eb5b851ba247190d"
+    },
+    {
+      "path": "Resources/OriginalImages/E_MBoss_04_Wpn.png",
+      "bytes": 6930,
+      "sha256": "1327f492b588d86a865729f4615a3c373c4e0b4fa8b7b2dcc81a66f7c488951f"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_map09_18.png",
+      "bytes": 26726,
+      "sha256": "c9cfb66bd8d93ea24ac68447a306db3e7235de578cfb88518f694d0a0d874ab5"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_map07_09.png",
+      "bytes": 15689,
+      "sha256": "740e6c4d4c05cb962ae707c05ad30b73fb4364c4281154fd0b4314733ca602ff"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_map09_24.png",
+      "bytes": 19829,
+      "sha256": "50964dedc777efb779d7bae9927e41dc1d6898efe71b0c3201d7a1eb3d30d60d"
+    },
+    {
+      "path": "Resources/OriginalImages/P_Body_07.png",
+      "bytes": 16303,
+      "sha256": "4033a5396f707bcf4aeaed7b1626e6cbbf5665ed250e19f8a7e87f2a2f259c1d"
+    },
+    {
+      "path": "Resources/OriginalImages/SelMission_Stage01.png",
+      "bytes": 6004,
+      "sha256": "12ccbef5e5e8bf44f75ba86840e88ce54a8ee78ee5dd9538b3efbe55301e922a"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_Ruin09.png",
+      "bytes": 5190,
+      "sha256": "bf81026e428f183ec2f748063a37b8e15a5942ebbdd38453d7bd252964861f13"
+    },
+    {
+      "path": "Resources/OriginalImages/E_0701_Body.png",
+      "bytes": 16221,
+      "sha256": "d25ac70c215997fbf264b1453db2f61993577b522a06f01bbb04d8b9ead57e3e"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map13_s2_12.png",
+      "bytes": 76853,
+      "sha256": "95c3d5a9899fc4387ba1ae29d2005c34b066bc3f1d3489a7d326c6005652a916"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map13_s2_06.png",
+      "bytes": 5441,
+      "sha256": "2bee659f2662db710ab4ba2c203594fc0c6392a152722f87058615c2293212f7"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_City07.png",
+      "bytes": 3101,
+      "sha256": "692fd22324e6be38ee7d13af08080399b0047b40c3a7c123d847d73742f1ca35"
+    },
+    {
+      "path": "Resources/OriginalImages/BG_City02.png",
+      "bytes": 344389,
+      "sha256": "b87b69521217d805a5f1affa4ec80c7d21edaa7fda99ea98bfad17fbec5d1c56"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map12_s1_08.png",
+      "bytes": 7755,
+      "sha256": "3b64447372534a919b8eb69bae58593d91bc8148cddb8669fbe365d5c8f5536f"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_Ruin01.png",
+      "bytes": 47240,
+      "sha256": "7eeefe1c2a54d247412f0ec56780a72461c02c7c9443c3c6a79c20e657a86dfe"
+    },
+    {
+      "path": "Resources/OriginalImages/P_Wpn_ElShock.png",
+      "bytes": 4366,
+      "sha256": "f9c56d387b4989e7831f6df47a79edc1edd6de1cde121eaefbc6952c5a1141d0"
+    },
+    {
+      "path": "Resources/OriginalImages/E_Truck_Wpn_05.png",
+      "bytes": 4869,
+      "sha256": "a67dd9c66155e66b259fed2f9e14eb8500ebac534de89a7897aa16f2885a3183"
+    },
+    {
+      "path": "Resources/OriginalImages/E_MBoss_10.png",
+      "bytes": 45479,
+      "sha256": "5706e9676be6b195a9290313dc134276877cc45025b71f303446ac0eaa09adb5"
+    },
+    {
+      "path": "Resources/OriginalImages/E_MBoss0901_Top.png",
+      "bytes": 7014,
+      "sha256": "40f199a9199b87454616c8e9dee071eef20509576fbd2b5fb5750dfab564ffdc"
+    },
+    {
+      "path": "Resources/OriginalImages/E_MBoss_04.png",
+      "bytes": 36555,
+      "sha256": "5dcaa0905915a9ae0ab24d43c370f153b84f0a0482533159171cb6df929e9102"
+    },
+    {
+      "path": "Resources/OriginalImages/E_MBoss_05.png",
+      "bytes": 42361,
+      "sha256": "d3d5b8bc60c152db0d13cf3a1360f0f0114fda48dc3ac5092966c63527cff25d"
+    },
+    {
+      "path": "Resources/OriginalImages/E_Truck_Wpn_04.png",
+      "bytes": 5291,
+      "sha256": "d87c8f0779b819895aae8a9431241c3adb09353ae5f189de43615eac9737e21b"
+    },
+    {
+      "path": "Resources/OriginalImages/GameMenuSub.png",
+      "bytes": 41546,
+      "sha256": "8e72f7288b9ebf2fe57f79289b2623a2ee161d4f085e8ba05b4087787f661420"
+    },
+    {
+      "path": "Resources/OriginalImages/E_07Boss_Wpn.png",
+      "bytes": 3480,
+      "sha256": "a8822d76e17e8ff47f8d9c7ce94ff411a2c0d8c5027ea6c79488f7952bab78ef"
+    },
+    {
+      "path": "Resources/OriginalImages/E_ArmoCar_Top_08.png",
+      "bytes": 4902,
+      "sha256": "d459fff716cca4a23c9a7bbd1fabf526541df3ef5b1220ba1f91c8b1b2505132"
+    },
+    {
+      "path": "Resources/OriginalImages/SelSlot_DelSlot.png",
+      "bytes": 41667,
+      "sha256": "cae15faf88108dd90f1ef25b1dc239717aca7c94c41d12b8b323ab6e7cdbfe3a"
+    },
+    {
+      "path": "Resources/OriginalImages/E_08MB04_Body.png",
+      "bytes": 34615,
+      "sha256": "d779075b9ec8f8d353ed66a556b126d8afa5a7dc72bb6a66bc6a87b31e45b74b"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map12_s1_09.png",
+      "bytes": 13495,
+      "sha256": "ed1ee6f6fb21508311a2dad57053781283144c88ed877c6574cb1dc712353e53"
+    },
+    {
+      "path": "Resources/OriginalImages/E_08MB05_Body.png",
+      "bytes": 30993,
+      "sha256": "857ecc498c3ef89528fa61981720798b033d5f4a14dd0f0e2a95ecd431989f5a"
+    },
+    {
+      "path": "Resources/OriginalImages/BG_City03.png",
+      "bytes": 281114,
+      "sha256": "966af75355a8e9233a94496c363568fb5317869900eee588c62e24eb657ef92e"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_City06.png",
+      "bytes": 3045,
+      "sha256": "f4e2341e01091190dedf640376860088acf90d78e5118f9ea07b163922778b4f"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map13_s2_07.png",
+      "bytes": 5331,
+      "sha256": "9538956a3006361630879be29f3d09f5728a6fc1472cf0b9703173e7a746af4e"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map13_s2_13.png",
+      "bytes": 54008,
+      "sha256": "c2fddcf011fec90abee7e651dbcc370bdff9b2545cc55470c7e1f828832225dd"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_Ruin08.png",
+      "bytes": 7163,
+      "sha256": "d29f351ffbde18bbe0f2fd9edba5333b1bbd31481c4b8c3484526802fae8f0d0"
+    },
+    {
+      "path": "Resources/OriginalImages/P_Body_06.png",
+      "bytes": 14214,
+      "sha256": "f460354b593c8f2c6d3aac4dfb97945365655f9c7ccb36545b1a38ace741b615"
+    },
+    {
+      "path": "Resources/OriginalImages/E_0702_Wpn.png",
+      "bytes": 3846,
+      "sha256": "8f7817a7972d0c2eac61440bd7f5f9ce52fb3ec7117bcf4252e99985e0f7a6c1"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_map09_25.png",
+      "bytes": 18445,
+      "sha256": "016b346c4095d73c0ebe74f22f8d24355f401d71fbe78adb7c8fe77e77863e3d"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_map07_08.png",
+      "bytes": 29512,
+      "sha256": "d711f31577ba75062fe20681d11bb0461c8a3786b1303a4439de4e1a06731586"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_map09_19.png",
+      "bytes": 34198,
+      "sha256": "f0fb47d8ea24ac10b07a4c5e9633c5a9af02df9425d840fe4c9f85d05890159e"
+    },
+    {
+      "path": "Resources/OriginalImages/E_0510_Body.png",
+      "bytes": 20730,
+      "sha256": "fbd453f8b92e444b670703d09279be96f5d36cf22185617489110062f3c25726"
+    },
+    {
+      "path": "Resources/OriginalImages/E_0511_Body.png",
+      "bytes": 18217,
+      "sha256": "a9f329e1829247fcaf09a15f1e9a9a47a3a9334ba09b153f3e504b4cace67eae"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_map09_21.png",
+      "bytes": 19785,
+      "sha256": "fe46b2664818f8b3052f5d55123013b2d84fb4d137e2b9cc1e845ba7692b98de"
+    },
+    {
+      "path": "Resources/OriginalImages/Efx_Explode02.png",
+      "bytes": 300930,
+      "sha256": "fb52fba6ddfcd36550399b0ab79df873650a874487d5fd2e0e1f1554813a3b2f"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_map09_09.png",
+      "bytes": 17327,
+      "sha256": "264add3533f0eee8232cb03ac9283cfae8070384352869c8caba39664837d66a"
+    },
+    {
+      "path": "Resources/OriginalImages/StageClear_BG.png",
+      "bytes": 241262,
+      "sha256": "365faa46e078b6aab65fa2c366ae577ced0e2dc1d2b128c45e741ca33b55e04a"
+    },
+    {
+      "path": "Resources/OriginalImages/P_Wpn_Missile02.png",
+      "bytes": 4565,
+      "sha256": "dccc51910c4a99ceb5c99fa786d3ca523c8eb045c01baa279468ffe3cbd01756"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_City22.png",
+      "bytes": 13407,
+      "sha256": "92812ec542be2195dcfd0a77a3a75d181238145d2fd681b51b9f580039d7ea2e"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map13_s2_03.png",
+      "bytes": 7267,
+      "sha256": "2915c716f9e123c319a3827152476b9d3693c465c43240372aa3fb9ed05613bf"
+    },
+    {
+      "path": "Resources/OriginalImages/E_08MB05_Wpn2.png",
+      "bytes": 5894,
+      "sha256": "bd5ecea9992b4cfc4712ea88e17bf16280c2302a3f0f56db6dd834c58cf8a6cc"
+    },
+    {
+      "path": "Resources/OriginalImages/P_Body_02.png",
+      "bytes": 12297,
+      "sha256": "43a35aab78bd67ea75f546de8d3abaf0e9bd3bcba05f07e69fa040694a81fdc7"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map12_s4_01.png",
+      "bytes": 47902,
+      "sha256": "e3d6d7c5c3b0e131ebcb4966836390307cb6d71736f00956e9bd999ba52c1d10"
+    },
+    {
+      "path": "Resources/OriginalImages/SelMission_Stage04.png",
+      "bytes": 6297,
+      "sha256": "bbb06593df0e1eea53e16d1db46c5b10593f016d6e48c7c6b983698bbb95b8fe"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map12_s3_08.png",
+      "bytes": 149472,
+      "sha256": "bba93cf177629ee434ad3c84dc80c98e4368302d94cba6e1a426ea83e9a862a1"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_City02.png",
+      "bytes": 3989,
+      "sha256": "9a8c3821e8434a5eeed9ee2d0b14dc7650a66030321065fd095630924324786c"
+    },
+    {
+      "path": "Resources/OriginalImages/WeaponTile.png",
+      "bytes": 28019,
+      "sha256": "6cb2e125f4c7c4b3f7cc01f55b0908deaf9fe8a8f7655fb015be2028ccd63f20"
+    },
+    {
+      "path": "Resources/OriginalImages/StageClearBtn.png",
+      "bytes": 34044,
+      "sha256": "34862501cbda6a16d1a1dc5ef87a73cc95388c1500920f96a94c43b99dec94a7"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_Ruin04.png",
+      "bytes": 16328,
+      "sha256": "d2d45f16c923b7d93a82e566edf4ec7bf54a2d9ff8f42fdf9ce9e0d75378797a"
+    },
+    {
+      "path": "Resources/OriginalImages/NumSet02.png",
+      "bytes": 2960,
+      "sha256": "1371454f66c0c1504082af2680a9e28678ff5b0d760fdb0247a0c477a3f41d28"
+    },
+    {
+      "path": "Resources/OriginalImages/ItemBox.png",
+      "bytes": 4942,
+      "sha256": "01aad2e2d0a7338c1d3b64fbd3fc35a9dace0954b500f6ec663fbeb27927f591"
+    },
+    {
+      "path": "Resources/OriginalImages/P_Weapon_02.png",
+      "bytes": 1207,
+      "sha256": "56cfae6a3ee9271845f688d816743ccd6232d182a3b2c5c9c4a8bf3aa777de34"
+    },
+    {
+      "path": "Resources/OriginalImages/E_MBoss_01.png",
+      "bytes": 37681,
+      "sha256": "704658d620ac36053262101c2b413a93d09512dd8cbcabe3406b5aa79dd4f7c1"
+    },
+    {
+      "path": "Resources/OriginalImages/P_Weapon_03.png",
+      "bytes": 1207,
+      "sha256": "56cfae6a3ee9271845f688d816743ccd6232d182a3b2c5c9c4a8bf3aa777de34"
+    },
+    {
+      "path": "Resources/OriginalImages/E_05MB01_Msl.png",
+      "bytes": 5573,
+      "sha256": "c4654cf2d4e631977b88220541593146c2ea475db092af35a70062a1654ffb19"
+    },
+    {
+      "path": "Resources/OriginalImages/E_Truck_Wpn_01.png",
+      "bytes": 4107,
+      "sha256": "04d2f37809eeab5368905b399922138c43ae3f88d069afbc3bde3e24a6b69494"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_City03.png",
+      "bytes": 3852,
+      "sha256": "1a0f95a2a5e0d89175810d89c80aa238a483904d70a16f25604eb9730054c1f7"
+    },
+    {
+      "path": "Resources/OriginalImages/SelMission_Stage05.png",
+      "bytes": 6422,
+      "sha256": "98990bb29508e5df8bddd40ae6fd4b3eef6c0d2a3570063417f81799fbf88aa4"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map12_s3_09.png",
+      "bytes": 100225,
+      "sha256": "ba5dd6da9cba54caa47c435ca64f6a85a999acb150a16b32aa71e9fd5b632af7"
+    },
+    {
+      "path": "Resources/OriginalImages/P_Body_03.png",
+      "bytes": 12486,
+      "sha256": "e23f09de53cdaa19da772180459723724a703523b2e1aef1567862b7df7c85d1"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map13_s2_02.png",
+      "bytes": 8973,
+      "sha256": "760d5ce1330f6b20ad878e076e485e816ab70b910563cf91a899e44971b0e0e7"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_City23.png",
+      "bytes": 12495,
+      "sha256": "d000d93d356b8ca460fa0c67cd31fb8a9a10db85f84d3b226af0b8e68c513dd5"
+    },
+    {
+      "path": "Resources/OriginalImages/P_Wpn_Missile03.png",
+      "bytes": 4565,
+      "sha256": "dccc51910c4a99ceb5c99fa786d3ca523c8eb045c01baa279468ffe3cbd01756"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_map09_08.png",
+      "bytes": 44015,
+      "sha256": "6eb8e0fe734765a5d606c4c8b919b6eaf60cdaac302f1fb9ebd8edadc6025c91"
+    },
+    {
+      "path": "Resources/OriginalImages/Efx_Explode03.png",
+      "bytes": 267793,
+      "sha256": "afe3481caf9abaf2eb686fd3b7a4dcad41f57ed94e362afaa395a4d36efdee75"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_map09_20.png",
+      "bytes": 25682,
+      "sha256": "215a55e7056b18b6e70bcc0e4eaf30c2116e0bf87ae110bcb575ee0eca258efc"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_RuinBridge01.png",
+      "bytes": 13281,
+      "sha256": "74ec529e1d04fd6ce745deaedac366b9d427f48bad44415e6db92cd28107ad29"
+    },
+    {
+      "path": "Resources/OriginalImages/E_Howitzer_08.png",
+      "bytes": 12660,
+      "sha256": "e98b3118eb20c5f844c5221d0dbbc153a2ee77157258cd78d414304037478b5d"
+    },
+    {
+      "path": "Resources/OriginalImages/E_0703_Wpn.png",
+      "bytes": 3249,
+      "sha256": "9a0b6c069339712974cd7f17cb112611a60515eb3123defe2bc075907a940ce6"
+    },
+    {
+      "path": "Resources/OriginalImages/E_Tank_Wpn_08.png",
+      "bytes": 3467,
+      "sha256": "e90d0fa6d3ed9813c009139744921767a45d0304d0afe9a85163d0a56c23d08c"
+    },
+    {
+      "path": "Resources/OriginalImages/Main_BG.png",
+      "bytes": 295335,
+      "sha256": "049126fd0456b2c1122d9797ca6d80e67b8ff3b9da0a7b1003223bdfa9da8d43"
+    },
+    {
+      "path": "Resources/OriginalImages/E_07MB03_Wpn.png",
+      "bytes": 3572,
+      "sha256": "1292c9e742d1fa9aa75d9b218202cdb677d00a17e19c281b6e5e20fa133332d8"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_map09_22.png",
+      "bytes": 18427,
+      "sha256": "65f7dcfa109bf05936d62716aa7a2811195115b2c3a122286276183a28a4b4da"
+    },
+    {
+      "path": "Resources/OriginalImages/Loading_Left.png",
+      "bytes": 138970,
+      "sha256": "7e2ffc14ba0620636488619b9a04ece9c4259b1178127ce18d262a1ca5b36dd6"
+    },
+    {
+      "path": "Resources/OriginalImages/Efx_Explode01.png",
+      "bytes": 191926,
+      "sha256": "c5586dad476bd68c286e3b6e723af757a657b7a97b05ab24d4764800254ed7f9"
+    },
+    {
+      "path": "Resources/OriginalImages/P_Wpn_Missile01.png",
+      "bytes": 4565,
+      "sha256": "dccc51910c4a99ceb5c99fa786d3ca523c8eb045c01baa279468ffe3cbd01756"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_City09.png",
+      "bytes": 6884,
+      "sha256": "53970f00606d3853fe8e26aa73d67d988e9a322b77f7a45db8c3ab042f4e622b"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_City21.png",
+      "bytes": 14155,
+      "sha256": "227de4330e1bfea0827dd5ee9f3689694d8b35acd4a0cdf8df76ea34d101cdd6"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map12_s3_01a.png",
+      "bytes": 204625,
+      "sha256": "c5eda9b91704fffd7616ef55b5a395ff864ab1e1a8a59cc952da0f000215d83e"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map13_s2_14.png",
+      "bytes": 99615,
+      "sha256": "06979703d035270f9f13cb8f76f8c7efe7ea2316658642fd214aff8ed3ba4471"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map12_s4_02.png",
+      "bytes": 26198,
+      "sha256": "bda7c4fdd9e260049afbe8cfd993d8325c9b5b0c57e48713e8dce8388a13f16f"
+    },
+    {
+      "path": "Resources/OriginalImages/E_08MB05_Wpn1.png",
+      "bytes": 3499,
+      "sha256": "25627b497db3a9ecb12124fcbcd7d608aa6d88cceced9a46b565c3e28e76db59"
+    },
+    {
+      "path": "Resources/OriginalImages/P_Body_01.png",
+      "bytes": 12186,
+      "sha256": "85f84a21bf00b62fd9de9cd008af2f937ec79650e2179ffce508151d1647efeb"
+    },
+    {
+      "path": "Resources/OriginalImages/Btn_Weapon.png",
+      "bytes": 12625,
+      "sha256": "431359f0a9766eab91adde0888bfabddd43e4b3767575fee72c46286cf530b04"
+    },
+    {
+      "path": "Resources/OriginalImages/GameUI_Btm.png",
+      "bytes": 44751,
+      "sha256": "d270ef73a5d19e99927ede18ab5a5089fe7b64efe15cf8a51c61b9ed36b5b5b9"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_City01.png",
+      "bytes": 7120,
+      "sha256": "7d89eee730ec6c577331fe03e99126c0fdc671a6456bb03e2171c2050689e1b3"
+    },
+    {
+      "path": "Resources/OriginalImages/NumSet_Mission.png",
+      "bytes": 11139,
+      "sha256": "b80196cd04f5ca0f17340c8876883d0c4a1462e379c30be7948dcc05aa03e12a"
+    },
+    {
+      "path": "Resources/OriginalImages/NumSet01.png",
+      "bytes": 3821,
+      "sha256": "67f1e55ea0985f19cf5534f936a27e8bdb8ba2134c7eed1305c7ae4a7c0d077e"
+    },
+    {
+      "path": "Resources/OriginalImages/E_Truck_Wpn_03.png",
+      "bytes": 5177,
+      "sha256": "c50737715fb291873ef350c7f959730a49ed633d49685ce996afb2c1b3a62044"
+    },
+    {
+      "path": "Resources/OriginalImages/P_Weapon_01.png",
+      "bytes": 3756,
+      "sha256": "f19e9dd73c6f3030563adda60e6c56ab24cb1ed073022df786965626a7ff9c3b"
+    },
+    {
+      "path": "Resources/OriginalImages/E_MBoss_02.png",
+      "bytes": 37425,
+      "sha256": "4c859a3ca101463c3f689afe614fdbf1f42a785da3479b98905a2b4ac4bca509"
+    },
+    {
+      "path": "Resources/OriginalImages/Btn_Booster.png",
+      "bytes": 11397,
+      "sha256": "53d6b51ab8ac7c4136f1c2b90052d639a94a1f6b4aad3b7df0a8cf5ba41c248d"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map12_s1_06a.png",
+      "bytes": 17166,
+      "sha256": "b0152e8295b1c4a049f933f8772629bd18664ec081eaf39d4a8633e4d5a252ff"
+    },
+    {
+      "path": "Resources/OriginalImages/E_MBoss_03.png",
+      "bytes": 38895,
+      "sha256": "a94a12d9a5a458e56ee58c05d2a281ee57f118bbc1dc0713dced336d8de5f928"
+    },
+    {
+      "path": "Resources/OriginalImages/E_0507_Body.png",
+      "bytes": 29622,
+      "sha256": "3cf218bc66dec956e3bf5eaeccdbda5b3c2c68d106c52fd7bf402aba7baa00fc"
+    },
+    {
+      "path": "Resources/OriginalImages/E_0506_Body.png",
+      "bytes": 27732,
+      "sha256": "0f2ff831dcd2f280138cf17bcb92683494d77b91043b24c614599010a9d10984"
+    },
+    {
+      "path": "Resources/OriginalImages/E_Truck_Wpn_02.png",
+      "bytes": 4644,
+      "sha256": "d7d373c140877b9f31fab7d6178fc34876d7f21fe73a448cf6dc1321f73f7a05"
+    },
+    {
+      "path": "Resources/OriginalImages/Upgrade_Sel.png",
+      "bytes": 5087,
+      "sha256": "c3b91aa66f71d1c93a0d587c1875e5e86b862753a2b010df339078a349dde4ee"
+    },
+    {
+      "path": "Resources/OriginalImages/SmokeTrail.png",
+      "bytes": 4846,
+      "sha256": "cf48a5304e87762a517278abd7fd9fb336ac079b43f15e0f8380eb0b0c7d3be3"
+    },
+    {
+      "path": "Resources/OriginalImages/SelSlot_Sel.png",
+      "bytes": 15057,
+      "sha256": "8baf91fc5e37fc7753a3c020a4173ea4b3f8b7fcc19e8bb4b1945a7694a0cf7e"
+    },
+    {
+      "path": "Resources/OriginalImages/SelSlot_Empty.png",
+      "bytes": 3827,
+      "sha256": "7fa9f3a2f6ab0a9bb90c21505743a753466ab2c58399827ae4e9aea1c28a3cee"
+    },
+    {
+      "path": "Resources/OriginalImages/GameLoading_04E.jpg",
+      "bytes": 53934,
+      "sha256": "1e189a5c46f2520fbcb9af1fbc3ef05401db84287332f055a2bf2b968dc27cf3"
+    },
+    {
+      "path": "Resources/OriginalImages/P_Wpn_Canon.png",
+      "bytes": 3701,
+      "sha256": "5c782bb970fcce86952fc6366cd617280566db0ff4aca36047b3f9aae338e650"
+    },
+    {
+      "path": "Resources/OriginalImages/P_Wpn_RaderMsl.png",
+      "bytes": 3480,
+      "sha256": "f9a238f9c6cb74a61866fdf25b41604cf219042cf36a07e8161f4e6dfd4333ca"
+    },
+    {
+      "path": "Resources/OriginalImages/SelMission_Stage06.png",
+      "bytes": 6478,
+      "sha256": "8379e25bb392428abb87f206805330d1ab9e10994940d57d5b06817cee8f33d1"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map12_s4_03.png",
+      "bytes": 99610,
+      "sha256": "7c971dc7824bb5a8175a284c6bd7d7ac45033c89bb58a9d7848370e037eb65ed"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map13_s2_15.png",
+      "bytes": 73801,
+      "sha256": "f6d7d76ced0e83b33c5b5ff31e77e25549e6fdc640396f0c999912eca05894a0"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map13_s2_01.png",
+      "bytes": 5525,
+      "sha256": "9d7fa83e8747cf458be48331e85e026f74ee04b004255a0ed0c314e1f360efd4"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_City20.png",
+      "bytes": 8990,
+      "sha256": "cc6c3262b23ac712a0bd623890da40aa75741d0bbe448b663386fd069056ca15"
+    },
+    {
+      "path": "Resources/OriginalImages/BulletEffect.png",
+      "bytes": 2979,
+      "sha256": "31d1a02e9b34945b734f490130e6ec012664f067d1faf69e0a4a2db6bc01f196"
+    },
+    {
+      "path": "Resources/OriginalImages/P_Wpn_Laser.png",
+      "bytes": 4387,
+      "sha256": "fccff8253ecd196249be0d7e1174ae029d25877344f0483d4f5b92c3bbb453e0"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_City08.png",
+      "bytes": 12119,
+      "sha256": "cae76c6471d8334a86eb869a681016f4b3385a0a9a5e9bf28f4345c41451edee"
+    },
+    {
+      "path": "Resources/OriginalImages/E_MBoss0501_Msl.png",
+      "bytes": 5573,
+      "sha256": "c4654cf2d4e631977b88220541593146c2ea475db092af35a70062a1654ffb19"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_map09_23.png",
+      "bytes": 23763,
+      "sha256": "4b57ca5b062c0c064c742a7af99df839ed43844ae1cc3a683a4472a0d41c9552"
+    },
+    {
+      "path": "Resources/OriginalImages/P_Wpn_NuBomb.png",
+      "bytes": 3480,
+      "sha256": "f9a238f9c6cb74a61866fdf25b41604cf219042cf36a07e8161f4e6dfd4333ca"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_RuinBridge02.png",
+      "bytes": 10014,
+      "sha256": "da05a017c867591f39c34ad2ba611eb3f28ad69cb708c41b0a9691f729301bca"
+    },
+    {
+      "path": "Resources/OriginalImages/E_Tank_Wpn_09.png",
+      "bytes": 3504,
+      "sha256": "9d98058bb430f7929a192625ff3417cacb6da7ae99da021dcab1ff4e010305e8"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map08_06.png",
+      "bytes": 17943,
+      "sha256": "fa5162542982cfc097f2e59d2fb44f1f53abca84da6a9120d9b9a6b3884fe8d6"
+    },
+    {
+      "path": "Resources/OriginalImages/E_Tank_Body_01.png",
+      "bytes": 7715,
+      "sha256": "62ae6dd0159b89c6edeb9352d921e6e52c8c3360a48552b1295920c20194fef4"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map08_12.png",
+      "bytes": 9375,
+      "sha256": "158fb5021ac78debd193cf8caf2205715b6a682d8d83f4220f684c6316f86809"
+    },
+    {
+      "path": "Resources/OriginalImages/E_Boss01_Wpn_02.png",
+      "bytes": 3625,
+      "sha256": "09d05111f57068efe29a755434ecaa66318a030d191d9c37dc1bd78a7e4ba800"
+    },
+    {
+      "path": "Resources/OriginalImages/E_Tank_Top_02.png",
+      "bytes": 4892,
+      "sha256": "e584afc2edc85fe3cbdbc0370055e5de6d632a1b835aeb12229b3f72f21ba3c3"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map13_s6_02.png",
+      "bytes": 11294,
+      "sha256": "0ff7295864e667278f321c316263b75aba102b2f846cccfc679f98980226dda8"
+    },
+    {
+      "path": "Resources/OriginalImages/E_MBoss0501_Top.png",
+      "bytes": 7254,
+      "sha256": "426b4653c1169a0e05af50667b9535b33ff2ea889de7d617e51ff44a9e70075e"
+    },
+    {
+      "path": "Resources/OriginalImages/E_08Boss_Wpn.png",
+      "bytes": 3490,
+      "sha256": "8777f736a8c63fa7cf0d848337ae80ffdf21667614d2cb55025acc63bfecd4ec"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_map08_04.png",
+      "bytes": 11946,
+      "sha256": "23dee3777a419d4e2b4f5bd6ef880a50c2ed8b2032ee6c0ac559bceaf6d5de33"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_map08_10.png",
+      "bytes": 126235,
+      "sha256": "041e048306d673edf5a4c239fb1c4da170858b53433b47d23fd4e934e47b88eb"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_map06_15.png",
+      "bytes": 94803,
+      "sha256": "cd37f04d330185b26228a5a6eee5b65801d8933ec36e9f12256cfc97fec03545"
+    },
+    {
+      "path": "Resources/OriginalImages/BG_map06b.png",
+      "bytes": 253398,
+      "sha256": "a86073bcca13f7de40f6ab8a73a06391da841f48380c3e046da54a4033cccf10"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_map06_01.png",
+      "bytes": 18301,
+      "sha256": "3811f5561073ed5fad6eefc832b87b20a79c8743b3c230a00e7dc68cedeca190"
+    },
+    {
+      "path": "Resources/OriginalImages/Btn_Menu.png",
+      "bytes": 9635,
+      "sha256": "1b9ba43c09e0a911c1004330e923538d88704f038b6805cf6173c9e284582b2d"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map12_s2_05.png",
+      "bytes": 7942,
+      "sha256": "1b0f3de4ab0e26d67c394a9df283cb6bc4330a62e560aaf3104fa2b2d6e278b8"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_map11_19.png",
+      "bytes": 19043,
+      "sha256": "e868ed1522927cf5a36f5f19bdfb39e90eaa5ce909960f904ab332afe1afdce8"
+    },
+    {
+      "path": "Resources/OriginalImages/SelMission_TileMission03.png",
+      "bytes": 39719,
+      "sha256": "4f5535237f65354ef0937a6b64a07b3fd5088d952a6917148fa64973583a9ba4"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_map11_18.png",
+      "bytes": 18351,
+      "sha256": "84ba5015c7f01d330509f99d89b35ce025846cc891972db5add436ed124cb04b"
+    },
+    {
+      "path": "Resources/OriginalImages/SelMission_TileMission02.png",
+      "bytes": 41277,
+      "sha256": "c9e43e1fa98597af1799647eb845087328a77775d8ead61b39fdbb4bc35ceea9"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map12_s2_04.png",
+      "bytes": 8002,
+      "sha256": "4bad8e019f43468849b7c0c3fa3225f27c684fa08659292ea4cf16ac185b60af"
+    },
+    {
+      "path": "Resources/OriginalImages/E_MBoss0601_Wpn.png",
+      "bytes": 3112,
+      "sha256": "d157cd3657a2f4ad72a68f6d1d865a387bb019b83c6f15df9fafb98559b0eee3"
+    },
+    {
+      "path": "Resources/OriginalImages/BG_map06c.png",
+      "bytes": 229469,
+      "sha256": "536123f099bd41e34141eb907204ee128c4d006e409b162e4da1d628ea4e18b8"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_map06_14.png",
+      "bytes": 83267,
+      "sha256": "31d1bcef08fed3f5915a423ed58f372bbc5306d15df93569d41356ca68347813"
+    },
+    {
+      "path": "Resources/OriginalImages/E_0701_Wpn.png",
+      "bytes": 6991,
+      "sha256": "73d00dec4ab3505e005b534be02a6f142e5d95f8f79e181cd1909e6471b72108"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_map08_11.png",
+      "bytes": 116663,
+      "sha256": "e31b847f0fcb18965821a8629bbc4420b7c160886994ee3d3481784fafdfdde7"
+    },
+    {
+      "path": "Resources/OriginalImages/E_Turret_Wpn_01.png",
+      "bytes": 6193,
+      "sha256": "e184d52921fcf34f652df370ff9e51a3190cc8e3d24a669baaa2167e156367ac"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_map08_05.png",
+      "bytes": 11818,
+      "sha256": "9af2535d014c4c4803aacad49915707a8facbc06c14a8dd1016b694ef701a1e2"
+    },
+    {
+      "path": "Resources/OriginalImages/E_ArmoCar_Wpn_04.png",
+      "bytes": 3243,
+      "sha256": "b87aaae35966c65774778c81251cba5d01679f5332e4837f20027263d5c61912"
+    },
+    {
+      "path": "Resources/OriginalImages/E_Turret_01.png",
+      "bytes": 7918,
+      "sha256": "9bb1234fb72e9e93d0138fc990e20b5b61e7cd3b38b12ba41b611075abc7927a"
+    },
+    {
+      "path": "Resources/OriginalImages/Main_Copyright.png",
+      "bytes": 4719,
+      "sha256": "58aa98b9955ca3b7d9c96ee6a511c1fc07ce6e611d24fcb01f46b1e34d368c03"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map13_s6_03.png",
+      "bytes": 11567,
+      "sha256": "308decbf84fe1f1e2b33bc29d6f662e59fac4ebef0b227eaa4b1d2b70e5ff4b4"
+    },
+    {
+      "path": "Resources/OriginalImages/E_Tank_Top_03.png",
+      "bytes": 3355,
+      "sha256": "d899220dbf0010f3954620e670b610d1198fc5bddacff4364b8f1776c51ab390"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map06_02.png",
+      "bytes": 4964,
+      "sha256": "31254798aa5db22392008c65fd0e491cd41647c7edee31cad50f887719adc244"
+    },
+    {
+      "path": "Resources/OriginalImages/E_Boss01_Wpn_03.png",
+      "bytes": 3184,
+      "sha256": "4cf9c9462ac037053f4f2d7c0a786e9cbe36276b92df892a93ae69552b0a7de6"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map08_13.png",
+      "bytes": 7387,
+      "sha256": "2114601cf3f167de584be34597efc1fa57f57e430c6ad97cee78be4b172d433f"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map08_07.png",
+      "bytes": 42245,
+      "sha256": "4a231f7a9274d8b1ea61423a39ddcb2c7e8328b3356218c1d1f29f30e9e05773"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map08_11.png",
+      "bytes": 18722,
+      "sha256": "d65f285b436b54e1f1e87818cb8b164c149391a534babd8ddc3ec38e127388aa"
+    },
+    {
+      "path": "Resources/OriginalImages/SelMission_Slot.png",
+      "bytes": 58937,
+      "sha256": "7e10059e1aabc471a550b369e5c5f0bdf40eed18031ebd08cb87e0e3d2b13797"
+    },
+    {
+      "path": "Resources/OriginalImages/E_Tank_Body_02.png",
+      "bytes": 6654,
+      "sha256": "335e2128a0781830bd0d9b698a094770eb3db60e86941190536ea9a023664975"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map08_05.png",
+      "bytes": 2092,
+      "sha256": "30a22cc5145a994d44c3dfd19f6bf5916187ca9ed90e4e71d6f83f99e5bed2b5"
+    },
+    {
+      "path": "Resources/OriginalImages/E_Boss01_Wpn_01.png",
+      "bytes": 3245,
+      "sha256": "a6f0099c707147301e461bcf918f8c8ea8fae7ad3038a25cf994b827fe81aa0f"
+    },
+    {
+      "path": "Resources/OriginalImages/E_Tank_Top_01.png",
+      "bytes": 4531,
+      "sha256": "b14906a2c11f5a7d6c1fbf58614ecf20bc0690a30d7d13deb0f691f2adfc359a"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map13_s6_01.png",
+      "bytes": 97590,
+      "sha256": "1d53bd698b33d7c3c82f7ba3b0598edb67aa8dbb86e998e85014bd0bc90b76c8"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map13_s1_08.png",
+      "bytes": 78126,
+      "sha256": "3bbeb9772e7f64bdc9305bcf85774868daf712951d2887cc49e17c805cccf959"
+    },
+    {
+      "path": "Resources/OriginalImages/E_Turret_03.png",
+      "bytes": 5879,
+      "sha256": "6d58d794c322da32f0f01985e4941db673b5ac6f156d8aa60cfb3528c844abce"
+    },
+    {
+      "path": "Resources/OriginalImages/E_MBoss0801_Top.png",
+      "bytes": 7440,
+      "sha256": "095fd109682afa2bfd685cfe671a11b9302dfe6c9e2bc34ac5b5d0c7290defa9"
+    },
+    {
+      "path": "Resources/OriginalImages/BG_map11e.png",
+      "bytes": 159201,
+      "sha256": "ec1080fb50bf542fe0cd2df3e3400f851cdf6040119d39019564fa5556dc6211"
+    },
+    {
+      "path": "Resources/OriginalImages/E_Heli_Body_08.png",
+      "bytes": 12355,
+      "sha256": "0fec6f67879b3ed7dcf0f3bfbd1e29ce9a43dae87a2b8bed4a7dc5fbcefd1bab"
+    },
+    {
+      "path": "Resources/OriginalImages/GameLoading_03E.jpg",
+      "bytes": 52183,
+      "sha256": "92139b2f8c5f8dedb52e4e5aad522a4f623a988eb6d808d18b3ad7d74178e011"
+    },
+    {
+      "path": "Resources/OriginalImages/E_Turret_Wpn_03.png",
+      "bytes": 5361,
+      "sha256": "849836a9fa7c8ef62a8aba1317c68eb50bfaa7800769a745742f0d5de8d29d1f"
+    },
+    {
+      "path": "Resources/OriginalImages/E_05MB01_Top.png",
+      "bytes": 7254,
+      "sha256": "426b4653c1169a0e05af50667b9535b33ff2ea889de7d617e51ff44a9e70075e"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_map08_07.png",
+      "bytes": 11878,
+      "sha256": "82bbeee5a5aef6595f40bbb11ebc4946d12844f1f4a597e0207c169146856dea"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_map06_02.png",
+      "bytes": 20186,
+      "sha256": "0ed83340ecf20030b56ce8330f2ced7822e61d5570740b63ba3d2551bad05175"
+    },
+    {
+      "path": "Resources/OriginalImages/BG_map06a.png",
+      "bytes": 244619,
+      "sha256": "12c90173a2e6ff4bb1f3b7cce955c20336bc5c4d0d48958cf554594748b9c728"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_map06_16.png",
+      "bytes": 109584,
+      "sha256": "914ed2a730c02823ccd6cdae7d30075772a52e0e29f70b267f74cc75fc5f7579"
+    },
+    {
+      "path": "Resources/OriginalImages/E_07MB01_Body.png",
+      "bytes": 33414,
+      "sha256": "a231bc1aa823e2073fa5215d0b19ecf58ae602d7f3075630166f17475d007012"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map12_s2_06.png",
+      "bytes": 13511,
+      "sha256": "6a3ef3576081c981f5213503b489d14d73ae8a4ab1a71107e6d0f807b4941c9e"
+    },
+    {
+      "path": "Resources/OriginalImages/SelMission_TileMission01.png",
+      "bytes": 35276,
+      "sha256": "51d195c9d6d2b0eca8a30f63bd9d93f3ccd228738c0e4a819f8dce4eb16b74d9"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map12_s2_07.png",
+      "bytes": 24069,
+      "sha256": "223528caa884ef370a668ba1e0bdc9adf0911bab03030688624fc0e198ac10c4"
+    },
+    {
+      "path": "Resources/OriginalImages/E_05MB05_Wpn.png",
+      "bytes": 5097,
+      "sha256": "02065440fd0b90634f78add8ba6f6e1ea031da955ae66cb1e03aad56d4109308"
+    },
+    {
+      "path": "Resources/OriginalImages/E_MBoss_07_Wpn.png",
+      "bytes": 6544,
+      "sha256": "8e77b7780be97cb035a07e8d4d120e6634a3e0154ac41f9b7d7c6a4a5a77b3e4"
+    },
+    {
+      "path": "Resources/OriginalImages/BG_map07d.png",
+      "bytes": 337061,
+      "sha256": "547fe50dcae278274b019608791eb74272f5702b4bea4b370eb93ece1c1de151"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_map06_17.png",
+      "bytes": 82075,
+      "sha256": "d1c7cc70278a5c020b597c890a08776f10236b0d8b3631adab0d84e930d67c66"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_map06_03.png",
+      "bytes": 17580,
+      "sha256": "b6be778113e64773e538a8e027034cafe0bffd37eff6a834865cefbd54c8fd1a"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_map08_06.png",
+      "bytes": 6317,
+      "sha256": "ba0c3689203a30171083f3f8a6708014816941eff1e8d02e3a1aa43b3848766c"
+    },
+    {
+      "path": "Resources/OriginalImages/E_Turret_Wpn_02.png",
+      "bytes": 5783,
+      "sha256": "0c64f172af44b0aab831649d293e01b80584d709be30b796000634c249ab4cc8"
+    },
+    {
+      "path": "Resources/OriginalImages/E_08MB02_Wpn.png",
+      "bytes": 4724,
+      "sha256": "ad0ff45a24ba0691d599305ba7c9a2c60762cb9f3fcfb86cfc3d9b207330da4d"
+    },
+    {
+      "path": "Resources/OriginalImages/E_0501_Body.png",
+      "bytes": 8054,
+      "sha256": "2737f51021d00e965715ac1c245fedbe9e496c153b71a4c0c387ff906d7a212c"
+    },
+    {
+      "path": "Resources/OriginalImages/E_Heli_Body_09.png",
+      "bytes": 16350,
+      "sha256": "4bbc811db09993f774f47dadcd22547f558eca867a506e0630602f1e1b8def5d"
+    },
+    {
+      "path": "Resources/OriginalImages/E_MBoss0801.png",
+      "bytes": 34958,
+      "sha256": "cf8cf8ced2afede24ef9d3ee3c90f13e83afe86c66f8e14e6c19bce299e3b23d"
+    },
+    {
+      "path": "Resources/OriginalImages/BG_map11d.png",
+      "bytes": 201945,
+      "sha256": "1757ddaaf1d796a70023a4fa52c86ef81574dd4a3807e3cadb43da34d2f5d3fc"
+    },
+    {
+      "path": "Resources/OriginalImages/E_Turret_02.png",
+      "bytes": 6912,
+      "sha256": "0c8fc0d842036bfb5afeacb88786b3945b25231101724d8ba88139eb16c7e193"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map12_s3_06a.png",
+      "bytes": 114122,
+      "sha256": "1bde1be69107b2f2691b251a9f8859942a7c7de575af0a46bd2bef0f163c938b"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map13_s1_09.png",
+      "bytes": 164683,
+      "sha256": "12aeba3f0fd08667e8a2631c30f3a311550d7f049f17e7ad815ab56833103f58"
+    },
+    {
+      "path": "Resources/OriginalImages/E_0506_Wpn.png",
+      "bytes": 3447,
+      "sha256": "25428a8cc29e956bfe4b2284816eaa3290edff9ba0e53ce20dee71d18045ddf6"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map06_01.png",
+      "bytes": 5660,
+      "sha256": "4bf15f1ab37b7b6e5bc6070980cd801b8b34628afc40d53c422f508a54f326cc"
+    },
+    {
+      "path": "Resources/OriginalImages/E_MBoss0801_Bullet.png",
+      "bytes": 4554,
+      "sha256": "15b89d2a263c4ca9850c955cec785dbac83ad4bc4797a54fca4ee8cd30e99621"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map08_04.png",
+      "bytes": 4155,
+      "sha256": "274268c7d4f057f6506342fbcd207ea91e9ba00e642886ad46490ed48cf4e2f6"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map08_10.png",
+      "bytes": 5564,
+      "sha256": "7cbb180be5e4d708286c3078f9037f23f1a09c5f43d325648a5a87f85b41dcce"
+    },
+    {
+      "path": "Resources/OriginalImages/E_Tank_Body_03.png",
+      "bytes": 7850,
+      "sha256": "5fabc4d53b0218abc00f4ea497229417f0b91b4a9410bee953e8298116cdaa86"
+    },
+    {
+      "path": "Resources/OriginalImages/NumSet02b.png",
+      "bytes": 2961,
+      "sha256": "6984a3c0596738245cc7ab50ce2c781e51cf9964f41b49af93c3ea6d69f7a177"
+    },
+    {
+      "path": "Resources/OriginalImages/Upgrade_Gauge.png",
+      "bytes": 3327,
+      "sha256": "6a5a9a691269e305aacffe9410fc56c031cd3bebe1d10ae7fbaf127f478a3677"
+    },
+    {
+      "path": "Resources/OriginalImages/E_Boss01_Wpn_04.png",
+      "bytes": 4081,
+      "sha256": "55a211e70473f6f6da81243ce639f8bd042d91c4bfe76ba9943aa2bb85c24e00"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map08_14.png",
+      "bytes": 21988,
+      "sha256": "97eed2a86d76531554feedbb67d514c26b954ce4805cff02cdb9dc26f58a6c17"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map13_s6_04.png",
+      "bytes": 12478,
+      "sha256": "4d04fcdd0060f570cb2e02dfc9963b099d0148b4ababc85002341b7c1f0b609e"
+    },
+    {
+      "path": "Resources/OriginalImages/E_Tank_Top_10.png",
+      "bytes": 5366,
+      "sha256": "f2dec743470d5674c62cc7e25a8d3f641d407ebb8f7c175e626a56b355c9426f"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map12_s4_03a.png",
+      "bytes": 28290,
+      "sha256": "4816866d98220df72ca1a7cc1d5daf2a5ba809558c43430ec43c048b481b2ebb"
+    },
+    {
+      "path": "Resources/OriginalImages/E_Tank_Top_04.png",
+      "bytes": 3384,
+      "sha256": "871aec96e8df0c3fe31f128cdcd09d26fc7e1dc54ac01e199a914a3dca769d56"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map11_09.png",
+      "bytes": 6054,
+      "sha256": "7cfb74607d9e0c6c6736a3cd29cdc62371d10ffd9bb32c4319858e66f53a37aa"
+    },
+    {
+      "path": "Resources/OriginalImages/E_Turret_06.png",
+      "bytes": 5745,
+      "sha256": "644b5d0e334f0dc412589a8f8358017763d40e1a98f72ff9414e142d0a6b45c1"
+    },
+    {
+      "path": "Resources/OriginalImages/E_Boss09_Wpn_02.png",
+      "bytes": 3630,
+      "sha256": "6d37ba2b751ccdb47d9687f99255e3815f144256a7dc365918cca060aad3589e"
+    },
+    {
+      "path": "Resources/OriginalImages/E_05MB05_Body.png",
+      "bytes": 55313,
+      "sha256": "5c7609d322382014cddf5934350440f098721d9e949ef4a72dd70d2e18521b1e"
+    },
+    {
+      "path": "Resources/OriginalImages/E_05MB04_Body.png",
+      "bytes": 50366,
+      "sha256": "9eb0913912bfb07f5eec711e00c3d8418965dfd0cb84c30cc0d49b5922d5bae3"
+    },
+    {
+      "path": "Resources/OriginalImages/GameUI_RedLight.png",
+      "bytes": 3812,
+      "sha256": "11b67d235106b460779e8b0a50fb9ac8cb5e3cb78ca290ab1f42289202a24f31"
+    },
+    {
+      "path": "Resources/OriginalImages/Default.png",
+      "bytes": 47097,
+      "sha256": "e42d15243e1b209c944591ac6dc3dadede651ed92f02796a24fca0ac51f3ad41"
+    },
+    {
+      "path": "Resources/OriginalImages/E_0604_Body.png",
+      "bytes": 13545,
+      "sha256": "d288ddfad523db3db0fe33843d4edf63696df76b2199405e80ec555608e0fe4b"
+    },
+    {
+      "path": "Resources/OriginalImages/E_0605_Body.png",
+      "bytes": 19220,
+      "sha256": "ad43e8aed8f17be994751db0f7c64f40bf6d67f57e7c2d674a0b3d2ba31df7dc"
+    },
+    {
+      "path": "Resources/OriginalImages/E_ArmoCar_Wpn_03.png",
+      "bytes": 3208,
+      "sha256": "9c494183beb4c57ba65fc8fe839f1e8538b6c795140afe5325c3512bc375a704"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_map06_07.png",
+      "bytes": 10407,
+      "sha256": "0ce265b258f2cb63f9417303050c054f277f5190e29542f3655b3fefaec678fb"
+    },
+    {
+      "path": "Resources/OriginalImages/BG_map06d.png",
+      "bytes": 283094,
+      "sha256": "e5e658a338182c3e36afb08e9f481fbf9c1cf8b14715ceaeb0a76894b428e94d"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_map06_13.png",
+      "bytes": 83074,
+      "sha256": "040c7a6a9cb3738a6d263d4684a068f59d6326c95d05911060999aae975171bb"
+    },
+    {
+      "path": "Resources/OriginalImages/SelSlot_ExpGauge.png",
+      "bytes": 3045,
+      "sha256": "f647d8f99349e51c2a5f7bf83232bcd84b456d273e6e158e645474377e2aa018"
+    },
+    {
+      "path": "Resources/OriginalImages/E_Turret_Wpn_06.png",
+      "bytes": 4431,
+      "sha256": "9d93cb48a8505aa5b1b348333be3adc5cc7337902b5b057c1470c1fff30e06cc"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_map08_02.png",
+      "bytes": 39774,
+      "sha256": "3b074e0b3cb9aafcd8392831a79a0027220f23b977a9a17ec3983cb35de7c6aa"
+    },
+    {
+      "path": "Resources/OriginalImages/SelMission_TileMission05.png",
+      "bytes": 38493,
+      "sha256": "26cd062eec1020d5f440f3832af0c4d78c71d7862f98e09557e9f0863dbc6a52"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map13_s4_01.png",
+      "bytes": 119107,
+      "sha256": "9baa052b12008a9254bd0798ac802b4e2a10e70f7cc5a903aa78551d315b40d8"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map12_s2_03.png",
+      "bytes": 143347,
+      "sha256": "4628a00911d97040d27189bc5c8ecebc802b4da6d67e4207b9ec1cc0f38455b2"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map12_s2_02.png",
+      "bytes": 168084,
+      "sha256": "82cd6c7273e77fb72435d63b954667310998f1cf91a9246821411202cf4d0bb6"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_map11_22.png",
+      "bytes": 28416,
+      "sha256": "5a6cc1c38723831ccce63a99c6ca1d457fce337e06453c32e2d0e0651c48755b"
+    },
+    {
+      "path": "Resources/OriginalImages/SelMission_TileMission04.png",
+      "bytes": 39712,
+      "sha256": "64487a79080d48632ad4bd277d449169dad68f49a0f9600079d5defc976003e5"
+    },
+    {
+      "path": "Resources/OriginalImages/E_08MB03_Wpn.png",
+      "bytes": 3146,
+      "sha256": "900ef25b0c7970ec54fed67628b9e86b476d045b4b4d7ffe1df8a0841d3a3131"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_map08_03.png",
+      "bytes": 20666,
+      "sha256": "f12732e7c6763cf72bad18731928522834552dd39f2c3eb6b819b7d8631f80a8"
+    },
+    {
+      "path": "Resources/OriginalImages/E_05MB04_Wpn.png",
+      "bytes": 3406,
+      "sha256": "09bc0f4cc1d7db11039be4b4321c8ff54346c5e5033942873b9533f8b8467856"
+    },
+    {
+      "path": "Resources/OriginalImages/Loading_Right.png",
+      "bytes": 148128,
+      "sha256": "cb33a09d6974d14bec2ff5f609f7baef0668fe44519d48ce1f5af118e34c7877"
+    },
+    {
+      "path": "Resources/OriginalImages/E_Turret_Wpn_07.png",
+      "bytes": 4409,
+      "sha256": "b46d56c85a3348068b0fe1cb56e1d02e16b72065a86c0c029d76f1383e4f07e2"
+    },
+    {
+      "path": "Resources/OriginalImages/BG_map07a.png",
+      "bytes": 253641,
+      "sha256": "280ac3aa2860b507a7c699b340904d920f60530ae6aa5d2362d861338c47235e"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_map06_12.png",
+      "bytes": 10091,
+      "sha256": "afc49866dec1c6d53e6835944ed5fe547cc687400098e54139b91b11d9e0e958"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_map06_06.png",
+      "bytes": 12591,
+      "sha256": "6aa791b0dffa026d2f4fdd4824cf02fb754e07fd49b8ae6e0973735e518e3500"
+    },
+    {
+      "path": "Resources/OriginalImages/EnemyBullet05.png",
+      "bytes": 11701,
+      "sha256": "e5bb21603fb850b804a9b6962a14b106890476bb3996f82202f1c2c1dc410530"
+    },
+    {
+      "path": "Resources/OriginalImages/E_ArmoCar_Wpn_02.png",
+      "bytes": 3113,
+      "sha256": "84bdade080547ad0ba2b2e468937752859aca7a516a730aa965fa3d482bcf6e9"
+    },
+    {
+      "path": "Resources/OriginalImages/E_MBoss0901_Msl.png",
+      "bytes": 4963,
+      "sha256": "60f36c34516be56ea21cce55202a1a82faf1f1e04b378797b7808c26ef37241a"
+    },
+    {
+      "path": "Resources/OriginalImages/GameLoading_02E.jpg",
+      "bytes": 45488,
+      "sha256": "d2156eb8f7cf767afe895c68c4a967a9ffdb8d03735ffeba9324ee63be9d634f"
+    },
+    {
+      "path": "Resources/OriginalImages/E_08Boss_Body.png",
+      "bytes": 74397,
+      "sha256": "7dc69132c18d5d890e1b370b909b939564ef08b05f9918f7f781c0944a4c606d"
+    },
+    {
+      "path": "Resources/OriginalImages/P_Wpn_Shotgun01.png",
+      "bytes": 3936,
+      "sha256": "15f424f5e371c5d8bc7977cb09ea0c554e6db45d4810aa284096ad86495eead8"
+    },
+    {
+      "path": "Resources/OriginalImages/BG_map11a.png",
+      "bytes": 151971,
+      "sha256": "01f6235a81254a0403df3f6b746d49fd99d87e49f1dd99247b74bc897b7b7837"
+    },
+    {
+      "path": "Resources/OriginalImages/E_Boss09_Wpn_03.png",
+      "bytes": 3388,
+      "sha256": "51b9f6298398b8f492038ebc71363df24f8ec26ff58a7b20b465b160965fd244"
+    },
+    {
+      "path": "Resources/OriginalImages/E_Turret_07.png",
+      "bytes": 5950,
+      "sha256": "6129bef2c4970cb3292a507b70e6d3485904f88f630f5703b0caabd7d7342124"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map11_08.png",
+      "bytes": 4569,
+      "sha256": "738a1de2642c38c5bef04d2487b2864e557e0e0ae2c5d60701c75e7e3db67163"
+    },
+    {
+      "path": "Resources/OriginalImages/E_Tank_Top_05.png",
+      "bytes": 3527,
+      "sha256": "d302386ef6e2d4fc34ce9cd533d23a5f78641c90dce9d25e613217c03566c8f4"
+    },
+    {
+      "path": "Resources/OriginalImages/E_Tank_Top_11.png",
+      "bytes": 5307,
+      "sha256": "55978bcb47bd3b8bb7f4f6d831970a9c56fa6d2c4014c6391851b44d58ac017d"
+    },
+    {
+      "path": "Resources/OriginalImages/SelSlot_Btn.png",
+      "bytes": 3113,
+      "sha256": "0529e0db86a221a16a77e022053f5537488d2279bb28c81e3c67c70dc737bf7e"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map08_01.png",
+      "bytes": 13793,
+      "sha256": "1a8282f26854d86b040669fca20a6c95649f4797e14bb0499005259673e2cb7a"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map08_15.png",
+      "bytes": 6396,
+      "sha256": "6f7cd8acb2c7816961cd3b7e0402e78981c4b36db1036e8e8bd464c3118c05f7"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map08_03.png",
+      "bytes": 41230,
+      "sha256": "0cf413e46a2999963639f0aa983496be3bd2bd6a1c653597c091def191e518f0"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map08_17.png",
+      "bytes": 9936,
+      "sha256": "f68e33a854a9e7e58c621a7a446f2c7e354b8252b9a68f422ccdcd31c80881a7"
+    },
+    {
+      "path": "Resources/OriginalImages/E_Tank_Body_04.png",
+      "bytes": 8338,
+      "sha256": "b451534bd1d91057e27b368fa0141b8f5e4fac13906bcd0b9ed3a1cac30dad3f"
+    },
+    {
+      "path": "Resources/OriginalImages/E_Tank_Top_07.png",
+      "bytes": 4949,
+      "sha256": "5d00778ebc13eb2d2360e27e41413b3e7bbd19347cae8f063258936e5dded860"
+    },
+    {
+      "path": "Resources/OriginalImages/E_0706_Body.png",
+      "bytes": 16629,
+      "sha256": "e6f058197d06605ae475ddac59990f46524375989dce9ef7b9a75c23c20ae191"
+    },
+    {
+      "path": "Resources/OriginalImages/E_Turret_05.png",
+      "bytes": 6153,
+      "sha256": "6fff14e80bbd021b26d9ff57c51567f3a5f50c67916098399b6716decb125246"
+    },
+    {
+      "path": "Resources/OriginalImages/E_Boss09_Wpn_01.png",
+      "bytes": 3258,
+      "sha256": "8a4ec6da99a483eb03a15a7acdacffba8ad6da4056ed0947cf3acaab934e6a31"
+    },
+    {
+      "path": "Resources/OriginalImages/BG_map11c.png",
+      "bytes": 197956,
+      "sha256": "46889966c4e27c327ce8a781e4c29d67d8dc0132ebdb80381e6e950bf0ad6db0"
+    },
+    {
+      "path": "Resources/OriginalImages/HPGauge.png",
+      "bytes": 2988,
+      "sha256": "a23323bd95909115d1b40c352284cf7390fde7a6197f6d2e124f0a2dbfa4dcca"
+    },
+    {
+      "path": "Resources/OriginalImages/E_MBoss0901_Bullet.png",
+      "bytes": 4036,
+      "sha256": "0f90fcf7c6421ef8685370e1ab05767b28c22b6f70071789443d3a117d0dae3c"
+    },
+    {
+      "path": "Resources/OriginalImages/ItemTile.png",
+      "bytes": 22390,
+      "sha256": "4efa6d90fdb7a9c495e1b25a6f64ba0a1c3d8dec020726145c337305b5b8f0f3"
+    },
+    {
+      "path": "Resources/OriginalImages/ResultTypo.png",
+      "bytes": 46929,
+      "sha256": "17f549fff3445f7b173a0a30a203b6ddc3822b72c5759fa8b0b3fbbc75bcbcce"
+    },
+    {
+      "path": "Resources/OriginalImages/BG_map07c.png",
+      "bytes": 326553,
+      "sha256": "025c7978039d3d6ee2d8034e32aeebbfa90880ba50cb338c580a836eae5a670a"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_map06_10.png",
+      "bytes": 9824,
+      "sha256": "48a2cc027e91d404db6bde7d8f244f96a86e00e3666abbf4dddb18c1b40a464e"
+    },
+    {
+      "path": "Resources/OriginalImages/Efx_ExplodeNPC.png",
+      "bytes": 171334,
+      "sha256": "1375077e142e834f94fd19d5f50dc28b2502e95174a966545efa745855ffc472"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_map06_04.png",
+      "bytes": 26127,
+      "sha256": "f1fb7534b34a984fad34af4ef932898f37aeeb01761da4af4ddc277f1912882b"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_map08_01.png",
+      "bytes": 43457,
+      "sha256": "dbd36337215a81e33f56c39e9477378aee7fdd601e6cfb9f5871fa2540545f50"
+    },
+    {
+      "path": "Resources/OriginalImages/E_Turret_Wpn_05.png",
+      "bytes": 4853,
+      "sha256": "fd254b41b8724dac3dbfcbdccd4248798792d551143ebbbcc186aea1d2e1bbab"
+    },
+    {
+      "path": "Resources/OriginalImages/E_MslTurret.png",
+      "bytes": 8537,
+      "sha256": "7d2e4ccde8e3f0fe384ac2d71e0b0e7249bdd00ca110318d00d4d8be8ea6abeb"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_map11_08.png",
+      "bytes": 99375,
+      "sha256": "070817ab8430f0fcfb45d0e4ecc196bad8e47ceab426fed05ecb15c8c8d17829"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map13_s4_02.png",
+      "bytes": 106753,
+      "sha256": "3342a7e2153601b44d0ae555d9d5abf31117a785e3d4436e41775a0bf44f3dda"
+    },
+    {
+      "path": "Resources/OriginalImages/SelMission_TileMission06.png",
+      "bytes": 33565,
+      "sha256": "538842e60884804a71c48b5088f9f4e1d77781795c4dec94999bd269b13d433a"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_map11_20.png",
+      "bytes": 22299,
+      "sha256": "8195516c3c1bf6c3d608c20548028d8ed5a48f29e4111da83c55bbd0c389a9d4"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_map11_21.png",
+      "bytes": 36389,
+      "sha256": "891d4dd825b42b777d920f49f39269bf24df12c89ddbac7c2ec9183e8f8f7b1d"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map12_s2_01.png",
+      "bytes": 149712,
+      "sha256": "375185179fbde2a72d50efb4efd1f49c298ab20f7979b7988463dbe6eb45d83f"
+    },
+    {
+      "path": "Resources/OriginalImages/SelMission_TileMission07.png",
+      "bytes": 31814,
+      "sha256": "7ef43da20b409c1d242e5d46b7db76fcfd3ce4bf57f9bf94e0b994eba075373d"
+    },
+    {
+      "path": "Resources/OriginalImages/E_08MB03_Body.png",
+      "bytes": 22053,
+      "sha256": "263154ca404ce803e2c108ccb7aaacfa15f6afb3c9cad0324cdb06ee454cd000"
+    },
+    {
+      "path": "Resources/OriginalImages/E_08MB02_Body.png",
+      "bytes": 29039,
+      "sha256": "c58480c686746202b33958964cb93ff24061e5c17b5ed62a07543b905800ccdf"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_map11_09.png",
+      "bytes": 64890,
+      "sha256": "896bc46430522f64348a506c3b92133d14556ca10b4be3a23e20d2dbb363b7dc"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map13_s4_03.png",
+      "bytes": 94595,
+      "sha256": "5451b6222ab44a4640a71bbab6d10e8369e60e12b3c34baaf96d248e9123ba08"
+    },
+    {
+      "path": "Resources/OriginalImages/E_Turret_Wpn_04.png",
+      "bytes": 5234,
+      "sha256": "a16e9659446e5901906fa504313b7b5e06b48a40c9e64dc5d1c4e1bbd5156ad0"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_map06_05.png",
+      "bytes": 20053,
+      "sha256": "4cf87eed73dd55e1e504b673b21355cea8e4793cedfc4f34a19f3c8b4f997b3f"
+    },
+    {
+      "path": "Resources/OriginalImages/Terrain_map06_11.png",
+      "bytes": 10101,
+      "sha256": "703a704648852380afc5af9cff5049ca01c9bb50b142bc819507e70f4e05bc5b"
+    },
+    {
+      "path": "Resources/OriginalImages/BG_map07b.png",
+      "bytes": 267179,
+      "sha256": "8aac6faf459113aa96331fc9ffafb4b270e8136155d178edaafc57bc93da5f88"
+    },
+    {
+      "path": "Resources/OriginalImages/E_ArmoCar_Wpn_01.png",
+      "bytes": 3098,
+      "sha256": "4c9109775981492b62a6d10ddb3a227119d21e8dc3a05e2efbac7e82f36af727"
+    },
+    {
+      "path": "Resources/OriginalImages/EnemyBullet06.png",
+      "bytes": 4976,
+      "sha256": "63bb7a02a72bb75b0ec3e6c48f72e51d2540dd851715dc7c980fb2f9cc54e9ca"
+    },
+    {
+      "path": "Resources/OriginalImages/P_Wpn_Shotgun.png",
+      "bytes": 3936,
+      "sha256": "15f424f5e371c5d8bc7977cb09ea0c554e6db45d4810aa284096ad86495eead8"
+    },
+    {
+      "path": "Resources/OriginalImages/P_Wpn_Shotgun02.png",
+      "bytes": 3936,
+      "sha256": "15f424f5e371c5d8bc7977cb09ea0c554e6db45d4810aa284096ad86495eead8"
+    },
+    {
+      "path": "Resources/OriginalImages/E_06MB01_Body.png",
+      "bytes": 17086,
+      "sha256": "45d28cdf63f5ea6960de5eef368653214519e54d8e4805c127177eae26c043fc"
+    },
+    {
+      "path": "Resources/OriginalImages/BG_map11b.png",
+      "bytes": 144552,
+      "sha256": "9c5cd87869927d826e888ad88f9ed40bcfe7e302c0c226a40014f095bc055a74"
+    },
+    {
+      "path": "Resources/OriginalImages/E_Turret_04.png",
+      "bytes": 6373,
+      "sha256": "1d31b2646dba42e17b84176ee69542d3dc2aacd9a25e556dcb4c311636383222"
+    },
+    {
+      "path": "Resources/OriginalImages/EnemyBullet.png",
+      "bytes": 8374,
+      "sha256": "ee55b9f49bcb6517f2a740c09612c81a81814c56cab076031cb11d1d986c5dc9"
+    },
+    {
+      "path": "Resources/OriginalImages/E_Turret_10.png",
+      "bytes": 5839,
+      "sha256": "3e8a79c679776ddcd5c783c2ef47918c390fb7d3923b2d270e58fd763d20ae2a"
+    },
+    {
+      "path": "Resources/OriginalImages/E_Tank_Top_12.png",
+      "bytes": 5519,
+      "sha256": "15ad2123b17860dde7d2cfac4f3ed90a50605886da51a590ceac20a93aa9a6e0"
+    },
+    {
+      "path": "Resources/OriginalImages/E_Tank_Top_06.png",
+      "bytes": 3719,
+      "sha256": "dfa17e33d58934691229c5b2cf619fe8f3f4e0f526c557975fa4290b2a87baa7"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map08_16.png",
+      "bytes": 4675,
+      "sha256": "1e63ce98843f6dbc4234dfb265972c00f92a091c87c369e9aea7d585c8a0e72f"
+    },
+    {
+      "path": "Resources/OriginalImages/E_Tank_Body_05.png",
+      "bytes": 9587,
+      "sha256": "6d3936a1d82deb8ccc391a162837cfd2c4ba6a31039ca8c853d3dc3384c23a71"
+    },
+    {
+      "path": "Resources/OriginalImages/Object_map08_02.png",
+      "bytes": 17414,
+      "sha256": "c7c62de1a72cd7618dca1f3d41ec81d807c314bd7edeaba7f8eb8395796ffef4"
+    },
+    {
+      "path": "Resources/RawData/WeaponInfo.mch",
+      "bytes": 27536,
+      "sha256": "460000cd8480addc496ce4afaa5f3a2385fcc81ad7fa440b1bfa6c338c4365fe"
+    },
+    {
+      "path": "Resources/RawData/Stage06.map",
+      "bytes": 9602,
+      "sha256": "9a09ab06739fba0388d8cbe346be37beca30568ae498f8d5a67999e788eb50d9"
+    },
+    {
+      "path": "Resources/RawData/Stage12.map",
+      "bytes": 5570,
+      "sha256": "c110e4d04e80636451159fa9ff5bb98aa13dd3224a551b8ef67bd880523b197a"
+    },
+    {
+      "path": "Resources/RawData/PartsInfo.mch",
+      "bytes": 18162,
+      "sha256": "f7b8ba0da76447c2f022d0114a582e57eb3085bba584c187cc635ad6ad4b6792"
+    },
+    {
+      "path": "Resources/RawData/Stage13.map",
+      "bytes": 10712,
+      "sha256": "0838c1d1f945d1c4544c9251a52ce9a3a36de7b9de19fce8db255379a80b7fec"
+    },
+    {
+      "path": "Resources/RawData/Stage07.map",
+      "bytes": 6738,
+      "sha256": "f746e31f74535b8dabb173a5a33793150ef3bb487679b92acda9d767aa8c8697"
+    },
+    {
+      "path": "Resources/RawData/Stage39.map",
+      "bytes": 2222,
+      "sha256": "0ed5a7d00f43abe25b67226f119c255a7da9187a3438c2d179c50c61e6244cff"
+    },
+    {
+      "path": "Resources/RawData/Stage11.map",
+      "bytes": 12369,
+      "sha256": "44f57652b5570ccfd428d99e845d2520380f43f6ddaa16b9ce1e8a9aa22ab122"
+    },
+    {
+      "path": "Resources/RawData/Stage05.map",
+      "bytes": 9548,
+      "sha256": "6c41271c19cea512bed3e7d357589e1414636c5610d330070abf762d2a591a23"
+    },
+    {
+      "path": "Resources/RawData/Stage04.map",
+      "bytes": 3523,
+      "sha256": "b2eb3b0400bc6fe502412b1f85ea0bbe0447fa12df0d6950c592f84c6720623c"
+    },
+    {
+      "path": "Resources/RawData/Stage10.map",
+      "bytes": 12335,
+      "sha256": "b227bb2ef0e7aa4c36ecba4ea637a73f762370c33fe0657521ad27fbe01ef0b5"
+    },
+    {
+      "path": "Resources/RawData/Stage38.map",
+      "bytes": 5166,
+      "sha256": "39800e9555a8674d29cc09080d662b4d0d7c7353aee11c020928dc1b2f1269d6"
+    },
+    {
+      "path": "Resources/RawData/MachInfo.mch",
+      "bytes": 121648,
+      "sha256": "c29eef4990655868b82361ba8f0119841f8c74bed5dcf31410094c5521459b05"
+    },
+    {
+      "path": "Resources/RawData/Stage14.map",
+      "bytes": 1648,
+      "sha256": "88d4aea8da4df15084d6ea55180efdbe6358c8f29678595890a5d2f28d51ae7e"
+    },
+    {
+      "path": "Resources/RawData/Stage28.map",
+      "bytes": 13090,
+      "sha256": "f3f7dfd3e8a95094424d228a82aad97d8c51133e71fdcf6b5aac5d806fed97b3"
+    },
+    {
+      "path": "Resources/RawData/Stage29.map",
+      "bytes": 1787,
+      "sha256": "c5b112484dbf5fe10adab95b185cba0a086b2c4ba3b9f73ae2859eee94b1ece5"
+    },
+    {
+      "path": "Resources/RawData/Stage01.map",
+      "bytes": 8386,
+      "sha256": "f73125c5c89bb5b38b23e99a16b7da79c8308f3e7bd5d6774f2481a2c0dc94e7"
+    },
+    {
+      "path": "Resources/RawData/Stage15.map",
+      "bytes": 7963,
+      "sha256": "7fb67bb1e231abf724731ced265250a487cd2c3f13ed969f82d66edafd958a89"
+    },
+    {
+      "path": "Resources/RawData/Stage03.map",
+      "bytes": 14420,
+      "sha256": "6a708cdba624411deff4f2e5dd79fc511bad6ea7d916914646d6e9f6f98a4267"
+    },
+    {
+      "path": "Resources/RawData/Stage17.map",
+      "bytes": 9344,
+      "sha256": "7efa8222f7052d2445fd396f67956c82c58962824f9403a9f8f23c805c186bb8"
+    },
+    {
+      "path": "Resources/RawData/Stage16.map",
+      "bytes": 7183,
+      "sha256": "ce00fc52bb9f13a5b629db7f01f33f74f5f1a83caa39db887b60e17a0c97afb0"
+    },
+    {
+      "path": "Resources/RawData/Stage02.map",
+      "bytes": 11318,
+      "sha256": "030a35b6c2a348aa6816b576a3090cd04b24673cae1d13827cd1ab76688bbead"
+    },
+    {
+      "path": "Resources/RawData/Stage27.map",
+      "bytes": 9735,
+      "sha256": "bb00e84e70a451a4025b2680603ae12610ad946846efaafd72b8da2f8be037ec"
+    },
+    {
+      "path": "Resources/RawData/Stage33.map",
+      "bytes": 5123,
+      "sha256": "5a900bcba584dc7bbf901d7f813c1b5e81b5c194c80725176a038e5884e42bd3"
+    },
+    {
+      "path": "Resources/RawData/Stage32.map",
+      "bytes": 5307,
+      "sha256": "c33fd34532e62f804caef023d89f3932f89b728a19376d4a0481686a56bb6e3b"
+    },
+    {
+      "path": "Resources/RawData/Stage26.map",
+      "bytes": 11006,
+      "sha256": "70da870faedf5f95e8d55e482a8e7ebb57dd792346d8aca130bc9da3fa320c52"
+    },
+    {
+      "path": "Resources/RawData/Stage18.map",
+      "bytes": 7152,
+      "sha256": "1cf286f418a2aada89f49f7454413713a70b61699e989d32035170976c3d772e"
+    },
+    {
+      "path": "Resources/RawData/Stage30.map",
+      "bytes": 6918,
+      "sha256": "3aff4ab5895a55e240038d344ecc4969dcdc8faf7b1b523cb05c63f4ac671c06"
+    },
+    {
+      "path": "Resources/RawData/Stage24.map",
+      "bytes": 1638,
+      "sha256": "f5783fbd96e755ac50641d27caf67a0046f3d2914221f14a728687db9cb8c9a6"
+    },
+    {
+      "path": "Resources/RawData/Stage25.map",
+      "bytes": 8927,
+      "sha256": "dcc2ffee272023e1f8aca89d1412f35ec0bf4302d980e0b6bd84783088849758"
+    },
+    {
+      "path": "Resources/RawData/Stage31.map",
+      "bytes": 6808,
+      "sha256": "9ae1d89312baf57eabbd5eccfa0bae7b51490dbe55f02287004fea50a6a603f5"
+    },
+    {
+      "path": "Resources/RawData/Stage19.map",
+      "bytes": 2307,
+      "sha256": "4a5eaf17743822d758381881a0e3f7e31eac05f327e3ee548ab74b319ecbe1a2"
+    },
+    {
+      "path": "Resources/RawData/Stage35.map",
+      "bytes": 1359,
+      "sha256": "5b3e96f7a9fc0b4edc12397a9492dfff4a47019b0d4bcdd895f2f44613b07d94"
+    },
+    {
+      "path": "Resources/RawData/Stage21.map",
+      "bytes": 7784,
+      "sha256": "b2bbe9d3944fc231151716dcd68af98ee7acd99d23cef57646343a1162d8b0ff"
+    },
+    {
+      "path": "Resources/RawData/Stage09.map",
+      "bytes": 2184,
+      "sha256": "db79544b1bd04dd2c8a21ee0ac769f0a30b07cca5a7601b4e06bced7e46bc8c1"
+    },
+    {
+      "path": "Resources/RawData/Stage08.map",
+      "bytes": 10750,
+      "sha256": "84229c5280d68b1d67c73ef9535e6009367d19f9199ec519aeca0d179efdaca1"
+    },
+    {
+      "path": "Resources/RawData/Stage20.map",
+      "bytes": 9806,
+      "sha256": "29030070cb72ae842e20af8b69cf6937dde9f6fc9ff55645f98386964e5871a5"
+    },
+    {
+      "path": "Resources/RawData/Stage34.map",
+      "bytes": 8550,
+      "sha256": "1e6ddca51277aa9ce12b2269a4902267508cd987a1c1a270af0ed84f22b50820"
+    },
+    {
+      "path": "Resources/RawData/Stage22.map",
+      "bytes": 8020,
+      "sha256": "efa585dbc5b41a140572e46eac6ca7b491f294526fa4569cb1e6a19e10fbbc5c"
+    },
+    {
+      "path": "Resources/RawData/Stage36.map",
+      "bytes": 3878,
+      "sha256": "12af950af80969dd99153e081ab97955a887276ff6947459a08ebe22a8be87f6"
+    },
+    {
+      "path": "Resources/RawData/Stage37.map",
+      "bytes": 2654,
+      "sha256": "f566b4a5a6c6b7c29b867538f78a8d05c183c05f8c56a0a75bc5eb49573415c3"
+    },
+    {
+      "path": "Resources/RawData/Stage23.map",
+      "bytes": 7815,
+      "sha256": "9f1674c11b06e22e67ac65ed01824258a42dce26fb75f53d2af16c8ea815b1a5"
+    },
+    {
+      "path": "Resources/RawData/Stage42.map",
+      "bytes": 126,
+      "sha256": "17c4464c82778149a06b124d500660064238874848e0add67b36481af64e3797"
+    },
+    {
+      "path": "Resources/RawData/Stage41.map",
+      "bytes": 830,
+      "sha256": "caf4b957497f31f9d40623b9eb07e6f0361e53caba23240b35500c8f20b0b4e9"
+    },
+    {
+      "path": "Resources/RawData/Survival.map",
+      "bytes": 903,
+      "sha256": "9b0fd8fcf26964ac2feed2c0c9abe1b0a1d820d2f726521ae27ef29f7a0a6553"
+    },
+    {
+      "path": "Resources/RawData/Stage40.map",
+      "bytes": 2814,
+      "sha256": "adfa18a9617a1e29efe90e5ac03a7ec3ca033768f401b9f476b6c66dc0f75131"
+    },
+    {
+      "path": "Art/Extensions/Lux_MiG31.png",
+      "bytes": 870924,
+      "sha256": "ef9351c5bb4112c0bc10befa489ae989d3b341e69da29a047c6570d3c468260d"
+    },
+    {
+      "path": "Art/Extensions/GAA_Shilka_Body2.png",
+      "bytes": 1568325,
+      "sha256": "2285a254646e75fce3e6188455d0275a066e08d99ebdf2cbb4c4575f0dbccf12"
+    },
+    {
+      "path": "Art/Extensions/GAA_Shilka_Body.png",
+      "bytes": 1621279,
+      "sha256": "8b78b67c7362b47133fab6e238823f0e153c1ef8c173a6f3223ab30a3f419de2"
+    },
+    {
+      "path": "Art/Extensions/Lux_Su57.png",
+      "bytes": 850600,
+      "sha256": "d8797d4559d71df8923e3d755f4f51237053a3ec1d374f0022834111b775a197"
+    },
+    {
+      "path": "Art/Extensions/GAA_Tunguska_Radar.png",
+      "bytes": 1714445,
+      "sha256": "602eb34b1abf661f987ae7f9f2a225c7b39ea44e6217095f8fd7c3124d406e5b"
+    },
+    {
+      "path": "Art/Extensions/VTOL_F35B.png",
+      "bytes": 874915,
+      "sha256": "8c2663b77851cde0665186c3ace3e7032de687e011162cfebe28fc71018a6913"
+    },
+    {
+      "path": "Art/Extensions/GAA_Tunguska_Missile.png",
+      "bytes": 1591085,
+      "sha256": "c9f52354db3c1f44aeb4bcdfd9777f417cf3568b6b845cd7a379f2e1eba57453"
+    },
+    {
+      "path": "Art/Extensions/GameMenuGlyphs.png",
+      "bytes": 28517,
+      "sha256": "447977393ad822a3508634f4b725368dfcb5a9b2affe0a4ed187e610142a487b"
+    },
+    {
+      "path": "Art/Extensions/GAA_Tunguska_Turret.png",
+      "bytes": 1479396,
+      "sha256": "164754098fe7d5390dc43e3eedddaa18942e280118788de45cc2df6307f06aad"
+    },
+    {
+      "path": "Art/Extensions/TitleWide.png",
+      "bytes": 2189002,
+      "sha256": "03ce72c951431b7a51d13b329c950b67ee635842e22630f7ec9d61097aefdf6b"
+    },
+    {
+      "path": "Art/Extensions/VTOL_Harrier.png",
+      "bytes": 886912,
+      "sha256": "9a523efede9a292a274671142430c7a028f49282235ab9248499a66f2c6d0dfb"
+    },
+    {
+      "path": "Art/Extensions/MenuMetal.png",
+      "bytes": 2081907,
+      "sha256": "46dcaa0f271fb0126e10c299409d54a6b56b5af76e21e21257d0e2d69f899997"
+    },
+    {
+      "path": "Art/Extensions/VTOL_Yak141.png",
+      "bytes": 881263,
+      "sha256": "fdff4c3a7193738d2da9ecb0dd233397490a5e1dc29a65544726cd9c68ace626"
+    },
+    {
+      "path": "Art/Extensions/MissionWide.png",
+      "bytes": 1853343,
+      "sha256": "a48312661ba3e27104cf50cbdc105c516f1b2a5f9e6c4f90f8eb8a92f2a7c457"
+    },
+    {
+      "path": "Art/Extensions/GAA_Shilka_Turret_v3.png",
+      "bytes": 1538560,
+      "sha256": "b6d21f38c6ea995e58cb16dbf7f7f5f6f11e004d2ec2c2915b39749d6b03c331"
+    },
+    {
+      "path": "Art/Extensions/AutoAimControls.png",
+      "bytes": 2275288,
+      "sha256": "8376ff2bc4635472d52ad435688b015e94b1d907995e13e97be8079364d9800b"
+    },
+    {
+      "path": "Art/Extensions/GAA_Shilka_Turret.png",
+      "bytes": 1461357,
+      "sha256": "850cce1e9cf80af45f8b34703e51fa821813da1f78f896ff36a72019248f4d06"
+    },
+    {
+      "path": "Art/Extensions/GAA_Shilka_Radar_v2.png",
+      "bytes": 2385714,
+      "sha256": "8c6f7624ffb0962f9690adce0e74d54e71fac9b3a814ab4f2afe568989eba167"
+    },
+    {
+      "path": "Art/Extensions/GAA_Tunguska_Parts_v2.png",
+      "bytes": 2308990,
+      "sha256": "a43afb7e3111085b6c1d9d841d3640976211e33e951537fef81324b48a3dcc8a"
+    },
+    {
+      "path": "Art/Extensions/GAA_Tunguska_Gun.png",
+      "bytes": 826067,
+      "sha256": "e74def2b25fa8fdb811f17b36dd37a50ded771cb36cbdb9155909e20439e7439"
+    },
+    {
+      "path": "Art/Extensions/GAA_Tunguska_Body.png",
+      "bytes": 1670826,
+      "sha256": "33235639ee574cb3ee689c044f48235180a066e30ea1319098f68684c0bf583e"
+    },
+    {
+      "path": "Art/Extensions/ModeWide.png",
+      "bytes": 1961891,
+      "sha256": "234b9a4b714e93cc84fd7b8e77f0ae8a946350b5fa6f7d6b7b8514ae3010ef97"
+    },
+    {
+      "path": "Art/Extensions/GAA_Tunguska_Body2.png",
+      "bytes": 1560071,
+      "sha256": "191c96c8f1365807c4efbecc7906d362e5fc816889e32fb87c021baeb3ed8a5d"
+    },
+    {
+      "path": "Art/Extensions/GAA_Tunguska_Radar_v2.png",
+      "bytes": 2026384,
+      "sha256": "07c00647b1e714fabf8be6b0f1336983e490c437071158cd9d1db6d155646d02"
+    },
+    {
+      "path": "Art/Extensions/GAA_Shilka_Parts_v2.png",
+      "bytes": 2419679,
+      "sha256": "53bb7031b265ab3439d64c217259f75d2351359fdd446e2519fef174339c8e6a"
+    },
+    {
+      "path": "Art/Extensions/GAA_Shilka_Gun.png",
+      "bytes": 1001223,
+      "sha256": "f727e5b2356b63339eb064966393d2c236b986a76d81dc7d22717193ca801c24"
+    },
+    {
+      "path": "Art/Extensions/Lux_F22.png",
+      "bytes": 829071,
+      "sha256": "8cf228dafd366849f50ce623901a1106dad35df4ccb451e1de6e346c79f6f082"
+    },
+    {
+      "path": "Art/Extensions/GAA_Shilka_Radar.png",
+      "bytes": 1586250,
+      "sha256": "fd335b45f3f2b4aa497b5f2553c903eb237e1c13bc7a6392f9ade807b947411f"
+    }
+  ]
+}
