@@ -1,0 +1,47 @@
+{
+  "ok": true,
+  "results": [
+    {
+      "width": 390,
+      "title": "카모프·유로파이터 캠페인 배치",
+      "images": [
+        {
+          "loaded": true,
+          "src": "https://media.githubusercontent.com/media/gelb2/HeavyMach/a74ac8cc72df7c949be0c9905d30cf5441f7e97a/docs/public/media/kamov-lux-stage-placement-20261109/campaign-1-1-ka52.png"
+        },
+        {
+          "loaded": true,
+          "src": "https://media.githubusercontent.com/media/gelb2/HeavyMach/a74ac8cc72df7c949be0c9905d30cf5441f7e97a/docs/public/media/kamov-lux-stage-placement-20261109/campaign-4-1-ka52-after-miniboss.png"
+        },
+        {
+          "loaded": true,
+          "src": "https://media.githubusercontent.com/media/gelb2/HeavyMach/a74ac8cc72df7c949be0c9905d30cf5441f7e97a/docs/public/media/kamov-lux-stage-placement-20261109/campaign-3-4-eurofighter-after-miniboss.png"
+        }
+      ],
+      "overflow": false,
+      "sections": 10,
+      "download": "http://127.0.0.1:8897/kamov-lux-stage-placement-20261109.html"
+    },
+    {
+      "width": 1440,
+      "title": "카모프·유로파이터 캠페인 배치",
+      "images": [
+        {
+          "loaded": true,
+          "src": "https://media.githubusercontent.com/media/gelb2/HeavyMach/a74ac8cc72df7c949be0c9905d30cf5441f7e97a/docs/public/media/kamov-lux-stage-placement-20261109/campaign-1-1-ka52.png"
+        },
+        {
+          "loaded": true,
+          "src": "https://media.githubusercontent.com/media/gelb2/HeavyMach/a74ac8cc72df7c949be0c9905d30cf5441f7e97a/docs/public/media/kamov-lux-stage-placement-20261109/campaign-4-1-ka52-after-miniboss.png"
+        },
+        {
+          "loaded": true,
+          "src": "https://media.githubusercontent.com/media/gelb2/HeavyMach/a74ac8cc72df7c949be0c9905d30cf5441f7e97a/docs/public/media/kamov-lux-stage-placement-20261109/campaign-3-4-eurofighter-after-miniboss.png"
+        }
+      ],
+      "overflow": false,
+      "sections": 10,
+      "download": "http://127.0.0.1:8897/kamov-lux-stage-placement-20261109.html"
+    }
+  ]
+}
