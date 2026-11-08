@@ -1,1 +1,1 @@
-export const GAME_URL="game/584cf2b910eda1d2/index.html";
+export const GAME_URL="game/b9eb1975ed29b8f4/index.html";
