@@ -42,7 +42,7 @@ The regular and cheat Android apps use the same C++ game rules and resources. Th
 
 The [Web version](https://gelb2.github.io/HeavyMach/) runs in a browser or as an installed Home Screen PWA. The launcher recommends installation and also offers browser play. Once resources finish downloading and pass validation, the game can start offline. It compiles the same C++ game rules to WebAssembly and supports touch, tilt, keyboards and trackpads.
 
-Tauri Mac includes this Web game and adds OS file backups. If Web storage is empty, it restores the last valid file. Local app builds, play, restoration and exit have been checked. [Download Tauri Mac](https://github.com/gelb2/HeavyMach/releases/tag/tauri-mac-20261102) is available as a ZIP. Notarization and the Windows version remain. [Web/PWA installation](../../../Distribution/Web/README.md) · [Tauri builds and saves](../../../Desktop/Tauri/README.md).
+Tauri Mac includes this Web game and adds OS file backups. If Web storage is empty, it restores the last valid file. Local app builds, play, restoration and exit have been checked. [Download Tauri Mac](https://github.com/gelb2/HeavyMach/releases/tag/new-unit-hotfix-20261109) is available as a ZIP. Notarization and the Windows version remain. [Web/PWA installation](../../../Distribution/Web/README.md) · [Tauri builds and saves](../../../Desktop/Tauri/README.md).
 
 <a id="복원-코드"></a>
 

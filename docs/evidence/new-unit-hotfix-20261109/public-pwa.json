@@ -1,0 +1,107 @@
+{
+  "recorded_utc": "2026-11-08T18:17:12.866887+00:00",
+  "url": "https://gelb2.github.io/HeavyMach/",
+  "source_main_commit": "4bbb3f50",
+  "release_tag": "new-unit-hotfix-20261109",
+  "pages_commit": "d5ab643",
+  "pages_run": "42508770318",
+  "public_config": {
+    "url": "https://gelb2.github.io/HeavyMach/config.js",
+    "status": 200,
+    "sha256": "eaac4ae0f8420b50a1643f6d331a300f471c64016c4dd945c44ae5f49de3d8db",
+    "text": "export const GAME_URL=\"game/584cf2b910eda1d2/index.html\";\n"
+  },
+  "public_service_worker": {
+    "url": "https://gelb2.github.io/HeavyMach/sw.js",
+    "sha256": "e2358198327fe3c6d935d93a15981b00da419f0fb0819f92b297482deba66434",
+    "local_sha256": "e2358198327fe3c6d935d93a15981b00da419f0fb0819f92b297482deba66434",
+    "byte_identical": true,
+    "version": "\"5be015e11fcc5269\""
+  },
+  "environment": {
+    "platform": "macOS Chrome installed standalone PWA",
+    "gpu": true,
+    "installed": true,
+    "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)",
+    "viewport": [
+      1200,
+      800
+    ],
+    "browser_profile": "temporary Puppeteer profile; existing user profile unused"
+  },
+  "result": {
+    "ok": true,
+    "functional_steps": 21,
+    "observational_steps": 2,
+    "steps": [
+      "manifest",
+      "installability",
+      "pwa-installed",
+      "pwa-standalone-window",
+      "offline-cache-and-title",
+      "before-title-click",
+      "after-title-click",
+      "mission-enter",
+      "gpu-frame-timing",
+      "fire",
+      "move",
+      "jump",
+      "automatic-aim-enabled",
+      "pause",
+      "second-window-blocked",
+      "export-save",
+      "corrupt-import-rejected-data-unchanged",
+      "import-roundtrip",
+      "offline-reload-game",
+      "offline-progress-restored",
+      "offline-save-content-matches",
+      "automatic-aim-restored",
+      "offline-mission-play"
+    ],
+    "errors": []
+  },
+  "gpu_measurement": {
+    "mean_ms": 16.667555555555552,
+    "p95_ms": 17.5,
+    "max_ms": 17.700000000000728,
+    "samples": 900,
+    "gameTicksPerSecond": 60.033578511803526
+  },
+  "evidence": {
+    "successful_report": "build/hotfix-evidence/public-pwa-probe-01/installed-result.json",
+    "report_sha256": "6417c6d70dc88ada4c7df07861c01e55ab74307da169488013d152a3b24b4456",
+    "offline_capture": "build/hotfix-evidence/public-pwa-probe-01/installed-offline.png",
+    "offline_capture_sha256": "b1aceb0be776e296bc53261b78d53e5fccb3df26d6019be508d166a4e5d8432b",
+    "original_test": "Distribution/Web/tests/pwa.mjs",
+    "original_test_sha256": "c2d0ca7769fc460675e966910964aae7eaf2d36cdc2af86f43f26485226c810d",
+    "instrumented_copy": "build/hotfix-evidence/public-pwa-probe.mjs",
+    "instrumented_copy_sha256": "81dcefed832c2b72fee2773d206457bd40367f7420bc5315bf224477e9b520be"
+  },
+  "initial_failure": {
+    "retained": true,
+    "report": "build/hotfix-evidence/public-pwa-failure-01/installed-result.json",
+    "report_sha256": "86120a3abad29a1a7191ec7110366f2cb94bbc631cd22512308f0b867e9db01e",
+    "completed_steps": [
+      "manifest",
+      "installability",
+      "pwa-installed",
+      "pwa-standalone-window",
+      "offline-cache-and-title"
+    ],
+    "error": "20-second timeout waiting for menu after the first title click",
+    "product_error_confirmed": false,
+    "cause_status": "Not conclusively identified: first run did not record game time at the click. Original title logic consumes an early first tap to skip its intro; fixed wall-clock waiting can differ from game time. This is a timing hypothesis, not a confirmed diagnosis.",
+    "successful_retry_click_times": {
+      "before": 6.5,
+      "after": 6.5667
+    }
+  },
+  "method": "First ran the existing test with HM_GPU=1 HM_INSTALLED=1. After preserving the failure, ran an ignored copy that only adds state observations immediately before/after the first title click and at failure. Input order, delays, assertions and timeouts were unchanged. All original checks passed on that instrumented run.",
+  "limits": [
+    "This is Mac Chrome installed PWA evidence; Android phone PWA was not exercised by this run.",
+    "GPU timing is this Mac/window/run only, not a phone performance result.",
+    "The initial title transition timeout remains recorded; its precise one-run cause was not proven."
+  ],
+  "cleanup": "Test browser closed by the harness; disposable browser profile used throughout.",
+  "product_code_changed": false
+}
