@@ -1,0 +1,17 @@
+{
+  "files": 850,
+  "packages": [
+    {
+      "data": "hm-assets-1.data",
+      "files": 73,
+      "bytes": 20846403,
+      "sha256": "cfa2f9ba1c8068ea85676086993ed7ac201d0ee38741eac639733445c811bee7"
+    },
+    {
+      "data": "hm-assets-2.data",
+      "files": 777,
+      "bytes": 20504552,
+      "sha256": "ae37256ccca1dafdff8f6cdbe5f5661a724c06f79cdf5b9932bb5b16725205f0"
+    }
+  ]
+}
