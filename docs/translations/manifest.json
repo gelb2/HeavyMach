@@ -5,8 +5,8 @@
   "documents": {
     "README.md": {
       "english": "README.en.md",
-      "source_sha256": "07b5c7c4260f61fee73e4ebb0bdd615d7481d5dc0f7796238dfedadf0be6ea2d",
-      "english_sha256": "c34e10504fd12b91474660b5e57954878e95569f45e431bb73aaea494d52ca2b",
+      "source_sha256": "88067a724e499ec66090213e0fd847e5f978b921bdf420dea9d39f23e77d9930",
+      "english_sha256": "afdb3f01bb50c9fbb4f143ba02058449c0edd1886a03d6eca61f525e5278cd75",
       "reviewed_numeric_difference": {
         "source_only": {
           "7": 1,
@@ -24,21 +24,21 @@
           "1": 1
         }
       },
-      "review_note": "2026-11-07: reviewed work/test essay text, first-person voice, dates, measured scope, figures, links and matching navigation. Existing author README passages preserved; only the new essay section was added."
+      "review_note": "2026-11-09: reviewed hotfix release entry and current download-link updates in both languages; existing author text preserved."
     },
     "CHANGELOG.md": {
       "english": "CHANGELOG.en.md",
-      "source_sha256": "1226ae938dfd93742b2ea5832e48fdff85ae5f406d056f3f78ee57a11973ab8c",
-      "english_sha256": "be8c7fbd0c1df79fe364d73acd2f67ba80f82c104f195dcc4ffb9051dcf5665a",
+      "source_sha256": "88bacf2e6f0e65c20041c1c601772c9873dba706f4112ba678c65728cb3c1607",
+      "english_sha256": "97cae04944d6f2c8f38db554f3d784c13ff10d1221f489143bfaebe72132d251",
       "reviewed_numeric_difference": {
         "source_only": {
-          "10": 2,
+          "8": 2,
           "2": 7,
-          "1": 1,
-          "3": 6,
           "4": 9,
           "5": 3,
-          "8": 1,
+          "10": 2,
+          "1": 1,
+          "3": 6,
           "0": 1,
           "6": 1,
           "482": 1
@@ -48,7 +48,7 @@
           "1,482": 1
         }
       },
-      "review_note": "2026-11-07: reviewed work/test essay text, first-person voice, dates, measured scope, figures, links and matching navigation. Existing author README passages preserved; only the new essay section was added."
+      "review_note": "2026-11-09: reviewed hotfix release entry and current download-link updates in both languages; existing author text preserved."
     },
     "CREDITS.md": {
       "english": "CREDITS.en.md",
@@ -120,8 +120,8 @@
     },
     "docs/public/features.md": {
       "english": "docs/en/public/features.md",
-      "source_sha256": "06ef7f79ea6d4864eb5c36802a669adf30229549904f4444ff5fc418674c861f",
-      "english_sha256": "01c317281837511ab76eeef174c7206d03d5193ae49e4ab500ab1d7170789f81",
+      "source_sha256": "b023fb25dc9bcf9d9ca90f92aef211396396c076deaac704ca21822529fea5f7",
+      "english_sha256": "e0060fc0f91def7ab1a0d4a714514d3da1f3aaab5f1f3832c22214b2346f4ede",
       "reviewed_numeric_difference": {
         "source_only": {
           "6": 2,
@@ -134,12 +134,12 @@
           "7": 1
         }
       },
-      "review_note": "Counts and durations sometimes use words. Ace Combat 7 and 8 expands 에이스 컴뱃7·8; only the digit preceded by Korean text is omitted by the numeric extractor. All weapon and placement tables compared. Updated Android availability; personal paragraphs unchanged. Reviewed 2026-10-30 Android coverage/link audit; current main and released v0.16 remain distinct. Lux sentence follows author commit 39b05834 where applicable. Reviewed 2026-11-02 platform status and recovery article: shared slots/codec, platform-specific restore choices, button fixes and measured versus pending checks. English number words/month names preserve source values. Personal opening unchanged. Reviewed dated Tauri Mac ZIP download, ad-hoc signing, first-launch steps, stable v0.17 distinction, and remaining notarization/other-Mac testing. Reviewed 2026-11-09 new-unit resource contract: original-format MCH/MAP and explicit common extensions, working-branch implementation versus pending release, original 113-placement history versus current 152 placements across 7 missions/35 stages, common PNG loading, and current code links. First-person history, unit specifications, and tables preserved; new numeric counts agree."
+      "review_note": "2026-11-09: reviewed hotfix release entry and current download-link updates in both languages; existing author text preserved."
     },
     "docs/public/implementation-status.md": {
       "english": "docs/en/public/implementation-status.md",
-      "source_sha256": "1772bf404e25bdece9eac5d77d5b7ad9cbe53bdd890c91706685e17e59d1cf35",
-      "english_sha256": "7abdfecb84b569a19a9a69773044c6894af491a38a73858e2524147349a6f8c1",
+      "source_sha256": "dd5559fa083a3eb13e426cdb873f5277ac27e18669a300f97f46ccf1ca1412b2",
+      "english_sha256": "0851c519f494fdc72c2cb3e0c81d76b40f6f0d8ecb733b29e306199ac2e272b6",
       "reviewed_numeric_difference": {
         "source_only": {
           "11": 2,
@@ -152,12 +152,12 @@
           "13": 1
         }
       },
-      "review_note": "English month/date syntax, word counts and iPad 13-inch spacing differ. Current v0.16 and historical v0.15 tests distinguished. Android implementation and linked evidence updated on 2026-10-30; existing paragraphs retained. Numeric wording reviewed. Updated Android availability; personal paragraphs unchanged. Reviewed Android develop-to-main merge and v0.16 exclusion, matching installation and gallery links. Reviewed v0.17 Android release, download links and current-version wording; historical v0.16 test results retained. Reviewed 2026-11-02 platform status and recovery article: shared slots/codec, platform-specific restore choices, button fixes and measured versus pending checks. English number words/month names preserve source values. Personal opening unchanged. Reviewed dated Tauri Mac ZIP download, ad-hoc signing, first-launch steps, stable v0.17 distinction, and remaining notarization/other-Mac testing."
+      "review_note": "2026-11-09: reviewed hotfix release entry and current download-link updates in both languages; existing author text preserved."
     },
     "docs/public/build-and-install.md": {
       "english": "docs/en/public/build-and-install.md",
-      "source_sha256": "11a89db5076a228935b66e64d3b7a73a5b025f2740a04fa25ed26616258fec50",
-      "english_sha256": "694e5895b7e00f17bdf6abced08add600b215c231c938545c6d6f0bcbd6733da",
+      "source_sha256": "fb1192c4f907e6b775da5ce5c5e665b9eb03f4867d6aa589f922b137ee88ad1e",
+      "english_sha256": "faf4f99b3007b187c6125823183c3fccd8befb28b4ecbf142516656f088eced1",
       "reviewed_numeric_difference": {
         "source_only": {
           "10": 1,
@@ -165,7 +165,7 @@
         },
         "english_only": {}
       },
-      "review_note": "October and four builds use English words. All fenced commands copied unchanged; current resource count is 1504. Reviewed Android SDK/NDK/CMake/JDK requirements against Gradle config, identical commands and APK paths, debug signing and current-main scope in both languages. Reviewed v0.17 Android release, download links and current-version wording; historical v0.16 test results retained. Reviewed 2026-11-02 platform status and recovery article: shared slots/codec, platform-specific restore choices, button fixes and measured versus pending checks. English number words/month names preserve source values. Personal opening unchanged. Reviewed dated Tauri Mac ZIP download, ad-hoc signing, first-launch steps, stable v0.17 distinction, and remaining notarization/other-Mac testing."
+      "review_note": "2026-11-09: reviewed hotfix release entry and current download-link updates in both languages; existing author text preserved."
     },
     "docs/public/gameplay-guide.md": {
       "english": "docs/en/public/gameplay-guide.md",
@@ -268,13 +268,13 @@
     },
     "docs/public/index.md": {
       "english": "docs/en/public/index.md",
-      "source_sha256": "abfdd822dd83023d54d9a92ff4b7b5603d685db46271f72a56ea1c69b92ee416",
-      "english_sha256": "9c1811c2a764a20e50f4f224117ffd82ea709170790bd28da4275a41d0cfdda4",
+      "source_sha256": "1f7ae34e46fe245e57831f0ed41e3d54bbed8447f3e271c7acdeb0678795f44e",
+      "english_sha256": "b200b9de6143ac93248592f5373e1e6d742b75ca9af7ce4d609fc0f8c85c852f",
       "reviewed_numeric_difference": {
         "source_only": {},
         "english_only": {}
       },
-      "review_note": "2026-11-07: reviewed work/test essay text, first-person voice, dates, measured scope, figures, links and matching navigation. Existing author README passages preserved; only the new essay section was added."
+      "review_note": "2026-11-09: reviewed hotfix release entry and current download-link updates in both languages; existing author text preserved."
     },
     "docs/public/design-intent.md": {
       "english": "docs/en/public/design-intent.md",
@@ -292,15 +292,15 @@
     },
     "docs/public/roadmap.md": {
       "english": "docs/en/public/roadmap.md",
-      "source_sha256": "78630b9c01883c2135f5e03dce252759fd04fd6052a8112f430214382dc117aa",
-      "english_sha256": "b6e238eecc6d7bf044a009cea1db1439a67a6ea21768d01f6b234df8e62e138e",
+      "source_sha256": "a165efdfcb9e19472956c27be79e26ea15d1ef9552ea9a4b0aeb38fcf515ebb4",
+      "english_sha256": "155412b6fa613cbae91d6be42b066826ca8e823ac0d8ca2814c97c0afc5b5ec5",
       "reviewed_numeric_difference": {
         "source_only": {
           "11": 2
         },
         "english_only": {}
       },
-      "review_note": "Compared source and English meaning, tables, commands, attribution and current/planned status. Numeric tokens match. Android implementation and linked evidence updated on 2026-10-30; existing paragraphs retained. Numeric wording reviewed. Reviewed 2026-10-30 Android coverage/link audit; current main and released v0.16 remain distinct. Lux sentence follows author commit 39b05834 where applicable. Reviewed v0.17 Android release, download links and current-version wording; historical v0.16 test results retained. Recorded v0.17 publication and the remaining draft-discovery recovery task. Reviewed 2026-11-02 platform status and recovery article: shared slots/codec, platform-specific restore choices, button fixes and measured versus pending checks. English number words/month names preserve source values. Personal opening unchanged. Reviewed dated Tauri Mac ZIP download, ad-hoc signing, first-launch steps, stable v0.17 distinction, and remaining notarization/other-Mac testing."
+      "review_note": "2026-11-09: reviewed hotfix release entry and current download-link updates in both languages; existing author text preserved."
     },
     "docs/public/android-ai-experience-20261030.md": {
       "english": "docs/en/public/android-ai-experience-20261030.md",
@@ -319,8 +319,8 @@
     },
     "docs/public/save-recovery-20261102.md": {
       "english": "docs/en/public/save-recovery-20261102.md",
-      "source_sha256": "23f7ef8f35713f9b879683e49b500425d31a8f9cc1295f7f24519e11db6003c8",
-      "english_sha256": "04b7881cae5c8394a02a430701bbc835e3a3eb5d0bfae7fbe84420954310ebb1",
+      "source_sha256": "3a7a25285396deb8b9268b483aa67b58328da3d2177b87cc7357e0dbb90327d2",
+      "english_sha256": "575d4c38f36df6c253ba92e17301a8a7badf5572dd3a0ecbc9427a85571c1006",
       "reviewed_numeric_difference": {
         "source_only": {
           "3": 3,
@@ -337,16 +337,17 @@
           "51": 1
         }
       },
-      "review_note": " Reviewed 2026-11-02 platform status and recovery article: shared slots/codec, platform-specific restore choices, button fixes and measured versus pending checks. English number words/month names preserve source values. Personal opening unchanged. Reviewed dated Tauri Mac ZIP download, ad-hoc signing, first-launch steps, stable v0.17 distinction, and remaining notarization/other-Mac testing."
+      "review_note": "2026-11-09: reviewed hotfix release entry and current download-link updates in both languages; existing author text preserved."
     },
     "docs/public/quick-play.md": {
       "english": "docs/en/public/quick-play.md",
-      "source_sha256": "61cef44e5a3e1c68ca79bce52fa013a8cabe962e39e6c6d6ecc859d6dd1b2a63",
-      "english_sha256": "08d96dff95833a758f93553b08dada80f5c2e2a5d2183e7771bbff96b9fef87f",
+      "source_sha256": "2cfbed5bb71fde21bb7f717b9b231e92b1d3209ff8dde5a613e199827657bf94",
+      "english_sha256": "b628e46f4954f3741c0d69b6ff76908f8939b7bd9195cffb1bd8d07a768b8c41",
       "reviewed_numeric_difference": {
         "source_only": {},
         "english_only": {}
-      }
+      },
+      "review_note": "2026-11-09: reviewed hotfix release entry and current download-link updates in both languages; existing author text preserved."
     },
     "docs/public/after-heavymach1-20261105.md": {
       "english": "docs/en/public/after-heavymach1-20261105.md",

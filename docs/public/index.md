@@ -20,7 +20,7 @@ HeavyMach는 iPhone·iPad·네이티브 Mac·Android·웹/PWA·Tauri Mac에서 �
 
 - [플레이와 설치](https://gelb2.github.io/HeavyMach/): 브라우저 실행과 오프라인 PWA.
 - [복원 코드와 화면](save-recovery-20261102.md): 원작 슬롯, 공용 모듈, 서버 없는 이전, 버튼 수정과 플랫폼별 검사.
-- [Tauri 빌드](../../Desktop/Tauri/README.md): Mac 앱. [Tauri Mac 다운로드](https://github.com/gelb2/HeavyMach/releases/tag/tauri-mac-20261102) ZIP을 제공하며 공증은 남아 있다.
+- [Tauri 빌드](../../Desktop/Tauri/README.md): Mac 앱. [Tauri Mac 다운로드](https://github.com/gelb2/HeavyMach/releases/tag/new-unit-hotfix-20261109) ZIP을 제공하며 공증은 남아 있다.
 
 ## Android
 

@@ -1,0 +1,1045 @@
+{
+  "captured_at_utc": "2026-11-08T17:59:55.198894+00:00",
+  "baseline_commit": "da4d0b890eeff384b1bad1308fe75d35ac365457",
+  "status": "working-tree candidate; final commit and release controlled by parent",
+  "asset_preservation": {
+    "manifest": {
+      "path": "Resources/RuntimeImages/manifest.json",
+      "sha256": "35ba83ce2cfd979d582746caf7c7ca0c291d02dc16fac40947b1bac86e6bfd61"
+    },
+    "images_per_profile": 63,
+    "profiles": [
+      {
+        "profile": "apple",
+        "actual_loader_method_pairs": 63,
+        "decode_and_upload_equal": true,
+        "path": "Sources/iOS/HMMedia.mm",
+        "baseline_method_sha256": "669bae0ec9e8a50955eec014a1736375609ec65dba11210ade2d386649d482ff",
+        "candidate_method_sha256": "9928fab2172383d87bd3fdde4df769f6938a6146ceecbe84395640a92c976e1f",
+        "fixture_sha256": "c7bb96fb42cbbe432b760470101a52c472c8b77c43b0546b923159b0c05aa7f3"
+      },
+      {
+        "profile": "web",
+        "actual_loader_method_pairs": 63,
+        "decode_and_upload_equal": true,
+        "path": "Sources/Web/WebMedia.cpp",
+        "baseline_method_sha256": "2859ddc3416c2f3aaef4c79bfee8e842c1b641a5e49e55f1aecabcb969e14a41",
+        "candidate_method_sha256": "f50907c0516cbf936f14be70153e72cc5c0fd6d62ee783b590e9d028b0f1c37e",
+        "fixture_sha256": "44d35328ec82bd0c1e58a37ead790c9dc849e10e5bc23576f71e45b2cdc07a6a"
+      },
+      {
+        "profile": "android",
+        "actual_loader_method_pairs": 63,
+        "upload_equal": true,
+        "path": "Android/app/src/main/cpp/Media.cpp",
+        "baseline_method_sha256": "00a70f035a1f70c0f9fd5ba5d2894899302f290cb50eacbf79b3025a39db3f19",
+        "candidate_method_sha256": "cfb895f4f52998ea7f8056e5eaf83be4837c840249abfec5a3a382dff78f882a",
+        "fixture_sha256": "22dfe40c0c8f7b56de2ebc122cb8d315d0753cfab9540f193af77d2a586daa84"
+      }
+    ],
+    "scope": "Verbatim actual pre/post loader method bodies compiled in native fixtures; platform shell mocks, no device/GPU execution"
+  },
+  "web": {
+    "report": {
+      "path": "build/web-unit-validation/results-v3-required-contract/report.json",
+      "sha256": "f5ab3305097031ef4a70d25675752f7f0fc8e997f27e57700b1fa3901bf674b7"
+    },
+    "passed": true,
+    "units": [
+      {
+        "name": "VTOL_Yak141",
+        "tile": "VTOL_Yak141.png",
+        "targetID": 4,
+        "initialHP": 210,
+        "minHP": 192,
+        "shots": 2,
+        "maxBullets": 1,
+        "seenSprite": true,
+        "error": "",
+        "cheats": {
+          "blockedHits": 0,
+          "refilledRounds": 0,
+          "fallRescues": 0
+        }
+      },
+      {
+        "name": "VTOL_Harrier",
+        "tile": "VTOL_Harrier.png",
+        "targetID": 4,
+        "initialHP": 400,
+        "minHP": 382,
+        "shots": 3,
+        "maxBullets": 2,
+        "seenSprite": true,
+        "error": "",
+        "cheats": {
+          "blockedHits": 0,
+          "refilledRounds": 0,
+          "fallRescues": 0
+        }
+      },
+      {
+        "name": "VTOL_F35B",
+        "tile": "VTOL_F35B.png",
+        "targetID": 4,
+        "initialHP": 900,
+        "minHP": 882,
+        "shots": 2,
+        "maxBullets": 1,
+        "seenSprite": true,
+        "error": "",
+        "cheats": {
+          "blockedHits": 0,
+          "refilledRounds": 0,
+          "fallRescues": 0
+        }
+      },
+      {
+        "name": "Lux_F22",
+        "tile": "Lux_F22.png",
+        "targetID": 4,
+        "initialHP": 765,
+        "minHP": 747,
+        "shots": 3,
+        "maxBullets": 2,
+        "seenSprite": true,
+        "error": "",
+        "cheats": {
+          "blockedHits": 0,
+          "refilledRounds": 0,
+          "fallRescues": 0
+        }
+      },
+      {
+        "name": "Lux_Su57",
+        "tile": "Lux_Su57.png",
+        "targetID": 4,
+        "initialHP": 765,
+        "minHP": 747,
+        "shots": 2,
+        "maxBullets": 1,
+        "seenSprite": true,
+        "error": "",
+        "cheats": {
+          "blockedHits": 0,
+          "refilledRounds": 0,
+          "fallRescues": 0
+        }
+      },
+      {
+        "name": "Lux_MiG31",
+        "tile": "Lux_MiG31.png",
+        "targetID": 4,
+        "initialHP": 765,
+        "minHP": 747,
+        "shots": 2,
+        "maxBullets": 2,
+        "seenSprite": true,
+        "error": "",
+        "cheats": {
+          "blockedHits": 0,
+          "refilledRounds": 0,
+          "fallRescues": 0
+        }
+      },
+      {
+        "name": "GAA_Shilka_M1",
+        "tile": "GAA_Shilka_Body.png",
+        "targetID": 4,
+        "initialHP": 250,
+        "minHP": 232,
+        "shots": 1,
+        "maxBullets": 1,
+        "seenSprite": true,
+        "error": "",
+        "cheats": {
+          "blockedHits": 0,
+          "refilledRounds": 0,
+          "fallRescues": 0
+        }
+      },
+      {
+        "name": "GAA_Tunguska_M1",
+        "tile": "GAA_Tunguska_Body.png",
+        "targetID": 4,
+        "initialHP": 250,
+        "minHP": 232,
+        "shots": 1,
+        "maxBullets": 1,
+        "seenSprite": true,
+        "error": "",
+        "cheats": {
+          "blockedHits": 0,
+          "refilledRounds": 0,
+          "fallRescues": 0
+        }
+      }
+    ],
+    "weapons": [],
+    "errors": [],
+    "normal_build": {
+      "bridge": "undefined",
+      "export": "undefined",
+      "prefix": "HeavyMach.",
+      "validation": false
+    },
+    "storage": {
+      "normalSentinel": "preserve-normal",
+      "normalMount": false,
+      "validationMount": true,
+      "saveBytes": 3624,
+      "prefix": "HeavyMach.Validation."
+    }
+  },
+  "installed_pwa": {
+    "report": {
+      "path": "build/pwa-unit-validation-v7/report.json",
+      "sha256": "4aa446f1444c86e848b7b71c809e3cabdaf943dafd2069cf963985afbaf9529f"
+    },
+    "platform": "macOS Chrome installed PWA",
+    "display": {
+      "standalone": true,
+      "fullscreen": false,
+      "url": "http://127.0.0.1:8873/",
+      "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36"
+    },
+    "manifest_id": "http://127.0.0.1:8873/validation-app",
+    "saved": true,
+    "uninstalled_after_test": true,
+    "passed": true,
+    "units": [
+      {
+        "name": "VTOL_Yak141",
+        "tile": "VTOL_Yak141.png",
+        "ok": true,
+        "initialHP": 210,
+        "minHP": 192,
+        "maxBullets": 1,
+        "seenSprite": true,
+        "shots": 2,
+        "cheats": {
+          "blockedHits": 0,
+          "refilledRounds": 0,
+          "fallRescues": 0
+        }
+      },
+      {
+        "name": "VTOL_Harrier",
+        "tile": "VTOL_Harrier.png",
+        "ok": true,
+        "initialHP": 400,
+        "minHP": 382,
+        "maxBullets": 2,
+        "seenSprite": true,
+        "shots": 2,
+        "cheats": {
+          "blockedHits": 0,
+          "refilledRounds": 0,
+          "fallRescues": 0
+        }
+      },
+      {
+        "name": "VTOL_F35B",
+        "tile": "VTOL_F35B.png",
+        "ok": true,
+        "initialHP": 900,
+        "minHP": 882,
+        "maxBullets": 1,
+        "seenSprite": true,
+        "shots": 2,
+        "cheats": {
+          "blockedHits": 0,
+          "refilledRounds": 0,
+          "fallRescues": 0
+        }
+      },
+      {
+        "name": "Lux_F22",
+        "tile": "Lux_F22.png",
+        "ok": true,
+        "initialHP": 765,
+        "minHP": 747,
+        "maxBullets": 1,
+        "seenSprite": true,
+        "shots": 2,
+        "cheats": {
+          "blockedHits": 0,
+          "refilledRounds": 0,
+          "fallRescues": 0
+        }
+      },
+      {
+        "name": "Lux_Su57",
+        "tile": "Lux_Su57.png",
+        "ok": true,
+        "initialHP": 765,
+        "minHP": 747,
+        "maxBullets": 1,
+        "seenSprite": true,
+        "shots": 2,
+        "cheats": {
+          "blockedHits": 0,
+          "refilledRounds": 0,
+          "fallRescues": 0
+        }
+      },
+      {
+        "name": "Lux_MiG31",
+        "tile": "Lux_MiG31.png",
+        "ok": true,
+        "initialHP": 765,
+        "minHP": 747,
+        "maxBullets": 1,
+        "seenSprite": true,
+        "shots": 2,
+        "cheats": {
+          "blockedHits": 0,
+          "refilledRounds": 0,
+          "fallRescues": 0
+        }
+      },
+      {
+        "name": "GAA_Shilka_M1",
+        "tile": "GAA_Shilka_Body.png",
+        "ok": true,
+        "initialHP": 250,
+        "minHP": 232,
+        "maxBullets": 1,
+        "seenSprite": true,
+        "shots": 1,
+        "cheats": {
+          "blockedHits": 0,
+          "refilledRounds": 0,
+          "fallRescues": 0
+        }
+      },
+      {
+        "name": "GAA_Tunguska_M1",
+        "tile": "GAA_Tunguska_Body.png",
+        "ok": true,
+        "initialHP": 250,
+        "minHP": 232,
+        "maxBullets": 1,
+        "seenSprite": true,
+        "shots": 1,
+        "cheats": {
+          "blockedHits": 0,
+          "refilledRounds": 0,
+          "fallRescues": 0
+        }
+      }
+    ],
+    "weapons": [
+      {
+        "weapon": "P_Wpn_Canon01",
+        "fixtureGrade": 3,
+        "ok": true,
+        "maxBullets": 1,
+        "shots": 1,
+        "lastShot": "P_Wpn_Canon01"
+      },
+      {
+        "weapon": "P_Wpn_Canon02",
+        "fixtureGrade": 3,
+        "ok": true,
+        "maxBullets": 1,
+        "shots": 1,
+        "lastShot": "P_Wpn_Canon02"
+      },
+      {
+        "weapon": "P_Wpn_Canon03",
+        "fixtureGrade": 3,
+        "ok": true,
+        "maxBullets": 1,
+        "shots": 1,
+        "lastShot": "P_Wpn_Canon03"
+      },
+      {
+        "weapon": "P_Wpn_ElShock",
+        "fixtureGrade": 3,
+        "ok": true,
+        "maxBullets": 1,
+        "shots": 1,
+        "lastShot": "P_Wpn_ElShock"
+      },
+      {
+        "weapon": "P_Wpn_Gun01",
+        "fixtureGrade": 0,
+        "ok": true,
+        "maxBullets": 1,
+        "shots": 1,
+        "lastShot": "P_Wpn_Gun01"
+      },
+      {
+        "weapon": "P_Wpn_Gun02",
+        "fixtureGrade": 3,
+        "ok": true,
+        "maxBullets": 1,
+        "shots": 1,
+        "lastShot": "P_Wpn_Gun02"
+      },
+      {
+        "weapon": "P_Wpn_Gun03",
+        "fixtureGrade": 3,
+        "ok": true,
+        "maxBullets": 1,
+        "shots": 1,
+        "lastShot": "P_Wpn_Gun03"
+      },
+      {
+        "weapon": "P_Wpn_Gun04",
+        "fixtureGrade": 3,
+        "ok": true,
+        "maxBullets": 1,
+        "shots": 1,
+        "lastShot": "P_Wpn_Gun04"
+      },
+      {
+        "weapon": "P_Wpn_Gun05",
+        "fixtureGrade": 3,
+        "ok": true,
+        "maxBullets": 1,
+        "shots": 1,
+        "lastShot": "P_Wpn_Gun05"
+      },
+      {
+        "weapon": "P_Wpn_Gun06",
+        "fixtureGrade": 3,
+        "ok": true,
+        "maxBullets": 1,
+        "shots": 1,
+        "lastShot": "P_Wpn_Gun06"
+      },
+      {
+        "weapon": "P_Wpn_Gun07",
+        "fixtureGrade": 3,
+        "ok": true,
+        "maxBullets": 1,
+        "shots": 1,
+        "lastShot": "P_Wpn_Gun07"
+      },
+      {
+        "weapon": "P_Wpn_Laser",
+        "fixtureGrade": 3,
+        "ok": true,
+        "maxBullets": 1,
+        "shots": 1,
+        "lastShot": "P_Wpn_Laser"
+      },
+      {
+        "weapon": "P_Wpn_Missile01",
+        "fixtureGrade": 3,
+        "ok": true,
+        "maxBullets": 1,
+        "shots": 1,
+        "lastShot": "P_Wpn_Missile01"
+      },
+      {
+        "weapon": "P_Wpn_Missile02",
+        "fixtureGrade": 3,
+        "ok": true,
+        "maxBullets": 1,
+        "shots": 1,
+        "lastShot": "P_Wpn_Missile02"
+      },
+      {
+        "weapon": "P_Wpn_Missile03",
+        "fixtureGrade": 3,
+        "ok": true,
+        "maxBullets": 1,
+        "shots": 1,
+        "lastShot": "P_Wpn_Missile03"
+      },
+      {
+        "weapon": "P_Wpn_RaderBomb",
+        "fixtureGrade": 3,
+        "ok": true,
+        "maxBullets": 1,
+        "shots": 1,
+        "lastShot": "P_Wpn_RaderBomb"
+      },
+      {
+        "weapon": "P_Wpn_RaderLsr",
+        "fixtureGrade": 3,
+        "ok": true,
+        "maxBullets": 1,
+        "shots": 1,
+        "lastShot": "P_Wpn_RaderLsr"
+      },
+      {
+        "weapon": "P_Wpn_RaderMsl",
+        "fixtureGrade": 3,
+        "ok": true,
+        "maxBullets": 1,
+        "shots": 1,
+        "lastShot": "P_Wpn_RaderMsl"
+      },
+      {
+        "weapon": "P_Wpn_Shotgun01",
+        "fixtureGrade": 3,
+        "ok": true,
+        "maxBullets": 4,
+        "shots": 4,
+        "lastShot": "P_Wpn_Shotgun01"
+      },
+      {
+        "weapon": "P_Wpn_Shotgun02",
+        "fixtureGrade": 3,
+        "ok": true,
+        "maxBullets": 4,
+        "shots": 4,
+        "lastShot": "P_Wpn_Shotgun02"
+      }
+    ],
+    "errors": []
+  },
+  "tauri_wkwebview": {
+    "report": {
+      "path": "build/tauri-validation-evidence/wkwebview-report.json",
+      "sha256": "5acba5ade176da7a1a05be55486950fadba8d5e5aaca22ad54a2bded00328cd8"
+    },
+    "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko)",
+    "app_id": "com.gelb2.heavymach.desktop.validation",
+    "foreground": {
+      "focused": true,
+      "visibility": "visible"
+    },
+    "mounts": {
+      "normal": false,
+      "validation": true
+    },
+    "save_path": "/validation-persist/HvM.dat",
+    "production_commands_blocked": true,
+    "normal_data_preservation": {
+      "normal_app_data_files_before": 18,
+      "normal_app_data_files_after": 18,
+      "identical": true,
+      "validation_closed_via_cua_command_q": true,
+      "validation_native_exit_code": 0
+    },
+    "passed": true,
+    "units": [
+      {
+        "cheats": {
+          "blockedHits": 0,
+          "fallRescues": 0,
+          "refilledRounds": 0
+        },
+        "initialHP": 210,
+        "maxBullets": 2,
+        "minHP": 192,
+        "name": "VTOL_Yak141",
+        "ok": true,
+        "seenSprite": true,
+        "shots": 2,
+        "tile": "VTOL_Yak141.png"
+      },
+      {
+        "cheats": {
+          "blockedHits": 0,
+          "fallRescues": 0,
+          "refilledRounds": 0
+        },
+        "initialHP": 400,
+        "maxBullets": 1,
+        "minHP": 382,
+        "name": "VTOL_Harrier",
+        "ok": true,
+        "seenSprite": true,
+        "shots": 2,
+        "tile": "VTOL_Harrier.png"
+      },
+      {
+        "cheats": {
+          "blockedHits": 0,
+          "fallRescues": 0,
+          "refilledRounds": 0
+        },
+        "initialHP": 900,
+        "maxBullets": 1,
+        "minHP": 882,
+        "name": "VTOL_F35B",
+        "ok": true,
+        "seenSprite": true,
+        "shots": 1,
+        "tile": "VTOL_F35B.png"
+      },
+      {
+        "cheats": {
+          "blockedHits": 0,
+          "fallRescues": 0,
+          "refilledRounds": 0
+        },
+        "initialHP": 765,
+        "maxBullets": 1,
+        "minHP": 747,
+        "name": "Lux_F22",
+        "ok": true,
+        "seenSprite": true,
+        "shots": 2,
+        "tile": "Lux_F22.png"
+      },
+      {
+        "cheats": {
+          "blockedHits": 0,
+          "fallRescues": 0,
+          "refilledRounds": 0
+        },
+        "initialHP": 765,
+        "maxBullets": 2,
+        "minHP": 747,
+        "name": "Lux_Su57",
+        "ok": true,
+        "seenSprite": true,
+        "shots": 2,
+        "tile": "Lux_Su57.png"
+      },
+      {
+        "cheats": {
+          "blockedHits": 0,
+          "fallRescues": 0,
+          "refilledRounds": 0
+        },
+        "initialHP": 765,
+        "maxBullets": 2,
+        "minHP": 747,
+        "name": "Lux_MiG31",
+        "ok": true,
+        "seenSprite": true,
+        "shots": 2,
+        "tile": "Lux_MiG31.png"
+      },
+      {
+        "cheats": {
+          "blockedHits": 0,
+          "fallRescues": 0,
+          "refilledRounds": 0
+        },
+        "initialHP": 250,
+        "maxBullets": 1,
+        "minHP": 232,
+        "name": "GAA_Shilka_M1",
+        "ok": true,
+        "seenSprite": true,
+        "shots": 1,
+        "tile": "GAA_Shilka_Body.png"
+      },
+      {
+        "cheats": {
+          "blockedHits": 0,
+          "fallRescues": 0,
+          "refilledRounds": 0
+        },
+        "initialHP": 250,
+        "maxBullets": 1,
+        "minHP": 232,
+        "name": "GAA_Tunguska_M1",
+        "ok": true,
+        "seenSprite": true,
+        "shots": 1,
+        "tile": "GAA_Tunguska_Body.png"
+      }
+    ],
+    "weapons": [
+      {
+        "fixtureGrade": 3,
+        "lastShot": "P_Wpn_Canon01",
+        "maxBullets": 1,
+        "ok": true,
+        "shots": 1,
+        "weapon": "P_Wpn_Canon01"
+      },
+      {
+        "fixtureGrade": 3,
+        "lastShot": "P_Wpn_Canon02",
+        "maxBullets": 1,
+        "ok": true,
+        "shots": 1,
+        "weapon": "P_Wpn_Canon02"
+      },
+      {
+        "fixtureGrade": 3,
+        "lastShot": "P_Wpn_Canon03",
+        "maxBullets": 1,
+        "ok": true,
+        "shots": 1,
+        "weapon": "P_Wpn_Canon03"
+      },
+      {
+        "fixtureGrade": 3,
+        "lastShot": "P_Wpn_ElShock",
+        "maxBullets": 1,
+        "ok": true,
+        "shots": 1,
+        "weapon": "P_Wpn_ElShock"
+      },
+      {
+        "fixtureGrade": 0,
+        "lastShot": "P_Wpn_Gun01",
+        "maxBullets": 1,
+        "ok": true,
+        "shots": 1,
+        "weapon": "P_Wpn_Gun01"
+      },
+      {
+        "fixtureGrade": 3,
+        "lastShot": "P_Wpn_Gun02",
+        "maxBullets": 1,
+        "ok": true,
+        "shots": 1,
+        "weapon": "P_Wpn_Gun02"
+      },
+      {
+        "fixtureGrade": 3,
+        "lastShot": "P_Wpn_Gun03",
+        "maxBullets": 1,
+        "ok": true,
+        "shots": 1,
+        "weapon": "P_Wpn_Gun03"
+      },
+      {
+        "fixtureGrade": 3,
+        "lastShot": "P_Wpn_Gun04",
+        "maxBullets": 1,
+        "ok": true,
+        "shots": 1,
+        "weapon": "P_Wpn_Gun04"
+      },
+      {
+        "fixtureGrade": 3,
+        "lastShot": "P_Wpn_Gun05",
+        "maxBullets": 1,
+        "ok": true,
+        "shots": 1,
+        "weapon": "P_Wpn_Gun05"
+      },
+      {
+        "fixtureGrade": 3,
+        "lastShot": "P_Wpn_Gun06",
+        "maxBullets": 1,
+        "ok": true,
+        "shots": 1,
+        "weapon": "P_Wpn_Gun06"
+      },
+      {
+        "fixtureGrade": 3,
+        "lastShot": "P_Wpn_Gun07",
+        "maxBullets": 1,
+        "ok": true,
+        "shots": 1,
+        "weapon": "P_Wpn_Gun07"
+      },
+      {
+        "fixtureGrade": 3,
+        "lastShot": "P_Wpn_Laser",
+        "maxBullets": 1,
+        "ok": true,
+        "shots": 1,
+        "weapon": "P_Wpn_Laser"
+      },
+      {
+        "fixtureGrade": 3,
+        "lastShot": "P_Wpn_Missile01",
+        "maxBullets": 1,
+        "ok": true,
+        "shots": 1,
+        "weapon": "P_Wpn_Missile01"
+      },
+      {
+        "fixtureGrade": 3,
+        "lastShot": "P_Wpn_Missile02",
+        "maxBullets": 1,
+        "ok": true,
+        "shots": 1,
+        "weapon": "P_Wpn_Missile02"
+      },
+      {
+        "fixtureGrade": 3,
+        "lastShot": "P_Wpn_Missile03",
+        "maxBullets": 1,
+        "ok": true,
+        "shots": 1,
+        "weapon": "P_Wpn_Missile03"
+      },
+      {
+        "fixtureGrade": 3,
+        "lastShot": "P_Wpn_RaderBomb",
+        "maxBullets": 1,
+        "ok": true,
+        "shots": 1,
+        "weapon": "P_Wpn_RaderBomb"
+      },
+      {
+        "fixtureGrade": 3,
+        "lastShot": "P_Wpn_RaderLsr",
+        "maxBullets": 1,
+        "ok": true,
+        "shots": 1,
+        "weapon": "P_Wpn_RaderLsr"
+      },
+      {
+        "fixtureGrade": 3,
+        "lastShot": "P_Wpn_RaderMsl",
+        "maxBullets": 1,
+        "ok": true,
+        "shots": 1,
+        "weapon": "P_Wpn_RaderMsl"
+      },
+      {
+        "fixtureGrade": 3,
+        "lastShot": "P_Wpn_Shotgun01",
+        "maxBullets": 3,
+        "ok": true,
+        "shots": 3,
+        "weapon": "P_Wpn_Shotgun01"
+      },
+      {
+        "fixtureGrade": 3,
+        "lastShot": "P_Wpn_Shotgun02",
+        "maxBullets": 4,
+        "ok": true,
+        "shots": 4,
+        "weapon": "P_Wpn_Shotgun02"
+      }
+    ],
+    "errors": []
+  },
+  "tauri_bundles": {
+    "normal": {
+      "bundle": "Desktop/Tauri/build/validation-target/release/bundle/macos/Heavy Mach Desktop.app",
+      "app_id": "com.gelb2.heavymach.desktop",
+      "version": "0.17.0",
+      "executable": {
+        "path": "Desktop/Tauri/build/validation-target/release/bundle/macos/Heavy Mach Desktop.app/Contents/MacOS/heavymach-desktop",
+        "sha256": "590571053c415dbbcbf51e49411668c60db7a4ddaf1eae761a7cad6efd1b5d6f"
+      },
+      "files": {
+        "Contents/Info.plist": "6a030d120e6c6b1d3540dbb0fc587ca160b6fd4d4ac580e999fbdd339dc1fd59",
+        "Contents/MacOS/heavymach-desktop": "590571053c415dbbcbf51e49411668c60db7a4ddaf1eae761a7cad6efd1b5d6f",
+        "Contents/Resources/Heavy Mach Desktop.icns": "13c6aaae1f3d395d4fcbe8d9e554a6b4771210735464adcf739dc886a3728f6d"
+      }
+    },
+    "validation": {
+      "bundle": "Desktop/Tauri/build/validation-target/release/bundle/macos/Heavy Mach Validation.app",
+      "app_id": "com.gelb2.heavymach.desktop.validation",
+      "version": "0.17.0",
+      "executable": {
+        "path": "Desktop/Tauri/build/validation-target/release/bundle/macos/Heavy Mach Validation.app/Contents/MacOS/heavymach-desktop",
+        "sha256": "97fce208ba7bae9b3045ed6ce46f237f66727178d1cb668affd2c5581953b8e5"
+      },
+      "files": {
+        "Contents/Info.plist": "c34a9f17e6f8eef681dba4e3c7cf01dddb3c59dffe6388d96a11ea4484bd63cb",
+        "Contents/MacOS/heavymach-desktop": "97fce208ba7bae9b3045ed6ce46f237f66727178d1cb668affd2c5581953b8e5",
+        "Contents/Resources/Heavy Mach Validation.icns": "13c6aaae1f3d395d4fcbe8d9e554a6b4771210735464adcf739dc886a3728f6d"
+      }
+    }
+  },
+  "normal_frontend_omits_validation_host_script": true,
+  "normal_game_file_sha256": {
+    "hm-assets-1.data": "94e5e210e3f2bbc94862d3cf06a39ac661b401d923628f1b037599b5bd31e47a",
+    "hm-assets-2.data": "401d37b24b36e3891ec585fb1c05d75113bd1a42b47e1b43ffba35db3139de44",
+    "hm-assets.js": "46934ead8e3c8a7c6d15e30aa06a1549b685b8193b343645040929281b7b5faa",
+    "hm-assets.json": "f3e4d8f3ab08474bfd0df269cd30f7ed796d02e30cc4af171032857ed41848ba",
+    "index.html": "445b30a1ca3b0a63e72ee0fdc73e7cbdc7c995e73f7700c4e152b2ee81aabb1e",
+    "index.js": "c940b3e59ade26e45835e97f37c0457649473445679f8040233613f9d6762b3a",
+    "index.wasm": "8ee07c59d57dfd034a81ca12c5b9354c1a8b4eb1c46eea222622fa88035aa935",
+    "manifest.webmanifest": "65c37e452de3dabbaa9971a8136a51497c8abf1a5034012fd15f56f7eb724e52"
+  },
+  "validation_game_file_sha256": {
+    "hm-assets-1.data": "94e5e210e3f2bbc94862d3cf06a39ac661b401d923628f1b037599b5bd31e47a",
+    "hm-assets-2.data": "401d37b24b36e3891ec585fb1c05d75113bd1a42b47e1b43ffba35db3139de44",
+    "hm-assets.js": "de61df75705327c9312d089f49ed938d588c882af161ce3c4fde3bea562c4d73",
+    "hm-assets.json": "f3e4d8f3ab08474bfd0df269cd30f7ed796d02e30cc4af171032857ed41848ba",
+    "index.html": "e0de0c5b6cd0e4f5beea5c5d58eb657e39e68cd07fa724c430cf869abdc4d4f4",
+    "index.js": "b080656d3c37d2135aa0bb00c63862a48fb0f5fbc59f544054dcece4b4271f45",
+    "index.wasm": "d2afa972519b203d56a9b1677179e427f6e8007b70f5107e04a9438f1f63f99d",
+    "manifest.webmanifest": "61c27feac6a8c62e97e6add10bacffaf93444c725f5edee1cfbb0e0484195068",
+    "validation-icon-256.png": "b94ffeea058a07aae9fb9b8c74d5ebd3a02fb56cce31d4627ccd44bb6091ff86",
+    "validation-icon-512.png": "c08b4cbc6d7c61fe2b1c1b458e99a41ca7fad8fcdb1a4dbb779dd348eead4b8e"
+  },
+  "source_sha256": {
+    "tools/prepare_unit_images.py": "77dc092a7ae146a19d4ffb5861fe9f74515d9d9f3078a501595289784d451907",
+    "tools/prepare_unit_images.mm": "6bfaa2b3ee0d23a5ce8ef5e690fba049ab01ae017c6792e19ba30f3d2f31ab6f",
+    "tools/prepare_unit_images_verify.py": "a5417a75606622102b6be52d98e6f7a40f10066765b2efbb628d0875515a58e3",
+    "Sources/iOS/HMMedia.mm": "2d8fcf7b3322b094e79464300bf7a7c686bf7946da805af0ce4232553bf10b3c",
+    "Sources/Web/WebMedia.cpp": "a518044d7991f237bf854418b74700f391d4f18e22c17e576d41592f2115548d",
+    "Android/app/src/main/cpp/Media.cpp": "da1f26eb8cd6b9e138815441eec8e9fd27e06cf882f46beff51e9884a6c05dd0",
+    "Sources/Web/WebGameView.cpp": "bf732b8216a52e0d4e943440255d2a9fc77e13a473caeb06d798e995d1e287ef",
+    "Sources/Web/WebGameView.hpp": "e56c8852e2f66c4d09643192502e5199975a85e0dfbb4eebfe0ea858887e82d6",
+    "Sources/Web/WebMain.cpp": "898396ecda2772bc0eb0bffae65822bf98b761abc50ec99062771232913b6ed2",
+    "Web/CMakeLists.txt": "27f6e36d6087071a7ce05f7c2405a16330623c12cfff430f53d6feea3c562149",
+    "Web/shell.html": "a3bb0aa4aa406663b61f2a5813ab3b2b5fc0397665ff74e026554eec3e1ae364",
+    "Web/validation.webmanifest": "61c27feac6a8c62e97e6add10bacffaf93444c725f5edee1cfbb0e0484195068",
+    "Web/tests/unit-validation.mjs": "31e146159c5b5e897fbcd84529898f283cbf39eb16806d7747a743f62e3b55b7",
+    "Web/tests/pwa-unit-validation.mjs": "f9a5ee368b6315d41442ce75edb4aa6f8fa7463bf25d73006594df4cef8f0368",
+    "Desktop/Tauri/frontend/validation.js": "a8e21c80ecd787d30504e85a52ad58a911bcbb774f9d43cb5c32106294b67328",
+    "Desktop/Tauri/scripts/validate_web_artifact.py": "aaf6b58ab8e679726bc540420161c0b27b665b3886bcdf6e962a7dbe63c874f2",
+    "Desktop/Tauri/scripts/prepare.py": "dd17ee56d200020528f0d7bc984b38244a73afb2477498e42bb4bf7d3e3c811d",
+    "Desktop/Tauri/scripts/prepare_validation.py": "feeb67401982a2106e2f3f7cd302ae778d801d323d4998831d9288bb37635e83",
+    "Desktop/Tauri/src-tauri/src/main.rs": "03030e91d41125123dc52d76a324b871aa8584cfdcbf5c46f418b75eeec27ae5",
+    "Desktop/Tauri/src-tauri/src/normal.rs": "0f581c7cb0b6ad00f99e7833cc4ba09c6a3b082f0a671579f44adae608787e9a",
+    "Desktop/Tauri/src-tauri/src/validation.rs": "3ef27a925a8e671117c509accda55ded9274e8ecf6f41b90ea7ff54373e191c2",
+    "Desktop/Tauri/src-tauri/tauri.conf.json": "ab0b4df12be4fa828b507cbba47a8fa49310aced6d035fb8fc0743492dae3c98",
+    "Desktop/Tauri/src-tauri/tauri.validation.conf.json": "7ae4dd16a121db494d4435fe480351b977211d36d1da951b134017ea14c1c59c",
+    "Desktop/Tauri/unit-resource-scope.json": "9636990273c803851e067e1f98124f515e2d2619c3355bd86bae61445f3d8b8a"
+  },
+  "limitations": [
+    "20-weapon checks prove selected player weapon fires, not every weapon damages every target.",
+    "Installed PWA run used macOS Chrome, not mobile Safari or Android PWA.",
+    "Native loader-method fixture is not a device/GPU execution test; actual app tests are recorded separately.",
+    "The validation WKWebView background run failed because normal pause prevented shots; failure evidence is retained and foreground run passed.",
+    "Tauri distribution uses an ad-hoc bundle signature; Developer ID signing and notarization are not included."
+  ],
+  "checks": {
+    "rust": {
+      "passed": 26,
+      "failed": 0,
+      "ignored": 2,
+      "ignored_notes": [
+        "child_writer is a subprocess helper exercised by killed_writer_retains_complete_generation",
+        "disk_full_retains_save requires a dedicated mounted test disk and was not run"
+      ]
+    },
+    "frontend": {
+      "passed": 17,
+      "failed": 0
+    },
+    "emitted_web_artifact": {
+      "passed": 9,
+      "failed": 0
+    },
+    "independent_emitted_web_artifact": {
+      "passed": 12,
+      "failed": 0,
+      "evidence": "build/audit-logic/review-fixtures/web-artifact-result.json"
+    },
+    "logs": {
+      "rust-tests-final.log": {
+        "path": "build/tauri-validation-evidence/rust-tests-final.log",
+        "sha256": "212149f819420e1f8272a33aac8c6fd846af4bd320d0c24f6727b673718d33be"
+      },
+      "frontend-tests-final.log": {
+        "path": "build/tauri-validation-evidence/frontend-tests-final.log",
+        "sha256": "2f4cb1c4c1fb8f87c1110a0b8733d38e7fbbf612a25b7580bf771aabd90da780"
+      },
+      "web-artifact-tests.log": {
+        "path": "build/tauri-validation-evidence/web-artifact-tests.log",
+        "sha256": "092f3ef0c082b5e2a61888b77b1f68ffbd0afb7284e19601ea6250cb7141c478"
+      },
+      "build-normal-final.log": {
+        "path": "build/tauri-validation-evidence/build-normal-final.log",
+        "sha256": "52b5ef68c6705ff744f3393128b4732a190539b3a165b3184cd5e7bd85d9b4d9"
+      },
+      "build-validation-foreground.log": {
+        "path": "build/tauri-validation-evidence/build-validation-foreground.log",
+        "sha256": "c5810d220ce4f5118f42847c28dc08564633caa7e303f9fe36e47685c537133d"
+      }
+    }
+  },
+  "normal_tauri_installation": {
+    "source_commit": "3729fd3510c52f284526da28c7748f63c1f88a5c",
+    "prepared_app": "build/release-new-unit-20261109/HeavyMach-Tauri-Mac-arm64-20261109/Heavy Mach Desktop.app",
+    "installed_app": "/Applications/Heavy Mach Desktop.app",
+    "source_executable_sha256": "590571053c415dbbcbf51e49411668c60db7a4ddaf1eae761a7cad6efd1b5d6f",
+    "signed_executable_sha256": "a9f6b8e33033124c998a5b50c4368a9f988b03952333d5c14bab216569a0e766",
+    "original_sections": {
+      "__TEXT,__text": {
+        "bytes": 5117948,
+        "sha256": "121b1083507cb0f6a907d7adca9db846f794104d5bf06bfa3b3586e385ebb17d"
+      },
+      "__TEXT,__text_startup": {
+        "bytes": 464,
+        "sha256": "8cd99385f3103ecac0124113ce0022b0e1c620585bf5d3c6f3d2a2e00bb9b354"
+      },
+      "__TEXT,__stubs": {
+        "bytes": 2628,
+        "sha256": "7f84018c074ac68007dfc691e4e366d3ad87fc4af7e7c2cfe71f4929650f8924"
+      },
+      "__TEXT,__init_offsets": {
+        "bytes": 4,
+        "sha256": "7a69743c0123fcf6337218f4f1277201f7b9d49683d34be0ddf0afa74846a37e"
+      },
+      "__TEXT,__gcc_except_tab": {
+        "bytes": 444192,
+        "sha256": "c904ad5d297bddd7d53d330fe632d6e3c47610c7b0baeeeb055f3ee235c2aa0b"
+      },
+      "__TEXT,__const": {
+        "bytes": 40641600,
+        "sha256": "d927f44807959db72b60568a1d9f307ff89c5177bf95e6813d61097ecdcf9edf"
+      },
+      "__TEXT,__cstring": {
+        "bytes": 79321,
+        "sha256": "7c0d5a2343f75fe955340a1c088e7ffc0b306a0b94b965ec8cb77e88fdc71c72"
+      },
+      "__TEXT,__unwind_info": {
+        "bytes": 145896,
+        "sha256": "ba3c807286ef52d9649fc27bb87b28b2218f4bd64d239916c75a5fff0df19e01"
+      },
+      "__TEXT,__eh_frame": {
+        "bytes": 793592,
+        "sha256": "a23ab961f53b6ad86d296d92eccd141783f6e8dae265223fbcbd64c7e9c123ee"
+      },
+      "__DATA_CONST,__const": {
+        "bytes": 159448,
+        "sha256": "92b59a73a7a47423bbac842fef5c9568544ee92a6e595ac58f80729ab6958a5c"
+      },
+      "__DATA_CONST,__objc_imageinfo": {
+        "bytes": 8,
+        "sha256": "94039884329d3732c577860f40d0dfdf883ff89dac332f87216e692c08892fa2"
+      },
+      "__DATA_CONST,__got": {
+        "bytes": 2400,
+        "sha256": "81d8025229f0e6d90f531eb6a34019e1cba765d44b20cbbd0d730e6fab83db61"
+      },
+      "__DATA,__data": {
+        "bytes": 3792,
+        "sha256": "e20b995158fa84ccdd37905f6e8136b413fb59acb8b6f8804c2f3a4b6919a137"
+      },
+      "__DATA,__thread_vars": {
+        "bytes": 432,
+        "sha256": "3a6d10caa66f1644e32b60174a2176c037ee0d25f1016cd4079e598f5c522cdc"
+      },
+      "__DATA,__thread_data": {
+        "bytes": 200,
+        "sha256": "ea8e5e49763bb07f5ed99f84b99f310a34789c19c104db4ad33a5426cd0b96ad"
+      }
+    },
+    "signed_sections_equal": true,
+    "installed_all_files_equal": true,
+    "storage_before_counts": {
+      "app-support": 18,
+      "webkit": 20
+    },
+    "bundle_signed_ad_hoc": true,
+    "notarized": false,
+    "original_app_retained": true,
+    "zip": "build/release-new-unit-20261109/HeavyMach-Tauri-Mac-arm64-20261109.zip",
+    "zip_bytes": 43488371,
+    "zip_sha256": "2bcdadb88ff08f5d5a380251ce0fa7f20cba75af82ecd83a42d6d03024c02cef",
+    "all_extracted_payload_files_equal": true,
+    "extracted_app_equals_executed_app": true,
+    "extracted_bundle_signature_verified": true,
+    "execution": {
+      "installed_executable_process_observed": true,
+      "launcher": true,
+      "game_title": true,
+      "slots_screen": true,
+      "visible_slots": [
+        "empty",
+        "level19",
+        "empty"
+      ],
+      "gameplay_started": false,
+      "quit_via_command_q": true,
+      "process_absent_after_quit": true
+    },
+    "storage": {
+      "app_support_18_files_identical": true,
+      "webkit_file_bytes_identical": false,
+      "webkit_notes": "SQLite files/checkpoints and resource-load statistics changed during normal launch. All LocalStorage and IndexedDB table rows remained byte-identical. No save restore was performed.",
+      "all_localstorage_and_indexeddb_rows_equal": true,
+      "before_and_after_copies_preserved": true
+    }
+  },
+  "updated_at_utc": "2026-11-08T18:05:04.519221+00:00"
+}

@@ -26,7 +26,7 @@ HeavyMach runs on iPhone, iPad, native Mac, Android, Web/PWA and Tauri Mac. The 
 
 - [Play or install](https://gelb2.github.io/HeavyMach/): browser play and offline PWA.
 - [Recovery codes and screenshots](save-recovery-20261102.md): the original slots, shared module, serverless transfer, button fixes and platform checks.
-- [Tauri build](../../../Desktop/Tauri/README.md): Mac app; [Download Tauri Mac](https://github.com/gelb2/HeavyMach/releases/tag/tauri-mac-20261102) ZIP is available, with notarization pending.
+- [Tauri build](../../../Desktop/Tauri/README.md): Mac app; [Download Tauri Mac](https://github.com/gelb2/HeavyMach/releases/tag/new-unit-hotfix-20261109) ZIP is available, with notarization pending.
 
 ## Android
 

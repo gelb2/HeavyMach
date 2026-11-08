@@ -1,0 +1,33 @@
+{
+  "implementation_commit": "3729fd3510c52f284526da28c7748f63c1f88a5c",
+  "develop_merge": "26964ff920781e7a7736b43bb9046939c66a455c",
+  "main_merge": "4bbb3f50100e3568e8ea15261e85dd517f5d49d1",
+  "prs": [
+    107,
+    108
+  ],
+  "tag": "new-unit-hotfix-20261109",
+  "release_url": "https://github.com/gelb2/HeavyMach/releases/tag/new-unit-hotfix-20261109",
+  "web_git_commit": "d5ab643b6655a9f00d21c0bd0c6ebcf1a3451f9b",
+  "web_version": "5be015e11fcc5269",
+  "web_game_version": "584cf2b910eda1d2",
+  "main_pr_core_apple_run": 42508227729,
+  "main_pr_build_conclusion": "success",
+  "product_tree_matches_tested_commit": true,
+  "artifacts_sha256": {
+    "HeavyMach-Android-cheat-20261109.apk": "59e21cc9261c824e0ae18fd21bf94d8be31094ae8ec2a8d474df7b38b569ccf6",
+    "HeavyMach-Android-normal-20261109.apk": "95f912c56649ac72c34b759929807f235d9ec3ec991b1eacf67543766c545f95",
+    "HeavyMach-Tauri-Mac-arm64-20261109.zip": "2bcdadb88ff08f5d5a380251ce0fa7f20cba75af82ecd83a42d6d03024c02cef"
+  },
+  "main_document_preservation": {
+    "main_before": "191728e310158a55df1164ee452b19b48fa97e57",
+    "candidate": "3729fd3510c52f284526da28c7748f63c1f88a5c",
+    "merge_base": "de492285c028fa741324fe5328f138b96bdd509d",
+    "main_side_changed_files": [],
+    "candidate_tree": "a72d5ad231d705c07e4b4a7d9199e981d440e840",
+    "result": "No main-side file changes since common ancestor; all current author passages preserved except explicitly appended troubleshooting section."
+  },
+  "pages_deploy_run": 42508770318,
+  "pages_deploy_conclusion": "success",
+  "public_config_verified": true
+}
