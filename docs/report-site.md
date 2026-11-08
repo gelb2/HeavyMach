@@ -1,5 +1,15 @@
 # HeavyMach 보고 사이트
 
+## 신규 유닛 전수 감사 — 2026-11-09
+
+[감사 보고서](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/new-unit-assets-audit-20261109.html)에 8종의 생성·포맷·패키징·C++ 처리·과거 보고 대조와 후속 TODO를 게시했다. 원고 다운로드와 파일별 해시·인벤토리·축소 비교 증거를 연결했다.
+
+- 감사 커밋: `6e3ce009` · `audit/new-unit-assets-20261109`. 게임 소스·자원·설치 변경 없음. develop/main 병합 없음.
+- Site source: `6c5f0bf83345d3ea7d36bf1cbc720b0d6f2f46bc`.
+- deployment: `appgdep_6af0ab2fcb6c819195c82c4f1ecf0030` · succeeded.
+- version: `appgprj_6addbf55aea081918d3d182d7e496e88~appgver_9a3539b36cb88191b6842492e4743f13`.
+- 소유자 전용 접근 유지. 문서 연결 검사·비밀 검사 통과. 보고서 링크 26개·앵커·다운로드 원문 일치를 확인했다. Safari 로컬에서 목차 이동과 판정 표 표시를 확인했다. 모바일 보고 화면은 미검사다.
+
 ## 7·14·30·40일 시각 변경 검사 — 2026-11-01
 
 [결과와 하트비트 검토](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/mac-web-pwa-comparison.html#date-test-results)를 게시했다. Chrome 일반 창·설치 PWA의 페이지 시각 변경/원복 8조건, 영구 저장 승인 관측과 시험 JSON을 연결했다. OS 시각·브라우저 내부 정리 시계·실제 장기 미사용은 미검사로 명시했다.
