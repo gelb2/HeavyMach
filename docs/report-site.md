@@ -977,3 +977,11 @@ Site source `4608b63240afd8b9b25aa653ff206715db167152`, deployment `appgdep_6af0
 - version `appgprj_6addbf55aea081918d3d182d7e496e88~appgver_dbb3ca8d9c1c81918a60426b23a69aa5`.
 - 390px·1440px에서 이미지12개·한글·표 가로넘침0·HTML 저장본 일치 확인. 게시 HTML은 호스팅이 삽입한 스크립트1개를 제외하고 소스와 일치했다. 기존 소유자 전용 접근 유지.
 - 제품 PR #112는 CI 통과 후 develop `c0744f7057c09da46d6fdb3f5041a0e5b888fdd4`에 병합했다. main `cc70daf9`는 유지했다.
+
+## 카모프·유로파이터 캠페인 배치 — 2026-11-09
+
+[배치·검증 보고서](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/kamov-lux-stage-placement-20261109.html)에 카모프76대·35스테이지, 기존14편대의 유로파이터21대 추가, 실제 웹 검증·아이폰 정식 설치·사용자 확인과 후속 무장 TODO를 게시했다. 대표 게임 화면3장과 스테이지별 표·원본 증거를 연결했다.
+
+- Site source `7899b79e7d3a9791c54fd60435b929fc59059f72`, deployment `appgdep_6af0dbfac944819198c53d24e41f0450`, succeeded.
+- version `appgprj_6addbf55aea081918d3d182d7e496e88~appgver_cf3cb08701448191b35dd6c5814f7f32`.
+- 기존 소유자 전용 접근 유지. 390·1440 화면에서 이미지3개와 가로 넘침 없음을 검사했다. 게시 HTML3개는 호스팅 주입 스크립트를 제외하고 소스와 같았다. [근거](evidence/kamov-lux-stage-placement-20261109/report-site.json).

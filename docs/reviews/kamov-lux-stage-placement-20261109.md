@@ -1,6 +1,6 @@
 # 카모프·럭스루나에 유로파이터 캠페인 배치
 
-2026-11-09 후속 요청으로 Ka52를 모든 플레이 가능한 스테이지에 배치하고, 기존 럭스루나에 편대 출현마다 Eurofighter를 추가했다. 작업 브랜치는 `feat/kamov-lux-stage-placement`, 시작 기준은 develop `f89983f08358996c83a5ea261e8cae532c6efef5`다. 외부 포드를 제거한 유로파이터 외형과 무장, 카모프 몸체·무장·로터, 두 기체의 수치는 유지했다.
+카모프 Ka-52 76대를 전체35개 스테이지에, 럭스루나에 유로파이터21대를 기존14개 편대에 추가했다. 아이폰 정식 앱을 업데이트 설치했고 사용자가 빌드를 확인했다. 채택된 외형·무장·로터와 기존 적의 배치·편대 발동 조건을 유지했다. 기관포 삭제와 미사일2연사는 아래의 후속 TODO이며 이번 설치본에는 적용하지 않았다.
 
 ## 배치 범위
 
@@ -138,3 +138,11 @@ Stage13은 앞선 MBoss05가 살아 있어 전선이X2146, 카메라 중심이X1
 3-4에서 MBoss05를 처치하고 마지막 구간까지 이동해 만난 유로파이터다. 기존 편대 출현 조건을 사용한다.
 
 공개 검증판도 같은 배치로 갱신했다. 공개10파일 해시와 실제 맵 생성(Stage01 카모프1대·Stage04 유로파이터2대)을 확인했다. 검증판 첫 화면은 타이틀이며 적을 자동 생성하지 않는다. 기존 정식 웹45개 파일과 서비스 워커는 보존했다. [공개 배포](../evidence/kamov-lux-stage-placement-20261109/web-publication.json) · [공개 브라우저](../evidence/kamov-lux-stage-placement-20261109/web-public-browser.json) · [배포 파일 해시](../evidence/kamov-lux-stage-placement-20261109/web-public-http.json).
+
+## 사용자 확인과 다음 무장 변경
+
+2026-11-09 사용자가 아이폰 빌드를 확인했다고 밝혔다. 이어 카모프 기관포 파츠와 기관포 공격 삭제, 미사일2발 연속 발사를 TODO로 요청했다. [후속 TODO](../usability-todo.md#hm-kamov-armament--카모프-무장-변경--승인미구현)에 기록했으며 이 보고서의 설치본에는 아직 적용하지 않았다.
+
+## develop 반영
+
+[PR #114](https://github.com/gelb2/HeavyMach/pull/114)는 코어·Apple 일반/치트 빌드·문서·보안 검사를 통과했고 develop `0e9495f5ea293a925cb5ffb3eed6c3a8722aa4e3`에 병합했다. 작업 브랜치는 `feat/kamov-lux-stage-placement`다. main에는 병합하지 않았다. 사용자 확인과 후속 무장 TODO는 별도 문서 변경으로 기록한다.

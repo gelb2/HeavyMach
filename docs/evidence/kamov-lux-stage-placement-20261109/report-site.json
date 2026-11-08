@@ -1,0 +1,16 @@
+{
+  "project_id": "appgprj_6addbf55aea081918d3d182d7e496e88",
+  "site_source": "7899b79e7d3a9791c54fd60435b929fc59059f72",
+  "deployment_id": "appgdep_6af0dbfac944819198c53d24e41f0450",
+  "version_id": "appgprj_6addbf55aea081918d3d182d7e496e88~appgver_cf3cb08701448191b35dd6c5814f7f32",
+  "status": "succeeded",
+  "audience": "owner-only",
+  "report_url": "https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/kamov-lux-stage-placement-20261109.html",
+  "report_source": "a74ac8cc72df7c949be0c9905d30cf5441f7e97a",
+  "html_viewports": [
+    390,
+    1440
+  ],
+  "images_loaded": 3,
+  "private_research_included": false
+}

@@ -1,0 +1,52 @@
+{
+  "headRefOid": "22b2208000992c72c1e37ce27159c85d77937003",
+  "mergeCommit": {
+    "oid": "0e9495f5ea293a925cb5ffb3eed6c3a8722aa4e3"
+  },
+  "mergedAt": "2026-11-08T20:28:16Z",
+  "number": 114,
+  "state": "MERGED",
+  "statusCheckRollup": [
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-11-08T20:22:31Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/gelb2/HeavyMach/actions/runs/42519657915/job/128850146414",
+      "name": "core",
+      "startedAt": "2026-11-08T20:20:56Z",
+      "status": "COMPLETED",
+      "workflowName": "Core and Apple builds"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-11-08T20:21:38Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/gelb2/HeavyMach/actions/runs/42519657972/job/128850146708",
+      "name": "documentation",
+      "startedAt": "2026-11-08T20:20:56Z",
+      "status": "COMPLETED",
+      "workflowName": "Documentation and resources"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-11-08T20:27:35Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/gelb2/HeavyMach/actions/runs/42519657915/job/128850146231",
+      "name": "apple",
+      "startedAt": "2026-11-08T20:20:56Z",
+      "status": "COMPLETED",
+      "workflowName": "Core and Apple builds"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-11-08T20:20:59Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://dashboard.gitguardian.com",
+      "name": "GitGuardian Security Checks",
+      "startedAt": "2026-11-08T20:20:54Z",
+      "status": "COMPLETED",
+      "workflowName": ""
+    }
+  ],
+  "url": "https://github.com/gelb2/HeavyMach/pull/114"
+}
