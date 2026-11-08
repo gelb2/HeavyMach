@@ -1,5 +1,9 @@
 # 소스 복원 설계와 원작 근거
 
+## 신규 유닛 구조 정리 요구 — 2026-11-09
+
+현재 C++ 기체/파츠/무기 등록과 별도 공중 동체·GAA 표시를 공통 데이터·파츠 경로로 이전하는 계획이다. 원작 MCH/MAP로 표현할 데이터는 별도 실행용 패키지로 내보내 기존 파서로 읽는다. 원작에 없는 현재 동작은 명시적 공통 확장 계약으로 구분한다. 아직 구현 전이다. [핫픽스 계획](reviews/new-unit-hotfix-plan-20261109.md), [경위서](reviews/new-unit-implementation-incident-20261109.md).
+
 ## Apple 플랫폼 확장 — 2026-10-26
 
 Apple 구성은 [공용 모듈](apple-platforms.md)을 따른다. 세 프로젝트를 workspace에서 연결하고 Core·AppleRuntime·Assets를 공유한다. [키보드 입력](keyboard-input-policy.md)은 GameSession 앞의 입력 계층이며 게임 수식은 유지한다.

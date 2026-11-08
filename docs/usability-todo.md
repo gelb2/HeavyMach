@@ -1,5 +1,22 @@
 # 버그 수정·사용성 개선 과제
 
+<a id="hm-new-unit-hotfix"></a>
+
+## HM-NEW-UNIT-HOTFIX — 화면 보존·원작 데이터/공통 실행 경로 — 2026-11-09
+
+[계획](reviews/new-unit-hotfix-plan-20261109.md) · [경위서](reviews/new-unit-implementation-incident-20261109.md). 현재 단계는 계획 완료, 구현 전이다.
+
+- [x] 현재 소스·자원878개 해시, 현행8종·배치·플랫폼 기준, 경위서, 구현·검증·배포·복귀 계획을 기록했다.
+- [ ] 플랫폼별 기존63개 논리 이미지의 캐시/업로드와 실제8종 장면, draw/전투/난수 기준을 확보한다.
+- [ ] 별도 실행용 MCH/MAP 내보내기→기존 파서 왕복, 원작 보관파일과 실행용 기존 레코드 보존을 검사한다.
+- [ ] 그림의 오프라인 crop/축소→실제 PNG→공통 로더→GPU 업로드 왕복을 검사한다. 원작CgBI 인코딩과 표준PNG 공통계약의 차이를 명시한다.
+- [ ] 공중 동체·GAA 표시를 공통 파츠 경로로 이전하고, pitch·레이더·Lux 증원/무장 등 추가 기능을 명시적 공통 데이터 계약으로 연결한다.
+- [ ] 기종 이름별 등록·alias·runtime crop/resize·직접 동체 draw와 미사용 파일 배포를 제거한다. 채택 원본·역사는 보존한다.
+- [ ] 현재 레이더24프레임·소수 원점·실수 크기·총구/AI발사시점·RNG·35스테이지·Lux14회72기·실사격·저장·성능을 비교한다.
+- [ ] iPhone·iPad·Galaxy·native Mac·웹/PWA·Tauri Mac의 후보/정식 빌드·설치·실행·배포를 각각 확인한다. 실기기 미검사는 완료로 대체하지 않는다.
+- [ ] 초기8방향 설명이 남은 ground-aa-expansion 및 weapon-validation-procedure와 공개 재사용 설명을 실제 구조·검사 범위에 맞춰 정정하고 이력을 보존한다.
+- [ ] 작업PR→develop→통합검증→develop PR→main→새 태그·릴리스 순서를 따른다. main 사용자 직접 수정과 기존 태그·기여자 이력을 보존한다.
+
 <a id="hm-new-unit-audit"></a>
 
 ## HM-NEW-UNIT-AUDIT — 신규 유닛 에셋·로직·보고 감사 — 2026-11-09

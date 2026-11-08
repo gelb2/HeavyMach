@@ -1,5 +1,9 @@
 # 그래픽 렌더링 정책
 
+## 신규 유닛 구조 정리 요구 — 2026-11-09
+
+현재 플랫폼별 출력이 핫픽스의 보존 기준이다. 채택 원본을 유지하고 crop·축소를 오프라인으로 옮기는 안을 검증한다. CgBI/표준PNG 알파 왕복, 실제 GPU 업로드, 프레임별 소수 원점·레이어·타일 경계·실수 표시 크기의 동일성을 확인한 뒤 공통 파츠 표시로 이전한다. 아직 구현 전이며 기존 절은 현재 구현과 과거 기록이다. [핫픽스 계획](reviews/new-unit-hotfix-plan-20261109.md), [경위서](reviews/new-unit-implementation-incident-20261109.md).
+
 ## Apple 플랫폼 확장 — 2026-10-26
 
 Apple 모듈화에서 iOS/iPadOS의 ES1.1 경로는 유지한다. native Mac은 AppKit NSOpenGLContext와 desktop compatibility GL을 사용하고 스프라이트·블렌드 제출 코드를 공유한다. Catalyst는 사용하지 않는다. [플랫폼 구조](apple-platforms.md).
