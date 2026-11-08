@@ -1,0 +1,100 @@
+{
+  "url": "https://gelb2.github.io/HeavyMach/validation/kamov-eurofighter-20261109/",
+  "query": "none",
+  "forcedEnemySpawns": 0,
+  "ok": true,
+  "cases": [
+    {
+      "map": "Stage01",
+      "kind": "ka",
+      "fixture": {
+        "weapon": "P_Wpn_Gun06",
+        "mission": 0,
+        "stage": 0,
+        "level": 99,
+        "grade": 6,
+        "position": true,
+        "x": 778.8333129882812,
+        "y": 80,
+        "seed": 12345
+      },
+      "expected": 1,
+      "actual": 1,
+      "enemies": [
+        {
+          "id": 13,
+          "name": "Ka52",
+          "x": 748.833313,
+          "y": 245.5,
+          "hp": 300,
+          "hpMax": 300,
+          "removed": false,
+          "bounds": [
+            -20,
+            0,
+            62.6666679,
+            40
+          ]
+        }
+      ],
+      "ok": true
+    },
+    {
+      "map": "Stage04",
+      "kind": "formation",
+      "fixture": {
+        "weapon": "P_Wpn_Gun06",
+        "mission": 0,
+        "stage": 3,
+        "level": 99,
+        "grade": 6,
+        "position": true,
+        "x": -172,
+        "y": -89,
+        "seed": 12345
+      },
+      "expected": 2,
+      "actual": 2,
+      "enemies": [
+        {
+          "id": 13,
+          "name": "Lux_Eurofighter",
+          "x": 472.166656,
+          "y": -2.31689453,
+          "hp": 765,
+          "hpMax": 765,
+          "removed": false,
+          "bounds": [
+            -55.1940765,
+            -14.6389914,
+            55.1591721,
+            17.6387882
+          ]
+        },
+        {
+          "id": 14,
+          "name": "Lux_Eurofighter",
+          "x": 472.166656,
+          "y": 67.6831055,
+          "hp": 765,
+          "hpMax": 765,
+          "removed": false,
+          "bounds": [
+            -55.1940765,
+            -14.6389914,
+            55.1591721,
+            17.6387882
+          ]
+        }
+      ],
+      "ok": true
+    }
+  ],
+  "errors": [],
+  "initial": {
+    "screen": "title",
+    "query": "",
+    "fixture": null,
+    "savePath": "/validation-persist/HvM.dat"
+  }
+}

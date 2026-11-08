@@ -1,0 +1,1 @@
+Assertion failed: (!data.parts.contains("Ka52_Cannon")&&!data.weapons.contains("Ka52_Cannon")), function main, file UnitAssemblyTests.cpp, line 35.

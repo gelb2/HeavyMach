@@ -64,7 +64,10 @@ try {
   s = await state();
   const fps = (s.time - t0) / 0.01666666753590107 / ((Date.now() - w0) / 1000);
   step('title', { canvas: s.canvas, gameFramesPerSecond: Number(fps.toFixed(1)), callbackInterval: s.callbackInterval, ticksPerCallback: s.ticksPerCallback });
-  await sleep(5000); await shot('01-title');
+  // TitleState::released consumes a tap before startTime+6 as intro skip.
+  // Wall-clock waits can run ahead of the game's timer during initial compilation.
+  await waitFor(s => s.screen === 'title' && !s.loading && s.time >= t0 + 6.2, 15000, 'title intro complete');
+  await shot('01-title');
 
   await tap(347, 160);
   s = await waitFor(s => s.screen === 'menu' && !s.loading, 15000, 'slot menu');
@@ -145,11 +148,13 @@ try {
   page = await userData.newPage(); watch(page);
   await page.goto(url, { waitUntil: 'load' });
   await page.focus('#canvas');
-  await waitFor(s => s.screen === 'title', 60000, 'title after reload');
+  const reloadedTitle = await waitFor(s => s.screen === 'title', 60000, 'title after reload');
   const persisted = await page.evaluate(() => { try { return Module.FS.stat('/persist/HvM.dat').size; } catch (e) { return -1; } });
   step('reload-save', { bytes: persisted });
   if (persisted !== 3624) throw new Error('save not restored from IndexedDB');
-  await sleep(6500); await tap(347, 160);
+  const reloadReady = await waitFor(s => s.screen === 'title' && !s.loading && s.time >= reloadedTitle.time + 6.2, 15000, 'reloaded title intro complete');
+  step('reload-title-ready', { observedAt: reloadedTitle.time, tappedAt: reloadReady.time });
+  await tap(347, 160);
   await waitFor(s => s.screen === 'menu' && !s.loading, 15000, 'slot menu after reload');
   await sleep(500); await shot('08-slots-after-reload'); step('slots-after-reload');
 

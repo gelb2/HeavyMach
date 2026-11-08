@@ -1,0 +1,45 @@
+{
+  "PartsInfo.mch": {
+    "sha256": "f7b8ba0da76447c2f022d0114a582e57eb3085bba584c187cc635ad6ad4b6792",
+    "records": {
+      "P_Wpn_Missile01": {
+        "record_sha256": "f767beba3a5d68bdc0425a827692c4d7764573019780a4903c10237d1c1190bb",
+        "record_bytes": 59
+      },
+      "E_Tank_Wpn_01": {
+        "record_sha256": "6888c47091d68712b49f4a2c77f0597b436a25e1904b4af04bcb77a02d3e71cd",
+        "record_bytes": 59
+      },
+      "E_Heli_Body_06": {
+        "record_sha256": "777c9fc17453e4d86fa96dace1c2a8fcf26faa2b6b1ab67b7bd36f63f884d714",
+        "record_bytes": 75
+      },
+      "E_Heli_Prop_01": {
+        "record_sha256": "5573dc2c94535ab44f0c92cef96a3d81086591428114f08faa5524e4eb990f5a",
+        "record_bytes": 59
+      }
+    }
+  },
+  "WeaponInfo.mch": {
+    "sha256": "460000cd8480addc496ce4afaa5f3a2385fcc81ad7fa440b1bfa6c338c4365fe",
+    "records": {
+      "E_Tank_Wpn_01": {
+        "record_sha256": "8d4263727186bc88238b95e71a8cb6d9af7aa9bad79ea25096f2fbbb69137fec",
+        "record_bytes": 172
+      },
+      "E_Wpn_ASM": {
+        "record_sha256": "c3d3143a101d922d4dc81668a7fb160682864f6b342b9b75c49e0026ffa5f821",
+        "record_bytes": 172
+      }
+    }
+  },
+  "MachInfo.mch": {
+    "sha256": "c29eef4990655868b82361ba8f0119841f8c74bed5dcf31410094c5521459b05",
+    "records": {
+      "Heli006": {
+        "record_sha256": "b38346aaa6f0bc26337332df70c2ecf1ea48db54fa18b870419ee495d26b82d5",
+        "record_bytes": 217
+      }
+    }
+  }
+}

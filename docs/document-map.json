@@ -56,7 +56,8 @@
     "docs/reviews/new-unit-hotfix-plan-20261109.md",
     "docs/reviews/new-unit-implementation-incident-20261109.md",
     "docs/reviews/new-unit-resource-hotfix-20261109.md",
-    "docs/reviews/kamov-eurofighter-plan-20261109.md"
+    "docs/reviews/kamov-eurofighter-plan-20261109.md",
+    "docs/reviews/kamov-eurofighter-implementation-20261109.md"
   ],
   "base_read": [
     "AGENTS.md",
@@ -77,20 +78,25 @@
         "docs/stage-transition-contract.md",
         "docs/lux-lunae-plan-20261027.md",
         "docs/ground-aa-expansion.md",
-        "docs/public/hud-improvement-plan-20261028.md"
+        "docs/public/hud-improvement-plan-20261028.md",
+        "docs/reviews/kamov-eurofighter-plan-20261109.md"
       ],
       "sources": [
         "Sources/Core/GameSession.cpp",
         "Sources/Core/GameData.cpp",
-        "Sources/Core/GlobalInfo.cpp"
+        "Sources/Core/GlobalInfo.cpp",
+        "Tests/UnitAssemblyTests.cpp"
       ],
       "tests": [
         "Tests/GameSessionTests.cpp",
-        "Tests/CoreTests.cpp"
+        "Tests/CoreTests.cpp",
+        "Tests/UnitAssemblyTests.cpp"
       ],
       "evidence": [
         "docs/current-status.md",
-        "docs/stage-journeys.md"
+        "docs/stage-journeys.md",
+        "docs/reviews/kamov-eurofighter-implementation-20261109.md",
+        "docs/reviews/kamov-lux-stage-placement-20261109.md"
       ]
     },
     "input": {
@@ -134,7 +140,8 @@
         "docs/weapon-validation-procedure.md",
         "docs/vtol-expansion.md",
         "docs/ground-aa-expansion.md",
-        "docs/public/hud-improvement-plan-20261028.md"
+        "docs/public/hud-improvement-plan-20261028.md",
+        "docs/reviews/kamov-eurofighter-plan-20261109.md"
       ],
       "sources": [
         "Sources/iOS/HMGLRenderer.*",
@@ -150,7 +157,8 @@
         "tools/prepare_unit_data*",
         "tools/prepare_unit_images*",
         "Resources/RuntimeData/*",
-        "Resources/RuntimeImages/*"
+        "Resources/RuntimeImages/*",
+        "Art/KamovEurofighter/20261109/*"
       ],
       "tests": [
         "Tests/iOS/HMGLReferenceTests.mm",
@@ -162,14 +170,17 @@
         "Tests/UnitContractTrace.cpp",
         "Tests/GroundAATests.cpp",
         "Tests/GroundAARuntimeTests.cpp",
-        "Tests/FightersTests.cpp"
+        "Tests/FightersTests.cpp",
+        "Tests/UnitAssemblyTests.cpp",
+        "tools/test_authored_unit_images.py"
       ],
       "evidence": [
         "docs/menu-joins-20261025.md",
         "docs/weapon-result-fix-20261025.md",
         "docs/reviews/game-button-incident-20261101.md",
         "docs/reviews/new-unit-assets-audit-20261109.md",
-        "docs/reviews/new-unit-hotfix-plan-20261109.md"
+        "docs/reviews/new-unit-hotfix-plan-20261109.md",
+        "docs/reviews/kamov-eurofighter-implementation-20261109.md"
       ]
     },
     "menus": {
@@ -210,7 +221,8 @@
         "docs/weapon-validation-procedure.md",
         "docs/vtol-expansion.md",
         "docs/lux-lunae-plan-20261027.md",
-        "docs/ground-aa-expansion.md"
+        "docs/ground-aa-expansion.md",
+        "docs/reviews/kamov-eurofighter-plan-20261109.md"
       ],
       "sources": [
         "Sources/Core/Combat.*",
@@ -223,7 +235,8 @@
         "tools/prepare_unit_data*",
         "tools/prepare_unit_images*",
         "Resources/RuntimeData/*",
-        "Resources/RuntimeImages/*"
+        "Resources/RuntimeImages/*",
+        "Tests/UnitAssemblyTests.cpp"
       ],
       "tests": [
         "Tests/CombatTests.cpp",
@@ -235,14 +248,17 @@
         "Tests/UnitContractTrace.cpp",
         "Tests/GroundAATests.cpp",
         "Tests/GroundAARuntimeTests.cpp",
-        "Tests/FightersTests.cpp"
+        "Tests/FightersTests.cpp",
+        "Tests/UnitAssemblyTests.cpp"
       ],
       "evidence": [
         "docs/boss-motion-fix-20261025.md",
         "docs/weapon-result-fix-20261025.md",
         "docs/current-status.md",
         "docs/reviews/new-unit-assets-audit-20261109.md",
-        "docs/reviews/new-unit-hotfix-plan-20261109.md"
+        "docs/reviews/new-unit-hotfix-plan-20261109.md",
+        "docs/reviews/kamov-eurofighter-implementation-20261109.md",
+        "docs/reviews/kamov-lux-stage-placement-20261109.md"
       ]
     },
     "runtime": {
@@ -293,17 +309,27 @@
         "tools/prepare_device_validation.py",
         ".gitignore",
         ".gitattributes",
-        "Resources/**/*"
+        "Resources/**/*",
+        "Tests/UnitAssemblyTests.cpp",
+        "Web/tests/campaign-unit-placement.mjs",
+        "Web/tests/campaign-ground-approach.mjs"
       ],
       "tests": [
         "Tests/iOS/HMFramePerformanceTests.mm",
         "Tests/iOS/HMSaveParityTests.mm",
-        "tools/verify_build_resources.py"
+        "tools/verify_build_resources.py",
+        "tools/test_authored_unit_images.py",
+        "Web/tests/kamov-eurofighter-validation.mjs",
+        "Tests/UnitAssemblyTests.cpp",
+        "Web/tests/campaign-unit-placement.mjs",
+        "Web/tests/campaign-ground-approach.mjs"
       ],
       "evidence": [
         "docs/device-validation-ready.md",
         "docs/release-review-20261025.md",
-        "docs/physical-self-test-20261025.md"
+        "docs/physical-self-test-20261025.md",
+        "docs/reviews/kamov-eurofighter-implementation-20261109.md",
+        "docs/reviews/kamov-lux-stage-placement-20261109.md"
       ]
     },
     "documentation": {
@@ -603,7 +629,9 @@
         "Web/shell.html",
         "Web/tools/package_assets.py",
         "Sources/Core/*",
-        "Sources/iOS/*"
+        "Sources/iOS/*",
+        "Web/tests/campaign-unit-placement.mjs",
+        "Web/tests/campaign-ground-approach.mjs"
       ],
       "tests": [
         "Web/tests/browser-smoke.mjs",
@@ -611,11 +639,16 @@
         "Web/tests/orientation-hold.mjs",
         "Tests/CoreTests.cpp",
         "Tests/GameSessionTests.cpp",
-        "Tests/KeyboardInputTests.cpp"
+        "Tests/KeyboardInputTests.cpp",
+        "Web/tests/kamov-eurofighter-validation.mjs",
+        "Web/tests/campaign-unit-placement.mjs",
+        "Web/tests/campaign-ground-approach.mjs"
       ],
       "evidence": [
         "docs/evidence/web-port-20261028.json",
-        "docs/current-status.md"
+        "docs/current-status.md",
+        "docs/reviews/kamov-eurofighter-implementation-20261109.md",
+        "docs/reviews/kamov-lux-stage-placement-20261109.md"
       ]
     },
     "desktop": {

@@ -1,0 +1,112 @@
+{
+  "url": "http://127.0.0.1:8897/web-validation/dist/",
+  "scope": "Stage01 natural MAP generation, original AI, real missile travel and player damage; explicit start position only",
+  "fixture": {
+    "mission": 0,
+    "stage": 0,
+    "level": 99,
+    "grade": 6,
+    "seed": 12345,
+    "x": 528.8333129882812,
+    "y": 80
+  },
+  "mapSha256": "04b80e406efcc0c3bba403d2d1956b86259e9a331ccac4a5bed5bfcd6ffd62b0",
+  "ok": true,
+  "errors": [],
+  "browser": "Chrome/156.0.8078.80",
+  "initial": [
+    {
+      "id": 13,
+      "name": "Ka52",
+      "x": 748.833313,
+      "y": 245.5,
+      "hp": 300,
+      "hpMax": 300,
+      "removed": false,
+      "bounds": [
+        -20,
+        0,
+        62.6666679,
+        40
+      ]
+    }
+  ],
+  "firstBurst": {
+    "startTimes": [
+      1.11666667,
+      1.61666679
+    ],
+    "interval": 0.5000001199999999
+  },
+  "damage": [
+    {
+      "target": 1,
+      "weapon": "Ka52_Missile",
+      "requested": 25,
+      "before": 781,
+      "after": 756,
+      "time": 2.91666682
+    },
+    {
+      "target": 1,
+      "weapon": "Ka52_Missile",
+      "requested": 25,
+      "before": 756,
+      "after": 731,
+      "time": 3.45000018
+    }
+  ],
+  "rotorFrames": {
+    "upper": [
+      0,
+      1
+    ],
+    "lower": [
+      0,
+      1
+    ]
+  },
+  "parts": [
+    {
+      "tile": "Ka52_Body.png",
+      "x": 403.563812,
+      "y": 246.485962,
+      "rotation": -0.0776596516,
+      "scaleX": 1,
+      "scaleY": 1,
+      "frame": 0
+    },
+    {
+      "tile": "Ka52_RotorLower.png",
+      "x": 389.993927,
+      "y": 252.557037,
+      "rotation": -0.0776596516,
+      "scaleX": 1,
+      "scaleY": 1,
+      "frame": 0
+    },
+    {
+      "tile": "Ka52_Missile.png",
+      "x": 406.495026,
+      "y": 235.342743,
+      "rotation": -5.73206758,
+      "scaleX": 1,
+      "scaleY": 1,
+      "frame": 0
+    },
+    {
+      "tile": "Ka52_RotorUpper.png",
+      "x": 390.847321,
+      "y": 263.523895,
+      "rotation": -0.0776596516,
+      "scaleX": 1,
+      "scaleY": 1,
+      "frame": 0
+    }
+  ],
+  "cheats": {
+    "blockedHits": 0,
+    "refilledRounds": 0,
+    "fallRescues": 0
+  }
+}

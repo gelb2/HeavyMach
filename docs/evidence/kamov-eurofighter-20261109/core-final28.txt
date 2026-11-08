@@ -1,0 +1,61 @@
+Test project /Users/sokol/Git/ProjectGameDev-Hub/HeavyMach/build/kamov-lux-eurofighter-20261109/build/kamov-core
+      Start  1: HeavyMachCoreTests
+ 1/28 Test  #1: HeavyMachCoreTests .....................   Passed    0.12 sec
+      Start  2: HeavyMachRuntimeUnitContractTests
+ 2/28 Test  #2: HeavyMachRuntimeUnitContractTests ......   Passed    0.14 sec
+      Start  3: HeavyMachUnitAssemblyTests
+ 3/28 Test  #3: HeavyMachUnitAssemblyTests .............   Passed    0.59 sec
+      Start  4: HeavyMachVTOLTests
+ 4/28 Test  #4: HeavyMachVTOLTests .....................   Passed    0.76 sec
+      Start  5: HeavyMachFightersTests
+ 5/28 Test  #5: HeavyMachFightersTests .................   Passed    1.41 sec
+      Start  6: HeavyMachGroundAATests
+ 6/28 Test  #6: HeavyMachGroundAATests .................   Passed    0.13 sec
+      Start  7: HeavyMachGroundAARuntimeTests
+ 7/28 Test  #7: HeavyMachGroundAARuntimeTests ..........   Passed    0.13 sec
+      Start  8: HeavyMachCombatTests
+ 8/28 Test  #8: HeavyMachCombatTests ...................   Passed    0.00 sec
+      Start  9: HeavyMachVisualsTests
+ 9/28 Test  #9: HeavyMachVisualsTests ..................   Passed    0.00 sec
+      Start 10: HeavyMachWorldTests
+10/28 Test #10: HeavyMachWorldTests ....................   Passed    0.00 sec
+      Start 11: HeavyMachStageTransitionTests
+11/28 Test #11: HeavyMachStageTransitionTests ..........   Passed    0.16 sec
+      Start 12: HeavyMachGameSessionTests
+12/28 Test #12: HeavyMachGameSessionTests ..............   Passed    1.05 sec
+      Start 13: HeavyMachAmmoSyncTests
+13/28 Test #13: HeavyMachAmmoSyncTests .................   Passed    0.05 sec
+      Start 14: HeavyMachAudioContractTests
+14/28 Test #14: HeavyMachAudioContractTests ............   Passed    0.00 sec
+      Start 15: HeavyMachPlayerGaugeTests
+15/28 Test #15: HeavyMachPlayerGaugeTests ..............   Passed    0.04 sec
+      Start 16: HeavyMachEnemyGaugeTests
+16/28 Test #16: HeavyMachEnemyGaugeTests ...............   Passed    0.05 sec
+      Start 17: HeavyMachPassiveContinuityTests
+17/28 Test #17: HeavyMachPassiveContinuityTests ........   Passed    0.09 sec
+      Start 18: HeavyMachSurvivalTests
+18/28 Test #18: HeavyMachSurvivalTests .................   Passed    0.34 sec
+      Start 19: HeavyMachCameraIntegrationTests
+19/28 Test #19: HeavyMachCameraIntegrationTests ........   Passed    0.76 sec
+      Start 20: HeavyMachTextureFormatTests
+20/28 Test #20: HeavyMachTextureFormatTests ............   Passed    0.00 sec
+      Start 21: HeavyMachSpriteRasterTests
+21/28 Test #21: HeavyMachSpriteRasterTests .............   Passed    0.01 sec
+      Start 22: HeavyMachHUDLayoutTests
+22/28 Test #22: HeavyMachHUDLayoutTests ................   Passed    0.00 sec
+      Start 23: HeavyMachHMButtonStateTests
+23/28 Test #23: HeavyMachHMButtonStateTests ............   Passed    0.00 sec
+      Start 24: HeavyMachGameButtonsTests
+24/28 Test #24: HeavyMachGameButtonsTests ..............   Passed    0.00 sec
+      Start 25: HeavyMachValidationScenarioTests
+25/28 Test #25: HeavyMachValidationScenarioTests .......   Passed    1.59 sec
+      Start 26: HeavyMachUnitAssemblyValidationTests
+26/28 Test #26: HeavyMachUnitAssemblyValidationTests ...   Passed    0.65 sec
+      Start 27: HeavyMachKeyboardInputTests
+27/28 Test #27: HeavyMachKeyboardInputTests ............   Passed    0.00 sec
+      Start 28: HeavyMachAutoAimTests
+28/28 Test #28: HeavyMachAutoAimTests ..................   Passed    0.80 sec
+
+100% tests passed out of 28
+
+Total Test time (real) =   8.92 sec

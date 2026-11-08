@@ -1295,6 +1295,111 @@
         "upload_rgba_sha256": "dbe92d7945d7acd06129ae1cc00f581a0865d77e96f248707a616aab7cb33ab6",
         "decode_equal": true,
         "upload_equal": true
+      },
+      {
+        "file": "Ka52_Body.png",
+        "source": "Art/KamovEurofighter/20261109/Ka52-generated-v1.png",
+        "source_sha256": "09c4e374313a52177fa941253df5ba401ae399695fbe7792f6d84364a3fbceda",
+        "source_crop": [
+          130,
+          19,
+          1968,
+          664
+        ],
+        "source_transform": "none",
+        "width": 112,
+        "height": 38,
+        "bytes": 6198,
+        "sha256": "eec7dfa0d647ed7633cd05bd1cc9480bb904e6ead98ff4247914a2fb7ae354e8",
+        "baseline_premultiplied_sha256": "51c21f1d3ce53559e2dee4a897c8157cb16b0da99f9790c9dbe07a88b3f4a07c",
+        "decoded_premultiplied_sha256": "51c21f1d3ce53559e2dee4a897c8157cb16b0da99f9790c9dbe07a88b3f4a07c",
+        "upload_rgba_sha256": "af5723f6f3698a4d665a9cbb6ea72e6b4fa64cb9da1fa61ad02e3b62bdc3a274",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "Lux_Eurofighter.png",
+        "source": "Art/KamovEurofighter/20261109/Eurofighter-generated-v2.png",
+        "source_sha256": "ed70539f96f604481b03f997fef0e9fadf42fb4a1f4133907183d8259a284d7f",
+        "source_crop": [
+          54,
+          35,
+          2092,
+          630
+        ],
+        "source_transform": "none",
+        "width": 116,
+        "height": 35,
+        "bytes": 5200,
+        "sha256": "ce36cc50798a7291833e20f338b4f77c6355142f4caf49f10b4f3cd09e5599f5",
+        "baseline_premultiplied_sha256": "917d0310549406876d762cca79901b23ac6349d8147c773b4cfeecd7cd1c2553",
+        "decoded_premultiplied_sha256": "917d0310549406876d762cca79901b23ac6349d8147c773b4cfeecd7cd1c2553",
+        "upload_rgba_sha256": "cdedabffea076152b34059fcbf7bded5919f629fe7b9b04cdc0286b21e9afbf7",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "Ka52_RotorUpper.png",
+        "source": "Resources/OriginalImages/E_Heli_Prop_01.png",
+        "source_sha256": "27c1fde2a503b4c537a80ff17d9572760c85b4814700b3ff966f904b0ba0027f",
+        "source_crop": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "source_transform": "none",
+        "width": 240,
+        "height": 10,
+        "bytes": 2947,
+        "sha256": "5041fe996941668e8376a1fef839686efe74e203944d9b27767800f7723c7f78",
+        "baseline_premultiplied_sha256": "176e64429ce21978718d307f2790e00b9bc06e3dab760a90d4171408be2958cc",
+        "decoded_premultiplied_sha256": "176e64429ce21978718d307f2790e00b9bc06e3dab760a90d4171408be2958cc",
+        "upload_rgba_sha256": "bf362a3cd89341174a551828faf483f05d0ff9313343a8c2d4a98f9b27ecdd27",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "Ka52_RotorLower.png",
+        "source": "Resources/OriginalImages/E_Heli_Prop_01.png",
+        "source_sha256": "27c1fde2a503b4c537a80ff17d9572760c85b4814700b3ff966f904b0ba0027f",
+        "source_crop": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "source_transform": "none",
+        "width": 240,
+        "height": 10,
+        "bytes": 2947,
+        "sha256": "5041fe996941668e8376a1fef839686efe74e203944d9b27767800f7723c7f78",
+        "baseline_premultiplied_sha256": "176e64429ce21978718d307f2790e00b9bc06e3dab760a90d4171408be2958cc",
+        "decoded_premultiplied_sha256": "176e64429ce21978718d307f2790e00b9bc06e3dab760a90d4171408be2958cc",
+        "upload_rgba_sha256": "bf362a3cd89341174a551828faf483f05d0ff9313343a8c2d4a98f9b27ecdd27",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "Ka52_Missile.png",
+        "source": "Resources/OriginalImages/P_Wpn_Missile01.png",
+        "source_sha256": "dccc51910c4a99ceb5c99fa786d3ca523c8eb045c01baa279468ffe3cbd01756",
+        "source_crop": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "source_transform": "mirror-x",
+        "width": 19,
+        "height": 8,
+        "bytes": 677,
+        "sha256": "f1695f0eafb7932838e0c51aab65e5eba4fa1cb235c329fdb8c32aaf92fd9139",
+        "baseline_premultiplied_sha256": "b2b05eec6a7b49e1db6d4d5a8ee606337c971ac3a7cc6cc8bc9a74dad07021ac",
+        "decoded_premultiplied_sha256": "b2b05eec6a7b49e1db6d4d5a8ee606337c971ac3a7cc6cc8bc9a74dad07021ac",
+        "upload_rgba_sha256": "d83ace8bbdd748e90fc57e955f01b8b80d9b3594b421e1cfa83ca6a85ab79863",
+        "decode_equal": true,
+        "upload_equal": true
       }
     ],
     "web": [
@@ -2555,6 +2660,111 @@
         "baseline_premultiplied_sha256": "238a422c84509b2c6a91b2d49af82a0400622ebafeb6dc3fd0063234f6714434",
         "decoded_premultiplied_sha256": "238a422c84509b2c6a91b2d49af82a0400622ebafeb6dc3fd0063234f6714434",
         "upload_rgba_sha256": "138f3ab2c0260ccdf51d040c6fd2fe2245f9c3383e0488a42b8356971018b3c7",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "Ka52_Body.png",
+        "source": "Art/KamovEurofighter/20261109/Ka52-generated-v1.png",
+        "source_sha256": "09c4e374313a52177fa941253df5ba401ae399695fbe7792f6d84364a3fbceda",
+        "source_crop": [
+          130,
+          19,
+          1968,
+          664
+        ],
+        "source_transform": "none",
+        "width": 112,
+        "height": 38,
+        "bytes": 6094,
+        "sha256": "ee43b3d33d30606b4606888ceee6c47c5b41b0213fb35d600559518634f04136",
+        "baseline_premultiplied_sha256": "1ca8255716288a283ff4b5a5779c837cbfa81d648d18ef52d660bcae3c72fca6",
+        "decoded_premultiplied_sha256": "1ca8255716288a283ff4b5a5779c837cbfa81d648d18ef52d660bcae3c72fca6",
+        "upload_rgba_sha256": "56d9e1560d233edfdf270c8d6b3aeaaf439efd0350c65f1cc322525ef3a56f35",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "Lux_Eurofighter.png",
+        "source": "Art/KamovEurofighter/20261109/Eurofighter-generated-v2.png",
+        "source_sha256": "ed70539f96f604481b03f997fef0e9fadf42fb4a1f4133907183d8259a284d7f",
+        "source_crop": [
+          54,
+          35,
+          2092,
+          630
+        ],
+        "source_transform": "none",
+        "width": 116,
+        "height": 35,
+        "bytes": 4977,
+        "sha256": "01d065b5b711af25728f104f694dd60a0ebf18b04ed8f0c2d7168fe9ce2f1951",
+        "baseline_premultiplied_sha256": "1fd332c3a587e041b51b24e0121ffb3cffdde1fc50e32f6346695f245b02fb5c",
+        "decoded_premultiplied_sha256": "1fd332c3a587e041b51b24e0121ffb3cffdde1fc50e32f6346695f245b02fb5c",
+        "upload_rgba_sha256": "73db9c606fcc96e97f9efd5c78b2c94ed6c72c3225b5eba4a28ba2ab1db85019",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "Ka52_RotorUpper.png",
+        "source": "Resources/OriginalImages/E_Heli_Prop_01.png",
+        "source_sha256": "27c1fde2a503b4c537a80ff17d9572760c85b4814700b3ff966f904b0ba0027f",
+        "source_crop": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "source_transform": "none",
+        "width": 240,
+        "height": 10,
+        "bytes": 2922,
+        "sha256": "c90f1c6a64c8d8be6c040bb2b27efefbad16d8b8a33c4e43ba0ab15a76c20902",
+        "baseline_premultiplied_sha256": "d74deb62c58b531ad9f2c21e83cf35bc279ec39d6783a842e994925982ae97cc",
+        "decoded_premultiplied_sha256": "d74deb62c58b531ad9f2c21e83cf35bc279ec39d6783a842e994925982ae97cc",
+        "upload_rgba_sha256": "e1f6646315d061abb33df48091a1638a67fd589e55c4c8b2cd8418ac4569c4bb",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "Ka52_RotorLower.png",
+        "source": "Resources/OriginalImages/E_Heli_Prop_01.png",
+        "source_sha256": "27c1fde2a503b4c537a80ff17d9572760c85b4814700b3ff966f904b0ba0027f",
+        "source_crop": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "source_transform": "none",
+        "width": 240,
+        "height": 10,
+        "bytes": 2922,
+        "sha256": "c90f1c6a64c8d8be6c040bb2b27efefbad16d8b8a33c4e43ba0ab15a76c20902",
+        "baseline_premultiplied_sha256": "d74deb62c58b531ad9f2c21e83cf35bc279ec39d6783a842e994925982ae97cc",
+        "decoded_premultiplied_sha256": "d74deb62c58b531ad9f2c21e83cf35bc279ec39d6783a842e994925982ae97cc",
+        "upload_rgba_sha256": "e1f6646315d061abb33df48091a1638a67fd589e55c4c8b2cd8418ac4569c4bb",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "Ka52_Missile.png",
+        "source": "Resources/OriginalImages/P_Wpn_Missile01.png",
+        "source_sha256": "dccc51910c4a99ceb5c99fa786d3ca523c8eb045c01baa279468ffe3cbd01756",
+        "source_crop": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "source_transform": "mirror-x",
+        "width": 19,
+        "height": 8,
+        "bytes": 684,
+        "sha256": "b9c24e19b48ad39fba953201a26ff2ed99273a52ea1cf2185bbc8eb5cd42a42a",
+        "baseline_premultiplied_sha256": "d1037315463399882aa3124aeaab7509f2db854d5006ce483ffc19f89ea8e7fc",
+        "decoded_premultiplied_sha256": "d1037315463399882aa3124aeaab7509f2db854d5006ce483ffc19f89ea8e7fc",
+        "upload_rgba_sha256": "a7dc783a1c9cd176c55204e466ef663dca6c333db440426837919ad0fb6752e7",
         "decode_equal": true,
         "upload_equal": true
       }
@@ -3819,7 +4029,118 @@
         "upload_rgba_sha256": "138f3ab2c0260ccdf51d040c6fd2fe2245f9c3383e0488a42b8356971018b3c7",
         "decode_equal": true,
         "upload_equal": true
+      },
+      {
+        "file": "Ka52_Body.png",
+        "source": "Art/KamovEurofighter/20261109/Ka52-generated-v1.png",
+        "source_sha256": "09c4e374313a52177fa941253df5ba401ae399695fbe7792f6d84364a3fbceda",
+        "source_crop": [
+          130,
+          19,
+          1968,
+          664
+        ],
+        "source_transform": "none",
+        "width": 112,
+        "height": 38,
+        "bytes": 6094,
+        "sha256": "ee43b3d33d30606b4606888ceee6c47c5b41b0213fb35d600559518634f04136",
+        "baseline_premultiplied_sha256": "1ca8255716288a283ff4b5a5779c837cbfa81d648d18ef52d660bcae3c72fca6",
+        "decoded_premultiplied_sha256": "1ca8255716288a283ff4b5a5779c837cbfa81d648d18ef52d660bcae3c72fca6",
+        "upload_rgba_sha256": "56d9e1560d233edfdf270c8d6b3aeaaf439efd0350c65f1cc322525ef3a56f35",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "Lux_Eurofighter.png",
+        "source": "Art/KamovEurofighter/20261109/Eurofighter-generated-v2.png",
+        "source_sha256": "ed70539f96f604481b03f997fef0e9fadf42fb4a1f4133907183d8259a284d7f",
+        "source_crop": [
+          54,
+          35,
+          2092,
+          630
+        ],
+        "source_transform": "none",
+        "width": 116,
+        "height": 35,
+        "bytes": 4977,
+        "sha256": "01d065b5b711af25728f104f694dd60a0ebf18b04ed8f0c2d7168fe9ce2f1951",
+        "baseline_premultiplied_sha256": "1fd332c3a587e041b51b24e0121ffb3cffdde1fc50e32f6346695f245b02fb5c",
+        "decoded_premultiplied_sha256": "1fd332c3a587e041b51b24e0121ffb3cffdde1fc50e32f6346695f245b02fb5c",
+        "upload_rgba_sha256": "73db9c606fcc96e97f9efd5c78b2c94ed6c72c3225b5eba4a28ba2ab1db85019",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "Ka52_RotorUpper.png",
+        "source": "Resources/OriginalImages/E_Heli_Prop_01.png",
+        "source_sha256": "27c1fde2a503b4c537a80ff17d9572760c85b4814700b3ff966f904b0ba0027f",
+        "source_crop": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "source_transform": "none",
+        "width": 240,
+        "height": 10,
+        "bytes": 2922,
+        "sha256": "c90f1c6a64c8d8be6c040bb2b27efefbad16d8b8a33c4e43ba0ab15a76c20902",
+        "baseline_premultiplied_sha256": "d74deb62c58b531ad9f2c21e83cf35bc279ec39d6783a842e994925982ae97cc",
+        "decoded_premultiplied_sha256": "d74deb62c58b531ad9f2c21e83cf35bc279ec39d6783a842e994925982ae97cc",
+        "upload_rgba_sha256": "e1f6646315d061abb33df48091a1638a67fd589e55c4c8b2cd8418ac4569c4bb",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "Ka52_RotorLower.png",
+        "source": "Resources/OriginalImages/E_Heli_Prop_01.png",
+        "source_sha256": "27c1fde2a503b4c537a80ff17d9572760c85b4814700b3ff966f904b0ba0027f",
+        "source_crop": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "source_transform": "none",
+        "width": 240,
+        "height": 10,
+        "bytes": 2922,
+        "sha256": "c90f1c6a64c8d8be6c040bb2b27efefbad16d8b8a33c4e43ba0ab15a76c20902",
+        "baseline_premultiplied_sha256": "d74deb62c58b531ad9f2c21e83cf35bc279ec39d6783a842e994925982ae97cc",
+        "decoded_premultiplied_sha256": "d74deb62c58b531ad9f2c21e83cf35bc279ec39d6783a842e994925982ae97cc",
+        "upload_rgba_sha256": "e1f6646315d061abb33df48091a1638a67fd589e55c4c8b2cd8418ac4569c4bb",
+        "decode_equal": true,
+        "upload_equal": true
+      },
+      {
+        "file": "Ka52_Missile.png",
+        "source": "Resources/OriginalImages/P_Wpn_Missile01.png",
+        "source_sha256": "dccc51910c4a99ceb5c99fa786d3ca523c8eb045c01baa279468ffe3cbd01756",
+        "source_crop": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "source_transform": "mirror-x",
+        "width": 19,
+        "height": 8,
+        "bytes": 684,
+        "sha256": "b9c24e19b48ad39fba953201a26ff2ed99273a52ea1cf2185bbc8eb5cd42a42a",
+        "baseline_premultiplied_sha256": "d1037315463399882aa3124aeaab7509f2db854d5006ce483ffc19f89ea8e7fc",
+        "decoded_premultiplied_sha256": "d1037315463399882aa3124aeaab7509f2db854d5006ce483ffc19f89ea8e7fc",
+        "upload_rgba_sha256": "a7dc783a1c9cd176c55204e466ef663dca6c333db440426837919ad0fb6752e7",
+        "decode_equal": true,
+        "upload_equal": true
       }
     ]
+  },
+  "authored_additions": {
+    "manifest": "Art/KamovEurofighter/20261109/bake.json",
+    "sha256": "3cfee93a33ae27a45fa58675162f2fbade64f1f35fce5d9219a4e60bca29b7d1",
+    "generator_sha256": "68f6a0302fa15ac042351555274485dd8608eabc4c37c755e45206b4dac9bb00",
+    "helper_sha256": "13c0642c6472977ab748967cd6b560757c41064746f20d190f64e457c064c61f"
   }
 }

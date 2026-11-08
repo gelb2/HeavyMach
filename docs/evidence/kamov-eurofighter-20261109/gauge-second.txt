@@ -1,0 +1,5 @@
+Ka52 fired=2 moved=1 playerHP=99935 persisted=0
+Ka52 gauge/body/weapon nonoverlap checks=5598
+Ka52 native parts/weapons/muzzle/animation/pause + 20 player damage cases + destruction PASS
+Lux_Eurofighter fired=1 moved=1 playerHP=99875 persisted=0
+Lux_Eurofighter native parts/weapons/muzzle/animation/pause + 20 player damage cases + destruction PASS

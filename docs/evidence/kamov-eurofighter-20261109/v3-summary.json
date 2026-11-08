@@ -1,0 +1,290 @@
+{
+  "version": "v3 final Ka52 gauge and Lux missile livery",
+  "ok": true,
+  "browser": "Chrome/156.0.8078.80",
+  "headless": true,
+  "units": [
+    {
+      "name": "Ka52",
+      "ok": true,
+      "initialHP": 300,
+      "minTargetHP": 0,
+      "playerShots": 17,
+      "movement": {
+        "x": 38.935608,
+        "y": 0
+      },
+      "pauseStable": true,
+      "enemyDamage": [
+        {
+          "target": 1,
+          "weapon": "Ka52_Missile",
+          "requested": 25,
+          "before": 815,
+          "after": 790,
+          "time": 7.46666706
+        },
+        {
+          "target": 1,
+          "weapon": "Ka52_Cannon",
+          "requested": 5,
+          "before": 790,
+          "after": 785,
+          "time": 7.46666706
+        }
+      ],
+      "destroyed": true,
+      "rendered_parts": [
+        "Ka52_Body.png",
+        "Ka52_RotorLower.png",
+        "Ka52_Missile.png",
+        "Ka52_RotorUpper.png",
+        "Ka52_Cannon.png",
+        "BulletEffect2.png"
+      ],
+      "rotor_frames": {
+        "Ka52_RotorLower.png": [
+          0,
+          1
+        ],
+        "Ka52_RotorUpper.png": [
+          0,
+          1
+        ]
+      },
+      "rotorSeparation": 11
+    },
+    {
+      "name": "Lux_Eurofighter",
+      "ok": true,
+      "initialHP": 765,
+      "minTargetHP": 0,
+      "playerShots": 37,
+      "movement": {
+        "x": 28.812682999999993,
+        "y": 0
+      },
+      "pauseStable": true,
+      "enemyDamage": [
+        {
+          "target": 1,
+          "weapon": "Lux_Euro_Missile",
+          "requested": 25,
+          "before": 825,
+          "after": 800,
+          "time": 7.0833337
+        }
+      ],
+      "destroyed": true,
+      "rendered_parts": [
+        "BulletEffect2.png",
+        "Lux_Eurofighter.png",
+        "Lux_Euro_Missile.png"
+      ],
+      "rotor_frames": {},
+      "rotorSeparation": null
+    }
+  ],
+  "weapons": [
+    {
+      "weapon": "P_Wpn_Canon01",
+      "ok": true,
+      "initialCharge": 10,
+      "shots": 2,
+      "lastShot": "P_Wpn_Canon01",
+      "finalCharge": 9,
+      "chargeUsed": 1
+    },
+    {
+      "weapon": "P_Wpn_Canon02",
+      "ok": true,
+      "initialCharge": 10,
+      "shots": 2,
+      "lastShot": "P_Wpn_Canon02",
+      "finalCharge": 9,
+      "chargeUsed": 1
+    },
+    {
+      "weapon": "P_Wpn_Canon03",
+      "ok": true,
+      "initialCharge": 10,
+      "shots": 3,
+      "lastShot": "P_Wpn_Canon03",
+      "finalCharge": 9,
+      "chargeUsed": 1
+    },
+    {
+      "weapon": "P_Wpn_ElShock",
+      "ok": true,
+      "initialCharge": 30,
+      "shots": 1,
+      "lastShot": "P_Wpn_ElShock",
+      "finalCharge": 29,
+      "chargeUsed": 1
+    },
+    {
+      "weapon": "P_Wpn_Gun01",
+      "ok": true,
+      "initialCharge": 99,
+      "shots": 1,
+      "lastShot": "P_Wpn_Gun01",
+      "finalCharge": 99,
+      "chargeUsed": 0
+    },
+    {
+      "weapon": "P_Wpn_Gun02",
+      "ok": true,
+      "initialCharge": 99,
+      "shots": 1,
+      "lastShot": "P_Wpn_Gun02",
+      "finalCharge": 98,
+      "chargeUsed": 1
+    },
+    {
+      "weapon": "P_Wpn_Gun03",
+      "ok": true,
+      "initialCharge": 99,
+      "shots": 1,
+      "lastShot": "P_Wpn_Gun03",
+      "finalCharge": 98,
+      "chargeUsed": 1
+    },
+    {
+      "weapon": "P_Wpn_Gun04",
+      "ok": true,
+      "initialCharge": 99,
+      "shots": 1,
+      "lastShot": "P_Wpn_Gun04",
+      "finalCharge": 98,
+      "chargeUsed": 1
+    },
+    {
+      "weapon": "P_Wpn_Gun05",
+      "ok": true,
+      "initialCharge": 99,
+      "shots": 1,
+      "lastShot": "P_Wpn_Gun05",
+      "finalCharge": 98,
+      "chargeUsed": 1
+    },
+    {
+      "weapon": "P_Wpn_Gun06",
+      "ok": true,
+      "initialCharge": 99,
+      "shots": 1,
+      "lastShot": "P_Wpn_Gun06",
+      "finalCharge": 98,
+      "chargeUsed": 1
+    },
+    {
+      "weapon": "P_Wpn_Gun07",
+      "ok": true,
+      "initialCharge": 99,
+      "shots": 1,
+      "lastShot": "P_Wpn_Gun07",
+      "finalCharge": 98,
+      "chargeUsed": 1
+    },
+    {
+      "weapon": "P_Wpn_Laser",
+      "ok": true,
+      "initialCharge": 10,
+      "shots": 1,
+      "lastShot": "P_Wpn_Laser",
+      "finalCharge": 9,
+      "chargeUsed": 1
+    },
+    {
+      "weapon": "P_Wpn_Missile01",
+      "ok": true,
+      "initialCharge": 10,
+      "shots": 2,
+      "lastShot": "P_Wpn_Missile01",
+      "finalCharge": 9,
+      "chargeUsed": 1
+    },
+    {
+      "weapon": "P_Wpn_Missile02",
+      "ok": true,
+      "initialCharge": 10,
+      "shots": 2,
+      "lastShot": "P_Wpn_Missile02",
+      "finalCharge": 9,
+      "chargeUsed": 1
+    },
+    {
+      "weapon": "P_Wpn_Missile03",
+      "ok": true,
+      "initialCharge": 10,
+      "shots": 3,
+      "lastShot": "P_Wpn_Missile03",
+      "finalCharge": 9,
+      "chargeUsed": 1
+    },
+    {
+      "weapon": "P_Wpn_RaderBomb",
+      "ok": true,
+      "initialCharge": 10,
+      "shots": 7,
+      "lastShot": "P_Wpn_RaderBomb",
+      "finalCharge": 9,
+      "chargeUsed": 1
+    },
+    {
+      "weapon": "P_Wpn_RaderLsr",
+      "ok": true,
+      "initialCharge": 5,
+      "shots": 10,
+      "lastShot": "P_Wpn_RaderLsr",
+      "finalCharge": 4,
+      "chargeUsed": 1
+    },
+    {
+      "weapon": "P_Wpn_RaderMsl",
+      "ok": true,
+      "initialCharge": 10,
+      "shots": 7,
+      "lastShot": "P_Wpn_RaderMsl",
+      "finalCharge": 9,
+      "chargeUsed": 1
+    },
+    {
+      "weapon": "P_Wpn_Shotgun01",
+      "ok": true,
+      "initialCharge": 20,
+      "shots": 5,
+      "lastShot": "P_Wpn_Shotgun01",
+      "finalCharge": 19,
+      "chargeUsed": 1
+    },
+    {
+      "weapon": "P_Wpn_Shotgun02",
+      "ok": true,
+      "initialCharge": 20,
+      "shots": 8,
+      "lastShot": "P_Wpn_Shotgun02",
+      "finalCharge": 19,
+      "chargeUsed": 1
+    }
+  ],
+  "storage": {
+    "normalSentinel": "preserve-normal",
+    "normalMount": false,
+    "validationMount": true,
+    "saveBytes": 3624,
+    "prefix": "HeavyMach.Validation."
+  },
+  "normal": {
+    "bridge": "undefined",
+    "export": "undefined",
+    "prefix": "HeavyMach.",
+    "validation": false
+  },
+  "errors": [],
+  "limits": [
+    "Chrome headless WebGL only, no physical Android/iPhone run",
+    "20 weapon selection, burst and charge coverage; not all-weapon/all-target collision coverage in this web run",
+    "Art tone assessment uses the separate actual game captures"
+  ],
+  "input_hashes_still_match": true
+}

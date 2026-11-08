@@ -1,0 +1,20 @@
+{
+  "baseline_commit": "b7bdd907089e403c4aaa9e8ac288c49d9a0df22f",
+  "changed_mch_records": {
+    "MachInfo.mch": [],
+    "PartsInfo.mch": [
+      "Lux_Euro_Missile"
+    ],
+    "WeaponInfo.mch": [
+      "Lux_Euro_Missile"
+    ]
+  },
+  "changed_hmex_records": [
+    [
+      1,
+      "Lux_Eurofighter"
+    ]
+  ],
+  "preserved_maps": 43,
+  "all_other_records_byte_identical": true
+}

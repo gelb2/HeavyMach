@@ -1,0 +1,10 @@
+{
+  "changed_part": "Lux_Euro_Missile",
+  "changed_weapon": "Lux_Euro_Missile",
+  "euro_aircraft_entry_unchanged": true,
+  "all_other_machine_part_weapon_rows_unchanged": true,
+  "fixed_muzzle": [
+    -23.5,
+    -9.5
+  ]
+}

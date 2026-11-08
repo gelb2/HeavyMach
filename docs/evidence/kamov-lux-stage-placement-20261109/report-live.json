@@ -1,0 +1,26 @@
+{
+  "ok": true,
+  "rows": [
+    {
+      "file": "kamov-lux-stage-placement-20261109.html",
+      "status": 200,
+      "matches_source_after_host_injection": true,
+      "injected_scripts_removed": 1,
+      "received_sha256": "badae4cea16d8a10f80ca0229c1a766c996e8cb2cf1c6416b16ff774cc658cab"
+    },
+    {
+      "file": "index.html",
+      "status": 200,
+      "matches_source_after_host_injection": true,
+      "injected_scripts_removed": 1,
+      "received_sha256": "5965313f59f661d9fce1f80610dc7f831db811087801115c2414d11a0f9a84a4"
+    },
+    {
+      "file": "kamov-eurofighter-implementation-20261109.html",
+      "status": 200,
+      "matches_source_after_host_injection": true,
+      "injected_scripts_removed": 1,
+      "received_sha256": "cddfa9a7736394b8e815d4f4e61848a20cb7f57322e8b58043e1085f1846f520"
+    }
+  ]
+}

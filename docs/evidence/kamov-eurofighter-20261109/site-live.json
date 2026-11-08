@@ -1,0 +1,55 @@
+{
+  "ok": true,
+  "pages": [
+    {
+      "path": "kamov-eurofighter-implementation-20261109.html",
+      "status": 200,
+      "content_type": "text/html",
+      "bytes": 16284,
+      "matches_published_source": false,
+      "sha256": "a24ee9d54b33571df0f50bb619dc4fab83154ec9db4205659c21decdd7a8e144",
+      "matches_html_without_host_injected_scripts": true,
+      "host_injected_scripts": 1
+    },
+    {
+      "path": "kamov-eurofighter-plan-20261109.html",
+      "status": 200,
+      "content_type": "text/html",
+      "bytes": 11398,
+      "matches_published_source": false,
+      "sha256": "06be402f17f2df93ddd115e368a3db333021df2bd2d0ebc692802617ad9a16b7",
+      "matches_html_without_host_injected_scripts": true,
+      "host_injected_scripts": 1
+    },
+    {
+      "path": "new-unit-resource-hotfix-20261109.html",
+      "status": 200,
+      "content_type": "text/html",
+      "bytes": 12992,
+      "matches_published_source": false,
+      "sha256": "3ebd53d1a16ad53282845bf3c00ab7ff67a6cf1258435675cce6f6e189366240",
+      "matches_html_without_host_injected_scripts": true,
+      "host_injected_scripts": 1
+    },
+    {
+      "path": "new-unit-audit-20261109/docs/reviews/kamov-eurofighter-plan-20261109.md",
+      "status": 200,
+      "content_type": "text/markdown",
+      "bytes": 7403,
+      "matches_published_source": true,
+      "sha256": "4b71cbb4c7648d10329bad18e4bac1a6a764ee0740873effc505d4b519624ed9",
+      "utf8_bom": true
+    },
+    {
+      "path": "index.html",
+      "status": 200,
+      "content_type": "text/html",
+      "bytes": 79005,
+      "matches_published_source": false,
+      "sha256": "077eec483184a3cbd31ed89b5427bb62c26905a6edde107a22bcf2b422007465",
+      "matches_html_without_host_injected_scripts": true,
+      "host_injected_scripts": 1
+    }
+  ],
+  "note": "Sites adds one hosting script to each HTML response. After removing only added script elements, complete parsed HTML matches. Markdown bytes match including UTF-8 BOM."
+}

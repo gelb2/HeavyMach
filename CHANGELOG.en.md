@@ -10,6 +10,11 @@
 
 <a id="new-unit-hotfix-20261109--신규-유닛-제작등록-절차-수정"></a>
 
+## kamov-armament-hotfix-20261109 — Kamov armament
+
+Removed the Kamov cannon part and attack. Its missile now fires two sequential rounds with a 0.5-second authored interval through the existing data and combat paths. Adopted body, two rotors and campaign placement are preserved. All 28 core tests passed; browser validation covered actual bursts, damage, destruction, animation, natural campaign spawning and all 20 player weapons. [Evidence and scope (Korean)](docs/reviews/kamov-armament-hotfix-20261109.md).
+
+
 ## new-unit-hotfix-20261109 — New-unit asset and registration procedure fix
 
 Moved separate C++ registration and image processing for the eight new units to runtime MCH/MAP data, an explicit HMEX contract, the common image loader and part renderer. Current appearance, combat and placement were preserved, along with original resources. Inaccurate reuse reports and procedure violations are recorded in Korean and English troubleshooting.

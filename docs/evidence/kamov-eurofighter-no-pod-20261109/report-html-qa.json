@@ -1,0 +1,186 @@
+{
+  "url": "http://127.0.0.1:8897/kamov-eurofighter-implementation-20261109.html",
+  "tool": "Chrome headless via existing Puppeteer harness",
+  "viewports": [
+    {
+      "title": "카모프·럭스루나에 유로파이터 구현과 웹 검증",
+      "h1": "카모프·럭스루나에 유로파이터 구현과 웹 검증",
+      "width": 390,
+      "scrollWidth": 390,
+      "images": [
+        {
+          "src": "https://media.githubusercontent.com/media/gelb2/HeavyMach/033c28c4c3ad44acb702daf097737a7debf4f2fd/docs/public/media/kamov-eurofighter-20261109/no-pod-v5/lux-family-same-scale-clean.png",
+          "width": 1800,
+          "height": 600
+        },
+        {
+          "src": "https://media.githubusercontent.com/media/gelb2/HeavyMach/033c28c4c3ad44acb702daf097737a7debf4f2fd/docs/public/media/kamov-eurofighter-20261109/no-pod-v5/helicopter-family-same-scale-clean.png",
+          "width": 1800,
+          "height": 600
+        },
+        {
+          "src": "https://media.githubusercontent.com/media/gelb2/HeavyMach/033c28c4c3ad44acb702daf097737a7debf4f2fd/docs/public/media/kamov-eurofighter-20261109/lux-family-same-scale.png",
+          "width": 1800,
+          "height": 600
+        },
+        {
+          "src": "https://media.githubusercontent.com/media/gelb2/HeavyMach/033c28c4c3ad44acb702daf097737a7debf4f2fd/docs/public/media/kamov-eurofighter-20261109/helicopter-family-same-scale.png",
+          "width": 1800,
+          "height": 600
+        },
+        {
+          "src": "https://media.githubusercontent.com/media/gelb2/HeavyMach/033c28c4c3ad44acb702daf097737a7debf4f2fd/Art/LuxLunae/20261027/references/lux-lunae-official.jpg",
+          "width": 1920,
+          "height": 1073
+        },
+        {
+          "src": "https://media.githubusercontent.com/media/gelb2/HeavyMach/033c28c4c3ad44acb702daf097737a7debf4f2fd/Art/Extensions/Lux_F22.png",
+          "width": 1902,
+          "height": 827
+        },
+        {
+          "src": "https://media.githubusercontent.com/media/gelb2/HeavyMach/033c28c4c3ad44acb702daf097737a7debf4f2fd/Art/KamovEurofighter/20261109/Eurofighter-generated-v1.png",
+          "width": 2172,
+          "height": 724
+        },
+        {
+          "src": "https://media.githubusercontent.com/media/gelb2/HeavyMach/033c28c4c3ad44acb702daf097737a7debf4f2fd/Art/KamovEurofighter/20261109/Eurofighter-generated-v2.png",
+          "width": 2172,
+          "height": 724
+        },
+        {
+          "src": "https://media.githubusercontent.com/media/gelb2/HeavyMach/033c28c4c3ad44acb702daf097737a7debf4f2fd/Art/KamovEurofighter/20261109/Ka52-generated-v1.png",
+          "width": 2172,
+          "height": 724
+        },
+        {
+          "src": "https://media.githubusercontent.com/media/gelb2/HeavyMach/033c28c4c3ad44acb702daf097737a7debf4f2fd/Art/KamovEurofighter/20261109/Euro-pod-generated-v2.png",
+          "width": 1996,
+          "height": 788
+        },
+        {
+          "src": "https://media.githubusercontent.com/media/gelb2/HeavyMach/033c28c4c3ad44acb702daf097737a7debf4f2fd/docs/public/media/kamov-eurofighter-20261109/Ka52-enemy-fire.png",
+          "width": 1200,
+          "height": 720
+        },
+        {
+          "src": "https://media.githubusercontent.com/media/gelb2/HeavyMach/033c28c4c3ad44acb702daf097737a7debf4f2fd/docs/public/media/kamov-eurofighter-20261109/Lux_Eurofighter-enemy-fire.png",
+          "width": 1200,
+          "height": 720
+        }
+      ],
+      "tables": [
+        {
+          "width": 354,
+          "parent": 354,
+          "scroll": 354
+        },
+        {
+          "width": 354,
+          "parent": 354,
+          "scroll": 354
+        }
+      ],
+      "download": [
+        {
+          "url": "http://127.0.0.1:8897/kamov-eurofighter-implementation-20261109.html",
+          "name": "kamov-eurofighter-implementation-20261109.html"
+        }
+      ],
+      "ok": true,
+      "downloadIdentical": true,
+      "sha256": "13e4cf2db1cc80413e3a7fa816d2c7be3008c6f41b3de784c081b976dd9d0782"
+    },
+    {
+      "title": "카모프·럭스루나에 유로파이터 구현과 웹 검증",
+      "h1": "카모프·럭스루나에 유로파이터 구현과 웹 검증",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "images": [
+        {
+          "src": "https://media.githubusercontent.com/media/gelb2/HeavyMach/033c28c4c3ad44acb702daf097737a7debf4f2fd/docs/public/media/kamov-eurofighter-20261109/no-pod-v5/lux-family-same-scale-clean.png",
+          "width": 1800,
+          "height": 600
+        },
+        {
+          "src": "https://media.githubusercontent.com/media/gelb2/HeavyMach/033c28c4c3ad44acb702daf097737a7debf4f2fd/docs/public/media/kamov-eurofighter-20261109/no-pod-v5/helicopter-family-same-scale-clean.png",
+          "width": 1800,
+          "height": 600
+        },
+        {
+          "src": "https://media.githubusercontent.com/media/gelb2/HeavyMach/033c28c4c3ad44acb702daf097737a7debf4f2fd/docs/public/media/kamov-eurofighter-20261109/lux-family-same-scale.png",
+          "width": 1800,
+          "height": 600
+        },
+        {
+          "src": "https://media.githubusercontent.com/media/gelb2/HeavyMach/033c28c4c3ad44acb702daf097737a7debf4f2fd/docs/public/media/kamov-eurofighter-20261109/helicopter-family-same-scale.png",
+          "width": 1800,
+          "height": 600
+        },
+        {
+          "src": "https://media.githubusercontent.com/media/gelb2/HeavyMach/033c28c4c3ad44acb702daf097737a7debf4f2fd/Art/LuxLunae/20261027/references/lux-lunae-official.jpg",
+          "width": 1920,
+          "height": 1073
+        },
+        {
+          "src": "https://media.githubusercontent.com/media/gelb2/HeavyMach/033c28c4c3ad44acb702daf097737a7debf4f2fd/Art/Extensions/Lux_F22.png",
+          "width": 1902,
+          "height": 827
+        },
+        {
+          "src": "https://media.githubusercontent.com/media/gelb2/HeavyMach/033c28c4c3ad44acb702daf097737a7debf4f2fd/Art/KamovEurofighter/20261109/Eurofighter-generated-v1.png",
+          "width": 2172,
+          "height": 724
+        },
+        {
+          "src": "https://media.githubusercontent.com/media/gelb2/HeavyMach/033c28c4c3ad44acb702daf097737a7debf4f2fd/Art/KamovEurofighter/20261109/Eurofighter-generated-v2.png",
+          "width": 2172,
+          "height": 724
+        },
+        {
+          "src": "https://media.githubusercontent.com/media/gelb2/HeavyMach/033c28c4c3ad44acb702daf097737a7debf4f2fd/Art/KamovEurofighter/20261109/Ka52-generated-v1.png",
+          "width": 2172,
+          "height": 724
+        },
+        {
+          "src": "https://media.githubusercontent.com/media/gelb2/HeavyMach/033c28c4c3ad44acb702daf097737a7debf4f2fd/Art/KamovEurofighter/20261109/Euro-pod-generated-v2.png",
+          "width": 1996,
+          "height": 788
+        },
+        {
+          "src": "https://media.githubusercontent.com/media/gelb2/HeavyMach/033c28c4c3ad44acb702daf097737a7debf4f2fd/docs/public/media/kamov-eurofighter-20261109/Ka52-enemy-fire.png",
+          "width": 1200,
+          "height": 720
+        },
+        {
+          "src": "https://media.githubusercontent.com/media/gelb2/HeavyMach/033c28c4c3ad44acb702daf097737a7debf4f2fd/docs/public/media/kamov-eurofighter-20261109/Lux_Eurofighter-enemy-fire.png",
+          "width": 1200,
+          "height": 720
+        }
+      ],
+      "tables": [
+        {
+          "width": 1024,
+          "parent": 1024,
+          "scroll": 1024
+        },
+        {
+          "width": 1024,
+          "parent": 1024,
+          "scroll": 1024
+        }
+      ],
+      "download": [
+        {
+          "url": "http://127.0.0.1:8897/kamov-eurofighter-implementation-20261109.html",
+          "name": "kamov-eurofighter-implementation-20261109.html"
+        }
+      ],
+      "ok": true,
+      "downloadIdentical": true,
+      "sha256": "13e4cf2db1cc80413e3a7fa816d2c7be3008c6f41b3de784c081b976dd9d0782"
+    }
+  ],
+  "errors": [],
+  "ok": true
+}

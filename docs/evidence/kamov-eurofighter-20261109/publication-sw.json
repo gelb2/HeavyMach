@@ -1,0 +1,35 @@
+{
+  "platform": "Chrome headless WebGL; existing production service worker registered first",
+  "ok": true,
+  "errors": [],
+  "productionController": "https://gelb2.github.io/HeavyMach/sw.js",
+  "preview": {
+    "url": "https://gelb2.github.io/HeavyMach/validation/kamov-eurofighter-20261109/?validation-unit=Lux_Eurofighter",
+    "controller": "https://gelb2.github.io/HeavyMach/sw.js",
+    "savePath": "/validation-persist/HvM.dat",
+    "normalMount": false,
+    "sentinel": "normal-preserved",
+    "fixture": {
+      "status": "spawned",
+      "units": [
+        "Lux_Eurofighter"
+      ],
+      "scenario": {
+        "weapon": "P_Wpn_Gun06",
+        "mission": 0,
+        "stage": 0,
+        "level": 30,
+        "grade": 6,
+        "seed": 12345
+      },
+      "cheats": false,
+      "spawns": [
+        {
+          "name": "Lux_Eurofighter",
+          "x": -740,
+          "y": 59.5
+        }
+      ]
+    }
+  }
+}

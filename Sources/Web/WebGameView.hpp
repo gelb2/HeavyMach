@@ -164,6 +164,8 @@ private:
     std::optional<heavymach::ValidationScenario> _validationFixture;
     std::string _validationError,_validationLastShot;
     uint64_t _validationShots=0;
+    struct ValidationDamage {uintptr_t target;std::string weapon;int32_t requested,before,after;double time;};
+    std::vector<ValidationDamage> _validationDamage;
 #endif
     std::shared_ptr<const heavymach::SaveSlot> _pendingSaveSnapshot;
     int _transferScreen=0;

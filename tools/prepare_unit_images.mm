@@ -78,8 +78,12 @@ static Bytes encodeExact(const Bytes& target,int w,int h){
 static Bytes upload(const Bytes& rgba,int w,int h){int pw=1,ph=1;while(pw<w)pw*=2;while(ph<h)ph*=2;Bytes out(size_t(pw)*ph*4);for(int y=0;y<h;y++){auto* row=out.data()+size_t(y)*pw*4;std::copy_n(rgba.data()+size_t(y)*w*4,w*4,row);heavymach::compatibilityBitmapPixels(row,w);}return out;}
 int main(int argc,char**argv){try{
  // profile source x y cropW cropH targetW targetH outputPNG evidencePrefix
- if(argc!=11)throw std::runtime_error("profile source x y cropW cropH targetW targetH outputPNG evidencePrefix");
+ if(argc!=11&&argc!=12)throw std::runtime_error("profile source x y cropW cropH targetW targetH outputPNG evidencePrefix");
  int w,h,x=atoi(argv[3]),y=atoi(argv[4]),cw=atoi(argv[5]),ch=atoi(argv[6]),dw=atoi(argv[7]),dh=atoi(argv[8]);auto source=decode(read(argv[2]),w,h);if(cw==0)cw=w;if(ch==0)ch=h;if(dh==0)dh=std::max(1,int(std::lround(double(ch)*dw/cw)));
+ if(argc==12){
+  if(std::string(argv[11])!="mirror-x")throw std::runtime_error("unknown source transform");
+  for(int row=0;row<h;row++)for(int col=0;col<w/2;col++)for(int c=0;c<4;c++)std::swap(source[(size_t(row)*w+col)*4+c],source[(size_t(row)*w+(w-1-col))*4+c]);
+ }
  std::string profile=argv[1];Bytes target;if(profile=="apple")target=appleResize(source,w,h,x,y,cw,ch,dw,dh);else{auto cropped=crop(source,w,h,x,y,cw,ch);if(profile=="web")target=webResize(cropped,cw,ch,dw,dh);else if(profile=="android")target=androidResize(cropped,cw,ch,dw,dh);else throw std::runtime_error("unknown profile");}
  auto png=encodeExact(target,dw,dh);int rw,rh;auto roundtrip=decode(png,rw,rh);if(rw!=dw||rh!=dh||roundtrip!=target)throw std::runtime_error("PNG/common decode/premultiply roundtrip differs");auto baselineUpload=upload(target,dw,dh),candidateUpload=upload(roundtrip,rw,rh);if(candidateUpload!=baselineUpload)throw std::runtime_error("compatibility/POT upload differs");
  write(argv[9],png);std::string prefix=argv[10];write(prefix+".baseline.rgba",target);write(prefix+".decoded.rgba",roundtrip);write(prefix+".upload.rgba",candidateUpload);

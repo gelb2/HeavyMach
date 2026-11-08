@@ -43,7 +43,7 @@ int main(){
  }
  for(const auto& counts:missions){assert(*std::min_element(counts.begin(),counts.end())>0);assert(*std::max_element(counts.begin(),counts.end())-*std::min_element(counts.begin(),counts.end())<=1);}
  assert((totals==std::array<int,3>{51,51,50}));
- size_t total=0;for(auto& [key,m]:data.maps)total+=m.enemies.size();assert(total==originalEntries+304);
+ size_t total=0;for(auto& [key,m]:data.maps)total+=m.enemies.size();assert(total==originalEntries+380);
  auto dims=[&](std::string_view name){return contractTileSize(root,name);};
  for(auto& spec:vtolSpecs()){
   assert(spec.width>dims("E_Heli_Body_01.png").x&&spec.width<dims("E_Heli_Body_06.png").x);

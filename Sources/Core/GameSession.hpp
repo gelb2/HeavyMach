@@ -40,12 +40,17 @@ public:
 #if defined(HM_VALIDATION) && HM_VALIDATION
  struct ValidationEnemySnapshot { uintptr_t id;std::string name;Vector2 position;int32_t hp,hpMax;bool boss,removed;Vector2 spawnPosition;ObjectBounds bounds; };
  std::vector<ValidationEnemySnapshot> validationEnemies()const;
+ // Read-only view of live projectiles for the separate validation host.
+ struct ValidationBulletSnapshot {std::string weapon;bool toPlayer,removed;Vector2 position,velocity;double startTime;};
+ std::vector<ValidationBulletSnapshot> validationBullets()const;
  void validationSpawnEnemy(const EnemyDefinition&);
  Vector2 validationAimOrigin()const;
  WeaponState validationWeaponState()const;
  // Optional read-only observer. No shot history or per-frame allocation in the app.
  using ValidationShotObserver=std::function<void(const WeaponInfo&,float,Vector2)>;
  void validationObserveShots(ValidationShotObserver);
+ using ValidationDamageObserver=std::function<void(uintptr_t,std::string_view,int32_t,int32_t,int32_t)>;
+ void validationObserveDamage(ValidationDamageObserver);
  void startValidation(const ValidationScenario&);
  void validationAddExperience(int32_t amount);
  struct ValidationCheatStats {uint64_t blockedHits=0,refilledRounds=0,bossKills=0,fallRescues=0;};

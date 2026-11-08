@@ -1,0 +1,156 @@
+[
+  {
+    "path": "Resources/Images/E_Heli_Body_01.png",
+    "sha256": "27935b3fca1c204ae01d2afd7a729bed3d07c32438cf8db1bb9727141d2dd074",
+    "size": [
+      99,
+      47
+    ],
+    "bounds": [
+      0,
+      0,
+      99,
+      47
+    ]
+  },
+  {
+    "path": "Resources/Images/E_Heli_Body_06.png",
+    "sha256": "35bb833f7768194ff6aff6503774351aeda0ff3d58c715f05d20b6ae38267537",
+    "size": [
+      126,
+      48
+    ],
+    "bounds": [
+      0,
+      0,
+      126,
+      48
+    ]
+  },
+  {
+    "path": "Resources/Images/E_Heli_Body_10.png",
+    "sha256": "5280d50b64082b16d0c2e01017ee25032b6c2eb63c015d86f17117a886a401c3",
+    "size": [
+      199,
+      58
+    ],
+    "bounds": [
+      0,
+      0,
+      199,
+      58
+    ]
+  },
+  {
+    "path": "Resources/Images/E_Boss02.png",
+    "sha256": "06470598d3ea869d01c7b72b4fd334d8abde2215da929a119b1eca40f75be720",
+    "size": [
+      289,
+      100
+    ],
+    "bounds": [
+      0,
+      0,
+      289,
+      100
+    ]
+  },
+  {
+    "path": "Resources/Images/E_Heli_Prop_01.png",
+    "sha256": "7f3accf828e74e43247f062a20d5ce3c34470c5dbf2e12f2a20a4376f77aec11",
+    "size": [
+      360,
+      15
+    ],
+    "bounds": [
+      8,
+      0,
+      345,
+      15
+    ]
+  },
+  {
+    "path": "Resources/Images/P_Wpn_Missile01.png",
+    "sha256": "4d3f348384cd9ff10a28ff7af2131e8529cd16c6fbca6444788116a740f9815c",
+    "size": [
+      38,
+      15
+    ],
+    "bounds": [
+      0,
+      0,
+      38,
+      15
+    ]
+  },
+  {
+    "path": "Art/Extensions/Lux_F22.png",
+    "sha256": "8cf228dafd366849f50ce623901a1106dad35df4ccb451e1de6e346c79f6f082",
+    "size": [
+      1902,
+      827
+    ],
+    "bounds": [
+      21,
+      163,
+      1886,
+      727
+    ]
+  },
+  {
+    "path": "Art/Extensions/Lux_Su57.png",
+    "sha256": "d8797d4559d71df8923e3d755f4f51237053a3ec1d374f0022834111b775a197",
+    "size": [
+      2079,
+      756
+    ],
+    "bounds": [
+      45,
+      99,
+      2039,
+      720
+    ]
+  },
+  {
+    "path": "Art/Extensions/Lux_MiG31.png",
+    "sha256": "ef9351c5bb4112c0bc10befa489ae989d3b341e69da29a047c6570d3c468260d",
+    "size": [
+      2172,
+      724
+    ],
+    "bounds": [
+      52,
+      101,
+      2138,
+      699
+    ]
+  },
+  {
+    "path": "Art/KamovEurofighter/20261109/Eurofighter-generated-v1.png",
+    "sha256": "5a73a8d5001e51039db9ac7480a22541443d9a9170116524ab85ef2528bc4a60",
+    "size": [
+      2172,
+      724
+    ],
+    "bounds": [
+      56,
+      36,
+      2152,
+      724
+    ]
+  },
+  {
+    "path": "Art/KamovEurofighter/20261109/Ka52-generated-v1.png",
+    "sha256": "09c4e374313a52177fa941253df5ba401ae399695fbe7792f6d84364a3fbceda",
+    "size": [
+      2172,
+      724
+    ],
+    "bounds": [
+      39,
+      15,
+      2146,
+      724
+    ]
+  }
+]

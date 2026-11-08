@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Build a derived 1.13-format runtime pack. Original payloads stay byte-identical.
-The immutable authoring capture is reviewed input, never regenerated at app startup.
+Reviewed authoring data is serialized offline, never synthesized at app startup.
 UnitExtensions.hmx is an explicit versioned extension, not an MCH record.
 """
 import argparse, copy, hashlib, json, math, pathlib, struct
@@ -53,7 +53,13 @@ def build(root=ROOT,output=None):
         effect=name+'_Exhaust';parts.append([effect,1,1,[[0,0]]]);rootpart[3].append([effect,0,0,[]])
         presentations.append((body,[width,f32(f32(width)*f32(aspect))],0,0,0,1,[(tile.removeprefix('Extensions/'),[0,0])],[0,0],False))
         presentations.append((effect,[0,0],0,0,1,2,[('BulletEffect2.png',[0,0])],nozzle,bool(aft)))
-        behaviors.append((name,1|2|8|16|32|64,bounds,-24,muzzle,[8,3,.5,20,12]))
+        mount=a.get('aircraft_weapon_mounts',{}).get(name,'fixed_muzzle')
+        if mount not in ('fixed_muzzle','part_sockets'):
+            raise ValueError('Unknown aircraft weapon mounting: '+mount)
+        # Visible rotating launchers use original MCH sockets. The earlier
+        # aircraft preserve their audited fixed muzzle extension unchanged.
+        flags=1|2|8|16|64|(32 if mount=='fixed_muzzle' else 0)
+        behaviors.append((name,flags,bounds,-24,muzzle,[8,3,.5,20,12]))
     art={x[0].removeprefix('Extensions/'):x for x in a['ground_images']}
     for p in parts:
         if not p[0].startswith('GAA_'):continue
@@ -65,6 +71,16 @@ def build(root=ROOT,output=None):
         presentations.append((p[0],art[keys[0]][1],int(kind=='Radar'),2 if kind=='Radar' else 0,0,1,frames,[0,0],False))
     for m in machines:
         if m[0].startswith('GAA_'):behaviors.append((m[0],1|2|4,[-54,0,43,55],58,[0,0],[0,0,.5,20,12]))
+    for name,gauge in a.get('machine_gauge_offsets',{}).items():
+        assert name in bymachine and math.isfinite(gauge),'Invalid gauge owner/offset'
+        prior=next((i for i,b in enumerate(behaviors) if b[0]==name),None)
+        if prior is None:behaviors.append((name,2,[0,0,0,0],gauge,[0,0],[0,0,.5,20,12]))
+        else:
+            b=list(behaviors[prior]);b[1]|=2;b[3]=gauge;behaviors[prior]=tuple(b)
+    if 'part_record_order' in a:
+        order=a['part_record_order'];defined={p[0]:p for p in parts}
+        assert len(order)==len(set(order))==len(parts) and set(order)==set(defined),'Part record order must name every authored part exactly once'
+        parts=[defined[name] for name in order]
     merged={
       'WeaponInfo.mch':append_children((original/'WeaponInfo.mch').read_bytes(),[weapon_bytes(w) for w in a['weapons']]),
       'PartsInfo.mch':append_children((original/'PartsInfo.mch').read_bytes(),[part_bytes(p) for p in parts]),

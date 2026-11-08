@@ -31,6 +31,71 @@ def run(command):
     result = subprocess.run(list(map(str, command)), check=True, text=True, capture_output=True)
     return result.stdout
 
+def bake_authored_units(authoring, output, evidence, verify=False):
+    """Bake explicitly authored additions; preserve the adopted 63-image baseline."""
+    spec = json.loads(authoring.read_text())
+    evidence.mkdir(parents=True, exist_ok=True)
+    helper = ROOT / "tools/prepare_unit_images.mm"
+    executable = evidence / "prepare_unit_images"
+    run(["xcrun", "clang++", "-std=c++20", "-O2", "-ffp-contract=off", helper,
+         "-I", ROOT / "vendor/stb", "-I", ROOT / "Sources/iOS",
+         "-framework", "CoreGraphics", "-lz", "-o", executable])
+    manifest = json.loads((output / "manifest.json").read_text())
+    names = [job["name"] for job in spec["images"]]
+    if len(set(names)) != len(names):
+        raise SystemExit("Duplicate authored image")
+    for job in spec["images"]:
+        if Path(job["name"]).name != job["name"] or sha(ROOT/job["source"]) != job["source_sha256"]:
+            raise SystemExit("Invalid image name or source hash: " + job["name"])
+        if len(job["size"]) != 2 or job["size"][0] <= 0 or job["size"][1] != 0:
+            raise SystemExit("Authored unit images require uniform width-based scaling")
+    with tempfile.TemporaryDirectory(prefix="authored-images-", dir=evidence) as temp:
+        stage = Path(temp)
+        for profile in PROFILES:
+            entries = [entry for entry in manifest["profiles"][profile] if entry["file"] not in names]
+            for job in spec["images"]:
+                path = stage / profile / job["name"]
+                path.parent.mkdir(parents=True, exist_ok=True)
+                ref = evidence / profile / Path(job["name"]).stem
+                ref.parent.mkdir(parents=True, exist_ok=True)
+                command = [executable, profile, ROOT/job["source"], *job["crop"], *job["size"], path, ref]
+                if job.get("transform"):
+                    command.append(job["transform"])
+                measured = json.loads(run(command))
+                target = output / profile / job["name"]
+                if verify:
+                    if not target.exists() or sha(target) != sha(path):
+                        raise SystemExit("Authored image differs: " + str(target))
+                entry = {"file":job["name"], "source":job["source"],
+                    "source_sha256":job["source_sha256"], "source_crop":job["crop"],
+                    "source_transform":job.get("transform", "none"),
+                    "width":measured["width"], "height":measured["height"],
+                    "bytes":path.stat().st_size, "sha256":sha(path),
+                    "baseline_premultiplied_sha256":sha(str(ref)+".baseline.rgba"),
+                    "decoded_premultiplied_sha256":sha(str(ref)+".decoded.rgba"),
+                    "upload_rgba_sha256":sha(str(ref)+".upload.rgba"),
+                    "decode_equal":measured["decode_equal"], "upload_equal":measured["upload_equal"]}
+                if verify:
+                    recorded = [r for r in manifest["profiles"][profile] if r["file"] == job["name"]]
+                    if recorded != [entry]:
+                        raise SystemExit("Authored image manifest differs: " + profile + "/" + job["name"])
+                entries.append(entry)
+            manifest["profiles"][profile] = entries
+        if not verify:
+            for profile in PROFILES:
+                for name in names:
+                    target = output / profile / name
+                    target.parent.mkdir(parents=True, exist_ok=True)
+                    shutil.copy2(stage/profile/name, target)
+    manifest["authored_additions"] = {"manifest":str(authoring.relative_to(ROOT)),
+        "sha256":sha(authoring), "generator_sha256":sha(__file__), "helper_sha256":sha(helper)}
+    if not verify:
+        (output/"manifest.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=2)+"\n")
+    result = {"authored_images":len(names), "profiles":list(PROFILES),
+        "decode_upload_roundtrips":len(names)*len(PROFILES), "verified_only":verify}
+    (evidence/("verify.json" if verify else "execution.json")).write_text(json.dumps(result, indent=2)+"\n")
+    print(json.dumps(result))
+
 def jobs(baseline):
     result = []
     for name, width in (("VTOL_Yak141",112), ("VTOL_Harrier",108), ("VTOL_F35B",116),
@@ -50,11 +115,23 @@ def jobs(baseline):
 
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--baseline-root",required=True,type=Path)
+    parser.add_argument("--baseline-root",type=Path)
+    parser.add_argument("--authoring",type=Path,help="Bake explicit new-unit art without altering adopted baseline images")
     parser.add_argument("--output",type=Path,default=ROOT/"Resources/RuntimeImages")
     parser.add_argument("--evidence",type=Path,default=ROOT/"build/unit-images/evidence")
     parser.add_argument("--verify",action="store_true",help="Compare regenerated outputs without changing packaged files")
-    args=parser.parse_args();baseline=args.baseline_root.resolve();output=args.output.resolve();evidence=args.evidence.resolve()
+    args=parser.parse_args();output=args.output.resolve();evidence=args.evidence.resolve()
+    if args.authoring:
+        bake_authored_units(args.authoring.resolve(), output, evidence, args.verify)
+        return
+    if not args.baseline_root:
+        parser.error("--baseline-root or --authoring is required")
+    baseline=args.baseline_root.resolve()
+    # Historical preservation is a separate operation. Never silently erase
+    # subsequently authored unit images when reproducing that older baseline.
+    current_manifest = output/"manifest.json"
+    if current_manifest.exists() and json.loads(current_manifest.read_text()).get("authored_additions"):
+        raise SystemExit("Historical baseline reproduction requires a separate --output directory; use --authoring to verify or update new units")
     if output==baseline or output.is_relative_to(baseline/"Art") or output.is_relative_to(baseline/"Resources/OriginalImages"):
         raise SystemExit("Refusing to overwrite baseline art")
     evidence.mkdir(parents=True,exist_ok=True)

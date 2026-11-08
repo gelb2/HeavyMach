@@ -1,0 +1,80 @@
+{
+  "tool": "image_gen.imagegen",
+  "mode": "built-in",
+  "date": "2026-11-09",
+  "generated": [
+    {
+      "id": "Lux_Eurofighter",
+      "file": "Eurofighter-generated-v1.png",
+      "prompt": "Create ONE production HeavyMach1 enemy aircraft BODY sprite, REAL Eurofighter Typhoon, strict LEFT-facing nearly orthographic side view with a very small amount of top wing visible, real length/height proportions, single tall vertical fin, identifiable small forward canards and main delta wing, twin engine nozzles. Gear retracted. Transparent background. Entire aircraft, no cropping.\nREFERENCE ROLES: first image is real Eurofighter outline reference ONLY; second is APPROVED Lux Lunae F22 including precise paint, GOLD canopy, shield badge and 055 marking; remaining three are ORIGINAL HeavyMach sprite material/style references (small, medium and large helicopter), NOT shape references.\nPaint Eurofighter with EXACT SAME visual family as approved Lux sprites: charcoal olive-grey weathered metal, restrained dull GOLD thin nose-to-shoulder stripe, matching GOLD vertical-tail leading-edge stripe, metallic GOLD/amber glass cockpit (NOT cyan), small gold shield with black rearing horse/dragon against moon, white tail digits \"055\" beneath badge. Maintain badge family of reference2, not generic crescent or eagle. No other national markings, no lettering outside plane. Match approved Lux surface brightness and olive-neutral hue, crisp hand-painted military metal panels, small worn highlights. Do NOT substitute blue/silver body, bright yellow neon, glossy comic rendering, heavy outline, white fringe, pixel grid, chibi/bulky shape. Dense details must survive reduction to approx116px aircraft length. Keep shallow sleek body and real Typhoon aerodynamic outline.\nSeparate runtime parts will provide weapon pods and exhaust flame. Draw EMPTY pylon mounts only, no bombs, missiles, detached parts, gun barrels or exhaust flame. Body sprite only. No ground, shadow, glow, vignette, backdrop. Clear silhouette and truly transparent alpha.",
+      "references": [
+        "Art/KamovEurofighter/20261109/references/eurofighter-profile.jpg",
+        "Art/Extensions/Lux_F22.png",
+        "Resources/Images/E_Heli_Body_01.png",
+        "Resources/Images/E_Heli_Body_06.png",
+        "Resources/Images/E_Heli_Body_10.png"
+      ],
+      "status": "superseded-too-bright-warm-body"
+    },
+    {
+      "id": "Ka52",
+      "file": "Ka52-generated-v1.png",
+      "prompt": "Production BODY sprite for HeavyMach1 side-scrolling game: ONE REAL Kamov Ka-52 attack helicopter, nose LEFT, almost exact orthographic side view, transparent background. Ref1 actual Ka-52 photo is SHAPE reference only (real blunt nose, side-by-side cockpit profile, twin engine shoulder, short stub wings, tapering rear fuselage and single vertical tail); refs2-4 ORIGINAL HeavyMach small/medium/large helicopter sprites are the palette/material/rendering references. Match original hand-painted muted light grey/olive military metal, ivory edge highlights, dark panel joints, small orange/red warning accents and smoked canopy. Not dark glossy modern 3D and not cartoon. Realistic proportions, same crisp small-scale paint treatment as original, readable after downsampling to112px body width.\nThis is the BODY PART ONLY for later assembly using original animated rotors and articulated weapons: draw the exposed vertical coaxial mast/shaft with TWO hubs at different heights, but ABSOLUTELY NO rotor blades, horizontal rotor discs, motion blur or tail rotor. Rotating blades will be separate runtime parts. Draw empty stub-wing weapon mounts, but NO attached cannon barrels, rocket pods, missiles, bullets or flames; separate articulated weapon sprites attach there. Retracted landing gear. Two-level mast is centered above engine shoulder and structurally connected. Do not cut off mast/tail/nose. No ground, shadow, glow, captions, background or extra detached pieces. Entire body with generous transparent margin and clear alpha. Natural original grey-green brightness, no black outline, no white fringe, no over-detailed decorative texture.",
+      "references": [
+        "Art/KamovEurofighter/20261109/references/ka52-photo.jpg",
+        "Resources/Images/E_Heli_Body_01.png",
+        "Resources/Images/E_Heli_Body_06.png",
+        "Resources/Images/E_Heli_Body_10.png"
+      ]
+    },
+    {
+      "id": "Lux_Euro_Missile",
+      "file": "Euro-pod-generated-v2.png",
+      "prompt": "This is a cosmetic texture recoloring task for an existing 2D video-game equipment sprite, not real equipment design or instructions. Edit only the colors of the FIRST attached 38x15-pixel HeavyMach sprite. Preserve its existing shape, orientation, mechanical panel layout, attachment and overall aspect ratio. Do not add or change geometry.\nReplace the bright white and red paint patches with the charcoal olive-grey weathered metal and sparse muted gold trim seen in references 2 and 3 (existing game aircraft paint). Keep the fine panel separation and metallic light/shadow so the small sprite remains readable. No red or bright white paint, no letters or new insignia. No other objects. Genuine transparent background, entire existing small component centered with a little transparent margin. This image is an attachable part for the same game. All gameplay remains existing code; request is solely surface recoloring.",
+      "references": [
+        "Resources/Images/P_Wpn_Missile01.png",
+        "Art/Extensions/Lux_F22.png",
+        "Art/KamovEurofighter/20261109/Eurofighter-generated-v1.png"
+      ],
+      "note": "Generated new charcoal/gold part based on original launcher; geometry is not pixel-identical recoloring. Original remains unchanged. Uniform crop/bake and sockets recorded.",
+      "prior_attempt": {
+        "prompt": "EDIT the FIRST image (HeavyMach original missile launcher sprite) into a Lux Lunae paint variant ONLY. Preserve its exact rectangular launcher silhouette, two launch tube layers, the visible open left-facing muzzles, mount, orthographic side view and panel geometry. First source has its muzzle facing RIGHT; output should stay in that same RIGHT-facing orientation because offline pipeline will mirror it for the left-facing aircraft.\nMatch reference2 approved Lux F22 and reference3 Eurofighter body. Replace all conspicuous bright white/red checker panels with charcoal olive-grey metal panels and very restrained dull gold single seam detail. Same overall brightness and worn grey metal shading as the existing Lux family. NO red, NO bright white, NO cyan, NO large insignia, no letters, no gold fill or neon, no extra tubes, no detached pieces. Retain readable tube apertures, mounting/supports and mechanical function. Thin metal highlights, not thick outlines. This is a SMALL attachable weapon part, not a plane and not a standalone tank turret. Transparent background, tightly framed entire launcher with small even padding. No shadow/glow/backdrop. It will be uniformly reduced to19px width by the existing offline baker.",
+        "status": "tool moderation rejected before generation; no image returned"
+      }
+    },
+    {
+      "id": "Lux_Eurofighter_tone_revision",
+      "file": "Eurofighter-generated-v2.png",
+      "prompt": "EDIT TARGET IS IMAGE1, the generated Lux Eurofighter body. Other references are the already approved Lux F22, Su57, MiG31, and original Lux Lunae illustration respectively. This is an existing video-game texture PAINT correction, not a new aircraft design.\nCHANGE ONLY THE BODY METAL MIDTONES. The target is visibly too bright and warm brown-grey compared with approved F22; large central fuselage and wing-upper metal surfaces must match F22's darker, cooler CHARCOAL OLIVE-NEUTRAL GREY. Reduce the non-gold metal midtone luminance roughly15-18% and remove the brown/warm cast, guided by F22 reference, retaining crisp fine worn highlights and original texture detail. Do NOT darken the metallic GOLD/amber canopy or gold trim and badge; preserve the exact gold canopy, thin gold nose/fuselage stripe, gold fin leading-edge stripe, gold shield emblem, white \"055\" digits.\nLOCK EVERYTHING ELSE: identical Eurofighter silhouette, canards, single fin, delta-wing/engine geometry, no gear, no weapons attached, no changes in pose, markings, crop, scale, coordinates, texture dimensions or transparency. Only one same full left-facing Eurofighter body on genuine transparent background. No added objects, shading halo, backdrop, border, lettering or decorative elements. Avoid crushed solid black; panel relief must remain readable at116px game width. It must visually belong beside the approved three Lux aircraft, without a brighter brown body.",
+      "references": [
+        "Art/KamovEurofighter/20261109/Eurofighter-generated-v1.png",
+        "Art/Extensions/Lux_F22.png",
+        "Art/Extensions/Lux_Su57.png",
+        "Art/Extensions/Lux_MiG31.png",
+        "Art/LuxLunae/20261027/references/lux-lunae-official.jpg"
+      ],
+      "status": "final-candidate",
+      "supersedes": "Eurofighter-generated-v1.png"
+    }
+  ],
+  "external_references": [
+    {
+      "file": "references/ka52-photo.jpg",
+      "url": "https://russianplanes.net/id333420",
+      "purpose": "Ka-52 silhouette and coaxial mast; not paint reference",
+      "credit": "Alexander Balykin / RussianPlanes"
+    },
+    {
+      "file": "references/eurofighter-profile.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Typhoon1.jpg",
+      "purpose": "real Eurofighter geometry only",
+      "credit": "Markus Kutscher / Wikimedia Commons"
+    }
+  ],
+  "livery_reference": "Art/LuxLunae/20261027/references/lux-lunae-official.jpg",
+  "existing_adopted": [
+    "Art/Extensions/Lux_F22.png",
+    "Art/Extensions/Lux_Su57.png",
+    "Art/Extensions/Lux_MiG31.png"
+  ]
+}
