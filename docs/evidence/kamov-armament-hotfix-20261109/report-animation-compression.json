@@ -1,0 +1,34 @@
+{
+  "status": "stopped_by_parent_after_nonreducing_candidates",
+  "applied": false,
+  "saved_bytes": 0,
+  "files": [
+    {
+      "name": "fighters.webp",
+      "bytes": 8490196,
+      "sha256": "e17fb09820daf7bfcfdd4b58f48715ec2d3470e54f191764adf12368a9a1c0c8",
+      "original_sha256": "e17fb09820daf7bfcfdd4b58f48715ec2d3470e54f191764adf12368a9a1c0c8",
+      "original_preserved": true
+    },
+    {
+      "name": "jump.webp",
+      "bytes": 7769224,
+      "sha256": "30d82b54f7e46136761e30eaa6a8121c7cf0d28e4e33729af2f7e65d4e2bb205",
+      "original_sha256": "30d82b54f7e46136761e30eaa6a8121c7cf0d28e4e33729af2f7e65d4e2bb205",
+      "original_preserved": true
+    },
+    {
+      "name": "boss.webp",
+      "bytes": 5496586,
+      "sha256": "d776a4f4c7f973ae1fb5189ef1418f63b58ff85c150155eec468dbf6293af0d0",
+      "original_sha256": "d776a4f4c7f973ae1fb5189ef1418f63b58ff85c150155eec468dbf6293af0d0",
+      "original_preserved": true
+    }
+  ],
+  "completed_trials": [
+    "report-animation-compression-method4.json",
+    "report-animation-compression-method6-q80.json"
+  ],
+  "max_method6_quality100": "terminated before completion; no candidate applied",
+  "all_originals_preserved": true
+}

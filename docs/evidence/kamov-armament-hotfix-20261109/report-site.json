@@ -1,0 +1,16 @@
+{
+  "sourceCommit": "7205811786279b1c34e7ad5ea0eccd4499cd6161",
+  "id": "appgdep_6af0fd2b061081919af82874381590ef",
+  "project_id": "appgprj_6addbf55aea081918d3d182d7e496e88",
+  "title": "HeavyMach 개발 보고",
+  "version_id": "appgprj_6addbf55aea081918d3d182d7e496e88~appgver_db7720bbbd5c8191a20358a35795939e",
+  "type": "publish",
+  "status": "succeeded",
+  "url": "https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site",
+  "has_mcp": false,
+  "screenshot_asset_pointer": null,
+  "provider_deployment_id": "site---6addbf55aea081918d3d182d7e496e88",
+  "failure_message": null,
+  "env_set_revision": 0,
+  "updated_at": "2026-11-08T22:52:40.804992+00:00"
+}
