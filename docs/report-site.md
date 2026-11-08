@@ -956,3 +956,14 @@ VTOL 첫 생성 프롬프트와 스킬 수정 커밋을 대조했다. 요청에 
 기존 소유자 전용 사이트에 [핫픽스·트러블슈팅·검증·배포 결과](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/new-unit-resource-hotfix-20261109.html)와 [카모프 헬기·럭스루나에 유로파이터 계획](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/kamov-eurofighter-plan-20261109.html)을 게시했다. 홈페이지와 같은 원고의 Markdown 다운로드를 연결했다. 접근 범위는 유지했다.
 
 Site source `4608b63240afd8b9b25aa653ff206715db167152`, deployment `appgdep_6af0bd9fe05c8191a72badd2d0a34ffd`, 결과 `succeeded`다. 최초 묶음은 256MiB 확장 용량 한도를 넘어 거부됐다. HTML·JS·Markdown·JSON에서 참조하지 않는 보고용 Android 스토어 아이콘 복사본 1개를 제외했다. 원본 게임 자원·Git 이력·로컬 백업은 보존했다. 문서와 다운로드 바이트·로컬 링크·HTTP 응답을 검사했다. 이번 페이지의 CUA 화면 검수는 도구 시간 초과로 수행하지 못했다.
+
+## 카모프·럭스루나에 유로파이터 구현·웹 검사 — 2026-11-09
+
+[구현과 웹 검증 보고서](https://heavymach-dev-report-20261025.hiphopxy.chatgpt.site/kamov-eurofighter-implementation-20261109.html)를 게시했다. 공식 일러스트, 기존 F-22, 수정 전후 시안, 최종 실제 게임 비교, 무장·로터·피격·파괴 검사와 공개 치트 실행 링크를 담았다. 최초 계획과 홈페이지에서 연결했다. 기존 보고서의 읽기 링크는 HTML로 연결하고 Markdown 원문에는 UTF-8 BOM을 붙였다. 원문 내용은 보존했다.
+
+- 구현 커밋 `7786319823fb187f892e2a97afd2a4bd6e5735fd`, 작업 브랜치 `feat/kamov-lux-eurofighter`, 검토 PR [#112](https://github.com/gelb2/HeavyMach/pull/112) → develop. 미병합.
+- Site source `9bddf1c8de4172d298db7ac555bc2fe2cd7281ff`.
+- deployment `appgdep_6af0c939a81481918544046bd7b806ab`, `succeeded`.
+- version `appgprj_6addbf55aea081918d3d182d7e496e88~appgver_dc3a05787894819185a469f41605a1ef`.
+- 기존 소유자 전용 접근 유지. 동시에 갱신된 MachDefense 보고 변경을 병합하고 최신 Markdown 212개의 본문 보존을 대조했다.
+- Chrome 390px·1440px에서 이미지10개 로드, 본문·표 가로넘침0, HTML 저장 본문 일치를 확인했다. Native Safari/Chrome CUA는 시간 초과와 사용자 화면 변경 알림으로 완료하지 못했다. 실기기 Android 화면 검증과 구분한다.

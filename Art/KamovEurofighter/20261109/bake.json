@@ -1,0 +1,97 @@
+{
+  "schema": 1,
+  "purpose": "Ka-52 and Lux Eurofighter: generated bodies, original animated rotor and Ka-52 weapon parts; Eurofighter uses invisible Lux missile mount",
+  "images": [
+    {
+      "name": "Ka52_Body.png",
+      "source": "Art/KamovEurofighter/20261109/Ka52-generated-v1.png",
+      "source_sha256": "09c4e374313a52177fa941253df5ba401ae399695fbe7792f6d84364a3fbceda",
+      "crop": [
+        130,
+        19,
+        1968,
+        664
+      ],
+      "size": [
+        112,
+        0
+      ]
+    },
+    {
+      "name": "Lux_Eurofighter.png",
+      "source": "Art/KamovEurofighter/20261109/Eurofighter-generated-v2.png",
+      "source_sha256": "ed70539f96f604481b03f997fef0e9fadf42fb4a1f4133907183d8259a284d7f",
+      "crop": [
+        54,
+        35,
+        2092,
+        630
+      ],
+      "size": [
+        116,
+        0
+      ]
+    },
+    {
+      "name": "Ka52_RotorUpper.png",
+      "source": "Resources/OriginalImages/E_Heli_Prop_01.png",
+      "source_sha256": "27c1fde2a503b4c537a80ff17d9572760c85b4814700b3ff966f904b0ba0027f",
+      "crop": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "size": [
+        240,
+        0
+      ]
+    },
+    {
+      "name": "Ka52_RotorLower.png",
+      "source": "Resources/OriginalImages/E_Heli_Prop_01.png",
+      "source_sha256": "27c1fde2a503b4c537a80ff17d9572760c85b4814700b3ff966f904b0ba0027f",
+      "crop": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "size": [
+        240,
+        0
+      ]
+    },
+    {
+      "name": "Ka52_Cannon.png",
+      "source": "Resources/OriginalImages/E_Tank_Wpn_01.png",
+      "source_sha256": "28350b21e834faff0b5f63ec6891adad1da8326a37becbde5bca171364be903f",
+      "crop": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "size": [
+        30,
+        0
+      ]
+    },
+    {
+      "name": "Ka52_Missile.png",
+      "source": "Resources/OriginalImages/P_Wpn_Missile01.png",
+      "source_sha256": "dccc51910c4a99ceb5c99fa786d3ca523c8eb045c01baa279468ffe3cbd01756",
+      "crop": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "size": [
+        19,
+        0
+      ],
+      "transform": "mirror-x"
+    }
+  ]
+}

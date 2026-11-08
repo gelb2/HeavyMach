@@ -1,0 +1,95 @@
+{
+  "ok": true,
+  "final_changes": "Eurofighter body tone v4 and generic validation-unit URL startup; executable and data unchanged since v3",
+  "units_executed_v4": [
+    {
+      "name": "Ka52",
+      "ok": true,
+      "enemyDamage": [
+        {
+          "target": 1,
+          "weapon": "Ka52_Cannon",
+          "requested": 5,
+          "before": 815,
+          "after": 810,
+          "time": 7.40000039
+        },
+        {
+          "target": 1,
+          "weapon": "Ka52_Missile",
+          "requested": 25,
+          "before": 810,
+          "after": 785,
+          "time": 7.6000004
+        }
+      ],
+      "movement": {
+        "x": 86.01605199999995,
+        "y": 0
+      },
+      "pauseStable": true,
+      "destroyed": true,
+      "minTargetHP": 0
+    },
+    {
+      "name": "Lux_Eurofighter",
+      "ok": true,
+      "enemyDamage": [
+        {
+          "target": 1,
+          "weapon": "Lux_Euro_Missile",
+          "requested": 25,
+          "before": 825,
+          "after": 800,
+          "time": 7.0833337
+        }
+      ],
+      "movement": {
+        "x": 29.285582999999974,
+        "y": 0
+      },
+      "pauseStable": true,
+      "destroyed": true,
+      "minTargetHP": 0
+    }
+  ],
+  "weapons_reuse": {
+    "source": "/Users/sokol/Git/ProjectGameDev-Hub/HeavyMach/build/kamov-lux-eurofighter-20261109/build/kamov-web-validation/results-v3/report.json",
+    "sourceSha256": "b8261fd407df2249a350d4f493743e984ab3691fca9f6ccddc812ab111fbbf32",
+    "weaponsExecuted": 0,
+    "weaponsReused": 20,
+    "reason": "Only the Eurofighter body PNG changed; validation WebAssembly and all runtime game data are byte-identical to the previous successful run",
+    "validationWasmSha256": "d061c43020881f63a4dba9323b17acc32423a9805923cafd5d86e45920bd1f59"
+  },
+  "link_tests": {
+    "path": "../link-results/report.json",
+    "cases": 8,
+    "ok": true
+  },
+  "final_build_artifact_delta_from_v4": [
+    "index.html only; JS/WASM/runtime data and images byte-identical"
+  ],
+  "normal": {
+    "bridge": "undefined",
+    "export": "undefined",
+    "prefix": "HeavyMach.",
+    "validation": false
+  },
+  "storage": {
+    "normalSentinel": "preserve-normal",
+    "normalMount": false,
+    "validationMount": true,
+    "saveBytes": 3624,
+    "prefix": "HeavyMach.Validation."
+  },
+  "captures": "../results-v4/*.png",
+  "review_urls": [
+    "http://127.0.0.1:8891/?validation-unit=Ka52",
+    "http://127.0.0.1:8891/?validation-unit=Lux_Eurofighter"
+  ],
+  "limits": [
+    "Chrome headless WebGL; not physical phone validation",
+    "20 weapon firing/charge evidence reused from byte-identical v3 executable/data",
+    "Normal campaign placements unchanged"
+  ]
+}

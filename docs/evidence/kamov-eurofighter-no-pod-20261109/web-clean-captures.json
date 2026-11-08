@@ -1,0 +1,1185 @@
+[
+  {
+    "file": "lux-family-same-scale-clean.png",
+    "game": {
+      "screen": "game",
+      "time": 5.35,
+      "canvas": [
+        960,
+        320
+      ],
+      "loading": 0,
+      "mission": 0,
+      "stage": 0,
+      "playerX": -1040,
+      "playerY": -40.5,
+      "hp": 825,
+      "enemies": 7,
+      "bullets": 1,
+      "paused": 0,
+      "gameState": 0,
+      "decodes": 131,
+      "loadError": 0,
+      "aimMode": 1,
+      "aimTarget": 0,
+      "inputBlocked": 0,
+      "keyboardFire": 0,
+      "gameMenu": 0,
+      "resumeRequired": 0,
+      "active": 1,
+      "keyboardAimX": 0,
+      "callbackInterval": 0.0168,
+      "ticksPerCallback": 1,
+      "motion": 0,
+      "tilt": [
+        0,
+        0,
+        -1
+      ],
+      "hudEditing": 0,
+      "hudCustomized": 0,
+      "hudFallback": 0,
+      "hudSelected": 2,
+      "hudDraftCustomized": 0,
+      "orientationHold": 0
+    },
+    "sprites": [
+      {
+        "tile": "BG_City01.png",
+        "x": 480,
+        "y": 160,
+        "rotation": 0,
+        "scaleX": 1.09464085,
+        "scaleY": 1.09464085,
+        "frame": 0
+      },
+      {
+        "tile": "E_ArmoCar_01.png",
+        "x": 493.363953,
+        "y": 80.2957687,
+        "rotation": 0.00270269532,
+        "scaleX": 1,
+        "scaleY": 1,
+        "frame": 0
+      },
+      {
+        "tile": "E_ArmoCar_Top_03.png",
+        "x": 493.312561,
+        "y": 99.2957001,
+        "rotation": 0.00270269532,
+        "scaleX": 1,
+        "scaleY": 1,
+        "frame": 0
+      },
+      {
+        "tile": "E_ArmoCar_Wpn_01.png",
+        "x": 479.332581,
+        "y": 100.794861,
+        "rotation": -0.0869077742,
+        "scaleX": 1,
+        "scaleY": 1,
+        "frame": 0
+      },
+      {
+        "tile": "E_ArmoCar_02.png",
+        "x": 392.014404,
+        "y": 79.0225754,
+        "rotation": -0.536416948,
+        "scaleX": 1,
+        "scaleY": 1,
+        "frame": 1
+      },
+      {
+        "tile": "E_ArmoCar_Top_01.png",
+        "x": 403.792114,
+        "y": 92.9612122,
+        "rotation": -0.536416948,
+        "scaleX": 1,
+        "scaleY": 1,
+        "frame": 0
+      },
+      {
+        "tile": "E_ArmoCar_Wpn_03.png",
+        "x": 389.494446,
+        "y": 95.4863358,
+        "rotation": -6.28016806,
+        "scaleX": 1,
+        "scaleY": 1,
+        "frame": 0
+      },
+      {
+        "tile": "E_ArmoCar_02.png",
+        "x": 860.998779,
+        "y": 100,
+        "rotation": 0,
+        "scaleX": 1,
+        "scaleY": 1,
+        "frame": 1
+      },
+      {
+        "tile": "E_ArmoCar_Top_03.png",
+        "x": 861.998779,
+        "y": 117,
+        "rotation": 0,
+        "scaleX": 1,
+        "scaleY": 1,
+        "frame": 0
+      },
+      {
+        "tile": "E_ArmoCar_Wpn_01.png",
+        "x": 847.998779,
+        "y": 118,
+        "rotation": 8.74227766e-8,
+        "scaleX": 1,
+        "scaleY": 1,
+        "frame": 0
+      },
+      {
+        "tile": "BulletEffect2.png",
+        "x": 339.548279,
+        "y": 198,
+        "rotation": 3.14159274,
+        "scaleX": 0.409268647,
+        "scaleY": 0.75,
+        "frame": 0
+      },
+      {
+        "tile": "Lux_F22.png",
+        "x": 280,
+        "y": 205,
+        "rotation": 0,
+        "scaleX": 1,
+        "scaleY": 0.993841112,
+        "frame": 0
+      },
+      {
+        "tile": "BulletEffect2.png",
+        "x": 486.534363,
+        "y": 199.058167,
+        "rotation": 3.10894179,
+        "scaleX": 0.409268647,
+        "scaleY": 0.75,
+        "frame": 0
+      },
+      {
+        "tile": "Lux_Su57.png",
+        "x": 427.148376,
+        "y": 205,
+        "rotation": -0.0326510295,
+        "scaleX": 1,
+        "scaleY": 1.00432909,
+        "frame": 0
+      },
+      {
+        "tile": "BulletEffect2.png",
+        "x": 631.54834,
+        "y": 202,
+        "rotation": 3.14159274,
+        "scaleX": 0.409268647,
+        "scaleY": 0.75,
+        "frame": 0
+      },
+      {
+        "tile": "Lux_MiG31.png",
+        "x": 570,
+        "y": 205,
+        "rotation": 0,
+        "scaleX": 1,
+        "scaleY": 1,
+        "frame": 0
+      },
+      {
+        "tile": "BulletEffect2.png",
+        "x": 773.307434,
+        "y": 196.124817,
+        "rotation": 3.12636828,
+        "scaleX": 0.409268647,
+        "scaleY": 0.75,
+        "frame": 0
+      },
+      {
+        "tile": "Lux_Eurofighter.png",
+        "x": 715.887573,
+        "y": 205,
+        "rotation": -0.0152244382,
+        "scaleX": 1,
+        "scaleY": 1,
+        "frame": 0
+      },
+      {
+        "tile": "P_Body_07.png",
+        "x": 19,
+        "y": 109.279999,
+        "rotation": -1.7753708e-20,
+        "scaleX": 1,
+        "scaleY": 1,
+        "frame": 1
+      },
+      {
+        "tile": "P_Top_07.png",
+        "x": 20,
+        "y": 134.279999,
+        "rotation": -1.7753708e-20,
+        "scaleX": 1,
+        "scaleY": 1,
+        "frame": 0
+      },
+      {
+        "tile": "P_Wpn_Gun06.png",
+        "x": 34.9350586,
+        "y": 134.437836,
+        "rotation": 0.100000001,
+        "scaleX": 1,
+        "scaleY": 1,
+        "frame": 0
+      },
+      {
+        "tile": "Terrain_City18.png",
+        "x": 523,
+        "y": 45,
+        "rotation": 0,
+        "scaleX": 1,
+        "scaleY": 1,
+        "frame": 0
+      },
+      {
+        "tile": "Terrain_City21.png",
+        "x": 616,
+        "y": 44,
+        "rotation": 0,
+        "scaleX": 1,
+        "scaleY": 1,
+        "frame": 0
+      },
+      {
+        "tile": "Terrain_City23.png",
+        "x": 709,
+        "y": 46,
+        "rotation": 0,
+        "scaleX": 1,
+        "scaleY": 1,
+        "frame": 0
+      },
+      {
+        "tile": "Terrain_City17.png",
+        "x": 815,
+        "y": 47,
+        "rotation": 0,
+        "scaleX": 1,
+        "scaleY": 1,
+        "frame": 0
+      },
+      {
+        "tile": "Terrain_City18.png",
+        "x": 922,
+        "y": 62,
+        "rotation": 0,
+        "scaleX": 1,
+        "scaleY": 1,
+        "frame": 0
+      },
+      {
+        "tile": "Terrain_City20.png",
+        "x": 986,
+        "y": 54,
+        "rotation": 0,
+        "scaleX": 1,
+        "scaleY": 1,
+        "frame": 0
+      },
+      {
+        "tile": "Object_City09.png",
+        "x": 802,
+        "y": 87,
+        "rotation": 0,
+        "scaleX": 1,
+        "scaleY": 1,
+        "frame": 0
+      },
+      {
+        "tile": "Object_Ruin09.png",
+        "x": 829,
+        "y": 106,
+        "rotation": 0,
+        "scaleX": 1,
+        "scaleY": 1,
+        "frame": 0
+      },
+      {
+        "tile": "Terrain_City01.png",
+        "x": 182,
+        "y": 161,
+        "rotation": 0,
+        "scaleX": 1,
+        "scaleY": 1,
+        "frame": 0
+      },
+      {
+        "tile": "Object_City08.png",
+        "x": 1020,
+        "y": 68,
+        "rotation": 0,
+        "scaleX": 1,
+        "scaleY": 1,
+        "frame": 0
+      },
+      {
+        "tile": "Terrain_City21.png",
+        "x": 1051,
+        "y": 39,
+        "rotation": 0,
+        "scaleX": 1,
+        "scaleY": 1,
+        "frame": 0
+      },
+      {
+        "tile": "Terrain_City12.png",
+        "x": 815,
+        "y": -7,
+        "rotation": 0,
+        "scaleX": 1,
+        "scaleY": 1,
+        "frame": 0
+      },
+      {
+        "tile": "Terrain_City12.png",
+        "x": 521,
+        "y": 4,
+        "rotation": 0,
+        "scaleX": 1,
+        "scaleY": 1,
+        "frame": 0
+      },
+      {
+        "tile": "Terrain_City21.png",
+        "x": 430,
+        "y": 44,
+        "rotation": 0,
+        "scaleX": 1,
+        "scaleY": 1,
+        "frame": 0
+      },
+      {
+        "tile": "Terrain_City20.png",
+        "x": 367,
+        "y": 58,
+        "rotation": 0,
+        "scaleX": 1,
+        "scaleY": 1,
+        "frame": 0
+      },
+      {
+        "tile": "Terrain_City21.png",
+        "x": 304,
+        "y": 65,
+        "rotation": 0,
+        "scaleX": 1,
+        "scaleY": 1,
+        "frame": 0
+      },
+      {
+        "tile": "Terrain_City23.png",
+        "x": 211,
+        "y": 67,
+        "rotation": 0,
+        "scaleX": 1,
+        "scaleY": 1,
+        "frame": 0
+      },
+      {
+        "tile": "Terrain_City21.png",
+        "x": 159,
+        "y": 65,
+        "rotation": 0,
+        "scaleX": 1,
+        "scaleY": 1,
+        "frame": 0
+      },
+      {
+        "tile": "Terrain_City21.png",
+        "x": 67,
+        "y": 65,
+        "rotation": 0,
+        "scaleX": 1,
+        "scaleY": 1,
+        "frame": 0
+      },
+      {
+        "tile": "Terrain_City21.png",
+        "x": -23,
+        "y": 65,
+        "rotation": 0,
+        "scaleX": 1,
+        "scaleY": 1,
+        "frame": 0
+      },
+      {
+        "tile": "HPGaugeEnemy.png",
+        "x": 493,
+        "y": 108,
+        "rotation": 0,
+        "scaleX": 1,
+        "scaleY": 1,
+        "frame": 1
+      },
+      {
+        "tile": "HPGaugeEnemy.png",
+        "x": 493,
+        "y": 109,
+        "rotation": 0,
+        "scaleX": 1,
+        "scaleY": 1,
+        "frame": 0
+      },
+      {
+        "tile": "HPGaugeEnemy.png",
+        "x": 384,
+        "y": 108,
+        "rotation": 0,
+        "scaleX": 1,
+        "scaleY": 1,
+        "frame": 1
+      },
+      {
+        "tile": "HPGaugeEnemy.png",
+        "x": 384,
+        "y": 109,
+        "rotation": 0,
+        "scaleX": 1,
+        "scaleY": 1,
+        "frame": 0
+      },
+      {
+        "tile": "HPGaugeEnemy.png",
+        "x": 860,
+        "y": 126,
+        "rotation": 0,
+        "scaleX": 1,
+        "scaleY": 1,
+        "frame": 1
+      },
+      {
+        "tile": "HPGaugeEnemy.png",
+        "x": 860,
+        "y": 127,
+        "rotation": 0,
+        "scaleX": 1,
+        "scaleY": 1,
+        "frame": 0
+      },
+      {
+        "tile": "HPGaugeBoss.png",
+        "x": 280,
+        "y": 181,
+        "rotation": 0,
+        "scaleX": 1,
+        "scaleY": 1,
+        "frame": 1
+      },
+      {
+        "tile": "HPGaugeBoss.png",
+        "x": 280,
+        "y": 182,
+        "rotation": 0,
+        "scaleX": 1,
+        "scaleY": 1,
+        "frame": 0
+      },
+      {
+        "tile": "HPGaugeBoss.png",
+        "x": 427,
+        "y": 181,
+        "rotation": 0,
+        "scaleX": 1,
+        "scaleY": 1,
+        "frame": 1
+      },
+      {
+        "tile": "HPGaugeBoss.png",
+        "x": 427,
+        "y": 182,
+        "rotation": 0,
+        "scaleX": 1,
+        "scaleY": 1,
+        "frame": 0
+      },
+      {
+        "tile": "HPGaugeBoss.png",
+        "x": 570,
+        "y": 181,
+        "rotation": 0,
+        "scaleX": 1,
+        "scaleY": 1,
+        "frame": 1
+      },
+      {
+        "tile": "HPGaugeBoss.png",
+        "x": 570,
+        "y": 182,
+        "rotation": 0,
+        "scaleX": 1,
+        "scaleY": 1,
+        "frame": 0
+      },
+      {
+        "tile": "HPGaugeBoss.png",
+        "x": 716,
+        "y": 181,
+        "rotation": 0,
+        "scaleX": 1,
+        "scaleY": 1,
+        "frame": 1
+      },
+      {
+        "tile": "HPGaugeBoss.png",
+        "x": 716,
+        "y": 182,
+        "rotation": 0,
+        "scaleX": 1,
+        "scaleY": 1,
+        "frame": 0
+      },
+      {
+        "tile": "HPGauge.png",
+        "x": 20,
+        "y": 150,
+        "rotation": 0,
+        "scaleX": 1,
+        "scaleY": 1,
+        "frame": 1
+      },
+      {
+        "tile": "HPGauge.png",
+        "x": 20,
+        "y": 151,
+        "rotation": 0,
+        "scaleX": 0.982142866,
+        "scaleY": 1,
+        "frame": 0
+      },
+      {
+        "tile": "BulletEffect.png",
+        "x": 136.589722,
+        "y": 117.760864,
+        "rotation": 3.14050293,
+        "scaleX": 1,
+        "scaleY": 1,
+        "frame": 0
+      }
+    ]
+  },
+  {
+    "file": "helicopter-family-same-scale-clean.png",
+    "game": {
+      "screen": "game",
+      "time": 5.95,
+      "canvas": [
+        960,
+        320
+      ],
+      "loading": 0,
+      "mission": 0,
+      "stage": 0,
+      "playerX": -1040,
+      "playerY": -40.5,
+      "hp": 840,
+      "enemies": 7,
+      "bullets": 0,
+      "paused": 0,
+      "gameState": 0,
+      "decodes": 141,
+      "loadError": 0,
+      "aimMode": 1,
+      "aimTarget": 0,
+      "inputBlocked": 0,
+      "keyboardFire": 0,
+      "gameMenu": 0,
+      "resumeRequired": 0,
+      "active": 1,
+      "keyboardAimX": 0,
+      "callbackInterval": 0.0168,
+      "ticksPerCallback": 1,
+      "motion": 0,
+      "tilt": [
+        0,
+        0,
+        -1
+      ],
+      "hudEditing": 0,
+      "hudCustomized": 0,
+      "hudFallback": 0,
+      "hudSelected": 2,
+      "hudDraftCustomized": 0,
+      "orientationHold": 0
+    },
+    "sprites": [
+      {
+        "tile": "BG_City01.png",
+        "x": 480,
+        "y": 160,
+        "rotation": 0,
+        "scaleX": 1.09464085,
+        "scaleY": 1.09464085,
+        "frame": 0
+      },
+      {
+        "tile": "E_ArmoCar_01.png",
+        "x": 627.97998,
+        "y": 80.5394211,
+        "rotation": 0.00111842528,
+        "scaleX": 1,
+        "scaleY": 1,
+        "frame": 1
+      },
+      {
+        "tile": "E_ArmoCar_Top_03.png",
+        "x": 627.95874,
+        "y": 99.5394058,
+        "rotation": 0.00111842528,
+        "scaleX": 1,
+        "scaleY": 1,
+        "frame": 0
+      },
+      {
+        "tile": "E_ArmoCar_Wpn_01.png",
+        "x": 613.957642,
+        "y": 100.530457,
+        "rotation": 8.74227766e-8,
+        "scaleX": 1,
+        "scaleY": 1,
+        "frame": 0
+      },
+      {
+        "tile": "E_ArmoCar_02.png",
+        "x": 535.970337,
+        "y": 82.2898331,
+        "rotation": 0.00177402573,
+        "scaleX": 1,
+        "scaleY": 1,
+        "frame": 1
+      },
+      {
+        "tile": "E_ArmoCar_Top_01.png",
+        "x": 538.938416,
+        "y": 100.295128,
+        "rotation": 0.00177402573,
+        "scaleX": 1,
+        "scaleY": 1,
+        "frame": 0
+      },
+      {
+        "tile": "E_ArmoCar_Wpn_03.png",
+        "x": 523.938416,
+        "y": 100.286255,
+        "rotation": 8.74227766e-8,
+        "scaleX": 1,
+        "scaleY": 1,
+        "frame": 0
+      },
+      {
+        "tile": "E_ArmoCar_02.png",
+        "x": 877,
+        "y": 99.879982,
+        "rotation": 0,
+        "scaleX": 1,
+        "scaleY": 1,
+        "frame": 1
+      },
+      {
+        "tile": "E_ArmoCar_Top_03.png",
+        "x": 878,
+        "y": 116.879982,
+        "rotation": 0,
+        "scaleX": 1,
+        "scaleY": 1,
+        "frame": 0
+      },
+      {
+        "tile": "E_ArmoCar_Wpn_01.png",
+        "x": 864,
+        "y": 117.879982,
+        "rotation": 8.74227766e-8,
+        "scaleX": 1,
+        "scaleY": 1,
+        "frame": 0
+      },
+      {
+        "tile": "E_Heli_Body_01.png",
+        "x": 289,
+        "y": 233.879974,
+        "rotation": 0,
+        "scaleX": 1,
+        "scaleY": 1,
+        "frame": 0
+      },
+      {
+        "tile": "E_Heli_Prop_01.png",
+        "x": 274,
+        "y": 259.879974,
+        "rotation": 0,
+        "scaleX": 1,
+        "scaleY": 1,
+        "frame": 0
+      },
+      {
+        "tile": "E_Heli_Prop_02.png",
+        "x": 328,
+        "y": 242.879974,
+        "rotation": -2.97500014,
+        "scaleX": 1,
+        "scaleY": 1,
+        "frame": 0
+      },
+      {
+        "tile": "E_Heli_Body_06.png",
+        "x": 496,
+        "y": 232.879974,
+        "rotation": 0,
+        "scaleX": 1,
+        "scaleY": 1,
+        "frame": 0
+      },
+      {
+        "tile": "E_Heli_Prop_02.png",
+        "x": 548,
+        "y": 242.879974,
+        "rotation": -2.97500014,
+        "scaleX": 1,
+        "scaleY": 1,
+        "frame": 0
+      },
+      {
+        "tile": "E_Heli_Prop_01.png",
+        "x": 471,
+        "y": 262.879974,
+        "rotation": 0,
+        "scaleX": 1,
+        "scaleY": 1,
+        "frame": 0
+      },
+      {
+        "tile": "E_Heli_Body_10.png",
+        "x": 694.933838,
+        "y": 239.896667,
+        "rotation": 0.00066743826,
+        "scaleX": 1,
+        "scaleY": 1,
+        "frame": 0
+      },
+      {
+        "tile": "E_Heli_Prop_02.png",
+        "x": 779.926514,
+        "y": 250.9534,
+        "rotation": -2.97433281,
+        "scaleX": 1,
+        "scaleY": 1,
+        "frame": 0
+      },
+      {
+        "tile": "E_Heli_Prop_01.png",
+        "x": 666.915894,
+        "y": 266.87796,
+        "rotation": 0.00066743826,
+        "scaleX": 1,
+        "scaleY": 1,
+        "frame": 0
+      },
+      {
+        "tile": "Ka52_Body.png",
+        "x": 893.111084,
+        "y": 230.879974,
+        "rotation": 0,
+        "scaleX": 1,
+        "scaleY": 1,
+        "frame": 0
+      },
+      {
+        "tile": "Ka52_RotorLower.png",
+        "x": 879.111084,
+        "y": 235.879974,
+        "rotation": 0,
+        "scaleX": 1,
+        "scaleY": 1,
+        "frame": 0
+      },
+      {
+        "tile": "Ka52_Missile.png",
+        "x": 896.611084,
+        "y": 220.879974,
+        "rotation": 8.74227766e-8,
+        "scaleX": 1,
+        "scaleY": 1,
+        "frame": 0
+      },
+      {
+        "tile": "Ka52_RotorUpper.png",
+        "x": 879.111084,
+        "y": 246.879974,
+        "rotation": 0,
+        "scaleX": 1,
+        "scaleY": 1,
+        "frame": 0
+      },
+      {
+        "tile": "Ka52_Cannon.png",
+        "x": 859.111084,
+        "y": 220.879974,
+        "rotation": 8.74227766e-8,
+        "scaleX": 1,
+        "scaleY": 1,
+        "frame": 0
+      },
+      {
+        "tile": "P_Body_07.png",
+        "x": 19.0842285,
+        "y": 109.16423,
+        "rotation": -0.00443479093,
+        "scaleX": 1,
+        "scaleY": 1,
+        "frame": 1
+      },
+      {
+        "tile": "P_Top_07.png",
+        "x": 20.1951904,
+        "y": 134.159546,
+        "rotation": -0.00443479093,
+        "scaleX": 1,
+        "scaleY": 1,
+        "frame": 0
+      },
+      {
+        "tile": "P_Wpn_Gun06.png",
+        "x": 35.1257324,
+        "y": 134.308533,
+        "rotation": 0.100000001,
+        "scaleX": 1,
+        "scaleY": 1,
+        "frame": 0
+      },
+      {
+        "tile": "Terrain_City18.png",
+        "x": 523,
+        "y": 44,
+        "rotation": 0,
+        "scaleX": 1,
+        "scaleY": 1,
+        "frame": 0
+      },
+      {
+        "tile": "Terrain_City21.png",
+        "x": 616,
+        "y": 43,
+        "rotation": 0,
+        "scaleX": 1,
+        "scaleY": 1,
+        "frame": 0
+      },
+      {
+        "tile": "Terrain_City23.png",
+        "x": 709,
+        "y": 45,
+        "rotation": 0,
+        "scaleX": 1,
+        "scaleY": 1,
+        "frame": 0
+      },
+      {
+        "tile": "Terrain_City17.png",
+        "x": 815,
+        "y": 46,
+        "rotation": 0,
+        "scaleX": 1,
+        "scaleY": 1,
+        "frame": 0
+      },
+      {
+        "tile": "Terrain_City18.png",
+        "x": 922,
+        "y": 61,
+        "rotation": 0,
+        "scaleX": 1,
+        "scaleY": 1,
+        "frame": 0
+      },
+      {
+        "tile": "Terrain_City20.png",
+        "x": 986,
+        "y": 53,
+        "rotation": 0,
+        "scaleX": 1,
+        "scaleY": 1,
+        "frame": 0
+      },
+      {
+        "tile": "Object_City09.png",
+        "x": 802,
+        "y": 86,
+        "rotation": 0,
+        "scaleX": 1,
+        "scaleY": 1,
+        "frame": 0
+      },
+      {
+        "tile": "Object_Ruin09.png",
+        "x": 829,
+        "y": 105,
+        "rotation": 0,
+        "scaleX": 1,
+        "scaleY": 1,
+        "frame": 0
+      },
+      {
+        "tile": "Terrain_City01.png",
+        "x": 182,
+        "y": 160,
+        "rotation": 0,
+        "scaleX": 1,
+        "scaleY": 1,
+        "frame": 0
+      },
+      {
+        "tile": "Object_City08.png",
+        "x": 1020,
+        "y": 67,
+        "rotation": 0,
+        "scaleX": 1,
+        "scaleY": 1,
+        "frame": 0
+      },
+      {
+        "tile": "Terrain_City21.png",
+        "x": 1051,
+        "y": 38,
+        "rotation": 0,
+        "scaleX": 1,
+        "scaleY": 1,
+        "frame": 0
+      },
+      {
+        "tile": "Terrain_City12.png",
+        "x": 815,
+        "y": -7,
+        "rotation": 0,
+        "scaleX": 1,
+        "scaleY": 1,
+        "frame": 0
+      },
+      {
+        "tile": "Terrain_City12.png",
+        "x": 521,
+        "y": 3,
+        "rotation": 0,
+        "scaleX": 1,
+        "scaleY": 1,
+        "frame": 0
+      },
+      {
+        "tile": "Terrain_City21.png",
+        "x": 430,
+        "y": 43,
+        "rotation": 0,
+        "scaleX": 1,
+        "scaleY": 1,
+        "frame": 0
+      },
+      {
+        "tile": "Terrain_City20.png",
+        "x": 367,
+        "y": 57,
+        "rotation": 0,
+        "scaleX": 1,
+        "scaleY": 1,
+        "frame": 0
+      },
+      {
+        "tile": "Terrain_City21.png",
+        "x": 304,
+        "y": 64,
+        "rotation": 0,
+        "scaleX": 1,
+        "scaleY": 1,
+        "frame": 0
+      },
+      {
+        "tile": "Terrain_City23.png",
+        "x": 211,
+        "y": 66,
+        "rotation": 0,
+        "scaleX": 1,
+        "scaleY": 1,
+        "frame": 0
+      },
+      {
+        "tile": "Terrain_City21.png",
+        "x": 159,
+        "y": 64,
+        "rotation": 0,
+        "scaleX": 1,
+        "scaleY": 1,
+        "frame": 0
+      },
+      {
+        "tile": "Terrain_City21.png",
+        "x": 67,
+        "y": 64,
+        "rotation": 0,
+        "scaleX": 1,
+        "scaleY": 1,
+        "frame": 0
+      },
+      {
+        "tile": "Terrain_City21.png",
+        "x": -23,
+        "y": 64,
+        "rotation": 0,
+        "scaleX": 1,
+        "scaleY": 1,
+        "frame": 0
+      },
+      {
+        "tile": "HPGaugeEnemy.png",
+        "x": 628,
+        "y": 109,
+        "rotation": 0,
+        "scaleX": 1,
+        "scaleY": 1,
+        "frame": 1
+      },
+      {
+        "tile": "HPGaugeEnemy.png",
+        "x": 628,
+        "y": 110,
+        "rotation": 0,
+        "scaleX": 1,
+        "scaleY": 1,
+        "frame": 0
+      },
+      {
+        "tile": "HPGaugeEnemy.png",
+        "x": 535,
+        "y": 108,
+        "rotation": 0,
+        "scaleX": 1,
+        "scaleY": 1,
+        "frame": 1
+      },
+      {
+        "tile": "HPGaugeEnemy.png",
+        "x": 535,
+        "y": 109,
+        "rotation": 0,
+        "scaleX": 1,
+        "scaleY": 1,
+        "frame": 0
+      },
+      {
+        "tile": "HPGaugeEnemy.png",
+        "x": 876,
+        "y": 126,
+        "rotation": 0,
+        "scaleX": 1,
+        "scaleY": 1,
+        "frame": 1
+      },
+      {
+        "tile": "HPGaugeEnemy.png",
+        "x": 876,
+        "y": 127,
+        "rotation": 0,
+        "scaleX": 1,
+        "scaleY": 1,
+        "frame": 0
+      },
+      {
+        "tile": "HPGaugeEnemy.png",
+        "x": 270,
+        "y": 205,
+        "rotation": 0,
+        "scaleX": 1,
+        "scaleY": 1,
+        "frame": 1
+      },
+      {
+        "tile": "HPGaugeEnemy.png",
+        "x": 270,
+        "y": 206,
+        "rotation": 0,
+        "scaleX": 1,
+        "scaleY": 1,
+        "frame": 0
+      },
+      {
+        "tile": "HPGaugeEnemy.png",
+        "x": 470,
+        "y": 205,
+        "rotation": 0,
+        "scaleX": 1,
+        "scaleY": 1,
+        "frame": 1
+      },
+      {
+        "tile": "HPGaugeEnemy.png",
+        "x": 470,
+        "y": 206,
+        "rotation": 0,
+        "scaleX": 1,
+        "scaleY": 1,
+        "frame": 0
+      },
+      {
+        "tile": "HPGaugeEnemy.png",
+        "x": 670,
+        "y": 205,
+        "rotation": 0,
+        "scaleX": 1,
+        "scaleY": 1,
+        "frame": 1
+      },
+      {
+        "tile": "HPGaugeEnemy.png",
+        "x": 670,
+        "y": 206,
+        "rotation": 0,
+        "scaleX": 1,
+        "scaleY": 1,
+        "frame": 0
+      },
+      {
+        "tile": "HPGaugeEnemy.png",
+        "x": 870,
+        "y": 197,
+        "rotation": 0,
+        "scaleX": 1,
+        "scaleY": 1,
+        "frame": 1
+      },
+      {
+        "tile": "HPGaugeEnemy.png",
+        "x": 870,
+        "y": 198,
+        "rotation": 0,
+        "scaleX": 1,
+        "scaleY": 1,
+        "frame": 0
+      },
+      {
+        "tile": "HPGauge.png",
+        "x": 20,
+        "y": 150,
+        "rotation": 0,
+        "scaleX": 1,
+        "scaleY": 1,
+        "frame": 1
+      },
+      {
+        "tile": "HPGauge.png",
+        "x": 20,
+        "y": 151,
+        "rotation": 0,
+        "scaleX": 1,
+        "scaleY": 1,
+        "frame": 0
+      }
+    ]
+  }
+]

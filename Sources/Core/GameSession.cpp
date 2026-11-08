@@ -40,6 +40,7 @@ struct GameSession::Impl final: WorldHost,CombatHost,PlayerHost,EnemyHost,ItemBo
  bool validationCheats=false;
  GameSession::ValidationCheatStats cheatStats{};
  GameSession::ValidationShotObserver shotObserver;
+ GameSession::ValidationDamageObserver damageObserver;
 #endif
  float safeBackLine=-32000,removeBgLine=-32000;uintptr_t nextID=2;
  Impl(const GameData& d,SaveSlot& s,TileSize t,Random31 r,PlayerPassives* shared,TileSize worldT):data(d),slot(s),sizes(std::move(t)),worldSizes(std::move(worldT)),random(std::move(r)),passives(shared?*shared:ownedPassives){if(!sizes||!random)throw std::invalid_argument("Session requires tile dimensions and original RNG");playerGraph.id=1;}
@@ -193,23 +194,40 @@ struct GameSession::Impl final: WorldHost,CombatHost,PlayerHost,EnemyHost,ItemBo
  bool waitingForBossEncounter(const Machine& m)const{
   return m.enemy&&m.enemy->isBoss&&m.mapEnemyIndex<world.bossEncounterActivated.size()&&!world.bossEncounterActivated[m.mapEnemyIndex];
  }
+#if defined(HM_VALIDATION) && HM_VALIDATION
+ void observeDamage(CombatTarget id,int32_t requested,int32_t before,int32_t after){
+  if(!damageObserver)return;
+  const auto* bullet=assistedBullet?std::get_if<BulletState>(&assistedBullet->value):nullptr;
+  damageObserver(id,bullet&&bullet->info?std::string_view(bullet->info->name):std::string_view{},requested,before,after);
+ }
+#endif
  EnemyFrame enemyFrame(const Machine& m)const{
   EnemyFrame f{world.motionWorld(m.enemy->position.x,globalTime),player?player->position:Vector2{},stage.mission,slot.level()};
   f.motion.paused=f.motion.paused||waitingForBossEncounter(m);return f;
  }
  void damage(CombatTarget id,int32_t amount)override{
 #if defined(HM_VALIDATION) && HM_VALIDATION
-  if(id==1&&player&&validationCheats&&amount>0){++cheatStats.blockedHits;return;}
+  if(id==1&&player&&validationCheats&&amount>0){++cheatStats.blockedHits;observeDamage(id,amount,player->hp,player->hp);return;}
 #endif
   if(assistedBullet&&assistedBullet->aimTarget==id){++aimState.targetHits;assistedBullet->aimTarget=0;}
-  if(id==1){if(player){player->onDamage(amount,*this);changed();}return;}
+  if(id==1){if(player){
+#if defined(HM_VALIDATION) && HM_VALIDATION
+   const auto before=player->hp;
+#endif
+   player->onDamage(amount,*this);changed();
+#if defined(HM_VALIDATION) && HM_VALIDATION
+   observeDamage(id,amount,before,player->hp);
+#endif
+  }return;}
   for(auto& m:enemies)if(m.id==id){auto prev=current;current=&m;
 #if defined(HM_VALIDATION) && HM_VALIDATION
    const bool aliveBoss=m.enemy->isBoss&&m.enemy->hp>0;
+   const auto before=m.enemy->hp;
 #endif
    m.enemy->onDamage(amount,enemyFrame(m),*this);
 #if defined(HM_VALIDATION) && HM_VALIDATION
    if(aliveBoss&&m.enemy->hp<=0)++cheatStats.bossKills;
+   observeDamage(id,amount,before,m.enemy->hp);
 #endif
    current=prev;return;}
  }
@@ -545,9 +563,16 @@ Vector2 GameSession::validationAimOrigin()const{
 }
 WeaponState GameSession::validationWeaponState()const{return impl_->playerGraph.parts.size()>2&&impl_->playerGraph.parts[2]?impl_->playerGraph.parts[2]->weapon:WeaponState{};}
 void GameSession::validationObserveShots(ValidationShotObserver observer){impl_->shotObserver=std::move(observer);}
+void GameSession::validationObserveDamage(ValidationDamageObserver observer){impl_->damageObserver=std::move(observer);}
 void GameSession::validationSpawnEnemy(const EnemyDefinition& enemy){impl_->spawnEnemy(enemy);}
 std::vector<GameSession::ValidationEnemySnapshot> GameSession::validationEnemies()const{
  std::vector<ValidationEnemySnapshot> result;for(const auto& m:impl_->enemies)result.push_back({m.id,m.definition->name,m.enemy->position,m.enemy->hp,m.enemy->hpMax,m.enemy->isBoss,m.removed,m.validationSpawnPosition,m.bounds});return result;
+}
+std::vector<GameSession::ValidationBulletSnapshot> GameSession::validationBullets()const{
+ std::vector<ValidationBulletSnapshot> result;
+ for(const auto& node:impl_->dynamic)if(const auto* b=std::get_if<BulletState>(&node.value))
+  result.push_back({b->info?b->info->name:std::string{},b->toPlayer,b->removed,b->pos,b->vel});
+ return result;
 }
 void GameSession::startValidation(const ValidationScenario& scenario){
  auto destination=validationSpawnPosition(impl_->data,scenario);

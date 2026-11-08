@@ -1,0 +1,170 @@
+[
+  {
+    "file": "Resources/RuntimeImages/web/Lux_F22.png",
+    "size": [
+      112,
+      49
+    ],
+    "alpha_bbox": [
+      1,
+      10,
+      111,
+      38
+    ],
+    "sha256": "ba85eea24c1d925cb873bb1f40bf8b43f9bc7d02097886ffb9ab00f78139bc55",
+    "opaque_mean_rgb": [
+      64.98,
+      63.83,
+      58.37
+    ],
+    "opaque_pixels": 1342,
+    "alpha_threshold": 250
+  },
+  {
+    "file": "Resources/RuntimeImages/web/Lux_Su57.png",
+    "size": [
+      116,
+      42
+    ],
+    "alpha_bbox": [
+      2,
+      7,
+      114,
+      33
+    ],
+    "sha256": "60e7a8ef41ed9959320b76691eceff1ae51f22b520a1b22975abe7652074bcd0",
+    "opaque_mean_rgb": [
+      60.19,
+      56.35,
+      49.98
+    ],
+    "opaque_pixels": 1226,
+    "alpha_threshold": 250
+  },
+  {
+    "file": "Resources/RuntimeImages/web/Lux_MiG31.png",
+    "size": [
+      120,
+      40
+    ],
+    "alpha_bbox": [
+      3,
+      6,
+      118,
+      34
+    ],
+    "sha256": "2706e83d07e8fd2c15ddf6ed79b03cbb987cf672f15188edbebc5a31f02cac96",
+    "opaque_mean_rgb": [
+      57.47,
+      57.53,
+      54.83
+    ],
+    "opaque_pixels": 1269,
+    "alpha_threshold": 250
+  },
+  {
+    "file": "Resources/RuntimeImages/web/Lux_Eurofighter.png",
+    "size": [
+      116,
+      35
+    ],
+    "alpha_bbox": [
+      0,
+      0,
+      116,
+      35
+    ],
+    "sha256": "01d065b5b711af25728f104f694dd60a0ebf18b04ed8f0c2d7168fe9ce2f1951",
+    "opaque_mean_rgb": [
+      62.07,
+      62.17,
+      56.48
+    ],
+    "opaque_pixels": 1422,
+    "alpha_threshold": 250
+  },
+  {
+    "file": "Resources/RuntimeImages/web/Ka52_Body.png",
+    "size": [
+      112,
+      38
+    ],
+    "alpha_bbox": [
+      0,
+      0,
+      112,
+      38
+    ],
+    "sha256": "ee43b3d33d30606b4606888ceee6c47c5b41b0213fb35d600559518634f04136",
+    "opaque_mean_rgb": [
+      100.2,
+      97.4,
+      80.32
+    ],
+    "opaque_pixels": 1385,
+    "alpha_threshold": 250
+  },
+  {
+    "file": "Resources/RuntimeImages/web/Ka52_Cannon.png",
+    "size": [
+      30,
+      6
+    ],
+    "alpha_bbox": [
+      0,
+      0,
+      30,
+      6
+    ],
+    "sha256": "26c9aac264036df3032149885825342b5705b78fbe451ae6c160cbb6a954427a",
+    "opaque_mean_rgb": [
+      102.95,
+      106.2,
+      99.16
+    ],
+    "opaque_pixels": 93,
+    "alpha_threshold": 250
+  },
+  {
+    "file": "Resources/RuntimeImages/web/Ka52_Missile.png",
+    "size": [
+      19,
+      8
+    ],
+    "alpha_bbox": [
+      0,
+      0,
+      19,
+      8
+    ],
+    "sha256": "b9c24e19b48ad39fba953201a26ff2ed99273a52ea1cf2185bbc8eb5cd42a42a",
+    "opaque_mean_rgb": [
+      122.29,
+      115.0,
+      107.92
+    ],
+    "opaque_pixels": 72,
+    "alpha_threshold": 250
+  },
+  {
+    "file": "Resources/RuntimeImages/web/Lux_Euro_Missile.png",
+    "size": [
+      19,
+      5
+    ],
+    "alpha_bbox": [
+      0,
+      0,
+      19,
+      5
+    ],
+    "sha256": "2810dae2a0d6d74993842828410c74d55071ebfb4af187cc86b44216c0c2d86a",
+    "opaque_mean_rgb": [
+      74.69,
+      71.33,
+      63.37
+    ],
+    "opaque_pixels": 51,
+    "alpha_threshold": 250
+  }
+]

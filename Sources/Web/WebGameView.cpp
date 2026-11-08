@@ -888,11 +888,13 @@ bool GameView::validationStart(const char* weapon,int mission,int stage,int leve
         for(int i=0;i<prepared.weaponCount();++i)if(prepared.weaponName(size_t(i))==(weapon?weapon:"")){selected=i;break;}
         if(selected<0)throw std::invalid_argument("Unknown original player weapon");scenario.selectedWeapon=selected;
         cancelGameInput();if(_hudEditing)closeHUDEditor();_resumeRequired=false;_keyboardSettingsOpen=false;_loading=LoadingTransition{};
-        _randomState=seed?seed:1;_retainedWorldTime=0;_retainedWorldCamera={};_validationShots=0;_validationLastShot.clear();_validationError.clear();_validationFixture=scenario;
+        _randomState=seed?seed:1;_retainedWorldTime=0;_retainedWorldCamera={};_validationShots=0;_validationLastShot.clear();_validationDamage.clear();_validationError.clear();_validationFixture=scenario;
+        _hud->setMenuVisible(false); // A new validation fixture resets the previous pause menu.
         startSlot(0,0,mission,stage);
         if(!_loadError.empty()||!_session)throw std::runtime_error(_loadError.empty()?"Session did not start":_loadError);
         _session->setAimMode(AimMode::manual);_session->validationSetCheats(false);
         _session->validationObserveShots([this](const WeaponInfo& w,float,Vector2){++_validationShots;_validationLastShot=w.name;});
+        _session->validationObserveDamage([this](uintptr_t target,std::string_view weapon,int32_t requested,int32_t before,int32_t after){if(_validationDamage.size()==256)_validationDamage.erase(_validationDamage.begin());_validationDamage.push_back({target,std::string(weapon),requested,before,after,_session->world().gameTime});});
         persistSave();noteInteraction();return true;
     }catch(const std::exception& error){_validationFixture.reset();_validationError=error.what();return false;}
 }
@@ -912,8 +914,11 @@ bool GameView::validationTouch(double x,double y,int state){
 void GameView::validationCheats(bool enabled){if(_session)_session->validationSetCheats(enabled);}
 std::string GameView::validationState(){
     std::ostringstream out;out.precision(9);out<<"{\"validation\":true,\"savePath\":"<<validationJSON(_savePath)<<",\"error\":"<<validationJSON(_validationError)<<",\"shots\":"<<_validationShots<<",\"lastShot\":"<<validationJSON(_validationLastShot)<<",\"game\":"<<debugState()<<",\"enemies\":[";
-    bool first=true;if(_session)for(const auto& e:_session->validationEnemies()){if(!first)out<<',';first=false;out<<"{\"id\":"<<e.id<<",\"name\":"<<validationJSON(e.name)<<",\"x\":"<<e.position.x<<",\"y\":"<<e.position.y<<",\"hp\":"<<e.hp<<",\"hpMax\":"<<e.hpMax<<",\"removed\":"<<(e.removed?"true":"false")<<'}';}
+    bool first=true;if(_session)for(const auto& e:_session->validationEnemies()){if(!first)out<<',';first=false;out<<"{\"id\":"<<e.id<<",\"name\":"<<validationJSON(e.name)<<",\"x\":"<<e.position.x<<",\"y\":"<<e.position.y<<",\"hp\":"<<e.hp<<",\"hpMax\":"<<e.hpMax<<",\"removed\":"<<(e.removed?"true":"false")<<",\"bounds\":["<<e.bounds.left<<','<<e.bounds.bottom<<','<<e.bounds.right<<','<<e.bounds.top<<"]}";}
     out<<"],\"sprites\":[";first=true;if(_session)for(const auto& d:_session->sprites()){if(!first)out<<',';first=false;out<<"{\"tile\":"<<validationJSON(d.tile)<<",\"x\":"<<d.position.x<<",\"y\":"<<d.position.y<<",\"rotation\":"<<d.rotation<<",\"scaleX\":"<<d.scale.x<<",\"scaleY\":"<<d.scale.y<<",\"frame\":"<<d.frame<<'}';}
+    out<<"],\"bullets\":[";first=true;if(_session)for(const auto& b:_session->validationBullets()){if(!first)out<<',';first=false;out<<"{\"weapon\":"<<validationJSON(b.weapon)<<",\"toPlayer\":"<<(b.toPlayer?"true":"false")<<",\"removed\":"<<(b.removed?"true":"false")<<",\"x\":"<<b.position.x<<",\"y\":"<<b.position.y<<",\"vx\":"<<b.velocity.x<<",\"vy\":"<<b.velocity.y<<'}';}
+    out<<"],\"weaponState\":";if(_session){const auto w=_session->validationWeaponState();const int index=_session->selectedWeapon();const auto& slot=_save.slots.at(_slotIndex);out<<"{\"name\":"<<validationJSON(w.weaponInfo?w.weaponInfo->name:"")<<",\"firing\":"<<(w.isFire?"true":"false")<<",\"fireCount\":"<<w.fireCount<<",\"reloading\":"<<(w.isReload?"true":"false")<<",\"charge\":"<<(index>=0&&index<slot.weaponCount()?slot.weaponCharge(size_t(index)):-1)<<'}';}else out<<"null";
+    out<<",\"damage\":[";first=true;for(const auto& d:_validationDamage){if(!first)out<<',';first=false;out<<"{\"target\":"<<d.target<<",\"weapon\":"<<validationJSON(d.weapon)<<",\"requested\":"<<d.requested<<",\"before\":"<<d.before<<",\"after\":"<<d.after<<",\"time\":"<<d.time<<'}';}
     out<<"],\"cheats\":{";if(_session){auto stats=_session->validationCheatStats();out<<"\"blockedHits\":"<<stats.blockedHits<<",\"refilledRounds\":"<<stats.refilledRounds<<",\"fallRescues\":"<<stats.fallRescues;}out<<"}}";return out.str();
 }
 #endif

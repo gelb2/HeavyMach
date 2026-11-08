@@ -1,0 +1,31 @@
+{
+  "bundle_id": "com.gelb2.heavymach.restored",
+  "normal_scheme": "HeavyMachRestored",
+  "development_signed": true,
+  "matched_runtime_files": 116,
+  "euro_external_pod_png_present": false,
+  "executable_sha256": "f90719bc15b6326aed28780545c0fd90d1f36caae94b61e1c7ff431ac6da8283",
+  "model": "iPhone Air",
+  "os": "27.2",
+  "transport": "localNetwork",
+  "installation": "update without uninstall",
+  "installed": true,
+  "launched": true,
+  "title_screen_observed": true,
+  "process_terminated": true,
+  "home_screen_observed": true,
+  "documents_before_after_install_identical": true,
+  "documents_after_title_launch_identical": true,
+  "documents_files": 2,
+  "new_units_combat_on_iphone_tested": false,
+  "source_state": "feat/kamov-lux-eurofighter after removal of external Eurofighter pod",
+  "build_note": "Xcode GUI build succeeded after CLI signing errSecInternalComponent; same workspace and normal scheme",
+  "local_evidence_sha256": {
+    "install.json": "a10879be1c6f0173f2fb0d7b98dd1e01ba95a821e33e9fd112e211e502f1daa5",
+    "launch-final.json": "0c698fb21e0a8ff71fc6e3a570a1f43659f58c4ee2b8b8b9b2f7ee329efc5805",
+    "terminate.json": "4f919938a5a679d822981521d48a503cec8d0f59d5f05d8901113e610633e2a2",
+    "save-preservation.json": "51727b7115c38f77fd86349f12f5df7fa1ecb0f4e4153b70af1eea4beab1a5dd",
+    "save-preservation-after-run.json": "eaf06bbab7e9caba45d4874733a6125a2ba51715ebbf8deff26b32533fdf79d4",
+    "package-check.json": "213a91d6e3d0408dbc74c49aaedf9c65de175fb017b355d387ba18cb7ed0904b"
+  }
+}

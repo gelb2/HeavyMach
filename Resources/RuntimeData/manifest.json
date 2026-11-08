@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "baseline": "191728e310158a55df1164ee452b19b48fa97e57",
-  "authoring_sha256": "5685dd5ecf4a354c541a6569b9abe9896a0ae71e1748fa20c6c4f017b347fd72",
+  "authoring_sha256": "a7ac33b70c33351d2322603ee7d7adad117d70578263e7f157685ce6a5dc0542",
   "original_sha256": {
     "MachInfo.mch": "c29eef4990655868b82361ba8f0119841f8c74bed5dcf31410094c5521459b05",
     "PartsInfo.mch": "f7b8ba0da76447c2f022d0114a582e57eb3085bba584c187cc635ad6ad4b6792",
@@ -51,8 +51,8 @@
     "WeaponInfo.mch": "460000cd8480addc496ce4afaa5f3a2385fcc81ad7fa440b1bfa6c338c4365fe"
   },
   "runtime_sha256": {
-    "MachInfo.mch": "c52e94aaeb73ab990921a90bf653de53deb1dcc534291e099809a7988ce46ca2",
-    "PartsInfo.mch": "2fb66f2c61c274912c757852fc4def301cbb025a8c07555e15c39c8bafd20ec6",
+    "MachInfo.mch": "205024a88c3cb772458345cc3b1d0731e1b98bf1ac7b65891de26c0b1cdec638",
+    "PartsInfo.mch": "27f3bd4d8dac2e3488004c42d9079f8a3ccf4612882be9026bdb95cde783f65c",
     "Stage01.map": "989e2342d83bce9b39ab8a95ffde453304f1666222b5c26caea51ef19982c16b",
     "Stage02.map": "88a1e5d9a1492c55780d55c4c8ae78a6f505fab0db6f4a430fefcab5de077ca8",
     "Stage03.map": "4e1283968302b54c979e68038780438566139bacd416147ece773f48ab721708",
@@ -96,13 +96,13 @@
     "Stage41.map": "caf4b957497f31f9d40623b9eb07e6f0361e53caba23240b35500c8f20b0b4e9",
     "Stage42.map": "17c4464c82778149a06b124d500660064238874848e0add67b36481af64e3797",
     "Survival.map": "9b0fd8fcf26964ac2feed2c0c9abe1b0a1d820d2f726521ae27ef29f7a0a6553",
-    "UnitExtensions.hmx": "e3940603f740a9ecc27e33d22123d93aa15575685761d33af4a0e433c6fac35b",
-    "WeaponInfo.mch": "6b0fc57078f7c3a36622bbf9d20fc54dd7d68d6f5213ce33fc391ad8434d5d22"
+    "UnitExtensions.hmx": "bb7566adcfe24790630885fe9f9f075f4ef0d36db52efd97c1fb0162b6606b29",
+    "WeaponInfo.mch": "4dd78178b5d70b09e7176cf65509576c73407917c20b98615802685646c1119f"
   },
   "added": {
-    "machines": 20,
-    "parts": 78,
-    "weapons": 24,
+    "machines": 22,
+    "parts": 86,
+    "weapons": 27,
     "placements": 304,
     "formations": 14
   }
