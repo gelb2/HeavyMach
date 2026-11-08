@@ -2,11 +2,11 @@
 
 ## 카모프·럭스루나에 유로파이터 — 2026-11-09
 
-`tools/prepare_unit_data_authoring.json`에 `Ka52`, `Lux_Eurofighter`와 무장·파츠를 직접 작성하고 기존 내보내기로 MCH에 추가했다. 과거 C++ factory를 실행해 새 정의를 캡처하지 않았다. 기존 레코드 바이트와 순서는 `part_record_order`로 유지한다. `GameData`의 같은 파서, `enemyParts`의 같은 조립, `drawParts/drawWeapon`과 전투 함수가 소비한다.
+`tools/prepare_unit_data_authoring.json`에 `Ka52`, `Lux_Eurofighter`와 무장·파츠를 직접 작성하고 기존 내보내기로 MCH에 추가했다. 과거 C++ factory를 실행해 새 정의를 캡처하지 않았다. 원작과 앞서 추가한 8종의 레코드 바이트를 보존하고 파츠 순서는 `part_record_order`로 유지한다. `GameData`의 같은 파서, `enemyParts`의 같은 조립, `drawParts/drawWeapon`과 전투 함수가 소비한다.
 
-카모프는 원작 Heli006의 HP·EXP·공중 이동 형식과 원작 로터 type3·2프레임을 사용한다. 몸체 아래 실제 기관포·미사일포드가 별도 무장 파츠로 붙는다. 유로파이터는 기존 Lux 수치와 자세·분사 속성을 사용하며 보이는 미사일포드의 소켓에서 발사한다. `aircraft_weapon_mounts=part_sockets`는 기존 고정 총구 속성을 끄는 authoring 선택이다. 카모프 HP 바 -18은 기존 HMEX customGauge 속성이다. 어느 항목도 원작 MCH에 원래 있던 추가 필드로 설명하지 않는다.
+카모프는 원작 Heli006의 HP·EXP·공중 이동 형식과 원작 로터 type3·2프레임을 사용한다. 몸체 아래 실제 기관포·미사일포드가 별도 무장 파츠로 붙는다. 유로파이터는 기존 Lux 수치와 자세·분사 속성을 사용한다. 2026-11-09 후속 사용자 지시로 유로파이터의 외부 미사일포드를 제거했다. 무장 파츠는 Lux_F22와 같은 tileCnt0·rotWpn0이며 기존 HMEX 고정 총구 `(-23.5,-9.5)`에서 실제 미사일을 발사한다. `aircraft_weapon_mounts`의 유로파이터 `part_sockets` 지정은 제거했다. 몸체·HP·3연사와 카모프는 유지한다. 카모프 HP 바 -18은 기존 HMEX customGauge 속성이다. 어느 항목도 원작 MCH에 원래 있던 추가 필드로 설명하지 않는다.
 
-이미지 7개는 오프라인 변환한 실제 PNG이며 플랫폼별 런타임 crop·alias·기종 draw를 추가하지 않았다. 기체별 C++ factory나 별도 표시·전투 분기를 추가하지 않았다. `HM_VALIDATION`에서만 탄환·피해를 읽는 관측 API를 추가했다. 캠페인 MAP·편대·일반 저장은 유지한다. [구현·검증·남은 범위](reviews/kamov-eurofighter-implementation-20261109.md).
+현재 실행용 이미지는 6개×3프로필의 오프라인 변환 PNG다. 유로파이터 포드의 생성 원본은 제작 이력으로 보존하고 실행용 PNG는 제거했다. 플랫폼별 런타임 crop·alias·기종 draw를 추가하지 않았다. 기체별 C++ factory나 별도 표시·전투 분기를 추가하지 않았다. `HM_VALIDATION`에서만 탄환·피해를 읽는 관측 API를 추가했다. 캠페인 MAP·편대·일반 저장은 유지한다. [구현·검증·남은 범위](reviews/kamov-eurofighter-implementation-20261109.md).
 
 ## 신규 유닛 구조 정리 요구 — 2026-11-09
 

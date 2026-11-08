@@ -30,8 +30,9 @@ int main(){
  assert(euro.hpMax==data.machines.at("Lux_F22").hpMax&&euro.giveExp==data.machines.at("Lux_F22").giveExp&&euro.machType==1);
  assert(heli.behavior&&heli.behavior->customGauge&&heli.behavior->gaugeY==-18);
  assert(!heli.behavior->fixedBounds&&!heli.behavior->velocityPitch&&!heli.behavior->mountedWeaponOrigin&&!heli.behavior->independentRandom);
- assert(euro.behavior&&!euro.behavior->mountedWeaponOrigin);
- for(auto key:{"Ka52_Cannon","Ka52_Missile","Lux_Euro_Missile"}){
+ assert(euro.behavior&&euro.behavior->mountedWeaponOrigin);
+ assert(near(euro.behavior->muzzle.x,-23.5f)&&near(euro.behavior->muzzle.y,-9.5f));
+ for(auto key:{"Ka52_Cannon","Ka52_Missile"}){
   const auto& p=data.parts.at(key);assert(p.partsType==2&&p.tileCnt==1&&p.sockets.size()==2);
   assert(data.weapons.at(key).rotWpn==1&&data.weapons.at(key).shotCnt>0);
  }
@@ -41,9 +42,12 @@ int main(){
  assert(missile.dmg==priorMissile.dmg&&missile.spd==priorMissile.spd&&missile.delay==priorMissile.delay&&missile.shotCnt==priorMissile.shotCnt);
  const auto& lux=data.weapons.at("Lux_Euro_Missile");const auto& priorLux=data.weapons.at("Lux_F22_Missile");
  assert(lux.dmg==priorLux.dmg&&lux.spd==priorLux.spd&&lux.delay==priorLux.delay&&lux.shotCnt==priorLux.shotCnt&&lux.shotDly==priorLux.shotDly&&lux.aiTimeScale==priorLux.aiTimeScale);
+ assert(lux.rotWpn==0&&lux.rotWpn==priorLux.rotWpn);
+ const auto& euroWeaponPart=data.parts.at("Lux_Euro_Missile");
+ assert(euroWeaponPart.partsType==2&&euroWeaponPart.tileCnt==0&&!euroWeaponPart.presentation);
  for(const auto& [name,map]:data.maps)for(const auto& e:map.enemies)assert(e.name!="Ka52"&&e.name!="Lux_Eurofighter");
  for(const auto& [name,wave]:data.formations)for(const auto& e:wave.units)assert(e.machine!="Ka52"&&e.machine!="Lux_Eurofighter");
- const std::array<std::string,7> files{{"Ka52_Body.png","Ka52_RotorUpper.png","Ka52_RotorLower.png","Ka52_Cannon.png","Ka52_Missile.png","Lux_Eurofighter.png","Lux_Euro_Missile.png"}};
+ const std::array<std::string,6> files{{"Ka52_Body.png","Ka52_RotorUpper.png","Ka52_RotorLower.png","Ka52_Cannon.png","Ka52_Missile.png","Lux_Eurofighter.png"}};
  for(const auto& file:files)assert(std::filesystem::exists(root/"Resources/RuntimeImages/apple"/file));
  auto dims=[&](std::string_view key){return contractTileSize(root,key);};
  for(const auto& key:{"Ka52_RotorUpper","Ka52_RotorLower"}){
@@ -98,18 +102,32 @@ int main(){
 #if defined(HM_VALIDATION) && HM_VALIDATION
   assert(impacting==wanted);game.validationObserveDamage({});std::cout<<name<<" attributed real weapon impacts="<<impacting.size()<<" PASS\n";
 #endif
-  for(auto& key:wanted)assert(drawn.contains(key+".png"));
+  if(name=="Ka52")for(auto& key:wanted)assert(drawn.contains(key+".png"));
+  else assert(!drawn.contains("Lux_Euro_Missile.png"));
   assert(drawn.contains(name=="Ka52"?"Ka52_Body.png":"Lux_Eurofighter.png"));
   if(name=="Ka52"){assert((upperFrames==std::set<int>{0,1})&&(lowerFrames==std::set<int>{0,1})&&gaugeChecks>0);std::cout<<"Ka52 gauge/body/weapon nonoverlap checks="<<gaugeChecks<<'\n';}
   const auto beforePause=m.enemy->position;game.setPaused(true);game.tick(21,0);assert(near(m.enemy->position.x,beforePause.x)&&near(m.enemy->position.y,beforePause.y));game.setPaused(false);
-  // Muzzle must follow the visible weapon's real socket and common rotation.
+  // Visible Ka52 weapons use their sockets. Eurofighter uses the existing
+  // Lux fixed-muzzle contract while its missile weapon remains invisible.
   for(float angle:{-.18f,0.f,.18f})for(auto& p:m.parts)if(p->armed){
    m.enemy->rotation=angle;p->weapon.aimDir=2.9f;p->weapon.aimDirDest=3.05f;p->weapon.fireOffset={};
    auto d=drawWeapon(p->visual,p->weapon,m.enemy->position,false,1,angle,0,1);
    auto frame=i.frame(*m.enemy,m,*p);refreshWeaponMuzzle(p->weapon,frame);
-   const auto muzzle=rotateAttachment(p->visual.info->sockets[1],d.rotation);
-   assert(near(frame.weaponPos.x+p->weapon.muzzlePos.x,d.position.x+muzzle.x));
-   assert(near(frame.weaponPos.y+p->weapon.muzzlePos.y,d.position.y+muzzle.y));
+   if(name=="Ka52"){
+    const auto muzzle=rotateAttachment(p->visual.info->sockets[1],d.rotation);
+    assert(near(frame.weaponPos.x+p->weapon.muzzlePos.x,d.position.x+muzzle.x));
+    assert(near(frame.weaponPos.y+p->weapon.muzzlePos.y,d.position.y+muzzle.y));
+   }else{
+    const auto muzzle=rotateAttachment(euro.behavior->muzzle,angle);
+    assert(near(frame.weaponPos.x,m.enemy->position.x+muzzle.x)&&near(frame.weaponPos.y,m.enemy->position.y+muzzle.y));
+    assert(frame.socket0.x==0&&frame.socket0.y==0&&frame.socket1.x==0&&frame.socket1.y==0);
+    assert(p->weapon.muzzlePos.x==0&&p->weapon.muzzlePos.y==0);
+    frame.paused=false;frame.time=40;p->weapon.fireTime=39;p->weapon.fireDelay=0;p->weapon.fireCount=1;
+    i.current=&m;tickWeapon(p->weapon,frame,i);i.current=nullptr;
+    const auto* emitted=std::get_if<BulletState>(&i.dynamic.back().value);
+    assert(emitted&&emitted->info==&lux&&emitted->toPlayer);
+    assert(near(emitted->pos.x,frame.weaponPos.x)&&near(emitted->pos.y,frame.weaponPos.y));
+   }
   }
   // Every existing player weapon uses real collision/damage against each new
   // target. Starting inside its hitbox isolates damage handling from aiming.

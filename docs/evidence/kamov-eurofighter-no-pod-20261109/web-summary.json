@@ -1,0 +1,80 @@
+{
+  "ok": true,
+  "units": [
+    {
+      "name": "Ka52",
+      "ok": true,
+      "enemyDamage": [
+        {
+          "target": 1,
+          "weapon": "Ka52_Cannon",
+          "requested": 5,
+          "before": 815,
+          "after": 810,
+          "time": 7.40000039
+        },
+        {
+          "target": 1,
+          "weapon": "Ka52_Missile",
+          "requested": 25,
+          "before": 810,
+          "after": 785,
+          "time": 7.6000004
+        }
+      ],
+      "movement": {
+        "x": 85.51660200000003,
+        "y": 0
+      },
+      "destroyed": true,
+      "playerShots": 17,
+      "minTargetHP": 0,
+      "pauseStable": true,
+      "rotorSeparation": 11
+    },
+    {
+      "name": "Lux_Eurofighter",
+      "ok": true,
+      "enemyDamage": [
+        {
+          "target": 1,
+          "weapon": "Lux_Euro_Missile",
+          "requested": 25,
+          "before": 825,
+          "after": 800,
+          "time": 7.0833337
+        }
+      ],
+      "movement": {
+        "x": 28.812682999999993,
+        "y": 0
+      },
+      "destroyed": true,
+      "playerShots": 37,
+      "minTargetHP": 0,
+      "pauseStable": true,
+      "externalPodVisible": false
+    }
+  ],
+  "weaponsExecuted": 20,
+  "weaponsPassed": 20,
+  "weaponsReused": 0,
+  "errors": [],
+  "cleanComparisonScreens": [
+    "lux-family-same-scale-clean.png",
+    "helicopter-family-same-scale-clean.png"
+  ],
+  "normal": {
+    "bridge": "undefined",
+    "export": "undefined",
+    "prefix": "HeavyMach.",
+    "validation": false
+  },
+  "storage": {
+    "normalSentinel": "preserve-normal",
+    "normalMount": false,
+    "validationMount": true,
+    "saveBytes": 3624,
+    "prefix": "HeavyMach.Validation."
+  }
+}

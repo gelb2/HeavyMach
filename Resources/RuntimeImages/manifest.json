@@ -1421,27 +1421,6 @@
         "upload_rgba_sha256": "d83ace8bbdd748e90fc57e955f01b8b80d9b3594b421e1cfa83ca6a85ab79863",
         "decode_equal": true,
         "upload_equal": true
-      },
-      {
-        "file": "Lux_Euro_Missile.png",
-        "source": "Art/KamovEurofighter/20261109/Euro-pod-generated-v2.png",
-        "source_sha256": "b1cf5935916a3292fb3d1a99502d8c166c1c0976f3fa2b4d88659ac1158b1bf7",
-        "source_crop": [
-          208,
-          206,
-          1581,
-          385
-        ],
-        "source_transform": "mirror-x",
-        "width": 19,
-        "height": 5,
-        "bytes": 390,
-        "sha256": "f5c193cc4cda91f8806e2fbc7619ff35f1bedfa475f3e8cccbbc3d44695024b5",
-        "baseline_premultiplied_sha256": "89e069906e891dfcc0083b2dcd5dd40d919c5fd1bdbceec0a948c220ff2afe74",
-        "decoded_premultiplied_sha256": "89e069906e891dfcc0083b2dcd5dd40d919c5fd1bdbceec0a948c220ff2afe74",
-        "upload_rgba_sha256": "d6a8bb2398e903a19939a13b355986b001bef28ca44937cb779619b1abdce501",
-        "decode_equal": true,
-        "upload_equal": true
       }
     ],
     "web": [
@@ -2828,27 +2807,6 @@
         "baseline_premultiplied_sha256": "d1037315463399882aa3124aeaab7509f2db854d5006ce483ffc19f89ea8e7fc",
         "decoded_premultiplied_sha256": "d1037315463399882aa3124aeaab7509f2db854d5006ce483ffc19f89ea8e7fc",
         "upload_rgba_sha256": "a7dc783a1c9cd176c55204e466ef663dca6c333db440426837919ad0fb6752e7",
-        "decode_equal": true,
-        "upload_equal": true
-      },
-      {
-        "file": "Lux_Euro_Missile.png",
-        "source": "Art/KamovEurofighter/20261109/Euro-pod-generated-v2.png",
-        "source_sha256": "b1cf5935916a3292fb3d1a99502d8c166c1c0976f3fa2b4d88659ac1158b1bf7",
-        "source_crop": [
-          208,
-          206,
-          1581,
-          385
-        ],
-        "source_transform": "mirror-x",
-        "width": 19,
-        "height": 5,
-        "bytes": 419,
-        "sha256": "2810dae2a0d6d74993842828410c74d55071ebfb4af187cc86b44216c0c2d86a",
-        "baseline_premultiplied_sha256": "269b99739f437dfbc0c6831d46e981de0e710cfb2b00c51f7d6f28f5df8b41c0",
-        "decoded_premultiplied_sha256": "269b99739f437dfbc0c6831d46e981de0e710cfb2b00c51f7d6f28f5df8b41c0",
-        "upload_rgba_sha256": "842566fd943287407643565cc3a39e96edb12e70d009ea3ac754f942a25ddfd5",
         "decode_equal": true,
         "upload_equal": true
       }
@@ -4239,33 +4197,12 @@
         "upload_rgba_sha256": "a7dc783a1c9cd176c55204e466ef663dca6c333db440426837919ad0fb6752e7",
         "decode_equal": true,
         "upload_equal": true
-      },
-      {
-        "file": "Lux_Euro_Missile.png",
-        "source": "Art/KamovEurofighter/20261109/Euro-pod-generated-v2.png",
-        "source_sha256": "b1cf5935916a3292fb3d1a99502d8c166c1c0976f3fa2b4d88659ac1158b1bf7",
-        "source_crop": [
-          208,
-          206,
-          1581,
-          385
-        ],
-        "source_transform": "mirror-x",
-        "width": 19,
-        "height": 5,
-        "bytes": 419,
-        "sha256": "2810dae2a0d6d74993842828410c74d55071ebfb4af187cc86b44216c0c2d86a",
-        "baseline_premultiplied_sha256": "269b99739f437dfbc0c6831d46e981de0e710cfb2b00c51f7d6f28f5df8b41c0",
-        "decoded_premultiplied_sha256": "269b99739f437dfbc0c6831d46e981de0e710cfb2b00c51f7d6f28f5df8b41c0",
-        "upload_rgba_sha256": "842566fd943287407643565cc3a39e96edb12e70d009ea3ac754f942a25ddfd5",
-        "decode_equal": true,
-        "upload_equal": true
       }
     ]
   },
   "authored_additions": {
     "manifest": "Art/KamovEurofighter/20261109/bake.json",
-    "sha256": "39ff3ed1913680be17ebddcc45746659d2a13e9f9f12ba342e059cf8daf7299f",
+    "sha256": "153e05c12db029c39f71f92633378db2d0407807ddd8ad27caa7c29611ca7126",
     "generator_sha256": "68f6a0302fa15ac042351555274485dd8608eabc4c37c755e45206b4dac9bb00",
     "helper_sha256": "13c0642c6472977ab748967cd6b560757c41064746f20d190f64e457c064c61f"
   }

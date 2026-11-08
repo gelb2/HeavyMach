@@ -20,9 +20,9 @@
     "Resources/RawData": 46,
     "Resources/Assets.xcassets": 9,
     "Resources/Validation": 1,
-    "Art/Extensions": 23,
+    "Art/Extensions": 28,
     "Resources/RuntimeData": 48,
-    "Resources/RuntimeImages": 211,
+    "Resources/RuntimeImages": 208,
     "Art/KamovEurofighter/20261109": 10
   },
   "files": [
@@ -7367,6 +7367,36 @@
       "sha256": "3960b126cbf2351bef44fa53797f530287c4c0cc47223ce8111f2459313a39a3"
     },
     {
+      "path": "Resources/Assets.xcassets/AppIcon.appiconset/AppIcon128.png",
+      "bytes": 32585,
+      "sha256": "9c6a0cfaf4aa461d68be199522cd130f5b8d5b2ed8e3d5ef6186e4a5f88959e1"
+    },
+    {
+      "path": "Resources/Assets.xcassets/AppIcon.appiconset/AppIcon16.png",
+      "bytes": 805,
+      "sha256": "ee8ec31e79a74672331ab54b91ce6847617b1ee07afa0b18dd2c26bb9d904570"
+    },
+    {
+      "path": "Resources/Assets.xcassets/AppIcon.appiconset/AppIcon256.png",
+      "bytes": 120604,
+      "sha256": "b94ffeea058a07aae9fb9b8c74d5ebd3a02fb56cce31d4627ccd44bb6091ff86"
+    },
+    {
+      "path": "Resources/Assets.xcassets/AppIcon.appiconset/AppIcon32.png",
+      "bytes": 2501,
+      "sha256": "fc3f0ab182c4c2aa39ca5b1bd3db6ff18fdd7c1534820bee47c348f60aaa4ebf"
+    },
+    {
+      "path": "Resources/Assets.xcassets/AppIcon.appiconset/AppIcon512.png",
+      "bytes": 448517,
+      "sha256": "c08b4cbc6d7c61fe2b1c1b458e99a41ca7fad8fcdb1a4dbb779dd348eead4b8e"
+    },
+    {
+      "path": "Resources/Assets.xcassets/AppIcon.appiconset/AppIcon64.png",
+      "bytes": 8817,
+      "sha256": "48cecd48eb115b799cea502cade26eb9b614a86f7b6be2948dc2b23d87738b0e"
+    },
+    {
       "path": "Resources/Assets.xcassets/AppIcon.appiconset/Contents.json",
       "bytes": 1356,
       "sha256": "876ddb48c120f6e09941dc8dab159aa9fcdf9f67afca691a7b1963db9749d566"
@@ -7380,6 +7410,111 @@
       "path": "Resources/Validation/ImageDecodeParity.json",
       "bytes": 124082,
       "sha256": "8887371a5e0247d459f0641b350998ed08b163ac6c3923e4680be7bca2235d17"
+    },
+    {
+      "path": "Art/Extensions/AutoAimControls.png",
+      "bytes": 2275288,
+      "sha256": "8376ff2bc4635472d52ad435688b015e94b1d907995e13e97be8079364d9800b"
+    },
+    {
+      "path": "Art/Extensions/GAA_Shilka_Body.png",
+      "bytes": 1621279,
+      "sha256": "8b78b67c7362b47133fab6e238823f0e153c1ef8c173a6f3223ab30a3f419de2"
+    },
+    {
+      "path": "Art/Extensions/GAA_Shilka_Body2.png",
+      "bytes": 1568325,
+      "sha256": "2285a254646e75fce3e6188455d0275a066e08d99ebdf2cbb4c4575f0dbccf12"
+    },
+    {
+      "path": "Art/Extensions/GAA_Shilka_Gun.png",
+      "bytes": 1001223,
+      "sha256": "f727e5b2356b63339eb064966393d2c236b986a76d81dc7d22717193ca801c24"
+    },
+    {
+      "path": "Art/Extensions/GAA_Shilka_Parts_v2.png",
+      "bytes": 2419679,
+      "sha256": "53bb7031b265ab3439d64c217259f75d2351359fdd446e2519fef174339c8e6a"
+    },
+    {
+      "path": "Art/Extensions/GAA_Shilka_Radar.png",
+      "bytes": 1586250,
+      "sha256": "fd335b45f3f2b4aa497b5f2553c903eb237e1c13bc7a6392f9ade807b947411f"
+    },
+    {
+      "path": "Art/Extensions/GAA_Shilka_Radar_v2.png",
+      "bytes": 2385714,
+      "sha256": "8c6f7624ffb0962f9690adce0e74d54e71fac9b3a814ab4f2afe568989eba167"
+    },
+    {
+      "path": "Art/Extensions/GAA_Shilka_Turret.png",
+      "bytes": 1461357,
+      "sha256": "850cce1e9cf80af45f8b34703e51fa821813da1f78f896ff36a72019248f4d06"
+    },
+    {
+      "path": "Art/Extensions/GAA_Shilka_Turret_v3.png",
+      "bytes": 1538560,
+      "sha256": "b6d21f38c6ea995e58cb16dbf7f7f5f6f11e004d2ec2c2915b39749d6b03c331"
+    },
+    {
+      "path": "Art/Extensions/GAA_Tunguska_Body.png",
+      "bytes": 1670826,
+      "sha256": "33235639ee574cb3ee689c044f48235180a066e30ea1319098f68684c0bf583e"
+    },
+    {
+      "path": "Art/Extensions/GAA_Tunguska_Body2.png",
+      "bytes": 1560071,
+      "sha256": "191c96c8f1365807c4efbecc7906d362e5fc816889e32fb87c021baeb3ed8a5d"
+    },
+    {
+      "path": "Art/Extensions/GAA_Tunguska_Gun.png",
+      "bytes": 826067,
+      "sha256": "e74def2b25fa8fdb811f17b36dd37a50ded771cb36cbdb9155909e20439e7439"
+    },
+    {
+      "path": "Art/Extensions/GAA_Tunguska_Missile.png",
+      "bytes": 1591085,
+      "sha256": "c9f52354db3c1f44aeb4bcdfd9777f417cf3568b6b845cd7a379f2e1eba57453"
+    },
+    {
+      "path": "Art/Extensions/GAA_Tunguska_Parts_v2.png",
+      "bytes": 2308990,
+      "sha256": "a43afb7e3111085b6c1d9d841d3640976211e33e951537fef81324b48a3dcc8a"
+    },
+    {
+      "path": "Art/Extensions/GAA_Tunguska_Radar.png",
+      "bytes": 1714445,
+      "sha256": "602eb34b1abf661f987ae7f9f2a225c7b39ea44e6217095f8fd7c3124d406e5b"
+    },
+    {
+      "path": "Art/Extensions/GAA_Tunguska_Radar_v2.png",
+      "bytes": 2026384,
+      "sha256": "07c00647b1e714fabf8be6b0f1336983e490c437071158cd9d1db6d155646d02"
+    },
+    {
+      "path": "Art/Extensions/GAA_Tunguska_Turret.png",
+      "bytes": 1479396,
+      "sha256": "164754098fe7d5390dc43e3eedddaa18942e280118788de45cc2df6307f06aad"
+    },
+    {
+      "path": "Art/Extensions/GameMenuGlyphs.png",
+      "bytes": 28517,
+      "sha256": "447977393ad822a3508634f4b725368dfcb5a9b2affe0a4ed187e610142a487b"
+    },
+    {
+      "path": "Art/Extensions/Lux_F22.png",
+      "bytes": 829071,
+      "sha256": "8cf228dafd366849f50ce623901a1106dad35df4ccb451e1de6e346c79f6f082"
+    },
+    {
+      "path": "Art/Extensions/Lux_MiG31.png",
+      "bytes": 870924,
+      "sha256": "ef9351c5bb4112c0bc10befa489ae989d3b341e69da29a047c6570d3c468260d"
+    },
+    {
+      "path": "Art/Extensions/Lux_Su57.png",
+      "bytes": 850600,
+      "sha256": "d8797d4559d71df8923e3d755f4f51237053a3ec1d374f0022834111b775a197"
     },
     {
       "path": "Art/Extensions/MenuMetal.png",
@@ -7417,141 +7552,6 @@
       "sha256": "fdff4c3a7193738d2da9ecb0dd233397490a5e1dc29a65544726cd9c68ace626"
     },
     {
-      "path": "Art/Extensions/AutoAimControls.png",
-      "bytes": 2275288,
-      "sha256": "8376ff2bc4635472d52ad435688b015e94b1d907995e13e97be8079364d9800b"
-    },
-    {
-      "path": "Art/Extensions/Lux_F22.png",
-      "bytes": 829071,
-      "sha256": "8cf228dafd366849f50ce623901a1106dad35df4ccb451e1de6e346c79f6f082"
-    },
-    {
-      "path": "Art/Extensions/Lux_MiG31.png",
-      "bytes": 870924,
-      "sha256": "ef9351c5bb4112c0bc10befa489ae989d3b341e69da29a047c6570d3c468260d"
-    },
-    {
-      "path": "Art/Extensions/Lux_Su57.png",
-      "bytes": 850600,
-      "sha256": "d8797d4559d71df8923e3d755f4f51237053a3ec1d374f0022834111b775a197"
-    },
-    {
-      "path": "Art/Extensions/GAA_Shilka_Body.png",
-      "bytes": 1621279,
-      "sha256": "8b78b67c7362b47133fab6e238823f0e153c1ef8c173a6f3223ab30a3f419de2"
-    },
-    {
-      "path": "Art/Extensions/GAA_Shilka_Body2.png",
-      "bytes": 1568325,
-      "sha256": "2285a254646e75fce3e6188455d0275a066e08d99ebdf2cbb4c4575f0dbccf12"
-    },
-    {
-      "path": "Art/Extensions/GAA_Shilka_Gun.png",
-      "bytes": 1001223,
-      "sha256": "f727e5b2356b63339eb064966393d2c236b986a76d81dc7d22717193ca801c24"
-    },
-    {
-      "path": "Art/Extensions/GAA_Shilka_Radar.png",
-      "bytes": 1586250,
-      "sha256": "fd335b45f3f2b4aa497b5f2553c903eb237e1c13bc7a6392f9ade807b947411f"
-    },
-    {
-      "path": "Art/Extensions/GAA_Shilka_Turret.png",
-      "bytes": 1461357,
-      "sha256": "850cce1e9cf80af45f8b34703e51fa821813da1f78f896ff36a72019248f4d06"
-    },
-    {
-      "path": "Art/Extensions/GAA_Tunguska_Body.png",
-      "bytes": 1670826,
-      "sha256": "33235639ee574cb3ee689c044f48235180a066e30ea1319098f68684c0bf583e"
-    },
-    {
-      "path": "Art/Extensions/GAA_Tunguska_Body2.png",
-      "bytes": 1560071,
-      "sha256": "191c96c8f1365807c4efbecc7906d362e5fc816889e32fb87c021baeb3ed8a5d"
-    },
-    {
-      "path": "Art/Extensions/GAA_Tunguska_Gun.png",
-      "bytes": 826067,
-      "sha256": "e74def2b25fa8fdb811f17b36dd37a50ded771cb36cbdb9155909e20439e7439"
-    },
-    {
-      "path": "Art/Extensions/GAA_Tunguska_Missile.png",
-      "bytes": 1591085,
-      "sha256": "c9f52354db3c1f44aeb4bcdfd9777f417cf3568b6b845cd7a379f2e1eba57453"
-    },
-    {
-      "path": "Art/Extensions/GAA_Tunguska_Radar.png",
-      "bytes": 1714445,
-      "sha256": "602eb34b1abf661f987ae7f9f2a225c7b39ea44e6217095f8fd7c3124d406e5b"
-    },
-    {
-      "path": "Art/Extensions/GAA_Tunguska_Turret.png",
-      "bytes": 1479396,
-      "sha256": "164754098fe7d5390dc43e3eedddaa18942e280118788de45cc2df6307f06aad"
-    },
-    {
-      "path": "Art/Extensions/GAA_Shilka_Parts_v2.png",
-      "bytes": 2419679,
-      "sha256": "53bb7031b265ab3439d64c217259f75d2351359fdd446e2519fef174339c8e6a"
-    },
-    {
-      "path": "Art/Extensions/GAA_Shilka_Radar_v2.png",
-      "bytes": 2385714,
-      "sha256": "8c6f7624ffb0962f9690adce0e74d54e71fac9b3a814ab4f2afe568989eba167"
-    },
-    {
-      "path": "Art/Extensions/GAA_Tunguska_Parts_v2.png",
-      "bytes": 2308990,
-      "sha256": "a43afb7e3111085b6c1d9d841d3640976211e33e951537fef81324b48a3dcc8a"
-    },
-    {
-      "path": "Art/Extensions/GAA_Tunguska_Radar_v2.png",
-      "bytes": 2026384,
-      "sha256": "07c00647b1e714fabf8be6b0f1336983e490c437071158cd9d1db6d155646d02"
-    },
-    {
-      "path": "Art/Extensions/GAA_Shilka_Turret_v3.png",
-      "bytes": 1538560,
-      "sha256": "b6d21f38c6ea995e58cb16dbf7f7f5f6f11e004d2ec2c2915b39749d6b03c331"
-    },
-    {
-      "path": "Resources/Assets.xcassets/AppIcon.appiconset/AppIcon128.png",
-      "bytes": 32585,
-      "sha256": "9c6a0cfaf4aa461d68be199522cd130f5b8d5b2ed8e3d5ef6186e4a5f88959e1"
-    },
-    {
-      "path": "Resources/Assets.xcassets/AppIcon.appiconset/AppIcon16.png",
-      "bytes": 805,
-      "sha256": "ee8ec31e79a74672331ab54b91ce6847617b1ee07afa0b18dd2c26bb9d904570"
-    },
-    {
-      "path": "Resources/Assets.xcassets/AppIcon.appiconset/AppIcon256.png",
-      "bytes": 120604,
-      "sha256": "b94ffeea058a07aae9fb9b8c74d5ebd3a02fb56cce31d4627ccd44bb6091ff86"
-    },
-    {
-      "path": "Resources/Assets.xcassets/AppIcon.appiconset/AppIcon32.png",
-      "bytes": 2501,
-      "sha256": "fc3f0ab182c4c2aa39ca5b1bd3db6ff18fdd7c1534820bee47c348f60aaa4ebf"
-    },
-    {
-      "path": "Resources/Assets.xcassets/AppIcon.appiconset/AppIcon512.png",
-      "bytes": 448517,
-      "sha256": "c08b4cbc6d7c61fe2b1c1b458e99a41ca7fad8fcdb1a4dbb779dd348eead4b8e"
-    },
-    {
-      "path": "Resources/Assets.xcassets/AppIcon.appiconset/AppIcon64.png",
-      "bytes": 8817,
-      "sha256": "48cecd48eb115b799cea502cade26eb9b614a86f7b6be2948dc2b23d87738b0e"
-    },
-    {
-      "path": "Art/Extensions/GameMenuGlyphs.png",
-      "bytes": 28517,
-      "sha256": "447977393ad822a3508634f4b725368dfcb5a9b2affe0a4ed187e610142a487b"
-    },
-    {
       "path": "Resources/RuntimeData/MachInfo.mch",
       "bytes": 126464,
       "sha256": "205024a88c3cb772458345cc3b1d0731e1b98bf1ac7b65891de26c0b1cdec638"
@@ -7559,7 +7559,7 @@
     {
       "path": "Resources/RuntimeData/PartsInfo.mch",
       "bytes": 23300,
-      "sha256": "f2708230d85fffa59a26bb915dd9d2315de5c5f11696fd9a1235661f27684eb9"
+      "sha256": "27f3bd4d8dac2e3488004c42d9079f8a3ccf4612882be9026bdb95cde783f65c"
     },
     {
       "path": "Resources/RuntimeData/Stage01.map",
@@ -7779,17 +7779,17 @@
     {
       "path": "Resources/RuntimeData/UnitExtensions.hmx",
       "bytes": 22453,
-      "sha256": "feb60b596debd8b80016740d0055fe299a3b0b0add3783847cd581802ad0ed69"
+      "sha256": "bb7566adcfe24790630885fe9f9f075f4ef0d36db52efd97c1fb0162b6606b29"
     },
     {
       "path": "Resources/RuntimeData/WeaponInfo.mch",
       "bytes": 32180,
-      "sha256": "9ac3167ada32e914661cb91ff608677fe84a78ef15d0dc6af37a6ea5a226e379"
+      "sha256": "4dd78178b5d70b09e7176cf65509576c73407917c20b98615802685646c1119f"
     },
     {
       "path": "Resources/RuntimeData/manifest.json",
       "bytes": 8449,
-      "sha256": "3d5bd15e5e283ce7969ad7c41bebd4d0b937e2a4fdbb6f2938e835ca57198a3a"
+      "sha256": "5d2879984682a25056a8c8e9fc5502415732548700733c3b33885dfb3ea06834"
     },
     {
       "path": "Resources/RuntimeImages/android/GAA_Shilka_Body.png",
@@ -8100,11 +8100,6 @@
       "path": "Resources/RuntimeImages/android/Ka52_RotorUpper.png",
       "bytes": 2922,
       "sha256": "c90f1c6a64c8d8be6c040bb2b27efefbad16d8b8a33c4e43ba0ab15a76c20902"
-    },
-    {
-      "path": "Resources/RuntimeImages/android/Lux_Euro_Missile.png",
-      "bytes": 419,
-      "sha256": "2810dae2a0d6d74993842828410c74d55071ebfb4af187cc86b44216c0c2d86a"
     },
     {
       "path": "Resources/RuntimeImages/android/Lux_Eurofighter.png",
@@ -8452,11 +8447,6 @@
       "sha256": "5041fe996941668e8376a1fef839686efe74e203944d9b27767800f7723c7f78"
     },
     {
-      "path": "Resources/RuntimeImages/apple/Lux_Euro_Missile.png",
-      "bytes": 390,
-      "sha256": "f5c193cc4cda91f8806e2fbc7619ff35f1bedfa475f3e8cccbbc3d44695024b5"
-    },
-    {
       "path": "Resources/RuntimeImages/apple/Lux_Eurofighter.png",
       "bytes": 5200,
       "sha256": "ce36cc50798a7291833e20f338b4f77c6355142f4caf49f10b4f3cd09e5599f5"
@@ -8493,8 +8483,8 @@
     },
     {
       "path": "Resources/RuntimeImages/manifest.json",
-      "bytes": 177492,
-      "sha256": "98f428a7210bc30ad634ebc5691108a670f57b4df91dd9ffd9e65a8b0dda37b1"
+      "bytes": 174831,
+      "sha256": "e67699e771c39bd0022a0926fc569e5efe3646f65980d78d5824595bc011c528"
     },
     {
       "path": "Resources/RuntimeImages/web/GAA_Shilka_Body.png",
@@ -8807,11 +8797,6 @@
       "sha256": "c90f1c6a64c8d8be6c040bb2b27efefbad16d8b8a33c4e43ba0ab15a76c20902"
     },
     {
-      "path": "Resources/RuntimeImages/web/Lux_Euro_Missile.png",
-      "bytes": 419,
-      "sha256": "2810dae2a0d6d74993842828410c74d55071ebfb4af187cc86b44216c0c2d86a"
-    },
-    {
       "path": "Resources/RuntimeImages/web/Lux_Eurofighter.png",
       "bytes": 4977,
       "sha256": "01d065b5b711af25728f104f694dd60a0ebf18b04ed8f0c2d7168fe9ce2f1951"
@@ -8868,8 +8853,8 @@
     },
     {
       "path": "Art/KamovEurofighter/20261109/bake.json",
-      "bytes": 2499,
-      "sha256": "39ff3ed1913680be17ebddcc45746659d2a13e9f9f12ba342e059cf8daf7299f"
+      "bytes": 2158,
+      "sha256": "153e05c12db029c39f71f92633378db2d0407807ddd8ad27caa7c29611ca7126"
     },
     {
       "path": "Art/KamovEurofighter/20261109/prompts.json",
