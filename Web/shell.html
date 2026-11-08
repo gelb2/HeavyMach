@@ -286,7 +286,24 @@
     for(const name of catalog.weapons){const option=document.createElement('option');option.textContent=name;option.value=name;weapons.appendChild(option);}
     panel.querySelector('#hv-start').onclick=()=>{const row=JSON.parse(map.value);window.hmValidation.start({weapon:weapons.value,mission:row.mission,stage:row.stage,level:Number(panel.querySelector('#hv-level').value),grade:Number(panel.querySelector('#hv-grade').value),position:panel.querySelector('#hv-position').checked,x:Number(panel.querySelector('#hv-x').value),y:Number(panel.querySelector('#hv-y').value)});panel.querySelector('#hv-cheats').checked=false;canvas.focus();};
     panel.querySelector('#hv-cheats').onchange=e=>window.hmValidation.cheats(e.target.checked);
-    setInterval(()=>{const s=state();panel.querySelector('#hv-status').textContent=s.error||`발사 ${s.shots} · 탄환 ${s.game?.bullets||0}\n${s.savePath}`;},500);
+    setInterval(()=>{const s=state(),fixture=window.hmValidation.linkFixture;panel.querySelector('#hv-status').textContent=fixture?.error||s.error||`${fixture?.status==='spawned'?fixture.units.join(', ')+' · 1-1 · LV31 · PART6 · SEED12345\n':''}발사 ${s.shots} · 탄환 ${s.game?.bullets||0}\n${s.savePath}`;},500);
+    // Optional review links initialize the same isolated scenario/spawn APIs.
+    // This function is never called by HM_WEB_VALIDATION=OFF builds.
+    const requested=new URLSearchParams(location.search).get('validation-unit');
+    if(requested!==null){
+      const units=requested.split(',').map(name=>name.trim());
+      const fixture=window.hmValidation.linkFixture={status:'pending',units,scenario:{weapon:'P_Wpn_Gun06',mission:0,stage:0,level:30,grade:6,seed:12345},cheats:false};
+      if(units.length<1||units.length>4||new Set(units).size!==units.length||units.some(name=>!catalog.machines.includes(name))){fixture.status='rejected';fixture.error='Unknown or repeated unit, or more than four units requested';return;}
+      weapons.value=fixture.scenario.weapon;panel.querySelector('#hv-level').value='30';panel.querySelector('#hv-grade').value='6';
+      // Defer until the native readiness callback has returned to the browser.
+      setTimeout(()=>{
+        if(window.hmValidation.start(fixture.scenario)!==1){fixture.status='rejected';fixture.error=state().error||'Validation scenario did not start';return;}
+        const s=state(),columns=s.game.canvas[0]>=850?4:2,base=units.length===1?300:Math.min(260,s.game.canvas[0]-240);
+        fixture.spawns=units.map((name,index)=>({name,x:s.game.playerX+base+(index%columns)*145,y:s.game.playerY+90+Math.floor(index/columns)*65}));
+        for(const spawn of fixture.spawns){if(window.hmValidation.spawn(spawn.name,spawn.x,spawn.y)!==1){fixture.status='rejected';fixture.error=state().error||'Validation unit did not spawn';return;}}
+        fixture.status='spawned';canvas.focus({preventScroll:true});
+      },0);
+    }
   }
 
   window.Module = {

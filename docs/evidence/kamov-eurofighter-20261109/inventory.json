@@ -1,0 +1,169 @@
+{
+  "files": [
+    {
+      "path": "docs/evidence/kamov-eurofighter-20261109/adopted-images-preserved.json",
+      "bytes": 113,
+      "sha256": "7af4228b03a4dd37e7651499b18e5c2e087a69a2fd673c1ae0153aeaaabb5e63"
+    },
+    {
+      "path": "docs/evidence/kamov-eurofighter-20261109/core-final28.txt",
+      "bytes": 3547,
+      "sha256": "28f853e59d2a329e8a839a915b4b801e0e7b98d8732fa03fa3b3537cfe89c1ac"
+    },
+    {
+      "path": "docs/evidence/kamov-eurofighter-20261109/final-builds.json",
+      "bytes": 437143,
+      "sha256": "c573dee1dfeb782a75c453e03fbbc541f371098fbf8211a3bb97866f14d3acd1"
+    },
+    {
+      "path": "docs/evidence/kamov-eurofighter-20261109/final-summary.json",
+      "bytes": 2672,
+      "sha256": "b30bb37d45fbed9d801a2b572049a8fda7d318f87306a56bfb48c412021a7985"
+    },
+    {
+      "path": "docs/evidence/kamov-eurofighter-20261109/gauge-second.txt",
+      "bytes": 350,
+      "sha256": "06016c6f6de6d3f1b2eb8a02e58f4bcb9c4bc326d1af2db4866bf93d81ca39d2"
+    },
+    {
+      "path": "docs/evidence/kamov-eurofighter-20261109/map-preservation.json",
+      "bytes": 854,
+      "sha256": "d56849b7a39410a40ce5a80e5dee9ba8d01be1f01f982e647d9998ae8d1a2dae"
+    },
+    {
+      "path": "docs/evidence/kamov-eurofighter-20261109/original-record-sources.json",
+      "bytes": 1468,
+      "sha256": "f0568d2cb711288825d2d3295e052d69830d9ed8e62f01ff94b4f95deff35cad"
+    },
+    {
+      "path": "docs/evidence/kamov-eurofighter-20261109/prior-record-preservation.json",
+      "bytes": 171,
+      "sha256": "2ca24150af2a1d0a749736e190cba5394b897d2f7dd3a2109bba8b2871c5490f"
+    },
+    {
+      "path": "docs/evidence/kamov-eurofighter-20261109/result.json",
+      "bytes": 965,
+      "sha256": "1d15b1d2eb93fc9e9349eb3bab9ec47280166ca1f6b8c319c2e0932b1e6247ec"
+    },
+    {
+      "path": "docs/evidence/kamov-eurofighter-20261109/v1-report.json",
+      "bytes": 38416,
+      "sha256": "8c8420e7c29e4eebca0bb4d4aaf7553a2ea0775034b6779029e53b09d5d02a4c"
+    },
+    {
+      "path": "docs/evidence/kamov-eurofighter-20261109/v3-builds.json",
+      "bytes": 436988,
+      "sha256": "005b2051151b1bf70f0521aee330b67fa2ac82b2c7d7cfae004c72914779697f"
+    },
+    {
+      "path": "docs/evidence/kamov-eurofighter-20261109/v3-report.json",
+      "bytes": 39610,
+      "sha256": "b8261fd407df2249a350d4f493743e984ab3691fca9f6ccddc812ab111fbbf32"
+    },
+    {
+      "path": "docs/evidence/kamov-eurofighter-20261109/v3-summary.json",
+      "bytes": 6310,
+      "sha256": "6cd3a33a14cc7b8abd80589141351bebce591235175c88a87a3936997123b300"
+    },
+    {
+      "path": "docs/evidence/kamov-eurofighter-20261109/v4-builds.json",
+      "bytes": 437036,
+      "sha256": "6ea8d9846156abf71e1ae55cc2245abf91ec0252d195eb7e67aee86dd8ac572b"
+    },
+    {
+      "path": "docs/evidence/kamov-eurofighter-20261109/v4-report.json",
+      "bytes": 40243,
+      "sha256": "e8b7b810982cbbcbc84fbfa1b3922d194ee3cdb1c5d212395a6798503680d51d"
+    },
+    {
+      "path": "Art/KamovEurofighter/20261109/Euro-pod-generated-v2.png",
+      "bytes": 815696,
+      "sha256": "b1cf5935916a3292fb3d1a99502d8c166c1c0976f3fa2b4d88659ac1158b1bf7"
+    },
+    {
+      "path": "Art/KamovEurofighter/20261109/Eurofighter-generated-v1.png",
+      "bytes": 1037529,
+      "sha256": "5a73a8d5001e51039db9ac7480a22541443d9a9170116524ab85ef2528bc4a60"
+    },
+    {
+      "path": "Art/KamovEurofighter/20261109/Eurofighter-generated-v2.png",
+      "bytes": 1012729,
+      "sha256": "ed70539f96f604481b03f997fef0e9fadf42fb4a1f4133907183d8259a284d7f"
+    },
+    {
+      "path": "Art/KamovEurofighter/20261109/Ka52-generated-v1.png",
+      "bytes": 1083450,
+      "sha256": "09c4e374313a52177fa941253df5ba401ae399695fbe7792f6d84364a3fbceda"
+    },
+    {
+      "path": "Art/KamovEurofighter/20261109/bake.json",
+      "bytes": 2499,
+      "sha256": "39ff3ed1913680be17ebddcc45746659d2a13e9f9f12ba342e059cf8daf7299f"
+    },
+    {
+      "path": "Art/KamovEurofighter/20261109/prompts.json",
+      "bytes": 9808,
+      "sha256": "95995ec8fa50fe3a51b915f07260563ac00666c8e18eb9b6c8841c0f8109a77e"
+    },
+    {
+      "path": "Art/KamovEurofighter/20261109/reference-metrics.json",
+      "bytes": 2716,
+      "sha256": "572d70ccb8a2668e6b3f448f17abab96d5fcd3192d27a119f7f99da9c51d33fe"
+    },
+    {
+      "path": "Art/KamovEurofighter/20261109/references/eurofighter-profile.jpg",
+      "bytes": 161658,
+      "sha256": "092f18d470bb13ae08cf798d04624d68732965a7b682c58dd93c2d2d09b68478"
+    },
+    {
+      "path": "Art/KamovEurofighter/20261109/references/ka52-photo.jpg",
+      "bytes": 475718,
+      "sha256": "00450c1712a5e262030045e654022b690ad9188def411b0eed93a1e459aa909e"
+    },
+    {
+      "path": "Art/KamovEurofighter/20261109/runtime-metrics.json",
+      "bytes": 3027,
+      "sha256": "de77e63128c59a9a3daec48aac33f0d6b2602344d0c3c4440be01f365297c10e"
+    },
+    {
+      "path": "docs/public/media/kamov-eurofighter-20261109/Ka52-assembled.png",
+      "bytes": 794668,
+      "sha256": "f9f8c5e079af422b516df4cf249e2d5259bc549a9c96e78094f23019b0b9ddb3"
+    },
+    {
+      "path": "docs/public/media/kamov-eurofighter-20261109/Ka52-destroyed.png",
+      "bytes": 798097,
+      "sha256": "b9fb8a611139fe998120eda543e46df487f3f5111341a1da058010eed805a84a"
+    },
+    {
+      "path": "docs/public/media/kamov-eurofighter-20261109/Ka52-enemy-fire.png",
+      "bytes": 786438,
+      "sha256": "9bbbf1e9bcf127911445a03fb0a978b61568642b713c0af3d820e399435b2feb"
+    },
+    {
+      "path": "docs/public/media/kamov-eurofighter-20261109/Lux_Eurofighter-assembled.png",
+      "bytes": 792694,
+      "sha256": "e2515f60b55e6a943be90df26d1786b8fd6e52e2a02d183acacb155ba385e1a5"
+    },
+    {
+      "path": "docs/public/media/kamov-eurofighter-20261109/Lux_Eurofighter-destroyed.png",
+      "bytes": 794060,
+      "sha256": "966f3b0a6b0dcd5a7de8f77d39be69afaf5efd09e9edc9e136a7a14362183069"
+    },
+    {
+      "path": "docs/public/media/kamov-eurofighter-20261109/Lux_Eurofighter-enemy-fire.png",
+      "bytes": 771837,
+      "sha256": "9b504a14ec6050cf3d40ff30ea5d0cd0d63bf1df43bfe38f9bd4999ba668e614"
+    },
+    {
+      "path": "docs/public/media/kamov-eurofighter-20261109/helicopter-family-same-scale.png",
+      "bytes": 1024944,
+      "sha256": "ad0a1154941ca26c25909622df3e18354bc2b3b665cc3e23f49e69ded3b91a87"
+    },
+    {
+      "path": "docs/public/media/kamov-eurofighter-20261109/lux-family-same-scale.png",
+      "bytes": 983120,
+      "sha256": "043a5e18b5eef754b28dff74421ffa5f8b9feb9f5f078be7e682dac3b74ad932"
+    }
+  ]
+}

@@ -11,7 +11,11 @@ def main():
     if out==ROOT or out.is_relative_to(ROOT/'Resources') or out.is_relative_to(ROOT/'Art'):
         raise SystemExit('Test fixtures cannot be staged in production Resources or Art')
     manifest_path=ROOT/'Resources/RuntimeImages/manifest.json'
-    manifest=json.loads(manifest_path.read_text());rows=manifest['profiles']['apple']
+    manifest=json.loads(manifest_path.read_text())
+    # This fixture compares the pre-hotfix 63 images to their historical loader.
+    # New authored units have no pre-hotfix image; their baker/core/web tests are separate.
+    rows=[r for r in manifest['profiles']['apple']
+          if r['file'].startswith(('VTOL_', 'GAA_')) or r['file'] in ('Lux_F22.png','Lux_Su57.png','Lux_MiG31.png')]
     if len(rows)!=63:raise SystemExit('Expected exactly 63 Apple images')
     selected={};basenames={}
     for row in rows:
@@ -28,7 +32,9 @@ def main():
     for old in sources.iterdir():
         if old.is_file() and old.name not in allowed:old.unlink()
     for source in selected.values():shutil.copyfile(source,sources/source.name)
-    shutil.copyfile(manifest_path,out/'manifest.json')
+    fixture_manifest=dict(manifest)
+    fixture_manifest['profiles']={'apple':rows}
+    (out/'manifest.json').write_text(json.dumps(fixture_manifest,indent=2)+'\n')
     evidence={'schema':1,'test_only':True,'manifest_sha256':sha(manifest_path),'source_count':11,'logical_image_count':63,'sources':{s:sha(p) for s,p in sorted(selected.items())}}
     (out/'fixture-manifest.json').write_text(json.dumps(evidence,indent=2)+'\n')
     print(json.dumps({'test_fixture':str(out),'source_count':11,'logical_images':63}))

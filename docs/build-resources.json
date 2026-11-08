@@ -8,7 +8,10 @@
     "Resources/RawData",
     "Resources/Assets.xcassets",
     "Resources/Validation",
-    "Art/Extensions"
+    "Art/Extensions",
+    "Resources/RuntimeData",
+    "Resources/RuntimeImages",
+    "Art/KamovEurofighter/20261109"
   ],
   "counts": {
     "Resources/OriginalImages": 695,
@@ -17,7 +20,10 @@
     "Resources/RawData": 46,
     "Resources/Assets.xcassets": 9,
     "Resources/Validation": 1,
-    "Art/Extensions": 23
+    "Art/Extensions": 23,
+    "Resources/RuntimeData": 48,
+    "Resources/RuntimeImages": 211,
+    "Art/KamovEurofighter/20261109": 10
   },
   "files": [
     {
@@ -7544,6 +7550,1351 @@
       "path": "Art/Extensions/GameMenuGlyphs.png",
       "bytes": 28517,
       "sha256": "447977393ad822a3508634f4b725368dfcb5a9b2affe0a4ed187e610142a487b"
+    },
+    {
+      "path": "Resources/RuntimeData/MachInfo.mch",
+      "bytes": 126464,
+      "sha256": "205024a88c3cb772458345cc3b1d0731e1b98bf1ac7b65891de26c0b1cdec638"
+    },
+    {
+      "path": "Resources/RuntimeData/PartsInfo.mch",
+      "bytes": 23300,
+      "sha256": "f2708230d85fffa59a26bb915dd9d2315de5c5f11696fd9a1235661f27684eb9"
+    },
+    {
+      "path": "Resources/RuntimeData/Stage01.map",
+      "bytes": 8482,
+      "sha256": "989e2342d83bce9b39ab8a95ffde453304f1666222b5c26caea51ef19982c16b"
+    },
+    {
+      "path": "Resources/RuntimeData/Stage02.map",
+      "bytes": 11414,
+      "sha256": "88a1e5d9a1492c55780d55c4c8ae78a6f505fab0db6f4a430fefcab5de077ca8"
+    },
+    {
+      "path": "Resources/RuntimeData/Stage03.map",
+      "bytes": 14612,
+      "sha256": "4e1283968302b54c979e68038780438566139bacd416147ece773f48ab721708"
+    },
+    {
+      "path": "Resources/RuntimeData/Stage04.map",
+      "bytes": 3619,
+      "sha256": "4c08d0585f958b3e506f7d36b9da4649cca2b4a3e23299cdfd20025eb59dac7c"
+    },
+    {
+      "path": "Resources/RuntimeData/Stage05.map",
+      "bytes": 10892,
+      "sha256": "f9c2308f0aacf71fa9e711f1ae0790f399edb5ec12858358e98e8dcf6c5374b4"
+    },
+    {
+      "path": "Resources/RuntimeData/Stage06.map",
+      "bytes": 10562,
+      "sha256": "a89f03ebd9c24eca2c647cceb7f5d6af2a42ffeabedbf3a823810ce80d6193dd"
+    },
+    {
+      "path": "Resources/RuntimeData/Stage07.map",
+      "bytes": 8082,
+      "sha256": "bf8b1a0ea5a0e363c67a4ae45f12b6e59a3f7830b96ac068e548c3a6d74fdc35"
+    },
+    {
+      "path": "Resources/RuntimeData/Stage08.map",
+      "bytes": 10846,
+      "sha256": "de2e0e1242c5556430ca0dd59a7c096b7f1420558a6310886179b729ddc6a2bd"
+    },
+    {
+      "path": "Resources/RuntimeData/Stage09.map",
+      "bytes": 2280,
+      "sha256": "2efd2805e302999716fbd5083ec4664e531edb3bcb8925257e62dae7351873ed"
+    },
+    {
+      "path": "Resources/RuntimeData/Stage10.map",
+      "bytes": 12431,
+      "sha256": "f3bae93484155e4db92cee70d7d3e4e9e70f5124db43f81cae07924f686ebbf0"
+    },
+    {
+      "path": "Resources/RuntimeData/Stage11.map",
+      "bytes": 12465,
+      "sha256": "375a9e39710cf5da63386fae178b488438f47c0d33f425a86cc4f5fa061e08c7"
+    },
+    {
+      "path": "Resources/RuntimeData/Stage12.map",
+      "bytes": 5666,
+      "sha256": "6198bcf589b2a3524aa649c079636674d39d4f73241dd9166b18069089a3024b"
+    },
+    {
+      "path": "Resources/RuntimeData/Stage13.map",
+      "bytes": 10808,
+      "sha256": "9892d0b7dcfe49b1443447cf48616895a6635157be945bd03869557f8d9a959b"
+    },
+    {
+      "path": "Resources/RuntimeData/Stage14.map",
+      "bytes": 1744,
+      "sha256": "ad177e385820379692d19d2a2c107c2410f7b73a89c93718041c48c34e2c4f9a"
+    },
+    {
+      "path": "Resources/RuntimeData/Stage15.map",
+      "bytes": 8347,
+      "sha256": "5449b39b96d1c01ceebb4133bc57522e1534ecafe4ad72b4514f819d88634039"
+    },
+    {
+      "path": "Resources/RuntimeData/Stage16.map",
+      "bytes": 8143,
+      "sha256": "9efee5f0d95c0a097bd12aa9794332061b841bb1edc3d3df6101f519edd41189"
+    },
+    {
+      "path": "Resources/RuntimeData/Stage17.map",
+      "bytes": 10016,
+      "sha256": "e810a648135b9d47c79b8863da5d133dd4014edcb316e3f83ef8b340b8817f91"
+    },
+    {
+      "path": "Resources/RuntimeData/Stage18.map",
+      "bytes": 8112,
+      "sha256": "f94a2f510a2d645be8c0c14d517414f57d2b5aefe435a22a4657bd7feb3220d5"
+    },
+    {
+      "path": "Resources/RuntimeData/Stage19.map",
+      "bytes": 2595,
+      "sha256": "0a8330e31147b2edc3c076958f3ca28553dd3dc4480c393a45cdecc89b8ac21b"
+    },
+    {
+      "path": "Resources/RuntimeData/Stage20.map",
+      "bytes": 10286,
+      "sha256": "220c029b489d7f560148fdbecca54caf45d699b4b88a632f70b5436370088453"
+    },
+    {
+      "path": "Resources/RuntimeData/Stage21.map",
+      "bytes": 8360,
+      "sha256": "b42afdbf14fd3e8fd0e3cae92c319a4c2738087e9593308931a8f27de23f4ac8"
+    },
+    {
+      "path": "Resources/RuntimeData/Stage22.map",
+      "bytes": 8116,
+      "sha256": "93352a06f8cbf41f72a92bd22a0e2b8622d8fb9b104aa4cade4eda713167c4f7"
+    },
+    {
+      "path": "Resources/RuntimeData/Stage23.map",
+      "bytes": 7911,
+      "sha256": "ec61181420c927bd297de197ce9a2d32966ea664aa8a792c8d178206c770ae9c"
+    },
+    {
+      "path": "Resources/RuntimeData/Stage24.map",
+      "bytes": 1734,
+      "sha256": "53e30a5e348800ee7db777cccc4e72ac0d295a5511811dc185ab8957d1de828e"
+    },
+    {
+      "path": "Resources/RuntimeData/Stage25.map",
+      "bytes": 9407,
+      "sha256": "af483b61fe2d0848cdd9313c95dc5aae660f55ee5b40892dc0eeec68b9d1f92f"
+    },
+    {
+      "path": "Resources/RuntimeData/Stage26.map",
+      "bytes": 12062,
+      "sha256": "0906109e9be38cef9e40e1233567613a56c02e4c5e9f9934f987afc41e1a8eaa"
+    },
+    {
+      "path": "Resources/RuntimeData/Stage27.map",
+      "bytes": 10215,
+      "sha256": "6f27e6ba3e3b5f172f10616cc4b390b03fff0b54b20bb0720a4e0cd856f6f564"
+    },
+    {
+      "path": "Resources/RuntimeData/Stage28.map",
+      "bytes": 13570,
+      "sha256": "dce84389bd8666ffa048f7632c92cb5cb2a6029dcecc42d38535b27fcdc004a0"
+    },
+    {
+      "path": "Resources/RuntimeData/Stage29.map",
+      "bytes": 1883,
+      "sha256": "a6fffac303e855eecadf262f23f378a69d8bce91df53ac5da3b7a3e037071cce"
+    },
+    {
+      "path": "Resources/RuntimeData/Stage30.map",
+      "bytes": 7686,
+      "sha256": "ebf7071f6f755ba0aee3ebc2f1117dc4313f48ac38e1407611a6fe794443c544"
+    },
+    {
+      "path": "Resources/RuntimeData/Stage31.map",
+      "bytes": 7096,
+      "sha256": "2cb23317285f2fc411b5128f10d33632bb3305a7e60b512430c868f78367a112"
+    },
+    {
+      "path": "Resources/RuntimeData/Stage32.map",
+      "bytes": 5595,
+      "sha256": "3d0797b9a53a7c96cfb451e9291767baf6a906ecde6791c481b8a764058a61f6"
+    },
+    {
+      "path": "Resources/RuntimeData/Stage33.map",
+      "bytes": 5315,
+      "sha256": "618b83952679d1fb2757f62b79c11d7381786c89fcfa24aaab1ca85eca82808c"
+    },
+    {
+      "path": "Resources/RuntimeData/Stage34.map",
+      "bytes": 9414,
+      "sha256": "93b6e5cc5b7db92c58e0807100033b3811fa722034f865fd5a6764fe8e0bd341"
+    },
+    {
+      "path": "Resources/RuntimeData/Stage35.map",
+      "bytes": 1551,
+      "sha256": "4997557032d8a6938bde813b67d2c501d1498f2bef1a2ceddc7aaaff94b429f4"
+    },
+    {
+      "path": "Resources/RuntimeData/Stage36.map",
+      "bytes": 3878,
+      "sha256": "12af950af80969dd99153e081ab97955a887276ff6947459a08ebe22a8be87f6"
+    },
+    {
+      "path": "Resources/RuntimeData/Stage37.map",
+      "bytes": 2654,
+      "sha256": "f566b4a5a6c6b7c29b867538f78a8d05c183c05f8c56a0a75bc5eb49573415c3"
+    },
+    {
+      "path": "Resources/RuntimeData/Stage38.map",
+      "bytes": 5166,
+      "sha256": "39800e9555a8674d29cc09080d662b4d0d7c7353aee11c020928dc1b2f1269d6"
+    },
+    {
+      "path": "Resources/RuntimeData/Stage39.map",
+      "bytes": 2222,
+      "sha256": "0ed5a7d00f43abe25b67226f119c255a7da9187a3438c2d179c50c61e6244cff"
+    },
+    {
+      "path": "Resources/RuntimeData/Stage40.map",
+      "bytes": 2814,
+      "sha256": "adfa18a9617a1e29efe90e5ac03a7ec3ca033768f401b9f476b6c66dc0f75131"
+    },
+    {
+      "path": "Resources/RuntimeData/Stage41.map",
+      "bytes": 830,
+      "sha256": "caf4b957497f31f9d40623b9eb07e6f0361e53caba23240b35500c8f20b0b4e9"
+    },
+    {
+      "path": "Resources/RuntimeData/Stage42.map",
+      "bytes": 126,
+      "sha256": "17c4464c82778149a06b124d500660064238874848e0add67b36481af64e3797"
+    },
+    {
+      "path": "Resources/RuntimeData/Survival.map",
+      "bytes": 903,
+      "sha256": "9b0fd8fcf26964ac2feed2c0c9abe1b0a1d820d2f726521ae27ef29f7a0a6553"
+    },
+    {
+      "path": "Resources/RuntimeData/UnitExtensions.hmx",
+      "bytes": 22453,
+      "sha256": "feb60b596debd8b80016740d0055fe299a3b0b0add3783847cd581802ad0ed69"
+    },
+    {
+      "path": "Resources/RuntimeData/WeaponInfo.mch",
+      "bytes": 32180,
+      "sha256": "9ac3167ada32e914661cb91ff608677fe84a78ef15d0dc6af37a6ea5a226e379"
+    },
+    {
+      "path": "Resources/RuntimeData/manifest.json",
+      "bytes": 8449,
+      "sha256": "3d5bd15e5e283ce7969ad7c41bebd4d0b937e2a4fdbb6f2938e835ca57198a3a"
+    },
+    {
+      "path": "Resources/RuntimeImages/android/GAA_Shilka_Body.png",
+      "bytes": 4299,
+      "sha256": "ed70226028cef8b51de44550be30a7b56bef1833011e3b223b354e08ec08d82a"
+    },
+    {
+      "path": "Resources/RuntimeImages/android/GAA_Shilka_Body2.png",
+      "bytes": 4290,
+      "sha256": "f492c17033c14c649b49cfbd15a10b5f8fa4d2f1438251b1a5e5b199d8b838d9"
+    },
+    {
+      "path": "Resources/RuntimeImages/android/GAA_Shilka_Gun.png",
+      "bytes": 733,
+      "sha256": "1f367799b2e9d232ad950b2b3a4933cb7bca169eda702a4147c0d4631a18fc49"
+    },
+    {
+      "path": "Resources/RuntimeImages/android/GAA_Shilka_Radar0.png",
+      "bytes": 633,
+      "sha256": "95fcb4174140bcf87ff78edb941660549053bf8fab696467502bd2b526f7f153"
+    },
+    {
+      "path": "Resources/RuntimeImages/android/GAA_Shilka_Radar1.png",
+      "bytes": 686,
+      "sha256": "4cbdcb5ae23aafd975d80ed52b571d19e3fa3b19575d3391a67d52605c1118c7"
+    },
+    {
+      "path": "Resources/RuntimeImages/android/GAA_Shilka_Radar10.png",
+      "bytes": 657,
+      "sha256": "33ef4f4e463fbd42ec45fa4947fbefee070c89a1ff2a202c1c8c439a868a6fe5"
+    },
+    {
+      "path": "Resources/RuntimeImages/android/GAA_Shilka_Radar11.png",
+      "bytes": 637,
+      "sha256": "2f33dfb76728c812c77942a56333836c640ecd896f7a0e6fb6428ba797940438"
+    },
+    {
+      "path": "Resources/RuntimeImages/android/GAA_Shilka_Radar12.png",
+      "bytes": 760,
+      "sha256": "978a3eaa2ee876066574cc9df1e6313ea13444925e9d9c20c6301a531e535688"
+    },
+    {
+      "path": "Resources/RuntimeImages/android/GAA_Shilka_Radar13.png",
+      "bytes": 697,
+      "sha256": "2b31ae1ac8a742de6afb207f27cbd3fb8cd18a7787d2b6d933f69dedf5976f37"
+    },
+    {
+      "path": "Resources/RuntimeImages/android/GAA_Shilka_Radar14.png",
+      "bytes": 720,
+      "sha256": "fa097a15776b71b89c233bcd8d84016141ad3b9d345d8b1cd505041b32c59f7e"
+    },
+    {
+      "path": "Resources/RuntimeImages/android/GAA_Shilka_Radar15.png",
+      "bytes": 656,
+      "sha256": "0ddfbf75aad3080410b74280a23d03febf9478088a2739e9f75a1b4864ec7764"
+    },
+    {
+      "path": "Resources/RuntimeImages/android/GAA_Shilka_Radar16.png",
+      "bytes": 651,
+      "sha256": "dbf3ab3649bd45ce18f4ff10ba17c7ea5d323c4103a87640498ab9789ca37dc2"
+    },
+    {
+      "path": "Resources/RuntimeImages/android/GAA_Shilka_Radar17.png",
+      "bytes": 627,
+      "sha256": "5fb8c4380f661a33bd0f7757b32d02ebe4dd8684e577d2073b173b80bd5b97ba"
+    },
+    {
+      "path": "Resources/RuntimeImages/android/GAA_Shilka_Radar18.png",
+      "bytes": 479,
+      "sha256": "6e319d3f44e23f314ca3f1d5fc183f2311822c5892fe606615fe8c7b742e9470"
+    },
+    {
+      "path": "Resources/RuntimeImages/android/GAA_Shilka_Radar19.png",
+      "bytes": 614,
+      "sha256": "3fd220e6825e3e87dc0a64d533dfce0760534e973dfbad0c3add63a3af1f7498"
+    },
+    {
+      "path": "Resources/RuntimeImages/android/GAA_Shilka_Radar2.png",
+      "bytes": 677,
+      "sha256": "9c05cbb6b04ee23f8b178e81ffd1cba6acdcbf24fb68003051e0eae636b101b2"
+    },
+    {
+      "path": "Resources/RuntimeImages/android/GAA_Shilka_Radar20.png",
+      "bytes": 670,
+      "sha256": "14ef3c2e0d332972ce14fce86102c1490437c1e2e7ab6f5baf77c26820c6f289"
+    },
+    {
+      "path": "Resources/RuntimeImages/android/GAA_Shilka_Radar21.png",
+      "bytes": 673,
+      "sha256": "2e31c14400d10d53b27479ecb721bd30ed4f4d819eb628453d46738d3684d738"
+    },
+    {
+      "path": "Resources/RuntimeImages/android/GAA_Shilka_Radar22.png",
+      "bytes": 695,
+      "sha256": "db86a2d37b1e6a2b9385c8605d1d343817ba17c198763473c0609ed9030ca91e"
+    },
+    {
+      "path": "Resources/RuntimeImages/android/GAA_Shilka_Radar23.png",
+      "bytes": 698,
+      "sha256": "fb14c7646154b099c708ecee92d7d199e4708456e4d440d9bd404e0aad0579a1"
+    },
+    {
+      "path": "Resources/RuntimeImages/android/GAA_Shilka_Radar3.png",
+      "bytes": 681,
+      "sha256": "c4a4a3b47daa42b6b69a8980508bb33aa360d7a447fb7725225524ef7d271911"
+    },
+    {
+      "path": "Resources/RuntimeImages/android/GAA_Shilka_Radar4.png",
+      "bytes": 655,
+      "sha256": "fb41e1fb322b0e1a05af4da5c315f156b86af416e5ba2c53d9df064ef8595624"
+    },
+    {
+      "path": "Resources/RuntimeImages/android/GAA_Shilka_Radar5.png",
+      "bytes": 601,
+      "sha256": "9e2287ad0e33dcb29c6cdbcad35db6465f101838cec1e31409a6b83fe08a9dfc"
+    },
+    {
+      "path": "Resources/RuntimeImages/android/GAA_Shilka_Radar6.png",
+      "bytes": 502,
+      "sha256": "f7de7f113206f8641725aacaf15f63ad9af61fe26574e0b8035080f886b7dfe2"
+    },
+    {
+      "path": "Resources/RuntimeImages/android/GAA_Shilka_Radar7.png",
+      "bytes": 533,
+      "sha256": "63c564fea14ebfe48f9b732b64f8a45bfd59531c7d3d1b050da7b95df1057e60"
+    },
+    {
+      "path": "Resources/RuntimeImages/android/GAA_Shilka_Radar8.png",
+      "bytes": 566,
+      "sha256": "b265dccf95b41b2a54f17fe404cc605a3975c36eb00664b70cc7bd295039e980"
+    },
+    {
+      "path": "Resources/RuntimeImages/android/GAA_Shilka_Radar9.png",
+      "bytes": 612,
+      "sha256": "161b42b09c1427177151bae0831505b1976e09ee545b8d3d57a1876b64b28c78"
+    },
+    {
+      "path": "Resources/RuntimeImages/android/GAA_Shilka_Turret.png",
+      "bytes": 3695,
+      "sha256": "8f8e0f7aed8c395132cf955ec8f7c9c424b20bafc532dd5639cd41c733eb00d4"
+    },
+    {
+      "path": "Resources/RuntimeImages/android/GAA_Tunguska_Body.png",
+      "bytes": 5524,
+      "sha256": "ad9ad57bf25f7638c7a8f40572e87c36d22b1f4cc57ca8af5a99cc22f6fabdf8"
+    },
+    {
+      "path": "Resources/RuntimeImages/android/GAA_Tunguska_Body2.png",
+      "bytes": 5512,
+      "sha256": "8b92d39b84e5088f617e23b1615d7303383ca21c3e3f906ffd3e553a6af7c54c"
+    },
+    {
+      "path": "Resources/RuntimeImages/android/GAA_Tunguska_Gun.png",
+      "bytes": 855,
+      "sha256": "da1313577f36dbe5f1ac7f1e288eb6444e392f2586815f7c025bfb148aa733a8"
+    },
+    {
+      "path": "Resources/RuntimeImages/android/GAA_Tunguska_Missile.png",
+      "bytes": 1538,
+      "sha256": "a18870b08d7aff51674d4d7c622ffbca661183de54fe07291ba7274d0253c3fe"
+    },
+    {
+      "path": "Resources/RuntimeImages/android/GAA_Tunguska_Radar0.png",
+      "bytes": 779,
+      "sha256": "a9a4cd781337454cf2ae196240fe1b7e82ff3e7d95ce06633f83e972b0f74890"
+    },
+    {
+      "path": "Resources/RuntimeImages/android/GAA_Tunguska_Radar1.png",
+      "bytes": 809,
+      "sha256": "d54188b123f12fade1b1b15cf25699f176fc98d82edce9021600ca67017a6265"
+    },
+    {
+      "path": "Resources/RuntimeImages/android/GAA_Tunguska_Radar10.png",
+      "bytes": 828,
+      "sha256": "891abf6569bd56bff4bb94194d47bf29dcaea2e28955812a1bc5aca7bddd8cae"
+    },
+    {
+      "path": "Resources/RuntimeImages/android/GAA_Tunguska_Radar11.png",
+      "bytes": 828,
+      "sha256": "7c7c641b603488a341d518a5b9e2f005c0aae92be2271a2e72b86f0394e03d79"
+    },
+    {
+      "path": "Resources/RuntimeImages/android/GAA_Tunguska_Radar12.png",
+      "bytes": 753,
+      "sha256": "80e872d942510dd647968ab4b051a1eb21e61e7d4fdf3d543edc15ce2df4e691"
+    },
+    {
+      "path": "Resources/RuntimeImages/android/GAA_Tunguska_Radar13.png",
+      "bytes": 829,
+      "sha256": "6cc8d58206be6f5b5f008f844a78c881a1545aa9bf5cdf2c2f5c3b8306eb96cc"
+    },
+    {
+      "path": "Resources/RuntimeImages/android/GAA_Tunguska_Radar14.png",
+      "bytes": 836,
+      "sha256": "eda686f121778e193dcfbce7ada48dd4785fc91f891313166783fa9fb6249afd"
+    },
+    {
+      "path": "Resources/RuntimeImages/android/GAA_Tunguska_Radar15.png",
+      "bytes": 780,
+      "sha256": "5bb295d8e422f74f70b88da11325a98eb142282e9c93a8b69348e6ea526b2a20"
+    },
+    {
+      "path": "Resources/RuntimeImages/android/GAA_Tunguska_Radar16.png",
+      "bytes": 782,
+      "sha256": "adec8be381f4266cf91430aa7d5d8a141e39d0eb24e8a24826c576d0f4d1e556"
+    },
+    {
+      "path": "Resources/RuntimeImages/android/GAA_Tunguska_Radar17.png",
+      "bytes": 792,
+      "sha256": "538f5a718d5a03356469292cb5d73346d83df609d567e38849281dc5445c98b4"
+    },
+    {
+      "path": "Resources/RuntimeImages/android/GAA_Tunguska_Radar18.png",
+      "bytes": 499,
+      "sha256": "46c23566d8281d1915af05ffadeff47c5552f1b1840ba0002fc10319be0c80be"
+    },
+    {
+      "path": "Resources/RuntimeImages/android/GAA_Tunguska_Radar19.png",
+      "bytes": 790,
+      "sha256": "aee3b3250f0077573f2adb20899748acae17744cb174ccbda1536a59f2db34d7"
+    },
+    {
+      "path": "Resources/RuntimeImages/android/GAA_Tunguska_Radar2.png",
+      "bytes": 807,
+      "sha256": "7fba053d0cd1e1fd503d3bb289cf83d15236054313e1facbc420f05a1afcc3b6"
+    },
+    {
+      "path": "Resources/RuntimeImages/android/GAA_Tunguska_Radar20.png",
+      "bytes": 789,
+      "sha256": "51dd82aa9aa33a784127441f27024e6331cf56d2c90cb808b937b42df988226a"
+    },
+    {
+      "path": "Resources/RuntimeImages/android/GAA_Tunguska_Radar21.png",
+      "bytes": 814,
+      "sha256": "d65303467f475541f90ad3f8097a38f962ec3f3b2a6023a74522fa185b61d41c"
+    },
+    {
+      "path": "Resources/RuntimeImages/android/GAA_Tunguska_Radar22.png",
+      "bytes": 808,
+      "sha256": "ee0e20194bd5ed9d0d47c113811f7cf8fcec5ed813f34dd2229882236dbf18ea"
+    },
+    {
+      "path": "Resources/RuntimeImages/android/GAA_Tunguska_Radar23.png",
+      "bytes": 770,
+      "sha256": "51f71eb027526419d13f252558fc29f8e435bc3d1bb6025cc0a3de1ab3607089"
+    },
+    {
+      "path": "Resources/RuntimeImages/android/GAA_Tunguska_Radar3.png",
+      "bytes": 740,
+      "sha256": "545e99276befb71c59ea5758aa89f496f5902912cab751a73b0f697835fc55b8"
+    },
+    {
+      "path": "Resources/RuntimeImages/android/GAA_Tunguska_Radar4.png",
+      "bytes": 764,
+      "sha256": "7a4f3e34d3cad486742905b86dec100619dc91b46d0bda1ea778acfb91afde23"
+    },
+    {
+      "path": "Resources/RuntimeImages/android/GAA_Tunguska_Radar5.png",
+      "bytes": 708,
+      "sha256": "fb554cd30b689e7699984b4355ff189f5f9cd10bedd8264eadfe16e7c53a92ba"
+    },
+    {
+      "path": "Resources/RuntimeImages/android/GAA_Tunguska_Radar6.png",
+      "bytes": 492,
+      "sha256": "e3fd4711679215fa6b3f45a8a5813c546fe6bf1864f8288b732bc035deefba8d"
+    },
+    {
+      "path": "Resources/RuntimeImages/android/GAA_Tunguska_Radar7.png",
+      "bytes": 715,
+      "sha256": "8cb4d9908343f15f433789236a803ea10238f4926a2c092dafcfe2fc2eebb48a"
+    },
+    {
+      "path": "Resources/RuntimeImages/android/GAA_Tunguska_Radar8.png",
+      "bytes": 794,
+      "sha256": "9a957ff9bbb5f7863bb7d4c9a61fd786a30bd8315b3918147b295748ad7f813e"
+    },
+    {
+      "path": "Resources/RuntimeImages/android/GAA_Tunguska_Radar9.png",
+      "bytes": 809,
+      "sha256": "36f01224f50569c7be6f231083e82148712ff03eb34f1771c5469b6c0f3f7ab2"
+    },
+    {
+      "path": "Resources/RuntimeImages/android/GAA_Tunguska_Turret.png",
+      "bytes": 2882,
+      "sha256": "94574a51e24a3a1ed809a06e471be3d0577eaa10353d36a04531e600d1986d89"
+    },
+    {
+      "path": "Resources/RuntimeImages/android/Ka52_Body.png",
+      "bytes": 6094,
+      "sha256": "ee43b3d33d30606b4606888ceee6c47c5b41b0213fb35d600559518634f04136"
+    },
+    {
+      "path": "Resources/RuntimeImages/android/Ka52_Cannon.png",
+      "bytes": 466,
+      "sha256": "26c9aac264036df3032149885825342b5705b78fbe451ae6c160cbb6a954427a"
+    },
+    {
+      "path": "Resources/RuntimeImages/android/Ka52_Missile.png",
+      "bytes": 684,
+      "sha256": "b9c24e19b48ad39fba953201a26ff2ed99273a52ea1cf2185bbc8eb5cd42a42a"
+    },
+    {
+      "path": "Resources/RuntimeImages/android/Ka52_RotorLower.png",
+      "bytes": 2922,
+      "sha256": "c90f1c6a64c8d8be6c040bb2b27efefbad16d8b8a33c4e43ba0ab15a76c20902"
+    },
+    {
+      "path": "Resources/RuntimeImages/android/Ka52_RotorUpper.png",
+      "bytes": 2922,
+      "sha256": "c90f1c6a64c8d8be6c040bb2b27efefbad16d8b8a33c4e43ba0ab15a76c20902"
+    },
+    {
+      "path": "Resources/RuntimeImages/android/Lux_Euro_Missile.png",
+      "bytes": 419,
+      "sha256": "2810dae2a0d6d74993842828410c74d55071ebfb4af187cc86b44216c0c2d86a"
+    },
+    {
+      "path": "Resources/RuntimeImages/android/Lux_Eurofighter.png",
+      "bytes": 4977,
+      "sha256": "01d065b5b711af25728f104f694dd60a0ebf18b04ed8f0c2d7168fe9ce2f1951"
+    },
+    {
+      "path": "Resources/RuntimeImages/android/Lux_F22.png",
+      "bytes": 4688,
+      "sha256": "ba85eea24c1d925cb873bb1f40bf8b43f9bc7d02097886ffb9ab00f78139bc55"
+    },
+    {
+      "path": "Resources/RuntimeImages/android/Lux_MiG31.png",
+      "bytes": 4400,
+      "sha256": "2706e83d07e8fd2c15ddf6ed79b03cbb987cf672f15188edbebc5a31f02cac96"
+    },
+    {
+      "path": "Resources/RuntimeImages/android/Lux_Su57.png",
+      "bytes": 4708,
+      "sha256": "60e7a8ef41ed9959320b76691eceff1ae51f22b520a1b22975abe7652074bcd0"
+    },
+    {
+      "path": "Resources/RuntimeImages/android/VTOL_F35B.png",
+      "bytes": 5087,
+      "sha256": "75a48432fbf4c68bd34db04f4dd83a8e40714e5e30ab1a6b4ace3d3987fd6d04"
+    },
+    {
+      "path": "Resources/RuntimeImages/android/VTOL_Harrier.png",
+      "bytes": 4518,
+      "sha256": "d87414990cd13521319ed82cd999cc3669395645c32bd34727d7c899cd5af26f"
+    },
+    {
+      "path": "Resources/RuntimeImages/android/VTOL_Yak141.png",
+      "bytes": 4366,
+      "sha256": "6960cc95d16124c88f23fb4ab5c2069be43a4817c8995b7c473f3c15d603bd28"
+    },
+    {
+      "path": "Resources/RuntimeImages/apple/GAA_Shilka_Body.png",
+      "bytes": 4316,
+      "sha256": "dd7875c09c7b85b7ee78ac37969c4691f85d5ae9d70ca574cbd2089497b0a89c"
+    },
+    {
+      "path": "Resources/RuntimeImages/apple/GAA_Shilka_Body2.png",
+      "bytes": 4250,
+      "sha256": "ef8974a6e316e96a43b52bcf2f461c1cc0e0aace0efa7a6321505d862600eb15"
+    },
+    {
+      "path": "Resources/RuntimeImages/apple/GAA_Shilka_Gun.png",
+      "bytes": 711,
+      "sha256": "7e3160127d5b45e760e0c4bad999090e45ae296dd2ca1abebc0e0c458318816e"
+    },
+    {
+      "path": "Resources/RuntimeImages/apple/GAA_Shilka_Radar0.png",
+      "bytes": 641,
+      "sha256": "699176c5002a38b5bf214cb9709685214d84452650a465251f7eed86b81a49f7"
+    },
+    {
+      "path": "Resources/RuntimeImages/apple/GAA_Shilka_Radar1.png",
+      "bytes": 675,
+      "sha256": "94c603034a9cb87e24258e4f897a179311d7a1f819a8fc6442855c7514b6a0a3"
+    },
+    {
+      "path": "Resources/RuntimeImages/apple/GAA_Shilka_Radar10.png",
+      "bytes": 617,
+      "sha256": "3c7d40dfcccbe76f385f6b6fad7de1e94fc36002f932915a690f9ea27d20d342"
+    },
+    {
+      "path": "Resources/RuntimeImages/apple/GAA_Shilka_Radar11.png",
+      "bytes": 607,
+      "sha256": "aef40a14d02bfc5a6babfa4b95cf92d1e27eb7a936235a120f48b616a5e7cbd5"
+    },
+    {
+      "path": "Resources/RuntimeImages/apple/GAA_Shilka_Radar12.png",
+      "bytes": 735,
+      "sha256": "6206fb067136b0ab105b08fd3db4612af9b946af872a5f8fa7b00b1cc47d58a9"
+    },
+    {
+      "path": "Resources/RuntimeImages/apple/GAA_Shilka_Radar13.png",
+      "bytes": 703,
+      "sha256": "8b969929ae6caeea7feb32ad2d9deb820208d0662f58e9bb9cad050a680b0d39"
+    },
+    {
+      "path": "Resources/RuntimeImages/apple/GAA_Shilka_Radar14.png",
+      "bytes": 707,
+      "sha256": "3ec8f748464cb7fb3dbad9f7f484b7d2b944c24301fd7a4aedca506b5fcd3488"
+    },
+    {
+      "path": "Resources/RuntimeImages/apple/GAA_Shilka_Radar15.png",
+      "bytes": 646,
+      "sha256": "124e73d928e0d329292d684264f062c36cb1deb7e7192ade5d3f9b57cf669a12"
+    },
+    {
+      "path": "Resources/RuntimeImages/apple/GAA_Shilka_Radar16.png",
+      "bytes": 643,
+      "sha256": "00e4538a2a6cd40fb014cebaa011915562329108c083161a30a0b35329601e8f"
+    },
+    {
+      "path": "Resources/RuntimeImages/apple/GAA_Shilka_Radar17.png",
+      "bytes": 604,
+      "sha256": "88cf341b9af155a87de62561c72b50385b0f5310099c51f352ab0eb6199bd27a"
+    },
+    {
+      "path": "Resources/RuntimeImages/apple/GAA_Shilka_Radar18.png",
+      "bytes": 469,
+      "sha256": "58570f4c44e898ac60dcb13b0bedb1b175944187912b93c6253db51010adc36f"
+    },
+    {
+      "path": "Resources/RuntimeImages/apple/GAA_Shilka_Radar19.png",
+      "bytes": 601,
+      "sha256": "02828eb284b07a89c0aa44b91356719f2a256464e150e297d7826a42539166c5"
+    },
+    {
+      "path": "Resources/RuntimeImages/apple/GAA_Shilka_Radar2.png",
+      "bytes": 686,
+      "sha256": "83fcf524377bc89893bb0866817b1723476969df02b5ba3b4b839c815dd82c37"
+    },
+    {
+      "path": "Resources/RuntimeImages/apple/GAA_Shilka_Radar20.png",
+      "bytes": 646,
+      "sha256": "88a058a8f76dbc4ac8898941dcbf37e792d95fa4e08555990ba57a1df6ee762b"
+    },
+    {
+      "path": "Resources/RuntimeImages/apple/GAA_Shilka_Radar21.png",
+      "bytes": 651,
+      "sha256": "d99179788510c3b0baa8cf163c0177d5c74c3a5cdaf052347a1dbdaee1197f69"
+    },
+    {
+      "path": "Resources/RuntimeImages/apple/GAA_Shilka_Radar22.png",
+      "bytes": 680,
+      "sha256": "701d0e66adb856eef0cafa114a672a9ff9f05c885876329927503835838fa8c1"
+    },
+    {
+      "path": "Resources/RuntimeImages/apple/GAA_Shilka_Radar23.png",
+      "bytes": 657,
+      "sha256": "9f4af7a3536af40fb2a2cf1203f823ac357beccf7bcf5f1a5d1bfb4420a33669"
+    },
+    {
+      "path": "Resources/RuntimeImages/apple/GAA_Shilka_Radar3.png",
+      "bytes": 672,
+      "sha256": "f0c1beb1229ee13fbb90fa55cd8e0fbf7b1a7c41f5ccb00004795060a1435b86"
+    },
+    {
+      "path": "Resources/RuntimeImages/apple/GAA_Shilka_Radar4.png",
+      "bytes": 639,
+      "sha256": "20374a6c9eb882bea22824f7252caf360d88a222136fd1348a6eb4d498476c60"
+    },
+    {
+      "path": "Resources/RuntimeImages/apple/GAA_Shilka_Radar5.png",
+      "bytes": 600,
+      "sha256": "833527eac1936ea8e4b65bb68098ad68963ff6fdcbeabbe649ebcc7f2999da44"
+    },
+    {
+      "path": "Resources/RuntimeImages/apple/GAA_Shilka_Radar6.png",
+      "bytes": 487,
+      "sha256": "61c8033c60206aa62be48d3290a48314ce3f31c5fa982d7ebd2ae85b303b95cc"
+    },
+    {
+      "path": "Resources/RuntimeImages/apple/GAA_Shilka_Radar7.png",
+      "bytes": 513,
+      "sha256": "32a730a349b9f4a4a0690c6ed805bb2468f16127e1935217606c31ddc580b119"
+    },
+    {
+      "path": "Resources/RuntimeImages/apple/GAA_Shilka_Radar8.png",
+      "bytes": 537,
+      "sha256": "aec65d747769f042de82d9062617c2d14407933f277f56243daf5cac77ceb3dd"
+    },
+    {
+      "path": "Resources/RuntimeImages/apple/GAA_Shilka_Radar9.png",
+      "bytes": 570,
+      "sha256": "40ed4c60f1f621824eb1304bc56e7039bef04785f945e6d833752e54e6087530"
+    },
+    {
+      "path": "Resources/RuntimeImages/apple/GAA_Shilka_Turret.png",
+      "bytes": 3684,
+      "sha256": "49969a71b0f2f58c08652de43bd7c9816bed900ddba0acb8a3bbff9aa855d97f"
+    },
+    {
+      "path": "Resources/RuntimeImages/apple/GAA_Tunguska_Body.png",
+      "bytes": 5465,
+      "sha256": "09e2ce9b0cd49e898fa9429395a32614f257fc03df57a5fd3c8ec65014d936cb"
+    },
+    {
+      "path": "Resources/RuntimeImages/apple/GAA_Tunguska_Body2.png",
+      "bytes": 5451,
+      "sha256": "33e90b69dd8ab2f49862df326b356e48105b4ad835d2420d994491e6caf60d92"
+    },
+    {
+      "path": "Resources/RuntimeImages/apple/GAA_Tunguska_Gun.png",
+      "bytes": 832,
+      "sha256": "9f9c2e0d792e75b2fd4fe2eea569b34a654b6b5b16ad87335ed544809824c950"
+    },
+    {
+      "path": "Resources/RuntimeImages/apple/GAA_Tunguska_Missile.png",
+      "bytes": 1502,
+      "sha256": "a362a1a126e2cb7cb3f4bf5fd55dc975abf2d1f28762729367f77fde4c2b8a82"
+    },
+    {
+      "path": "Resources/RuntimeImages/apple/GAA_Tunguska_Radar0.png",
+      "bytes": 746,
+      "sha256": "965891fbcdd749ed5dd0b71a72592cd79a08c87aef7e1fdff2b924ee8843d8df"
+    },
+    {
+      "path": "Resources/RuntimeImages/apple/GAA_Tunguska_Radar1.png",
+      "bytes": 794,
+      "sha256": "1c9cc216dbd0d6648d1c2ea571dd3e323a8dd37ed592c8c5cb1247b448306260"
+    },
+    {
+      "path": "Resources/RuntimeImages/apple/GAA_Tunguska_Radar10.png",
+      "bytes": 793,
+      "sha256": "7a0594984b1ee24f349b1093fd5c1844d10cdac64a40eac4c701716d40c3c350"
+    },
+    {
+      "path": "Resources/RuntimeImages/apple/GAA_Tunguska_Radar11.png",
+      "bytes": 805,
+      "sha256": "ecf6db353cf7cdf039477ffaf624f440b783a6ca55826ea70ea96cd5ff63d295"
+    },
+    {
+      "path": "Resources/RuntimeImages/apple/GAA_Tunguska_Radar12.png",
+      "bytes": 773,
+      "sha256": "0ecd479ec210a4af1d3fa30a38f823d33a18d9a3a340c2c0137917f27d4f77ae"
+    },
+    {
+      "path": "Resources/RuntimeImages/apple/GAA_Tunguska_Radar13.png",
+      "bytes": 828,
+      "sha256": "2ee899a149fb9cc2c10d4b72cf5d8ddde2b423c7e634075a08950280ca3afe2a"
+    },
+    {
+      "path": "Resources/RuntimeImages/apple/GAA_Tunguska_Radar14.png",
+      "bytes": 808,
+      "sha256": "edc8a37f67985b024a3a54d7b647e54c748ea4193e39ba38cc412f191126fc20"
+    },
+    {
+      "path": "Resources/RuntimeImages/apple/GAA_Tunguska_Radar15.png",
+      "bytes": 753,
+      "sha256": "e3c5bf6c4960e542b3c6f492bfbe887361515f9b3d5030516cec40690578e337"
+    },
+    {
+      "path": "Resources/RuntimeImages/apple/GAA_Tunguska_Radar16.png",
+      "bytes": 763,
+      "sha256": "51afd21e3f79f81d319f91d7b8a5aeabb9db5eb17325cbaa234ace6d5f650827"
+    },
+    {
+      "path": "Resources/RuntimeImages/apple/GAA_Tunguska_Radar17.png",
+      "bytes": 774,
+      "sha256": "a9692224fdd57a673be8a5328ca1003b77cff1052f4678ee1d74ff46e6f04802"
+    },
+    {
+      "path": "Resources/RuntimeImages/apple/GAA_Tunguska_Radar18.png",
+      "bytes": 479,
+      "sha256": "ea23574b3156ec67256f2a9710fbcb954066ddc1b863c29f136be4d1f002e4c1"
+    },
+    {
+      "path": "Resources/RuntimeImages/apple/GAA_Tunguska_Radar19.png",
+      "bytes": 754,
+      "sha256": "3381118e97a23ca81f66b9a7b7ea562ebbd0f56f813cbfc414de7085667dee3c"
+    },
+    {
+      "path": "Resources/RuntimeImages/apple/GAA_Tunguska_Radar2.png",
+      "bytes": 817,
+      "sha256": "691449ce73b976a703b93d8cc49c41189d1fe9c3ab6e58963dd5bf4bf5cfdf91"
+    },
+    {
+      "path": "Resources/RuntimeImages/apple/GAA_Tunguska_Radar20.png",
+      "bytes": 768,
+      "sha256": "b4fde585a599b722b339d70070deb3e1ffe1c9bfeada24ea12f758b25a17b0d5"
+    },
+    {
+      "path": "Resources/RuntimeImages/apple/GAA_Tunguska_Radar21.png",
+      "bytes": 802,
+      "sha256": "e532469255630325b7d7681dc75e34b0424128c5b03f16763e3268c454c8384a"
+    },
+    {
+      "path": "Resources/RuntimeImages/apple/GAA_Tunguska_Radar22.png",
+      "bytes": 767,
+      "sha256": "0153a9224e1f9c7ffca9be568153054ccdc1cc9d27c63c53858973951dec577a"
+    },
+    {
+      "path": "Resources/RuntimeImages/apple/GAA_Tunguska_Radar23.png",
+      "bytes": 737,
+      "sha256": "43f4aa957ea4ad167460c200127eec060f1deeaab2ad995e132304b71ccf0428"
+    },
+    {
+      "path": "Resources/RuntimeImages/apple/GAA_Tunguska_Radar3.png",
+      "bytes": 723,
+      "sha256": "1e1daec48f359b2c742b9629de5bed37fa9668d3dc5604b9979af25533da2eeb"
+    },
+    {
+      "path": "Resources/RuntimeImages/apple/GAA_Tunguska_Radar4.png",
+      "bytes": 709,
+      "sha256": "3aa02742a6513ce61ddffcba3bb52963f38a0224571c69b6aafa4f5853a0758c"
+    },
+    {
+      "path": "Resources/RuntimeImages/apple/GAA_Tunguska_Radar5.png",
+      "bytes": 707,
+      "sha256": "e8883078d3b5052dd0521eb4cfa3a5b0929e2f1da004356e8585ea67f4c5b2e0"
+    },
+    {
+      "path": "Resources/RuntimeImages/apple/GAA_Tunguska_Radar6.png",
+      "bytes": 488,
+      "sha256": "090eecc5c0a65dde399788fd007862280d162b8ef54adb0c25e9a4b70a4cdcd7"
+    },
+    {
+      "path": "Resources/RuntimeImages/apple/GAA_Tunguska_Radar7.png",
+      "bytes": 686,
+      "sha256": "2b436747c33185b8b215f4e7b69d0454cfb01879e2fed996cf7c9d35dfd7b1e6"
+    },
+    {
+      "path": "Resources/RuntimeImages/apple/GAA_Tunguska_Radar8.png",
+      "bytes": 780,
+      "sha256": "65f0f3c94ca986a20b3597909473c4c9b2b4870f9f232910052ccbfa91b5ced1"
+    },
+    {
+      "path": "Resources/RuntimeImages/apple/GAA_Tunguska_Radar9.png",
+      "bytes": 771,
+      "sha256": "22d3ddeba6a2b1e363bf2a7dec8eb38eaa1db0e89267082699c722ad2581fa7b"
+    },
+    {
+      "path": "Resources/RuntimeImages/apple/GAA_Tunguska_Turret.png",
+      "bytes": 2915,
+      "sha256": "217e769bcb3b3f67b9e4c03c02b4c2b3e1a224967042d7b2287a3076334cdd9f"
+    },
+    {
+      "path": "Resources/RuntimeImages/apple/Ka52_Body.png",
+      "bytes": 6198,
+      "sha256": "eec7dfa0d647ed7633cd05bd1cc9480bb904e6ead98ff4247914a2fb7ae354e8"
+    },
+    {
+      "path": "Resources/RuntimeImages/apple/Ka52_Cannon.png",
+      "bytes": 466,
+      "sha256": "26c9aac264036df3032149885825342b5705b78fbe451ae6c160cbb6a954427a"
+    },
+    {
+      "path": "Resources/RuntimeImages/apple/Ka52_Missile.png",
+      "bytes": 677,
+      "sha256": "f1695f0eafb7932838e0c51aab65e5eba4fa1cb235c329fdb8c32aaf92fd9139"
+    },
+    {
+      "path": "Resources/RuntimeImages/apple/Ka52_RotorLower.png",
+      "bytes": 2947,
+      "sha256": "5041fe996941668e8376a1fef839686efe74e203944d9b27767800f7723c7f78"
+    },
+    {
+      "path": "Resources/RuntimeImages/apple/Ka52_RotorUpper.png",
+      "bytes": 2947,
+      "sha256": "5041fe996941668e8376a1fef839686efe74e203944d9b27767800f7723c7f78"
+    },
+    {
+      "path": "Resources/RuntimeImages/apple/Lux_Euro_Missile.png",
+      "bytes": 390,
+      "sha256": "f5c193cc4cda91f8806e2fbc7619ff35f1bedfa475f3e8cccbbc3d44695024b5"
+    },
+    {
+      "path": "Resources/RuntimeImages/apple/Lux_Eurofighter.png",
+      "bytes": 5200,
+      "sha256": "ce36cc50798a7291833e20f338b4f77c6355142f4caf49f10b4f3cd09e5599f5"
+    },
+    {
+      "path": "Resources/RuntimeImages/apple/Lux_F22.png",
+      "bytes": 4840,
+      "sha256": "4c65eb6555084935a2d1b8fbe4bf4555889071110324adafe3dd73784c722760"
+    },
+    {
+      "path": "Resources/RuntimeImages/apple/Lux_MiG31.png",
+      "bytes": 4648,
+      "sha256": "887603726fe0c89bcaca44f3cc2f6fa42bff76b1ff25ca685393bbcaad19bee9"
+    },
+    {
+      "path": "Resources/RuntimeImages/apple/Lux_Su57.png",
+      "bytes": 4819,
+      "sha256": "6b02bfdf620f489db1994cfb3102bffac671861b805db200d21c688fbf0153cf"
+    },
+    {
+      "path": "Resources/RuntimeImages/apple/VTOL_F35B.png",
+      "bytes": 5198,
+      "sha256": "3c268bff05158fe278c4e8937d74784e7d13a1984a2a8e90790e2cd3157a851f"
+    },
+    {
+      "path": "Resources/RuntimeImages/apple/VTOL_Harrier.png",
+      "bytes": 4638,
+      "sha256": "17d731c012637dbe2c52c6a66015f92a79e9db976e081fe4f4b524957aed6e4d"
+    },
+    {
+      "path": "Resources/RuntimeImages/apple/VTOL_Yak141.png",
+      "bytes": 4448,
+      "sha256": "38a667384b266446299ae0434b5e7ab39d81daddc46dda664d6e2e39579d9992"
+    },
+    {
+      "path": "Resources/RuntimeImages/manifest.json",
+      "bytes": 177492,
+      "sha256": "98f428a7210bc30ad634ebc5691108a670f57b4df91dd9ffd9e65a8b0dda37b1"
+    },
+    {
+      "path": "Resources/RuntimeImages/web/GAA_Shilka_Body.png",
+      "bytes": 4299,
+      "sha256": "ed70226028cef8b51de44550be30a7b56bef1833011e3b223b354e08ec08d82a"
+    },
+    {
+      "path": "Resources/RuntimeImages/web/GAA_Shilka_Body2.png",
+      "bytes": 4290,
+      "sha256": "f492c17033c14c649b49cfbd15a10b5f8fa4d2f1438251b1a5e5b199d8b838d9"
+    },
+    {
+      "path": "Resources/RuntimeImages/web/GAA_Shilka_Gun.png",
+      "bytes": 733,
+      "sha256": "1f367799b2e9d232ad950b2b3a4933cb7bca169eda702a4147c0d4631a18fc49"
+    },
+    {
+      "path": "Resources/RuntimeImages/web/GAA_Shilka_Radar0.png",
+      "bytes": 633,
+      "sha256": "95fcb4174140bcf87ff78edb941660549053bf8fab696467502bd2b526f7f153"
+    },
+    {
+      "path": "Resources/RuntimeImages/web/GAA_Shilka_Radar1.png",
+      "bytes": 686,
+      "sha256": "4cbdcb5ae23aafd975d80ed52b571d19e3fa3b19575d3391a67d52605c1118c7"
+    },
+    {
+      "path": "Resources/RuntimeImages/web/GAA_Shilka_Radar10.png",
+      "bytes": 657,
+      "sha256": "33ef4f4e463fbd42ec45fa4947fbefee070c89a1ff2a202c1c8c439a868a6fe5"
+    },
+    {
+      "path": "Resources/RuntimeImages/web/GAA_Shilka_Radar11.png",
+      "bytes": 637,
+      "sha256": "2f33dfb76728c812c77942a56333836c640ecd896f7a0e6fb6428ba797940438"
+    },
+    {
+      "path": "Resources/RuntimeImages/web/GAA_Shilka_Radar12.png",
+      "bytes": 760,
+      "sha256": "978a3eaa2ee876066574cc9df1e6313ea13444925e9d9c20c6301a531e535688"
+    },
+    {
+      "path": "Resources/RuntimeImages/web/GAA_Shilka_Radar13.png",
+      "bytes": 697,
+      "sha256": "2b31ae1ac8a742de6afb207f27cbd3fb8cd18a7787d2b6d933f69dedf5976f37"
+    },
+    {
+      "path": "Resources/RuntimeImages/web/GAA_Shilka_Radar14.png",
+      "bytes": 720,
+      "sha256": "fa097a15776b71b89c233bcd8d84016141ad3b9d345d8b1cd505041b32c59f7e"
+    },
+    {
+      "path": "Resources/RuntimeImages/web/GAA_Shilka_Radar15.png",
+      "bytes": 656,
+      "sha256": "0ddfbf75aad3080410b74280a23d03febf9478088a2739e9f75a1b4864ec7764"
+    },
+    {
+      "path": "Resources/RuntimeImages/web/GAA_Shilka_Radar16.png",
+      "bytes": 651,
+      "sha256": "dbf3ab3649bd45ce18f4ff10ba17c7ea5d323c4103a87640498ab9789ca37dc2"
+    },
+    {
+      "path": "Resources/RuntimeImages/web/GAA_Shilka_Radar17.png",
+      "bytes": 627,
+      "sha256": "5fb8c4380f661a33bd0f7757b32d02ebe4dd8684e577d2073b173b80bd5b97ba"
+    },
+    {
+      "path": "Resources/RuntimeImages/web/GAA_Shilka_Radar18.png",
+      "bytes": 479,
+      "sha256": "6e319d3f44e23f314ca3f1d5fc183f2311822c5892fe606615fe8c7b742e9470"
+    },
+    {
+      "path": "Resources/RuntimeImages/web/GAA_Shilka_Radar19.png",
+      "bytes": 614,
+      "sha256": "3fd220e6825e3e87dc0a64d533dfce0760534e973dfbad0c3add63a3af1f7498"
+    },
+    {
+      "path": "Resources/RuntimeImages/web/GAA_Shilka_Radar2.png",
+      "bytes": 677,
+      "sha256": "9c05cbb6b04ee23f8b178e81ffd1cba6acdcbf24fb68003051e0eae636b101b2"
+    },
+    {
+      "path": "Resources/RuntimeImages/web/GAA_Shilka_Radar20.png",
+      "bytes": 670,
+      "sha256": "14ef3c2e0d332972ce14fce86102c1490437c1e2e7ab6f5baf77c26820c6f289"
+    },
+    {
+      "path": "Resources/RuntimeImages/web/GAA_Shilka_Radar21.png",
+      "bytes": 673,
+      "sha256": "2e31c14400d10d53b27479ecb721bd30ed4f4d819eb628453d46738d3684d738"
+    },
+    {
+      "path": "Resources/RuntimeImages/web/GAA_Shilka_Radar22.png",
+      "bytes": 695,
+      "sha256": "db86a2d37b1e6a2b9385c8605d1d343817ba17c198763473c0609ed9030ca91e"
+    },
+    {
+      "path": "Resources/RuntimeImages/web/GAA_Shilka_Radar23.png",
+      "bytes": 698,
+      "sha256": "fb14c7646154b099c708ecee92d7d199e4708456e4d440d9bd404e0aad0579a1"
+    },
+    {
+      "path": "Resources/RuntimeImages/web/GAA_Shilka_Radar3.png",
+      "bytes": 681,
+      "sha256": "c4a4a3b47daa42b6b69a8980508bb33aa360d7a447fb7725225524ef7d271911"
+    },
+    {
+      "path": "Resources/RuntimeImages/web/GAA_Shilka_Radar4.png",
+      "bytes": 655,
+      "sha256": "fb41e1fb322b0e1a05af4da5c315f156b86af416e5ba2c53d9df064ef8595624"
+    },
+    {
+      "path": "Resources/RuntimeImages/web/GAA_Shilka_Radar5.png",
+      "bytes": 601,
+      "sha256": "9e2287ad0e33dcb29c6cdbcad35db6465f101838cec1e31409a6b83fe08a9dfc"
+    },
+    {
+      "path": "Resources/RuntimeImages/web/GAA_Shilka_Radar6.png",
+      "bytes": 502,
+      "sha256": "f7de7f113206f8641725aacaf15f63ad9af61fe26574e0b8035080f886b7dfe2"
+    },
+    {
+      "path": "Resources/RuntimeImages/web/GAA_Shilka_Radar7.png",
+      "bytes": 533,
+      "sha256": "63c564fea14ebfe48f9b732b64f8a45bfd59531c7d3d1b050da7b95df1057e60"
+    },
+    {
+      "path": "Resources/RuntimeImages/web/GAA_Shilka_Radar8.png",
+      "bytes": 566,
+      "sha256": "b265dccf95b41b2a54f17fe404cc605a3975c36eb00664b70cc7bd295039e980"
+    },
+    {
+      "path": "Resources/RuntimeImages/web/GAA_Shilka_Radar9.png",
+      "bytes": 612,
+      "sha256": "161b42b09c1427177151bae0831505b1976e09ee545b8d3d57a1876b64b28c78"
+    },
+    {
+      "path": "Resources/RuntimeImages/web/GAA_Shilka_Turret.png",
+      "bytes": 3695,
+      "sha256": "8f8e0f7aed8c395132cf955ec8f7c9c424b20bafc532dd5639cd41c733eb00d4"
+    },
+    {
+      "path": "Resources/RuntimeImages/web/GAA_Tunguska_Body.png",
+      "bytes": 5524,
+      "sha256": "ad9ad57bf25f7638c7a8f40572e87c36d22b1f4cc57ca8af5a99cc22f6fabdf8"
+    },
+    {
+      "path": "Resources/RuntimeImages/web/GAA_Tunguska_Body2.png",
+      "bytes": 5512,
+      "sha256": "8b92d39b84e5088f617e23b1615d7303383ca21c3e3f906ffd3e553a6af7c54c"
+    },
+    {
+      "path": "Resources/RuntimeImages/web/GAA_Tunguska_Gun.png",
+      "bytes": 855,
+      "sha256": "da1313577f36dbe5f1ac7f1e288eb6444e392f2586815f7c025bfb148aa733a8"
+    },
+    {
+      "path": "Resources/RuntimeImages/web/GAA_Tunguska_Missile.png",
+      "bytes": 1538,
+      "sha256": "a18870b08d7aff51674d4d7c622ffbca661183de54fe07291ba7274d0253c3fe"
+    },
+    {
+      "path": "Resources/RuntimeImages/web/GAA_Tunguska_Radar0.png",
+      "bytes": 779,
+      "sha256": "a9a4cd781337454cf2ae196240fe1b7e82ff3e7d95ce06633f83e972b0f74890"
+    },
+    {
+      "path": "Resources/RuntimeImages/web/GAA_Tunguska_Radar1.png",
+      "bytes": 809,
+      "sha256": "d54188b123f12fade1b1b15cf25699f176fc98d82edce9021600ca67017a6265"
+    },
+    {
+      "path": "Resources/RuntimeImages/web/GAA_Tunguska_Radar10.png",
+      "bytes": 828,
+      "sha256": "891abf6569bd56bff4bb94194d47bf29dcaea2e28955812a1bc5aca7bddd8cae"
+    },
+    {
+      "path": "Resources/RuntimeImages/web/GAA_Tunguska_Radar11.png",
+      "bytes": 828,
+      "sha256": "7c7c641b603488a341d518a5b9e2f005c0aae92be2271a2e72b86f0394e03d79"
+    },
+    {
+      "path": "Resources/RuntimeImages/web/GAA_Tunguska_Radar12.png",
+      "bytes": 753,
+      "sha256": "80e872d942510dd647968ab4b051a1eb21e61e7d4fdf3d543edc15ce2df4e691"
+    },
+    {
+      "path": "Resources/RuntimeImages/web/GAA_Tunguska_Radar13.png",
+      "bytes": 829,
+      "sha256": "6cc8d58206be6f5b5f008f844a78c881a1545aa9bf5cdf2c2f5c3b8306eb96cc"
+    },
+    {
+      "path": "Resources/RuntimeImages/web/GAA_Tunguska_Radar14.png",
+      "bytes": 836,
+      "sha256": "eda686f121778e193dcfbce7ada48dd4785fc91f891313166783fa9fb6249afd"
+    },
+    {
+      "path": "Resources/RuntimeImages/web/GAA_Tunguska_Radar15.png",
+      "bytes": 780,
+      "sha256": "5bb295d8e422f74f70b88da11325a98eb142282e9c93a8b69348e6ea526b2a20"
+    },
+    {
+      "path": "Resources/RuntimeImages/web/GAA_Tunguska_Radar16.png",
+      "bytes": 782,
+      "sha256": "adec8be381f4266cf91430aa7d5d8a141e39d0eb24e8a24826c576d0f4d1e556"
+    },
+    {
+      "path": "Resources/RuntimeImages/web/GAA_Tunguska_Radar17.png",
+      "bytes": 792,
+      "sha256": "538f5a718d5a03356469292cb5d73346d83df609d567e38849281dc5445c98b4"
+    },
+    {
+      "path": "Resources/RuntimeImages/web/GAA_Tunguska_Radar18.png",
+      "bytes": 499,
+      "sha256": "46c23566d8281d1915af05ffadeff47c5552f1b1840ba0002fc10319be0c80be"
+    },
+    {
+      "path": "Resources/RuntimeImages/web/GAA_Tunguska_Radar19.png",
+      "bytes": 790,
+      "sha256": "aee3b3250f0077573f2adb20899748acae17744cb174ccbda1536a59f2db34d7"
+    },
+    {
+      "path": "Resources/RuntimeImages/web/GAA_Tunguska_Radar2.png",
+      "bytes": 807,
+      "sha256": "7fba053d0cd1e1fd503d3bb289cf83d15236054313e1facbc420f05a1afcc3b6"
+    },
+    {
+      "path": "Resources/RuntimeImages/web/GAA_Tunguska_Radar20.png",
+      "bytes": 789,
+      "sha256": "51dd82aa9aa33a784127441f27024e6331cf56d2c90cb808b937b42df988226a"
+    },
+    {
+      "path": "Resources/RuntimeImages/web/GAA_Tunguska_Radar21.png",
+      "bytes": 814,
+      "sha256": "d65303467f475541f90ad3f8097a38f962ec3f3b2a6023a74522fa185b61d41c"
+    },
+    {
+      "path": "Resources/RuntimeImages/web/GAA_Tunguska_Radar22.png",
+      "bytes": 808,
+      "sha256": "ee0e20194bd5ed9d0d47c113811f7cf8fcec5ed813f34dd2229882236dbf18ea"
+    },
+    {
+      "path": "Resources/RuntimeImages/web/GAA_Tunguska_Radar23.png",
+      "bytes": 770,
+      "sha256": "51f71eb027526419d13f252558fc29f8e435bc3d1bb6025cc0a3de1ab3607089"
+    },
+    {
+      "path": "Resources/RuntimeImages/web/GAA_Tunguska_Radar3.png",
+      "bytes": 740,
+      "sha256": "545e99276befb71c59ea5758aa89f496f5902912cab751a73b0f697835fc55b8"
+    },
+    {
+      "path": "Resources/RuntimeImages/web/GAA_Tunguska_Radar4.png",
+      "bytes": 764,
+      "sha256": "7a4f3e34d3cad486742905b86dec100619dc91b46d0bda1ea778acfb91afde23"
+    },
+    {
+      "path": "Resources/RuntimeImages/web/GAA_Tunguska_Radar5.png",
+      "bytes": 708,
+      "sha256": "fb554cd30b689e7699984b4355ff189f5f9cd10bedd8264eadfe16e7c53a92ba"
+    },
+    {
+      "path": "Resources/RuntimeImages/web/GAA_Tunguska_Radar6.png",
+      "bytes": 492,
+      "sha256": "e3fd4711679215fa6b3f45a8a5813c546fe6bf1864f8288b732bc035deefba8d"
+    },
+    {
+      "path": "Resources/RuntimeImages/web/GAA_Tunguska_Radar7.png",
+      "bytes": 715,
+      "sha256": "8cb4d9908343f15f433789236a803ea10238f4926a2c092dafcfe2fc2eebb48a"
+    },
+    {
+      "path": "Resources/RuntimeImages/web/GAA_Tunguska_Radar8.png",
+      "bytes": 794,
+      "sha256": "9a957ff9bbb5f7863bb7d4c9a61fd786a30bd8315b3918147b295748ad7f813e"
+    },
+    {
+      "path": "Resources/RuntimeImages/web/GAA_Tunguska_Radar9.png",
+      "bytes": 809,
+      "sha256": "36f01224f50569c7be6f231083e82148712ff03eb34f1771c5469b6c0f3f7ab2"
+    },
+    {
+      "path": "Resources/RuntimeImages/web/GAA_Tunguska_Turret.png",
+      "bytes": 2882,
+      "sha256": "94574a51e24a3a1ed809a06e471be3d0577eaa10353d36a04531e600d1986d89"
+    },
+    {
+      "path": "Resources/RuntimeImages/web/Ka52_Body.png",
+      "bytes": 6094,
+      "sha256": "ee43b3d33d30606b4606888ceee6c47c5b41b0213fb35d600559518634f04136"
+    },
+    {
+      "path": "Resources/RuntimeImages/web/Ka52_Cannon.png",
+      "bytes": 466,
+      "sha256": "26c9aac264036df3032149885825342b5705b78fbe451ae6c160cbb6a954427a"
+    },
+    {
+      "path": "Resources/RuntimeImages/web/Ka52_Missile.png",
+      "bytes": 684,
+      "sha256": "b9c24e19b48ad39fba953201a26ff2ed99273a52ea1cf2185bbc8eb5cd42a42a"
+    },
+    {
+      "path": "Resources/RuntimeImages/web/Ka52_RotorLower.png",
+      "bytes": 2922,
+      "sha256": "c90f1c6a64c8d8be6c040bb2b27efefbad16d8b8a33c4e43ba0ab15a76c20902"
+    },
+    {
+      "path": "Resources/RuntimeImages/web/Ka52_RotorUpper.png",
+      "bytes": 2922,
+      "sha256": "c90f1c6a64c8d8be6c040bb2b27efefbad16d8b8a33c4e43ba0ab15a76c20902"
+    },
+    {
+      "path": "Resources/RuntimeImages/web/Lux_Euro_Missile.png",
+      "bytes": 419,
+      "sha256": "2810dae2a0d6d74993842828410c74d55071ebfb4af187cc86b44216c0c2d86a"
+    },
+    {
+      "path": "Resources/RuntimeImages/web/Lux_Eurofighter.png",
+      "bytes": 4977,
+      "sha256": "01d065b5b711af25728f104f694dd60a0ebf18b04ed8f0c2d7168fe9ce2f1951"
+    },
+    {
+      "path": "Resources/RuntimeImages/web/Lux_F22.png",
+      "bytes": 4688,
+      "sha256": "ba85eea24c1d925cb873bb1f40bf8b43f9bc7d02097886ffb9ab00f78139bc55"
+    },
+    {
+      "path": "Resources/RuntimeImages/web/Lux_MiG31.png",
+      "bytes": 4400,
+      "sha256": "2706e83d07e8fd2c15ddf6ed79b03cbb987cf672f15188edbebc5a31f02cac96"
+    },
+    {
+      "path": "Resources/RuntimeImages/web/Lux_Su57.png",
+      "bytes": 4708,
+      "sha256": "60e7a8ef41ed9959320b76691eceff1ae51f22b520a1b22975abe7652074bcd0"
+    },
+    {
+      "path": "Resources/RuntimeImages/web/VTOL_F35B.png",
+      "bytes": 5087,
+      "sha256": "75a48432fbf4c68bd34db04f4dd83a8e40714e5e30ab1a6b4ace3d3987fd6d04"
+    },
+    {
+      "path": "Resources/RuntimeImages/web/VTOL_Harrier.png",
+      "bytes": 4518,
+      "sha256": "d87414990cd13521319ed82cd999cc3669395645c32bd34727d7c899cd5af26f"
+    },
+    {
+      "path": "Resources/RuntimeImages/web/VTOL_Yak141.png",
+      "bytes": 4366,
+      "sha256": "6960cc95d16124c88f23fb4ab5c2069be43a4817c8995b7c473f3c15d603bd28"
+    },
+    {
+      "path": "Art/KamovEurofighter/20261109/Euro-pod-generated-v2.png",
+      "bytes": 815696,
+      "sha256": "b1cf5935916a3292fb3d1a99502d8c166c1c0976f3fa2b4d88659ac1158b1bf7"
+    },
+    {
+      "path": "Art/KamovEurofighter/20261109/Eurofighter-generated-v1.png",
+      "bytes": 1037529,
+      "sha256": "5a73a8d5001e51039db9ac7480a22541443d9a9170116524ab85ef2528bc4a60"
+    },
+    {
+      "path": "Art/KamovEurofighter/20261109/Eurofighter-generated-v2.png",
+      "bytes": 1012729,
+      "sha256": "ed70539f96f604481b03f997fef0e9fadf42fb4a1f4133907183d8259a284d7f"
+    },
+    {
+      "path": "Art/KamovEurofighter/20261109/Ka52-generated-v1.png",
+      "bytes": 1083450,
+      "sha256": "09c4e374313a52177fa941253df5ba401ae399695fbe7792f6d84364a3fbceda"
+    },
+    {
+      "path": "Art/KamovEurofighter/20261109/bake.json",
+      "bytes": 2499,
+      "sha256": "39ff3ed1913680be17ebddcc45746659d2a13e9f9f12ba342e059cf8daf7299f"
+    },
+    {
+      "path": "Art/KamovEurofighter/20261109/prompts.json",
+      "bytes": 9808,
+      "sha256": "95995ec8fa50fe3a51b915f07260563ac00666c8e18eb9b6c8841c0f8109a77e"
+    },
+    {
+      "path": "Art/KamovEurofighter/20261109/reference-metrics.json",
+      "bytes": 2716,
+      "sha256": "572d70ccb8a2668e6b3f448f17abab96d5fcd3192d27a119f7f99da9c51d33fe"
+    },
+    {
+      "path": "Art/KamovEurofighter/20261109/references/eurofighter-profile.jpg",
+      "bytes": 161658,
+      "sha256": "092f18d470bb13ae08cf798d04624d68732965a7b682c58dd93c2d2d09b68478"
+    },
+    {
+      "path": "Art/KamovEurofighter/20261109/references/ka52-photo.jpg",
+      "bytes": 475718,
+      "sha256": "00450c1712a5e262030045e654022b690ad9188def411b0eed93a1e459aa909e"
+    },
+    {
+      "path": "Art/KamovEurofighter/20261109/runtime-metrics.json",
+      "bytes": 3027,
+      "sha256": "de77e63128c59a9a3daec48aac33f0d6b2602344d0c3c4440be01f365297c10e"
     }
   ]
 }

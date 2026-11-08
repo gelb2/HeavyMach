@@ -1,0 +1,29 @@
+{
+  "cases": [
+    {
+      "case": "missing-png",
+      "rejected": true,
+      "message": "Authored image differs: /Users/sokol/Git/ProjectGameDev-Hub/HeavyMach/build/kamov-lux-eurofighter-20261109/build/kamov-evidence/image-negative/tmpfr470j0_/RuntimeImages/apple/Ka52_Body.png"
+    },
+    {
+      "case": "wrong-png",
+      "rejected": true,
+      "message": "Authored image differs: /Users/sokol/Git/ProjectGameDev-Hub/HeavyMach/build/kamov-lux-eurofighter-20261109/build/kamov-evidence/image-negative/tmpfr470j0_/RuntimeImages/apple/Ka52_Body.png"
+    },
+    {
+      "case": "wrong-manifest-hash",
+      "rejected": true,
+      "message": "Authored image manifest differs: apple/Ka52_Body.png"
+    },
+    {
+      "case": "wrong-manifest-crop",
+      "rejected": true,
+      "message": "Authored image manifest differs: apple/Ka52_Body.png"
+    },
+    {
+      "case": "unchanged-package",
+      "accepted": true
+    }
+  ],
+  "product_images_preserved": true
+}
