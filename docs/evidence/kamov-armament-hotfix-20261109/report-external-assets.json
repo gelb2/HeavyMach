@@ -1,0 +1,113 @@
+{
+  "ok": true,
+  "files": [
+    {
+      "url": "https://media.githubusercontent.com/media/gelb2/HeavyMach/fc40a53478513cbef7cde506c99b1f0b09b2107a/docs/public/media/kamov-armament-hotfix-20261109/Ka52-two-missiles.png",
+      "bytes": 768188,
+      "ok": true,
+      "sha256": "f763120a3fdf1e33da91717df0ef2071671871feb24ca3678d78a2f8c8ddb982"
+    },
+    {
+      "url": "https://media.githubusercontent.com/media/gelb2/HeavyMach/fc40a53478513cbef7cde506c99b1f0b09b2107a/docs/public/media/kamov-armament-hotfix-20261109/Stage01-Ka52.png",
+      "bytes": 785421,
+      "ok": true,
+      "sha256": "ef66d41fa1c0d3503172184cead789f101a888f293a4ee0f8328464343e30171"
+    },
+    {
+      "url": "https://media.githubusercontent.com/media/gelb2/HeavyMach/fc40a53478513cbef7cde506c99b1f0b09b2107a/docs/public/media/kamov-armament-hotfix-20261109/helicopter-family-same-scale.png",
+      "bytes": 1045234,
+      "ok": true,
+      "sha256": "67edf7b41fd6fd2a8c4f31f854f0ae59d6d2f4ec00a48df55d98c693d581b531"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/gelb2/HeavyMach/fc40a53478513cbef7cde506c99b1f0b09b2107a/docs/evidence/kamov-armament-hotfix-20261109/assembly-detail.txt",
+      "bytes": 2809,
+      "ok": true,
+      "sha256": "d25ffd05f580a370eeac774f4f6356068d11efcca1aad52d2ab6e348bf76a087"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/gelb2/HeavyMach/fc40a53478513cbef7cde506c99b1f0b09b2107a/docs/evidence/kamov-armament-hotfix-20261109/builds.json",
+      "bytes": 5892,
+      "ok": true,
+      "sha256": "bde2dda2ff6f40847f6b5a8bc11fa73730a966774cbaa5e2c1f84736898b9c0d"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/gelb2/HeavyMach/fc40a53478513cbef7cde506c99b1f0b09b2107a/docs/evidence/kamov-armament-hotfix-20261109/core-tests.txt",
+      "bytes": 3541,
+      "ok": true,
+      "sha256": "2d409daf56c43fbe3f34c317013412320779ad386140712983a02b0192754ea6"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/gelb2/HeavyMach/fc40a53478513cbef7cde506c99b1f0b09b2107a/docs/evidence/kamov-armament-hotfix-20261109/image-verification.json",
+      "bytes": 145,
+      "ok": true,
+      "sha256": "5b2d66192a6c657d74ed16973d040e1bf9ee08988088e73418ae5ffbaa8e1049"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/gelb2/HeavyMach/fc40a53478513cbef7cde506c99b1f0b09b2107a/docs/evidence/kamov-armament-hotfix-20261109/normal-web-smoke.json",
+      "bytes": 2964,
+      "ok": true,
+      "sha256": "6340fb804154cce345e554353a420a5c72a28cdac1a0e5a6a26fe6e65e3e87a4"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/gelb2/HeavyMach/fc40a53478513cbef7cde506c99b1f0b09b2107a/docs/evidence/kamov-armament-hotfix-20261109/preservation.json",
+      "bytes": 2841,
+      "ok": true,
+      "sha256": "95095a0bc8976cd1273d1a1e834c8ef9c6805a88dfb8cca974246242d49d9350"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/gelb2/HeavyMach/fc40a53478513cbef7cde506c99b1f0b09b2107a/docs/evidence/kamov-armament-hotfix-20261109/protection-develop-verified.json",
+      "bytes": 1262,
+      "ok": true,
+      "sha256": "6e9a9a58744808af0407a0149798b34811dd6dbf604ed5356e8ec3ee09e626f3"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/gelb2/HeavyMach/fc40a53478513cbef7cde506c99b1f0b09b2107a/docs/evidence/kamov-armament-hotfix-20261109/protection-main-verified.json",
+      "bytes": 1301,
+      "ok": true,
+      "sha256": "f640237b30adda5d26a12ad785107a290d0af0113258b68e3d7d82f0fe4a31fb"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/gelb2/HeavyMach/fc40a53478513cbef7cde506c99b1f0b09b2107a/docs/evidence/kamov-armament-hotfix-20261109/public-campaign.json",
+      "bytes": 2141,
+      "ok": true,
+      "sha256": "c85f94353d7604be5e0a3b3bf4104a5f058924d735e389574cb1cb5034921aa8"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/gelb2/HeavyMach/fc40a53478513cbef7cde506c99b1f0b09b2107a/docs/evidence/kamov-armament-hotfix-20261109/public-http.json",
+      "bytes": 8695,
+      "ok": true,
+      "sha256": "410a275fac971a77055c26355862ee94ed8f2d57d88bac4ee1af16ea798026df"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/gelb2/HeavyMach/fc40a53478513cbef7cde506c99b1f0b09b2107a/docs/evidence/kamov-armament-hotfix-20261109/public-link.json",
+      "bytes": 5278,
+      "ok": true,
+      "sha256": "73a8e0009f3c2c58bae43d59bb68ca623f1ba4049ba370a0af239b739f51e161"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/gelb2/HeavyMach/fc40a53478513cbef7cde506c99b1f0b09b2107a/docs/evidence/kamov-armament-hotfix-20261109/public-normal.json",
+      "bytes": 2989,
+      "ok": true,
+      "sha256": "ae2e96bc5d2b4d6c6361ed6cf592ddb0c21b3e323df0f27b536a1fb413db5e05"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/gelb2/HeavyMach/fc40a53478513cbef7cde506c99b1f0b09b2107a/docs/evidence/kamov-armament-hotfix-20261109/title-timing-probe.json",
+      "bytes": 2389,
+      "ok": true,
+      "sha256": "69bb712cf60aebe4fe9086427a3bea0e52600fce0c091ba447e87fdaf59a3c92"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/gelb2/HeavyMach/fc40a53478513cbef7cde506c99b1f0b09b2107a/docs/evidence/kamov-armament-hotfix-20261109/web-campaign.json",
+      "bytes": 2108,
+      "ok": true,
+      "sha256": "589631e29b48ee1a24dc03fe4cc9567d617cec29b55860c5fa78b7f1cc6fe4a6"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/gelb2/HeavyMach/fc40a53478513cbef7cde506c99b1f0b09b2107a/docs/evidence/kamov-armament-hotfix-20261109/web-validation.json",
+      "bytes": 40329,
+      "ok": true,
+      "sha256": "c39c86ee8d16442d2f9d2a358bca74d7cd8d6020a643808225b9dac5fe2f35f0"
+    }
+  ]
+}
