@@ -138,3 +138,50 @@ Tauri Mac·Windows는 새 `Desktop/Tauri/`, 순수 웹 배포는 새 `Distributi
 develop·main에 GitHub 브랜치 보호를 적용했다. 최신 사용자 지시대로 본인 `gelb2`는 관리자 예외를 유지한다. 다른 기여자의 변경은 PR·승인1건·CODEOWNERS(@gelb2) 승인·대화 해결을 거친다. 일반 권한자의 강제 푸시·브랜치 삭제는 금지한다. `documentation`은 두 브랜치, `develop-only`는 main의 필수 검사다. core/apple/translations는 경로 필터 때문에 전역 필수로 등록하지 않았으며 관련 변경의 실제 통과 여부를 병합 전에 확인한다.
 
 현재 관리자·쓰기 권한 계정은 gelb2 한 명이다. 다른 관리자를 추가하면 그 계정도 예외가 된다. 최신 base 동기화 강제는 껐다. 이 보호 설정은 위의 작업 브랜치→develop→main 및 merge commit 규칙을 폐기하지 않는다. [실제 설정과 배포 근거](reviews/kamov-armament-hotfix-20261109.md#developmain-보호).
+
+
+## 검증 브라우저 앱 정리 — 2026-11-09
+
+Chrome 설치 PWA 검사에서 생성한 macOS 실행 항목이 검증 종료 뒤에도
+`~/Applications/Chrome Apps.localized`에 남았다. HeavyMach 16개와 MachDefense 8개 중
+21개가 이미 사라진 Puppeteer 임시 프로필을 가리켰다. Safari의 두 게임 확장은 발견하지 못했다.
+
+`tools/cleanup_browser_apps.py`는 두 게임의 이름·Chrome 앱 ID·실행 파일·URL·임시 프로필 경로를
+함께 확인한다. 임시 프로필이 사라졌고 실행 중이지 않은 검증용 `.app`만 휴지통으로 옮긴다.
+영구 프로필, 존재하는 임시 프로필, 다른 확장, 브라우저 데이터, 게임 저장, 네이티브 앱은 유지한다.
+앱 내부에 알려진 저장 파일, 허용한 번들 경로 밖의 파일, 심볼릭 링크가 있으면 보존한다. 휴지통은 비우지 않는다.
+
+```sh
+# 삭제 대상 확인만 한다.
+python3 tools/cleanup_browser_apps.py
+# 확인 조건을 다시 검사하고 실행 항목을 휴지통으로 옮긴다.
+python3 tools/cleanup_browser_apps.py --apply
+# 이 Mac에서 로그인 중 자동 실행을 설치한다. 저장소 절대 경로를 지정한다.
+python3 tools/cleanup_browser_apps.py --install-agent --repo /path/to/HeavyMach --repo /path/to/MachDefense
+```
+
+설치한 LaunchAgent `com.gelb2.mach-browser-cleanup`은 로그인과 10분 주기로 실행한다.
+두 저장소의 원격 main SHA를 읽어 변경을 기록하고 같은 정리를 실행한다.
+GitHub에서 병합하면 Mac이 깨어 있고 로그인한 상태에서 다음 주기에 반영한다.
+로컬 `post-merge`에 의존하지 않으므로 GitHub PR 병합도 같은 경로로 처리한다.
+네트워크 조회가 실패해도 잔여 항목 정리는 실행하고 main 조회는 다음 주기에 재시도한다.
+
+검토한 스크립트 사본·설정·최근 실행·변경 이력은
+`~/Library/Application Support/MachBrowserCleanup`에 보관한다.
+저장소 변경을 자동으로 실행 코드에 덮어쓰지 않으며 도구를 수정하면 다시 설치한다.
+자동 실행을 중지하려면 다음 명령을 사용한다.
+
+```sh
+launchctl bootout "gui/$(id -u)/com.gelb2.mach-browser-cleanup"
+```
+
+검사: `python3 -m unittest discover -s tools/tests -p test_cleanup_browser_apps.py`.
+임시/영구 프로필·저장·실행 중 앱·심볼릭 링크 보존, 재실행, main 변경 감지를 검사한다.
+Safari용 자동 삭제는 대상과 데이터 보존 절차를 확인하지 않았으므로 구현하지 않았다.
+빌드 캐시·보고 사이트 압축 파일의 정리는 이 도구와 별개다.
+
+로컬 적용 결과: HeavyMach 15개와 MachDefense 6개를 휴지통으로 옮겼다.
+프로필이 남은 HeavyMach 1개·MachDefense 2개는 보존했다.
+LaunchAgent 최초 실행은 종료 코드 0이며 두 저장소의 main SHA를 읽었다.
+독립 검토에서 찾은 상태 파일 중단 문제는 원자 교체와 손상 상태 복구로 수정했다.
+보존·중단 복구·main 감지 검사 14개가 통과했다.

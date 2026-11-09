@@ -897,3 +897,13 @@ C 기능·API와 탄속·분산·비행 중 경로 보정을 삭제했다. 자�
 ## iOS 자원 증분 빌드 서명 의존성 — 2026-11-09
 
 - [ ] RuntimeData만 갱신했을 때 Xcode의 상위 앱 재서명이 누락되는 의존성을 조사한다. 이번 배치에서 빌드 성공 뒤 `codesign --verify --deep --strict`가 이전 자원 서명으로 실패했다. Clean Build Folder 후 전체 빌드·서명 검사·실제 업데이트 설치는 통과했다. 사용자 저장은 보존됐다. [발견과 우회 결과](reviews/kamov-lux-stage-placement-20261109.md#아이폰-정식-앱-설치).
+
+
+## HM-BROWSER-CLEANUP — 검증 브라우저 설치 항목 정리 · 2026-11-09
+
+- [x] Chrome/Safari의 HeavyMach·MachDefense 설치 항목 확인. Chrome 검증 PWA 24개 중 임시 프로필이 사라진 항목은 21개이며 Safari 대상은 발견하지 못했다.
+- [x] 두 게임의 orphan 검증 실행 항목만 휴지통으로 이동하는 도구와 보존 조건 검사 14개 구현.
+- [x] Mac 자동 실행 설치와 최초 정리 결과 확인. 21개 실행 항목을 휴지통으로 옮겼고 3개는 보존했다. 원격 main 변경 확인 및 10분 주기 실행.
+- [x] MachDefense 작업 세션에 동일 요구·대상 식별·보존 조건을 전달. 해당 저장소 TODO 커밋 확인은 회신 대기.
+
+[범위·설치·보존 조건](repository-management.md#검증-브라우저-앱-정리--2026-11-09).
