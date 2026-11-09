@@ -904,6 +904,6 @@ C 기능·API와 탄속·분산·비행 중 경로 보정을 삭제했다. 자�
 - [x] Chrome/Safari의 HeavyMach·MachDefense 설치 항목 확인. Chrome 검증 PWA 24개 중 임시 프로필이 사라진 항목은 21개이며 Safari 대상은 발견하지 못했다.
 - [x] 두 게임의 orphan 검증 실행 항목만 휴지통으로 이동하는 도구와 보존 조건 검사 14개 구현.
 - [x] Mac 자동 실행 설치와 최초 정리 결과 확인. 21개 실행 항목을 휴지통으로 옮겼고 3개는 보존했다. 원격 main 변경 확인 및 10분 주기 실행.
-- [x] MachDefense 작업 세션에 동일 요구·대상 식별·보존 조건을 전달. 해당 저장소 TODO 커밋 확인은 회신 대기.
+- [x] MachDefense 작업 세션에 동일 요구·대상 식별·보존 조건을 전달. 해당 세션의 `docs/usability-todo.md`에 `MD-POST-MAIN-CLEANUP-01`이 커밋된 상태도 확인했다.
 
 [범위·설치·보존 조건](repository-management.md#검증-브라우저-앱-정리--2026-11-09).
