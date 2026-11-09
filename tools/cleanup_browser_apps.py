@@ -174,7 +174,7 @@ def install(repos):
     plist_path.parent.mkdir(parents=True, exist_ok=True)
     plist_path.write_bytes(plistlib.dumps({
         'Label': LABEL,
-        'ProgramArguments': [str(Path(sys.executable).resolve()), str(dest), '--watch', str(config_path)],
+        'ProgramArguments': [sys.executable, str(dest), '--watch', str(config_path)],
         'RunAtLoad': True, 'StartInterval': 600,
         'EnvironmentVariables': {'PATH': '/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin'},
         'StandardOutPath': str(state_dir / 'stdout.log'),
