@@ -8,6 +8,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from check_translations import (EXPECTED, anchors, check_pair, check_scope, digest,
                                 numeric_difference, strip_nav)
+from check_publication import author_manuscript
 
 
 class TranslationChecks(unittest.TestCase):
@@ -45,6 +46,25 @@ class TranslationChecks(unittest.TestCase):
     def errors(self):
         self.write()
         return check_pair(self.root, self.ko, self.en, self.record)
+
+    def test_author_hash_allows_only_the_fixed_series_navigation(self):
+        path = 'docs/RESTORATION.md'
+        intro = '# Author statement\n\n'
+        body = 'Original author paragraph.\n'
+        links = (
+            '<!-- series-statement-nav:start -->\n'
+            '[MachDefense](https://github.com/gelb2/MachDefense/blob/main/docs/RESTORATION.md) '
+            '([English](https://github.com/gelb2/MachDefense/blob/main/docs/en/RESTORATION.md)) · '
+            '[HeavyMach 2](https://github.com/gelb2/HeavyMach2/blob/main/docs/RESTORATION.md) '
+            '([English](https://github.com/gelb2/HeavyMach2/blob/main/docs/en/heavymach2-restoration.md))\n'
+            '<!-- series-statement-nav:end -->\n\n'
+        )
+        self.assertEqual(author_manuscript(path, intro + links + body), intro + body)
+        with_inserted_prose = links.replace('<!-- series-statement-nav:end -->', 'Another paragraph.\n<!-- series-statement-nav:end -->')
+        wrong_destination = links.replace('gelb2/MachDefense', 'gelb2/HeavyMach', 1)
+        for invalid in (with_inserted_prose, wrong_destination):
+            self.assertNotEqual(author_manuscript(path, intro + invalid + body), intro + body)
+        self.assertNotEqual(author_manuscript(path, intro + links + 'Changed text.\n'), intro + body)
 
     def test_valid_pair_and_shared_image(self):
         self.assertEqual(self.errors(), [])
