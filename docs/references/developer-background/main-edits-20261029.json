@@ -1,7 +1,7 @@
 {
   "commit": "87c6e522e8e695f9720b616cd941c07644e08f46",
   "files": {
-    "docs/RESTORATION.md": "0424f75048249b367c217d55da0d9d17b76eba40a3c17b18e54dddcc08f4f1aa",
+    "docs/RESTORATION.md": "e9ded607a084701c39de217a7ea7d40108bd60c3f2605be67ab5c3cd28c869b4",
     "docs/public/lux-lunae-intent-20261028.md": "14496bab32400b26c1ffec592d85d69bc1f246143d04098ec955d15322b648e6"
   },
   "authorized_update_20261030": "사용자 지시에 따라 복원 시작 문단을 Internet Archive의 HeavyMach 시리즈 모음에서 1.13을 받았다는 내용과 링크로 수정했다. 나머지 사용자 본문은 유지했다.",
@@ -9,6 +9,10 @@
     "docs/public/lux-lunae-intent-20261028.md": {
       "commit": "39b05834",
       "note": "사용자가 main에서 직접 수정한 문장을 그대로 보존하고 README와 영문에 반영했다."
+    },
+    "docs/RESTORATION.md": {
+      "commit": "ca75b1b66174686503ab0aebccc4577ae9dd866e",
+      "note": "공개 main에서 사용자가 직접 수정한 최신 국문 전문과 일치한다."
     }
   }
 }
