@@ -33,6 +33,8 @@ Money is only needed in this life.
 
 [Full developer's statement](docs/en/RESTORATION.md)
 
+[MachDefense developer’s statement](https://github.com/gelb2/MachDefense/blob/main/docs/en/RESTORATION.md) ([한국어](https://github.com/gelb2/MachDefense/blob/main/docs/RESTORATION.md)) · [HeavyMach 2 developer’s statement](https://github.com/gelb2/HeavyMach2/blob/main/docs/en/heavymach2-restoration.md) ([한국어](https://github.com/gelb2/HeavyMach2/blob/main/docs/RESTORATION.md))
+
 ## Reflections After Restoring the Trilogy. I Have Fulfilled My Duty to the Two Creators.
 
 This has nothing to do with what I felt while restoring the trilogy, but I’ve noticed something after meeting some of these people nowadays, the ones who fall short of being conscientious, decent members of society. Their brains are rotting because they’ve forgotten that a person can die in an instant. In Angeles, in the Philippines, I learned that death comes without warning and takes the head of even the most arrogant. I also learned that who gets reaped has nothing to do with good or evil. Then I felt that it was my turn, and that I had even less time than I’d expected. That’s why I decided to restore the HeavyMach trilogy. To restore, while I still had some presence of mind, the software that had extended my life. Today, with HeavyMach 2 the last of the three to be restored, HeavyMach 1, MachDefense, and HeavyMach 2 all run on every platform except Windows and have reached a point where they can be maintained. I believe I have fulfilled my duty to Byun Hae-jun, the developer, and Park Jae-cheol, the illustrator, who gave me the extra time to live that even my Creator had refused to grant me.

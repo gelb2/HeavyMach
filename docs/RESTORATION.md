@@ -4,6 +4,10 @@
 [한국어](RESTORATION.md) | [English](en/RESTORATION.md)
 <!-- language-nav:end -->
 
+<!-- series-statement-nav:start -->
+[맥디펜스 개발자의 변](https://github.com/gelb2/MachDefense/blob/main/docs/RESTORATION.md) ([English](https://github.com/gelb2/MachDefense/blob/main/docs/en/RESTORATION.md)) · [헤비멕2 개발자의 변](https://github.com/gelb2/HeavyMach2/blob/main/docs/RESTORATION.md) ([English](https://github.com/gelb2/HeavyMach2/blob/main/docs/en/heavymach2-restoration.md))
+<!-- series-statement-nav:end -->
+
 이와 비슷한 프로젝트를 진행한 [mesabloo](https://github.com/Mesabloo/hm-defense)라는 사람이 있었다. 그는 HeavyMach Defense의 에셋을 구하고 소스코드를 밑바닥부터 새로 작성했다. 유닛 간 교전 알고리즘을 구현하다가 멈춘 듯했다. 나는 소스코드를 밑바닥부터 새로 작성해야 했던 그 보다는 시작점이 더 나은 상황이었다.
 
 주말에 잠을 자다가 꿈을 꿨다. 꿈속에서 아이팟터치와 Cydia를 처음 접하던 나를 제3자의 시점으로 보고 있었다. 일어나서 구글에 heavy Mach을 쳐봤다. 구글 검색의 Gemini가 HeavyMach 원본을 받을 수 있는 [Internet Archive](https://archive.org)를 알려줬다. 그곳의 [HeavyMach 시리즈 모음](https://archive.org/details/heavy-mach-archive_202406)에서 받은 HeavyMach 1.13을 바탕으로 복원을 시작했다.

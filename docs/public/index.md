@@ -31,6 +31,7 @@ HeavyMach는 iPhone·iPad·네이티브 Mac·Android·웹/PWA·Tauri Mac에서 �
 ## 개발 배경과 기획
 
 - [개발자의 변](../RESTORATION.md): 이 게임을 복원한 개인적인 이유.
+- [맥디펜스 개발자의 변](https://github.com/gelb2/MachDefense/blob/main/docs/RESTORATION.md) ([English](https://github.com/gelb2/MachDefense/blob/main/docs/en/RESTORATION.md)) · [헤비멕2 개발자의 변](https://github.com/gelb2/HeavyMach2/blob/main/docs/RESTORATION.md) ([English](https://github.com/gelb2/HeavyMach2/blob/main/docs/en/heavymach2-restoration.md))
 - [추가 기능의 기획 의도](design-intent.md): 넓은 화면, 공용 모듈, 자동조준, 새 적과 HUD 편집.
 - [왜 럭스루나에인가](lux-lunae-intent-20261028.md): 두 게임의 의미, 도색과 전투 기획, 승인 도안과 게임 화면.
 - [기능과 세부 구현](features.md): 표적·탄도 계산, 항공기 무장과 배치 수치.

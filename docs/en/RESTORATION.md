@@ -6,6 +6,10 @@
 [한국어](../RESTORATION.md) | [English](RESTORATION.md)
 <!-- language-nav:end -->
 
+<!-- series-statement-nav:start -->
+[MachDefense developer’s statement](https://github.com/gelb2/MachDefense/blob/main/docs/en/RESTORATION.md) ([한국어](https://github.com/gelb2/MachDefense/blob/main/docs/RESTORATION.md)) · [HeavyMach 2 developer’s statement](https://github.com/gelb2/HeavyMach2/blob/main/docs/en/heavymach2-restoration.md) ([한국어](https://github.com/gelb2/HeavyMach2/blob/main/docs/RESTORATION.md))
+<!-- series-statement-nav:end -->
+
 Someone named [mesabloo](https://github.com/Mesabloo/hm-defense) worked on a similar project. He obtained HeavyMach Defense assets and wrote its source code from scratch. He appears to have stopped while implementing combat between units. My starting point was better than his, since he had to write the source code from scratch.
 
 One weekend, I had a dream. I saw myself from a third-person perspective, encountering the iPod touch and Cydia for the first time. After waking up, I searched Google for heavy Mach. Gemini in Google Search pointed me to [Internet Archive](https://archive.org), where I downloaded HeavyMach 1.13 from the [HeavyMach series archive](https://archive.org/details/heavy-mach-archive_202406) and began the restoration.

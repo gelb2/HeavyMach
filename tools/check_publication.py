@@ -68,6 +68,25 @@ def check_editorial(root):
     return errors
 
 
+STATEMENT_LINK = r'\[[^\]\n]+\]\(https://github\.com/gelb2/'
+RELATED_STATEMENT_NAV = re.compile(
+    r'\A(#[^\n]+\n\n)<!-- series-statement-nav:start -->\n'
+    + STATEMENT_LINK + r'MachDefense/blob/main/docs/RESTORATION\.md\) \('
+    + STATEMENT_LINK + r'MachDefense/blob/main/docs/en/RESTORATION\.md\)\) · '
+    + STATEMENT_LINK + r'HeavyMach2/blob/main/docs/RESTORATION\.md\) \('
+    + STATEMENT_LINK + r'HeavyMach2/blob/main/docs/en/heavymach2-restoration\.md\)\)\n'
+    r'<!-- series-statement-nav:end -->\n\n'
+)
+
+
+def author_manuscript(name, text):
+    text = strip_nav(text)
+    if name == 'docs/RESTORATION.md':
+        # The byline navigation has four fixed destinations. Hash every author paragraph.
+        return RELATED_STATEMENT_NAV.sub(r'\1', text, count=1)
+    return text
+
+
 def check(root):
     errors = check_editorial(root)
     links = 0
@@ -107,14 +126,15 @@ def check(root):
     expected = '#' + approved
     if expected not in readme_text:
         errors.append('README opening differs from the approved manuscript')
-    restoration_paragraphs = strip_nav((root / 'docs/RESTORATION.md').read_text()).split('\n\n')
+    restoration_path = 'docs/RESTORATION.md'
+    restoration_paragraphs = author_manuscript(restoration_path, (root / restoration_path).read_text()).split('\n\n')
     shared = restoration_paragraphs[1:4]
     shared += [p for p in restoration_paragraphs if p.startswith('요즘 나는 내게 남은 시간이')]
     if any(p not in expected for p in shared):
         errors.append('README and restoration shared paragraphs differ')
     main_edits = json.loads((root / 'docs/references/developer-background/main-edits-20261029.json').read_text())
     for name, digest in main_edits['files'].items():
-        if hashlib.sha256(strip_nav((root / name).read_text()).encode()).hexdigest() != digest:
+        if hashlib.sha256(author_manuscript(name, (root / name).read_text()).encode()).hexdigest() != digest:
             errors.append(f'Changed author manuscript from main: {name}')
     sources = root / 'docs/references/developer-background'
     manifest = json.loads((sources / 'source-manifest.json').read_text())

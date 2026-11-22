@@ -5,8 +5,8 @@
   "documents": {
     "README.md": {
       "english": "README.en.md",
-      "source_sha256": "7ace822d66a74d0f1fab67b714fa87d42ea4e9a0addfd3f33ba1d6706fd04fc1",
-      "english_sha256": "7c142e409d8510f63206551cca8983465edac2fc07d9276f3358bed67315b773",
+      "source_sha256": "12d97853e747a6bc71ba2ffdad1e4f521b1655237ad56e57b4ee33123d6212de",
+      "english_sha256": "078b1bb693995efba2e8c2b827f12361e8f3134111b50ae6653a88ff92fd1446",
       "reviewed_numeric_difference": {
         "source_only": {
           "7": 1,
@@ -15,7 +15,6 @@
           "6": 4,
           "8": 1,
           "4": 2,
-          "2": 1,
           "5": 1,
           "11": 1
         },
@@ -24,7 +23,7 @@
           "13": 2
         }
       },
-      "review_note": "2026-11-09: reviewed hotfix release entry and current download-link updates in both languages; existing author text preserved. 2026-11-22: reviewed the trilogy reflection and the requested title in both languages. Kept the Korean author edits already on main. Korean 3부작 and 3개 correspond to trilogy and three, and Korean game names attach numerals where the English names use spaces."
+      "review_note": "2026-11-09: reviewed hotfix release entry and current download-link updates in both languages; existing author text preserved. 2026-11-22: reviewed the trilogy reflection and the requested title in both languages. Kept the Korean author edits already on main. Korean 3부작 and 3개 correspond to trilogy and three, and Korean game names attach numerals where the English names use spaces. 2026-11-23: verified links to the same Korean and English statements. The numeral in 헤비멕2 and HeavyMach 2 is part of the game title."
     },
     "CHANGELOG.md": {
       "english": "CHANGELOG.en.md",
@@ -106,8 +105,8 @@
     },
     "docs/RESTORATION.md": {
       "english": "docs/en/RESTORATION.md",
-      "source_sha256": "e9ded607a084701c39de217a7ea7d40108bd60c3f2605be67ab5c3cd28c869b4",
-      "english_sha256": "bf1e4aff3c0d0682a8b39c62c0e2e89d88cb10d89e7f25da45426bb31fa1333c",
+      "source_sha256": "f84efedff40d933c2281cd2600d126a75242be46ef32495efb5d90aa0e5ee763",
+      "english_sha256": "9c2ebee1780249d73ef3fc7f4c9fc9226ffa80f183b3cc571943496afa987dac",
       "reviewed_numeric_difference": {
         "source_only": {
           "7": 1,
@@ -115,10 +114,11 @@
           "1": 1
         },
         "english_only": {
+          "2": 1,
           "140": 1
         }
       },
-      "review_note": "July, top five, and KRW 140 million translate 7월, 5위권 and 1억4천만 원. Personal statements, Japanese poem and criticism preserved. User-approved correction: 이승에서나 → in this life. 2026-11-22: retained the existing Korean-only paragraph already published by the author on main. The Korean and English files are unchanged from main."
+      "review_note": "July, top five, and KRW 140 million translate 7월, 5위권 and 1억4천만 원. Personal statements, Japanese poem and criticism preserved. User-approved correction: 이승에서나 → in this life. 2026-11-22: retained the existing Korean-only paragraph already published by the author on main. The Korean and English files are unchanged from main. 2026-11-23: verified links to the same Korean and English statements. The numeral in 헤비멕2 and HeavyMach 2 is part of the game title."
     },
     "docs/public/features.md": {
       "english": "docs/en/public/features.md",
@@ -270,13 +270,15 @@
     },
     "docs/public/index.md": {
       "english": "docs/en/public/index.md",
-      "source_sha256": "1f7ae34e46fe245e57831f0ed41e3d54bbed8447f3e271c7acdeb0678795f44e",
-      "english_sha256": "b200b9de6143ac93248592f5373e1e6d742b75ca9af7ce4d609fc0f8c85c852f",
+      "source_sha256": "d29d4eef9374933fcc00dedcf05294d068647b802128a2dd0edfd228175dedcd",
+      "english_sha256": "cffba3bf073d61de6350bcec5de20e805610054e7d47dc1c98125a1c0e9af995",
       "reviewed_numeric_difference": {
         "source_only": {},
-        "english_only": {}
+        "english_only": {
+          "2": 1
+        }
       },
-      "review_note": "2026-11-09: reviewed hotfix release entry and current download-link updates in both languages; existing author text preserved."
+      "review_note": "2026-11-09: reviewed hotfix release entry and current download-link updates in both languages; existing author text preserved. 2026-11-23: verified links to the same Korean and English statements. The numeral in 헤비멕2 and HeavyMach 2 is part of the game title."
     },
     "docs/public/design-intent.md": {
       "english": "docs/en/public/design-intent.md",
