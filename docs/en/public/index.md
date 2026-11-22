@@ -39,6 +39,7 @@ HeavyMach runs on iPhone, iPad, native Mac, Android, Web/PWA and Tauri Mac. The 
 ## Background and design
 
 - [Developer's statement](../RESTORATION.md): personal reasons for restoring this game.
+- [MachDefense developer’s statement](https://github.com/gelb2/MachDefense/blob/main/docs/en/RESTORATION.md) ([한국어](https://github.com/gelb2/MachDefense/blob/main/docs/RESTORATION.md)) · [HeavyMach 2 developer’s statement](https://github.com/gelb2/HeavyMach2/blob/main/docs/en/heavymach2-restoration.md) ([한국어](https://github.com/gelb2/HeavyMach2/blob/main/docs/RESTORATION.md))
 - [Intent behind the additions](design-intent.md): wider screens, shared modules, auto-aim, new enemies and HUD editing.
 - [Why Lux Lunae?](lux-lunae-intent-20261028.md): the two games' meaning, livery and combat design, approved artwork and gameplay.
 - [Features and implementation](features.md): target and trajectory calculations, aircraft weapons and placement values.
