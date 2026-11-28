@@ -17,7 +17,7 @@ android {
     }
     flavorDimensions += "edition"
     productFlavors {
-        create("normal") { dimension = "edition"; buildConfigField("boolean", "CHEAT", "false"); resValue("string", "app_name", "Heavy Mach 1"); externalNativeBuild { cmake { arguments += "-DHM_ANDROID_VALIDATION=OFF" } } }
+        create("normal") { dimension = "edition"; buildConfigField("boolean", "CHEAT", "false"); resValue("string", "app_name", "HeavyMach"); externalNativeBuild { cmake { arguments += "-DHM_ANDROID_VALIDATION=OFF" } } }
         create("cheat") { dimension = "edition"; applicationId = "com.gelb2.heavymach.validation"; buildConfigField("boolean", "CHEAT", "true"); resValue("string", "app_name", "HM Validation"); externalNativeBuild { cmake { arguments += "-DHM_ANDROID_VALIDATION=ON" } } }
     }
     buildTypes { getByName("release") { isMinifyEnabled = false } }

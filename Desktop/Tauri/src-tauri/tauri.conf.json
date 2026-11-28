@@ -1,6 +1,6 @@
 {
   "$schema": "https://schema.tauri.app/config/2",
-  "productName": "Heavy Mach Desktop",
+  "productName": "HeavyMach",
   "version": "0.17.0",
   "identifier": "com.gelb2.heavymach.desktop",
   "build": {

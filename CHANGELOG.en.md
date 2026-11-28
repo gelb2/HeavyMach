@@ -8,6 +8,12 @@
 [한국어](CHANGELOG.md) | [English](CHANGELOG.en.md)
 <!-- language-nav:end -->
 
+## app-display-name-20261129 — Display name
+
+The regular iPhone, iPad, Android, native Mac, Tauri Mac, web and PWA editions now display `HeavyMach`. Updates use the existing application identifiers and save locations. Validation editions keep their distinct names and save storage.
+
+[Play on the web or install the PWA](https://gelb2.github.io/HeavyMach/) · [Installation guide](docs/en/public/quick-play.md)
+
 <a id="new-unit-hotfix-20261109--신규-유닛-제작등록-절차-수정"></a>
 
 ## kamov-armament-hotfix-20261109 — Kamov armament

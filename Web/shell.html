@@ -8,9 +8,9 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="Heavy Mach">
+<meta name="apple-mobile-web-app-title" content="@HM_WEB_APP_NAME@">
 <link rel="manifest" href="manifest.webmanifest">
-<title>Heavy Mach 1</title>
+<title>@HM_WEB_APP_NAME@</title>
 <link rel="icon" href="data:,">
 <style>
   :root { color-scheme: dark; }
@@ -29,13 +29,13 @@
 </style>
 </head>
 <body>
-<canvas id="canvas" tabindex="0" aria-label="Heavy Mach 1"></canvas>
+<canvas id="canvas" tabindex="0" aria-label="@HM_WEB_APP_NAME@"></canvas>
 <div id="safe-probe"></div>
 <div id="hm-error" class="overlay"></div>
 <div id="hm-boot"><div id="hm-boot-text">게임 자원을 불러오는 중</div><div class="bar"><i id="hm-boot-bar"></i></div></div>
 <div id="hm-storage" class="overlay" style="inset:24px;bottom:auto;padding:20px;z-index:8" role="alert"><p id="hm-storage-text"></p><button id="hm-storage-retry" type="button">Retry</button></div>
 <div id="hm-context" class="overlay" style="inset:24px;bottom:auto;padding:20px;z-index:7" role="alert">Graphics interrupted. Waiting for recovery.</div>
-<div id="hm-rotate">기기를 가로로 돌려 주세요.<br>Heavy Mach 1은 가로 화면에서 플레이합니다.</div>
+<div id="hm-rotate">기기를 가로로 돌려 주세요.<br>@HM_WEB_APP_NAME@ 앱은 가로 화면에서 플레이합니다.</div>
 <script>
 (function(){
   'use strict';

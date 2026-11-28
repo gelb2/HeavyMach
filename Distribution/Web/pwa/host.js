@@ -63,13 +63,13 @@ $('play').onclick=()=>exclusive(async()=>{
 $('retry').onclick=()=>registration?.active?exclusive(()=>prepare()).catch(fail):location.reload();
 function installState(){const installed=standalone();$('install').hidden=installed;$('install-storage').hidden=installed;$('play').classList.toggle('primary',installed);$('play').textContent=installed?'Play':'Play in browser';if(installed)$('intro').textContent='Download once, then play offline. Updates download when you are online.';}
 $('install').onclick=async()=>{
- if(installPrompt){const prompt=installPrompt;installPrompt=null;await prompt.prompt();const choice=await prompt.userChoice;if(choice.outcome==='accepted')status.textContent='Open Heavy Mach from its new icon.';return;}
+ if(installPrompt){const prompt=installPrompt;installPrompt=null;await prompt.prompt();const choice=await prompt.userChoice;if(choice.outcome==='accepted')status.textContent='Open HeavyMach from its new icon.';return;}
  const appleMobile=/iPhone|iPad|iPod/.test(navigator.userAgent)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1);
- $('install-help').textContent=appleMobile?'In Safari, tap Share, then Add to Home Screen. Leave Open as Web App on and tap Add.':/Safari/.test(navigator.userAgent)&&!/Chrome|Chromium|Edg/.test(navigator.userAgent)?'In Safari, choose File → Add to Dock.':'Open your browser menu and choose Install Heavy Mach or Install this page as an app.';
+ $('install-help').textContent=appleMobile?'In Safari, tap Share, then Add to Home Screen. Leave Open as Web App on and tap Add.':/Safari/.test(navigator.userAgent)&&!/Chrome|Chromium|Edg/.test(navigator.userAgent)?'In Safari, choose File → Add to Dock.':'Open your browser menu and choose Install HeavyMach or Install this page as an app.';
  $('install-dialog').showModal();
 };
 window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();installPrompt=e;});
-window.addEventListener('appinstalled',()=>{installPrompt=null;status.textContent='Open Heavy Mach from its new icon.';});
+window.addEventListener('appinstalled',()=>{installPrompt=null;status.textContent='Open HeavyMach from its new icon.';});
 window.addEventListener('pageshow',e=>{if(e.persisted)location.reload();});
 installState();
 if(!('serviceWorker' in navigator))fail(Error('Open this game over HTTPS in a current browser.'));else{
