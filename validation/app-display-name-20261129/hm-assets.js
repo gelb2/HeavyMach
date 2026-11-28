@@ -18,7 +18,7 @@
         // web worker
         PACKAGE_PATH = encodeURIComponent(location.pathname.substring(0, location.pathname.lastIndexOf('/')) + '/');
       }
-      var PACKAGE_NAME = '/Users/sokol/Git/ProjectGameDev-Hub/HeavyMach/build/kamov-armament-hotfix-20261109/build/web/dist/hm-assets-1.data';
+      var PACKAGE_NAME = '/Users/sokol/Git/ProjectGameDev-Hub/HeavyMach/.local/worktrees/heavymach-app-display-name/build/web-validation/dist/hm-assets-1.data';
       var REMOTE_PACKAGE_BASE = 'hm-assets-1.data';
       var REMOTE_PACKAGE_NAME = Module['locateFile'] ? Module['locateFile'](REMOTE_PACKAGE_BASE, '') : REMOTE_PACKAGE_BASE;
       var REMOTE_PACKAGE_SIZE = metadata['remote_package_size'];
@@ -101,9 +101,9 @@ Module['FS_createPath']("/assets", "OriginalImages", true, true);
             // canOwn this data in the filesystem, it is a slice into the heap that will never change
         Module['FS_createDataFile'](name, null, data, true, true, true);
           }
-          Module['removeRunDependency']('datafile_/Users/sokol/Git/ProjectGameDev-Hub/HeavyMach/build/kamov-armament-hotfix-20261109/build/web/dist/hm-assets-1.data');
+          Module['removeRunDependency']('datafile_/Users/sokol/Git/ProjectGameDev-Hub/HeavyMach/.local/worktrees/heavymach-app-display-name/build/web-validation/dist/hm-assets-1.data');
       }
-      Module['addRunDependency']('datafile_/Users/sokol/Git/ProjectGameDev-Hub/HeavyMach/build/kamov-armament-hotfix-20261109/build/web/dist/hm-assets-1.data');
+      Module['addRunDependency']('datafile_/Users/sokol/Git/ProjectGameDev-Hub/HeavyMach/.local/worktrees/heavymach-app-display-name/build/web-validation/dist/hm-assets-1.data');
 
       if (!Module['preloadResults']) Module['preloadResults'] = {};
 
@@ -146,7 +146,7 @@ Module['FS_createPath']("/assets", "OriginalImages", true, true);
         // web worker
         PACKAGE_PATH = encodeURIComponent(location.pathname.substring(0, location.pathname.lastIndexOf('/')) + '/');
       }
-      var PACKAGE_NAME = '/Users/sokol/Git/ProjectGameDev-Hub/HeavyMach/build/kamov-armament-hotfix-20261109/build/web/dist/hm-assets-2.data';
+      var PACKAGE_NAME = '/Users/sokol/Git/ProjectGameDev-Hub/HeavyMach/.local/worktrees/heavymach-app-display-name/build/web-validation/dist/hm-assets-2.data';
       var REMOTE_PACKAGE_BASE = 'hm-assets-2.data';
       var REMOTE_PACKAGE_NAME = Module['locateFile'] ? Module['locateFile'](REMOTE_PACKAGE_BASE, '') : REMOTE_PACKAGE_BASE;
       var REMOTE_PACKAGE_SIZE = metadata['remote_package_size'];
@@ -228,9 +228,9 @@ Module['FS_createPath']("/assets", "RuntimeData", true, true);
             // canOwn this data in the filesystem, it is a slice into the heap that will never change
         Module['FS_createDataFile'](name, null, data, true, true, true);
           }
-          Module['removeRunDependency']('datafile_/Users/sokol/Git/ProjectGameDev-Hub/HeavyMach/build/kamov-armament-hotfix-20261109/build/web/dist/hm-assets-2.data');
+          Module['removeRunDependency']('datafile_/Users/sokol/Git/ProjectGameDev-Hub/HeavyMach/.local/worktrees/heavymach-app-display-name/build/web-validation/dist/hm-assets-2.data');
       }
-      Module['addRunDependency']('datafile_/Users/sokol/Git/ProjectGameDev-Hub/HeavyMach/build/kamov-armament-hotfix-20261109/build/web/dist/hm-assets-2.data');
+      Module['addRunDependency']('datafile_/Users/sokol/Git/ProjectGameDev-Hub/HeavyMach/.local/worktrees/heavymach-app-display-name/build/web-validation/dist/hm-assets-2.data');
 
       if (!Module['preloadResults']) Module['preloadResults'] = {};
 
