@@ -89,7 +89,7 @@ targets:
     info:
       path: Info.plist
       properties:
-        CFBundleDisplayName: Heavy Mach 1
+        CFBundleDisplayName: HeavyMach
         CFBundleShortVersionString: '1.13'
         CFBundleVersion: '1'
         UIApplicationSceneManifest:

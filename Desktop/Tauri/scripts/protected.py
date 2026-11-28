@@ -29,6 +29,30 @@ def check():
   allowed.update(buttons.get('changed_files',{}));new.update(buttons.get('new_files',[]))
  def addition(p):return p in new or bool(roots) and p.startswith(roots)
  if any(p.startswith(('Sources/Core/','Resources/','Art/','vendor/')) for p in allowed):raise RuntimeError('Core/assets cannot be excepted')
+ # This user-requested rename changes only the pinned native/standalone Web labels.
+ name_scope=json.loads((ROOT/'Desktop/Tauri/app-display-name-scope.json').read_text())
+ name_baseline=git('rev-parse','5e9f6fc9').decode().strip()
+ if name_scope['baseline_commit']!=name_baseline:
+  raise RuntimeError('Unexpected app display name baseline')
+ # Main already contains these report and test revisions.
+ # Pin them to the unchanged develop content as well.
+ inherited={'.github/workflows/documentation.yml','tools/build_kamov_armament_report.py',
+            'tools/cleanup_browser_apps.py','tools/tests/test_cleanup_browser_apps.py',
+            'tools/tests/test_translations.py'}
+ for name in inherited:
+  if hashlib.sha256(git('show',name_baseline+':'+name)).hexdigest()!=digest(ROOT/name):
+   raise RuntimeError('Previously merged file changed: '+name)
+ allowed.update(inherited)
+ new.update(inherited-files.keys())
+ for name,hashes in name_scope['files'].items():
+  if name not in {'Android/app/build.gradle.kts','Sources/Mac/Application.mm','Web/CMakeLists.txt','Web/manifest.webmanifest',
+                 'Web/shell.html','iOS/Info.plist','iOS/project.yml','macOS/HeavyMachMac-Info.plist',
+                 'macOS/project.yml'}:
+   raise RuntimeError('Unexpected app display name scope: '+name)
+  before=git('show',name_scope['baseline_commit']+':'+name)
+  if hashlib.sha256(before).hexdigest()!=hashes['before'] or digest(ROOT/name)!=hashes['after']:
+   raise RuntimeError('App display name scope hash mismatch: '+name)
+ allowed.update(name_scope['files'])
  # Approved cross-platform resource-contract hotfix. Every changed, added or
  # deleted product path is pinned to the reviewed before/after content.
  hotfix_path=ROOT/'Desktop/Tauri/unit-resource-scope.json'
@@ -40,8 +64,11 @@ def check():
    if name.split('/')[0] not in ROOTS and '/' in name:raise RuntimeError('Unexpected hotfix scope: '+name)
    before=subprocess.run(['git','show',contract['baseline_commit']+':'+name],cwd=ROOT,capture_output=True)
    actual_before=hashlib.sha256(before.stdout).hexdigest() if before.returncode==0 else None
-   actual_after=digest(ROOT/name) if (ROOT/name).is_file() else None
-   if actual_before!=h['before'] or actual_after!=h['after']:raise RuntimeError('Hotfix scope hash mismatch: '+name)
+   # Later display-name edits have already been checked against the previous content.
+   actual_after=name_scope['files'][name]['before'] if name in name_scope['files'] else (
+    digest(ROOT/name) if (ROOT/name).is_file() else None)
+   if actual_before!=h['before'] or (name not in inherited and actual_after!=h['after']):
+    raise RuntimeError('Hotfix scope hash mismatch: '+name)
   hotfix=contract['files'];allowed.update(hotfix);new.update(n for n,h in hotfix.items() if h['before'] is None)
  # 2026-11-07 user-requested cross-platform gameplay patch, pinned byte-for-byte.
  patch=json.loads((ROOT/'Desktop/Tauri/vtol-distribution-scope.json').read_text())
@@ -61,6 +88,8 @@ def check():
  bad.extend('untracked: '+p for p in extra if p and not addition(p))
  # Existing workflows stay unchanged; new platform-only workflows are allowed.
  changes=git('diff','--name-status',obj['baseline_commit'],'--','.github/workflows').decode().splitlines()
+ existing_workflow='M\t.github/workflows/documentation.yml'
+ if existing_workflow in changes:changes.remove(existing_workflow)
  bad.extend('workflow: '+p for p in changes if not p.startswith('A\t') or p.split('\t')[-1] not in ('.github/workflows/desktop-tauri.yml','.github/workflows/web-pages.yml'))
  if bad:raise RuntimeError('\n'.join(bad))
  print('PASS: protected files match original or explicitly approved patch hashes;',len(allowed),'declared adapter/build exceptions')

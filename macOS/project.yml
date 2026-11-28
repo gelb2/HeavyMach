@@ -64,6 +64,7 @@ targets:
     info:
       path: HeavyMachMac-Info.plist
       properties:
+        CFBundleDisplayName: HeavyMach
         CFBundleShortVersionString: '1.13'
         CFBundleVersion: '1'
         NSHighResolutionCapable: true

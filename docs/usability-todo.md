@@ -1,5 +1,13 @@
 # 버그 수정·사용성 개선 과제
 
+## HM-APP-DISPLAY-NAME — 정식판 이름을 HeavyMach로 변경
+
+- [x] iOS·iPadOS, Android, 네이티브 Mac, Tauri Mac, 웹·PWA에서 정식판 이름을 `HeavyMach`로 맞춘다.
+- [x] 기존 설치 식별자와 저장 경로를 유지한다. 치트판을 별도 이름과 별도 저장 공간으로 구분한다.
+- [x] 웹 치트판 전투 시작, 별도 저장 경로와 정식판의 치트 차단을 확인한다.
+
+[이번 변경](current-status.md#2026-11-29-정식판-앱-이름) · [변경 이력](../CHANGELOG.md#app-display-name-20261129--정식판-앱-이름).
+
 <a id="hm-kamov-armament--카모프-무장-변경--승인미구현"></a>
 ## HM-KAMOV-ARMAMENT — 카모프 무장 변경 · 구현·웹 검사·main 배포 완료
 

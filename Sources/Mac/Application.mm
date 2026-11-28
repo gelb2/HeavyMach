@@ -7,7 +7,7 @@
 @implementation HMNativeAppDelegate
 - (void)applicationDidFinishLaunching:(NSNotification*)notification {
  self.window=[[NSWindow alloc]initWithContentRect:NSMakeRect(0,0,1200,800) styleMask:NSWindowStyleMaskTitled|NSWindowStyleMaskClosable|NSWindowStyleMaskMiniaturizable|NSWindowStyleMaskResizable backing:NSBackingStoreBuffered defer:NO];
- self.window.title=@"Heavy Mach";self.window.delegate=self;self.window.contentMinSize=NSMakeSize(640,420);self.window.collectionBehavior=NSWindowCollectionBehaviorFullScreenPrimary;
+ self.window.title=[NSBundle.mainBundle objectForInfoDictionaryKey:@"CFBundleDisplayName"] ?: @"Heavy Mach";self.window.delegate=self;self.window.contentMinSize=NSMakeSize(640,420);self.window.collectionBehavior=NSWindowCollectionBehaviorFullScreenPrimary;
  self.game=[[HMGameView alloc]initWithFrame:self.window.contentView.bounds];self.game.autoresizingMask=NSViewWidthSizable|NSViewHeightSizable;self.window.contentView=self.game;
  [self.window center];[self.window makeKeyAndOrderFront:nil];[NSApp activateIgnoringOtherApps:YES];
  NSMenu* bar=[NSMenu new];NSMenuItem* item=[NSMenuItem new];[bar addItem:item];NSMenu* app=[NSMenu new];[app addItemWithTitle:@"Full Screen" action:@selector(toggleFullScreen:) keyEquivalent:@"f"];[app addItemWithTitle:@"Quit" action:@selector(terminate:) keyEquivalent:@"q"];item.submenu=app;

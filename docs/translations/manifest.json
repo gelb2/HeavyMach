@@ -5,8 +5,8 @@
   "documents": {
     "README.md": {
       "english": "README.en.md",
-      "source_sha256": "12d97853e747a6bc71ba2ffdad1e4f521b1655237ad56e57b4ee33123d6212de",
-      "english_sha256": "078b1bb693995efba2e8c2b827f12361e8f3134111b50ae6653a88ff92fd1446",
+      "source_sha256": "a985f69d68b5e92fa8f9b6f76e9c71cd1308ec58777ff0c444687a538e2af246",
+      "english_sha256": "6a3fc512339437dbfb94fd71f2534c759333fdd673a5189d57b1a8be6d107e11",
       "reviewed_numeric_difference": {
         "source_only": {
           "7": 1,
@@ -23,12 +23,12 @@
           "13": 2
         }
       },
-      "review_note": "2026-11-09: reviewed hotfix release entry and current download-link updates in both languages; existing author text preserved. 2026-11-22: reviewed the trilogy reflection and the requested title in both languages. Kept the Korean author edits already on main. Korean 3부작 and 3개 correspond to trilogy and three, and Korean game names attach numerals where the English names use spaces. 2026-11-23: verified links to the same Korean and English statements. The numeral in 헤비멕2 and HeavyMach 2 is part of the game title."
+      "review_note": "2026-11-09: reviewed hotfix release entry and current download-link updates in both languages; existing author text preserved. 2026-11-22: reviewed the trilogy reflection and the requested title in both languages. Kept the Korean author edits already on main. Korean 3부작 and 3개 correspond to trilogy and three, and Korean game names attach numerals where the English names use spaces. 2026-11-23: verified links to the same Korean and English statements. The numeral in 헤비멕2 and HeavyMach 2 is part of the game title. 2026-11-29: Reviewed the current Tauri download link in both languages. The intro and other author text are unchanged."
     },
     "CHANGELOG.md": {
       "english": "CHANGELOG.en.md",
-      "source_sha256": "aaef827f7a06629f0d982b2cc2d1c7c576c96e51680db92d5b423bc866dc5a80",
-      "english_sha256": "d01d65e2fb5907288346a3adab5f1fc21c0aa87f20e6c62b5ccef98d0656d566",
+      "source_sha256": "b7be6bb6d4005475958dc5068ed876e0d032e9af19c46673e74aab3f8aa13b0d",
+      "english_sha256": "0ac79aa242b2a91d9ee2b6646276ef6f8764dd36cefebe67c56a1845748661a1",
       "reviewed_numeric_difference": {
         "source_only": {
           "8": 2,
@@ -49,7 +49,7 @@
           "1,482": 1
         }
       },
-      "review_note": "2026-11-09: reviewed Kamov cannon removal, two sequential missiles, 0.5-second interval, 28 core tests and 20 player weapons in both languages. Existing entries preserved; Korean attached numerals and English number words account for token differences."
+      "review_note": "2026-11-09: reviewed Kamov cannon removal, two sequential missiles, 0.5-second interval, 28 core tests and 20 player weapons in both languages. Existing entries preserved; Korean attached numerals and English number words account for token differences. 2026-11-29: Reviewed the HeavyMach regular display label, validation distinction, save continuity, and installation links in both languages."
     },
     "CREDITS.md": {
       "english": "CREDITS.en.md",
@@ -345,13 +345,13 @@
     },
     "docs/public/quick-play.md": {
       "english": "docs/en/public/quick-play.md",
-      "source_sha256": "2cfbed5bb71fde21bb7f717b9b231e92b1d3209ff8dde5a613e199827657bf94",
-      "english_sha256": "b628e46f4954f3741c0d69b6ff76908f8939b7bd9195cffb1bd8d07a768b8c41",
+      "source_sha256": "eed5fb19f78f9acfcdee089aa4b310300f491ef0df67cb63b6df79574beab78e",
+      "english_sha256": "b836fda3a8fe8924615c99bd9ae1a0fc8a65a2379edb84ff7fb0d8eb319bec0b",
       "reviewed_numeric_difference": {
         "source_only": {},
         "english_only": {}
       },
-      "review_note": "2026-11-09: reviewed hotfix release entry and current download-link updates in both languages; existing author text preserved."
+      "review_note": "2026-11-09: reviewed hotfix release entry and current download-link updates in both languages; existing author text preserved. 2026-11-29: Reviewed the new Tauri download destination in both languages."
     },
     "docs/public/after-heavymach1-20261105.md": {
       "english": "docs/en/public/after-heavymach1-20261105.md",

@@ -1,6 +1,6 @@
 {
-  "name": "Heavy Mach 1",
-  "short_name": "Heavy Mach",
+  "name": "HeavyMach",
+  "short_name": "HeavyMach",
   "start_url": "./",
   "scope": "./",
   "display": "fullscreen",

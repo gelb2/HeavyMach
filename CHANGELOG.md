@@ -6,6 +6,12 @@
 [한국어](CHANGELOG.md) | [English](CHANGELOG.en.md)
 <!-- language-nav:end -->
 
+## app-display-name-20261129 — 정식판 앱 이름
+
+iPhone·iPad, Android, 네이티브 Mac, Tauri Mac과 웹·PWA에서 정식판 앱 이름을 `HeavyMach`로 표시한다. 업데이트는 기존 앱의 설치 식별자와 저장 경로를 사용한다. 치트판은 기존 별도 이름과 저장 공간을 쓴다.
+
+[웹·PWA 실행](https://gelb2.github.io/HeavyMach/) · [플레이 안내](docs/public/quick-play.md)
+
 ## kamov-armament-hotfix-20261109 — 카모프 무장 변경
 
 카모프 기관포 파츠·공격을 제거하고 미사일을 0.5초 간격의2연사로 바꿨다. 채택 몸체·두 로터·캠페인 배치는 보존했다. 원작 공통 데이터·파츠·사격 경로를 사용한다. 코어28개와 웹 치트 실제발사·피해·파괴·로터·자연캠페인, 플레이어20무기를 검사했다. [변경·검사·범위](docs/reviews/kamov-armament-hotfix-20261109.md).
