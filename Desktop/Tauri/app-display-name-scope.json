@@ -1,0 +1,41 @@
+{
+  "baseline_commit": "5e9f6fc9591664309f652e06134d83340e5be6cf",
+  "files": {
+    "Android/app/build.gradle.kts": {
+      "before": "01c2c902e59ea5ef3ea0c6c0f1ebf81178feda0cfe4cdf5dd16797831866429e",
+      "after": "092ff0b26d27ff333f12e06103a783e07965239a90b0dcccba225f26686f3439"
+    },
+    "Sources/Mac/Application.mm": {
+      "before": "3ed9a0fe5763c4c897ac823156f60afe574eed1c247cc41a3b059c78992c8d6d",
+      "after": "2c818d19bea9e5d354203b554ef39dec4a60b789642afa3adefa69e8f0a33773"
+    },
+    "Web/CMakeLists.txt": {
+      "before": "27f6e36d6087071a7ce05f7c2405a16330623c12cfff430f53d6feea3c562149",
+      "after": "aaf9f2f2d7ffe2378d463400a756d6fae64a5a16a43179a46d05b4030d4e009f"
+    },
+    "Web/manifest.webmanifest": {
+      "before": "65c37e452de3dabbaa9971a8136a51497c8abf1a5034012fd15f56f7eb724e52",
+      "after": "2e9884de82ea081cdd98e449b012b211bbe7fa94093d5eab5a687f849bd3792c"
+    },
+    "Web/shell.html": {
+      "before": "9ac3b4b6cd88becf96caf59566a79a20078c51941536ca60bf92982d1450356e",
+      "after": "04d2201d8081c7f098294dc5a68afb8fd35c8a366c77449089c15b7f36b4f8e8"
+    },
+    "iOS/Info.plist": {
+      "before": "db9bf54628f06912b6c367600e99a1828ed2c366865e108323f8cfdd097ef66e",
+      "after": "789fbd0332867fae19c88532648acd20e8e0cdeb137fd58827ec5f4cb471aee8"
+    },
+    "iOS/project.yml": {
+      "before": "c861580318bfc1eda84d1b6519babdf795b36dd8fa9770bee8985fec2b96b53d",
+      "after": "9cf6f155ba1f9993ef6154be0cde212dc27db8000451a7d7fa1f3d52e0352d2c"
+    },
+    "macOS/HeavyMachMac-Info.plist": {
+      "before": "732e5923da6448087f90a2a392293d6a4acaa6f64a9c4cc55a3492f5fbccd355",
+      "after": "3135ee73ba115cc857fe2168590cdd5a6ea1122db82afbc7f9307430017380af"
+    },
+    "macOS/project.yml": {
+      "before": "41f32328fa9cd7221281b5dcfba14942b66e284734fe2bb5d6313c971bea0411",
+      "after": "eeee8218d32f8836bdf64db0a7da7fb557f23edd2140c8d7a5c5b0d8726af8c7"
+    }
+  }
+}

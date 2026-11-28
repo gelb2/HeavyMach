@@ -177,7 +177,7 @@ fn close_error(w: WebviewWindow, message: String) -> Result<(), String> {
     local(&w)?;
     let detail: String = message.chars().take(500).collect();
     w.dialog().message(format!("Could not finish the backup. The game is still open.\n{detail}\nRetry Quit after resolving the error."))
-        .title("Heavy Mach Desktop").show(|_| {});
+        .title("HeavyMach").show(|_| {});
     Ok(())
 }
 #[tauri::command]
@@ -204,7 +204,7 @@ fn request_close(w: &WebviewWindow) {
     if let Err(e) = w.eval("window.__hmDesktop?.requestClose()") {
         w.dialog()
             .message(format!("Could not request quit. Retry.\n{e}"))
-            .title("Heavy Mach Desktop")
+            .title("HeavyMach")
             .show(|_| {});
     }
 }
@@ -241,10 +241,10 @@ pub fn run() {
             use tauri::menu::{MenuBuilder, MenuItemBuilder, SubmenuBuilder};
             // Native macOS predefined Quit sends terminate: directly. Route Cmd-Q
             // through our completed-save backup before calling app.exit().
-            let quit = MenuItemBuilder::with_id("quit-after-backup", "Quit Heavy Mach Desktop")
+            let quit = MenuItemBuilder::with_id("quit-after-backup", "Quit HeavyMach")
                 .accelerator("CmdOrCtrl+Q")
                 .build(app)?;
-            let app_menu = SubmenuBuilder::new(app, "Heavy Mach Desktop")
+            let app_menu = SubmenuBuilder::new(app, "HeavyMach")
                 .hide()
                 .hide_others()
                 .show_all()
@@ -298,7 +298,7 @@ pub fn run() {
             );
             let window =
                 tauri::WebviewWindowBuilder::new(app, "main", WebviewUrl::App("index.html".into()))
-                    .title("Heavy Mach Desktop")
+                    .title("HeavyMach")
                     .inner_size(1200., 800.)
                     .min_inner_size(640., 360.)
                     .initialization_script(script)
@@ -320,7 +320,7 @@ pub fn run() {
             Ok(())
         })
         .build(tauri::generate_context!())
-        .expect("Create Heavy Mach Desktop");
+        .expect("Create HeavyMach");
     app.run(|app, event| {
         if let tauri::RunEvent::ExitRequested { api, .. } = event {
             if !app.state::<State>().allow_exit.load(Ordering::SeqCst) {
